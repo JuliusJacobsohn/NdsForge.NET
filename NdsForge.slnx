@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NdsForge.Cli/NdsForge.Cli.csproj" />
+    <Project Path="src/NdsForge/NdsForge.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/NdsForge.CompatibilityTests/NdsForge.CompatibilityTests.csproj" />
+    <Project Path="tests/NdsForge.Tests/NdsForge.Tests.csproj" />
+  </Folder>
+</Solution>
+
