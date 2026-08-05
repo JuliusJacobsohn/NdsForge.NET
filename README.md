@@ -1,6 +1,6 @@
 # NdsForge.NET
 
-NdsForge.NET is a clean-room, pure C# toolkit for inspecting, extracting, editing,
+NdsForge.NET is an independent, pure C# toolkit for inspecting, extracting, editing,
 validating, and building Nintendo DS and DSi software images. It targets .NET 10
 and is designed first as an object-oriented library, with a thin CLI for people
 and build pipelines.
@@ -30,8 +30,8 @@ the repository or test output.
 
 ## License
 
-NdsForge.NET is licensed under the MIT License. The implementation is developed
-from public format documentation and black-box compatibility tests. GPL-licensed
-tools may be invoked only as optional development oracles; their code is not
-copied or translated into this repository.
-
+NdsForge.NET is licensed under the MIT License. The implementation is written
+from public format documentation and independently designed APIs, with existing
+tools used to identify expected behavior. GPL-licensed code is not copied,
+translated, linked, or included in this repository. This engineering boundary is
+not a legal opinion; licensing should be reviewed before a public release.

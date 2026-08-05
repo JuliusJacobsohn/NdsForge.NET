@@ -1,0 +1,3 @@
+# Use an independent managed implementation
+
+NdsForge.NET is implemented from public format documentation and independently designed APIs because the established `ndstool` implementation is GPL-licensed while this reusable library is MIT-licensed. Existing tools and their published behavior may identify compatibility requirements, but production code does not copy, translate, link, or include GPL source; this preserves a dependency-free managed runtime and a deliberate licensing boundary at the cost of maintaining our own specification-based compatibility tests. Because upstream source was inspected during research, the project does not claim a formal clean-room process, and licensing should be reviewed before public release.
