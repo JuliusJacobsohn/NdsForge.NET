@@ -8,32 +8,45 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     private readonly IImageDataSource _source;
     private bool _disposed;
 
-    private NdsImage(IImageDataSource source, NdsHeader header)
+    private NdsImage(IImageDataSource source, NdsHeader header, NdsFileSystem fileSystem)
     {
         _source = source;
         Header = header;
+        FileSystem = fileSystem;
     }
 
     /// <summary>Gets the parsed image header.</summary>
     public NdsHeader Header { get; }
+
+    /// <summary>Gets the parsed NitroFS tree and allocations.</summary>
+    public NdsFileSystem FileSystem { get; }
 
     /// <summary>Gets the total length of the source image in bytes.</summary>
     public long Length => _source.Length;
 
     /// <summary>Opens an image from a filesystem path without loading the entire file into memory.</summary>
     /// <param name="path">The image path.</param>
+    /// <param name="options">Optional parser resource limits.</param>
     /// <param name="cancellationToken">A token used to cancel header reading.</param>
     /// <returns>The opened image. The caller must dispose it.</returns>
     public static async ValueTask<NdsImage> OpenAsync(
         string path,
+        NdsReadOptions? options = null,
         CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(path);
         var source = new FileImageDataSource(path);
         try
         {
+            options ??= NdsReadOptions.Default;
+            options.Validate();
             NdsHeader header = await ReadHeaderAsync(source, cancellationToken).ConfigureAwait(false);
-            return new NdsImage(source, header);
+            NdsFileSystem fileSystem = await NitroFileSystemParser.ParseAsync(
+                source,
+                header,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            return new NdsImage(source, header, fileSystem);
         }
         catch
         {
@@ -45,14 +58,18 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <summary>Loads an image from caller-owned memory.</summary>
     /// <remarks>The memory must not be mutated while the returned image is in use.</remarks>
     /// <param name="data">The complete image data.</param>
+    /// <param name="options">Optional parser resource limits.</param>
     /// <returns>The loaded image. The caller must dispose it.</returns>
-    public static NdsImage Load(ReadOnlyMemory<byte> data)
+    public static NdsImage Load(ReadOnlyMemory<byte> data, NdsReadOptions? options = null)
     {
         var source = new MemoryImageDataSource(data);
         try
         {
+            options ??= NdsReadOptions.Default;
+            options.Validate();
             NdsHeader header = ReadHeader(source);
-            return new NdsImage(source, header);
+            NdsFileSystem fileSystem = NitroFileSystemParser.Parse(source, header, options);
+            return new NdsImage(source, header, fileSystem);
         }
         catch
         {

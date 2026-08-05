@@ -51,7 +51,9 @@ public sealed class NdsImageTests
             CancellationToken cancellationToken = TestContext.Current.CancellationToken;
             await File.WriteAllBytesAsync(path, SyntheticImage.CreateHeaderOnly(), cancellationToken).ConfigureAwait(true);
 
-            using NdsImage image = await NdsImage.OpenAsync(path, cancellationToken).ConfigureAwait(true);
+            using NdsImage image = await NdsImage.OpenAsync(
+                path,
+                cancellationToken: cancellationToken).ConfigureAwait(true);
 
             Assert.Equal("TEST", image.Header.GameCode);
             Assert.Equal(0x4000, image.Length);
