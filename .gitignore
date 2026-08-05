@@ -1,0 +1,19 @@
+**/bin/
+**/obj/
+**/TestResults/
+.vs/
+.idea/
+.vscode/
+artifacts/
+coverage/
+
+# Private or derived Nintendo DS material
+*.nds
+*.srl
+*.dsi
+*.sav
+*.bin
+*.bmp
+fixtures/private/
+work/
+
