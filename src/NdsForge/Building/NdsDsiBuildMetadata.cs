@@ -12,6 +12,18 @@ public sealed class NdsDsiBuildMetadata
     private byte[] _memoryBankSettings = CreateDefaultMemoryBankSettings();
     /// <summary>Stores all sixteen authority-specific rating slots; <c>0x80</c> is the conventional unrated value.</summary>
     private byte[] _ageRatings = Enumerable.Repeat((byte)0x80, 0x10).ToArray();
+    /// <summary>Tracks a parsed component-relative first modcrypt interval across structural relocation.</summary>
+    private NdsProcessor? _modcryptArea1Anchor;
+    /// <summary>Tracks a parsed component-relative second modcrypt interval across structural relocation.</summary>
+    private NdsProcessor? _modcryptArea2Anchor;
+    /// <summary>Retains the first interval's byte displacement from its source Program.</summary>
+    private long _modcryptArea1RelativeOffset;
+    /// <summary>Retains the second interval's byte displacement from its source Program.</summary>
+    private long _modcryptArea2RelativeOffset;
+    /// <summary>Stores the caller-visible first interval independently from an optional import anchor.</summary>
+    private NdsRegion _modcryptArea1;
+    /// <summary>Stores the caller-visible second interval independently from an optional import anchor.</summary>
+    private NdsRegion _modcryptArea2;
 
     /// <summary>Preserves common-header DSi behavior flags separately from the application flags in the extension.</summary>
     public byte DsiFlags { get; set; } = 0x01;
@@ -41,10 +53,28 @@ public sealed class NdsDsiBuildMetadata
     public uint PrivateSaveSize { get; set; }
 
     /// <summary>Declares the first modcrypt-transformed image interval, or an empty region when modcrypt is unused.</summary>
-    public NdsRegion ModcryptArea1 { get; set; }
+    public NdsRegion ModcryptArea1
+    {
+        get => _modcryptArea1;
+        set
+        {
+            _modcryptArea1 = value;
+            _modcryptArea1Anchor = null;
+            _modcryptArea1RelativeOffset = 0;
+        }
+    }
 
     /// <summary>Declares the second modcrypt-transformed image interval, or an empty region when modcrypt is unused.</summary>
-    public NdsRegion ModcryptArea2 { get; set; }
+    public NdsRegion ModcryptArea2
+    {
+        get => _modcryptArea2;
+        set
+        {
+            _modcryptArea2 = value;
+            _modcryptArea2Anchor = null;
+            _modcryptArea2RelativeOffset = 0;
+        }
+    }
 
     /// <summary>Determines whether authentication fields are cleared or computed under an explicitly named key policy.</summary>
     public NdsDsiIntegrityOptions Integrity { get; set; } = NdsDsiIntegrityOptions.Unauthenticated;
@@ -119,6 +149,60 @@ public sealed class NdsDsiBuildMetadata
 
     /// <summary>Returns copied raw rating slots to the serializer without interpreting their authority-dependent bits.</summary>
     internal ReadOnlyMemory<byte> AgeRatings => _ageRatings;
+
+    /// <summary>Anchors imported absolute modcrypt offsets to Programs so a deterministic rebuild can relocate them safely.</summary>
+    /// <param name="programs">Source Programs whose original physical offsets define possible anchors.</param>
+    internal void AnchorModcryptAreas(IEnumerable<NdsProgram> programs)
+    {
+        NdsProgram[] candidates = programs.ToArray();
+        (_modcryptArea1Anchor, _modcryptArea1RelativeOffset) = FindAnchor(ModcryptArea1, candidates);
+        (_modcryptArea2Anchor, _modcryptArea2RelativeOffset) = FindAnchor(ModcryptArea2, candidates);
+    }
+
+    /// <summary>Resolves one imported area against final Program placement while leaving caller-authored absolute areas unchanged.</summary>
+    /// <param name="area">Original absolute interval and preserved length.</param>
+    /// <param name="first">Selects the first or second area's independently discovered anchor.</param>
+    /// <param name="layout">Final build layout supplying relocated Program offsets.</param>
+    /// <returns>A final absolute interval coherent with the generated image.</returns>
+    internal NdsRegion ResolveModcryptArea(NdsRegion area, bool first, NdsImageBuildLayout layout)
+    {
+        NdsProcessor? anchor = first ? _modcryptArea1Anchor : _modcryptArea2Anchor;
+        long relativeOffset = first ? _modcryptArea1RelativeOffset : _modcryptArea2RelativeOffset;
+        if (anchor is null)
+        {
+            return area;
+        }
+
+        NdsRegion program = anchor switch
+        {
+            NdsProcessor.Arm9 => layout.Arm9,
+            NdsProcessor.Arm7 => layout.Arm7,
+            NdsProcessor.Arm9i => layout.Arm9i!.Value,
+            NdsProcessor.Arm7i => layout.Arm7i!.Value,
+            _ => throw new InvalidDataException($"Unsupported modcrypt Program anchor {anchor}."),
+        };
+        return new(checked(program.Offset + relativeOffset), area.Length);
+    }
+
+    /// <summary>Recognizes an interval beginning within a source Program and records only its relocatable displacement.</summary>
+    /// <param name="area">Header-declared absolute modcrypt interval.</param>
+    /// <param name="programs">Parsed source Programs in any order.</param>
+    /// <returns>Processor anchor and relative byte displacement, or no anchor for an empty or external interval.</returns>
+    private static (NdsProcessor? Anchor, long RelativeOffset) FindAnchor(
+        NdsRegion area,
+        IReadOnlyList<NdsProgram> programs)
+    {
+        if (area.IsEmpty)
+        {
+            return (null, 0);
+        }
+
+        NdsProgram? program = programs.FirstOrDefault(candidate =>
+            area.Offset >= candidate.Data.Offset && area.Offset < candidate.Data.End);
+        return program is null
+            ? (null, 0)
+            : (program.Processor, area.Offset - program.Data.Offset);
+    }
 
     /// <summary>Builds the conventional ndstool homebrew MBK register image used when no source template is supplied.</summary>
     /// <returns>Exactly 48 bytes covering global, ARM9, ARM7, and WRAM control registers.</returns>

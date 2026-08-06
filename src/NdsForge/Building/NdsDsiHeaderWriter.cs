@@ -39,8 +39,8 @@ internal static class NdsDsiHeaderWriter
         NdsBinary.WriteUInt32(header, 0x208, checked((uint)(builder.Banner?.RawData.Length ?? 0)));
         NdsBinary.WriteUInt32(header, 0x20C, 0x00010000);
         NdsBinary.WriteUInt32(header, 0x210, checked((uint)layout.PhysicalSize));
-        WriteRegion(header, 0x220, metadata.ModcryptArea1);
-        WriteRegion(header, 0x228, metadata.ModcryptArea2);
+        WriteRegion(header, 0x220, metadata.ResolveModcryptArea(metadata.ModcryptArea1, first: true, layout));
+        WriteRegion(header, 0x228, metadata.ResolveModcryptArea(metadata.ModcryptArea2, first: false, layout));
         NdsBinary.WriteUInt32(header, 0x230, (uint)metadata.TitleId);
         NdsBinary.WriteUInt32(header, 0x234, (uint)(metadata.TitleId >> 32));
         NdsBinary.WriteUInt32(header, 0x238, metadata.PublicSaveSize);

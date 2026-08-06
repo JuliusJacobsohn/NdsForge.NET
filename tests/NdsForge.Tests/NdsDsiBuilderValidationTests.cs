@@ -1,3 +1,4 @@
+using System.Buffers.Binary;
 using System.Security.Cryptography;
 
 namespace NdsForge.Tests;
@@ -89,6 +90,41 @@ public sealed class NdsDsiBuilderValidationTests
     {
         Assert.Throws<ArgumentException>(() =>
             NdsDsiIntegrityOptions.CreateHmacSha1([1], NdsDsiSignatureMode.RsaSha1));
+    }
+
+    [Fact]
+    public async Task StructuralImportRelocatesProgramAnchoredModcryptArea()
+    {
+        byte[] sourceBytes = await CreateDsiBuilder().BuildAsync(
+            cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        using (NdsImage initial = NdsImage.Load(sourceBytes))
+        {
+            BinaryPrimitives.WriteUInt32LittleEndian(
+                sourceBytes.AsSpan(0x220),
+                checked((uint)initial.Header.Arm9i!.Data.Offset));
+            BinaryPrimitives.WriteUInt32LittleEndian(sourceBytes.AsSpan(0x224), 1);
+        }
+
+        using NdsImage source = NdsImage.Load(sourceBytes);
+        long originalOffset = source.Header.Arm9i!.Data.Offset;
+        NdsImageBuilder imported = await NdsImageBuilder.FromImageAsync(
+            source,
+            TestContext.Current.CancellationToken).ConfigureAwait(true);
+        imported.FileSystem.AddFile("/shift.bin", new byte[0x1000]);
+
+        byte[] rebuiltBytes = await imported.BuildAsync(
+            cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        using NdsImage rebuilt = NdsImage.Load(rebuiltBytes);
+        Assert.NotEqual(originalOffset, rebuilt.Header.Arm9i!.Data.Offset);
+        Assert.Equal(rebuilt.Header.Arm9i.Data.Offset, rebuilt.Header.Dsi!.ModcryptArea1.Offset);
+        Assert.Equal(1, rebuilt.Header.Dsi.ModcryptArea1.Length);
+        Assert.True(rebuilt.Validate().IsValid);
+
+        imported.DsiMetadata!.ModcryptArea1 = default;
+        byte[] overriddenBytes = await imported.BuildAsync(
+            cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        using NdsImage overridden = NdsImage.Load(overriddenBytes);
+        Assert.True(overridden.Header.Dsi!.ModcryptArea1.IsEmpty);
     }
 
     private static NdsImageBuilder CreateDsBuilder() => new()

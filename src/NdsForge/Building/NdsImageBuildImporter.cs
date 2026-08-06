@@ -39,6 +39,9 @@ internal static class NdsImageBuildImporter
         if (dsiMetadata is not null)
         {
             dsiMetadata.DsiFlags = image.Header.DsiFlags;
+            dsiMetadata.AnchorModcryptAreas(
+                new[] { image.Header.Arm9, image.Header.Arm7, image.Header.Arm9i, image.Header.Arm7i }
+                    .OfType<NdsProgram>());
         }
 
         var builder = new NdsImageBuilder
