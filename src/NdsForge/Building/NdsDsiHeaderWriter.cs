@@ -91,9 +91,19 @@ internal static class NdsDsiHeaderWriter
     /// values, because those fields lie inside the marker's 0xE00-byte SHA-1 input.
     /// </summary>
     /// <param name="header">Complete header with every field except the signature area finalized.</param>
-    /// <param name="mode">Clear-field or explicitly non-RSA development-marker policy.</param>
-    public static void FinalizeSignature(Span<byte> header, NdsDsiSignatureMode mode) =>
-        WriteDevelopmentSignature(header, mode);
+    /// <param name="integrity">Clear, development-marker, or application-supplied RSA signing policy.</param>
+    public static void FinalizeSignature(Span<byte> header, NdsDsiIntegrityOptions integrity)
+    {
+        if (integrity.SignatureMode == NdsDsiSignatureMode.RsaSha1)
+        {
+            INdsDsiSignatureProvider provider = integrity.SignatureProvider ??
+                throw new InvalidDataException("RSA signature mode has no signing provider.");
+            provider.SignHeader(header[..0xE00], header[0xF80..0x1000]);
+            return;
+        }
+
+        WriteDevelopmentSignature(header, integrity.SignatureMode);
+    }
 
     /// <summary>Encodes a DSi Program's ROM offset, single runtime address, and exact byte length.</summary>
     /// <param name="header">Mutable extended header.</param>

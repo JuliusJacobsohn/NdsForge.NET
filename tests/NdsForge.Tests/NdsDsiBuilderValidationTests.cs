@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+
 namespace NdsForge.Tests;
 
 public sealed class NdsDsiBuilderValidationTests
@@ -55,6 +57,38 @@ public sealed class NdsDsiBuilderValidationTests
         Assert.Equal(NdsProcessor.Arm9i, image.Header.Arm9i!.Processor);
         Assert.Equal(NdsProcessor.Arm7i, image.Header.Arm7i!.Processor);
         Assert.True(image.Validate().IsValid);
+    }
+
+    [Fact]
+    public async Task CallerSigningAuthorityProducesVerifiableDsiHeader()
+    {
+#pragma warning disable CA5351 // DSi header authenticity is fixed to RSA-1024 by the platform format.
+        using RSA rsa = RSA.Create(1024);
+#pragma warning restore CA5351
+        using var signer = new NdsDsiRsaSignatureProvider(rsa);
+        NdsDsiRsaPublicKey publicKey = NdsDsiRsaPublicKey.FromRsa(rsa);
+        byte[] hmacKey = [1, 3, 3, 7];
+        NdsImageBuilder builder = CreateDsiBuilder();
+        builder.DsiMetadata!.Integrity = NdsDsiIntegrityOptions.CreateSignedHmacSha1(hmacKey, signer);
+
+        byte[] data = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(data);
+        var validationOptions = new NdsValidationOptions()
+            .SetDsiHmacKey(hmacKey)
+            .SetDsiRsaPublicKey(publicKey);
+
+        Assert.True(image.Header.Dsi!.VerifyRsaSignature(publicKey));
+        Assert.True(image.Validate(validationOptions).IsValid);
+        data[0x240] ^= 1;
+        using NdsImage tampered = NdsImage.Load(data);
+        Assert.Contains(tampered.Validate(validationOptions).Diagnostics, static value => value.Code == "NDS1321");
+    }
+
+    [Fact]
+    public void RsaModeCannotBeSelectedWithoutSigningAuthority()
+    {
+        Assert.Throws<ArgumentException>(() =>
+            NdsDsiIntegrityOptions.CreateHmacSha1([1], NdsDsiSignatureMode.RsaSha1));
     }
 
     private static NdsImageBuilder CreateDsBuilder() => new()

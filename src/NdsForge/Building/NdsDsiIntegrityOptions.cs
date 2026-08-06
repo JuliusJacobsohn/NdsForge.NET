@@ -1,17 +1,19 @@
 namespace NdsForge;
 
 /// <summary>
-/// Defines which DSi authentication fields a build can honestly produce. Retail RSA signing is deliberately
-/// absent until a caller supplies an explicit signing key and trust policy; component HMACs can use either a
-/// caller-owned key or the published ndstool homebrew compatibility key.
+/// Defines which DSi authentication fields a build can honestly produce. Component HMACs use caller-selected
+/// key material, while an optional signing provider keeps private-key custody outside the image builder. The
+/// built-in ndstool policy remains explicitly a homebrew compatibility identity rather than a retail trust claim.
 /// </summary>
 public sealed class NdsDsiIntegrityOptions
 {
     /// <summary>Retains a copied key so later caller buffer mutation cannot change a reviewed build recipe.</summary>
     private readonly byte[]? _hmacKey;
+    /// <summary>Retains an application signing abstraction only for the lifetime of the caller's build recipe.</summary>
+    private readonly INdsDsiSignatureProvider? _signatureProvider;
 
     /// <summary>Uses zeroed HMAC and signature fields for a clearly unauthenticated DSi image.</summary>
-    public static NdsDsiIntegrityOptions Unauthenticated { get; } = new(null, NdsDsiSignatureMode.Cleared);
+    public static NdsDsiIntegrityOptions Unauthenticated { get; } = new(null, NdsDsiSignatureMode.Cleared, null);
 
     /// <summary>
     /// Reproduces the public 64-byte HMAC-SHA1 key and no$gba development marker used by modern ndstool builds.
@@ -24,15 +26,21 @@ public sealed class NdsDsiIntegrityOptions
             0x8F, 0x6D, 0x63, 0x3C, 0xFE, 0x22, 0xCA, 0x92, 0x20, 0x88, 0x97, 0x23, 0xD2, 0xCF, 0xAE, 0xC2,
             0x32, 0x67, 0x8D, 0xFE, 0xCA, 0x83, 0x64, 0x98, 0xAC, 0xFD, 0x3E, 0x37, 0x87, 0x46, 0x58, 0x24,
         ],
-        NdsDsiSignatureMode.NoGbaDevelopmentMarker);
+        NdsDsiSignatureMode.NoGbaDevelopmentMarker,
+        null);
 
     /// <summary>Captures the selected key and development-signature behavior after public factory validation.</summary>
     /// <param name="hmacKey">Copied HMAC-SHA1 key, or <see langword="null"/> to clear keyed hashes.</param>
-    /// <param name="signatureMode">Honest unsigned or explicitly non-RSA development marker behavior.</param>
-    private NdsDsiIntegrityOptions(byte[]? hmacKey, NdsDsiSignatureMode signatureMode)
+    /// <param name="signatureMode">The exact authentication representation written to the signature field.</param>
+    /// <param name="signatureProvider">Application authority retained only for genuine RSA mode.</param>
+    private NdsDsiIntegrityOptions(
+        byte[]? hmacKey,
+        NdsDsiSignatureMode signatureMode,
+        INdsDsiSignatureProvider? signatureProvider)
     {
         _hmacKey = hmacKey;
         SignatureMode = signatureMode;
+        _signatureProvider = signatureProvider;
     }
 
     /// <summary>
@@ -51,7 +59,32 @@ public sealed class NdsDsiIntegrityOptions
             throw new ArgumentException("A DSi HMAC-SHA1 key cannot be empty.", nameof(key));
         }
 
-        return new(key.ToArray(), signatureMode);
+        if (signatureMode == NdsDsiSignatureMode.RsaSha1)
+        {
+            throw new ArgumentException("RSA signature mode requires CreateSignedHmacSha1 and a signing provider.", nameof(signatureMode));
+        }
+
+        return new(key.ToArray(), signatureMode, null);
+    }
+
+    /// <summary>
+    /// Combines component HMAC generation with a real header signature supplied by a caller-controlled authority.
+    /// The provider is retained rather than owned and must remain usable until every build using this policy ends.
+    /// </summary>
+    /// <param name="hmacKey">Non-empty key for DSi component and optional digest HMACs.</param>
+    /// <param name="signatureProvider">RSA-1024 provider or application adapter for a hardware/remote signer.</param>
+    /// <returns>An immutable policy whose HMAC bytes are copied immediately.</returns>
+    public static NdsDsiIntegrityOptions CreateSignedHmacSha1(
+        ReadOnlySpan<byte> hmacKey,
+        INdsDsiSignatureProvider signatureProvider)
+    {
+        if (hmacKey.IsEmpty)
+        {
+            throw new ArgumentException("A DSi HMAC-SHA1 key cannot be empty.", nameof(hmacKey));
+        }
+
+        ArgumentNullException.ThrowIfNull(signatureProvider);
+        return new(hmacKey.ToArray(), NdsDsiSignatureMode.RsaSha1, signatureProvider);
     }
 
     /// <summary>Indicates whether component HMAC fields are recomputed instead of deliberately cleared.</summary>
@@ -62,4 +95,7 @@ public sealed class NdsDsiIntegrityOptions
 
     /// <summary>Exposes copied key material only to the internal serializer performing the requested HMAC operation.</summary>
     internal ReadOnlyMemory<byte> HmacKey => _hmacKey;
+
+    /// <summary>Exposes the retained signing authority only to final header serialization.</summary>
+    internal INdsDsiSignatureProvider? SignatureProvider => _signatureProvider;
 }

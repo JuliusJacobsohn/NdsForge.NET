@@ -45,6 +45,15 @@ internal static class NdsDsiIntegrityValidator
         {
             ValidateDevelopmentSignature(image, diagnostics, dsi);
         }
+
+        if (options.DsiRsaPublicKey is not null && !dsi.VerifyRsaSignature(options.DsiRsaPublicKey))
+        {
+            diagnostics.Add(new(
+                "NDS1321",
+                NdsDiagnosticSeverity.Error,
+                "The DSi header RSA-SHA1 signature does not match the caller-trusted public key.",
+                new(0xF80, 128)));
+        }
     }
 
     /// <summary>Checks a nonempty optional region against physical image bounds.</summary>

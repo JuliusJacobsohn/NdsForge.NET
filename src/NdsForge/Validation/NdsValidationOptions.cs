@@ -10,6 +10,8 @@ public sealed class NdsValidationOptions
     private byte[]? _dsiHmacKey;
     /// <summary>Retains the immutable caller table used to distinguish and checksum KEY1 secure-area states.</summary>
     private NdsKey1KeyTable? _secureAreaKeyTable;
+    /// <summary>Retains immutable caller trust material for DSi header authenticity checks.</summary>
+    private NdsDsiRsaPublicKey? _dsiRsaPublicKey;
 
     /// <summary>Returns a fresh keyless policy suitable for structural validation without shared mutable state.</summary>
     public static NdsValidationOptions Default => new();
@@ -44,6 +46,18 @@ public sealed class NdsValidationOptions
     }
 
     /// <summary>
+    /// Enables DSi header authenticity verification against one explicitly trusted RSA-1024 key. A mismatch becomes
+    /// a validation error; the library never substitutes a built-in publisher trust store.
+    /// </summary>
+    /// <param name="publicKey">Immutable public key whose provenance the calling application has established.</param>
+    /// <returns>The same options object for fluent validation configuration.</returns>
+    public NdsValidationOptions SetDsiRsaPublicKey(NdsDsiRsaPublicKey publicKey)
+    {
+        _dsiRsaPublicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey));
+        return this;
+    }
+
+    /// <summary>
     /// Verifies a recognizable no$gba development marker against the finalized 0xE00-byte header input. Unknown
     /// nonzero signatures remain unverified rather than being mislabeled invalid without a trusted RSA key.
     /// </summary>
@@ -63,6 +77,9 @@ public sealed class NdsValidationOptions
 
     /// <summary>Exposes optional KEY1 material only to the internal secure-area validator.</summary>
     internal NdsKey1KeyTable? SecureAreaKeyTable => _secureAreaKeyTable;
+
+    /// <summary>Exposes optional DSi authenticity trust material only to the internal integrity validator.</summary>
+    internal NdsDsiRsaPublicKey? DsiRsaPublicKey => _dsiRsaPublicKey;
 
     /// <summary>Rejects resource limits that would disable bounded validation or overflow managed buffers.</summary>
     internal void Validate()

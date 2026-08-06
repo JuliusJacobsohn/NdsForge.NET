@@ -3,10 +3,13 @@ namespace NdsForge;
 /// <summary>Projects DSi security, digest, memory, title, and save metadata while preserving the complete extension.</summary>
 public sealed class NdsDsiHeader
 {
+    /// <summary>Retains the complete common-plus-extension prefix because RSA coverage begins before the public DSi projection.</summary>
+    private readonly ReadOnlyMemory<byte> _rawHeader;
     /// <summary>Slices typed fields from a complete 0x1000-byte DSi header without copying each fixed byte array.</summary>
     /// <param name="rawHeader">Immutable header memory retained by the parent <see cref="NdsHeader"/>.</param>
     internal NdsDsiHeader(ReadOnlyMemory<byte> rawHeader)
     {
+        _rawHeader = rawHeader;
         ReadOnlySpan<byte> data = rawHeader.Span;
         RawData = rawHeader.Slice(0x180, 0xE80);
         MemoryBankSettings = rawHeader.Slice(0x180, 0x30);
@@ -131,6 +134,18 @@ public sealed class NdsDsiHeader
 
     /// <summary>Preserves the 128-byte header signature for later verification without claiming trust or key provenance.</summary>
     public ReadOnlyMemory<byte> RsaSignature { get; }
+
+    /// <summary>
+    /// Verifies the stored signature against an explicitly trusted public key and the preserved final bytes
+    /// <c>0x000</c>-<c>0xDFF</c>. A true result establishes authenticity only relative to that caller trust choice.
+    /// </summary>
+    /// <param name="publicKey">Caller-trusted RSA-1024 key.</param>
+    /// <returns><see langword="true"/> when the PKCS#1 v1.5 RSA-SHA1 signature matches.</returns>
+    public bool VerifyRsaSignature(NdsDsiRsaPublicKey publicKey)
+    {
+        ArgumentNullException.ThrowIfNull(publicKey);
+        return publicKey.VerifyHeader(_rawHeader.Span[..0xE00], RsaSignature.Span);
+    }
 
     /// <summary>Decodes an extended-header offset/length pair without conflating zero length with absent metadata.</summary>
     /// <param name="data">Complete DSi header beginning at cartridge offset zero.</param>

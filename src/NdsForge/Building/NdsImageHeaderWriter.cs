@@ -75,7 +75,7 @@ internal static class NdsImageHeaderWriter
             NdsChecksums.ComputeCrc16(header.AsSpan(0, 0x15E)));
         if (builder.Kind != NdsImageKind.NintendoDs)
         {
-            NdsDsiHeaderWriter.FinalizeSignature(header, builder.DsiMetadata!.Integrity.SignatureMode);
+            NdsDsiHeaderWriter.FinalizeSignature(header, builder.DsiMetadata!.Integrity);
         }
 
         return header;
