@@ -27,6 +27,7 @@ internal static class CliApplication
                 "VALIDATE" => await ValidateAsync(args, cancellation.Token).ConfigureAwait(false),
                 "LIST" or "LS" => await ListAsync(args, cancellation.Token).ConfigureAwait(false),
                 "EXTRACT" => await ExtractAsync(args, cancellation.Token).ConfigureAwait(false),
+                "REPLACE" => await ReplaceAsync(args, cancellation.Token).ConfigureAwait(false),
                 _ => InvalidArguments($"Unknown command '{args[0]}'."),
             };
         }
@@ -160,6 +161,40 @@ internal static class CliApplication
         return 0;
     }
 
+    private static async Task<int> ReplaceAsync(string[] args, CancellationToken cancellationToken)
+    {
+        bool overwrite = args.Length == 6 && args[5] == "--overwrite";
+        if (args.Length is < 5 or > 6 || (args.Length == 6 && !overwrite))
+        {
+            return InvalidArguments(
+                "Usage: ndsforge replace <image.nds> <nitro-path> <file> <output.nds> [--overwrite]");
+        }
+
+        byte[] contents = await File.ReadAllBytesAsync(args[3], cancellationToken).ConfigureAwait(false);
+        using NdsImage image = await NdsImage.OpenAsync(args[1], cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+        NdsImageEditor editor = image.Edit().ReplaceFile(args[2], contents);
+        NdsFileChange change = AssertSingleChange(editor);
+        NdsSaveResult result = await editor.SaveAsync(
+            args[4],
+            new() { OverwriteDestination = overwrite },
+            cancellationToken).ConfigureAwait(false);
+        Console.WriteLine(
+            $"Replaced {change.Path} ({change.OriginalLength:N0} -> {change.ReplacementLength:N0} bytes); " +
+            $"{result.RelocatedFiles:N0} relocation(s), used size {FormatSize(result.UsedImageSize)}.");
+        return 0;
+    }
+
+    private static NdsFileChange AssertSingleChange(NdsImageEditor editor)
+    {
+        if (editor.Changes.Count != 1)
+        {
+            throw new InvalidOperationException("The replace command expected exactly one change.");
+        }
+
+        return editor.Changes[0];
+    }
+
     private static void PrintProgram(NdsProgram program)
     {
         string footer = program.Footer is null ? string.Empty : " + 12-byte footer";
@@ -190,5 +225,7 @@ internal static class CliApplication
         Console.WriteLine("  list <image.nds> [--long]            List named NitroFS files");
         Console.WriteLine("  extract <image.nds> <dir> [--overwrite]");
         Console.WriteLine("                                       Safely export all image components");
+        Console.WriteLine("  replace <image.nds> <path> <file> <output.nds> [--overwrite]");
+        Console.WriteLine("                                       Replace one NitroFS file and verify output");
     }
 }
