@@ -6,11 +6,14 @@ namespace NdsForge;
 /// <summary>Builds deterministic static Nintendo DS banner versions 1 through 3.</summary>
 public sealed class NdsBannerBuilder
 {
+    /// <summary>Stores only explicitly supplied titles so unused fixed-width slots remain deterministically zero-filled.</summary>
     private readonly Dictionary<NdsBannerLanguage, string> _titles = [];
+    /// <summary>Uses ergonomic row-major pixels until build time converts them to the console's 8-by-8 tile order.</summary>
     private byte[] _paletteIndices = new byte[32 * 32];
+    /// <summary>Preserves the caller's 16 raw BGR555 values, with palette index zero treated as transparent when rendered.</summary>
     private ushort[] _palette = new ushort[16];
 
-    /// <summary>Initializes a static banner builder.</summary>
+    /// <summary>Selects a fixed static layout whose language slots and CRC coverage expand from version one through three.</summary>
     /// <param name="version">Version 1, 2, or 3.</param>
     public NdsBannerBuilder(ushort version = 1)
     {
@@ -22,10 +25,10 @@ public sealed class NdsBannerBuilder
         Version = version;
     }
 
-    /// <summary>Gets the banner version.</summary>
+    /// <summary>Controls output length, title-slot count, and how many cumulative CRC fields are populated.</summary>
     public ushort Version { get; }
 
-    /// <summary>Sets a localized title of at most 127 UTF-16 code units.</summary>
+    /// <summary>Assigns one version-supported UTF-16LE title while reserving a terminating NUL code unit.</summary>
     /// <param name="language">A language supported by the selected version.</param>
     /// <param name="title">The localized title.</param>
     /// <returns>This builder.</returns>
@@ -43,7 +46,7 @@ public sealed class NdsBannerBuilder
         return this;
     }
 
-    /// <summary>Sets a row-major 32-by-32 indexed icon and 16-entry BGR555 palette.</summary>
+    /// <summary>Accepts developer-friendly row-major pixels and converts them to tiled 4-bpp banner storage during build.</summary>
     /// <param name="paletteIndices">Exactly 1024 palette indices from zero through 15.</param>
     /// <param name="bgr555Palette">Exactly 16 BGR555 colors.</param>
     /// <returns>This builder.</returns>
@@ -90,6 +93,8 @@ public sealed class NdsBannerBuilder
         return NdsBanner.Parse(data);
     }
 
+    /// <summary>Packs two four-bit pixels per byte in 8-by-8 tile order and writes the adjacent BGR555 palette.</summary>
+    /// <param name="data">Complete zero-initialized banner buffer containing icon regions at offsets <c>0x20</c> and <c>0x220</c>.</param>
     private void WriteIcon(Span<byte> data)
     {
         Span<byte> tiles = data.Slice(0x20, 0x200);
@@ -110,6 +115,8 @@ public sealed class NdsBannerBuilder
         }
     }
 
+    /// <summary>Maps static layout revisions to their historical six-, seven-, or eight-title capacity.</summary>
+    /// <returns>The exclusive upper bound for <see cref="NdsBannerLanguage"/> values accepted by <see cref="SetTitle"/>.</returns>
     private int GetLanguageCount() => Version switch
     {
         1 => 6,
