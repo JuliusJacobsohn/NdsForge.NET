@@ -48,6 +48,21 @@ public sealed class NdsFile
     /// <returns>A read-only stream.</returns>
     public Stream OpenRead() => new ImageSliceStream(_source, Data);
 
+    /// <summary>Streams this allocation into a caller-owned destination without buffering the complete file in memory.</summary>
+    /// <param name="destination">Writable stream positioned where the first payload byte should be copied.</param>
+    /// <param name="cancellationToken">Cancels reads and writes while leaving the destination open.</param>
+    public async ValueTask CopyToAsync(Stream destination, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(destination);
+        if (!destination.CanWrite)
+        {
+            throw new ArgumentException("The NitroFS file destination must be writable.", nameof(destination));
+        }
+
+        using Stream source = OpenRead();
+        await source.CopyToAsync(destination, cancellationToken).ConfigureAwait(false);
+    }
+
     /// <summary>Reads all file contents into memory.</summary>
     /// <param name="cancellationToken">A token used to cancel reading.</param>
     /// <returns>The complete file contents.</returns>

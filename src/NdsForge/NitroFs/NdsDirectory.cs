@@ -39,6 +39,46 @@ public sealed class NdsDirectory
     /// <summary>Gets immediate child files in FNT order.</summary>
     public IReadOnlyList<NdsFile> Files => _files;
 
+    /// <summary>Walks named payloads in encoded depth-first order without allocating a flattened collection.</summary>
+    /// <param name="recursive">Whether descendants are included after this node's immediate files.</param>
+    /// <returns>A lazy traversal that remains valid while the owning image is live.</returns>
+    public IEnumerable<NdsFile> EnumerateFiles(bool recursive = true)
+    {
+        foreach (NdsFile file in _files)
+        {
+            yield return file;
+        }
+
+        if (recursive)
+        {
+            foreach (NdsDirectory directory in _directories)
+            {
+                foreach (NdsFile file in directory.EnumerateFiles())
+                {
+                    yield return file;
+                }
+            }
+        }
+    }
+
+    /// <summary>Walks child directory nodes in encoded depth-first order while excluding the current node.</summary>
+    /// <param name="recursive">Whether each child's descendants follow that child in the traversal.</param>
+    /// <returns>A lazy sequence suitable for hierarchy-aware LINQ queries.</returns>
+    public IEnumerable<NdsDirectory> EnumerateDirectories(bool recursive = true)
+    {
+        foreach (NdsDirectory directory in _directories)
+        {
+            yield return directory;
+            if (recursive)
+            {
+                foreach (NdsDirectory descendant in directory.EnumerateDirectories())
+                {
+                    yield return descendant;
+                }
+            }
+        }
+    }
+
     /// <summary>Publishes parsed children atomically after a zero terminator closes this directory subtable.</summary>
     /// <param name="directories">Immediate directory entries in encoded FNT order.</param>
     /// <param name="files">Immediate file entries in encoded FNT order and consecutive file-ID order.</param>

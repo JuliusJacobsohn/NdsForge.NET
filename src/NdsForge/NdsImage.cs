@@ -102,6 +102,26 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         return new ImageSliceStream(_source, region);
     }
 
+    /// <summary>Copies an arbitrary validated image interval without materializing it as one managed array.</summary>
+    /// <param name="region">Half-open physical interval, commonly obtained from a typed component or allocation.</param>
+    /// <param name="destination">Writable caller-owned stream positioned at the desired output location.</param>
+    /// <param name="cancellationToken">Cancels bounded source reads and destination writes without closing either owner.</param>
+    public async ValueTask CopyToAsync(
+        NdsRegion region,
+        Stream destination,
+        CancellationToken cancellationToken = default)
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        ArgumentNullException.ThrowIfNull(destination);
+        if (!destination.CanWrite)
+        {
+            throw new ArgumentException("The image-region destination must be writable.", nameof(destination));
+        }
+
+        using Stream source = OpenRead(region);
+        await source.CopyToAsync(destination, cancellationToken).ConfigureAwait(false);
+    }
+
     /// <summary>
     /// Reads one declared DSi modcrypt area and writes its symmetric AES-CTR transformation without loading the
     /// region into memory. The supplied context controls key provenance; neither caller-owned destination nor image

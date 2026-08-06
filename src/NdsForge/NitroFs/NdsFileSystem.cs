@@ -9,6 +9,8 @@ public sealed class NdsFileSystem
     private readonly Dictionary<string, NdsFile> _filesByPath;
     /// <summary>Resolves FAT identifiers used by overlays while excluding allocations that have no FNT name.</summary>
     private readonly Dictionary<int, NdsFile> _filesById;
+    /// <summary>Accelerates root and nested directory lookup without forcing callers to traverse each segment.</summary>
+    private readonly Dictionary<string, NdsDirectory> _directoriesByPath;
 
     /// <summary>Freezes a successfully traversed FNT together with the complete FAT allocation list.</summary>
     /// <param name="root">Directory ID <c>0xF000</c> from which every named entry is reachable.</param>
@@ -27,6 +29,7 @@ public sealed class NdsFileSystem
         Allocations = allocations;
         _filesByPath = files.ToDictionary(static file => file.FullPath, StringComparer.Ordinal);
         _filesById = files.ToDictionary(static file => file.Id);
+        _directoriesByPath = directories.ToDictionary(static directory => directory.FullPath, StringComparer.Ordinal);
     }
 
     /// <summary>Anchors hierarchical traversal at directory ID <c>0xF000</c> and canonical path <c>/</c>.</summary>
@@ -58,6 +61,24 @@ public sealed class NdsFileSystem
     /// <returns><see langword="true"/> when the file exists.</returns>
     public bool TryGetFile(string path, [NotNullWhen(true)] out NdsFile? file) =>
         _filesByPath.TryGetValue(NormalizePath(path), out file);
+
+    /// <summary>Resolves the root or a nested directory by its case-sensitive logical path.</summary>
+    /// <param name="path">Canonical or root-relative NitroFS directory path; <c>/</c> selects the root.</param>
+    /// <returns>The directory node retaining its encoded ID and child order.</returns>
+    public NdsDirectory GetDirectory(string path)
+    {
+        string normalized = NormalizeDirectoryPath(path);
+        return _directoriesByPath.TryGetValue(normalized, out NdsDirectory? directory)
+            ? directory
+            : throw new DirectoryNotFoundException($"NitroFS directory '{normalized}' was not found.");
+    }
+
+    /// <summary>Attempts direct directory lookup without conflating an absent path with an empty directory.</summary>
+    /// <param name="path">Canonical or root-relative NitroFS directory path.</param>
+    /// <param name="directory">Receives the immutable directory node when it exists.</param>
+    /// <returns><see langword="true"/> when the FNT contains the normalized directory.</returns>
+    public bool TryGetDirectory(string path, [NotNullWhen(true)] out NdsDirectory? directory) =>
+        _directoriesByPath.TryGetValue(NormalizeDirectoryPath(path), out directory);
 
     /// <summary>Resolves a FAT identifier only when the FNT assigns that allocation a visible name.</summary>
     /// <param name="fileId">The file ID.</param>
@@ -97,6 +118,32 @@ public sealed class NdsFileSystem
             {
                 throw new ArgumentException("NitroFS paths cannot contain traversal segments.", nameof(path));
             }
+        }
+
+        return normalized;
+    }
+
+    /// <summary>Normalizes convenient directory input while preserving the root's unique single-slash identity.</summary>
+    /// <param name="path">Logical directory path subject to the same traversal rules as file lookup.</param>
+    /// <returns>Canonical absolute path without a trailing separator, except for the root.</returns>
+    private static string NormalizeDirectoryPath(string path)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(path);
+        string normalized = path.Replace('\\', '/');
+        if (!normalized.StartsWith('/'))
+        {
+            normalized = "/" + normalized;
+        }
+
+        if (normalized.Length > 1 && normalized.EndsWith('/'))
+        {
+            normalized = normalized.TrimEnd('/');
+        }
+
+        if (normalized.Contains("//", StringComparison.Ordinal) ||
+            normalized.Split('/', StringSplitOptions.RemoveEmptyEntries).Any(static segment => segment is "." or ".."))
+        {
+            throw new ArgumentException("NitroFS directory paths cannot contain empty or traversal segments.", nameof(path));
         }
 
         return normalized;
