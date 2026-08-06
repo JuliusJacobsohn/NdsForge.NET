@@ -102,6 +102,38 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         return new ImageSliceStream(_source, region);
     }
 
+    /// <summary>
+    /// Reads one declared DSi modcrypt area and writes its symmetric AES-CTR transformation without loading the
+    /// region into memory. The supplied context controls key provenance; neither caller-owned destination nor image
+    /// is closed after completion.
+    /// </summary>
+    /// <param name="area">First or second extended-header interval.</param>
+    /// <param name="destination">Writable stream positioned where transformed area bytes should begin.</param>
+    /// <param name="context">Detached normal-key and HMAC-counter context.</param>
+    /// <param name="cancellationToken">Cancels bounded image reads and destination writes.</param>
+    public async ValueTask TransformModcryptAreaAsync(
+        NdsModcryptArea area,
+        Stream destination,
+        NdsModcryptContext context,
+        CancellationToken cancellationToken = default)
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        ArgumentNullException.ThrowIfNull(destination);
+        ArgumentNullException.ThrowIfNull(context);
+        NdsDsiHeader dsi = Header.Dsi ??
+            throw new InvalidOperationException("A DS-only image does not declare modcrypt areas.");
+        NdsRegion region = dsi.GetModcryptArea(area);
+
+        using Stream source = OpenRead(region);
+        await NdsModcrypt.TransformAsync(
+            source,
+            destination,
+            region.Length,
+            context,
+            area,
+            cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
     /// <summary>Safely exports selected image components to a directory.</summary>
     /// <param name="destination">The destination directory.</param>
     /// <param name="options">Optional component, filtering, and overwrite policies.</param>

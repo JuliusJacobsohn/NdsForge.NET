@@ -96,6 +96,26 @@ public sealed class NdsDsiHeader
     /// <summary>Locates the second optional region transformed by DSi modcrypt when corresponding flags enable it.</summary>
     public NdsRegion ModcryptArea2 { get; }
 
+    /// <summary>Reports whether either modcrypt interval has content, independently from key-selection flags.</summary>
+    public bool HasModcryptAreas => !ModcryptArea1.IsEmpty || !ModcryptArea2.IsEmpty;
+
+    /// <summary>
+    /// Indicates that modcrypt uses the public first sixteen header bytes instead of a securely derived normal key.
+    /// Either common-header flag <c>0x04</c> or DSi application flag <c>0x80</c> selects this development mode.
+    /// </summary>
+    public bool UsesInsecureModcryptKey =>
+        (_rawHeader.Span[0x1C] & 0x04) != 0 || (ApplicationFlags & 0x80) != 0;
+
+    /// <summary>Selects one declared modcrypt interval while rejecting undefined enum values at the model boundary.</summary>
+    /// <param name="area">First or second area whose absolute image region is required.</param>
+    /// <returns>The header-declared half-open interval, which may be empty.</returns>
+    public NdsRegion GetModcryptArea(NdsModcryptArea area) => area switch
+    {
+        NdsModcryptArea.First => ModcryptArea1,
+        NdsModcryptArea.Second => ModcryptArea2,
+        _ => throw new ArgumentOutOfRangeException(nameof(area), area, "Unknown modcrypt area."),
+    };
+
     /// <summary>Combines low and high words into the platform title identifier used by DSi services and save storage.</summary>
     public ulong TitleId { get; }
 
