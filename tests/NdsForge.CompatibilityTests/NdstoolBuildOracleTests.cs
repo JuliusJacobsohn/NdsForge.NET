@@ -7,6 +7,57 @@ namespace NdsForge.CompatibilityTests;
 public sealed class NdstoolBuildOracleTests
 {
     [Fact]
+    public async Task ElfProgramBuildIsByteEqualToNdstool1503()
+    {
+        string ndstool = GetNdstoolPath();
+        string root = Path.Combine(Path.GetTempPath(), $"ndsforge-elf-oracle-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(root);
+        try
+        {
+            string dataDirectory = Path.Combine(root, "data");
+            Directory.CreateDirectory(dataDirectory);
+            string arm9 = Path.Combine(root, "arm9.elf");
+            string arm7 = Path.Combine(root, "arm7.elf");
+            string logo = Path.Combine(root, "logo.bin");
+            string expected = Path.Combine(root, "ndstool.nds");
+            string actual = Path.Combine(root, "ndsforge.nds");
+            byte[] arm9Elf = CreateElf([0xA9, 1, 2], 0x0200_0000);
+            byte[] arm7Elf = CreateElf([0xA7, 3], 0x0238_0000);
+            await File.WriteAllBytesAsync(arm9, arm9Elf, TestContext.Current.CancellationToken).ConfigureAwait(true);
+            await File.WriteAllBytesAsync(arm7, arm7Elf, TestContext.Current.CancellationToken).ConfigureAwait(true);
+            await File.WriteAllBytesAsync(logo, new byte[156], TestContext.Current.CancellationToken).ConfigureAwait(true);
+            await File.WriteAllBytesAsync(
+                Path.Combine(dataDirectory, "named.bin"),
+                [4],
+                TestContext.Current.CancellationToken).ConfigureAwait(true);
+
+            await RunAsync(ndstool, expected, arm9, arm7, logo, dataDirectory, banner: null).ConfigureAwait(true);
+            var builder = new NdsImageBuilder
+            {
+                Title = "BUILD TEST",
+                GameCode = "BT01",
+                MakerCode = "HB",
+            };
+            NdsElfProgramImporter.Import(arm9Elf, NdsProcessor.Arm9).ApplyTo(builder);
+            NdsElfProgramImporter.Import(arm7Elf, NdsProcessor.Arm7).ApplyTo(builder);
+            builder.SetNintendoLogo(new byte[156]);
+            builder.FileSystem.AddFile("/named.bin", [4]);
+            await builder.WriteAsync(
+                actual,
+                new() { Profile = NdsImageBuildProfile.Ndstool1503 },
+                TestContext.Current.CancellationToken).ConfigureAwait(true);
+
+            byte[] expectedBytes = await File.ReadAllBytesAsync(expected, TestContext.Current.CancellationToken).ConfigureAwait(true);
+            byte[] actualBytes = await File.ReadAllBytesAsync(actual, TestContext.Current.CancellationToken).ConfigureAwait(true);
+            Assert.True(expectedBytes.SequenceEqual(actualBytes), DescribeDifference(expectedBytes, actualBytes));
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
+    }
+
+    [Fact]
     public async Task MinimalBuildIsByteEqualToNdstool1503()
     {
         string ndstool = GetNdstoolPath();
@@ -242,6 +293,36 @@ public sealed class NdstoolBuildOracleTests
         }
 
         return path;
+    }
+
+    private static byte[] CreateElf(byte[] program, uint address)
+    {
+        const int headerSize = 52;
+        const int programHeaderSize = 32;
+        var elf = new byte[headerSize + programHeaderSize + program.Length];
+        elf[0] = 0x7F;
+        "ELF"u8.CopyTo(elf.AsSpan(1));
+        elf[4] = 1;
+        elf[5] = 1;
+        elf[6] = 1;
+        BinaryPrimitives.WriteUInt16LittleEndian(elf.AsSpan(16), 2);
+        BinaryPrimitives.WriteUInt16LittleEndian(elf.AsSpan(18), 40);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(20), 1);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(24), address);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(28), headerSize);
+        BinaryPrimitives.WriteUInt16LittleEndian(elf.AsSpan(40), headerSize);
+        BinaryPrimitives.WriteUInt16LittleEndian(elf.AsSpan(42), programHeaderSize);
+        BinaryPrimitives.WriteUInt16LittleEndian(elf.AsSpan(44), 1);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(headerSize), 1);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(headerSize + 4), headerSize + programHeaderSize);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(headerSize + 8), address);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(headerSize + 12), address);
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(headerSize + 16), checked((uint)program.Length));
+        BinaryPrimitives.WriteUInt32LittleEndian(elf.AsSpan(headerSize + 20), checked((uint)program.Length));
+        elf[headerSize + 24] = 5;
+        elf[headerSize + 28] = 1;
+        program.CopyTo(elf, headerSize + programHeaderSize);
+        return elf;
     }
 
     private static string DescribeDifference(byte[] expected, byte[] actual)
