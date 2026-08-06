@@ -21,6 +21,9 @@ public sealed record NdsImageBuildOptions
     /// <summary>Reopens the completed stream and validates its structure, checksums, and NitroFS payload mapping.</summary>
     public bool VerifyOutput { get; init; } = true;
 
+    /// <summary>Allows a successful path build to atomically replace an existing regular destination file.</summary>
+    public bool OverwriteDestination { get; init; }
+
     /// <summary>Requires power-of-two alignments and a header large enough to keep Programs outside the secure-area boundary.</summary>
     /// <exception cref="ArgumentException">A size or alignment cannot produce a valid deterministic Layout.</exception>
     internal void Validate()

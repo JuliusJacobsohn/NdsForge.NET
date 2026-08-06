@@ -70,6 +70,56 @@ public sealed class NdsImageBuilder
         CancellationToken cancellationToken = default) =>
         NdsImageBuildWriter.WriteAsync(this, destination, options ?? NdsImageBuildOptions.Default, cancellationToken);
 
+    /// <summary>Builds beside a host destination and moves the verified temporary image into place only after success.</summary>
+    /// <param name="path">Output path normalized once before any directory or temporary-file operation.</param>
+    /// <param name="options">Layout, verification, and explicit existing-destination policy.</param>
+    /// <param name="cancellationToken">Cancels writing or verification while leaving an existing destination untouched.</param>
+    /// <returns>Final Regions, sizes, and File ID count.</returns>
+    public async ValueTask<NdsImageBuildResult> WriteAsync(
+        string path,
+        NdsImageBuildOptions? options = null,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(path);
+        options ??= NdsImageBuildOptions.Default;
+        options.Validate();
+        string output = Path.GetFullPath(path);
+        string? directory = Path.GetDirectoryName(output);
+        if (!string.IsNullOrEmpty(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        if (File.Exists(output) && !options.OverwriteDestination)
+        {
+            throw new IOException($"Destination already exists: {output}");
+        }
+
+        string temporary = output + ".ndsforge-" + Guid.NewGuid().ToString("N");
+        try
+        {
+            NdsImageBuildResult result;
+            var stream = new FileStream(
+                temporary,
+                FileMode.CreateNew,
+                FileAccess.ReadWrite,
+                FileShare.None,
+                64 * 1024,
+                FileOptions.Asynchronous | FileOptions.SequentialScan);
+            await using (stream.ConfigureAwait(false))
+            {
+                result = await WriteAsync(stream, options, cancellationToken).ConfigureAwait(false);
+            }
+
+            File.Move(temporary, output, options.OverwriteDestination);
+            return result;
+        }
+        finally
+        {
+            File.Delete(temporary);
+        }
+    }
+
     /// <summary>Materializes a complete deterministic image for tests, small tools, or APIs that require one contiguous buffer.</summary>
     /// <param name="options">Deterministic Layout settings, or <see langword="null"/> for defaults.</param>
     /// <param name="cancellationToken">Cancels writing or reopen verification.</param>

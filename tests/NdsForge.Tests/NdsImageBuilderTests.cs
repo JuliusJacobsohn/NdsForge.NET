@@ -78,6 +78,34 @@ public sealed class NdsImageBuilderTests
         Assert.Equal([9, 8, 7], destination.ToArray());
     }
 
+    [Fact]
+    public async Task PathBuildRequiresExplicitOverwriteAndCommitsValidImage()
+    {
+        string directory = Path.Combine(Path.GetTempPath(), "NdsForgeTests", Guid.NewGuid().ToString("N"));
+        string path = Path.Combine(directory, "built.nds");
+        try
+        {
+            NdsImageBuilder builder = CreateBuilder();
+            await builder.WriteAsync(path, cancellationToken: TestContext.Current.CancellationToken);
+            await Assert.ThrowsAsync<IOException>(async () =>
+                await builder.WriteAsync(path, cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true));
+
+            await builder.WriteAsync(
+                path,
+                new() { OverwriteDestination = true },
+                TestContext.Current.CancellationToken);
+            using NdsImage image = await NdsImage.OpenAsync(path, cancellationToken: TestContext.Current.CancellationToken);
+            Assert.True(image.Validate().IsValid);
+        }
+        finally
+        {
+            if (Directory.Exists(directory))
+            {
+                Directory.Delete(directory, recursive: true);
+            }
+        }
+    }
+
     private static NdsImageBuilder CreateBuilder() => new()
     {
         Title = "BUILD TEST",
