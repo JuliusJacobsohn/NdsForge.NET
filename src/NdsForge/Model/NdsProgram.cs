@@ -9,5 +9,11 @@ public sealed record NdsProgram(
     NdsProcessor Processor,
     NdsRegion Data,
     uint EntryAddress,
-    uint LoadAddress);
+    uint LoadAddress)
+{
+    /// <summary>Gets the optional 12-byte Nitro code footer following an ARM9 program.</summary>
+    public NdsRegion? Footer { get; internal set; }
 
+    /// <summary>Gets the program region including its recognized footer.</summary>
+    public NdsRegion CompleteData => Footer is null ? Data : new(Data.Offset, Data.Length + Footer.Value.Length);
+}

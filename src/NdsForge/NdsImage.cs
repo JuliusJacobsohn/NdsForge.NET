@@ -59,6 +59,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
             options ??= NdsReadOptions.Default;
             options.Validate();
             NdsHeader header = await ReadHeaderAsync(source, cancellationToken).ConfigureAwait(false);
+            await DetectArm9FooterAsync(source, header, cancellationToken).ConfigureAwait(false);
             NdsFileSystem fileSystem = await NitroFileSystemParser.ParseAsync(
                 source,
                 header,
@@ -105,6 +106,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
             options ??= NdsReadOptions.Default;
             options.Validate();
             NdsHeader header = ReadHeader(source);
+            DetectArm9Footer(source, header);
             NdsFileSystem fileSystem = NitroFileSystemParser.Parse(source, header, options);
             IReadOnlyList<NdsOverlay> arm9Overlays = NdsOverlayParser.Parse(
                 source,
@@ -136,6 +138,22 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         ObjectDisposedException.ThrowIf(_disposed, this);
         ValidateRegion(region, Length);
         return new ImageSliceStream(_source, region);
+    }
+
+    /// <summary>Safely exports selected image components to a directory.</summary>
+    /// <param name="destination">The destination directory.</param>
+    /// <param name="options">Optional component, filtering, and overwrite policies.</param>
+    /// <param name="cancellationToken">A token used to cancel extraction.</param>
+    /// <returns>A summary of files and bytes written.</returns>
+    public ValueTask<NdsExtractionResult> ExtractAsync(
+        string destination,
+        NdsExtractionOptions? options = null,
+        CancellationToken cancellationToken = default)
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        ArgumentException.ThrowIfNullOrWhiteSpace(destination);
+        return new NdsImageExtractor(this, destination, options ?? NdsExtractionOptions.Default)
+            .ExtractAsync(cancellationToken);
     }
 
     /// <summary>Validates header checksums and top-level region bounds.</summary>
@@ -232,6 +250,41 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
             fullHeader.AsMemory(BaseHeaderLength),
             cancellationToken).ConfigureAwait(false);
         return new NdsHeader(fullHeader);
+    }
+
+    private static void DetectArm9Footer<TSource>(TSource source, NdsHeader header)
+        where TSource : IImageDataSource
+    {
+        if (header.Arm9.Data.End > source.Length - 12)
+        {
+            return;
+        }
+
+        Span<byte> marker = stackalloc byte[4];
+        source.ReadExactly(header.Arm9.Data.End, marker);
+        if (NdsBinary.ReadUInt32(marker, 0) == 0xDEC00621)
+        {
+            header.Arm9.Footer = new(header.Arm9.Data.End, 12);
+        }
+    }
+
+    private static async ValueTask DetectArm9FooterAsync<TSource>(
+        TSource source,
+        NdsHeader header,
+        CancellationToken cancellationToken)
+        where TSource : IImageDataSource
+    {
+        if (header.Arm9.Data.End > source.Length - 12)
+        {
+            return;
+        }
+
+        byte[] marker = new byte[4];
+        await source.ReadExactlyAsync(header.Arm9.Data.End, marker, cancellationToken).ConfigureAwait(false);
+        if (NdsBinary.ReadUInt32(marker, 0) == 0xDEC00621)
+        {
+            header.Arm9.Footer = new(header.Arm9.Data.End, 12);
+        }
     }
 
     private static void ValidateRegion(NdsRegion region, long imageLength)

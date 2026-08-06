@@ -63,4 +63,13 @@ public sealed class NdsImageTests
             File.Delete(path);
         }
     }
+
+    [Fact]
+    public void LoadDetectsArm9NitroFooter()
+    {
+        using NdsImage image = NdsImage.Load(SyntheticImage.CreateWithArm9Footer());
+
+        Assert.Equal(new NdsRegion(0x204, 12), image.Header.Arm9.Footer);
+        Assert.Equal(new NdsRegion(0x200, 16), image.Header.Arm9.CompleteData);
+    }
 }

@@ -72,6 +72,27 @@ internal static class SyntheticImage
         return data;
     }
 
+    public static byte[] CreateWithArm9Footer()
+    {
+        byte[] data = CreateHeaderOnly();
+        byte[] fnt = data.AsSpan(0x208, 19).ToArray();
+        WriteUInt32(data, 0x204, 0xDEC00621);
+        WriteUInt32(data, 0x208, 0x01020304);
+        WriteUInt32(data, 0x20C, 0x05060708);
+        WriteUInt32(data, 0x30, 0x218);
+        WriteUInt32(data, 0x40, 0x220);
+        WriteUInt32(data, 0x48, 0x238);
+        WriteUInt32(data, 0x238, 0x240);
+        WriteUInt32(data, 0x23C, 0x245);
+        fnt.CopyTo(data, 0x220);
+        "hello"u8.CopyTo(data.AsSpan(0x240));
+        WriteUInt32(data, 0x44, 19);
+        WriteUInt32(data, 0x4C, 8);
+        WriteUInt32(data, 0x80, 0x245);
+        WriteUInt16(data, 0x15E, NdsChecksums.ComputeCrc16(data.AsSpan(0, 0x15E)));
+        return data;
+    }
+
     private static void WriteUInt32(byte[] data, int offset, uint value) =>
         BinaryPrimitives.WriteUInt32LittleEndian(data.AsSpan(offset), value);
 
