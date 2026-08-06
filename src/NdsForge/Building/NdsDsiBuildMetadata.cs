@@ -50,6 +50,12 @@ public sealed class NdsDsiBuildMetadata
     public NdsDsiIntegrityOptions Integrity { get; set; } = NdsDsiIntegrityOptions.Unauthenticated;
 
     /// <summary>
+    /// Enables hierarchical content authentication when non-null. Building tables requires the same explicit
+    /// HMAC key policy used for component fields; null emits the format's valid all-zero “digests absent” form.
+    /// </summary>
+    public NdsDsiDigestOptions? Digests { get; set; }
+
+    /// <summary>
     /// Copies all 0xE80 extension bytes from a parsed header, then initializes typed properties from the same
     /// source. Later layout and integrity fields are deliberately regenerated rather than blindly preserved.
     /// </summary>

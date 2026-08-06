@@ -12,6 +12,10 @@ namespace NdsForge;
 /// <param name="FileRegions">FAT payload Regions in File ID order.</param>
 /// <param name="Arm9i">Optional DSi-mode ARM9 Region placed after common DS content.</param>
 /// <param name="Arm7i">Optional DSi-mode ARM7 Region placed after ARM9i.</param>
+/// <param name="NtrDigest">Common-mode content interval covered by sector hashes.</param>
+/// <param name="TwlDigest">DSi-mode content interval covered after the NTR sectors.</param>
+/// <param name="SectorHashTable">First-level HMAC-SHA1 entries, or an empty region when digests are disabled.</param>
+/// <param name="BlockHashTable">Second-level HMAC-SHA1 entries, or an empty region when digests are disabled.</param>
 /// <param name="UsedSize">Exclusive NTR/common content end encoded at header offset <c>0x80</c>.</param>
 /// <param name="PhysicalSize">Final aligned stream length.</param>
 internal sealed record NdsImageBuildLayout(
@@ -26,5 +30,9 @@ internal sealed record NdsImageBuildLayout(
     IReadOnlyList<NdsRegion> FileRegions,
     NdsRegion? Arm9i,
     NdsRegion? Arm7i,
+    NdsRegion NtrDigest,
+    NdsRegion TwlDigest,
+    NdsRegion SectorHashTable,
+    NdsRegion BlockHashTable,
     long UsedSize,
     long PhysicalSize);

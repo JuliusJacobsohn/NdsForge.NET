@@ -132,7 +132,9 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     public NdsValidationResult Validate(NdsValidationOptions? options = null)
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
-        return NdsImageValidator.Validate(this, options ?? NdsValidationOptions.Default);
+        options ??= NdsValidationOptions.Default;
+        options.Validate();
+        return NdsImageValidator.Validate(this, options);
     }
 
     /// <inheritdoc />

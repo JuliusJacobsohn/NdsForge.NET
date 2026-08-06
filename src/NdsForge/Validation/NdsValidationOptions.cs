@@ -35,6 +35,24 @@ public sealed class NdsValidationOptions
     /// </summary>
     public bool ValidateDsiDevelopmentSignature { get; init; } = true;
 
+    /// <summary>
+    /// Bounds each materialized DSi digest table while sector contents themselves remain streamed. The default
+    /// 64 MiB permits very large legitimate images without accepting attacker-controlled unbounded allocation.
+    /// </summary>
+    public int MaxDsiDigestTableBytes { get; init; } = 64 * 1024 * 1024;
+
+    /// <summary>Caps individual sector/block mismatch diagnostics while retaining a final truncation warning.</summary>
+    public int MaxDsiDigestFailures { get; init; } = 64;
+
     /// <summary>Exposes optional copied key bytes only to the internal integrity validator.</summary>
     internal ReadOnlyMemory<byte> DsiHmacKey => _dsiHmacKey;
+
+    /// <summary>Rejects resource limits that would disable bounded validation or overflow managed buffers.</summary>
+    internal void Validate()
+    {
+        if (MaxDsiDigestTableBytes < 20 || MaxDsiDigestFailures < 1)
+        {
+            throw new ArgumentException("DSi digest validation limits must allow at least one 20-byte entry and one finding.");
+        }
+    }
 }

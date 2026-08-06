@@ -19,7 +19,13 @@ internal static class NdsImageBuildVerifier
             destination,
             leaveOpen: true,
             cancellationToken: cancellationToken).ConfigureAwait(false);
-        NdsValidationResult validation = image.Validate();
+        var validationOptions = new NdsValidationOptions();
+        if (builder.DsiMetadata?.Integrity.HmacKey.IsEmpty == false)
+        {
+            validationOptions.SetDsiHmacKey(builder.DsiMetadata.Integrity.HmacKey.Span);
+        }
+
+        NdsValidationResult validation = image.Validate(validationOptions);
         if (!validation.IsValid)
         {
             throw new InvalidDataException(

@@ -50,6 +50,7 @@ public sealed class NdsImageBuilderTests
     [Fact]
     public async Task BuildsDsiEnhancedImageWithExplicitHomebrewIntegrity()
     {
+        byte[] hmacKey = [1, 2, 3, 4];
         NdsImageBuilder builder = CreateBuilder();
         builder.Kind = NdsImageKind.NintendoDsiEnhanced;
         builder.Arm9i = new(NdsProcessor.Arm9i, [0x91, 1, 2, 3, 4], 0x02E00000, 0x02E00000);
@@ -65,8 +66,9 @@ public sealed class NdsImageBuilderTests
             TitleId = 0x0003000442543031,
             PublicSaveSize = 0x10000,
             PrivateSaveSize = 0x20000,
+            Digests = new() { SectorSize = 0x200, BlockSectorCount = 2 },
             Integrity = NdsDsiIntegrityOptions.CreateHmacSha1(
-                [1, 2, 3, 4],
+                hmacKey,
                 NdsDsiSignatureMode.NoGbaDevelopmentMarker),
         };
 
@@ -79,27 +81,49 @@ public sealed class NdsImageBuilderTests
         Assert.Equal(0x0003000442543031UL, dsi.TitleId);
         Assert.Equal((uint)data.Length, dsi.TotalImageSize);
         Assert.Equal((uint)builder.Banner.RawData.Length, dsi.BannerSize);
+        Assert.False(dsi.SectorHashTable.IsEmpty);
+        Assert.False(dsi.BlockHashTable.IsEmpty);
+        Assert.NotEqual(new byte[20], dsi.DigestMasterHmac.ToArray());
         Assert.True(image.Header.UsedImageSize < image.Header.Arm9i!.Data.Offset);
         Assert.Equal(
             [0x91, 1, 2, 3, 4],
             await ReadRegionAsync(image, image.Header.Arm9i.Data, TestContext.Current.CancellationToken));
 #pragma warning disable CA5350 // The test independently verifies the DSi format's mandated HMAC-SHA1 bytes.
-        Assert.Equal(HMACSHA1.HashData([1, 2, 3, 4], [0x91, 1, 2, 3, 4]), dsi.Arm9iHmac.ToArray());
+        Assert.Equal(HMACSHA1.HashData(hmacKey, new byte[] { 0x91, 1, 2, 3, 4 }), dsi.Arm9iHmac.ToArray());
+        byte[] firstSector = await ReadRegionAsync(
+            image,
+            new(dsi.NtrDigest.Offset, Math.Min(dsi.DigestSectorSize, dsi.NtrDigest.Length)),
+            TestContext.Current.CancellationToken);
+        byte[] sectorHashes = await ReadRegionAsync(image, dsi.SectorHashTable, TestContext.Current.CancellationToken);
+        Assert.Equal(HMACSHA1.HashData(hmacKey, firstSector), sectorHashes[..20]);
+        byte[] blockHashes = await ReadRegionAsync(image, dsi.BlockHashTable, TestContext.Current.CancellationToken);
+        Assert.Equal(HMACSHA1.HashData(hmacKey, sectorHashes[..40]), blockHashes[..20]);
+        Assert.Equal(HMACSHA1.HashData(hmacKey, blockHashes), dsi.DigestMasterHmac.ToArray());
         byte[] expectedMarkerHash = SHA1.HashData(data.AsSpan(0, 0xE00));
 #pragma warning restore CA5350
         Assert.Equal(expectedMarkerHash, dsi.RsaSignature.Slice(0x6C, 20).ToArray());
         Assert.Equal(0, dsi.RsaSignature.Span[0]);
         Assert.Equal(1, dsi.RsaSignature.Span[1]);
         Assert.True(image.Validate().IsValid);
-        Assert.True(image.Validate(new NdsValidationOptions().SetDsiHmacKey([1, 2, 3, 4])).IsValid);
+        Assert.True(image.Validate(new NdsValidationOptions().SetDsiHmacKey(hmacKey)).IsValid);
 
         byte[] tamperedData = data.ToArray();
         tamperedData[checked((int)image.Header.Arm9i.Data.Offset)] ^= 0xFF;
         using (NdsImage tampered = NdsImage.Load(tamperedData))
         {
             NdsValidationResult tamperedValidation = tampered.Validate(
-                new NdsValidationOptions().SetDsiHmacKey([1, 2, 3, 4]));
+                new NdsValidationOptions().SetDsiHmacKey(hmacKey));
             Assert.Contains(tamperedValidation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1313");
+            Assert.Contains(tamperedValidation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1317");
+        }
+
+        byte[] tamperedTableData = data.ToArray();
+        tamperedTableData[checked((int)dsi.SectorHashTable.Offset)] ^= 0xFF;
+        using (NdsImage tamperedTable = NdsImage.Load(tamperedTableData))
+        {
+            NdsValidationResult tableValidation = tamperedTable.Validate(
+                new NdsValidationOptions().SetDsiHmacKey(hmacKey));
+            Assert.Contains(tableValidation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1318");
         }
 
         NdsImageBuilder imported = await NdsImageBuilder.FromImageAsync(image, TestContext.Current.CancellationToken);

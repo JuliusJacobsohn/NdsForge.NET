@@ -19,12 +19,14 @@ internal static class NdsImageHeaderWriter
     /// <param name="layout">Final physical regions whose offsets are encoded into the header.</param>
     /// <param name="content">Frozen Program and Banner bytes used by DSi authentication fields.</param>
     /// <param name="options">Header reservation and compatibility behavior selected for this build.</param>
+    /// <param name="digestResult">Generated DSi hierarchy, or <see langword="null"/> when digests are absent.</param>
     /// <returns>A standalone header buffer whose length is exactly the requested reserved header size.</returns>
     public static byte[] Write(
         NdsImageBuilder builder,
         NdsImageBuildLayout layout,
         NdsImageBuildContent content,
-        NdsImageBuildOptions options)
+        NdsImageBuildOptions options,
+        NdsDsiDigestBuildResult? digestResult)
     {
         byte[] header = new byte[options.HeaderSize];
         WriteAscii(header.AsSpan(0x00, 12), builder.Title);
@@ -62,7 +64,7 @@ internal static class NdsImageHeaderWriter
 
         if (builder.Kind != NdsImageKind.NintendoDs)
         {
-            NdsDsiHeaderWriter.Write(header, builder, layout, content);
+            NdsDsiHeaderWriter.Write(header, builder, layout, content, digestResult);
         }
 
         BinaryPrimitives.WriteUInt16LittleEndian(

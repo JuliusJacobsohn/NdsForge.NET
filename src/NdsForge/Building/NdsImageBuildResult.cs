@@ -16,6 +16,8 @@ public sealed class NdsImageBuildResult
     /// <param name="banner">Final Banner Region, or <see langword="null"/> when absent.</param>
     /// <param name="arm9i">Final ARM9i Region, or <see langword="null"/> for a DS-only build.</param>
     /// <param name="arm7i">Final ARM7i Region, or <see langword="null"/> for a DS-only build.</param>
+    /// <param name="sectorHashTable">Generated first-level DSi digest table, or an empty region.</param>
+    /// <param name="blockHashTable">Generated second-level DSi digest table, or an empty region.</param>
     /// <param name="fileCount">Number of named NitroFS payloads assigned File IDs.</param>
     /// <param name="allocationCount">Total FAT records, including unnamed Overlay payloads.</param>
     internal NdsImageBuildResult(
@@ -31,6 +33,8 @@ public sealed class NdsImageBuildResult
         NdsRegion? banner,
         NdsRegion? arm9i,
         NdsRegion? arm7i,
+        NdsRegion sectorHashTable,
+        NdsRegion blockHashTable,
         int fileCount,
         int allocationCount)
     {
@@ -46,6 +50,8 @@ public sealed class NdsImageBuildResult
         Banner = banner;
         Arm9i = arm9i;
         Arm7i = arm7i;
+        SectorHashTable = sectorHashTable;
+        BlockHashTable = blockHashTable;
         FileCount = fileCount;
         AllocationCount = allocationCount;
     }
@@ -85,6 +91,12 @@ public sealed class NdsImageBuildResult
 
     /// <summary>Locates the DSi-mode ARM7 payload appended after ARM9i, or remains absent for DS images.</summary>
     public NdsRegion? Arm7i { get; }
+
+    /// <summary>Locates generated per-sector DSi HMACs, or remains empty when hierarchical digests are disabled.</summary>
+    public NdsRegion SectorHashTable { get; }
+
+    /// <summary>Locates generated HMACs over sector-hash groups, or remains empty when hierarchical digests are disabled.</summary>
+    public NdsRegion BlockHashTable { get; }
 
     /// <summary>Counts named files serialized into both FNT ordering and FAT allocations.</summary>
     public int FileCount { get; }

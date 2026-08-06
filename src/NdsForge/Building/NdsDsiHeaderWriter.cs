@@ -16,11 +16,13 @@ internal static class NdsDsiHeaderWriter
     /// <param name="builder">Validated DSi recipe supplying Programs and typed metadata.</param>
     /// <param name="layout">Final common and DSi physical regions.</param>
     /// <param name="content">Exact payload bytes used for HMAC-SHA1 input.</param>
+    /// <param name="digestResult">Generated hierarchy bytes and master HMAC, or <see langword="null"/> when disabled.</param>
     public static void Write(
         Span<byte> header,
         NdsImageBuilder builder,
         NdsImageBuildLayout layout,
-        NdsImageBuildContent content)
+        NdsImageBuildContent content,
+        NdsDsiDigestBuildResult? digestResult)
     {
         NdsDsiBuildMetadata metadata = builder.DsiMetadata!;
         metadata.ExtensionTemplate.Span.CopyTo(header[0x180..0x1000]);
@@ -33,7 +35,7 @@ internal static class NdsDsiHeaderWriter
         WriteProgram(header, 0x1D0, layout.Arm7i!.Value, builder.Arm7i!);
         NdsBinary.WriteUInt32(header, 0x1D4, metadata.Arm7DeviceListAddress);
 
-        header[0x1E0..0x208].Clear();
+        WriteDigestMetadata(header, layout, metadata.Digests, digestResult);
         NdsBinary.WriteUInt32(header, 0x208, checked((uint)(builder.Banner?.RawData.Length ?? 0)));
         NdsBinary.WriteUInt32(header, 0x20C, 0x00010000);
         NdsBinary.WriteUInt32(header, 0x210, checked((uint)layout.PhysicalSize));
@@ -45,7 +47,43 @@ internal static class NdsDsiHeaderWriter
         NdsBinary.WriteUInt32(header, 0x23C, metadata.PrivateSaveSize);
         metadata.AgeRatings.Span.CopyTo(header[0x2F0..0x300]);
         ClearAuthenticationFields(header);
+        if (digestResult is not null)
+        {
+            digestResult.MasterHmac.CopyTo(header[0x328..0x33C]);
+        }
+
         WriteHmacs(header, builder, content, metadata.Integrity);
+    }
+
+    /// <summary>Writes a coherent all-zero or fully populated digest hierarchy descriptor.</summary>
+    /// <param name="header">Mutable extended header.</param>
+    /// <param name="layout">Covered content and generated table regions.</param>
+    /// <param name="options">Configured granularity, or <see langword="null"/> when digests are absent.</param>
+    /// <param name="result">Generated table bytes used to cross-check planned lengths.</param>
+    private static void WriteDigestMetadata(
+        Span<byte> header,
+        NdsImageBuildLayout layout,
+        NdsDsiDigestOptions? options,
+        NdsDsiDigestBuildResult? result)
+    {
+        header[0x1E0..0x208].Clear();
+        if (options is null || result is null)
+        {
+            return;
+        }
+
+        if (layout.SectorHashTable.Length != result.SectorHashes.Length ||
+            layout.BlockHashTable.Length != result.BlockHashes.Length)
+        {
+            throw new InvalidDataException("Generated DSi digest bytes disagree with their planned Regions.");
+        }
+
+        WriteRegion(header, 0x1E0, layout.NtrDigest);
+        WriteRegion(header, 0x1E8, layout.TwlDigest);
+        WriteRegion(header, 0x1F0, layout.SectorHashTable);
+        WriteRegion(header, 0x1F8, layout.BlockHashTable);
+        NdsBinary.WriteUInt32(header, 0x200, checked((uint)options.SectorSize));
+        NdsBinary.WriteUInt32(header, 0x204, checked((uint)options.BlockSectorCount));
     }
 
     /// <summary>
