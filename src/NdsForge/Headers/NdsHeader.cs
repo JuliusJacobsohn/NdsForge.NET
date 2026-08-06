@@ -38,8 +38,8 @@ public sealed class NdsHeader
 
         if (data.Length >= 0x1E0 && Kind != NdsImageKind.NintendoDs)
         {
-            Arm9i = ReadProgram(data, NdsProcessor.Arm9i, 0x1C0);
-            Arm7i = ReadProgram(data, NdsProcessor.Arm7i, 0x1D0);
+            Arm9i = ReadDsiProgram(data, NdsProcessor.Arm9i, 0x1C0);
+            Arm7i = ReadDsiProgram(data, NdsProcessor.Arm7i, 0x1D0);
         }
     }
 
@@ -154,7 +154,16 @@ public sealed class NdsHeader
             NdsBinary.ReadUInt32(data, offset + 4),
             NdsBinary.ReadUInt32(data, offset + 8));
 
+    private static NdsProgram ReadDsiProgram(ReadOnlySpan<byte> data, NdsProcessor processor, int offset)
+    {
+        uint loadAddress = NdsBinary.ReadUInt32(data, offset + 8);
+        return new(
+            processor,
+            NdsRegion.FromUInt32(NdsBinary.ReadUInt32(data, offset), NdsBinary.ReadUInt32(data, offset + 12)),
+            loadAddress,
+            loadAddress);
+    }
+
     private static NdsRegion ReadRegion(ReadOnlySpan<byte> data, int offset) =>
         NdsRegion.FromUInt32(NdsBinary.ReadUInt32(data, offset), NdsBinary.ReadUInt32(data, offset + 4));
 }
-

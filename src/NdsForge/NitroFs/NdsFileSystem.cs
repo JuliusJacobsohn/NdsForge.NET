@@ -59,6 +59,9 @@ public sealed class NdsFileSystem
         ? file
         : throw new KeyNotFoundException($"No named NitroFS file has ID {fileId}.");
 
+    internal bool TryGetFile(int fileId, [NotNullWhen(true)] out NdsFile? file) =>
+        _filesById.TryGetValue(fileId, out file);
+
     private static string NormalizePath(string path)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(path);

@@ -8,11 +8,18 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     private readonly IImageDataSource _source;
     private bool _disposed;
 
-    private NdsImage(IImageDataSource source, NdsHeader header, NdsFileSystem fileSystem)
+    private NdsImage(
+        IImageDataSource source,
+        NdsHeader header,
+        NdsFileSystem fileSystem,
+        IReadOnlyList<NdsOverlay> arm9Overlays,
+        IReadOnlyList<NdsOverlay> arm7Overlays)
     {
         _source = source;
         Header = header;
         FileSystem = fileSystem;
+        Arm9Overlays = arm9Overlays;
+        Arm7Overlays = arm7Overlays;
     }
 
     /// <summary>Gets the parsed image header.</summary>
@@ -20,6 +27,12 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
 
     /// <summary>Gets the parsed NitroFS tree and allocations.</summary>
     public NdsFileSystem FileSystem { get; }
+
+    /// <summary>Gets ARM9 overlays in table order.</summary>
+    public IReadOnlyList<NdsOverlay> Arm9Overlays { get; }
+
+    /// <summary>Gets ARM7 overlays in table order.</summary>
+    public IReadOnlyList<NdsOverlay> Arm7Overlays { get; }
 
     /// <summary>Gets the total length of the source image in bytes.</summary>
     public long Length => _source.Length;
@@ -46,7 +59,21 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
                 header,
                 options,
                 cancellationToken).ConfigureAwait(false);
-            return new NdsImage(source, header, fileSystem);
+            IReadOnlyList<NdsOverlay> arm9Overlays = await NdsOverlayParser.ParseAsync(
+                source,
+                header.Arm9OverlayTable,
+                NdsProcessor.Arm9,
+                fileSystem,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            IReadOnlyList<NdsOverlay> arm7Overlays = await NdsOverlayParser.ParseAsync(
+                source,
+                header.Arm7OverlayTable,
+                NdsProcessor.Arm7,
+                fileSystem,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays);
         }
         catch
         {
@@ -69,7 +96,19 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
             options.Validate();
             NdsHeader header = ReadHeader(source);
             NdsFileSystem fileSystem = NitroFileSystemParser.Parse(source, header, options);
-            return new NdsImage(source, header, fileSystem);
+            IReadOnlyList<NdsOverlay> arm9Overlays = NdsOverlayParser.Parse(
+                source,
+                header.Arm9OverlayTable,
+                NdsProcessor.Arm9,
+                fileSystem,
+                options);
+            IReadOnlyList<NdsOverlay> arm7Overlays = NdsOverlayParser.Parse(
+                source,
+                header.Arm7OverlayTable,
+                NdsProcessor.Arm7,
+                fileSystem,
+                options);
+            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays);
         }
         catch
         {
@@ -112,6 +151,9 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         {
             ValidateRegion(diagnostics, "NDS1108", "ARM7i program", Header.Arm7i.Data);
         }
+
+        ValidateOverlays(diagnostics, Arm9Overlays);
+        ValidateOverlays(diagnostics, Arm7Overlays);
 
         return new NdsValidationResult(diagnostics);
     }
@@ -217,6 +259,28 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
                 NdsDiagnosticSeverity.Error,
                 $"The {name} region at 0x{region.Offset:X} with length 0x{region.Length:X} is outside the 0x{Length:X}-byte image.",
                 region));
+        }
+    }
+
+    private static void ValidateOverlays(List<NdsDiagnostic> diagnostics, IEnumerable<NdsOverlay> overlays)
+    {
+        foreach (NdsOverlay overlay in overlays)
+        {
+            if (overlay.Data is null)
+            {
+                diagnostics.Add(new(
+                    "NDS1201",
+                    NdsDiagnosticSeverity.Error,
+                    $"{overlay.Processor} overlay {overlay.Id} references missing FAT file ID {overlay.FileId}."));
+            }
+
+            if (overlay.StaticInitializerEnd < overlay.StaticInitializerStart)
+            {
+                diagnostics.Add(new(
+                    "NDS1202",
+                    NdsDiagnosticSeverity.Error,
+                    $"{overlay.Processor} overlay {overlay.Id} has a reversed static-initializer range."));
+            }
         }
     }
 }

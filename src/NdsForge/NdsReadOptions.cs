@@ -18,12 +18,15 @@ public sealed record NdsReadOptions
     /// <summary>Gets the maximum accepted NitroFS directory nesting depth.</summary>
     public int MaximumDirectoryDepth { get; init; } = 128;
 
+    /// <summary>Gets the maximum accepted entries in each overlay table.</summary>
+    public int MaximumOverlayCount { get; init; } = 65_536;
+
     internal void Validate()
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumFileNameTableBytes);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumFileAllocationTableBytes);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumDirectoryCount);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumDirectoryDepth);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumOverlayCount);
     }
 }
-

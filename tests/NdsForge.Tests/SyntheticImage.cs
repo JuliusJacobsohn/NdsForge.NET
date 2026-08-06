@@ -40,6 +40,24 @@ internal static class SyntheticImage
         return data;
     }
 
+    public static byte[] CreateWithOverlay()
+    {
+        byte[] data = CreateHeaderOnly();
+        WriteUInt32(data, 0x50, 0x230);
+        WriteUInt32(data, 0x54, 32);
+        WriteUInt32(data, 0x80, 0x250);
+        WriteUInt32(data, 0x230, 7);
+        WriteUInt32(data, 0x234, 0x02001000);
+        WriteUInt32(data, 0x238, 0x100);
+        WriteUInt32(data, 0x23C, 0x20);
+        WriteUInt32(data, 0x240, 0x02001080);
+        WriteUInt32(data, 0x244, 0x02001088);
+        WriteUInt32(data, 0x248, 0);
+        WriteUInt32(data, 0x24C, 0x01000005);
+        WriteUInt16(data, 0x15E, NdsChecksums.ComputeCrc16(data.AsSpan(0, 0x15E)));
+        return data;
+    }
+
     private static void WriteUInt32(byte[] data, int offset, uint value) =>
         BinaryPrimitives.WriteUInt32LittleEndian(data.AsSpan(offset), value);
 
