@@ -42,6 +42,7 @@ internal static class NdsImageValidator
             diagnostics.AddRange(image.Banner.ValidateCrcs(image.Header.BannerOffset));
         }
 
+        NdsSecureAreaValidator.Validate(image, diagnostics, options.SecureAreaKeyTable);
         NdsDsiIntegrityValidator.Validate(image, diagnostics, options);
 
         return new NdsValidationResult(diagnostics);

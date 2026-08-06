@@ -8,6 +8,8 @@ public sealed class NdsValidationOptions
 {
     /// <summary>Retains a copied DSi HMAC key so validation cannot observe later caller buffer mutation.</summary>
     private byte[]? _dsiHmacKey;
+    /// <summary>Retains the immutable caller table used to distinguish and checksum KEY1 secure-area states.</summary>
+    private NdsKey1KeyTable? _secureAreaKeyTable;
 
     /// <summary>Returns a fresh keyless policy suitable for structural validation without shared mutable state.</summary>
     public static NdsValidationOptions Default => new();
@@ -30,6 +32,18 @@ public sealed class NdsValidationOptions
     }
 
     /// <summary>
+    /// Enables secure-area identifier recovery and encrypted-form CRC validation. No default table is bundled;
+    /// supplying one is an explicit trust and provenance decision separate from ordinary structural validation.
+    /// </summary>
+    /// <param name="keyTable">Complete immutable KEY1 seed schedule.</param>
+    /// <returns>The same options object for fluent validation configuration.</returns>
+    public NdsValidationOptions SetSecureAreaKeyTable(NdsKey1KeyTable keyTable)
+    {
+        _secureAreaKeyTable = keyTable ?? throw new ArgumentNullException(nameof(keyTable));
+        return this;
+    }
+
+    /// <summary>
     /// Verifies a recognizable no$gba development marker against the finalized 0xE00-byte header input. Unknown
     /// nonzero signatures remain unverified rather than being mislabeled invalid without a trusted RSA key.
     /// </summary>
@@ -46,6 +60,9 @@ public sealed class NdsValidationOptions
 
     /// <summary>Exposes optional copied key bytes only to the internal integrity validator.</summary>
     internal ReadOnlyMemory<byte> DsiHmacKey => _dsiHmacKey;
+
+    /// <summary>Exposes optional KEY1 material only to the internal secure-area validator.</summary>
+    internal NdsKey1KeyTable? SecureAreaKeyTable => _secureAreaKeyTable;
 
     /// <summary>Rejects resource limits that would disable bounded validation or overflow managed buffers.</summary>
     internal void Validate()
