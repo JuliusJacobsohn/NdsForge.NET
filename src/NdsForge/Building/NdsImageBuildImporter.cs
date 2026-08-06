@@ -1,6 +1,6 @@
 namespace NdsForge;
 
-/// <summary>Detaches logical DS components from an existing Image for deliberate Structural Rebuild operations.</summary>
+/// <summary>Detaches logical DS or DSi components from an existing Image for deliberate Structural Rebuild operations.</summary>
 internal static class NdsImageBuildImporter
 {
     /// <summary>Materializes every referenced payload and reconstructs Overlay sharing through named NitroFS links.</summary>
@@ -12,11 +12,6 @@ internal static class NdsImageBuildImporter
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(image);
-        if (image.Header.Kind != NdsImageKind.NintendoDs)
-        {
-            throw new NotSupportedException("DSi structural import requires the DSi build pipeline and cannot be downgraded to DS.");
-        }
-
         byte[] arm9 = await ReadRegionAsync(image, image.Header.Arm9.Data, cancellationToken).ConfigureAwait(false);
         byte[] arm7 = await ReadRegionAsync(image, image.Header.Arm7.Data, cancellationToken).ConfigureAwait(false);
         var arm9Definition = new NdsProgramDefinition(
@@ -30,8 +25,25 @@ internal static class NdsImageBuildImporter
                 await ReadRegionAsync(image, image.Header.Arm9.Footer.Value, cancellationToken).ConfigureAwait(false));
         }
 
+        NdsProgramDefinition? arm9iDefinition = await ImportDsiProgramAsync(
+            image,
+            image.Header.Arm9i,
+            cancellationToken).ConfigureAwait(false);
+        NdsProgramDefinition? arm7iDefinition = await ImportDsiProgramAsync(
+            image,
+            image.Header.Arm7i,
+            cancellationToken).ConfigureAwait(false);
+        NdsDsiBuildMetadata? dsiMetadata = image.Header.Dsi is null
+            ? null
+            : NdsDsiBuildMetadata.FromHeader(image.Header.Dsi);
+        if (dsiMetadata is not null)
+        {
+            dsiMetadata.DsiFlags = image.Header.DsiFlags;
+        }
+
         var builder = new NdsImageBuilder
         {
+            Kind = image.Header.Kind,
             Title = image.Header.Title,
             GameCode = image.Header.GameCode,
             MakerCode = image.Header.MakerCode,
@@ -51,6 +63,9 @@ internal static class NdsImageBuildImporter
                 arm7,
                 image.Header.Arm7.LoadAddress,
                 image.Header.Arm7.EntryAddress),
+            Arm9i = arm9iDefinition,
+            Arm7i = arm7iDefinition,
+            DsiMetadata = dsiMetadata,
             Banner = image.Banner,
         };
         builder.SetNintendoLogo(image.Header.RawData.Span.Slice(0xC0, 156));
@@ -82,6 +97,28 @@ internal static class NdsImageBuildImporter
         }
 
         return builder;
+    }
+
+    /// <summary>Materializes one optional DSi Program while retaining its single-address tuple semantics.</summary>
+    /// <param name="image">Source image used for bounded reads.</param>
+    /// <param name="program">Parsed ARM9i or ARM7i tuple, or <see langword="null"/> for a DS image.</param>
+    /// <param name="cancellationToken">Cancels executable materialization.</param>
+    /// <returns>A detached definition, or <see langword="null"/> when the source has no DSi tuple.</returns>
+    private static async ValueTask<NdsProgramDefinition?> ImportDsiProgramAsync(
+        NdsImage image,
+        NdsProgram? program,
+        CancellationToken cancellationToken)
+    {
+        if (program is null)
+        {
+            return null;
+        }
+
+        return new(
+            program.Processor,
+            await ReadRegionAsync(image, program.Data, cancellationToken).ConfigureAwait(false),
+            program.LoadAddress,
+            program.LoadAddress);
     }
 
     /// <summary>Preserves named sharing or copies one private Allocation while rejecting ambiguous shared-private topology.</summary>

@@ -126,12 +126,13 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         return new(this);
     }
 
-    /// <summary>Validates header checksums and top-level region bounds.</summary>
+    /// <summary>Validates checksums, component relationships, bounds, and optional DSi authentication fields.</summary>
+    /// <param name="options">Optional external trust material; keyless validation never guesses cryptographic provenance.</param>
     /// <returns>All detected diagnostics.</returns>
-    public NdsValidationResult Validate()
+    public NdsValidationResult Validate(NdsValidationOptions? options = null)
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
-        return NdsImageValidator.Validate(this);
+        return NdsImageValidator.Validate(this, options ?? NdsValidationOptions.Default);
     }
 
     /// <inheritdoc />

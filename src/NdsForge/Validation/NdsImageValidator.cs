@@ -7,8 +7,9 @@ internal static class NdsImageValidator
 {
     /// <summary>Collects stable diagnostic codes instead of failing fast, allowing callers to report every detected defect.</summary>
     /// <param name="image">A live parsed image whose regions and optional components are inspected.</param>
+    /// <param name="options">Optional DSi trust material and development-marker validation policy.</param>
     /// <returns>An immutable result containing checksum, bounds, overlay, and banner findings.</returns>
-    public static NdsValidationResult Validate(NdsImage image)
+    public static NdsValidationResult Validate(NdsImage image, NdsValidationOptions options)
     {
         var diagnostics = new List<NdsDiagnostic>();
         ValidateChecksum(
@@ -40,6 +41,8 @@ internal static class NdsImageValidator
         {
             diagnostics.AddRange(image.Banner.ValidateCrcs(image.Header.BannerOffset));
         }
+
+        NdsDsiIntegrityValidator.Validate(image, diagnostics, options);
 
         return new NdsValidationResult(diagnostics);
     }

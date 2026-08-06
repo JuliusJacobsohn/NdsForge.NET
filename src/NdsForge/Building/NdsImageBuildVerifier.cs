@@ -37,8 +37,43 @@ internal static class NdsImageBuildVerifier
             }
         }
 
+        if (builder.Arm9i is not null)
+        {
+            await VerifyProgramAsync(image, image.Header.Arm9i, builder.Arm9i, cancellationToken).ConfigureAwait(false);
+        }
+
+        if (builder.Arm7i is not null)
+        {
+            await VerifyProgramAsync(image, image.Header.Arm7i, builder.Arm7i, cancellationToken).ConfigureAwait(false);
+        }
+
         await VerifyOverlaysAsync(image, image.Arm9Overlays, builder.Arm9Overlays, cancellationToken).ConfigureAwait(false);
         await VerifyOverlaysAsync(image, image.Arm7Overlays, builder.Arm7Overlays, cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>Proves one DSi Program retained processor identity, runtime address, and exact payload bytes.</summary>
+    /// <param name="image">Reopened output used for bounded program reads.</param>
+    /// <param name="actual">Parsed extended-header tuple, or absent when serialization failed.</param>
+    /// <param name="expected">Recipe definition whose bytes and address must round-trip.</param>
+    /// <param name="cancellationToken">Cancels payload materialization.</param>
+    private static async ValueTask VerifyProgramAsync(
+        NdsImage image,
+        NdsProgram? actual,
+        NdsProgramDefinition expected,
+        CancellationToken cancellationToken)
+    {
+        if (actual is null || actual.Processor != expected.Processor || actual.LoadAddress != expected.LoadAddress)
+        {
+            throw new InvalidDataException($"Generated {expected.Processor} Program metadata did not round-trip.");
+        }
+
+        using Stream stream = image.OpenRead(actual.Data);
+        byte[] contents = new byte[expected.Contents.Length];
+        await stream.ReadExactlyAsync(contents, cancellationToken).ConfigureAwait(false);
+        if (!contents.AsSpan().SequenceEqual(expected.Contents.Span))
+        {
+            throw new InvalidDataException($"Generated {expected.Processor} Program payload did not round-trip.");
+        }
     }
 
     /// <summary>Byte-compares private Overlay Allocations and verifies record identity after production parsing.</summary>

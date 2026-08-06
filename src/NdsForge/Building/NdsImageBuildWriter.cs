@@ -28,7 +28,7 @@ internal static class NdsImageBuildWriter
         NdsImageBuildContent content = NdsImageBuildContentPreparer.Prepare(builder, options);
         NdsImageBuildLayout layout = CalculateLayout(builder, content, options);
         byte[] fat = BuildFat(layout.FileRegions);
-        byte[] header = NdsImageHeaderWriter.Write(builder, layout, options);
+        byte[] header = NdsImageHeaderWriter.Write(builder, layout, content, options);
 
         destination.Position = 0;
         destination.SetLength(0);
@@ -83,6 +83,26 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
+        if (layout.Arm9i is not null)
+        {
+            await WriteAtAsync(
+                destination,
+                layout.Arm9i.Value.Offset,
+                content.Arm9iData,
+                paddingByte,
+                cancellationToken).ConfigureAwait(false);
+        }
+
+        if (layout.Arm7i is not null)
+        {
+            await WriteAtAsync(
+                destination,
+                layout.Arm7i.Value.Offset,
+                content.Arm7iData,
+                paddingByte,
+                cancellationToken).ConfigureAwait(false);
+        }
+
         await FillToAsync(destination, layout.PhysicalSize, paddingByte, cancellationToken).ConfigureAwait(false);
         destination.SetLength(layout.PhysicalSize);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
@@ -103,6 +123,8 @@ internal static class NdsImageBuildWriter
             layout.FileNameTable,
             layout.FileAllocationTable,
             layout.Banner,
+            layout.Arm9i,
+            layout.Arm7i,
             content.FileSystem.FilesInIdOrder.Count,
             layout.FileRegions.Count);
     }
@@ -121,9 +143,47 @@ internal static class NdsImageBuildWriter
             throw new InvalidDataException("A non-empty ARM7 definition with the ARM7 processor identity is required.");
         }
 
+        bool isDsi = builder.Kind != NdsImageKind.NintendoDs;
+        if (!isDsi && (builder.Arm9i is not null || builder.Arm7i is not null || builder.DsiMetadata is not null))
+        {
+            throw new InvalidDataException("DS recipes cannot contain DSi Programs or extended metadata; select a DSi image kind explicitly.");
+        }
+
+        if (isDsi)
+        {
+            ValidateDsiRecipe(builder);
+        }
+
         ValidateAscii(builder.Title, 0, 12, nameof(builder.Title));
         ValidateAscii(builder.GameCode, 4, 4, nameof(builder.GameCode));
         ValidateAscii(builder.MakerCode, 2, 2, nameof(builder.MakerCode));
+    }
+
+    /// <summary>Rejects incomplete DSi recipes and address identities that cannot be encoded by the extended tuples.</summary>
+    /// <param name="builder">Recipe whose unit code already selects DSi-enhanced or DSi-exclusive execution.</param>
+    private static void ValidateDsiRecipe(NdsImageBuilder builder)
+    {
+        if (builder.DsiMetadata is null)
+        {
+            throw new InvalidDataException("A DSi recipe requires explicit extended metadata and integrity policy.");
+        }
+
+        if (builder.Arm9i is null || builder.Arm9i.Processor != NdsProcessor.Arm9i || builder.Arm9i.Contents.IsEmpty ||
+            builder.Arm9i.EntryAddress != builder.Arm9i.LoadAddress)
+        {
+            throw new InvalidDataException("A DSi recipe requires non-empty ARM9i data whose entry and load addresses match.");
+        }
+
+        if (builder.Arm7i is null || builder.Arm7i.Processor != NdsProcessor.Arm7i || builder.Arm7i.Contents.IsEmpty ||
+            builder.Arm7i.EntryAddress != builder.Arm7i.LoadAddress)
+        {
+            throw new InvalidDataException("A DSi recipe requires non-empty ARM7i data whose entry and load addresses match.");
+        }
+
+        if (builder.DsiMetadata.Integrity is null)
+        {
+            throw new InvalidDataException("A DSi recipe must name how authentication fields are populated.");
+        }
     }
 
     /// <summary>Assigns monotonically increasing aligned Regions without consulting mutable stream state.</summary>
@@ -171,15 +231,44 @@ internal static class NdsImageBuildWriter
             files[fileId] = Place(ref cursor, content.Allocations[fileId].Length, allocationAlignment);
         }
 
-        long contentEnd = cursor;
-        long physicalSize = Align(contentEnd, options.FileAlignment);
-        long usedSize = ndstoolProfile ? physicalSize : contentEnd;
+        long commonContentEnd = cursor;
+        NdsRegion? arm9i = null;
+        NdsRegion? arm7i = null;
+        long usedSize;
+        long physicalSize;
+        if (builder.Kind == NdsImageKind.NintendoDs)
+        {
+            physicalSize = Align(commonContentEnd, options.FileAlignment);
+            usedSize = ndstoolProfile ? physicalSize : commonContentEnd;
+        }
+        else
+        {
+            usedSize = Align(commonContentEnd, options.FileAlignment);
+            cursor = usedSize;
+            arm9i = Place(ref cursor, content.Arm9iData.Length, alignment: 0x400);
+            arm7i = Place(ref cursor, content.Arm7iData.Length, options.SectionAlignment);
+            physicalSize = Align(cursor, options.SectionAlignment);
+        }
+
         if (physicalSize > uint.MaxValue)
         {
             throw new InvalidDataException("The generated image exceeds the DS header's 32-bit offset and size fields.");
         }
 
-        return new(arm9, arm9Footer, arm9Overlays, arm7, arm7Overlays, fnt, fat, banner, files, usedSize, physicalSize);
+        return new(
+            arm9,
+            arm9Footer,
+            arm9Overlays,
+            arm7,
+            arm7Overlays,
+            fnt,
+            fat,
+            banner,
+            files,
+            arm9i,
+            arm7i,
+            usedSize,
+            physicalSize);
     }
 
     /// <summary>Writes File ID-indexed half-open payload intervals in the eight-byte FAT record format.</summary>

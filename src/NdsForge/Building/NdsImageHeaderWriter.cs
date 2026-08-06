@@ -17,20 +17,24 @@ internal static class NdsImageHeaderWriter
     /// </summary>
     /// <param name="builder">Validated recipe supplying cartridge identity, runtime addresses, and security metadata.</param>
     /// <param name="layout">Final physical regions whose offsets are encoded into the header.</param>
+    /// <param name="content">Frozen Program and Banner bytes used by DSi authentication fields.</param>
     /// <param name="options">Header reservation and compatibility behavior selected for this build.</param>
     /// <returns>A standalone header buffer whose length is exactly the requested reserved header size.</returns>
     public static byte[] Write(
         NdsImageBuilder builder,
         NdsImageBuildLayout layout,
+        NdsImageBuildContent content,
         NdsImageBuildOptions options)
     {
         byte[] header = new byte[options.HeaderSize];
         WriteAscii(header.AsSpan(0x00, 12), builder.Title);
         WriteAscii(header.AsSpan(0x0C, 4), builder.GameCode);
         WriteAscii(header.AsSpan(0x10, 2), builder.MakerCode);
+        header[0x12] = (byte)builder.Kind;
         header[0x13] = builder.EncryptionSeedSelect;
         header[0x14] = CalculateDeviceCapacity(layout.PhysicalSize);
         header[0x1D] = builder.RegionCode;
+        header[0x1C] = builder.DsiMetadata?.DsiFlags ?? 0;
         header[0x1E] = builder.Version;
         header[0x1F] = builder.AutoStart;
         WriteProgram(header, 0x20, layout.Arm9, builder.Arm9!);
@@ -56,12 +60,22 @@ internal static class NdsImageHeaderWriter
             builder.NintendoLogo.Span.CopyTo(header.AsSpan(0xC0, 156));
         }
 
+        if (builder.Kind != NdsImageKind.NintendoDs)
+        {
+            NdsDsiHeaderWriter.Write(header, builder, layout, content);
+        }
+
         BinaryPrimitives.WriteUInt16LittleEndian(
             header.AsSpan(0x15C),
             NdsChecksums.ComputeCrc16(header.AsSpan(0xC0, 156)));
         BinaryPrimitives.WriteUInt16LittleEndian(
             header.AsSpan(0x15E),
             NdsChecksums.ComputeCrc16(header.AsSpan(0, 0x15E)));
+        if (builder.Kind != NdsImageKind.NintendoDs)
+        {
+            NdsDsiHeaderWriter.FinalizeSignature(header, builder.DsiMetadata!.Integrity.SignatureMode);
+        }
+
         return header;
     }
 

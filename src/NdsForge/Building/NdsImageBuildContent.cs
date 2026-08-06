@@ -13,6 +13,8 @@ namespace NdsForge;
 /// <param name="Arm9TrailingData">Explicit and/or synthesized footer bytes written immediately after physical ARM9 data.</param>
 /// <param name="Arm7Data">Physical ARM7 bytes.</param>
 /// <param name="Arm7DeclaredLength">Length encoded in the header after profile-specific rounding.</param>
+/// <param name="Arm9iData">DSi-mode ARM9 bytes, or empty memory for a DS recipe.</param>
+/// <param name="Arm7iData">DSi-mode ARM7 bytes, or empty memory for a DS recipe.</param>
 /// <param name="Allocations">Every FAT payload in final numeric File ID order.</param>
 /// <param name="Arm9OverlayTable">Serialized ARM9 records in recipe insertion order.</param>
 /// <param name="Arm7OverlayTable">Serialized ARM7 records in recipe insertion order.</param>
@@ -23,6 +25,8 @@ internal sealed record NdsImageBuildContent(
     ReadOnlyMemory<byte> Arm9TrailingData,
     ReadOnlyMemory<byte> Arm7Data,
     int Arm7DeclaredLength,
+    ReadOnlyMemory<byte> Arm9iData,
+    ReadOnlyMemory<byte> Arm7iData,
     ReadOnlyMemory<byte>[] Allocations,
     byte[] Arm9OverlayTable,
     byte[] Arm7OverlayTable);
@@ -40,6 +44,11 @@ internal static class NdsImageBuildContentPreparer
     public static NdsImageBuildContent Prepare(NdsImageBuilder builder, NdsImageBuildOptions options)
     {
         bool ndstoolProfile = options.Profile == NdsImageBuildProfile.Ndstool1503;
+        if (ndstoolProfile && builder.Kind != NdsImageKind.NintendoDs)
+        {
+            throw new InvalidDataException("The ndstool 1.50.3 compatibility profile predates DSi image creation.");
+        }
+
         int arm9PrivateCount = builder.Arm9Overlays.Count(static overlay => overlay.HasPrivateAllocation);
         int arm7PrivateCount = builder.Arm7Overlays.Count(static overlay => overlay.HasPrivateAllocation);
         if (ndstoolProfile &&
@@ -75,6 +84,8 @@ internal static class NdsImageBuildContentPreparer
         ReadOnlyMemory<byte> arm9TrailingData = PrepareArm9TrailingData(
             builder.Arm9!,
             synthesizeNdstoolFooter: ndstoolProfile && arm9OverlayTable.Length > 0);
+        ReadOnlyMemory<byte> arm9iData = builder.Arm9i?.Contents ?? ReadOnlyMemory<byte>.Empty;
+        ReadOnlyMemory<byte> arm7iData = builder.Arm7i?.Contents ?? ReadOnlyMemory<byte>.Empty;
         return new(
             fileSystem,
             arm9Data,
@@ -82,6 +93,8 @@ internal static class NdsImageBuildContentPreparer
             arm9TrailingData,
             arm7Data,
             arm7DeclaredLength,
+            arm9iData,
+            arm7iData,
             allocations,
             arm9OverlayTable,
             arm7OverlayTable);

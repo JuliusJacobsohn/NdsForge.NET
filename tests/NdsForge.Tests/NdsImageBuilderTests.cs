@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+
 namespace NdsForge.Tests;
 
 public sealed class NdsImageBuilderTests
@@ -43,6 +45,77 @@ public sealed class NdsImageBuilderTests
         Assert.Equal(["/", "/empty", "/empty/child"], image.FileSystem.Directories.Select(static value => value.FullPath));
         Assert.Empty(image.FileSystem.Files);
         Assert.True(image.Header.FileAllocationTable.IsEmpty);
+    }
+
+    [Fact]
+    public async Task BuildsDsiEnhancedImageWithExplicitHomebrewIntegrity()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.Kind = NdsImageKind.NintendoDsiEnhanced;
+        builder.Arm9i = new(NdsProcessor.Arm9i, [0x91, 1, 2, 3, 4], 0x02E00000, 0x02E00000);
+        builder.Arm7i = new(NdsProcessor.Arm7i, [0x71, 5, 6], 0x02E80000, 0x02E80000);
+        builder.Banner = new NdsBannerBuilder().SetTitle(NdsBannerLanguage.English, "DSi Build").Build();
+        builder.DsiMetadata = new()
+        {
+            RegionFlags = 0x11223344,
+            AccessControl = 0x55667788,
+            ScfgExtMask = 0x99AABBCC,
+            ApplicationFlags = 0x5A,
+            Arm7DeviceListAddress = 0x02E81000,
+            TitleId = 0x0003000442543031,
+            PublicSaveSize = 0x10000,
+            PrivateSaveSize = 0x20000,
+            Integrity = NdsDsiIntegrityOptions.CreateHmacSha1(
+                [1, 2, 3, 4],
+                NdsDsiSignatureMode.NoGbaDevelopmentMarker),
+        };
+
+        byte[] data = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(data);
+        NdsDsiHeader dsi = Assert.IsType<NdsDsiHeader>(image.Header.Dsi);
+
+        Assert.Equal(NdsImageKind.NintendoDsiEnhanced, image.Header.Kind);
+        Assert.Equal(0x11223344U, dsi.RegionFlags);
+        Assert.Equal(0x0003000442543031UL, dsi.TitleId);
+        Assert.Equal((uint)data.Length, dsi.TotalImageSize);
+        Assert.Equal((uint)builder.Banner.RawData.Length, dsi.BannerSize);
+        Assert.True(image.Header.UsedImageSize < image.Header.Arm9i!.Data.Offset);
+        Assert.Equal(
+            [0x91, 1, 2, 3, 4],
+            await ReadRegionAsync(image, image.Header.Arm9i.Data, TestContext.Current.CancellationToken));
+#pragma warning disable CA5350 // The test independently verifies the DSi format's mandated HMAC-SHA1 bytes.
+        Assert.Equal(HMACSHA1.HashData([1, 2, 3, 4], [0x91, 1, 2, 3, 4]), dsi.Arm9iHmac.ToArray());
+        byte[] expectedMarkerHash = SHA1.HashData(data.AsSpan(0, 0xE00));
+#pragma warning restore CA5350
+        Assert.Equal(expectedMarkerHash, dsi.RsaSignature.Slice(0x6C, 20).ToArray());
+        Assert.Equal(0, dsi.RsaSignature.Span[0]);
+        Assert.Equal(1, dsi.RsaSignature.Span[1]);
+        Assert.True(image.Validate().IsValid);
+        Assert.True(image.Validate(new NdsValidationOptions().SetDsiHmacKey([1, 2, 3, 4])).IsValid);
+
+        byte[] tamperedData = data.ToArray();
+        tamperedData[checked((int)image.Header.Arm9i.Data.Offset)] ^= 0xFF;
+        using (NdsImage tampered = NdsImage.Load(tamperedData))
+        {
+            NdsValidationResult tamperedValidation = tampered.Validate(
+                new NdsValidationOptions().SetDsiHmacKey([1, 2, 3, 4]));
+            Assert.Contains(tamperedValidation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1313");
+        }
+
+        NdsImageBuilder imported = await NdsImageBuilder.FromImageAsync(image, TestContext.Current.CancellationToken);
+        imported.FileSystem.AddFile("/added.bin", [9, 8, 7]);
+        byte[] rebuiltData = await imported.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage rebuilt = NdsImage.Load(rebuiltData);
+
+        Assert.Equal(NdsImageKind.NintendoDsiEnhanced, rebuilt.Header.Kind);
+        Assert.Equal([0x91, 1, 2, 3, 4], await ReadRegionAsync(
+            rebuilt,
+            rebuilt.Header.Arm9i!.Data,
+            TestContext.Current.CancellationToken));
+        Assert.Equal(0x0003000442543031UL, rebuilt.Header.Dsi!.TitleId);
+        Assert.Equal(new byte[20], rebuilt.Header.Dsi.Arm9iHmac.ToArray());
+        Assert.Equal([9, 8, 7], await rebuilt.FileSystem.GetFile("/added.bin")
+            .ReadAllBytesAsync(TestContext.Current.CancellationToken));
     }
 
     [Fact]

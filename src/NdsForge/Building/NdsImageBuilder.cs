@@ -6,8 +6,9 @@ namespace NdsForge;
 /// <remarks>
 /// This builder describes a new image rather than editing an existing one. Every byte-bearing setter copies
 /// caller data, and repeated writes from unchanged state use identical ordering, offsets, padding, and checksums.
-/// DSi-specific Programs and extended metadata will use the same recipe but are rejected until their integrity
-/// layout is fully configured rather than emitting a misleading partially-DSi image.
+/// DSi recipes require both DSi-mode Programs and explicit extended metadata so a unit-code change can never
+/// silently emit a partially configured image. Their integrity policy distinguishes homebrew compatibility
+/// hashes from absent retail authentication.
 /// </remarks>
 public sealed class NdsImageBuilder
 {
@@ -25,6 +26,9 @@ public sealed class NdsImageBuilder
     {
         FileSystem = new NdsFileSystemBuilder();
     }
+
+    /// <summary>Selects DS, DSi-enhanced, or DSi-exclusive header and execution semantics for the complete recipe.</summary>
+    public NdsImageKind Kind { get; set; } = NdsImageKind.NintendoDs;
 
     /// <summary>Controls the padded 12-byte printable-ASCII label written at the beginning of the header.</summary>
     public string Title { get; set; } = string.Empty;
@@ -71,6 +75,18 @@ public sealed class NdsImageBuilder
     /// <summary>Supplies the required secondary processor payload and its runtime addresses.</summary>
     public NdsProgramDefinition? Arm7 { get; set; }
 
+    /// <summary>Supplies the required ARM9i payload for a DSi recipe; its single header address serves as load and entry.</summary>
+    public NdsProgramDefinition? Arm9i { get; set; }
+
+    /// <summary>Supplies the required ARM7i payload for a DSi recipe; its single header address serves as load and entry.</summary>
+    public NdsProgramDefinition? Arm7i { get; set; }
+
+    /// <summary>
+    /// Supplies DSi service, title, storage, memory-bank, modcrypt, and integrity policy. It must be present exactly
+    /// when <see cref="Kind"/> selects an extended image.
+    /// </summary>
+    public NdsDsiBuildMetadata? DsiMetadata { get; set; }
+
     /// <summary>Provides structural NitroFS operations whose stable snapshot becomes the generated FNT and FAT.</summary>
     public NdsFileSystemBuilder FileSystem { get; }
 
@@ -93,12 +109,12 @@ public sealed class NdsImageBuilder
         return this;
     }
 
-    /// <summary>Copies a parsed DS Image into a detached Build Recipe suitable for structural filesystem changes.</summary>
+    /// <summary>Copies a parsed DS or DSi Image into a detached Build Recipe suitable for structural filesystem changes.</summary>
     /// <remarks>
     /// All Programs, files, private Overlay payloads, and footer bytes are materialized. The returned builder
     /// no longer depends on the source Image and remains usable after that Image is disposed.
     /// </remarks>
-    /// <param name="image">Live DS Image whose logical components and relationships are imported.</param>
+    /// <param name="image">Live Image whose logical components and relationships are imported.</param>
     /// <param name="cancellationToken">Cancels potentially large payload reads before a partial recipe is returned.</param>
     /// <returns>A deterministic builder initialized from source semantics rather than source physical Layout.</returns>
     public static ValueTask<NdsImageBuilder> FromImageAsync(

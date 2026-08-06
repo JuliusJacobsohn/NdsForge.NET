@@ -14,6 +14,8 @@ public sealed class NdsImageBuildResult
     /// <param name="fileNameTable">Final FNT Region.</param>
     /// <param name="fileAllocationTable">Final FAT Region.</param>
     /// <param name="banner">Final Banner Region, or <see langword="null"/> when absent.</param>
+    /// <param name="arm9i">Final ARM9i Region, or <see langword="null"/> for a DS-only build.</param>
+    /// <param name="arm7i">Final ARM7i Region, or <see langword="null"/> for a DS-only build.</param>
     /// <param name="fileCount">Number of named NitroFS payloads assigned File IDs.</param>
     /// <param name="allocationCount">Total FAT records, including unnamed Overlay payloads.</param>
     internal NdsImageBuildResult(
@@ -27,6 +29,8 @@ public sealed class NdsImageBuildResult
         NdsRegion fileNameTable,
         NdsRegion fileAllocationTable,
         NdsRegion? banner,
+        NdsRegion? arm9i,
+        NdsRegion? arm7i,
         int fileCount,
         int allocationCount)
     {
@@ -40,6 +44,8 @@ public sealed class NdsImageBuildResult
         FileNameTable = fileNameTable;
         FileAllocationTable = fileAllocationTable;
         Banner = banner;
+        Arm9i = arm9i;
+        Arm7i = arm7i;
         FileCount = fileCount;
         AllocationCount = allocationCount;
     }
@@ -73,6 +79,12 @@ public sealed class NdsImageBuildResult
 
     /// <summary>Locates optional checksummed menu metadata after final alignment.</summary>
     public NdsRegion? Banner { get; }
+
+    /// <summary>Locates the DSi-mode ARM9 payload appended after common content, or remains absent for DS images.</summary>
+    public NdsRegion? Arm9i { get; }
+
+    /// <summary>Locates the DSi-mode ARM7 payload appended after ARM9i, or remains absent for DS images.</summary>
+    public NdsRegion? Arm7i { get; }
 
     /// <summary>Counts named files serialized into both FNT ordering and FAT allocations.</summary>
     public int FileCount { get; }
