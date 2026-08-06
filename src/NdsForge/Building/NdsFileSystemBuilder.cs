@@ -39,6 +39,18 @@ public sealed class NdsFileSystemBuilder
     public IReadOnlyCollection<NdsBuildFile> Files => new ReadOnlyCollection<NdsBuildFile>(
         _files.Values.OrderBy(static file => file.Path, StringComparer.Ordinal).ToArray());
 
+    /// <summary>Resolves a builder-owned payload so other recipe components can retain its identity across path moves.</summary>
+    /// <param name="path">Canonical or root-relative NitroFS file path.</param>
+    /// <returns>The stable payload object whose <see cref="NdsBuildFile.Path"/> follows later move operations.</returns>
+    /// <exception cref="FileNotFoundException">No file exists at the normalized path.</exception>
+    public NdsBuildFile GetFile(string path)
+    {
+        string normalized = NormalizePath(path, allowRoot: false);
+        return _files.TryGetValue(normalized, out NdsBuildFile? file)
+            ? file
+            : throw new FileNotFoundException($"NitroFS file was not found: {normalized}", normalized);
+    }
+
     /// <summary>
     /// Declares a directory, retaining it even when no descendant files are added.
     /// </summary>

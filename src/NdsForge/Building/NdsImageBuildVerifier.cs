@@ -62,9 +62,10 @@ internal static class NdsImageBuildVerifier
                 throw new InvalidDataException($"Generated Overlay record {index} did not round-trip.");
             }
 
-            if (expected[index].LinkedFilePath is not null)
+            string? linkedFilePath = expected[index].EffectiveLinkedFilePath;
+            if (linkedFilePath is not null)
             {
-                if (actual[index].File?.FullPath != expected[index].LinkedFilePath)
+                if (actual[index].File?.FullPath != linkedFilePath)
                 {
                     throw new InvalidDataException($"Generated Overlay file link {index} did not round-trip.");
                 }

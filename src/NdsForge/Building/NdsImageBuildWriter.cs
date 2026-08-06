@@ -172,12 +172,13 @@ internal static class NdsImageBuildWriter
         {
             NdsOverlayDefinition overlay = overlays[index];
             int fileId;
-            if (overlay.LinkedFilePath is not null)
+            string? linkedFilePath = overlay.EffectiveLinkedFilePath;
+            if (linkedFilePath is not null)
             {
-                if (!namedFileIds.TryGetValue(overlay.LinkedFilePath, out fileId))
+                if (!namedFileIds.TryGetValue(linkedFilePath, out fileId))
                 {
                     throw new InvalidDataException(
-                        $"Overlay {overlay.Id} links missing NitroFS file '{overlay.LinkedFilePath}'.");
+                        $"Overlay {overlay.Id} links missing NitroFS file '{linkedFilePath}'.");
                 }
             }
             else
@@ -273,15 +274,25 @@ internal static class NdsImageBuildWriter
         WriteAscii(header.AsSpan(0x00, 12), builder.Title);
         WriteAscii(header.AsSpan(0x0C, 4), builder.GameCode);
         WriteAscii(header.AsSpan(0x10, 2), builder.MakerCode);
+        header[0x13] = builder.EncryptionSeedSelect;
         header[0x14] = CalculateDeviceCapacity(layout.PhysicalSize);
+        header[0x1D] = builder.RegionCode;
         header[0x1E] = builder.Version;
+        header[0x1F] = builder.AutoStart;
         WriteProgram(header, 0x20, layout.Arm9, builder.Arm9!);
         WriteProgram(header, 0x30, layout.Arm7, builder.Arm7!);
         WriteRegion(header, 0x40, layout.FileNameTable);
         WriteRegion(header, 0x48, layout.FileAllocationTable);
         WriteRegion(header, 0x50, layout.Arm9OverlayTable);
         WriteRegion(header, 0x58, layout.Arm7OverlayTable);
+        NdsBinary.WriteUInt32(header, 0x60, builder.NormalCardControl);
+        NdsBinary.WriteUInt32(header, 0x64, builder.SecureCardControl);
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x68), checked((uint)(layout.Banner?.Offset ?? 0)));
+        NdsBinary.WriteUInt16(header, 0x6E, builder.SecureTransferTimeout);
+        NdsBinary.WriteUInt32(header, 0x70, builder.Arm9AutoLoad);
+        NdsBinary.WriteUInt32(header, 0x74, builder.Arm7AutoLoad);
+        NdsBinary.WriteUInt32(header, 0x78, (uint)builder.SecureDisable);
+        NdsBinary.WriteUInt32(header, 0x7C, (uint)(builder.SecureDisable >> 32));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)layout.UsedSize));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x84), checked((uint)options.HeaderSize));
         if (!builder.NintendoLogo.IsEmpty)

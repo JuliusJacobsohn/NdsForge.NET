@@ -34,6 +34,7 @@ public sealed class NdsOverlayDefinition
             id,
             contents.ToArray(),
             linkedFilePath: null,
+            linkedFile: null,
             loadAddress,
             ramSize,
             bssSize,
@@ -71,6 +72,43 @@ public sealed class NdsOverlayDefinition
             id,
             contents: null,
             NdsFileSystemBuilder.NormalizePath(filePath, allowRoot: false),
+            linkedFile: null,
+            loadAddress,
+            ramSize,
+            bssSize,
+            staticInitializerStart,
+            staticInitializerEnd,
+            compressedSize,
+            flags);
+
+    /// <summary>Links to a builder-owned file object so directory or file moves automatically retain the Overlay relationship.</summary>
+    /// <param name="processor">ARM9 or ARM7 table receiving the record.</param>
+    /// <param name="id">Runtime Overlay identity, independent from generated File ID.</param>
+    /// <param name="file">Payload owned by the same filesystem builder used in the final recipe.</param>
+    /// <param name="loadAddress">First runtime address populated by the Overlay loader.</param>
+    /// <param name="ramSize">Initialized runtime size after any decompression.</param>
+    /// <param name="bssSize">Additional zero-initialized bytes absent from storage.</param>
+    /// <param name="staticInitializerStart">Inclusive constructor-list start.</param>
+    /// <param name="staticInitializerEnd">Exclusive constructor-list end.</param>
+    /// <param name="compressedSize">Low 24 bits of the packed control word.</param>
+    /// <param name="flags">High eight bits of the packed control word.</param>
+    /// <returns>An immutable definition whose effective path follows <paramref name="file"/>.</returns>
+    public static NdsOverlayDefinition LinkToFile(
+        NdsProcessor processor,
+        uint id,
+        NdsBuildFile file,
+        uint loadAddress,
+        uint ramSize,
+        uint bssSize = 0,
+        uint staticInitializerStart = 0,
+        uint staticInitializerEnd = 0,
+        uint compressedSize = 0,
+        byte flags = 0) => new(
+            processor,
+            id,
+            contents: null,
+            linkedFilePath: null,
+            file ?? throw new ArgumentNullException(nameof(file)),
             loadAddress,
             ramSize,
             bssSize,
@@ -84,6 +122,7 @@ public sealed class NdsOverlayDefinition
     /// <param name="id">Runtime Overlay identity.</param>
     /// <param name="contents">Private payload copy, or <see langword="null"/> for a named link.</param>
     /// <param name="linkedFilePath">Canonical named-file path, or <see langword="null"/> for a private Allocation.</param>
+    /// <param name="linkedFile">Builder-owned payload whose mutable path supersedes fixed path text.</param>
     /// <param name="loadAddress">Runtime payload start.</param>
     /// <param name="ramSize">Initialized runtime byte count.</param>
     /// <param name="bssSize">Zero-filled runtime byte count.</param>
@@ -96,6 +135,7 @@ public sealed class NdsOverlayDefinition
         uint id,
         byte[]? contents,
         string? linkedFilePath,
+        NdsBuildFile? linkedFile,
         uint loadAddress,
         uint ramSize,
         uint bssSize,
@@ -118,6 +158,7 @@ public sealed class NdsOverlayDefinition
         Id = id;
         Contents = contents ?? [];
         LinkedFilePath = linkedFilePath;
+        LinkedFile = linkedFile;
         LoadAddress = loadAddress;
         RamSize = ramSize;
         BssSize = bssSize;
@@ -139,8 +180,14 @@ public sealed class NdsOverlayDefinition
     /// <summary>Identifies a shared named NitroFS payload, or remains <see langword="null"/> for a private Allocation.</summary>
     public string? LinkedFilePath { get; }
 
+    /// <summary>Retains builder-owned payload identity so structural moves do not break the Overlay link.</summary>
+    internal NdsBuildFile? LinkedFile { get; }
+
+    /// <summary>Resolves the current object path when available, otherwise the fixed link supplied by path.</summary>
+    internal string? EffectiveLinkedFilePath => LinkedFile?.Path ?? LinkedFilePath;
+
     /// <summary>Distinguishes payloads that add a FAT record from records that reuse an existing named File ID.</summary>
-    internal bool HasPrivateAllocation => LinkedFilePath is null;
+    internal bool HasPrivateAllocation => EffectiveLinkedFilePath is null;
 
     /// <summary>Specifies the first runtime address receiving initialized Overlay bytes.</summary>
     public uint LoadAddress { get; }

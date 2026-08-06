@@ -160,6 +160,37 @@ public sealed class NdsImageBuilderTests
     }
 
     [Fact]
+    public async Task ImportsDetachedRecipeForStructuralRebuild()
+    {
+        NdsImageBuilder original = CreateBuilder();
+        original.NormalCardControl = 0x11223344;
+        original.SecureTransferTimeout = 0x5566;
+        original.FileSystem.CreateDirectory("/empty");
+        original.FileSystem.AddFile("/old/shared.bin", [3, 2, 1]);
+        original.AddOverlay(NdsOverlayDefinition.LinkToFile(
+            NdsProcessor.Arm9,
+            id: 9,
+            filePath: "/old/shared.bin",
+            loadAddress: 0x02003000,
+            ramSize: 3));
+        byte[] sourceBytes = await original.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        NdsImageBuilder imported;
+        using (NdsImage source = NdsImage.Load(sourceBytes))
+        {
+            imported = await NdsImageBuilder.FromImageAsync(source, TestContext.Current.CancellationToken);
+        }
+
+        imported.FileSystem.MoveDirectory("/old", "/new");
+        byte[] rebuiltBytes = await imported.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage rebuilt = NdsImage.Load(rebuiltBytes);
+
+        Assert.Equal(0x11223344U, rebuilt.Header.NormalCardControl);
+        Assert.Equal((ushort)0x5566, rebuilt.Header.SecureTransferTimeout);
+        Assert.Equal(["/", "/empty", "/new"], rebuilt.FileSystem.Directories.Select(static directory => directory.FullPath));
+        Assert.Equal("/new/shared.bin", rebuilt.Arm9Overlays[0].File!.FullPath);
+    }
+
+    [Fact]
     public async Task RejectsMissingOrMismatchedProgramsBeforeTruncatingDestination()
     {
         var builder = new NdsImageBuilder

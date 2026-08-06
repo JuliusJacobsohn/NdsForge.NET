@@ -38,6 +38,33 @@ public sealed class NdsImageBuilder
     /// <summary>Controls the publisher-defined software revision byte, independently from format versions.</summary>
     public byte Version { get; set; }
 
+    /// <summary>Preserves the raw cartridge encryption seed-selection byte used by secure-area protocols.</summary>
+    public byte EncryptionSeedSelect { get; set; }
+
+    /// <summary>Controls the hardware-dependent region byte without interpreting reserved bits.</summary>
+    public byte RegionCode { get; set; }
+
+    /// <summary>Controls the complete boot-policy byte at header offset <c>0x1F</c>.</summary>
+    public byte AutoStart { get; set; }
+
+    /// <summary>Preserves ROM-control timing and flags used for ordinary cartridge transfers.</summary>
+    public uint NormalCardControl { get; set; }
+
+    /// <summary>Preserves ROM-control timing and flags used during secure cartridge transfers.</summary>
+    public uint SecureCardControl { get; set; }
+
+    /// <summary>Preserves the timeout applied to secure-area transfers.</summary>
+    public ushort SecureTransferTimeout { get; set; }
+
+    /// <summary>Preserves the ARM9 SDK autoload-list address used during runtime initialization.</summary>
+    public uint Arm9AutoLoad { get; set; }
+
+    /// <summary>Preserves the ARM7 SDK autoload-list address used during runtime initialization.</summary>
+    public uint Arm7AutoLoad { get; set; }
+
+    /// <summary>Preserves the raw 64-bit secure-area disable token across structural rebuilds.</summary>
+    public ulong SecureDisable { get; set; }
+
     /// <summary>Supplies the required primary processor payload and its runtime addresses.</summary>
     public NdsProgramDefinition? Arm9 { get; set; }
 
@@ -65,6 +92,19 @@ public sealed class NdsImageBuilder
         (overlay.Processor == NdsProcessor.Arm9 ? _arm9Overlays : _arm7Overlays).Add(overlay);
         return this;
     }
+
+    /// <summary>Copies a parsed DS Image into a detached Build Recipe suitable for structural filesystem changes.</summary>
+    /// <remarks>
+    /// All Programs, files, private Overlay payloads, and footer bytes are materialized. The returned builder
+    /// no longer depends on the source Image and remains usable after that Image is disposed.
+    /// </remarks>
+    /// <param name="image">Live DS Image whose logical components and relationships are imported.</param>
+    /// <param name="cancellationToken">Cancels potentially large payload reads before a partial recipe is returned.</param>
+    /// <returns>A deterministic builder initialized from source semantics rather than source physical Layout.</returns>
+    public static ValueTask<NdsImageBuilder> FromImageAsync(
+        NdsImage image,
+        CancellationToken cancellationToken = default) =>
+        NdsImageBuildImporter.ImportAsync(image, cancellationToken);
 
     /// <summary>Copies the 156-byte encoded cartridge logo block without embedding or sourcing proprietary assets.</summary>
     /// <param name="data">Exactly the native bytes stored at header offsets <c>0xC0</c>-<c>0x15B</c>.</param>
