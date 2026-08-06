@@ -13,13 +13,15 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         NdsHeader header,
         NdsFileSystem fileSystem,
         IReadOnlyList<NdsOverlay> arm9Overlays,
-        IReadOnlyList<NdsOverlay> arm7Overlays)
+        IReadOnlyList<NdsOverlay> arm7Overlays,
+        NdsBanner? banner)
     {
         _source = source;
         Header = header;
         FileSystem = fileSystem;
         Arm9Overlays = arm9Overlays;
         Arm7Overlays = arm7Overlays;
+        Banner = banner;
     }
 
     /// <summary>Gets the parsed image header.</summary>
@@ -33,6 +35,9 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
 
     /// <summary>Gets ARM7 overlays in table order.</summary>
     public IReadOnlyList<NdsOverlay> Arm7Overlays { get; }
+
+    /// <summary>Gets the parsed menu banner, or <see langword="null"/> when absent.</summary>
+    public NdsBanner? Banner { get; }
 
     /// <summary>Gets the total length of the source image in bytes.</summary>
     public long Length => _source.Length;
@@ -73,7 +78,12 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
                 fileSystem,
                 options,
                 cancellationToken).ConfigureAwait(false);
-            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays);
+            NdsBanner? banner = await NdsBannerParser.ParseAsync(
+                source,
+                header.BannerOffset,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
         }
         catch
         {
@@ -108,7 +118,8 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
                 NdsProcessor.Arm7,
                 fileSystem,
                 options);
-            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays);
+            NdsBanner? banner = NdsBannerParser.Parse(source, header.BannerOffset, options);
+            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
         }
         catch
         {
@@ -154,6 +165,10 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
 
         ValidateOverlays(diagnostics, Arm9Overlays);
         ValidateOverlays(diagnostics, Arm7Overlays);
+        if (Banner is not null)
+        {
+            diagnostics.AddRange(Banner.ValidateCrcs(Header.BannerOffset));
+        }
 
         return new NdsValidationResult(diagnostics);
     }

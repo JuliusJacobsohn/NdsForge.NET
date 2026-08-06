@@ -21,6 +21,9 @@ public sealed record NdsReadOptions
     /// <summary>Gets the maximum accepted entries in each overlay table.</summary>
     public int MaximumOverlayCount { get; init; } = 65_536;
 
+    /// <summary>Gets the maximum accepted banner size.</summary>
+    public int MaximumBannerBytes { get; init; } = 0x23C0;
+
     internal void Validate()
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumFileNameTableBytes);
@@ -28,5 +31,6 @@ public sealed record NdsReadOptions
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumDirectoryCount);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumDirectoryDepth);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumOverlayCount);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumBannerBytes);
     }
 }
