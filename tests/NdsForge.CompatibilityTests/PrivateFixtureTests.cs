@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+
 namespace NdsForge.CompatibilityTests;
 
 public sealed class PrivateFixtureTests
@@ -56,6 +58,65 @@ public sealed class PrivateFixtureTests
         {
             File.Delete(output);
         }
+    }
+
+    [Fact]
+    public async Task StructuralRebuildPreservesRealFixtureSemantics()
+    {
+        string path = GetFixturePath();
+        string output = Path.Combine(Path.GetTempPath(), $"ndsforge-rebuild-{Guid.NewGuid():N}.nds");
+        try
+        {
+            CancellationToken cancellationToken = TestContext.Current.CancellationToken;
+            using NdsImage source = await NdsImage.OpenAsync(path, cancellationToken: cancellationToken).ConfigureAwait(true);
+            NdsImageBuilder builder = await NdsImageBuilder.FromImageAsync(source, cancellationToken).ConfigureAwait(true);
+
+            await builder.WriteAsync(output, cancellationToken: cancellationToken).ConfigureAwait(true);
+            using NdsImage rebuilt = await NdsImage.OpenAsync(output, cancellationToken: cancellationToken).ConfigureAwait(true);
+
+            Assert.True(rebuilt.Validate().IsValid);
+            Assert.Equal(source.Header.Title, rebuilt.Header.Title);
+            Assert.Equal(source.Header.GameCode, rebuilt.Header.GameCode);
+            Assert.Equal(
+                source.FileSystem.Directories.Select(static directory => directory.FullPath).Order(StringComparer.Ordinal),
+                rebuilt.FileSystem.Directories.Select(static directory => directory.FullPath).Order(StringComparer.Ordinal));
+            Assert.Equal(
+                source.FileSystem.Files.Select(static file => file.FullPath).Order(StringComparer.Ordinal),
+                rebuilt.FileSystem.Files.Select(static file => file.FullPath).Order(StringComparer.Ordinal));
+            Assert.Equal(source.Arm9Overlays.Select(static overlay => overlay.Id), rebuilt.Arm9Overlays.Select(static overlay => overlay.Id));
+            Assert.Equal(source.Arm7Overlays.Select(static overlay => overlay.Id), rebuilt.Arm7Overlays.Select(static overlay => overlay.Id));
+            Assert.Equal(source.Banner?.RawData.ToArray(), rebuilt.Banner?.RawData.ToArray());
+
+            await AssertRegionHashEqualAsync(source, source.Header.Arm9.CompleteData, rebuilt, rebuilt.Header.Arm9.CompleteData, cancellationToken)
+                .ConfigureAwait(true);
+            await AssertRegionHashEqualAsync(source, source.Header.Arm7.Data, rebuilt, rebuilt.Header.Arm7.Data, cancellationToken)
+                .ConfigureAwait(true);
+            foreach (NdsFile sourceFile in source.FileSystem.Files)
+            {
+                NdsFile rebuiltFile = rebuilt.FileSystem.GetFile(sourceFile.FullPath);
+                await AssertRegionHashEqualAsync(source, sourceFile.Data, rebuilt, rebuiltFile.Data, cancellationToken)
+                    .ConfigureAwait(true);
+            }
+        }
+        finally
+        {
+            File.Delete(output);
+        }
+    }
+
+    private static async ValueTask AssertRegionHashEqualAsync(
+        NdsImage expectedImage,
+        NdsRegion expectedRegion,
+        NdsImage actualImage,
+        NdsRegion actualRegion,
+        CancellationToken cancellationToken)
+    {
+        Assert.Equal(expectedRegion.Length, actualRegion.Length);
+        using Stream expected = expectedImage.OpenRead(expectedRegion);
+        using Stream actual = actualImage.OpenRead(actualRegion);
+        byte[] expectedHash = await SHA256.HashDataAsync(expected, cancellationToken).ConfigureAwait(true);
+        byte[] actualHash = await SHA256.HashDataAsync(actual, cancellationToken).ConfigureAwait(true);
+        Assert.Equal(expectedHash, actualHash);
     }
 
     private static string GetFixturePath()
