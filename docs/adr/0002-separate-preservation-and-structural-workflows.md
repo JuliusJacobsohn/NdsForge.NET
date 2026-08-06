@@ -1,0 +1,3 @@
+# Separate preservation edits from structural rebuilds
+
+NdsForge exposes preservation editing and structural rebuilding as distinct workflows. A preservation save retains unknown bytes, File IDs, unchanged Regions, and physical placement wherever possible, while a structural rebuild is allowed to regenerate the FNT, FAT, dependent Overlay links, and Layout under an explicit policy. A single catch-all save API would make seemingly small tree changes capable of silently invalidating numeric references or byte-equality guarantees; the separate boundary makes those trade-offs visible before output is written.
