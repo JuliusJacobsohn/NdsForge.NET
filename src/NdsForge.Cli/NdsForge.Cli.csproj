@@ -11,10 +11,10 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <IsPackable>true</IsPackable>
+    <NoWarn>$(NoWarn);CA1303;CA1849</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../NdsForge/NdsForge.csproj" />
     <None Include="../../README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 </Project>
-
