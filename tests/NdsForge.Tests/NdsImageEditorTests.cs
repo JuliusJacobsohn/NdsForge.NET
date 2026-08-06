@@ -125,4 +125,60 @@ public sealed class NdsImageEditorTests
         Assert.Equal("Replacement", output.Banner?.Titles[NdsBannerLanguage.English]);
         Assert.True(output.Validate().IsValid);
     }
+
+    [Fact]
+    public async Task NoOpDamagedImageStaysByteIdenticalWhenVerificationIsDisabled()
+    {
+        byte[] source = SyntheticImage.CreateHeaderOnly();
+        source[0x15E] ^= 0x40;
+        using NdsImage image = NdsImage.Load(source);
+        using var destination = new MemoryStream();
+
+        await image.Edit().SaveAsync(
+            destination,
+            new() { VerifyOutput = false },
+            TestContext.Current.CancellationToken).ConfigureAwait(true);
+
+        Assert.Equal(source, destination.ToArray());
+    }
+
+    [Fact]
+    public async Task NamedHeaderAndLogoRepairsTouchOnlyChecksumFields()
+    {
+        byte[] source = SyntheticImage.CreateHeaderOnly();
+        source[0xC0] ^= 0x20;
+        source[0x15C] ^= 0x01;
+        source[0x15E] ^= 0x02;
+        using NdsImage image = NdsImage.Load(source);
+        NdsImageEditor editor = image.Edit().RepairNintendoLogoCrc();
+        using var destination = new MemoryStream();
+
+        await editor.SaveAsync(destination, cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        byte[] repaired = destination.ToArray();
+        using NdsImage output = NdsImage.Load(repaired);
+
+        Assert.Equal(NdsRepairKind.HeaderCrc | NdsRepairKind.NintendoLogoCrc, editor.Plan.Repairs);
+        Assert.True(editor.Plan.HasChanges);
+        Assert.True(output.Validate().IsValid);
+        Assert.Equal(source.AsSpan(0, 0x15C).ToArray(), repaired.AsSpan(0, 0x15C).ToArray());
+        Assert.Equal(source.AsSpan(0x160).ToArray(), repaired.AsSpan(0x160).ToArray());
+    }
+
+    [Fact]
+    public async Task BannerRepairPreservesPayloadAndReservedBytes()
+    {
+        byte[] source = SyntheticImage.CreateWithBanner();
+        source[0x302] ^= 0x10;
+        using NdsImage image = NdsImage.Load(source);
+        NdsImageEditor editor = image.Edit().RepairBannerCrcs();
+        using var destination = new MemoryStream();
+
+        await editor.SaveAsync(destination, cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        byte[] repaired = destination.ToArray();
+        using NdsImage output = NdsImage.Load(repaired);
+
+        Assert.Equal(NdsRepairKind.BannerCrcs, editor.Plan.Repairs);
+        Assert.True(output.Validate().IsValid);
+        Assert.Equal(source.AsSpan(0x304, 0x83C).ToArray(), repaired.AsSpan(0x304, 0x83C).ToArray());
+    }
 }

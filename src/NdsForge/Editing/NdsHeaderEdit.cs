@@ -5,10 +5,13 @@ namespace NdsForge;
 /// <summary>Collects validated mutable identity and card-control header fields.</summary>
 public sealed class NdsHeaderEdit
 {
+    /// <summary>Anchors change detection to parsed values so no-op sessions remain byte-preserving even for damaged CRCs.</summary>
+    private readonly NdsHeader _source;
     /// <summary>Seeds editable fields from a parsed header while deliberately excluding structural offsets and security bytes.</summary>
     /// <param name="source">Header whose developer-safe identity and card-control values become initial edits.</param>
     internal NdsHeaderEdit(NdsHeader source)
     {
+        _source = source;
         Title = source.Title;
         GameCode = source.GameCode;
         MakerCode = source.MakerCode;
@@ -46,6 +49,18 @@ public sealed class NdsHeaderEdit
 
     /// <summary>Controls the raw 16-bit timeout applied to secure-area cartridge transfers.</summary>
     public ushort SecureTransferTimeout { get; set; }
+
+    /// <summary>Compares every editable projection value without serializing or normalizing caller text.</summary>
+    internal bool HasChanges =>
+        Title != _source.Title ||
+        GameCode != _source.GameCode ||
+        MakerCode != _source.MakerCode ||
+        Version != _source.Version ||
+        RegionCode != _source.RegionCode ||
+        AutoStart != _source.AutoStart ||
+        NormalCardControl != _source.NormalCardControl ||
+        SecureCardControl != _source.SecureCardControl ||
+        SecureTransferTimeout != _source.SecureTransferTimeout;
 
     /// <summary>Validates and overlays only supported mutable fields onto a lossless header copy before CRC recalculation.</summary>
     /// <param name="header">Complete mutable common header prefix containing all destination offsets.</param>

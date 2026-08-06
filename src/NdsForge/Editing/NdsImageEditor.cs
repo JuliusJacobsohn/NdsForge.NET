@@ -11,6 +11,10 @@ public sealed class NdsImageEditor
     private readonly Dictionary<int, byte[]> _replacements = [];
     /// <summary>Holds a checksummed banner to overwrite in place or append when its layout grows.</summary>
     private NdsBanner? _bannerReplacement;
+    /// <summary>Records named repairs independently from ordinary edits for plan review and precise metadata writes.</summary>
+    private NdsRepairKind _repairs;
+    /// <summary>Holds the key-derived encrypted-form checksum only after secure-area inspection succeeds.</summary>
+    private ushort? _secureAreaCrc;
 
     /// <summary>Begins a non-mutating session and initializes the restricted header-edit projection from the source.</summary>
     /// <param name="image">Live source image retained for lazy copying and final verification.</param>
@@ -28,6 +32,9 @@ public sealed class NdsImageEditor
         .OrderBy(static pair => pair.Key)
         .Select(pair => CreateChange(pair.Key, pair.Value))
         .ToArray();
+
+    /// <summary>Snapshots all pending semantic changes and named repairs for review before a destination is opened.</summary>
+    public NdsEditPlan Plan => new(Changes, Header.HasChanges, _bannerReplacement is not null, _repairs);
 
     /// <summary>Replaces a named NitroFS file.</summary>
     /// <param name="path">The canonical or root-relative NitroFS path.</param>
@@ -80,6 +87,55 @@ public sealed class NdsImageEditor
     {
         ArgumentNullException.ThrowIfNull(banner);
         _bannerReplacement = banner;
+        return this;
+    }
+
+    /// <summary>Selects only the common header checksum for repair; other damaged checksums remain untouched.</summary>
+    /// <returns>This editor.</returns>
+    public NdsImageEditor RepairHeaderCrc()
+    {
+        _repairs |= NdsRepairKind.HeaderCrc;
+        return this;
+    }
+
+    /// <summary>Selects the dedicated logo checksum and the dependent common header checksum for repair.</summary>
+    /// <returns>This editor.</returns>
+    public NdsImageEditor RepairNintendoLogoCrc()
+    {
+        _repairs |= NdsRepairKind.NintendoLogoCrc | NdsRepairKind.HeaderCrc;
+        return this;
+    }
+
+    /// <summary>Replaces the current banner with a copy whose version-defined CRC slots are repaired in place.</summary>
+    /// <returns>This editor.</returns>
+    /// <exception cref="InvalidOperationException">The source contains no banner to repair.</exception>
+    public NdsImageEditor RepairBannerCrcs()
+    {
+        NdsBanner banner = _bannerReplacement ?? _image.Banner ??
+            throw new InvalidOperationException("The image has no banner checksum fields to repair.");
+        _bannerReplacement = banner.WithRepairedCrcs();
+        _repairs |= NdsRepairKind.BannerCrcs;
+        return this;
+    }
+
+    /// <summary>
+    /// Selects secure-area CRC repair after the explicit KEY1 table proves whether source bytes are encrypted or
+    /// reconstructs the encrypted checksum representation from a decrypted dump.
+    /// </summary>
+    /// <param name="keyTable">Complete caller-authorized KEY1 seed schedule.</param>
+    /// <returns>This editor.</returns>
+    /// <exception cref="InvalidOperationException">The interval is absent, malformed, unrecognized, or not checksumable.</exception>
+    public NdsImageEditor RepairSecureAreaCrc(NdsKey1KeyTable keyTable)
+    {
+        ArgumentNullException.ThrowIfNull(keyTable);
+        NdsSecureAreaInspection inspection = NdsSecureArea.Inspect(_image, keyTable);
+        if (!inspection.IsTransformable || inspection.CalculatedCrc is not ushort calculated)
+        {
+            throw new InvalidOperationException($"Secure-area state {inspection.State} cannot produce a verified CRC repair.");
+        }
+
+        _secureAreaCrc = calculated;
+        _repairs |= NdsRepairKind.SecureAreaCrc | NdsRepairKind.HeaderCrc;
         return this;
     }
 
@@ -262,10 +318,31 @@ public sealed class NdsImageEditor
         Header.Apply(header);
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x68), bannerOffset);
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)usedSize));
-        header[0x14] = CalculateDeviceCapacity(usedSize, _image.Header.DeviceCapacityExponent);
-        BinaryPrimitives.WriteUInt16LittleEndian(
-            header.AsSpan(0x15E),
-            NdsChecksums.ComputeCrc16(header.AsSpan(0, 0x15E)));
+        if (_secureAreaCrc is ushort secureAreaCrc)
+        {
+            BinaryPrimitives.WriteUInt16LittleEndian(header.AsSpan(0x6C), secureAreaCrc);
+        }
+
+        if ((_repairs & NdsRepairKind.NintendoLogoCrc) != 0)
+        {
+            BinaryPrimitives.WriteUInt16LittleEndian(
+                header.AsSpan(0x15C),
+                NdsChecksums.ComputeCrc16(header.AsSpan(0xC0, 156)));
+        }
+
+        byte capacity = CalculateDeviceCapacity(usedSize, _image.Header.DeviceCapacityExponent);
+        header[0x14] = capacity;
+        bool commonHeaderChanged = Header.HasChanges ||
+            bannerOffset != _image.Header.BannerOffset ||
+            usedSize != _image.Header.UsedImageSize ||
+            capacity != _image.Header.DeviceCapacityExponent ||
+            (_repairs & (NdsRepairKind.HeaderCrc | NdsRepairKind.NintendoLogoCrc | NdsRepairKind.SecureAreaCrc)) != 0;
+        if (commonHeaderChanged)
+        {
+            BinaryPrimitives.WriteUInt16LittleEndian(
+                header.AsSpan(0x15E),
+                NdsChecksums.ComputeCrc16(header.AsSpan(0, 0x15E)));
+        }
         destination.Position = 0;
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
     }

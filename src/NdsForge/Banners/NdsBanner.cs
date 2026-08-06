@@ -188,19 +188,32 @@ public sealed class NdsBanner
         return steps.AsReadOnly();
     }
 
+    /// <summary>
+    /// Returns a byte-preserving banner copy with only the version-defined CRC fields recalculated. Reserved bytes,
+    /// titles, pixels, palettes, sequence capacity, and unused checksum slots remain unchanged.
+    /// </summary>
+    /// <returns>An immutable repaired banner suitable for an explicit preservation edit.</returns>
+    public NdsBanner WithRepairedCrcs()
+    {
+        byte[] data = _data.ToArray();
+        int slots = GetCrcCount(Version);
+        for (int slot = 0; slot < slots; slot++)
+        {
+            (int offset, int length) = GetCrcRegion(slot);
+            BinaryPrimitives.WriteUInt16LittleEndian(
+                data.AsSpan(2 + (slot * 2)),
+                NdsChecksums.ComputeCrc16(data.AsSpan(offset, length)));
+        }
+
+        return Parse(data);
+    }
+
     /// <summary>Validates every cumulative CRC slot defined by the version and reports its absolute protected region.</summary>
     /// <param name="bannerOffset">Image offset used to translate banner-relative coverage into diagnostics.</param>
     /// <returns>Zero or more stable errors; reserved CRC slots from earlier versions are intentionally ignored.</returns>
     internal IEnumerable<NdsDiagnostic> ValidateCrcs(uint bannerOffset)
     {
-        int slots = Version switch
-        {
-            1 => 1,
-            2 => 2,
-            3 => 3,
-            0x0103 => 4,
-            _ => 0,
-        };
+        int slots = GetCrcCount(Version);
 
         for (int slot = 0; slot < slots; slot++)
         {
@@ -239,6 +252,18 @@ public sealed class NdsBanner
         2 => (0x20, 0xA20),
         3 => (0x1240, 0x1180),
         _ => throw new ArgumentOutOfRangeException(nameof(slot)),
+    };
+
+    /// <summary>Maps layout revisions to the number of meaningful cumulative checksum slots.</summary>
+    /// <param name="version">Already supported banner version.</param>
+    /// <returns>One through four checksum fields.</returns>
+    private static int GetCrcCount(ushort version) => version switch
+    {
+        1 => 1,
+        2 => 2,
+        3 => 3,
+        0x0103 => 4,
+        _ => 0,
     };
 
     /// <summary>Finds a two-byte-aligned NUL so embedded zero bytes within non-ASCII UTF-16 code units do not truncate text.</summary>

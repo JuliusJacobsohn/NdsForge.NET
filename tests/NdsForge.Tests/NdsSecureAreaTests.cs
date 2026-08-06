@@ -117,6 +117,24 @@ public sealed class NdsSecureAreaTests
         Assert.Equal([9, 8, 7], output.ToArray());
     }
 
+    [Fact]
+    public async Task ExplicitEditorRepairUpdatesSecureAndDependentHeaderCrcs()
+    {
+        byte[] bytes = CreateImageWithSecureArea(out NdsKey1KeyTable key);
+        bytes[0x6C] ^= 0x20;
+        bytes[0x15E] ^= 0x40;
+        using NdsImage image = NdsImage.Load(bytes);
+        NdsImageEditor editor = image.Edit().RepairSecureAreaCrc(key);
+        using var destination = new MemoryStream();
+
+        await editor.SaveAsync(destination, cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        using NdsImage output = NdsImage.Load(destination.ToArray());
+        NdsValidationResult validation = output.Validate(new NdsValidationOptions().SetSecureAreaKeyTable(key));
+
+        Assert.Equal(NdsRepairKind.SecureAreaCrc | NdsRepairKind.HeaderCrc, editor.Plan.Repairs);
+        Assert.True(validation.IsValid);
+    }
+
     private static byte[] CreateDecryptedArea()
     {
         var area = new byte[NdsSecureArea.ByteLength];
