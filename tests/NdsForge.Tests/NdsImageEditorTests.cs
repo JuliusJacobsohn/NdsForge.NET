@@ -107,4 +107,22 @@ public sealed class NdsImageEditorTests
             destination,
             cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true));
     }
+
+    [Fact]
+    public async Task BannerReplacementRoundTripsAndVerifies()
+    {
+        using NdsImage image = NdsImage.Load(SyntheticImage.CreateWithBanner());
+        using var destination = new MemoryStream();
+        NdsBanner banner = new NdsBannerBuilder()
+            .SetTitle(NdsBannerLanguage.English, "Replacement")
+            .Build();
+
+        await image.Edit().ReplaceBanner(banner).SaveAsync(
+            destination,
+            cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        using NdsImage output = NdsImage.Load(destination.ToArray());
+
+        Assert.Equal("Replacement", output.Banner?.Titles[NdsBannerLanguage.English]);
+        Assert.True(output.Validate().IsValid);
+    }
 }

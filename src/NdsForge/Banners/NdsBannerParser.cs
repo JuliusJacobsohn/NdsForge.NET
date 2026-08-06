@@ -17,7 +17,7 @@ internal static class NdsBannerParser
         int size = GetValidatedSize(NdsBinary.ReadUInt16(versionBytes, 0), options);
         byte[] data = new byte[size];
         source.ReadExactly(offset, data);
-        return new(data);
+        return NdsBanner.Parse(data);
     }
 
     public static async ValueTask<NdsBanner?> ParseAsync(
@@ -36,7 +36,7 @@ internal static class NdsBannerParser
         int size = GetValidatedSize(NdsBinary.ReadUInt16(versionBytes, 0), options);
         byte[] data = new byte[size];
         await source.ReadExactlyAsync(offset, data, cancellationToken).ConfigureAwait(false);
-        return new(data);
+        return NdsBanner.Parse(data);
     }
 
     private static int GetValidatedSize(ushort version, NdsReadOptions options)
@@ -50,4 +50,3 @@ internal static class NdsBannerParser
         return size;
     }
 }
-

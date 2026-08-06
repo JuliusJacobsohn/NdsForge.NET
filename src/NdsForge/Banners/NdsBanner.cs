@@ -34,6 +34,27 @@ public sealed class NdsBanner
         Titles = new ReadOnlyDictionary<NdsBannerLanguage, string>(titles);
     }
 
+    /// <summary>Parses a complete raw banner from memory.</summary>
+    /// <param name="data">Exactly one supported banner structure.</param>
+    /// <returns>The immutable parsed banner.</returns>
+    public static NdsBanner Parse(ReadOnlyMemory<byte> data)
+    {
+        if (data.Length < 2)
+        {
+            throw new InvalidDataException("A banner is too small to contain a version.");
+        }
+
+        ushort version = NdsBinary.ReadUInt16(data.Span, 0);
+        int expected = GetSize(version);
+        if (data.Length != expected)
+        {
+            throw new InvalidDataException(
+                $"Banner version 0x{version:X4} requires 0x{expected:X} bytes, not 0x{data.Length:X}.");
+        }
+
+        return new(data.ToArray());
+    }
+
     /// <summary>Gets the raw banner version value.</summary>
     public ushort Version { get; }
 

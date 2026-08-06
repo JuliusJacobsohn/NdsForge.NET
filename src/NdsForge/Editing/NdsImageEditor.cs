@@ -7,6 +7,7 @@ public sealed class NdsImageEditor
 {
     private readonly NdsImage _image;
     private readonly Dictionary<int, byte[]> _replacements = [];
+    private NdsBanner? _bannerReplacement;
 
     internal NdsImageEditor(NdsImage image)
     {
@@ -66,6 +67,16 @@ public sealed class NdsImageEditor
     /// <param name="fileId">The FAT file ID.</param>
     /// <returns>Whether a pending change was removed.</returns>
     public bool Revert(int fileId) => _replacements.Remove(fileId);
+
+    /// <summary>Replaces or adds the menu banner.</summary>
+    /// <param name="banner">The checksummed banner to write.</param>
+    /// <returns>This editor.</returns>
+    public NdsImageEditor ReplaceBanner(NdsBanner banner)
+    {
+        ArgumentNullException.ThrowIfNull(banner);
+        _bannerReplacement = banner;
+        return this;
+    }
 
     /// <summary>Saves to a new or atomically replaced filesystem path.</summary>
     /// <param name="path">The destination image path.</param>
@@ -166,10 +177,27 @@ public sealed class NdsImageEditor
             allocations[fileId] = new(offset, contents.LongLength);
         }
 
+        uint bannerOffset = _image.Header.BannerOffset;
+        if (_bannerReplacement is not null)
+        {
+            long originalLength = _image.Banner?.RawData.Length ?? 0;
+            long offset = bannerOffset;
+            if (bannerOffset == 0 || _bannerReplacement.RawData.Length > originalLength)
+            {
+                offset = Align(usedSize, options.RelocatedFileAlignment);
+                await FillGapAsync(destination, offset, options.PaddingByte, cancellationToken).ConfigureAwait(false);
+            }
+
+            destination.Position = offset;
+            await destination.WriteAsync(_bannerReplacement.RawData, cancellationToken).ConfigureAwait(false);
+            usedSize = Math.Max(usedSize, offset + _bannerReplacement.RawData.Length);
+            bannerOffset = checked((uint)offset);
+        }
+
         usedSize = Math.Max(usedSize, _image.Header.UsedImageSize);
         long physicalSize = Math.Max(_image.Length, usedSize);
         destination.SetLength(physicalSize);
-        await WriteMetadataAsync(destination, allocations, usedSize, cancellationToken).ConfigureAwait(false);
+        await WriteMetadataAsync(destination, allocations, usedSize, bannerOffset, cancellationToken).ConfigureAwait(false);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
 
         if (options.VerifyOutput)
@@ -197,6 +225,7 @@ public sealed class NdsImageEditor
         Stream destination,
         NdsRegion[] allocations,
         long usedSize,
+        uint bannerOffset,
         CancellationToken cancellationToken)
     {
         if (usedSize > uint.MaxValue)
@@ -216,6 +245,7 @@ public sealed class NdsImageEditor
         await destination.WriteAsync(fat, cancellationToken).ConfigureAwait(false);
         byte[] header = _image.Header.RawData.ToArray();
         Header.Apply(header);
+        BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x68), bannerOffset);
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)usedSize));
         header[0x14] = CalculateDeviceCapacity(usedSize, _image.Header.DeviceCapacityExponent);
         BinaryPrimitives.WriteUInt16LittleEndian(
@@ -249,6 +279,12 @@ public sealed class NdsImageEditor
             {
                 throw new InvalidDataException($"Output verification failed for FAT file ID {fileId}.");
             }
+        }
+
+        if (_bannerReplacement is not null &&
+            (output.Banner is null || !output.Banner.RawData.Span.SequenceEqual(_bannerReplacement.RawData.Span)))
+        {
+            throw new InvalidDataException("Output verification failed for the banner.");
         }
     }
 
