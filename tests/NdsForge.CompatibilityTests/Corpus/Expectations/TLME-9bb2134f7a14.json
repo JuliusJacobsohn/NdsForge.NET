@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "LEGO\u00AE MARVEL - WB Games Inc. [TLME] [USA - English].nds",
+    "length": 134217728,
+    "sha256": "9bb2134f7a14ec8c726d91e89447c5f4a9c7298bb2177db38d4cbe3fa50205d9",
+    "headerTitle": "LEGOMARV",
+    "gameCode": "TLME",
+    "makerCode": "WR",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "LEGO\u00AE MARVEL - WB Games Inc.",
+    "bannerTitles": {
+      "Japanese": "LEGO\u00AE MARVEL\nWB Games Inc.",
+      "English": "LEGO\u00AE MARVEL\nWB Games Inc.",
+      "French": "LEGO\u00AE MARVEL\nWB Games Inc.",
+      "German": "LEGO\u00AE MARVEL\nWB Games Inc.",
+      "Italian": "LEGO\u00AE MARVEL\nWB Games Inc.",
+      "Spanish": "LEGO\u00AE MARVEL\nWB Games Inc."
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "info",
+      "exitCode": 0,
+      "standardOutputSha256": "EC4456C8C1A200B1DB38610EFE803350B10C57EC3DB1B004C18B9FD036A86436",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "verbose-info",
+      "exitCode": 0,
+      "standardOutputSha256": "2BF33EA52C25254BE7AE45125E43451D235B51E69247C445F49BE698D2BE684A",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "list",
+      "exitCode": 0,
+      "standardOutputSha256": "C7D7840090A477BD5224F4B55775B072B5131895471CE8E9F6DB4DA28CB85BE9",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "wildcard-list",
+      "exitCode": 0,
+      "standardOutputSha256": "A9D3720FEA7F64D49242A90FF938E940A17C8A4E6B58526CBF42651A179A99E7",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 156808,
+          "sha256": "192C705D5FA2AF4611E553DF54D726D6516BF68AD845FB03CC62EB1923ABBB87"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1788004,
+          "sha256": "B2A031C318950CEEE47A5E28C10A3C033457AA15A0152BF728A46755E6131C70"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "42507BEE3B428A29FE5851FACA041EAA602C444AEB4F532FCB6511B22219D691"
+        },
+        {
+          "path": "data/CutScenes/lvl_01_grandcentral_a_intro.fmv",
+          "length": 7081601,
+          "sha256": "3ECEA705E453EE8354656404284D28E0A199D119D7DE03D9499F4AC886145393"
+        },
+        {
+          "path": "data/CutScenes/lvl_01_grandcentral_c_outro.fmv",
+          "length": 3241768,
+          "sha256": "9796834DB6D68F5D6792A5A9A63DC3A0BB50E268968440642B74917D4F638940"
+        },
+        {
+          "path": "data/CutScenes/lvl_02_baxterbuilding_a_intro.fmv",
+          "length": 1283866,
+          "sha256": "5D689346D2F1CF064547D31F5BE30249ABC775CA0F6DA66B313A07A178330E97"
+        },
+        {
+          "path": "data/CutScenes/lvl_02_baxterbuilding_c_outro.fmv",
+          "length": 1488187,
+          "sha256": "180CBD8327DCA761BCE1B783280DA54D4C80FFCFF5704BB16508935E5252D114"
+        },
+        {
+          "path": "data/CutScenes/lvl_03_oscorp_a_intro.fmv",
+          "length": 1137454,
+          "sha256": "51A23B77747A4FED3FCAE5F811D0179C523B85D666AE9A9FD7BD9BD190489901"
+        },
+        {
+          "path": "data/CutScenes/lvl_03_oscorp_c_outro.fmv",
+          "length": 1323104,
+          "sha256": "E0A7F77CE8453E364B3B016348E3DAAFE7BD0C7E0B3B5B91359B91AB5D208914"
+        },
+        {
+          "path": "data/CutScenes/lvl_04_theraft_a_intro.fmv",
+          "length": 2832634,
+          "sha256": "2954B4B4F4413E28F8657CF3C82AB454EE7CA5048855BE8277FAF245CB4A8E87"
+        },
+        {
+          "path": "data/CutScenes/lvl_04_theraft_c_outro.fmv",
+          "length": 1727429,
+          "sha256": "6F6810B656120966F76BD778B9092CAA262ACFF2A5D9F4B21CB3AC1858A690F1"
+        },
+        {
+          "path": "data/CutScenes/lvl_05_starktower_a_intro.fmv",
+          "length": 1483415,
+          "sha256": "E4A03FD761750E2F7E9E8431853F4C645CFABD66FE8D778735D0DDE72DD4AF37"
+        },
+        {
+          "path": "data/CutScenes/lvl_05_starktower_c_outro.fmv",
+          "length": 822926,
+          "sha256": "EF90E2214450FC94E369D814EB8ABC6411F180DD5E1A613E4A5ED014E6DF7A5E"
+        },
+        {
+          "path": "data/CutScenes/lvl_06_hydrabase_a_intro.fmv",
+          "length": 277828,
+          "sha256": "2BF9F748B4D06576428009F859C4FCB712F97E06D5502C0E2B234A0237DE39D9"
+        },
+        {
+          "path": "data/CutScenes/lvl_06_hydrabase_c_outro.fmv",
+          "length": 1010566,
+          "sha256": "75A63E3204CC81F8EE7C3CDEB5CEA62ED27C422609F87C305F05E4F0B00651C0"
+        },
+        {
+          "path": "data/CutScenes/lvl_07_asgard_a_intro.fmv",
+          "length": 1315110,
+          "sha256": "13BC38E815B747AB168F548E9CE8DC3CFDE73B58DF6974C8B4DB1706EAD52950"
+        },
+        {
+          "path": "data/CutScenes/lvl_07_asgard_c_outro.fmv",
+          "length": 2492194,
+          "sha256": "A65F1112166EFA9B14F309451FF0DA3E5B565F5546DF05AF531192284A914A5E"
+        },
+        {
+          "path": "data/CutScenes/lvl_08_xmansion_a_intro.fmv",
+          "length": 270931,
+          "sha256": "5D072078CA46E7ED70905C6770B93E246B8C777151C5751485E4B82279BC9CAF"
+        },
+        {
+          "path": "data/CutScenes/lvl_08_xmansion_c_outro.fmv",
+          "length": 796941,
+          "sha256": "3922C180D8D9C5B9AACF4FA8753CFF059E9B3EC0C7FAD0F7CB2289915F6E10E3"
+        },
+        {
+          "path": "data/CutScenes/lvl_09_castlevondoom_b_intro.fmv",
+          "length": 1160855,
+          "sha256": "0D333D7EA0EF64DDB8F34596C8107D4AD9E7CFE1DF08DDBC39EFF41120D2161D"
+        },
+        {
+          "path": "data/CutScenes/lvl_09_castlevondoom_d_outro.fmv",
+          "length": 2003369,
+          "sha256": "EAD11EBDF35CB540ACD5A62B4C180408CCEA8F73A4FC2F4C905FBAD00C693E26"
+        },
+        {
+          "path": "data/CutScenes/lvl_10_doomtanker_a_intro.fmv",
+          "length": 2763197,
+          "sha256": "AAB96A0C7521C515A47193B62B41C3B998516A6360E4E507DB0088AB8E88AC8A"
+        },
+        {
+          "path": "data/CutScenes/lvl_10_doomtanker_c_outro.fmv",
+          "length": 1567492,
+          "sha256": "72B1BB98057E2C3C396997D4468F91DA1FA9CDC8ABD6D18235BCF2A18030140F"
+        },
+        {
+          "path": "data/CutScenes/lvl_11_nypowerplant_a_intro.fmv",
+          "length": 1564211,
+          "sha256": "9E4F1B21CC13DC4EE8E153C6E8C06E7EB7A25DC3A89197A6A3CCD4A0B455F484"
+        },
+        {
+          "path": "data/CutScenes/lvl_11_nypowerplant_c_outro.fmv",
+          "length": 889884,
+          "sha256": "55A1926B3E08EE2A81D1892E2D4213313181770FE0566FE4C21E249DA0008E15"
+        },
+        {
+          "path": "data/CutScenes/lvl_12_asteroidm_a_intro.fmv",
+          "length": 2878139,
+          "sha256": "FF0017989A27C9C6C603633B390DF3661FF6764ABAB3E5E7766105DA4F3F20D5"
+        },
+        {
+          "path": "data/CutScenes/lvl_12_asteroidm_c_outro.fmv",
+          "length": 1702624,
+          "sha256": "9D9906EC812B45E12F7F84BCDE2BE3974E17AAC00F02132BABFCA542AFCD65DE"
+        },
+        {
+          "path": "data/CutScenes/lvl_13_asteroidminterior_a_intro.fmv",
+          "length": 2807092,
+          "sha256": "748136EC8862391337EAD6A404C2DCF29D5CB923A620A68296982964B7CBE32E"
+        },
+        {
+          "path": "data/CutScenes/lvl_13_asteroidminterior_c_outro.fmv",
+          "length": 684534,
+          "sha256": "F662EA26A56B068D7C3C8BDBA8227BCE82166D6067AB09350EB896F78B117633"
+        },
+        {
+          "path": "data/CutScenes/lvl_14_doomshowdown_a_intro.fmv",
+          "length": 3718163,
+          "sha256": "2BDF1D66E5451A8DA3D8B37EB05416FA015C2B0981293660623FAA687F6DC190"
+        },
+        {
+          "path": "data/CutScenes/lvl_14_doomshowdown_c_outro.fmv",
+          "length": 483791,
+          "sha256": "49B355E1B0C7B577ACD7ADE0387BE98C2F368C67F99438FF7245189AAC6189A9"
+        },
+        {
+          "path": "data/CutScenes/lvl_15_galactus_a_intro.fmv",
+          "length": 3097269,
+          "sha256": "A9DB3C6A45111BBF2DF8452507FAD4A8960749E8E9CB5175D0B969ACC89218D9"
+        },
+        {
+          "path": "data/CutScenes/lvl_15_galactus_c_outro.fmv",
+          "length": 3108496,
+          "sha256": "7E19523D4CC9117EF7664D24963A3EFDF38FBC7B14CAF84C5DB778FDECD008EC"
+        },
+        {
+          "path": "data/LEGO_M1_01.fib",
+          "length": 315475,
+          "sha256": "3B061500FBA7C22930D8CF73483102A411C663F0562396EC776608CB0F0296B7"
+        },
+        {
+          "path": "data/LEGO_M1_02.fib",
+          "length": 579996,
+          "sha256": "D0E343597F56CBBAE19D83A3EF5927FAA5658559BB488F4905A84059440007E3"
+        },
+        {
+          "path": "data/LEGO_M1_03.fib",
+          "length": 218917,
+          "sha256": "60A20F427179BF20AD5DA91554587E3A20FCFBF88DF05EC15FDBF2F97B9CB7FC"
+        },
+        {
+          "path": "data/LEGO_M1_04.fib",
+          "length": 369964,
+          "sha256": "3367982096FF1056D389ED4FBB08277085DB89B17253E3613DE151C60E621765"
+        },
+        {
+          "path": "data/LEGO_M1_05.fib",
+          "length": 421044,
+          "sha256": "538526DAEF85B9B0D25B068CF54380F0029DFB1EFF4285ADE75784100E3C3D45"
+        },
+        {
+          "path": "data/LEGO_M1_06.fib",
+          "length": 357759,
+          "sha256": "7CA1CA8EFE3A610F636CFAD72A5E9E4D26938B19CFF87909B04A99CFDB01BFE7"
+        },
+        {
+          "path": "data/LEGO_M1_07.fib",
+          "length": 479018,
+          "sha256": "80C62BAC507CEA144A22CE39296D6DDDCF0868715E7DAB82890B8D8C5A5F5CD5"
+        },
+        {
+          "path": "data/LEGO_M1_08.fib",
+          "length": 569765,
+          "sha256": "6A836D97D7209C47C92D9FC4D72E7D3A5CC80333CFF947592CE54CB752A1F556"
+        },
+        {
+          "path": "data/LEGO_M1_09.fib",
+          "length": 465758,
+          "sha256": "4305C33345D06A9DF681C39E18523D06596FE4CFB14D85EAF1F90D7949242ED4"
+        },
+        {
+          "path": "data/LEGO_M1_10.fib",
+          "length": 519214,
+          "sha256": "D9237D0831E8273A0B8C10CC87DCBCE07B970D25927385CA0ECDA6E189FCD1D5"
+        },
+        {
+          "path": "data/LEGO_M1_11.fib",
+          "length": 808269,
+          "sha256": "C94CFFC7B3EBE3F2D99640677E76A584B894EFAE12E9959604291984E5A73F26"
+        },
+        {
+          "path": "data/LEGO_M1_12.fib",
+          "length": 316955,
+          "sha256": "30A63AC1E9384A3E56840185380EE40CF05DB452C295A015572412B9B8BCB650"
+        },
+        {
+          "path": "data/LEGO_M1_13.fib",
+          "length": 414994,
+          "sha256": "9F7090B19F7CDEC761A8CBFBAC0856E148C28A22CD5E524677966D22A8692C3C"
+        },
+        {
+          "path": "data/LEGO_M1_14.fib",
+          "length": 443251,
+          "sha256": "9EB2B53B214EC042F0311BB19B9F7DB250B539023AFC1CC7B84A442AA60F81E5"
+        },
+        {
+          "path": "data/LEGO_M1_15.fib",
+          "length": 342002,
+          "sha256": "FC18D971B4D3E2224E7857C4FA92C0F926E807C65FD7042D6F51EFF4E1337C75"
+        },
+        {
+          "path": "data/LEGO_M1_16.fib",
+          "length": 420130,
+          "sha256": "31FDE3C04A676F28144F5F8712AB56932101E6CBDC72EA47FAB77E4F633CF2BF"
+        },
+        {
+          "path": "data/LEGO_M1_17.fib",
+          "length": 489562,
+          "sha256": "3B6393D30477B2AFA68536E01EAD90CA117EAA2086A7BB42F9E00DAAA1504F74"
+        },
+        {
+          "path": "data/LEGO_M1_18.fib",
+          "length": 250289,
+          "sha256": "15ECE4E339E9BB06442AEB43DD56463A66B27B2D091229C1129028150E3EA6A8"
+        },
+        {
+          "path": "data/LEGO_M1_19.fib",
+          "length": 300491,
+          "sha256": "8E6B325926663BD4AD94D010FED36C8BD2DB139088DD7DD38C327FA0CC5C5171"
+        },
+        {
+          "path": "data/LEGO_M1_20.fib",
+          "length": 634643,
+          "sha256": "4ADB78D92886768406127250A15FE5014A699BAB2202656B049FBCC3108B283F"
+        },
+        {
+          "path": "data/LEGO_M1_21.fib",
+          "length": 439111,
+          "sha256": "0539AE0E3BC3836EE8D5DBCC4AF4F6F8E4DC657369B3A9E027AA82AF2AF0DD0E"
+        },
+        {
+          "path": "data/LEGO_M1_22.fib",
+          "length": 517554,
+          "sha256": "A48CF131BAC5826C7B8D5746C32FBD12621746356D87FA39AAC02C507E3E334E"
+        },
+        {
+          "path": "data/LEGO_M1_23.fib",
+          "length": 499446,
+          "sha256": "9A4AAF0423332E749D02F0937096129CB2DC3FD02EB4DFFAC8DED46350205E1B"
+        },
+        {
+          "path": "data/LEGO_M1_24.fib",
+          "length": 282958,
+          "sha256": "9B0C55A7EAD353339E8DB5DCB28C2268F458A1052A71547AA8321B6281F85C37"
+        },
+        {
+          "path": "data/LEGO_M1_25.fib",
+          "length": 474688,
+          "sha256": "A6A507421BFEFE49E0877976DB372E923AE37D1DD464A97E4E5AC8E2FE453C7D"
+        },
+        {
+          "path": "data/LEGO_M1_26.fib",
+          "length": 441705,
+          "sha256": "DB9EF86B388EF110FDDCEBA9F81AEECE2F4A3A8C806976E95151B3A2A434FBE2"
+        },
+        {
+          "path": "data/LEGO_M1_27.fib",
+          "length": 304540,
+          "sha256": "ABB6F62E3ADF931D1356CC0E600D8FB9062EF61D4290311C3C821F3465C4D581"
+        },
+        {
+          "path": "data/LEGO_M1_28.fib",
+          "length": 491977,
+          "sha256": "C0F2BE6BB386809A0902779B4B5BFB5D7D8ECE3223E130EB4A64E128F5B5827D"
+        },
+        {
+          "path": "data/LEGO_M1_29.fib",
+          "length": 314004,
+          "sha256": "FDEC36F7E50CC2073AD5674AAB18DB5B91C51A72C897F2EDFB471930D8C18BD1"
+        },
+        {
+          "path": "data/LEGO_M1_30.fib",
+          "length": 437063,
+          "sha256": "61AF87536C09D442D2521A754384A688C38B2C2537F26E28013D6E4F10F07EAF"
+        },
+        {
+          "path": "data/LEGO_M1_31.fib",
+          "length": 347610,
+          "sha256": "E63421D17F4889AC2A62A3ECE82133EA2028D88A93F1380B4D0733F76C1F45F3"
+        },
+        {
+          "path": "data/LEGO_M1_32.fib",
+          "length": 335857,
+          "sha256": "1B81910E2B7B71526C4433658FFD1E8BB2D1D9F29A403190DB6619B764D48550"
+        },
+        {
+          "path": "data/LEGO_M1_33.fib",
+          "length": 185155,
+          "sha256": "32702FE9D54BBCD4AFC20CFDB3954653D837724564E47E5CB6C3860257ADF727"
+        },
+        {
+          "path": "data/LEGO_M1_34.fib",
+          "length": 598933,
+          "sha256": "207CB0EEE268D0E227D0647579B19B1D78DBA83EEFCFF04EB78E26068DE44595"
+        },
+        {
+          "path": "data/LEGO_M1_35.fib",
+          "length": 524618,
+          "sha256": "4A35C49597916739D945A6B4855B260FB00D9486322DE55D30C9263C73B9004E"
+        },
+        {
+          "path": "data/LEGO_M1_36.fib",
+          "length": 211075,
+          "sha256": "B877ECCA42DAE45DD70D16BD9ED18C9A610E8C4B7D0A2CDF3080001C3C4A8F72"
+        },
+        {
+          "path": "data/LEGO_M1_37.fib",
+          "length": 423110,
+          "sha256": "4F08F34D28B9C4436779FE52AAC38A1CB735E4E21A9A8078253BF2355AEA4B0C"
+        },
+        {
+          "path": "data/LEGO_M1_38.fib",
+          "length": 525394,
+          "sha256": "30E5913A7E916A488319EC0609B03998CB482AA90A168ADA6D17BF7F6B8F9358"
+        },
+        {
+          "path": "data/LEGO_M1_39.fib",
+          "length": 278439,
+          "sha256": "657EA014D1390C6D8A76EAD8509B742397B2E3609E8A1F2B9D585E48CC1D3C2E"
+        },
+        {
+          "path": "data/LEGO_M1_40.fib",
+          "length": 498397,
+          "sha256": "F61B250D31A77A5A4A41A406FA6479A616360F7FCB747E4E70075547DC9B1F7A"
+        },
+        {
+          "path": "data/LEGO_M1_41.fib",
+          "length": 495483,
+          "sha256": "A98A654949F7ABF92E6F38FA03C766D0E9F178BE11ED87DE8A2058CA83FA607E"
+        },
+        {
+          "path": "data/LEGO_M1_42.fib",
+          "length": 386094,
+          "sha256": "8135464E517746DB314CF280BA74998AE2507F2B3C851E7F9D141926A15F7B64"
+        },
+        {
+          "path": "data/LEGO_M1_43.fib",
+          "length": 496747,
+          "sha256": "5D1A656A0E2730A8662C4A49F36C0C8162D429D6212781CCAFC084C8B78D46A0"
+        },
+        {
+          "path": "data/LEGO_M1_44.fib",
+          "length": 648129,
+          "sha256": "7FB1F66CEAD8F96D4FEC953510990BAC0371F24B64F9577C147E88880E99D843"
+        },
+        {
+          "path": "data/LEGO_M1_45.fib",
+          "length": 595790,
+          "sha256": "921F2AD3100BAE8A7FB2AD315CF6FF0EB49AFA6DDC293316829339F71651701C"
+        },
+        {
+          "path": "data/LEGO_M1_DS.fib",
+          "length": 50551049,
+          "sha256": "FBEF56031C314BB738B19C83625AD8B1D42BC8F41FE6066F91B17AD8AD9B48CC"
+        },
+        {
+          "path": "data/LEGO_M1_cuts.fib",
+          "length": 140042,
+          "sha256": "7959F6811353AB9556E42034E231BCEF6E21061344868B87C40BFA4C8F302C77"
+        },
+        {
+          "path": "data/data/LEGO_M1_DS.nbfc",
+          "length": 512,
+          "sha256": "923E856EB6C8CF9F2563AF8E304E2EEB46FB7CA8434D7508E5C9955FB7B0464D"
+        },
+        {
+          "path": "data/data/LEGO_M1_DS.nbfp",
+          "length": 32,
+          "sha256": "6CC49094ACFBCBAE06B8E8D1CAA45DDD300AB25CC3A6C079F468CE029FB0EBB0"
+        },
+        {
+          "path": "data/data/icon.char",
+          "length": 512,
+          "sha256": "882C0B871CED21077CC54DC52C32472EC63C72C3EF414446258A44040C98126D"
+        },
+        {
+          "path": "data/data/icon.plt",
+          "length": 32,
+          "sha256": "0063CE3E700F0C3B2C35F5B4F40A9A2E842F0E4F9FB0015692A010851943E1E3"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "3FCB40B340A3EC35DCD34734FB76063E71D05CA4069C6B3F587FDA3A63097518"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 129164832,
+          "sha256": "02BAB7617070B11DDC96DEC3CA376DA14A5F08D312D877B4DCFDD700C0B6520C"
+        }
+      ]
+    },
+    {
+      "name": "create-elf",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-elf.nds",
+          "length": 26633,
+          "sha256": "B62921C545ECAD5C8900B4D71FD72F95194F2A4E47DC4B3A014A1A38E06B52EC"
+        }
+      ]
+    },
+    {
+      "name": "create-bitmaps",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-bitmaps.nds",
+          "length": 29248,
+          "sha256": "6C448E52546FF2617CA4E1BAEF07A692C2C73DFFD425BFC8FA5E196CAD0BC067"
+        }
+      ]
+    },
+    {
+      "name": "dsi-options-probe",
+      "exitCode": 1,
+      "standardOutputSha256": "4B9A60048447E5B7F089814F08EE526141144DDD4B549113EED6CD0D46997161",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 134217728,
+          "sha256": "38D01C266F73B12E26C305AE6629950826756FAAD37D8B94DC151C6C99F985E4"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 134217728,
+          "sha256": "8904D9DDAAA08A14E92975A5CBFD6C005B3196381203780E180F5863EA700A42"
+        }
+      ]
+    },
+    {
+      "name": "secure-decrypt",
+      "exitCode": 0,
+      "standardOutputSha256": "2D91FE422AD3060CE4E5B32FCB9EFCB1C75F8F5D9381DD5449B41115F14B2B53",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-decrypted.nds",
+          "length": 134217728,
+          "sha256": "9BB2134F7A14EC8C726D91E89447C5F4A9C7298BB2177DB38D4CBE3FA50205D9"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-nintendo",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-nintendo.nds",
+          "length": 134217728,
+          "sha256": "2549105BE56E3C5941EC843CDD32494E322035E22D102ACA48A4DB7D0CA39A9D"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-other",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-other.nds",
+          "length": 134217728,
+          "sha256": "4C98FEB5FE85BD31B671FEF5B674C312CB95E66D81298A71C201288EF08AF5E8"
+        }
+      ]
+    },
+    {
+      "name": "verbose-list",
+      "exitCode": 0,
+      "standardOutputSha256": "C7D7840090A477BD5224F4B55775B072B5131895471CE8E9F6DB4DA28CB85BE9",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "post-oracle-info",
+      "exitCode": 0,
+      "standardOutputSha256": "2BF33EA52C25254BE7AE45125E43451D235B51E69247C445F49BE698D2BE684A",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    }
+  ]
+}

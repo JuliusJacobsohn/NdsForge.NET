@@ -1,0 +1,2009 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Pok\u00E9mon Diamond [ADAE] [USA - English].nds",
+    "length": 67108864,
+    "sha256": "e29bc6ebe431d7a6b238267b6b1521fec4a3bc14f2fa348798062f870c738454",
+    "headerTitle": "POKEMON D",
+    "gameCode": "ADAE",
+    "makerCode": "01",
+    "kind": "NintendoDs",
+    "revision": 5,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Pok\u00E9mon Diamond",
+    "bannerTitles": {
+      "Japanese": "Pok\u00E9mon Diamond\nNintendo",
+      "English": "Pok\u00E9mon Diamond\nNintendo",
+      "French": "Pok\u00E9mon Diamond\nNintendo",
+      "German": "Pok\u00E9mon Diamond\nNintendo",
+      "Italian": "Pok\u00E9mon Diamond\nNintendo",
+      "Spanish": "Pok\u00E9mon Diamond\nNintendo"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "info",
+      "exitCode": 0,
+      "standardOutputSha256": "669A934C4DF042855CF2B7462C1E24D7AE97AE23492F74487D7FFD64DCF792D5",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "verbose-info",
+      "exitCode": 0,
+      "standardOutputSha256": "A1638A24FDD8D3FBFDC6C58F5DE7F8CCA87EFC9E925CB785492E2417B38203F2",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "list",
+      "exitCode": 0,
+      "standardOutputSha256": "16650F198C357F0477346018DB2F4BB7416AFA500A7AE3DF217743CD4569915F",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "wildcard-list",
+      "exitCode": 0,
+      "standardOutputSha256": "88156CA73D9F58D100932958F703BDA7C3EFA5E12643972C0B9BB6EAA49C7708",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 168732,
+          "sha256": "14FA162BF7CDDC98F2DB04D927CDECA54EA54C9821B23F9CD8CE2B6CBABBE626"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 2784,
+          "sha256": "48EA41CFAADFAD8718E4954A330A0369FFDD2F78C32F710787D13E4FF7FA8AD2"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1079088,
+          "sha256": "D8581E96E4B050D46437BAD4A1A1BDCE09192586268052551CAF49DB3A20679B"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "FEDF7218F2C83190481A5FB3AC9569699EA666D3BFC0AA3FDF9F3697D9229228"
+        },
+        {
+          "path": "data/application/custom_ball/data/cb_data.narc",
+          "length": 60812,
+          "sha256": "4B25EE9D91E977FCBF4BE1CAB7D2BA15CFB6D58983D5EF5EBEACA137409506A1"
+        },
+        {
+          "path": "data/application/wifi_earth/wifi_earth.narc",
+          "length": 152180,
+          "sha256": "A529C990A715B9599316ABF4049A14A23B4C18A019B69A41B2630FB921460FF6"
+        },
+        {
+          "path": "data/application/wifi_earth/wifi_earth_place.narc",
+          "length": 3272,
+          "sha256": "067806345D96CE91F3CD76AAAFDDF4B6A915C512499FBF61F49E0368A59C7E84"
+        },
+        {
+          "path": "data/application/zukanlist/zkn_data/zukan_data.narc",
+          "length": 22552,
+          "sha256": "60A0E09F5A78A625CCA5B7E150FD6C17DCB98BC0BA2859F7119AC585D6E04432"
+        },
+        {
+          "path": "data/application/zukanlist/zkn_data/zukan_enc_diamond.narc",
+          "length": 71648,
+          "sha256": "B8CB42E92606E365F31BB869AE606AADE7FBECB60806F98016BC52C24734A992"
+        },
+        {
+          "path": "data/application/zukanlist/zkn_data/zukan_enc_pearl.narc",
+          "length": 71624,
+          "sha256": "A57924FD8444D022AFBF56DD0FE0BB9C82108E5DBFACB65572989D1227288EAA"
+        },
+        {
+          "path": "data/arc/bm_anime.narc",
+          "length": 37376,
+          "sha256": "5B46F1446499C070966515AB667AB4223BF00EA62B1B5397EDA43EEA629EC68B"
+        },
+        {
+          "path": "data/arc/bm_anime_list.narc",
+          "length": 15032,
+          "sha256": "3547A1CC82D4388F2FC37FCF6B25176B686645DC4B0C9B70D179D9865CDD8C07"
+        },
+        {
+          "path": "data/arc/encdata_ex.narc",
+          "length": 1828,
+          "sha256": "5A466B26B3595FF878992810881D77BDA8661C2776E92036612E12FDC9026C8D"
+        },
+        {
+          "path": "data/arc/ppark.narc",
+          "length": 3020,
+          "sha256": "78ED2C1252CA3D76324B60F2FEDBB7F20BC84E3AC08F55F87AA1E7AC38173528"
+        },
+        {
+          "path": "data/arc/ship_demo.narc",
+          "length": 95064,
+          "sha256": "B596DB0CE389AD0B3BBB3DBE4112F8E9306A3B7519036EEAC6CB0FF7F36931FD"
+        },
+        {
+          "path": "data/arc/tv.narc",
+          "length": 896,
+          "sha256": "6BF46C807745F991DAE47E3633AEAE516479C2E5D84ACC10767FE0C9A9BAFD55"
+        },
+        {
+          "path": "data/battle/b_tower/btdpm.narc",
+          "length": 22876,
+          "sha256": "776D9AD316BD6A9D97F45CA6DC5405DBF2E3E96F75A36118619BCAD4081BEC6C"
+        },
+        {
+          "path": "data/battle/b_tower/btdtr.narc",
+          "length": 33728,
+          "sha256": "9D8E016906E413D77A3A30856764F7605C03B9C0D956601E6262A4918B0F0040"
+        },
+        {
+          "path": "data/battle/graphic/b_bag_gra.narc",
+          "length": 20228,
+          "sha256": "1BAD36D04C4462F5E43DF643F0F2BB388F0230E917253D66401DB9E2AE39ED7B"
+        },
+        {
+          "path": "data/battle/graphic/b_plist_gra.narc",
+          "length": 74408,
+          "sha256": "1786A3FDF7DDFBDB88E4C723EA7E16EBF9B4B45599264AAC7BDEB523DB57B300"
+        },
+        {
+          "path": "data/battle/graphic/batt_bg.narc",
+          "length": 640124,
+          "sha256": "BCF2C24AE32B38A546B9B293B16AF3782B706FD6DC5EC9D58C1E245655CE05AB"
+        },
+        {
+          "path": "data/battle/graphic/batt_obj.narc",
+          "length": 131676,
+          "sha256": "04E5DF4768970CC2C677047EFD2F280A17F522017CAD05436BADF52D4E00AE82"
+        },
+        {
+          "path": "data/battle/graphic/vs_demo_gra.narc",
+          "length": 20864,
+          "sha256": "0F2B6DB0502D559797CE7BF9C56B84FDBB5D8DEED2113447E407D06B09A8AF4C"
+        },
+        {
+          "path": "data/battle/skill/be_seq.narc",
+          "length": 16892,
+          "sha256": "9BEF02E3319BA414C4146B5FFF87FD727B72A655079FB3FF68A4F7C24F17B476"
+        },
+        {
+          "path": "data/battle/skill/sub_seq.narc",
+          "length": 51000,
+          "sha256": "0CD8C8FC49D79A2B852C5427F0BFD1A8D7ECB1F60E8154C83EE191FEAE4F86AF"
+        },
+        {
+          "path": "data/battle/skill/waza_seq.narc",
+          "length": 6416,
+          "sha256": "31A96DBB1AE49166726CC66E604444D24AB92EED57103822CEF84630AFE80E89"
+        },
+        {
+          "path": "data/battle/tr_ai/tr_ai_seq.narc",
+          "length": 42448,
+          "sha256": "74B17CD373C63C5AA9FA5E7E909C7037F768B443C726EEE51ED0F0278EFD709D"
+        },
+        {
+          "path": "data/contest/data/contest_data.narc",
+          "length": 14140,
+          "sha256": "7CF7C17D07B805FC4D6C65B7B23E6D25B0B94E87F5CF0D729C308ED2B1B9496F"
+        },
+        {
+          "path": "data/contest/graphic/contest_bg.narc",
+          "length": 80708,
+          "sha256": "604FC581C1D39592AFE5EA72A2A14365C9A06C2C4C0B4267B4663D58248BF8DA"
+        },
+        {
+          "path": "data/contest/graphic/contest_obj.narc",
+          "length": 23844,
+          "sha256": "43BB5B2C71DE2E630BAFAC397CC0E103F3ADD14645D2A2ECC73280F7E2F42BD1"
+        },
+        {
+          "path": "data/data/UTF16.dat",
+          "length": 490,
+          "sha256": "2E66CC1325A472BA8DE7C88562216F02F6D478743F29E99732C2C58A10BFC728"
+        },
+        {
+          "path": "data/data/area00light.txt",
+          "length": 2082,
+          "sha256": "CE56F77F15E41B127C4CD4230910736DA58705964D36B4101CD171E06EE03564"
+        },
+        {
+          "path": "data/data/area01light.txt",
+          "length": 2024,
+          "sha256": "CE00FD5DE6739F4849E6C322EAF06CF254065213D7C0E0BAC942559B59D0A4C8"
+        },
+        {
+          "path": "data/data/area02light.txt",
+          "length": 2114,
+          "sha256": "7DB2DEEB4BFB1B8CEC526A09E18EE6170DF031413BCD79C69B596B5E9E3EEA63"
+        },
+        {
+          "path": "data/data/battle_win.NSCR",
+          "length": 2084,
+          "sha256": "786C211EFFB3F47630BA88C443D2B11AD815F99AFFAB9802586F129015423DD6"
+        },
+        {
+          "path": "data/data/btower_canm.resdat",
+          "length": 52,
+          "sha256": "2C906D1FFB6A67209EE3C8DAAC86AC095BC3F39E8257657703B5C6A5F3F8B57E"
+        },
+        {
+          "path": "data/data/btower_celact.cldat",
+          "length": 64,
+          "sha256": "1F123E9D1801E4EF8FB0A0F49A75DB77F38C3A3B94AD347F207C1AB10DBC2817"
+        },
+        {
+          "path": "data/data/btower_cell.resdat",
+          "length": 52,
+          "sha256": "A74A51EB2D927D8606797F195359808DB51E8724784D4A4682CCB5A030172107"
+        },
+        {
+          "path": "data/data/btower_chr.resdat",
+          "length": 52,
+          "sha256": "3203FFFB886D328C3FB529E78C7ED5D3D6FAC9CB12B46A5C7FB2E998F36BCD15"
+        },
+        {
+          "path": "data/data/btower_pal.resdat",
+          "length": 52,
+          "sha256": "A25715710DE58CB59AB60219BF75930FD58050A96F1E325555A46A64F4A4EACE"
+        },
+        {
+          "path": "data/data/cell0.NCGR",
+          "length": 8240,
+          "sha256": "744E07505E4C80A62DF7782D14DB317152AA090363FFE40FCADA29B463D6C509"
+        },
+        {
+          "path": "data/data/cell0.NCLR",
+          "length": 552,
+          "sha256": "EC23E08F70EC23BEF86883D2025EA41A518F4C41BF0B61A7427853502A95D9F4"
+        },
+        {
+          "path": "data/data/clact_default.NANR",
+          "length": 111,
+          "sha256": "30249884BD91F10BC9D4E13E7B1495F09991B6F488405A0CDBB61CFB402D10CA"
+        },
+        {
+          "path": "data/data/crystal.nsbmd",
+          "length": 3332,
+          "sha256": "67EA106FF319B63062AFD6927E4CA022966CD550CC937CB1CEB1920BA35F46BF"
+        },
+        {
+          "path": "data/data/demo_climax.narc",
+          "length": 472620,
+          "sha256": "18D011C800914E0410979A16996DCDF6CCA15BA384AA85D9973A769AB6DEF94E"
+        },
+        {
+          "path": "data/data/dp_areawindow.NCGR",
+          "length": 368,
+          "sha256": "25A619FBA61E036C8BEE2595996EF4A480F84D31F6601018C7915549BB971F51"
+        },
+        {
+          "path": "data/data/dp_areawindow.NCLR",
+          "length": 552,
+          "sha256": "6E5AFDCA34A65CD2ADCCD5DE0C3E026FE76488AFA707BFAED2ECA788161CA4C2"
+        },
+        {
+          "path": "data/data/dt_test_celact.txt",
+          "length": 54,
+          "sha256": "657D5DE29B925E3EAF5AE872783367F10475B5C0F90BFCD5043CB1ABDB69D85E"
+        },
+        {
+          "path": "data/data/dt_test_res_cell.txt",
+          "length": 38,
+          "sha256": "C8389498002FE33AB42C1090E38FF07579D464DDBFAC95A20829DBF0B7D7FDB0"
+        },
+        {
+          "path": "data/data/dt_test_res_cellanm.txt",
+          "length": 38,
+          "sha256": "CBE867BE063BE570F1FBC6FCDFB5B879AD308C06326BD8ECF53436EBE6E6557D"
+        },
+        {
+          "path": "data/data/dt_test_res_char.txt",
+          "length": 43,
+          "sha256": "385FCCD82BC01A6CAC1ED7E0CA5BDCC2F21F6822014C8F834F1507E8DF120988"
+        },
+        {
+          "path": "data/data/dt_test_res_multi.txt",
+          "length": 16,
+          "sha256": "8B908000B9CF297550FF4B4A08E641B2122597F77232D9DBA5422AFDB23A198A"
+        },
+        {
+          "path": "data/data/dt_test_res_multianm.txt",
+          "length": 16,
+          "sha256": "1B97C2F67DCCDC6B480D4982764C8CEDEAF4D055B845AB7FB6373E12874D9496"
+        },
+        {
+          "path": "data/data/dt_test_res_pltt.txt",
+          "length": 45,
+          "sha256": "4BB2F67548EDDDD0D90A4344EAA0D1DA254B6150ECFD6A045226FF33AA882F57"
+        },
+        {
+          "path": "data/data/dun_sea.nsbtx",
+          "length": 1400,
+          "sha256": "39C857F5B0FB8E0C07C161C838D0FAA4A9F7C06A99FA432F4E4E92D70F59EE4E"
+        },
+        {
+          "path": "data/data/eoo.dat",
+          "length": 286720,
+          "sha256": "5C7D80ADF0567CD0F45166BA79D40974B7B2DCDA06C2EF77366C4B6A2F68456F"
+        },
+        {
+          "path": "data/data/exdata.dat",
+          "length": 292,
+          "sha256": "D25F106D39D48484FB0944D9B9D2706A17885ED46702ABBEF4402E9B4BED4F0D"
+        },
+        {
+          "path": "data/data/field_cutin.narc",
+          "length": 53792,
+          "sha256": "1634F209420540F1FDA098E8269F7830DEBBAD9E33AD3FC3A33C1FD1BD89598E"
+        },
+        {
+          "path": "data/data/fld_anime0.bin",
+          "length": 72,
+          "sha256": "1EC9B817623B914AA1336AF423F5C0A0172AD74A1A0049EEF79A3E0BECFDE53B"
+        },
+        {
+          "path": "data/data/fld_anime1.bin",
+          "length": 72,
+          "sha256": "7F72C84BB5552E478DCC27BB339BE852876F8C3F0B7D1774D2E7BB6FEFBD9FEE"
+        },
+        {
+          "path": "data/data/fld_anime10.bin",
+          "length": 72,
+          "sha256": "C19E0811AE7000F211BC8E1D23590E14E22480ADFD275C20267124DB8970095A"
+        },
+        {
+          "path": "data/data/fld_anime2.bin",
+          "length": 72,
+          "sha256": "A2B9CB0BB30ABE7ECCB0A1D2793407D4DA6C9C3B15C33A5BBDE1AAEF6F4B5E63"
+        },
+        {
+          "path": "data/data/fld_anime3.bin",
+          "length": 72,
+          "sha256": "84A53AE8352350E35582DE2710B79DFCB6DB44AE3A189BE0AC9A68A807283785"
+        },
+        {
+          "path": "data/data/fld_anime4.bin",
+          "length": 72,
+          "sha256": "5978DBB7F77E96E630E931CBC6D34E2B487ADDE774D3E203F9727E931D9DE7D2"
+        },
+        {
+          "path": "data/data/fld_anime5.bin",
+          "length": 72,
+          "sha256": "DE96FCC88817B1797FF20AD9774546B8B391B6E3C61D3DAD801DEC93D321C14C"
+        },
+        {
+          "path": "data/data/fld_anime6.bin",
+          "length": 72,
+          "sha256": "81FBE84C6FA50DC51D6063D914754783933B824243F3C2041584029D6116D0F5"
+        },
+        {
+          "path": "data/data/fld_anime7.bin",
+          "length": 72,
+          "sha256": "F44AC96D074F591823BA68AA7D928479F6597ADED2002EFF8301F41216B15D23"
+        },
+        {
+          "path": "data/data/fld_anime8.bin",
+          "length": 72,
+          "sha256": "49908ACBEAEC47BCC9B0E1A35730391A3C24F8FBA4B9689A4240723E39166C1E"
+        },
+        {
+          "path": "data/data/fld_anime9.bin",
+          "length": 72,
+          "sha256": "7DA5C71F81701B46246603A08A4773600A55E6DF79050D91B20C6773A7BC73A6"
+        },
+        {
+          "path": "data/data/fs_kanban.nsbca",
+          "length": 2036,
+          "sha256": "41B95F6D1C3E3BFAC512D44D17669A94843E21439C6BD4275933464139129B24"
+        },
+        {
+          "path": "data/data/ground0.NCGR",
+          "length": 32816,
+          "sha256": "11C41561E7436491DCFEC563B5ACDC60AD5A4BBB26CA5B5EAD43762EEC4C6722"
+        },
+        {
+          "path": "data/data/ground0.NCLR",
+          "length": 552,
+          "sha256": "35263E138D7E792EA5509BACD9C44E25E77028DBBCCF39B48F76A5249D5B3E0A"
+        },
+        {
+          "path": "data/data/ground0.NSCR",
+          "length": 2084,
+          "sha256": "3AB3B003D343C067CC9B3E9C45FDD2EBE2FF4D8E4D2FE0A2BAB0CBC4D028B16A"
+        },
+        {
+          "path": "data/data/kemu_itpconv.dat",
+          "length": 20,
+          "sha256": "E985FDCDDE6952900C40E69EBB53010E24CBB5D7370A604962DC8104FE3D8F18"
+        },
+        {
+          "path": "data/data/lake_anim.nsbtx",
+          "length": 4432,
+          "sha256": "B474BDA5A56416DEE86D57F43F17414265E91477B5990B00AA3A6D145D12D4AF"
+        },
+        {
+          "path": "data/data/miniasahamabe.nsbtx",
+          "length": 4488,
+          "sha256": "753EA89FCE5BF92A8F65EA5A4D7A90F774FC282F54EA97D999CE9203FDE63F36"
+        },
+        {
+          "path": "data/data/miniasasea.nsbtx",
+          "length": 1400,
+          "sha256": "BC976C5218B1CE8561FF47C0A7CAC4B560A7128439E2E173F4CBA2476F68B3D6"
+        },
+        {
+          "path": "data/data/minihamabe.nsbtx",
+          "length": 4488,
+          "sha256": "CB3D2F02227509848D1623FA39F42BC171C8337DA3605A89076A286450A19382"
+        },
+        {
+          "path": "data/data/minimum.nsbtx",
+          "length": 1400,
+          "sha256": "155A8541E3C57084D98AF2463EE9530F9B45BF7BD1E4C403D0E56DEFA47510B9"
+        },
+        {
+          "path": "data/data/minirhana.nsbtx",
+          "length": 712,
+          "sha256": "EBFA325C84A395484192F52D2B103974EFDF9C0F27506EEE728B8F9409033D23"
+        },
+        {
+          "path": "data/data/mmodel/fldeff.narc",
+          "length": 114328,
+          "sha256": "6BD19C67AB558CEBE32BFC8C031FF2995AD2F494FF8826EFF781CD6A0C24C701"
+        },
+        {
+          "path": "data/data/mmodel/mmodel.narc",
+          "length": 1213532,
+          "sha256": "888316B815CA5C290CF13865005536CBA79ED2EE84982D391CD348A390993BCF"
+        },
+        {
+          "path": "data/data/namein.narc",
+          "length": 16216,
+          "sha256": "7143A5494CDD8F390B60DA3DC7CB5AD9577F61DD6B1D27C9F941B4935C4C68F2"
+        },
+        {
+          "path": "data/data/nfont.NCGR",
+          "length": 32816,
+          "sha256": "E410717B2E20E7480FD141FB3D03CB5DA2B3B847F879957466BED40C1B0341B7"
+        },
+        {
+          "path": "data/data/nfont.NCLR",
+          "length": 552,
+          "sha256": "0BF22D2454070563B5620CEE5D7AE0F5A730B26EE5A201CBFD320262972DF9B5"
+        },
+        {
+          "path": "data/data/pc.nsbca",
+          "length": 396,
+          "sha256": "7AA84DEBB0C59CEF33397F91465936DB833E7F3988665FAF4F371D4FBE62C450"
+        },
+        {
+          "path": "data/data/plist_canm.resdat",
+          "length": 196,
+          "sha256": "E45075FF86460CCAE5ACA98A556893B3089FAFC2AFFF31B94CF26C674C33C925"
+        },
+        {
+          "path": "data/data/plist_cell.resdat",
+          "length": 196,
+          "sha256": "5CFC08FFF70E6B544B620482D43C902BA0CA32C9DB61BBB8F1137185BFCC140C"
+        },
+        {
+          "path": "data/data/plist_chr.resdat",
+          "length": 316,
+          "sha256": "F84160BF538379143E3E8AD1EC80DEA5E020D59BF6C15D1766C80A43B2FA6A52"
+        },
+        {
+          "path": "data/data/plist_h.cldat",
+          "length": 416,
+          "sha256": "8278E86C245BD6A3E22A2A360C9C33F593D2327467E0257C8594E8AC787AFB9C"
+        },
+        {
+          "path": "data/data/plist_pal.resdat",
+          "length": 148,
+          "sha256": "F1ABC76D96D88132168AD73DFD850C6E6B875A7EC54948E7E9F2AC09998567C7"
+        },
+        {
+          "path": "data/data/porucase_canm.resdat",
+          "length": 76,
+          "sha256": "9BDCC1919C667A68FB4CBFBFE4FB7A0B3E112C8052B82D4026BD54EDE817729E"
+        },
+        {
+          "path": "data/data/porucase_celact.cldat",
+          "length": 96,
+          "sha256": "98DA22B91ED5487B9DAA2D1B200C150B6DFEA5A8C0426FB2DFFC204848B15FD6"
+        },
+        {
+          "path": "data/data/porucase_cell.resdat",
+          "length": 76,
+          "sha256": "AE15F03165E11E9126CABD75E06573794AD6079C74D63B27193C9BED592734E0"
+        },
+        {
+          "path": "data/data/porucase_chr.resdat",
+          "length": 76,
+          "sha256": "C42AD0AB9664AC46B9A6DB1F1E38391FAFB210D8113519166126CB268D0B88E5"
+        },
+        {
+          "path": "data/data/porucase_pal.resdat",
+          "length": 52,
+          "sha256": "A31B47EA496719503FC802D7E87541A3585423B0392150AA9432827358E05269"
+        },
+        {
+          "path": "data/data/pst_canm.resdat",
+          "length": 436,
+          "sha256": "CDD4B1795F2937ACBA5A2FBD621E7D9B87D9FD63E0F6C1E3AF5CED1055ABF557"
+        },
+        {
+          "path": "data/data/pst_cell.resdat",
+          "length": 436,
+          "sha256": "853CC46A9CA084D641D0C35528EE8B4423559E9F98D79A5C2CFBD43E38166A6E"
+        },
+        {
+          "path": "data/data/pst_chr.resdat",
+          "length": 1060,
+          "sha256": "0A884A16EDD6572B766898FEEF4A5DD1A585415BA14499B9137C10531236856A"
+        },
+        {
+          "path": "data/data/pst_h.cldat",
+          "length": 1408,
+          "sha256": "436DE87B1B9A4AC7A078B9DB17453FE86567207C252D5245F03083F8D974512E"
+        },
+        {
+          "path": "data/data/pst_pal.resdat",
+          "length": 172,
+          "sha256": "D8861F3A3CBDE453EC5EE8D4B305F47A81229B94F2514490EC42AE5ACBCDA069"
+        },
+        {
+          "path": "data/data/shop_canm.resdat",
+          "length": 100,
+          "sha256": "823FCB63AC3823F4465AA0FF1E3F1AAD19D9E55B474DE831C9068055B91E2B65"
+        },
+        {
+          "path": "data/data/shop_cell.resdat",
+          "length": 100,
+          "sha256": "EB0B7EAD8BAC9B90762BE6F339FE2504F489FE9A298759E91F5B4BFCF8E5ACFA"
+        },
+        {
+          "path": "data/data/shop_chr.resdat",
+          "length": 100,
+          "sha256": "005159FEB5641BD7D1218BFD92305C98D3253AB6A5DFFD6305F18BAEF52B0234"
+        },
+        {
+          "path": "data/data/shop_h.cldat",
+          "length": 128,
+          "sha256": "39EFE178B8D718386CD8D9A5FCD5EC5ACA0934B6840B7147609DD2E844B97B1A"
+        },
+        {
+          "path": "data/data/shop_pal.resdat",
+          "length": 76,
+          "sha256": "8CD4A0ABEA77D5A26E519D25F416C068930D49DAE2BA51BFD180CB5A5B6D6040"
+        },
+        {
+          "path": "data/data/slot.narc",
+          "length": 88388,
+          "sha256": "F8F3652B02D4CA83E6962E925333721D7E01D8CE004AE4ADA7BC5493B05E4B49"
+        },
+        {
+          "path": "data/data/smptm_koori.NANR",
+          "length": 163,
+          "sha256": "8B86C5A47C78FAD0302BAEE732FB713ABF1B3FF0A80E84164514CB20C56ABA55"
+        },
+        {
+          "path": "data/data/smptm_koori.NCER",
+          "length": 215,
+          "sha256": "CAB213E4865C507E57A2530D8647B1ADAEE6F68C33BD28E1B319C95C66435E35"
+        },
+        {
+          "path": "data/data/smptm_koori.NCGR",
+          "length": 3248,
+          "sha256": "0BBDB832A2E68B212B7D16E2A33422BDD0B6E534691B3F98ED1C0F7461665583"
+        },
+        {
+          "path": "data/data/smptm_koori.NCLR",
+          "length": 552,
+          "sha256": "E8B3ECF1147D10858D39B4778E12F7799156B37D355235146BCE06C0F7918BA2"
+        },
+        {
+          "path": "data/data/smptm_nemuri.NANR",
+          "length": 111,
+          "sha256": "02501A6A5CE892AFBFAF7AAF1AC388045DB6E55ADE71548A00CC3A91B7FB3F37"
+        },
+        {
+          "path": "data/data/smptm_nemuri.NCER",
+          "length": 99,
+          "sha256": "C3325D4CEB81CA33FECEA1CF20FF792369CF038863E3875AF4305AFB6791F7A0"
+        },
+        {
+          "path": "data/data/smptm_nemuri.NCGR",
+          "length": 560,
+          "sha256": "8AEDBF79A2C78ED76691EAA997A1A9B409AAB774F94D02B928E44282B560A50D"
+        },
+        {
+          "path": "data/data/smptm_nemuri.NCLR",
+          "length": 552,
+          "sha256": "7072A697C60EB373779B149F3113041FF5111D7BB898EC44FD6BD7C62C4AC62D"
+        },
+        {
+          "path": "data/data/sound/sound_data.sdat",
+          "length": 7484768,
+          "sha256": "C3F5535DFAE0BDE260B39ACCEF3A72149D735D62AA4B68EC34ED4BA3516672C8"
+        },
+        {
+          "path": "data/data/t3_fl_b.nsbtx",
+          "length": 592,
+          "sha256": "A11539BF20040B840209DE86DDE37C3AA1EC26058F5B782DA16BF3A0CB663257"
+        },
+        {
+          "path": "data/data/t3_fl_p.nsbtx",
+          "length": 592,
+          "sha256": "D01550848B0F4124EE32F8279744CBB939F6544747896660B99150C6EEB62B44"
+        },
+        {
+          "path": "data/data/t3_fl_r.nsbtx",
+          "length": 592,
+          "sha256": "67C4F0AD6B0BA3B4AD9E576CD0739729AA37112639786C774D26E9F2C69A9F5D"
+        },
+        {
+          "path": "data/data/t3_fl_y.nsbtx",
+          "length": 592,
+          "sha256": "9B3B8AA1DF95DC347CC684692C36AD1DF49A81815C68B0A0D23CEBF4F92D05AA"
+        },
+        {
+          "path": "data/data/test.atr",
+          "length": 2048,
+          "sha256": "F955BDCB6611C4E3033CF5104E01C732001DA4A79E23F7771FC6F0216195BD6E"
+        },
+        {
+          "path": "data/data/tmap_block.dat",
+          "length": 4372,
+          "sha256": "A68FAA282A2F7F35073D1038D432E68054EFA63B6A322C47BBA069F3158E6AB9"
+        },
+        {
+          "path": "data/data/tmap_flags.dat",
+          "length": 732,
+          "sha256": "A1B0002FE43379E9BFF3D8E50CE6CBFBA185640945F1D523EBE2BA84049B3413"
+        },
+        {
+          "path": "data/data/tmapn_canm.resdat",
+          "length": 148,
+          "sha256": "72425A598AFA45B0BDDDFABAB629B5BCB943637671B4ED84B60AF97546F60C8A"
+        },
+        {
+          "path": "data/data/tmapn_celact.cldat",
+          "length": 192,
+          "sha256": "FD393F5096A32D5931F4654F1EB758BA878749E44A188D30C06A37A24933EA66"
+        },
+        {
+          "path": "data/data/tmapn_celact.txt",
+          "length": 268,
+          "sha256": "8152F0391DEE4C278CC3A66F526ED03079522533205A636C902166516AFE7D42"
+        },
+        {
+          "path": "data/data/tmapn_cell.resdat",
+          "length": 148,
+          "sha256": "EF5015C57FA94C1C7C8C58005F7B067B1B3B7232520F4C640ED248EDD281EAF0"
+        },
+        {
+          "path": "data/data/tmapn_chr.resdat",
+          "length": 148,
+          "sha256": "38BBE458432E856B8DFAC9430DB63D10F243D0E914667E5BA3F81202B1DA90EB"
+        },
+        {
+          "path": "data/data/tmapn_pal.resdat",
+          "length": 76,
+          "sha256": "E27AC43992DEC007F7F0EEEB01435A3C55EFCC40699FC72749C1E1FBA8D5730D"
+        },
+        {
+          "path": "data/data/tmapn_res_canm.txt",
+          "length": 170,
+          "sha256": "406713C3A6CA63C7CBB6EA999821DBA41FF93AC55C315EE20B551AB86ED97D6D"
+        },
+        {
+          "path": "data/data/tmapn_res_cell.txt",
+          "length": 186,
+          "sha256": "60B5CA5D92731D92E53B1DCFBA5BE6CE71FFEFC7352F2674B781BD283C49E3D0"
+        },
+        {
+          "path": "data/data/tmapn_res_chr.txt",
+          "length": 220,
+          "sha256": "884025C767A9A17A29AA0FD3D659A8AF69D004FAB778C988587AE8BEC7B5FA12"
+        },
+        {
+          "path": "data/data/tmapn_res_pal.txt",
+          "length": 149,
+          "sha256": "C7A4E4407DE1C66FA9F30E55AF1FDFDE1B7F018AE55866FDD4F94A0D53C4881B"
+        },
+        {
+          "path": "data/data/tradelist.narc",
+          "length": 10868,
+          "sha256": "69FF435241DCCF7824B576313F539C64EE48D0B3D148F2926E8F8ABC9DCA0F5B"
+        },
+        {
+          "path": "data/data/trapmark.narc",
+          "length": 612,
+          "sha256": "6F577DF39A0BC2EFB3605011EC4B424575C4316D5C361F88A461D7AC89455A79"
+        },
+        {
+          "path": "data/data/ug_anim.narc",
+          "length": 23680,
+          "sha256": "CD49B51638DCF62C8F98725B613496D430B88CEAB8C890D152F615548C69FB89"
+        },
+        {
+          "path": "data/data/ug_base_cur.nsbmd",
+          "length": 1684,
+          "sha256": "3A6A9145C00ACFDA492B047CAB5D7AD275C4CDA60C58B7A01A72FBE3A3C0A101"
+        },
+        {
+          "path": "data/data/ug_boygirl.NCGR",
+          "length": 4656,
+          "sha256": "48D58205E3AF7664DEE5A0391FD9235CF6D6C6E4EA1DC09E3C2C1720B196F8B4"
+        },
+        {
+          "path": "data/data/ug_boygirl.NCLR",
+          "length": 552,
+          "sha256": "5B223381BB291856354054377270449984122DC23178863F25DC13E6E84AAB15"
+        },
+        {
+          "path": "data/data/ug_fossil.narc",
+          "length": 16088,
+          "sha256": "4F48A58A7EAEDFE8274D27BC35CA478F9D66E677A8FE766F3FD8CEAAF6642236"
+        },
+        {
+          "path": "data/data/ug_hero.NANR",
+          "length": 249,
+          "sha256": "9082D4C4EC380836F4B632C390B3920D281B0CA5D88400F7A92110E8B192D5E6"
+        },
+        {
+          "path": "data/data/ug_hero.NCER",
+          "length": 265,
+          "sha256": "A5AE217F2E4880F1AEE8EBF3D3577BF1BEF40E22F9C7FF48076DCDDFED8DDF47"
+        },
+        {
+          "path": "data/data/ug_hole.NANR",
+          "length": 214,
+          "sha256": "BFD73E8FFFAD25A2DB44E513C11069C0F3D13726D5DB00ECD7EB91202009026C"
+        },
+        {
+          "path": "data/data/ug_hole.NCER",
+          "length": 162,
+          "sha256": "146CC38BA450DF40C78773790564D35C3799A8B308B5C3BFD381BE7F6920B55B"
+        },
+        {
+          "path": "data/data/ug_hole.NCGR",
+          "length": 1328,
+          "sha256": "D18C686E78CB6A83168CAD8DF2EF75A489AD4854DCF9C2E14ADD46868F7DAAE6"
+        },
+        {
+          "path": "data/data/ug_parts.narc",
+          "length": 133020,
+          "sha256": "6AEF71920A64161CB0879222C36A89A2B6A2BE34DB605B8AD68766C2B5F2C68D"
+        },
+        {
+          "path": "data/data/ug_radar.narc",
+          "length": 14440,
+          "sha256": "38C022B32CBFB6BE13A80AEF230DCEB386785284DA947A1357A44D8A6019FEC2"
+        },
+        {
+          "path": "data/data/ug_trap.narc",
+          "length": 121772,
+          "sha256": "41FD698D83B7F883100B7CD2D2796486AC6FD2293DA4736E1FDA7BBAEE571FC3"
+        },
+        {
+          "path": "data/data/ugeffect_obj_graphic.narc",
+          "length": 19816,
+          "sha256": "7B5DDD52EFC8DAEB79EB517C71F72C2F6DA461A4723EB80CC72EF7EA065D2FFB"
+        },
+        {
+          "path": "data/data/uground_cell.resdat",
+          "length": 76,
+          "sha256": "0C50E13F1DBCB0851E33CF7EF4A77EA35C42699EAEF90E356150990478924E38"
+        },
+        {
+          "path": "data/data/uground_cellanm.resdat",
+          "length": 76,
+          "sha256": "6190918BE0B8FA7B3BA260AC05EBAD1916229248157803C65FA038CEC2F2C636"
+        },
+        {
+          "path": "data/data/uground_char.resdat",
+          "length": 76,
+          "sha256": "BADC16D06B427EB138241E53AD783835A0BA4149125E4649C89A5AD2A0861461"
+        },
+        {
+          "path": "data/data/uground_char2.resdat",
+          "length": 76,
+          "sha256": "66CA5E25A5E8DF7EEA64ADB0D7418EA423AC1C8C969336BE267B5EE064C8A617"
+        },
+        {
+          "path": "data/data/uground_clact.cldat",
+          "length": 96,
+          "sha256": "E2FBCEFBE3BBC036C8471198C98595E364EF428711DFC428558417EDAE75C322"
+        },
+        {
+          "path": "data/data/uground_pltt.resdat",
+          "length": 52,
+          "sha256": "D5FC6E80C4477CC6D53399932068FA32203020C22ECAE81849B366AAE12E34A0"
+        },
+        {
+          "path": "data/data/uground_pltt2.resdat",
+          "length": 52,
+          "sha256": "CAE65E73A4AC3CCBF8F7B82DFD96A1B1BF04FE0F2227BEE08ECCFB569FE3E2A8"
+        },
+        {
+          "path": "data/data/underg_radar.narc",
+          "length": 41524,
+          "sha256": "F02B453A55678F112C31B7A78B794D132B25212641A767F83F3CF42017CD704D"
+        },
+        {
+          "path": "data/data/utility.bin",
+          "length": 898240,
+          "sha256": "1D2EC39E86493319E724DC1DEEF8DA848B794A4BB36176218FD6532727DB4774"
+        },
+        {
+          "path": "data/data/weather_sys.narc",
+          "length": 63656,
+          "sha256": "A52F8B2F311A1397A1A97A011D904F5CA28E6674239F16605515A5B5EEEE59C3"
+        },
+        {
+          "path": "data/data/wifi.ncgr",
+          "length": 576,
+          "sha256": "D43DC9DEDAC998E67448E69E7F9F31732528154B672F6CC6E2EFA522C5751524"
+        },
+        {
+          "path": "data/data/wifinote.narc",
+          "length": 14668,
+          "sha256": "85E6F3744806C16014EFF71ABCFE70E4CD7B60CC80BEBDB542617F92DF00C82B"
+        },
+        {
+          "path": "data/data/wifip2pmatch.narc",
+          "length": 15892,
+          "sha256": "AEEEC3912FC435255AB8F076A5124C8AFA6866B6710EC09F9A71F137165ED20F"
+        },
+        {
+          "path": "data/data/wm.ncgr",
+          "length": 576,
+          "sha256": "CED58383A0C9395FE6975F2CEF706E2E7B527E4DD4006EA1276555412DFC4BF7"
+        },
+        {
+          "path": "data/data/wm.nclr",
+          "length": 552,
+          "sha256": "B087BE2BD632ABD639697F70AFBD955D2E51AB5205EF8A991F9490AF54E526D2"
+        },
+        {
+          "path": "data/demo/egg/data/egg_data.narc",
+          "length": 11004,
+          "sha256": "C4FCC55205B9FBC52A00FAD3451B6F8766E94BB05F90578FF7F66CC78EA8A134"
+        },
+        {
+          "path": "data/demo/egg/data/particle/egg_demo_particle.narc",
+          "length": 9708,
+          "sha256": "97429870AD23F453D0D10AAE69D899DDC9825B2ECD6FE06917563D9F54B4819A"
+        },
+        {
+          "path": "data/demo/intro/intro.narc",
+          "length": 111500,
+          "sha256": "848FEE0F0E9D86BDF02709749AB8A7908E2C9E3A598A528C5F8F00A03F6D4649"
+        },
+        {
+          "path": "data/demo/intro/intro_tv.narc",
+          "length": 57312,
+          "sha256": "A2B72B17BDB24A6B7229A30244B06E718C3E923887912CD035BD4C30C1410B60"
+        },
+        {
+          "path": "data/demo/shinka/data/particle/shinka_demo_particle.narc",
+          "length": 9364,
+          "sha256": "4519249FA8C3C6DA9C20579DDE3A6447AAA77B05F5C33F8F92EFF5CBDBD4A3B1"
+        },
+        {
+          "path": "data/demo/syoujyou/syoujyou.narc",
+          "length": 25796,
+          "sha256": "2864AEAF82701FC0C9668AD609779A41A97A347D43C1B2207FB053516AB0B7F3"
+        },
+        {
+          "path": "data/demo/title/op_demo.narc",
+          "length": 618888,
+          "sha256": "8336CB1C146EB1D18F0BD5AC61B83327AB2F952667CC65C27523F2C695933AAF"
+        },
+        {
+          "path": "data/demo/title/titledemo.narc",
+          "length": 228112,
+          "sha256": "78F6975F4C51CDA3ADE8C4D9547786D48632D3A7C8F73BE9D8042C55ADC69F60"
+        },
+        {
+          "path": "data/dwc/utility.bin",
+          "length": 898240,
+          "sha256": "1D2EC39E86493319E724DC1DEEF8DA848B794A4BB36176218FD6532727DB4774"
+        },
+        {
+          "path": "data/fielddata/areadata/area_build_model/area_build.narc",
+          "length": 4724,
+          "sha256": "2B6B92D60559FAACD6682355303462E135F3EDA456F0B2A28A25BC46EC37C6AA"
+        },
+        {
+          "path": "data/fielddata/areadata/area_build_model/areabm_texset.narc",
+          "length": 1201332,
+          "sha256": "717A9DCCA499B1C75F0C31CBD37F0E24B2703BF03C61E92BB5553DCFB0DFD6A7"
+        },
+        {
+          "path": "data/fielddata/areadata/area_data.narc",
+          "length": 996,
+          "sha256": "E839931D138154A330CE9BFD04B0DB8DA5AC4F2D28F73919E2ABE5E6DA2B5E6E"
+        },
+        {
+          "path": "data/fielddata/areadata/area_map_tex/map_tex_set.narc",
+          "length": 1256784,
+          "sha256": "D333762813F9D4FB136A9D1BAB08F06E612902B5E16F8CD7E28866179D16FB3D"
+        },
+        {
+          "path": "data/fielddata/areadata/area_move_model/move_model_list.narc",
+          "length": 1240,
+          "sha256": "A7C17C4E3C40975CA46762EBBF7DC0AEDC02793C50B2F030CC220F766ECD52BA"
+        },
+        {
+          "path": "data/fielddata/build_model/build_model.narc",
+          "length": 1918412,
+          "sha256": "9162D14C30396DADB096ED31BF05ABB5F1FAF81C233B8B7F54EC56E3E23069FC"
+        },
+        {
+          "path": "data/fielddata/build_model/build_model_matshp.dat",
+          "length": 5924,
+          "sha256": "713DD40DEC5A55B1A615D93F67D8736CEC74E766B432441DC2C2E2D9C0B6DC95"
+        },
+        {
+          "path": "data/fielddata/encountdata/d_enc_data.narc",
+          "length": 79108,
+          "sha256": "8872DA981014C6DA71A0BA6D20AD05CCEFAFA3E1895D9B1295F588FD7AF64080"
+        },
+        {
+          "path": "data/fielddata/encountdata/p_enc_data.narc",
+          "length": 79108,
+          "sha256": "41BE039D459F5EEACFB537A79D3237CFE3B0BA9D3E4310F40D6D2C20853839E6"
+        },
+        {
+          "path": "data/fielddata/eventdata/zone_event_release.narc",
+          "length": 140020,
+          "sha256": "3B61439A26B1C4BC6DE9B1301A5A3073F6EDF2B392082A4427E8EF3228BB23A4"
+        },
+        {
+          "path": "data/fielddata/land_data/land_data_release.narc",
+          "length": 14778156,
+          "sha256": "1C8D3C0E0C2DE3170A61C8B021E4A1C6E8ECE54FBE65F4C7FAFF2BCC83B1E1E1"
+        },
+        {
+          "path": "data/fielddata/mapmatrix/map_matrix.narc",
+          "length": 11800,
+          "sha256": "22190B1455E3655A239FF6340C577D03839247725D6A01DCF11931C549FDB339"
+        },
+        {
+          "path": "data/fielddata/maptable/mapname.bin",
+          "length": 8944,
+          "sha256": "E15A660B77B361CFDCE4B4B11D3AABDB7D001C4FEBCCC697D9518628354A3FE8"
+        },
+        {
+          "path": "data/fielddata/mm_list/move_model_list.narc",
+          "length": 612,
+          "sha256": "565877E4A06CB02B58F02A3F261735D34B1F4FC7C5801B0AFB3A9E78C4860E82"
+        },
+        {
+          "path": "data/fielddata/pokemon_trade/fld_trade.narc",
+          "length": 404,
+          "sha256": "F7884EE1A0B23399F4E9CB6317B1D61EE10CF99A6ED8BB64F971E79FD27F4101"
+        },
+        {
+          "path": "data/fielddata/script/scr_seq_release.narc",
+          "length": 219608,
+          "sha256": "C62E6F7F537FBFF6604BA0E7985270ACE40562D5A6912F2661B892545F039AF7"
+        },
+        {
+          "path": "data/graphic/bag_gra.narc",
+          "length": 105588,
+          "sha256": "5E1D21EF61CC5A3236F83A785295E5F8354706623E0898AB39A114E235B75C1D"
+        },
+        {
+          "path": "data/graphic/box.narc",
+          "length": 113440,
+          "sha256": "91851F69A7D2349126A90C1B4C0D517B1F09B518434CE5E6C5A10C88EFA8D848"
+        },
+        {
+          "path": "data/graphic/btower.narc",
+          "length": 16888,
+          "sha256": "44ED333D18CBF238CCF8E3B40777EF5865F8B1607F2C9523EB86D66AC9113B17"
+        },
+        {
+          "path": "data/graphic/config_gra.narc",
+          "length": 684,
+          "sha256": "CD4FDB2D299ACE3698DA3CA72F4ACF961759128FA4FD08DC3AFE50C0396778E6"
+        },
+        {
+          "path": "data/graphic/demo_trade.narc",
+          "length": 31512,
+          "sha256": "84C5643070177367C342B8D5A18C679639B03C305B77933FB007A929E74F99CF"
+        },
+        {
+          "path": "data/graphic/dendou_demo.narc",
+          "length": 1564,
+          "sha256": "D3F76C5C4CC8C5FA92B659A0E8442E36EB9523D8F4FD33144F684926995E9E95"
+        },
+        {
+          "path": "data/graphic/dendou_pc.narc",
+          "length": 668,
+          "sha256": "3844B3B7482C93AA0E6397E3ED09F390E61E10BBC839B902ED26760B30C68DAE"
+        },
+        {
+          "path": "data/graphic/ending.narc",
+          "length": 333468,
+          "sha256": "A1584955051E0F3D5394B98C60E1F4C4400652ED841999DC33A2344D0D9C9941"
+        },
+        {
+          "path": "data/graphic/ev_pokeselect.narc",
+          "length": 140580,
+          "sha256": "57F6359243B2E663B5A23AA525F2719F0F2333E419580D4DBB227FC015BE02B0"
+        },
+        {
+          "path": "data/graphic/f_note_gra.narc",
+          "length": 10620,
+          "sha256": "3A1B1600F28697F037F39BE18786CB600A020BEBBA6E26E85971BB813E0E2B3A"
+        },
+        {
+          "path": "data/graphic/field_board.narc",
+          "length": 43260,
+          "sha256": "64865BA617900EE04ABC7DC4090DB2B0C128FBA907EB65EE2A734090BDF9DCA9"
+        },
+        {
+          "path": "data/graphic/field_encounteffect.narc",
+          "length": 38664,
+          "sha256": "6FDF8C5486042C5401361A9A3C7CFD772771AFE409B288FED50EC074167538DF"
+        },
+        {
+          "path": "data/graphic/fld_comact.narc",
+          "length": 868,
+          "sha256": "1CA3E421C0AD0A380BC6ECB063ABA373097AF1F80E70113C87F245185B7BC437"
+        },
+        {
+          "path": "data/graphic/font.narc",
+          "length": 134744,
+          "sha256": "BE387CBEEC816DBAD5065A38023971262523141362ADED9C834A0B29E7172EE8"
+        },
+        {
+          "path": "data/graphic/fontoam.narc",
+          "length": 1444,
+          "sha256": "5CCFF2254DBF1FE7DF12BE151D74DE7B5A6C6D44C49D3A3FC0CEE77419ED1FB7"
+        },
+        {
+          "path": "data/graphic/hiden_effect.narc",
+          "length": 32276,
+          "sha256": "85D834C089435928FCEA971930C872F0CB62040DDD421A25C8E4DDA91910A7DC"
+        },
+        {
+          "path": "data/graphic/imageclip.narc",
+          "length": 255536,
+          "sha256": "B9E5FDC4781E07FF904EFB3605EEC2B94824C8EF8E4F04F7D9745612EFEDED99"
+        },
+        {
+          "path": "data/graphic/mail_gra.narc",
+          "length": 106800,
+          "sha256": "E0C78256D8335716657696D8363B71671606D5634D69E0CFDEB188EE9FDE7655"
+        },
+        {
+          "path": "data/graphic/menu_gra.narc",
+          "length": 19312,
+          "sha256": "63BBFA26EDF4845D061EA5784B7B73186F73CB5E5F394CA57239A62905D3F776"
+        },
+        {
+          "path": "data/graphic/mysign.narc",
+          "length": 4280,
+          "sha256": "F36C892150DEE7567ADE0C901EB52AE2FA9D814A53FDEDDFA63DD48C46CDC94F"
+        },
+        {
+          "path": "data/graphic/mystery.narc",
+          "length": 30916,
+          "sha256": "573A8E721970849947BC3E5CD439B13AA0297D382FC4D9870AF1A81E2FF786D1"
+        },
+        {
+          "path": "data/graphic/ntag_gra.narc",
+          "length": 183920,
+          "sha256": "1B969B5E73D02857755726622B61C5251DFA3F068A410296D193D22FA6D44D6F"
+        },
+        {
+          "path": "data/graphic/nutmixer.narc",
+          "length": 180980,
+          "sha256": "2389BCBCFB89DB63FEE618EE6B2748BF7FF2C306D1F55D989CBB771FC0F236BB"
+        },
+        {
+          "path": "data/graphic/oekaki.narc",
+          "length": 5412,
+          "sha256": "A81AC3264060405B30D9393F0DFC6BDE237479FED739E124310E09991A5BE4A1"
+        },
+        {
+          "path": "data/graphic/opening.narc",
+          "length": 27580,
+          "sha256": "A7F697F95321DCFB2E9C8F155DAA0B032932C42215A627E0E2397CD455C61D20"
+        },
+        {
+          "path": "data/graphic/plist_gra.narc",
+          "length": 40108,
+          "sha256": "AFC98CDFAA34FE70EBC99F219682C3CE989B648AD91FCFCFB42BFD81294F4CF5"
+        },
+        {
+          "path": "data/graphic/pmsi.narc",
+          "length": 12644,
+          "sha256": "0654FE9EF26AB42E224DC0992AA02776834522C7902EDB7FE4EF1A0DB5DB7A5E"
+        },
+        {
+          "path": "data/graphic/poketch.narc",
+          "length": 58820,
+          "sha256": "5235827D35C2F6C3DDBF6F8EFCF809B56D545D3E902091D4A4C6CBD7640CB1DB"
+        },
+        {
+          "path": "data/graphic/poru_gra.narc",
+          "length": 27108,
+          "sha256": "9B60EDE5071FED56136A5FCD31E062F0ED0FA58F3D02E0471664EA8400C8371F"
+        },
+        {
+          "path": "data/graphic/poruact.narc",
+          "length": 5292,
+          "sha256": "3690BBDC63E30A2ED1A8B7082593F0AAB37C1EE3BAB29C415612EF9424B356B8"
+        },
+        {
+          "path": "data/graphic/porudemo.narc",
+          "length": 8812,
+          "sha256": "2A62543AF8B1F73ECCA4A902B1E7D384C4785DC865923D0A08AE00C013F01D65"
+        },
+        {
+          "path": "data/graphic/pst_gra.narc",
+          "length": 127152,
+          "sha256": "450B0DFDE96B5A34B7B0634A994615203B6C5A2E7F616D12B451FE98EA6226A0"
+        },
+        {
+          "path": "data/graphic/ranking.narc",
+          "length": 5320,
+          "sha256": "41EDAC6DF8E779A1FA6DBAB5E60856B931050533F461CD6765EE5CDB5BC43AAE"
+        },
+        {
+          "path": "data/graphic/record.narc",
+          "length": 22980,
+          "sha256": "B7B8F40A3F42E4CFA4CA895D0614A27C47B2264E3CD9CFF60687DE6C524999FD"
+        },
+        {
+          "path": "data/graphic/shop_gra.narc",
+          "length": 10048,
+          "sha256": "50E3C3B71806810A03494973501B2AB36184B77D5397D6ECB3616E33ECCAA693"
+        },
+        {
+          "path": "data/graphic/tmap_gra.narc",
+          "length": 85776,
+          "sha256": "9C53A93615844943D312D01AA6C5736F07CB3D8BD29C07A5FBFF3BDB7B93D374"
+        },
+        {
+          "path": "data/graphic/touch_subwindow.narc",
+          "length": 2456,
+          "sha256": "1B0CB1819A86DFB284D380A999820C303523CCB4523DD6C040886064D36D7C57"
+        },
+        {
+          "path": "data/graphic/trainer_case.narc",
+          "length": 228320,
+          "sha256": "009131C495F817DEFDD9B5639BA113C89EFDA62951D5A36F5F2C6EF8D96F1A2B"
+        },
+        {
+          "path": "data/graphic/unionroom.narc",
+          "length": 4624,
+          "sha256": "18AF9494DB8AB737185C930BB3FFA6DB52B3B11A643108BC1EAE48305AD24428"
+        },
+        {
+          "path": "data/graphic/waza_oshie_gra.narc",
+          "length": 12084,
+          "sha256": "6FCA079A9B8AC505A6825BF703423BBA492E14EAC7C292F181C702761C572DD1"
+        },
+        {
+          "path": "data/graphic/winframe.narc",
+          "length": 35044,
+          "sha256": "656AD458E1A40D6F30ADCFA01F958AB01B205721E28CE804833F3CC5C95DFEDE"
+        },
+        {
+          "path": "data/graphic/worldtrade.narc",
+          "length": 46808,
+          "sha256": "C58D7070AE9E30D4C0FF7DA0AAB73B715755AE46ADF3CFC3FE1B2E4D23B20981"
+        },
+        {
+          "path": "data/itemtool/itemdata/item_data.narc",
+          "length": 19500,
+          "sha256": "A6CFE6DF97F24B191D782FE0AB14A9C067A9B496AFD12180B4904F56E8740C7E"
+        },
+        {
+          "path": "data/itemtool/itemdata/item_icon.narc",
+          "length": 395440,
+          "sha256": "20DCD51401A18B37EF01AB62C8EB8307C6CD6A6D9C5EF6722FD6D4BA92D20B01"
+        },
+        {
+          "path": "data/itemtool/itemdata/nuts_data.narc",
+          "length": 1332,
+          "sha256": "671D1D33478A40E89F5D9811827649B880666321BF7DFE83B4C7BE4FCE69C97E"
+        },
+        {
+          "path": "data/msgdata/msg.narc",
+          "length": 2695184,
+          "sha256": "F291040FA010137CABB12A5661E9CECE845A460788DAE94FBE740E04AA98FD06"
+        },
+        {
+          "path": "data/msgdata/scenario/scr_msg.narc",
+          "length": 6748,
+          "sha256": "89E84AB4475C85AD4358761C89C69C16F51C024041D2081A1DA6AD1AD51B7CBA"
+        },
+        {
+          "path": "data/particledata/particledata.narc",
+          "length": 34300,
+          "sha256": "EEA55FB469D825B97C734B7CCC537F9C774FD54DA70668FDA418CF4AC2482EA6"
+        },
+        {
+          "path": "data/pokeanime/poke_anm.narc",
+          "length": 25412,
+          "sha256": "32606834ED99B654238499E3B42610D984B61C2CF3F67368F091CCF58E9AF217"
+        },
+        {
+          "path": "data/poketool/icongra/poke_icon.narc",
+          "length": 577776,
+          "sha256": "3463C546C112F928F2F8E82EE1638B9739D52DEA1D72779704AD3CC36CFB6C1B"
+        },
+        {
+          "path": "data/poketool/personal/evo.narc",
+          "length": 26104,
+          "sha256": "38BD9DD28F32827246299ED922E05FFD3905C2C445A059B9FD7EC3B56213F5DE"
+        },
+        {
+          "path": "data/poketool/personal/growtbl.narc",
+          "length": 3348,
+          "sha256": "CE5C612E32E537DA3CDF7808C3F21AB217E83A75EAD56027D98A7D84BB1B55D6"
+        },
+        {
+          "path": "data/poketool/personal/personal.narc",
+          "length": 26104,
+          "sha256": "9BC883E846AF6CC0810251C8CE05663CEADACAC0F47DD83A24A93FA0CEA75392"
+        },
+        {
+          "path": "data/poketool/personal/pms.narc",
+          "length": 1002,
+          "sha256": "9DBB6AF03FB378031A191410D698A8124F8A4B96E501827F5A00D9C3179920C6"
+        },
+        {
+          "path": "data/poketool/personal/wotbl.narc",
+          "length": 18752,
+          "sha256": "B46D62D1FD781E66A7BDA535E3A1C1AB1AF2B5AA72778D183C65411B344937D0"
+        },
+        {
+          "path": "data/poketool/pokeanm/pokeanm.narc",
+          "length": 13892,
+          "sha256": "25AF2F6E78A5A8EAB609313A6E21B103604753686088EF4C51F212C89C109011"
+        },
+        {
+          "path": "data/poketool/pokefoot/pokefoot.narc",
+          "length": 58604,
+          "sha256": "181E87EB2BF79BA6E73124D1F694E801AA48844DCDD85E66C0BD2C707E8F8688"
+        },
+        {
+          "path": "data/poketool/pokegra/height.narc",
+          "length": 23108,
+          "sha256": "B44492AA09F74D2CF5F41CA13C2F7FC6D8238258C64EF49F2C23C1AC15DCCEC3"
+        },
+        {
+          "path": "data/poketool/pokegra/height_o.narc",
+          "length": 1684,
+          "sha256": "8DCEF49C4815FDD7662B78AD140858FA23FBA5971FAE866CB6581F3CB0C8F6BD"
+        },
+        {
+          "path": "data/poketool/pokegra/otherpoke.narc",
+          "length": 890604,
+          "sha256": "CAB7AF2E4FEF1878AF6A7002EECC24C7A1C879166AAF5DFD61EBDC0BD4B92681"
+        },
+        {
+          "path": "data/poketool/pokegra/poke_shadow.narc",
+          "length": 556,
+          "sha256": "037338FFC4F027A249F506B8171DC872C875477158F019E4EA503D1ADE6255EC"
+        },
+        {
+          "path": "data/poketool/pokegra/poke_shadow_ofx.narc",
+          "length": 556,
+          "sha256": "0E145A476FC5D98620D37F98322EFBF812CF597D4B0675BEAF87846D3A643885"
+        },
+        {
+          "path": "data/poketool/pokegra/poke_yofs.narc",
+          "length": 556,
+          "sha256": "A5984361E6E9167321A9B4F5CE444A3B628D36520E97E8D9C61C1477FF157969"
+        },
+        {
+          "path": "data/poketool/pokegra/pokegra.narc",
+          "length": 11778676,
+          "sha256": "3320B89C6C84341784F58F9632DBE93B44EE34E0FE16D3A6B8673AED70A9ADC2"
+        },
+        {
+          "path": "data/poketool/pokezukan.narc",
+          "length": 1048,
+          "sha256": "A8072CA83ECCB60CC3D94B0C7BE53807E9D39E0895BC82551FD168DB54EEA381"
+        },
+        {
+          "path": "data/poketool/shinzukan.narc",
+          "length": 364,
+          "sha256": "86C2C31F90A1FE9D8DDF7F38187CE9E62C84C7E2AEF720EE30B61AEAE3871DE6"
+        },
+        {
+          "path": "data/poketool/trainer/trdata.narc",
+          "length": 23852,
+          "sha256": "B459FEC85EBA6036F328EBA6853B85CFE1104C941004052F5FFA7C93D8D472E3"
+        },
+        {
+          "path": "data/poketool/trainer/trpoke.narc",
+          "length": 21908,
+          "sha256": "612C5D48F937AFF12898AF92A2E3D37840851D39E289EA7245C4D19B2DFB0A1E"
+        },
+        {
+          "path": "data/poketool/trgra/trbgra.narc",
+          "length": 52340,
+          "sha256": "4CDAA08B37D980CA81CF475F148CCEA36F71C19CECE2C581B015F2164053814A"
+        },
+        {
+          "path": "data/poketool/trgra/trfgra.narc",
+          "length": 640580,
+          "sha256": "4E757A733993340E7B903F0FBE533565B20DAD1E972932DEF4CED01428608917"
+        },
+        {
+          "path": "data/poketool/trmsg/trtbl.narc",
+          "length": 9604,
+          "sha256": "B28373DCA644706E57BB643C2B1A24182E62935555158B9AE620DCB48BB86663"
+        },
+        {
+          "path": "data/poketool/trmsg/trtblofs.narc",
+          "length": 1760,
+          "sha256": "C473B9EB2E8EBB2761E8F737BDE3A871EB6F0B9A2A5116F1DCE3C9A10836F76A"
+        },
+        {
+          "path": "data/poketool/waza/waza_tbl.narc",
+          "length": 11356,
+          "sha256": "F9F6A37E8B8170558CE14C4BE35C890FF59CC97508A4AA237FDAC945DFDFFE54"
+        },
+        {
+          "path": "data/resource/eng/trial/trial.narc",
+          "length": 56292,
+          "sha256": "28844AF1506FFB512EE1949D89FD9C5964DB1E43170AFC020BDC90FA808D9557"
+        },
+        {
+          "path": "data/resource/eng/zukan/zukan.narc",
+          "length": 72988,
+          "sha256": "6C27D3C79AF8A1FDA140D730C04AFBA099DFDB760E1F9E681E1E3DD52B1C5022"
+        },
+        {
+          "path": "data/wazaeffect/effectclact/wecell.narc",
+          "length": 5364,
+          "sha256": "CEF63814CCDB2063E385D88366D4E610061958723B7B0131C7DA3F2163749648"
+        },
+        {
+          "path": "data/wazaeffect/effectclact/wecellanm.narc",
+          "length": 4688,
+          "sha256": "0E47C9B5F7C24199BD56D0576F276DABBF4C1D8AA68922CAA3AC4EC2699D0865"
+        },
+        {
+          "path": "data/wazaeffect/effectclact/wechar.narc",
+          "length": 33076,
+          "sha256": "E6902F8F1EB1B63F9D3F23CAF2E6EEE4F981F6773A118324D8FFF6A9559E5D68"
+        },
+        {
+          "path": "data/wazaeffect/effectclact/wepltt.narc",
+          "length": 4480,
+          "sha256": "31F3222BB317406D558A130BCFBFF12CF49F76E05DD9F89CDA8EF4E319A4A4D2"
+        },
+        {
+          "path": "data/wazaeffect/effectdata/ball_particle.narc",
+          "length": 321604,
+          "sha256": "3E87820EEA3920C98231F806D166F315F339DF9FF9C834C8E5640BB87FFBDD01"
+        },
+        {
+          "path": "data/wazaeffect/effectdata/waza_particle.narc",
+          "length": 2381840,
+          "sha256": "D5AE0E67CE103DFB89F1E34510402789633D02C28C474FD3C1FD0F06B1C45681"
+        },
+        {
+          "path": "data/wazaeffect/pt_debug/debug_particle.narc",
+          "length": 3016,
+          "sha256": "15B42228DB722E499F072C1FAC5F57AA71C388E9AAAE1502AF2FBCC0D13F8F78"
+        },
+        {
+          "path": "data/wazaeffect/we.arc",
+          "length": 254028,
+          "sha256": "2EE2183AD04A7B4BA20EF1562E25F335081B7501B42AD50D43846BE9583367FF"
+        },
+        {
+          "path": "data/wazaeffect/we_sub.narc",
+          "length": 12324,
+          "sha256": "D4314B2B2A3CFEC4B4CAC16713E80A20400EA1B03A1E6CE87320174CE6B1F2F9"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "BDF7E81D6F64FA36D9E2597988A6D84C0447DFEA2EA73834FCECAE33F7F29C83"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 32,
+          "sha256": "7D714EBD20B8188E95318E524E9F8B3FB8D4DC194E1BE591A1717EB574A5BC6E"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 231136,
+          "sha256": "7BADE8989412A7F7D12DFE1013FF04FA0AA92A047F6BB6E6865769B4554C427B"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 156064,
+          "sha256": "0F129503572C03306B6C545A4E2509B697BCB1E8CD4E022F3C7166EAC6C5EB96"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 101760,
+          "sha256": "91EA83F1FA8D305A628DDC96BCF5C50370308BC61C60CD6650C62E5B8C27ADC4"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 13024,
+          "sha256": "C87BD0563A0E4587D82AD49A578ACBA81A83223676C7F5CDF5899F813654E0ED"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 112480,
+          "sha256": "EEC26894E42E885AEF01784B9A6B1FFBB3BF5AE49D78D6F94B3A0C7CF010C89F"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 41376,
+          "sha256": "CEEEF1BC433239EC4CBF996DBB55FF2A8F7CC8A8501C398805D5F7CEEF9A3EA3"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 207328,
+          "sha256": "876CF7E269A985B52A323131CCBFBC854ECFE00DC3B9DFFE1E8C5D0EADA727A9"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 103008,
+          "sha256": "BDDB98A776626A41092E6F4C80ECDA5AC16756E2C7D9687348E76E2A81F0FE4A"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 191456,
+          "sha256": "6247397A0BDED739DF236624C4ED438093535063EF498AF28B1786AAD6D84935"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 62752,
+          "sha256": "A8C8BDCFD94A2A87BA26D6E44C75EF2C0D3B7E329005F94A7E881BFBEA753E32"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 18048,
+          "sha256": "EBD5074438A9541AAA5D217C03BF1A35C4BC70D2E32747A6F7FBEABB97A7FF30"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 165120,
+          "sha256": "8811E963A9950BA4A6D86BCD5DA005AE7C9109E30803D650E1F37B9E4F84B825"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 28288,
+          "sha256": "BF86ED75E64B280907CFA4BE79A5614AB3EE806FAB141E71058E34121D96D025"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 97504,
+          "sha256": "19056B9C746027236F52A15937EFF0D24F0028B11821560B98D59A3E7A5EE418"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 256,
+          "sha256": "265B3083EE8856D7554732C2149C0389D6797E81BBA50CFF1803D18357BE9774"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 9216,
+          "sha256": "C2740E1643D9939671BB6C434058364EF767DBEFB50FCF2EA4EDB7D1A3169800"
+        },
+        {
+          "path": "overlays/overlay_0021.bin",
+          "length": 1472,
+          "sha256": "14A8108FC5AB07E72035ACDA984FD63A237EFB1E4B642B779641A6DFDE650BFE"
+        },
+        {
+          "path": "overlays/overlay_0022.bin",
+          "length": 3840,
+          "sha256": "A10CC560AFD7AF25D9B0382F5F6DC78CFB0104383F9DF67FE72461A4724C88EA"
+        },
+        {
+          "path": "overlays/overlay_0023.bin",
+          "length": 6400,
+          "sha256": "74C2E4A74E4A41F98E90F8513BF496295C35FB5F9D6B8540CC9864AF3C21568C"
+        },
+        {
+          "path": "overlays/overlay_0024.bin",
+          "length": 2464,
+          "sha256": "51A9AF3AC5046C880FBF115275C28B4D71ED83A3D7155EADAE3BAA4968B290C0"
+        },
+        {
+          "path": "overlays/overlay_0025.bin",
+          "length": 1376,
+          "sha256": "B0F63859A3357CC33CA03D61132D3EA483D8AF00C69C12324F66DA1DEE9AF916"
+        },
+        {
+          "path": "overlays/overlay_0026.bin",
+          "length": 2048,
+          "sha256": "811217F7D65FB474F089E2543B7F9A7EBD74CCA6C6EA401A13DDAFAC2CF91856"
+        },
+        {
+          "path": "overlays/overlay_0027.bin",
+          "length": 2976,
+          "sha256": "5AA86B3F432E3D940F4A310FF1D337466946765495A0DC8632247EF8E429F94F"
+        },
+        {
+          "path": "overlays/overlay_0028.bin",
+          "length": 6016,
+          "sha256": "00ACED84BACFA312C5FA22D22D3E64F7971A5948530594D0AF8AD25CCA1E0483"
+        },
+        {
+          "path": "overlays/overlay_0029.bin",
+          "length": 2304,
+          "sha256": "4C4919BBA8D878BD47AAF7B98EB50B4A5860E6337505FB48BE8A34C6710A42A7"
+        },
+        {
+          "path": "overlays/overlay_0030.bin",
+          "length": 1536,
+          "sha256": "C6C45F26007FF97C8E209CD84B58B4B55FEAD689EA5149700AD7B8A91EE1FB88"
+        },
+        {
+          "path": "overlays/overlay_0031.bin",
+          "length": 1536,
+          "sha256": "89C406128241E415C7BF16FCF538150BCFDF9349CB1364245563AEA2AF9EF975"
+        },
+        {
+          "path": "overlays/overlay_0032.bin",
+          "length": 1184,
+          "sha256": "D98852300F1F773CF30B380201CCAB71FF4BC06C0EA2A0C865BC2090F4693022"
+        },
+        {
+          "path": "overlays/overlay_0033.bin",
+          "length": 800,
+          "sha256": "63075A78BDE98567FF4E13B4267D2E7A2A71737BFE0435DAC38C6899F413F993"
+        },
+        {
+          "path": "overlays/overlay_0034.bin",
+          "length": 1216,
+          "sha256": "D2B0F9A24B2BE9541CA28ED2EBF25ADCB87565541DDC47A5954A73BE713EB92F"
+        },
+        {
+          "path": "overlays/overlay_0035.bin",
+          "length": 2464,
+          "sha256": "37AA387A1589B8690872DB985B8C5B3773C8EB47EA9270B6A584CF1E7686B1E2"
+        },
+        {
+          "path": "overlays/overlay_0036.bin",
+          "length": 3264,
+          "sha256": "6D66F8DAD90D8C559B499B48F806E3970292631CB9352253E16B2F844E0A2D7C"
+        },
+        {
+          "path": "overlays/overlay_0037.bin",
+          "length": 1376,
+          "sha256": "5675CAC6082947D47367A6D1497112408BA013EBBEF1F58277F12A9E59D2BAA9"
+        },
+        {
+          "path": "overlays/overlay_0038.bin",
+          "length": 2880,
+          "sha256": "1A081A06FE528B4163A3CB25649E5F81C2B489F8181EB536CFE5D26F0A7B4E55"
+        },
+        {
+          "path": "overlays/overlay_0039.bin",
+          "length": 3264,
+          "sha256": "3ADCF31153F502F4119A05271C1141177BBF74C720A5419545453F854A5B7926"
+        },
+        {
+          "path": "overlays/overlay_0040.bin",
+          "length": 3168,
+          "sha256": "201AF4D8C1349F1925B6BC2EDFB46BD92DF32C9701AA8C56017446E77A85B7E0"
+        },
+        {
+          "path": "overlays/overlay_0041.bin",
+          "length": 4416,
+          "sha256": "70F384984BDDC1FAD09ABB16D793E11D066AD3536312652FDC1D7630B6FE6A64"
+        },
+        {
+          "path": "overlays/overlay_0042.bin",
+          "length": 2304,
+          "sha256": "4DE4706DCB7068EF232CD3A152A6E90088B78F887BD90158E12010552E65179E"
+        },
+        {
+          "path": "overlays/overlay_0043.bin",
+          "length": 2496,
+          "sha256": "49B5E70784B7D0AD3FEF82677B5B49AC55E46239F47960F446B291CAB9EBB28B"
+        },
+        {
+          "path": "overlays/overlay_0044.bin",
+          "length": 1184,
+          "sha256": "525D6ADE35A08FD3A4F26D6FEE887DC845A0DAB1FF0A5AA472FF062400A2D57A"
+        },
+        {
+          "path": "overlays/overlay_0045.bin",
+          "length": 2368,
+          "sha256": "AB6B494D61AC6104A777EE8F4B9EA5B8FB89AD0C269F24AAAA0807C8DE8E545A"
+        },
+        {
+          "path": "overlays/overlay_0046.bin",
+          "length": 800,
+          "sha256": "A5A72CDF09A59631B20C82E4EF5BFE895FA67B8720D8FCBB906C470C4D39297A"
+        },
+        {
+          "path": "overlays/overlay_0047.bin",
+          "length": 3232,
+          "sha256": "7B09611FA020F64C6B360C604C0D139BD5FA3BF90BEDAD53D953B60CC1077D62"
+        },
+        {
+          "path": "overlays/overlay_0048.bin",
+          "length": 2208,
+          "sha256": "A24FB6A3F0CC1EF345A3A97C73EF9ABE4F57C105050A2172C34026DBBE54EDDA"
+        },
+        {
+          "path": "overlays/overlay_0049.bin",
+          "length": 1536,
+          "sha256": "920C9A423C792DB211B7B7CC51BBB0C1E2C23F8E9AFE87277A1C1A4E1F52BD12"
+        },
+        {
+          "path": "overlays/overlay_0050.bin",
+          "length": 800,
+          "sha256": "91B5449DC04A995C6A9AD343B62523C03441BED4F44C197CB4E2E37B7EB63979"
+        },
+        {
+          "path": "overlays/overlay_0051.bin",
+          "length": 4032,
+          "sha256": "4A8A6A91A04C91A1838B175D4319BE643EA79BA44C1F1D1DD0FE87AF49DB3919"
+        },
+        {
+          "path": "overlays/overlay_0052.bin",
+          "length": 1024,
+          "sha256": "D9A7EC93BCE0146D9B4CC9114E5B15E39C0EA631B00CD9722F0698AAD0B53A21"
+        },
+        {
+          "path": "overlays/overlay_0053.bin",
+          "length": 9344,
+          "sha256": "9A32BD6C1BFDF295DB33C6988355E928C6857A07CE27CA9CC6B9058BC7658536"
+        },
+        {
+          "path": "overlays/overlay_0054.bin",
+          "length": 9088,
+          "sha256": "D67FD94A56457A7D5EB52806C00A0163E581ED1D52B35FFE4D58794FEE626541"
+        },
+        {
+          "path": "overlays/overlay_0055.bin",
+          "length": 12352,
+          "sha256": "8A07E23BA4EE3AFECC2EE24DD0201700DBB0983FDF54B6CD84C815A170732392"
+        },
+        {
+          "path": "overlays/overlay_0056.bin",
+          "length": 18336,
+          "sha256": "A1F9F6C2F45E6CD8E797D9F62D6A771B3D9AFC1DEAF6A1CFD485C59A3E90DF64"
+        },
+        {
+          "path": "overlays/overlay_0057.bin",
+          "length": 9536,
+          "sha256": "DBF1E309F8FFA42EB72D7030B1800D70C94671BDC7ADFC6A36FC6192FB397374"
+        },
+        {
+          "path": "overlays/overlay_0058.bin",
+          "length": 5536,
+          "sha256": "24A76CCD1C10027275B59E95C54F617DD76B6C04B1E79139BFE191357B9D7D16"
+        },
+        {
+          "path": "overlays/overlay_0059.bin",
+          "length": 11296,
+          "sha256": "7BDCC37EDD43F07EC94C0B60B9EFE0A65BC285D406A490234F965450AA8140C7"
+        },
+        {
+          "path": "overlays/overlay_0060.bin",
+          "length": 3328,
+          "sha256": "1439A2471B5DEFA9B375DF64A326F1E4DEFD787E1C5632D7FFF8F84BD1C40A67"
+        },
+        {
+          "path": "overlays/overlay_0061.bin",
+          "length": 4224,
+          "sha256": "C225CFEC79F26745F3F15DCEA30852391E7438ED7793E7BAC26D1B6A79DBB086"
+        },
+        {
+          "path": "overlays/overlay_0062.bin",
+          "length": 15840,
+          "sha256": "F4998286761DC05946350F5355CC73D7BBB60EA3B6474EAF972319EFE24DDF1A"
+        },
+        {
+          "path": "overlays/overlay_0063.bin",
+          "length": 19136,
+          "sha256": "99CCC9D2337A4A1904E305219FF1B408CA7DAE626F4B2F4CAFF67AC41F2B649B"
+        },
+        {
+          "path": "overlays/overlay_0064.bin",
+          "length": 7232,
+          "sha256": "B31ADFDFE807DE9D161D97424BD4C7C4C17F7CA3F249E8BA8F1844450029A14F"
+        },
+        {
+          "path": "overlays/overlay_0065.bin",
+          "length": 12288,
+          "sha256": "A505B088576D0566C8B1D51BF00C9DBC33BA6F7F52AE51EBE20B3266487027F8"
+        },
+        {
+          "path": "overlays/overlay_0066.bin",
+          "length": 9824,
+          "sha256": "3FF3BA8E6C10F97CC402197EFB99367AFD2494142C152E0570B1458794ACB3F4"
+        },
+        {
+          "path": "overlays/overlay_0067.bin",
+          "length": 9280,
+          "sha256": "55D1157F21A13EE06123E73B359AE2FBE0C72732118F06C1DA3993E615F57405"
+        },
+        {
+          "path": "overlays/overlay_0068.bin",
+          "length": 5632,
+          "sha256": "09B2376277CDDDC6735B15A88BD70527C09C4A766ADC964A5DCB33E468DA3AD6"
+        },
+        {
+          "path": "overlays/overlay_0069.bin",
+          "length": 9120,
+          "sha256": "339C4E128D9F22EE472909E54FA49C3A2FC8C01E6264A078318196B1FB52F301"
+        },
+        {
+          "path": "overlays/overlay_0070.bin",
+          "length": 3616,
+          "sha256": "AF4DB01E19E818256C833A22FD57064023EB594ABCB54326ADAC55D758D5E34E"
+        },
+        {
+          "path": "overlays/overlay_0071.bin",
+          "length": 16064,
+          "sha256": "201305E713A7FD1795B6AB4C374BF6D7B4FA146FF8492A2CDE9E630E3FAA6B61"
+        },
+        {
+          "path": "overlays/overlay_0072.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0073.bin",
+          "length": 19168,
+          "sha256": "A69E34C8269C3165FDF6FA3DF6CA57515D7B7A34CA6C27B7EF4D5EAA328947E3"
+        },
+        {
+          "path": "overlays/overlay_0074.bin",
+          "length": 4640,
+          "sha256": "AC397207A6B2D754A235A988A171D5A1CE746228B0B991DCB7BB7CC37EBB3CF3"
+        },
+        {
+          "path": "overlays/overlay_0075.bin",
+          "length": 24032,
+          "sha256": "1053836431A27FCE86AD49059392EB7B1174D9D8B55762EA8747E1B7FB2FCE47"
+        },
+        {
+          "path": "overlays/overlay_0076.bin",
+          "length": 7712,
+          "sha256": "13581B50D3CAB7DEB180297CFA1AB91B3426E93B266020438C5AE99D743B7EA0"
+        },
+        {
+          "path": "overlays/overlay_0077.bin",
+          "length": 7136,
+          "sha256": "4672222284E6FDA0308545EA9D2DA08504E04C21398156AD1C7B77EDBB5849F6"
+        },
+        {
+          "path": "overlays/overlay_0078.bin",
+          "length": 1120,
+          "sha256": "4ED4D0C431938878A9CF25AB573FE2C5935BB59E1CDAE24CE108BDE87159FBC9"
+        },
+        {
+          "path": "overlays/overlay_0079.bin",
+          "length": 21184,
+          "sha256": "50FFD469DD8294D3FB3D115979E93019CDA6749D7225DC3938B9CFCC0814BB1E"
+        },
+        {
+          "path": "overlays/overlay_0080.bin",
+          "length": 42784,
+          "sha256": "8AE7FB8C086A67FA15C850B153BECB8DEFE26BB12A877BE3748A330663F8D7F7"
+        },
+        {
+          "path": "overlays/overlay_0081.bin",
+          "length": 21888,
+          "sha256": "A6873862995A3E7AE04D3265949CEC680916902D616496341A64D4E206250176"
+        },
+        {
+          "path": "overlays/overlay_0082.bin",
+          "length": 9536,
+          "sha256": "1B32C9290EB520DD8550725608DFCF6890C88115FD9C60CB7AE94814243BDD07"
+        },
+        {
+          "path": "overlays/overlay_0083.bin",
+          "length": 58016,
+          "sha256": "09EB7686CB1B31F9EC18ECF5DDA5B14A9D8C0BBF83FFD3956AC52081484AA498"
+        },
+        {
+          "path": "overlays/overlay_0084.bin",
+          "length": 14624,
+          "sha256": "7E4CDAB98F4B8149DF6B5AB155648974359FF77672035248DE5D2AF164810F84"
+        },
+        {
+          "path": "overlays/overlay_0085.bin",
+          "length": 37120,
+          "sha256": "FEC5D359B3457F922CD37FA1E60AF793B33FF8B6500521228DE02240637005C1"
+        },
+        {
+          "path": "overlays/overlay_0086.bin",
+          "length": 2080,
+          "sha256": "90227B2E553A75B5A116463B16E9E23609860F0EE3F8546480078854764BFF40"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 61169608,
+          "sha256": "7D48D2CCC2D67259F8B163AC082AA19ADE5C6B6A6F841F97DE55C05E84E5E529"
+        }
+      ]
+    },
+    {
+      "name": "create-elf",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-elf.nds",
+          "length": 26633,
+          "sha256": "49BA67B3BB3082251576AA2EA35210F5BD44D08153FB6BCC5AF5B310A790C0E0"
+        }
+      ]
+    },
+    {
+      "name": "create-bitmaps",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-bitmaps.nds",
+          "length": 29248,
+          "sha256": "F9A8EB93A09A86A0B300E3FE09F6DA1EF93F636CDA7D2BE8FA81E846BE5BE762"
+        }
+      ]
+    },
+    {
+      "name": "dsi-options-probe",
+      "exitCode": 1,
+      "standardOutputSha256": "4B9A60048447E5B7F089814F08EE526141144DDD4B549113EED6CD0D46997161",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 67108864,
+          "sha256": "78C47C360EF4DD4AC17800654F0B5ED511DBA47179655A16577C6072A9428DFD"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 67108864,
+          "sha256": "2D821522B161D053A07EF83EB6CBD81CC8244C4C070E39879077EEDF855C02FB"
+        }
+      ]
+    },
+    {
+      "name": "secure-decrypt",
+      "exitCode": 0,
+      "standardOutputSha256": "2D91FE422AD3060CE4E5B32FCB9EFCB1C75F8F5D9381DD5449B41115F14B2B53",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-decrypted.nds",
+          "length": 67108864,
+          "sha256": "E29BC6EBE431D7A6B238267B6B1521FEC4A3BC14F2FA348798062F870C738454"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-nintendo",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-nintendo.nds",
+          "length": 67108864,
+          "sha256": "58180C2CD8A6C7F2EE97E3AF532CFA5EB5DE086AEC4FC87EF8C30E46163DC795"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-other",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-other.nds",
+          "length": 67108864,
+          "sha256": "BBCC464C63B8B2BF48AFDEFE78542D2800AD61F0D252E669D02CF112EDCAEF61"
+        }
+      ]
+    },
+    {
+      "name": "verbose-list",
+      "exitCode": 0,
+      "standardOutputSha256": "16650F198C357F0477346018DB2F4BB7416AFA500A7AE3DF217743CD4569915F",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "post-oracle-info",
+      "exitCode": 0,
+      "standardOutputSha256": "A1638A24FDD8D3FBFDC6C58F5DE7F8CCA87EFC9E925CB785492E2417B38203F2",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    }
+  ]
+}

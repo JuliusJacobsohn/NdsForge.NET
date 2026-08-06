@@ -213,6 +213,16 @@ $env:NDSFORGE_NDSTOOL_SOURCE = "C:\src\ndstool\source\encryption.cpp"
 dotnet test NdsForge.slnx --configuration Release
 ```
 
+The large differential corpus is content-addressed rather than filename-addressed.
+Set `NDSFORGE_CORPUS` to any directory tree containing legally dumped images; a
+case runs only when a complete-file SHA-256 matches its committed expectation.
+Set `NDSFORGE_REQUIRE_CORPUS=1` in maintainer CI to turn any missing case into a
+failure. The repository contains only metadata, process outcomes, lengths, and
+SHA-256 values—not ROMs, extracted payloads, original paths, or console logs.
+
+See [the corpus testing design](docs/corpus-testing.md) for the feature matrix,
+known ndstool divergences, and the procedure for refreshing expectations.
+
 ## Scope
 
 NdsForge is an image/container library, not an emulator, disassembler, save-game

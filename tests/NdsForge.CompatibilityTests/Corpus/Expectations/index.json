@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "cases": [
+    {
+      "name": "42 ALL-TIME CLASSICS [ATDP] [Europe - Multilingual].nds",
+      "romSha256": "9a3f3001dee8acffdfb705ef89b36dfaeb9d6edcfb47cbb067f13375719bf1c9",
+      "expectationFile": "ATDP-9a3f3001dee8.json"
+    },
+    {
+      "name": "Animal Crossing- Wild World [ADME] [USA - English].nds",
+      "romSha256": "b2b7031f1d08dd0544952757a1ab2164501b16fae2a44b64954a03a76e31fb87",
+      "expectationFile": "ADME-b2b7031f1d08.json"
+    },
+    {
+      "name": "Bratz Forever Diamondz - THQ [AVDS] [Spain - Spanish].nds",
+      "romSha256": "2a96a464d031a99ba1c6ca92eabecabf740fb8adf65095923c75b5a487be012e",
+      "expectationFile": "AVDS-2a96a464d031.json"
+    },
+    {
+      "name": "Call of Duty\u00AE- Black Ops - Activision [BDYE] [USA - English].nds",
+      "romSha256": "f497e9f5b2cb834142f29a8e1943500e63cf0c04840d5aa2e21aa6a82b1521ac",
+      "expectationFile": "BDYE-f497e9f5b2cb.json"
+    },
+    {
+      "name": "Cooking Mama - Majesco Entertainment [ACCE] [USA - English].nds",
+      "romSha256": "4d3d7b05d01cabf4dee66d8c875da962b8f044ef1bd95dc282896b4dae02a0b1",
+      "expectationFile": "ACCE-4d3d7b05d01c.json"
+    },
+    {
+      "name": "Cooking Mama 2 - Majesco Entertainment [YCQE] [USA - English].nds",
+      "romSha256": "fe11b26d3ba5652df8a1f136a39e3ece5ac53fd899c7f4fdee45002c73b06feb",
+      "expectationFile": "YCQE-fe11b26d3ba5.json"
+    },
+    {
+      "name": "Coraline - D3Publisher of America, Inc. [CRLE] [USA - English].nds",
+      "romSha256": "336f5b398ceff68517f3356ad2693827d2277d1633ff8410434656dc74a09682",
+      "expectationFile": "CRLE-336f5b398cef.json"
+    },
+    {
+      "name": "GTA- Chinatown Wars - ROCKSTAR GAMES\u2122 [YGXP] [Europe - Multilingual].nds",
+      "romSha256": "3c944ef4408e321aa0887855054d8b53c86a2e250c2e69cd46f38a162c45fad4",
+      "expectationFile": "YGXP-3c944ef4408e.json"
+    },
+    {
+      "name": "Kirby Super Star Ultra [YKWE] [USA - English].nds",
+      "romSha256": "b2573313a582c8dfaf2d93834a670c1ca8f389e5daa744e2dbe1a4ca903f3027",
+      "expectationFile": "YKWE-b2573313a582.json"
+    },
+    {
+      "name": "LEGO\u00AE MARVEL - WB Games Inc. [TLME] [USA - English].nds",
+      "romSha256": "9bb2134f7a14ec8c726d91e89447c5f4a9c7298bb2177db38d4cbe3fa50205d9",
+      "expectationFile": "TLME-9bb2134f7a14.json"
+    },
+    {
+      "name": "LEGO\u00AE Star Wars\u2122 - The Complete Saga - LucasArts\u2122 [YLGE] [USA - English].nds",
+      "romSha256": "354004fbf17f5a95ad4546ec64e47bb036f5d78c946daa021e4636abf00fda1a",
+      "expectationFile": "YLGE-354004fbf17f.json"
+    },
+    {
+      "name": "MARIO \u0026 LUIGI - Bowser\u0027s Inside Story [CLJE] [USA - English].nds",
+      "romSha256": "9126963d6c6b6f81a9a666ba766e223781ff286634486e2a56d07a4c82eef4f1",
+      "expectationFile": "CLJE-9126963d6c6b.json"
+    },
+    {
+      "name": "MARIO KART DS [AMCE] [USA - English].nds",
+      "romSha256": "0ea8a91a0ae3e9db26337c25a6a8568f6737fa36c1e0761988c0fa0ecbf210ed",
+      "expectationFile": "AMCE-0ea8a91a0ae3.json"
+    },
+    {
+      "name": "MARIO KART DS [AMCP] [Europe - Multilingual].nds",
+      "romSha256": "d1dd7a96e6c8c912faac2e4accb83682de0f42bac34f1ad5313d6cb78fb8d225",
+      "expectationFile": "AMCP-d1dd7a96e6c8.json"
+    },
+    {
+      "name": "Mario Party DS [A8TE] [USA - English].nds",
+      "romSha256": "50a8df48d0cc78d45506825217278598fac2c87cb2bb090e0da304a8b4f31433",
+      "expectationFile": "A8TE-50a8df48d0cc.json"
+    },
+    {
+      "name": "Mario Party DS [A8TP] [Europe - Multilingual].nds",
+      "romSha256": "ab76a6ac312122dcf5cf05d255188b5ecac894afc995865d6849461f273bcc14",
+      "expectationFile": "A8TP-ab76a6ac3121.json"
+    },
+    {
+      "name": "Metal Slug 7 - \u00A9SNK PLAYMORE - Ignition [YM7E] [USA - English].nds",
+      "romSha256": "b4562b43b003675bddb25a886f3905fcccff0943192b9babde717715ce954499",
+      "expectationFile": "YM7E-b4562b43b003.json"
+    },
+    {
+      "name": "New Super Mario Bros. [A2DE] [USA - English].nds",
+      "romSha256": "9f67fef1b4c73e966767f6153431ada3751dc1b0da2c70f386c14a5e3017f354",
+      "expectationFile": "A2DE-9f67fef1b4c7.json"
+    },
+    {
+      "name": "New Super Mario Bros. [A2DP] [Europe - Multilingual].nds",
+      "romSha256": "dd2e519a9e46134e213e6e63dd2b478d9a258627769b777baddb2316dc21b81d",
+      "expectationFile": "A2DP-dd2e519a9e46.json"
+    },
+    {
+      "name": "Nintendogs [AD3P] [Europe - Multilingual].nds",
+      "romSha256": "a5c795e837bec9c984f5a38178a423c9b1b810852c57576ea757c7845a49af02",
+      "expectationFile": "AD3P-a5c795e837be.json"
+    },
+    {
+      "name": "Nintendogs [AD7P] [Europe - Multilingual].nds",
+      "romSha256": "6bf1ad5172b3f83cdea146fbbed2e85b3c08bb33dbfeac594dc2f11d6b13ad25",
+      "expectationFile": "AD7P-6bf1ad5172b3.json"
+    },
+    {
+      "name": "Plants vs. Zombies\u2122 - PopCap Games, Inc. [BWBE] [USA - English].nds",
+      "romSha256": "43dfad7bcaea611a770034919d3fbf77c0ffe41b81483a0eec7774d7c5c418ad",
+      "expectationFile": "BWBE-43dfad7bcaea.json"
+    },
+    {
+      "name": "Pok\u00E9mon - Black Version 2 [IREO] [USA - English].nds",
+      "romSha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+      "expectationFile": "IREO-39a661636de0.json"
+    },
+    {
+      "name": "Pok\u00E9mon - Black Version [IRBO] [USA - English].nds",
+      "romSha256": "b9979189d299a0231d01c8885c0d054b706976ffc75427ca59d84e0ce1493034",
+      "expectationFile": "IRBO-b9979189d299.json"
+    },
+    {
+      "name": "Pok\u00E9mon - White Version 2 [IRDO] [USA - English].nds",
+      "romSha256": "3e50aec3db401332175a5d2b5fe2a68ac1a05ec63995dba9d1506b1b51837446",
+      "expectationFile": "IRDO-3e50aec3db40.json"
+    },
+    {
+      "name": "Pok\u00E9mon - White Version [IRAO] [USA - English].nds",
+      "romSha256": "b288bb061fd646894f5059f55cd0a1efb13b4f0cfd3d9e06e9e42a5bd9431ac6",
+      "expectationFile": "IRAO-b288bb061fd6.json"
+    },
+    {
+      "name": "Pok\u00E9mon Diamond [ADAE] [USA - English].nds",
+      "romSha256": "e29bc6ebe431d7a6b238267b6b1521fec4a3bc14f2fa348798062f870c738454",
+      "expectationFile": "ADAE-e29bc6ebe431.json"
+    },
+    {
+      "name": "Pok\u00E9mon HeartGold [IPKD] [Germany - German].nds",
+      "romSha256": "b0746b12cafdc2a80de21d218d491cd06c567fab07d9740ae658bb548c37a339",
+      "expectationFile": "IPKD-b0746b12cafd.json"
+    },
+    {
+      "name": "Pok\u00E9mon HeartGold [IPKE] [USA - English].nds",
+      "romSha256": "65f02a56842b75aa92d775d56d657a56fe3fa993550b04dc20704ab82d760105",
+      "expectationFile": "IPKE-65f02a56842b.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Skies [C2SE] [USA - English] [Staro Mod].nds",
+      "romSha256": "add506595ffad785e2a426ca826fb2538824e8450bb1af8f6819260f0739fe6b",
+      "expectationFile": "C2SE-add506595ffa.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SE] [USA - English] [Randomized 202100228].nds",
+      "romSha256": "6634d2cd6d760cbc85ab27424d0441d916edf8bd34c4b78c61c1f1c0b94b786c",
+      "expectationFile": "C2SE-6634d2cd6d76.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SE] [USA - English] [Randomized 314159].nds",
+      "romSha256": "3a75e68cf450d57fc7f866660190dfad68391648e29277e1ad0faf7d5bd74a98",
+      "expectationFile": "C2SE-3a75e68cf450.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SE] [USA - English] [Randomized Starters].nds",
+      "romSha256": "4d6f92ffb9ea12d6838436486c339284d02573b8b1282ca702b9bd00a077ecb0",
+      "expectationFile": "C2SE-4d6f92ffb9ea.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SE] [USA - English] [Randomized].nds",
+      "romSha256": "e150b2b40c85b5850c01d880f2bf8115797358b5245f33a7d99a5a0c258ba3b8",
+      "expectationFile": "C2SE-e150b2b40c85.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SE] [USA - English].nds",
+      "romSha256": "2469842638725ebb797867f87693b5eb79722af5163ff424f4b97f9dbdf648e9",
+      "expectationFile": "C2SE-246984263872.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SP] [Europe - Multilingual] [Randomized].nds",
+      "romSha256": "671b463b81c0229bfa57e9b9a8dd5fcef678c1be615d2d9568fa0cba5624573b",
+      "expectationFile": "C2SP-671b463b81c0.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SP] [Europe - Multilingual].nds",
+      "romSha256": "ed94666fc2ce2aa2afc29755add1d7d086568fc5eafedbfde9f6334ab67e9447",
+      "expectationFile": "C2SP-ed94666fc2ce.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon [APHP] [Europe - Multilingual].nds",
+      "romSha256": "2540966e1e9cd722bf2ae401069df10b81875af03f0618d413b9d32511c14b05",
+      "expectationFile": "APHP-2540966e1e9c.json"
+    },
+    {
+      "name": "Pok\u00E9mon Pearl [APAE] [USA - English].nds",
+      "romSha256": "2dcc471033d1757ee572415f5773a77af67b350ad59e2aeb3fc28c1402c3a84c",
+      "expectationFile": "APAE-2dcc471033d1.json"
+    },
+    {
+      "name": "Pok\u00E9mon Platin [CPUD] [Germany - German] [Randomized].nds",
+      "romSha256": "48939f8198aba3312b5da9502be4805456be72c7a1d8da35ac5347087767f47e",
+      "expectationFile": "CPUD-48939f8198ab.json"
+    },
+    {
+      "name": "Pok\u00E9mon Platin [CPUD] [Germany - German].nds",
+      "romSha256": "93e5e06988ce50847ff0613fe1a972cb1c325808c679bf780272a5a0870f2329",
+      "expectationFile": "CPUD-93e5e06988ce.json"
+    },
+    {
+      "name": "Pok\u00E9mon Platinum [CPUE] [USA - English] [Randomized 20201229].nds",
+      "romSha256": "cd179419aa8f7129f93fd047930da0a074cf61052e11f6bb70ca62f2cd6c1d71",
+      "expectationFile": "CPUE-cd179419aa8f.json"
+    },
+    {
+      "name": "Pok\u00E9mon Platinum [CPUE] [USA - English] [fbce4c4d].nds",
+      "romSha256": "fbce4c4def0c7797f8dd238a3d7a5e48b4a7e3abd86890ac65f6321cef781bdb",
+      "expectationFile": "CPUE-fbce4c4def0c.json"
+    },
+    {
+      "name": "Pok\u00E9mon Platinum [CPUE] [USA - English].nds",
+      "romSha256": "67de86a1bc8e7eb6479dbbbd6e8f5edfc2fa160576a38e40e06d2180ed63b110",
+      "expectationFile": "CPUE-67de86a1bc8e.json"
+    },
+    {
+      "name": "Pok\u00E9mon SoulSilver [IPGE] [USA - English] [51d0f94a].nds",
+      "romSha256": "51d0f94a16af7d77c067b4cb7d821ba890a13203a2e2c76049623332c0582e20",
+      "expectationFile": "IPGE-51d0f94a16af.json"
+    },
+    {
+      "name": "Pok\u00E9mon SoulSilver [IPGE] [USA - English].nds",
+      "romSha256": "94ad298c32bbcc623d042ca20f46cfcaa399a8e814260cc5645dfe5f4c167c17",
+      "expectationFile": "IPGE-94ad298c32bb.json"
+    },
+    {
+      "name": "Sonic Classic Collection\u2122 - SEGA [VSOE] [USA - English].nds",
+      "romSha256": "11aa9fbd1b4ee4264a35dcca1467566520cd84922a86c4103ec0c97784da81b1",
+      "expectationFile": "VSOE-11aa9fbd1b4e.json"
+    },
+    {
+      "name": "Style Savvy\u2122 [AZLE] [USA - English].nds",
+      "romSha256": "cc4c3bb50d723a73e6e01e5075344edfe543fab3b176ac0b9a64136abb26162b",
+      "expectationFile": "AZLE-cc4c3bb50d72.json"
+    },
+    {
+      "name": "Super Mario 64 DS [ASME] [USA - English].nds",
+      "romSha256": "14aa4cd7b7a63a1b5dc0aa8f6f83c4a188e94b42027f0bb3c678353527d8b228",
+      "expectationFile": "ASME-14aa4cd7b7a6.json"
+    },
+    {
+      "name": "Super Mario 64 DS [ASMP] [Europe - Multilingual].nds",
+      "romSha256": "ce5829aaa79f06c67140ed1f45cbca738b0a9d0180538c8c1498472d859db032",
+      "expectationFile": "ASMP-ce5829aaa79f.json"
+    },
+    {
+      "name": "Super Princess Peach [ASPP] [Europe - Multilingual].nds",
+      "romSha256": "e6dc5120731fecc38e1aff6c29d283a84d62443b1320776a6332803cfab94d79",
+      "expectationFile": "ASPP-e6dc5120731f.json"
+    },
+    {
+      "name": "The Legend of Zelda - Phantom Hourglass [AZEE] [USA - English].nds",
+      "romSha256": "2dd43288c1b7b428cbd09d9a74464b9a46fe0239eaed82849369f261678011f7",
+      "expectationFile": "AZEE-2dd43288c1b7.json"
+    },
+    {
+      "name": "The Legend of Zelda - Spirit Tracks [BKIE] [USA - English] [9186ba3e].nds",
+      "romSha256": "9186ba3ec8bc99d74aea8f69f25e16e16cb7f34b62ffdb579181689c8927a05d",
+      "expectationFile": "BKIE-9186ba3ec8bc.json"
+    },
+    {
+      "name": "The Legend of Zelda - Spirit Tracks [BKIE] [USA - English].nds",
+      "romSha256": "81609a6dcbfbcdac9bc35ac1afe1790021a858cd557d3808684686b1e4b65b95",
+      "expectationFile": "BKIE-81609a6dcbfb.json"
+    },
+    {
+      "name": "The Sims\u2122 3 - Electronic Arts Inc. [VS3E] [USA - English].nds",
+      "romSha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+      "expectationFile": "VS3E-d42e03e66bc2.json"
+    },
+    {
+      "name": "Ultimate Mortal Kombat - \u00A9 2007 Midway [YUTE] [USA - English].nds",
+      "romSha256": "898cfecec88de512e7cc9987601942a0e74bb5428af9a63d4c70ab944bfed70e",
+      "expectationFile": "YUTE-898cfecec88d.json"
+    },
+    {
+      "name": "YOSHI\u0027S ISLAND DS [AYWP] [Europe - Multilingual].nds",
+      "romSha256": "259910231a16cefc463b138f28043cd1d5b29a298ba08edf13ce3c8114ec0c5b",
+      "expectationFile": "AYWP-259910231a16.json"
+    }
+  ]
+}

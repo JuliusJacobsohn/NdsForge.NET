@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "LEGO\u00AE Star Wars\u2122 - The Complete Saga - LucasArts\u2122 [YLGE] [USA - English].nds",
+    "length": 67108864,
+    "sha256": "354004fbf17f5a95ad4546ec64e47bb036f5d78c946daa021e4636abf00fda1a",
+    "headerTitle": "LEGOSTARWARS",
+    "gameCode": "YLGE",
+    "makerCode": "64",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "LEGO\u00AE Star Wars\u2122 - The Complete Saga - LucasArts\u2122",
+    "bannerTitles": {
+      "Japanese": "LEGO\u00AE Star Wars\u2122\nThe Complete Saga\nLucasArts\u2122",
+      "English": "LEGO\u00AE Star Wars\u2122\nThe Complete Saga\nLucasArts\u2122",
+      "French": "LEGO\u00AE Star Wars\u2122\nLa Saga Compl\u00E8te\nLucasArts\u2122",
+      "German": "LEGO\u00AE Star Wars\u2122\nDie komplette Saga\nLucasArts\u2122",
+      "Italian": "LEGO\u00AE Star Wars\u2122\nla saga completa\nLucasArts\u2122",
+      "Spanish": "LEGO\u00AE Star Wars\u2122\nThe Complete Saga\nLucasArts\u2122"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "info",
+      "exitCode": 0,
+      "standardOutputSha256": "12CFCB1DB89D0AEBF4C5D4F4F41150C638EBD1503F76ABB9DDF788D00CAD5080",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "verbose-info",
+      "exitCode": 0,
+      "standardOutputSha256": "C2BE3A3E5208C9AF57B4D41DBF6E5D20E77CA07BD2CFBA03107BB8BB3EED43AE",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "list",
+      "exitCode": 0,
+      "standardOutputSha256": "B90706E5A5546C713AB651CFFDB460D653DC42E06D8382D944E3D4021AF51052",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "wildcard-list",
+      "exitCode": 0,
+      "standardOutputSha256": "C4F1897561C1C3A6410E027EE097F7D5BF24544D55B1786F2645B17DEF61508B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 166336,
+          "sha256": "50437F370148D003E5CCEE09587222CEE2651191969E5064D1567074C7996161"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1189604,
+          "sha256": "7769C18318C17AFE7A04B2CE9D40AF2A992C935C5696E9ABA0283F2391379AF9"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "6BC8CD30027FFCE850838D2532B5823AF334CFCD2079FF7D5445675B61E443A4"
+        },
+        {
+          "path": "data/StarWars.fib",
+          "length": 64573077,
+          "sha256": "D6A846B02F355A13197DBEAF8F37EC71B1384608812FC2E13E4B0E17F65440FE"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "21BD9B7B949CA06BD183293C6A00CE6063D7818368CB4D77EF03E4D013F5AA0C"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 65949336,
+          "sha256": "6F5ACAB1796E579812BD318FCF204666DA6B387DF1E43BD9C972C44017A312E8"
+        }
+      ]
+    },
+    {
+      "name": "create-elf",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-elf.nds",
+          "length": 26633,
+          "sha256": "97444939747B44301C375716A1F9FE2CFD8980E37946DCB96513AD55920C68CA"
+        }
+      ]
+    },
+    {
+      "name": "create-bitmaps",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-bitmaps.nds",
+          "length": 29248,
+          "sha256": "8A7ED46DEB35A294EBAD20AFE7610E20B9AFBCDB9F0495D2CD0EB7464949CFFB"
+        }
+      ]
+    },
+    {
+      "name": "dsi-options-probe",
+      "exitCode": 1,
+      "standardOutputSha256": "4B9A60048447E5B7F089814F08EE526141144DDD4B549113EED6CD0D46997161",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 67108864,
+          "sha256": "01F13AC2892BA554B39610C651880E46652F0A5EE1507CB18C376FF4B01E90F2"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 67108864,
+          "sha256": "776C225AB926C6C15BB71FF8E9BF86E4EEFAE2C53A894809E3FB5EF5D9B0CD7C"
+        }
+      ]
+    },
+    {
+      "name": "secure-decrypt",
+      "exitCode": 0,
+      "standardOutputSha256": "2D91FE422AD3060CE4E5B32FCB9EFCB1C75F8F5D9381DD5449B41115F14B2B53",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-decrypted.nds",
+          "length": 67108864,
+          "sha256": "354004FBF17F5A95AD4546EC64E47BB036F5D78C946DAA021E4636ABF00FDA1A"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-nintendo",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-nintendo.nds",
+          "length": 67108864,
+          "sha256": "1E07222985DA896969AFAC85A7B0283FDD64836A7AD0FAC10899707F20CBA4C4"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-other",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-other.nds",
+          "length": 67108864,
+          "sha256": "5011A589136EC785B787F8998F3C138E413A8021204D7F136F1AFC86EB341EDE"
+        }
+      ]
+    },
+    {
+      "name": "verbose-list",
+      "exitCode": 0,
+      "standardOutputSha256": "B90706E5A5546C713AB651CFFDB460D653DC42E06D8382D944E3D4021AF51052",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "post-oracle-info",
+      "exitCode": 0,
+      "standardOutputSha256": "C2BE3A3E5208C9AF57B4D41DBF6E5D20E77CA07BD2CFBA03107BB8BB3EED43AE",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    }
+  ]
+}

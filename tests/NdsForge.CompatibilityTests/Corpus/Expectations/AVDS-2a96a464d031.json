@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Bratz Forever Diamondz - THQ [AVDS] [Spain - Spanish].nds",
+    "length": 16777216,
+    "sha256": "2a96a464d031a99ba1c6ca92eabecabf740fb8adf65095923c75b5a487be012e",
+    "headerTitle": "BRATZDIAMOND",
+    "gameCode": "AVDS",
+    "makerCode": "78",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "Spain - Spanish",
+    "preferredLanguage": "Spanish",
+    "displayTitle": "Bratz Forever Diamondz - THQ",
+    "bannerTitles": {
+      "Japanese": "Bratz Forever Diamondz\nTHQ",
+      "English": "Bratz Forever Diamondz\nTHQ",
+      "French": "Bratz Forever Diamondz\nTHQ",
+      "German": "Bratz Forever Diamondz\nTHQ",
+      "Italian": "Bratz Forever Diamondz\nTHQ",
+      "Spanish": "Bratz Forever Diamondz\nTHQ"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "info",
+      "exitCode": 0,
+      "standardOutputSha256": "31CB1A04BD48EFE0061FFDCFDDD49172B54E521A11E952CD073D259911AF8C3B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "verbose-info",
+      "exitCode": 0,
+      "standardOutputSha256": "6C3909A1A0AB3101D0DCF52D3E2D0FFF85E7624CB7B9B7E4803C6FD1D990B279",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "list",
+      "exitCode": 0,
+      "standardOutputSha256": "63E9F5185548E50F8C3FE5E1AC5D0696D2227382886CB5DFAC22BEDE40895E84",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "wildcard-list",
+      "exitCode": 0,
+      "standardOutputSha256": "C4F1897561C1C3A6410E027EE097F7D5BF24544D55B1786F2645B17DEF61508B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 165552,
+          "sha256": "0540BD6FBA14F886C542B3BFA15B1C0391B23DD4EAA3688367E1813CBC021139"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 552344,
+          "sha256": "8F5A2C7932608198DF0FB52BC05FADA85161B940650BB7C5D29BF1C1C34F8719"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "E0ADA4D7D5DAE84CC9378A26C00592CA298E31D633189CEF23EBBBD5C950C1BE"
+        },
+        {
+          "path": "data/animalz.pkg",
+          "length": 339072,
+          "sha256": "BC23FFC1D7494D08C8347BB61E62BFD94C95FF4B180D02F4821FB84C0A074A35"
+        },
+        {
+          "path": "data/bratz.pkg",
+          "length": 715739,
+          "sha256": "07FC98E21D97C5FE641A0C0600AE094FB3796B716DC17DDE9FC632911743FE8B"
+        },
+        {
+          "path": "data/bratzIcon.nbfc",
+          "length": 512,
+          "sha256": "FE8F6802414A8A15D1510DCD8B149A52CB2D8E3363539F604FA33949C2229197"
+        },
+        {
+          "path": "data/bratzIcon.nbfp",
+          "length": 32,
+          "sha256": "A300B0F07BD992684C662F6357344EF6CDA1BE5BF64B428BA9E73DB7D9E92677"
+        },
+        {
+          "path": "data/bratz_spr.pkg",
+          "length": 40060,
+          "sha256": "CDA95CB2A5A6DF4897591B163B070BF4FA8A7166619477AB2C6C1B1B1CB0A7E4"
+        },
+        {
+          "path": "data/codefont.pkg",
+          "length": 1853,
+          "sha256": "90CB7BD1F812F239D4252B1E1C55435C682CA42A1560310CA362298DA488E05D"
+        },
+        {
+          "path": "data/levagilityrace.pkg",
+          "length": 202961,
+          "sha256": "9D24CCD8EBE0A74AD89E3957BEFACD63EBAC1122AE0BE00C7A84F1B66DE0A6AD"
+        },
+        {
+          "path": "data/levanimalfashion.pkg",
+          "length": 97250,
+          "sha256": "81E48A9DEB8D2492240F83DA2079C05AC7431B31F071249A04FDAA3C5E68D124"
+        },
+        {
+          "path": "data/levanimalplay.pkg",
+          "length": 114294,
+          "sha256": "0582A842C463C774E2F0FF080768C3B140FA870D4C51CE4DD198A253762DF5FB"
+        },
+        {
+          "path": "data/levanimalselect.pkg",
+          "length": 61981,
+          "sha256": "CDC2761FF0CD642B0B7C3B9E2B9E8A32B63E83D40FCB23850D2A9EBA98653DCB"
+        },
+        {
+          "path": "data/levanimalwalk.pkg",
+          "length": 25079,
+          "sha256": "2FF3C9BA8C027A8118C9BCE305A632F7BCE192333BAAD0C344FA91A993F4831E"
+        },
+        {
+          "path": "data/levarcticrace.pkg",
+          "length": 116184,
+          "sha256": "0BB7EC313BEC73149F577A1E37A0BBAEE7A1A1A4C8479B3C611A9F4ED6709E33"
+        },
+        {
+          "path": "data/levbase.pkg",
+          "length": 9116,
+          "sha256": "07A406C521F4D42AD961299D20D5A0A553C2BCE7CCD13460D0E207007C4B1BCB"
+        },
+        {
+          "path": "data/levclothingstore.pkg",
+          "length": 85935,
+          "sha256": "7C545E7120DBBEB7079C3291FA7E802928AECEE77E55548B96AFFA3923213AF2"
+        },
+        {
+          "path": "data/levcutscene.pkg",
+          "length": 1450969,
+          "sha256": "7BD25B2CC7EEA325ECE8940085F02D435E2A891F47511781EE8E793231FE2910"
+        },
+        {
+          "path": "data/levdance.pkg",
+          "length": 163869,
+          "sha256": "924F016B65FA265106D175CF746B163D0BE4DA31A8B44978AA38275F30CD7577"
+        },
+        {
+          "path": "data/levdance2.pkg",
+          "length": 42150,
+          "sha256": "114FE878053D3672F4CA5FAD8B65E00F83BD4A93829F79568335DF5E7D52259F"
+        },
+        {
+          "path": "data/levdogsledding.pkg",
+          "length": 300899,
+          "sha256": "634BA04D8DE13357D21A7AD7AE79F1E767027B4FECEF013391A934674FA35937"
+        },
+        {
+          "path": "data/levelgemz.pkg",
+          "length": 170313,
+          "sha256": "ACF568693B49EFA2DD99891A74ABDA01C0FB46366E2E04309B5D2DEA746B89EB"
+        },
+        {
+          "path": "data/levelwaterski.pkg",
+          "length": 312850,
+          "sha256": "879FBF3C2566720160D8B715FDAEC2BF6FBC2FFD12FD01E489537131C0A9B070"
+        },
+        {
+          "path": "data/levend.pkg",
+          "length": 103893,
+          "sha256": "4B9F86641A62E43265214117F446D50AE7DB8E4AF3CB2E433A7D3ED64D29988B"
+        },
+        {
+          "path": "data/levequestrian.pkg",
+          "length": 206174,
+          "sha256": "9C14196CFB45C93C8FAC55238E59276B68C4FE1A6900D468D1FABC9A3D3C2303"
+        },
+        {
+          "path": "data/levherding.pkg",
+          "length": 53361,
+          "sha256": "D9AEB96A992A3FBE3EE40B5F600717CC9E787B625D7C58D92DA384B51064CDB8"
+        },
+        {
+          "path": "data/levintro.pkg",
+          "length": 296049,
+          "sha256": "EA5A332EEC5107369DF0BD48FF1DA9AAFF92EE224C609FC08BF3FAEB30837A75"
+        },
+        {
+          "path": "data/levintro_vrl.pkg",
+          "length": 111409,
+          "sha256": "9CF0E4D5A3985C0CFF1977F542ED09FB842E3BC70936733A7CBA5D581584F115"
+        },
+        {
+          "path": "data/levjewel.pkg",
+          "length": 183375,
+          "sha256": "6715482BC36C9846B5DC3053EE7E3DF76B62CF586903C6E81E95DC4EC2791466"
+        },
+        {
+          "path": "data/levmakeup.pkg",
+          "length": 225237,
+          "sha256": "2E30DD0C8262CA25442033602D5B8DFF7B82B100BB02195B8A84BE9BFE7BFC01"
+        },
+        {
+          "path": "data/levmgintro.pkg",
+          "length": 591609,
+          "sha256": "CCDFE731FD04B1616454EE792F7B7C5EEAC4B7ACE966E19135F6E05363D1A926"
+        },
+        {
+          "path": "data/levparkshoot.pkg",
+          "length": 141454,
+          "sha256": "FD4713B98E5E7796E52CF263FBAFBEF3C6A8A04F996EBB81B12EC84B66987FE4"
+        },
+        {
+          "path": "data/levphotoshoot.pkg",
+          "length": 396860,
+          "sha256": "F52D18A9CBBAB99780FCCF979122670209822073AF2301A6FD56780F343A9C13"
+        },
+        {
+          "path": "data/levposter.pkg",
+          "length": 553410,
+          "sha256": "689C27D020F6025112162429D12B1C79DA5FCB70EBE1090F1E68AE2422D58B31"
+        },
+        {
+          "path": "data/levsemi.pkg",
+          "length": 252698,
+          "sha256": "085F17D41CE59A5D5B6261AE4518DEBC97BA005A4FEC62FC9288FE9ED3818786"
+        },
+        {
+          "path": "data/levshare.pkg",
+          "length": 43050,
+          "sha256": "DCAAB5EE5B7FA500C60C320C1B595C908DD05ACDA512E73175ED90B324B9713C"
+        },
+        {
+          "path": "data/levskating.pkg",
+          "length": 242049,
+          "sha256": "9FB4D506F7DFE26A74B11AF01F6B957B7123D038255536815406231A2D42DD58"
+        },
+        {
+          "path": "data/levsnowboard.pkg",
+          "length": 154134,
+          "sha256": "9AC8FC17C419B6EBF7E88288759291A8A44F668E15C9ABCF14B59A63463C6AF4"
+        },
+        {
+          "path": "data/levsnowbratz.pkg",
+          "length": 172756,
+          "sha256": "3C19516441A0562380EBCA52D11F46E09688F3B278B42634687AA19E9D4A5B67"
+        },
+        {
+          "path": "data/levtoptrumps.pkg",
+          "length": 609173,
+          "sha256": "D46C5780542E327CD72FFD0734CADE0A3FD1CF1BAE16036308C98F1A6494566B"
+        },
+        {
+          "path": "data/levtreatbuilder.pkg",
+          "length": 74716,
+          "sha256": "252EEA9732AD36CB412E3F3EB627664A50AB97E9DDA6B57FBE8D977FB01DAC42"
+        },
+        {
+          "path": "data/levwardrobe.pkg",
+          "length": 59343,
+          "sha256": "5D1CAB35FF44F0CFB8720F4747FFA91B6DEA917BFE97A17461C9B2971DE6AB9C"
+        },
+        {
+          "path": "data/sounds.pkg",
+          "length": 1612320,
+          "sha256": "23E1B32A90570C51E8E250E10858599078977800002196AD2B325D2CB0ED38DB"
+        },
+        {
+          "path": "data/speech.pkg",
+          "length": 56418,
+          "sha256": "32E6262D452A611C313F08A146C2992B813D7E74D94DBCB09A0E6DEE1790D8FA"
+        },
+        {
+          "path": "data/tt_child.srl",
+          "length": 1122504,
+          "sha256": "AE2B35ACDD893D2784407D508FDE7716A15DE7F592339DF483087CB914080027"
+        },
+        {
+          "path": "data/viral_sgn.srl",
+          "length": 1308872,
+          "sha256": "2A595B122C83622B6073A977EA60438A77C8B8225C974EC8DDCDFC6480F04817"
+        },
+        {
+          "path": "data/westernmusic.pkg",
+          "length": 167413,
+          "sha256": "DC2BD603579D3D05D3E2961E65E8168A608595E97A762514654805AD5B38973E"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "06E7BC4D98AB631616F9B70F683933AC7028D796C3BD74611534F5764C34D09F"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 13739000,
+          "sha256": "4A0ED739B524AB300D64260827CE0C69ECE0C74D35659CF858D2337228C7955D"
+        }
+      ]
+    },
+    {
+      "name": "create-elf",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-elf.nds",
+          "length": 26633,
+          "sha256": "1DE4CB9FE11C87DB51B92A4AD5C51314B87DFF70ABFDE4FD9C6D999E2B74BB14"
+        }
+      ]
+    },
+    {
+      "name": "create-bitmaps",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-bitmaps.nds",
+          "length": 29248,
+          "sha256": "0B4532875712C04C4C1BBAA115A52F904005DA9931F5D916AEE8D032662CF37A"
+        }
+      ]
+    },
+    {
+      "name": "dsi-options-probe",
+      "exitCode": 1,
+      "standardOutputSha256": "4B9A60048447E5B7F089814F08EE526141144DDD4B549113EED6CD0D46997161",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 16777216,
+          "sha256": "951BAA961B22B4FA0B3B79D4930573F7F57C97ED1676F4427C743B7A34CE83C8"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 16777216,
+          "sha256": "6788DC23221352C22AF914F93B15ED0DB3881A32A6BEC8ECFA3AA5AE3075BD6F"
+        }
+      ]
+    },
+    {
+      "name": "secure-decrypt",
+      "exitCode": 0,
+      "standardOutputSha256": "2D91FE422AD3060CE4E5B32FCB9EFCB1C75F8F5D9381DD5449B41115F14B2B53",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-decrypted.nds",
+          "length": 16777216,
+          "sha256": "2A96A464D031A99BA1C6CA92EABECABF740FB8ADF65095923C75B5A487BE012E"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-nintendo",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-nintendo.nds",
+          "length": 16777216,
+          "sha256": "41222E882FC957B6AAE1432D082F8B1FE83778692EFB666C59F83B9C9C5F3688"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-other",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-other.nds",
+          "length": 16777216,
+          "sha256": "550F46456E446AD4E92FB6B50DA4ECE52ADBDC8B13C3095F5671F869ADD5C948"
+        }
+      ]
+    },
+    {
+      "name": "verbose-list",
+      "exitCode": 0,
+      "standardOutputSha256": "63E9F5185548E50F8C3FE5E1AC5D0696D2227382886CB5DFAC22BEDE40895E84",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "post-oracle-info",
+      "exitCode": 0,
+      "standardOutputSha256": "6C3909A1A0AB3101D0DCF52D3E2D0FFF85E7624CB7B9B7E4803C6FD1D990B279",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    }
+  ]
+}

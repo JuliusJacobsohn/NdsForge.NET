@@ -7,5 +7,7 @@
     <Project Path="tests/NdsForge.CompatibilityTests/NdsForge.CompatibilityTests.csproj" />
     <Project Path="tests/NdsForge.Tests/NdsForge.Tests.csproj" />
   </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/NdsForge.Corpus/NdsForge.Corpus.csproj" />
+  </Folder>
 </Solution>
-

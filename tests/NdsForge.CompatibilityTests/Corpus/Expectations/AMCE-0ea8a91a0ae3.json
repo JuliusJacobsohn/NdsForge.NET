@@ -1,0 +1,3279 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "MARIO KART DS [AMCE] [USA - English].nds",
+    "length": 33554432,
+    "sha256": "0ea8a91a0ae3e9db26337c25a6a8568f6737fa36c1e0761988c0fa0ecbf210ed",
+    "headerTitle": "MARIOKARTDS",
+    "gameCode": "AMCE",
+    "makerCode": "01",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "MARIO KART DS",
+    "bannerTitles": {
+      "Japanese": "MARIO KART DS\nNintendo",
+      "English": "MARIO KART DS\nNintendo",
+      "French": "MARIO KART DS\nNintendo",
+      "German": "MARIO KART DS\nNintendo",
+      "Italian": "MARIO KART DS\nNintendo",
+      "Spanish": "MARIO KART DS\nNintendo"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "info",
+      "exitCode": 0,
+      "standardOutputSha256": "66410AA56788BCF6F3798D020B2763018A5F0DF2C9014E51E4F20F913068EF6A",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "verbose-info",
+      "exitCode": 0,
+      "standardOutputSha256": "E50C7E56F0865BFA52C742CAB3DEC11A423913D8C8E8AC420B9C84C353665116",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "list",
+      "exitCode": 0,
+      "standardOutputSha256": "238A38FF0EC938BC7BB55B147E1C5522D011427CF26E458EAD2587ED1231BA87",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "wildcard-list",
+      "exitCode": 0,
+      "standardOutputSha256": "E37FE8ACDB31F811F8581C7923ED803837C178D90B34214CF332997F3E44A777",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 166308,
+          "sha256": "00778BD51D96EF14BF278D6B27F6AD063DDC6C343769CA643A5A042BAA3F839F"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 128,
+          "sha256": "9D6B434321A26E36FB570EE6752473F78A7468669C618116EC046929DE1A3C7B"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 947520,
+          "sha256": "180BAF1605BEB967A2397E92621AFF7E3597B8E9B1AE68B20B8EB2E145227F05"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "35CA8DF652238A54D68F0F5981744FDE6CD32E482B2B9A7277035C0754A5076A"
+        },
+        {
+          "path": "data/data/Boot/builddate.bin",
+          "length": 30,
+          "sha256": "47DE0DCC8898F4DC62D9361034E047F6BC659AD17D4081BA302DC6A3A1DE35B5"
+        },
+        {
+          "path": "data/data/Boot/dbgfont.NCGR",
+          "length": 32816,
+          "sha256": "60802898CE12B52881E56A758DA92047B39C7C07D81254661635342E713D4D7C"
+        },
+        {
+          "path": "data/data/Boot/dbgfont.NCLR",
+          "length": 552,
+          "sha256": "F364F06A88DF3E61A5BC61AFAD39EF935C4ACADBBE4E26D5045EF114970889E1"
+        },
+        {
+          "path": "data/data/Boot/mkds_banner02.nbfc",
+          "length": 512,
+          "sha256": "E98FC00D115C2BB82626C80407B4D2B9B04D44195C6E1BD428FA119745CFF0C5"
+        },
+        {
+          "path": "data/data/Boot/mkds_banner02.nbfp",
+          "length": 32,
+          "sha256": "5F25AFD1D9C0EA4E52A74D4945D7E9A5C7C62931D88CFE0CE17AC5C39B7039E5"
+        },
+        {
+          "path": "data/data/CharacterKartSelect.carc",
+          "length": 15519,
+          "sha256": "6876ECCC57B1C95DED1AC169574D74C29159B0DDFCF60C61AAD77159F13BA55A"
+        },
+        {
+          "path": "data/data/CharacterKartSelect_es.carc",
+          "length": 28533,
+          "sha256": "1C4B4F394DF5C7508E7E0FA3BC285613D9955D494E2C376ADA35F26DB29F4ED3"
+        },
+        {
+          "path": "data/data/CharacterKartSelect_fr.carc",
+          "length": 28708,
+          "sha256": "1AB7FF2EEC14987233B39D82407A63D098BF2BC36C6E453166B9EF9023FF50A8"
+        },
+        {
+          "path": "data/data/CharacterKartSelect_ge.carc",
+          "length": 28887,
+          "sha256": "CCBFF63AC18C987015340E4392E4AA647B370844B8B3EE452A9ACCA60D3E595A"
+        },
+        {
+          "path": "data/data/CharacterKartSelect_it.carc",
+          "length": 28476,
+          "sha256": "27F6CF0B39307AAC7A6D1A72441D4D1E03EF0883F0C6D0D0B11E308C38B3DE12"
+        },
+        {
+          "path": "data/data/CharacterKartSelect_us.carc",
+          "length": 28485,
+          "sha256": "6659DF4AD7D9268B2DB7754DF8F0936DB7415803351AC8E5B4B3392307F6C228"
+        },
+        {
+          "path": "data/data/Course/Award.carc",
+          "length": 132985,
+          "sha256": "216429AB89BC06B1F44DF9BBB21A2FF14DEF33CF7B790FDEE6DBE7C5E05578DC"
+        },
+        {
+          "path": "data/data/Course/AwardTex.carc",
+          "length": 115667,
+          "sha256": "5EED26F9DEE9805A031FA600C0E7D5460867A7D2189928CBC0BE7500BA7A1BF5"
+        },
+        {
+          "path": "data/data/Course/MR_stage1.carc",
+          "length": 58065,
+          "sha256": "1DC06B017DFFC99587C2AC5E098E47D935B1F3CE5FE535FBC9E8A32E78D52B3B"
+        },
+        {
+          "path": "data/data/Course/MR_stage1Tex.carc",
+          "length": 38647,
+          "sha256": "187D0B8FF24CC442F36207AD04B371A435BB60534C4C47BD895C22D4B370ABE5"
+        },
+        {
+          "path": "data/data/Course/MR_stage2.carc",
+          "length": 91244,
+          "sha256": "DDFFA3A013FF0A467A8DB156706E11729C367567223BF46EF82AC746B3F8FA13"
+        },
+        {
+          "path": "data/data/Course/MR_stage2Tex.carc",
+          "length": 59462,
+          "sha256": "4133B93E4ECE676156A25B6AD6AC4427FDCB03CB09362D14EFF6C0F0687A43A8"
+        },
+        {
+          "path": "data/data/Course/MR_stage3.carc",
+          "length": 66468,
+          "sha256": "2F7FDF696EB21A34DFE313B7D5F82E8368A606C2EC6045956A61D8F73B70996F"
+        },
+        {
+          "path": "data/data/Course/MR_stage3Tex.carc",
+          "length": 55756,
+          "sha256": "C83214EA262778B51F65DBA464ABBF68804B10172B77EFC5B969C8A9F829200B"
+        },
+        {
+          "path": "data/data/Course/MR_stage4.carc",
+          "length": 188529,
+          "sha256": "62B97E2B5EBC095C1DF8A42F101858300D63ABC2AB27BE8EDAFDE1743C360221"
+        },
+        {
+          "path": "data/data/Course/MR_stage4Tex.carc",
+          "length": 134302,
+          "sha256": "347B1CE1AD1D10D5613D2533DDFBBB145D0CF8D2B89D8A12224BFDBE6FB149EE"
+        },
+        {
+          "path": "data/data/Course/StaffRoll.carc",
+          "length": 18798,
+          "sha256": "8AC635FC7A96201E0D6CBF0E6FB41EB1E7E29946F89CE1244124AB5E36C7F4A7"
+        },
+        {
+          "path": "data/data/Course/StaffRollTex.carc",
+          "length": 86594,
+          "sha256": "979D86FF7564DCFCDC1775A96672094B1F8D4C690E44ACADE484B7DE5C72664A"
+        },
+        {
+          "path": "data/data/Course/StaffRollTrue.carc",
+          "length": 20537,
+          "sha256": "988FA5624DE3266915D90613D092164F7E37C77028E9AD756E4BDF69778DAACA"
+        },
+        {
+          "path": "data/data/Course/StaffRollTrueTex.carc",
+          "length": 86594,
+          "sha256": "979D86FF7564DCFCDC1775A96672094B1F8D4C690E44ACADE484B7DE5C72664A"
+        },
+        {
+          "path": "data/data/Course/airship_course.carc",
+          "length": 162916,
+          "sha256": "2D1E6CB111D1803CE78020C29C9CCC968C6D7417B44AE8648A41521041DCDCD4"
+        },
+        {
+          "path": "data/data/Course/airship_courseTex.carc",
+          "length": 111028,
+          "sha256": "F9FE4409AD2992463660B82E63058CD7DBB2412641809F74F5F1E5D07E79FF4D"
+        },
+        {
+          "path": "data/data/Course/bank_course.carc",
+          "length": 114284,
+          "sha256": "5EC8563AD9F5DB65ABBAD5FFA49CA45F907ACC7F57CA89AFC9DB49B3CAB9CD3E"
+        },
+        {
+          "path": "data/data/Course/bank_courseTex.carc",
+          "length": 115124,
+          "sha256": "91DD5C5D9A716B32558DD66A4C14E8D7F6F7DC4629C440BA2064D701A76A5BCF"
+        },
+        {
+          "path": "data/data/Course/beach_course.carc",
+          "length": 147101,
+          "sha256": "1541B5327B98727315B2BCC5994AF0F2550B503E53654444873937A253239C2A"
+        },
+        {
+          "path": "data/data/Course/beach_courseD.carc",
+          "length": 143923,
+          "sha256": "912C5240BE5C7CD322C66CD6DA7FB0E3DD7DD4C22F88A7B7812131E01EBC682A"
+        },
+        {
+          "path": "data/data/Course/beach_courseDTex.carc",
+          "length": 88547,
+          "sha256": "DEF24720779853BA94C5756086CF687A1E41CCA4D165609B6DB9BFE825CDEFEE"
+        },
+        {
+          "path": "data/data/Course/beach_courseTex.carc",
+          "length": 92732,
+          "sha256": "B8EB1B97C1371F957B5BFA076E1D0742E2BC5B457A9C801650CF9D4F98C2D74B"
+        },
+        {
+          "path": "data/data/Course/clock_course.carc",
+          "length": 126966,
+          "sha256": "AAD51CB94305B4AD5EEF09D440DE1DC5CC52B96D83656197793F649DD058C116"
+        },
+        {
+          "path": "data/data/Course/clock_courseTex.carc",
+          "length": 76267,
+          "sha256": "E626D776F40949BF1CFB0AAAC04FD2DAA038441C356795AFC016117384D83DC4"
+        },
+        {
+          "path": "data/data/Course/cross_course.carc",
+          "length": 137690,
+          "sha256": "D5502670888A8D38F0749ECE0C8266A92769A4432187F01AD6B7C8C1FC4FE452"
+        },
+        {
+          "path": "data/data/Course/cross_courseD.carc",
+          "length": 122003,
+          "sha256": "358807C294578EEAFD7CF4D3161C6C3389FF53D7BA67FB2631840EA9E1DB355F"
+        },
+        {
+          "path": "data/data/Course/cross_courseDTex.carc",
+          "length": 92117,
+          "sha256": "7FF7403433B1DDE6EAAF33D65513F8FAA62F73E21D5A6D70685436773CF20C65"
+        },
+        {
+          "path": "data/data/Course/cross_courseTex.carc",
+          "length": 116244,
+          "sha256": "17CD96CDA7EF177E682A42E88F9F144265BD0A6B93CCB24E066DAA435AC93C53"
+        },
+        {
+          "path": "data/data/Course/desert_course.carc",
+          "length": 195619,
+          "sha256": "3C9B7AB11B1E9E5A7C57E4AE8B7470F1EBAB4953D56896A71C690AE87CF406D1"
+        },
+        {
+          "path": "data/data/Course/desert_courseTex.carc",
+          "length": 127570,
+          "sha256": "2B1E96460A3B0187B4A94C72471F8705E3AC727C5778DB0D0E75A0598E78AA6C"
+        },
+        {
+          "path": "data/data/Course/dokan_course.carc",
+          "length": 114461,
+          "sha256": "F96B9BC52925D2A53E3BDB96F9AA3A17BE28BED74EA4C7835A7401EC78780250"
+        },
+        {
+          "path": "data/data/Course/dokan_courseTex.carc",
+          "length": 29327,
+          "sha256": "DF019554D1ACEA7047FF9A8A7BA393EA7B534D6CF2131620AA81D02DD7CA2DAA"
+        },
+        {
+          "path": "data/data/Course/donkey_course.carc",
+          "length": 191216,
+          "sha256": "E2D0057DC58D1FC514F9D33ED94C628703EF5EC37DFAA0DD200893410E94B6BB"
+        },
+        {
+          "path": "data/data/Course/donkey_courseTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/Course/garden_course.carc",
+          "length": 148979,
+          "sha256": "12F6DD9085B2D8FE1763260FAB9593CCD6A9E06743100ECABADA71A125267053"
+        },
+        {
+          "path": "data/data/Course/garden_courseTex.carc",
+          "length": 109318,
+          "sha256": "3C0666B4C2923F2209D9F8638E906E7DD0CFF23BEB4E60380F57825087E7C086"
+        },
+        {
+          "path": "data/data/Course/koopa_course.carc",
+          "length": 152788,
+          "sha256": "DB2BDECD1F981629753A6A85935C22CF686CCD4D89B56217A7484BC11D955511"
+        },
+        {
+          "path": "data/data/Course/koopa_courseTex.carc",
+          "length": 100375,
+          "sha256": "2EE01CC442CCA4B2594FD8C7264C8C807298DF6CC5A47936C3C579105DE81178"
+        },
+        {
+          "path": "data/data/Course/luigi_course.carc",
+          "length": 172128,
+          "sha256": "D797BCA70C78D4ABEFF36183BB6B123089551EA670662DF090761E4A43775E1D"
+        },
+        {
+          "path": "data/data/Course/luigi_courseTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/Course/mansion_course.carc",
+          "length": 172021,
+          "sha256": "8DB7405F397450395107FDD7914A2840820A54321514D3DAD3F2D82C79A53A0B"
+        },
+        {
+          "path": "data/data/Course/mansion_courseD.carc",
+          "length": 160629,
+          "sha256": "9B5B3F646A57382C6FD78A9351C2DF03900E87683527BFC56079CCC2C80E01EA"
+        },
+        {
+          "path": "data/data/Course/mansion_courseDTex.carc",
+          "length": 64056,
+          "sha256": "4D2B980647C3AE46D1AEA64FD36CCB81A97372A7AC3DFE00A39700A6D31835E2"
+        },
+        {
+          "path": "data/data/Course/mansion_courseTex.carc",
+          "length": 97444,
+          "sha256": "D33F13E315D81EA8D125D41E939D31698E60E32E9AD843E938EC1E1E72148F2F"
+        },
+        {
+          "path": "data/data/Course/mario_course.carc",
+          "length": 192890,
+          "sha256": "DE0E61E4DAE37699B70E5FA1BE49F4F1311F5E17F2BB3EBF1899DF2DA6CCB32E"
+        },
+        {
+          "path": "data/data/Course/mario_courseTex.carc",
+          "length": 94756,
+          "sha256": "11E584EC94B8B3B1648EA32C9DD5E66D836ACEC32D884A50C6A62B96D9187BA5"
+        },
+        {
+          "path": "data/data/Course/mini_block_64.carc",
+          "length": 133969,
+          "sha256": "003239BADECBFCEE6962D5C13E2316BC2935406F18F700E7150804EB93203D71"
+        },
+        {
+          "path": "data/data/Course/mini_block_64Tex.carc",
+          "length": 47533,
+          "sha256": "EE240DAEA21D735B132290666A0367F9AEC41350332F85BE633E1ADE73B9C126"
+        },
+        {
+          "path": "data/data/Course/mini_block_course.carc",
+          "length": 74944,
+          "sha256": "7A3CA7155E59C960E32724837DA7B5A1F79F98ED9D885F1EE1B1A6280BF6E416"
+        },
+        {
+          "path": "data/data/Course/mini_block_courseTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/Course/mini_dokan_gc.carc",
+          "length": 78061,
+          "sha256": "EF499F163F97048C4F68237ED734A8D94D98C9FB40CC25DDB88B5B869483C1BA"
+        },
+        {
+          "path": "data/data/Course/mini_dokan_gcTex.carc",
+          "length": 26954,
+          "sha256": "941A27FFFFB98CFE03974BBB16F434ED59E06DE4095F54633FDD49DE1CE06801"
+        },
+        {
+          "path": "data/data/Course/mini_stage1.carc",
+          "length": 62209,
+          "sha256": "10BC0F83D7E58B616681772812666455C26E6D20D4E6B2BABE96CB89341CF2C3"
+        },
+        {
+          "path": "data/data/Course/mini_stage1Tex.carc",
+          "length": 65082,
+          "sha256": "136B9EC4AAF5860F4E3FF3F19B3A828B32495CE19FC76184DA3EE7DCE22788A2"
+        },
+        {
+          "path": "data/data/Course/mini_stage2.carc",
+          "length": 103786,
+          "sha256": "9272EC2EB6F464992A046CC3E1987079B7B30F15E82B7E8C5EF06F55591DCB9B"
+        },
+        {
+          "path": "data/data/Course/mini_stage2Tex.carc",
+          "length": 56792,
+          "sha256": "A38959920FFFEA0A820399661B4DEE22B0DBFCDC0AD6C6DEDBECD4DCFB685153"
+        },
+        {
+          "path": "data/data/Course/mini_stage3.carc",
+          "length": 158788,
+          "sha256": "CB71235A7492E17E5875DB130E163BC15FA86D420BF91709EEA4E3AD52225C92"
+        },
+        {
+          "path": "data/data/Course/mini_stage3Tex.carc",
+          "length": 48904,
+          "sha256": "A1959FA452B0F09D8084F18E4DFF028151BBC58055431D908D87A53BD820019E"
+        },
+        {
+          "path": "data/data/Course/mini_stage4.carc",
+          "length": 90976,
+          "sha256": "0129083A77008621D5AA73F19640FE3F53F36D64BDFD3345FAEE6DE5F985A593"
+        },
+        {
+          "path": "data/data/Course/mini_stage4Tex.carc",
+          "length": 105042,
+          "sha256": "0E02DC02B95B8F8FDCCE82420AFCD4ADB387296A2642CA02AF9BC06BB4321906"
+        },
+        {
+          "path": "data/data/Course/nokonoko_course.carc",
+          "length": 163821,
+          "sha256": "4B479696454EFFFB7F2166318FB61EAAFEBDD149D66806429A61FA42897C4F34"
+        },
+        {
+          "path": "data/data/Course/nokonoko_courseTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/Course/old_baby_gc.carc",
+          "length": 71300,
+          "sha256": "3E1285F5ECF76F1D394DFB27197406183B581B9B4A4A40C7C60776F7DB3A9524"
+        },
+        {
+          "path": "data/data/Course/old_baby_gcTex.carc",
+          "length": 112269,
+          "sha256": "57007956673482865049306E17493DFAF28BE91D1B602BEDA5D2F99F5AA55DA7"
+        },
+        {
+          "path": "data/data/Course/old_choco_64.carc",
+          "length": 180316,
+          "sha256": "01062B6E363442BF21F020ADD8F1C21B39EA3A45BDFD449942A58E03C310F72B"
+        },
+        {
+          "path": "data/data/Course/old_choco_64Tex.carc",
+          "length": 66702,
+          "sha256": "41CCAA4FD1AE7FB8F90E4EB79E66AD1D204B3F1C8090BB51ADB730B9ADCBE7BC"
+        },
+        {
+          "path": "data/data/Course/old_choco_sfc.carc",
+          "length": 129618,
+          "sha256": "7AF8720A4BEA65CFACAC8DD2447D88E081533635919119E59BEC01103211674D"
+        },
+        {
+          "path": "data/data/Course/old_choco_sfcTex.carc",
+          "length": 34657,
+          "sha256": "9D06192412130CCEB210D0E04A4B9F9881687153126DA9305AC43D0972F887E2"
+        },
+        {
+          "path": "data/data/Course/old_donut_sfc.carc",
+          "length": 167609,
+          "sha256": "B3F298C1126F976A3D14930CFA435DC84F253C562A87C11FDC027C716F35E9E6"
+        },
+        {
+          "path": "data/data/Course/old_donut_sfcTex.carc",
+          "length": 81853,
+          "sha256": "3D6209C83BE8E3E21123138A9A08416D71D58B8D28F25ED7283DF0038BE80F77"
+        },
+        {
+          "path": "data/data/Course/old_frappe_64.carc",
+          "length": 166752,
+          "sha256": "0CEBFA6C67EF37D4170941AEEDF8EDEF4828BA4278D2CD806DF824B9998262A0"
+        },
+        {
+          "path": "data/data/Course/old_frappe_64Tex.carc",
+          "length": 52259,
+          "sha256": "923C77C85E085A382F92F3ABEE40A6D1430C0164FFBF1F23FB09E83734C89996"
+        },
+        {
+          "path": "data/data/Course/old_hyudoro_64.carc",
+          "length": 99620,
+          "sha256": "9B133EC5A5B8B039325F0623C952358A796B0954E7D8905CF17523BADE636D6F"
+        },
+        {
+          "path": "data/data/Course/old_hyudoro_64Tex.carc",
+          "length": 56244,
+          "sha256": "7F4E0842109DD421DDD80BC261E5968BEF1E3227EB6AB58E7DA1A6D6F6A680C0"
+        },
+        {
+          "path": "data/data/Course/old_kinoko_gc.carc",
+          "length": 178112,
+          "sha256": "F9C81684BFAC4E0A92F4A66C23BB35DA36C9A20519504792EC1DECD5E5E610B6"
+        },
+        {
+          "path": "data/data/Course/old_kinoko_gcTex.carc",
+          "length": 112405,
+          "sha256": "A4872BD935C6312BB997424AC3E33DFDE4430E11020BEB08145FC0C2D304CD93"
+        },
+        {
+          "path": "data/data/Course/old_koopa_agb.carc",
+          "length": 98984,
+          "sha256": "870ABCF34E9D50233E7DE6E0D7C74B0DCAD0BE8E9705065946057E3777B104FB"
+        },
+        {
+          "path": "data/data/Course/old_koopa_agbTex.carc",
+          "length": 42165,
+          "sha256": "B3617D5E1D02679951B0D83B6FBD9D715A8A03842E7E6F1032BB2A8D1BA68A1E"
+        },
+        {
+          "path": "data/data/Course/old_luigi_agb.carc",
+          "length": 167114,
+          "sha256": "841DFD7FA01D316666BA005F97A7820D91682C739EF4EE46A867802C6CD8E5BD"
+        },
+        {
+          "path": "data/data/Course/old_luigi_agbTex.carc",
+          "length": 47752,
+          "sha256": "D13292C82D4DFDB7400B37E81B6CEEFCAFE2034BF24C8AB7DCB0A8283BEEF031"
+        },
+        {
+          "path": "data/data/Course/old_luigi_gc.carc",
+          "length": 138923,
+          "sha256": "1FDAFEAA3AE8204B317DC06CBA6DDDE0ECF7916E1A0ED952F3427EEB05ABD17F"
+        },
+        {
+          "path": "data/data/Course/old_luigi_gcD.carc",
+          "length": 130395,
+          "sha256": "58A62ECD67795DE7B5D0411809FD650BF2A28536AD9D0F8791D5140CD961DB4C"
+        },
+        {
+          "path": "data/data/Course/old_luigi_gcDTex.carc",
+          "length": 93053,
+          "sha256": "2079416461A200DC4554E18CCD3E61A752F4DF5E4C5D7D5DEF35259F60A277F0"
+        },
+        {
+          "path": "data/data/Course/old_luigi_gcTex.carc",
+          "length": 93053,
+          "sha256": "2079416461A200DC4554E18CCD3E61A752F4DF5E4C5D7D5DEF35259F60A277F0"
+        },
+        {
+          "path": "data/data/Course/old_mario_gc.carc",
+          "length": 186386,
+          "sha256": "27BD3B578EBAB209BF3281D811F4F35A84B7F3BF1727755B6D817AE1EB851951"
+        },
+        {
+          "path": "data/data/Course/old_mario_gcTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/Course/old_mario_sfc.carc",
+          "length": 70550,
+          "sha256": "82CD4A0FAEC0D8010644ADD29569F575615ED87D7E2F3E1C40F054B9F1B8D3FD"
+        },
+        {
+          "path": "data/data/Course/old_mario_sfcTex.carc",
+          "length": 27477,
+          "sha256": "F0752B78B725B303C0B1F48797873055DF89BBA28499C8493FE2DAD24A2AF4BF"
+        },
+        {
+          "path": "data/data/Course/old_momo_64.carc",
+          "length": 143197,
+          "sha256": "7ED0A7F1F06153C3DC6DD6CEE113F7133E03A6D5BCF772272AF494EB3A84126D"
+        },
+        {
+          "path": "data/data/Course/old_momo_64D.carc",
+          "length": 139173,
+          "sha256": "7CD7840616742DE826466652A8DE45C2B7CF38C888E55FB3A2FCF7946DBC2D90"
+        },
+        {
+          "path": "data/data/Course/old_momo_64DTex.carc",
+          "length": 52329,
+          "sha256": "A08FA060D80F7DF84596BB60123AA40F72056733377B904CA9C43DC64DD244C4"
+        },
+        {
+          "path": "data/data/Course/old_momo_64Tex.carc",
+          "length": 67491,
+          "sha256": "94348DC31F8265603E6B1132293F14717C2D5CBE70023DBC22B81E68E22E3433"
+        },
+        {
+          "path": "data/data/Course/old_noko_sfc.carc",
+          "length": 159338,
+          "sha256": "1AA17501D461330C6E1BB6BBC49C3FADA38B54732FCF17305B952C37CC245A31"
+        },
+        {
+          "path": "data/data/Course/old_noko_sfcTex.carc",
+          "length": 44972,
+          "sha256": "A6AFA6077928BD030F37CD6D2B441C752D693F8DEF84E574745F43A7566BFFA6"
+        },
+        {
+          "path": "data/data/Course/old_peach_agb.carc",
+          "length": 88551,
+          "sha256": "5595724B21857522913C37405443F862E09DFC4DE31714FA97D0D186C654F340"
+        },
+        {
+          "path": "data/data/Course/old_peach_agbTex.carc",
+          "length": 82647,
+          "sha256": "640D0F0B5C098E5ABF90EFEE84213432FF388B9C3182CA33E6EB65DBC719647E"
+        },
+        {
+          "path": "data/data/Course/old_sky_agb.carc",
+          "length": 95645,
+          "sha256": "7FE907A99A8E4D04296363CF53C0DDDC30E0323F6AA7F74B669622230BF78E47"
+        },
+        {
+          "path": "data/data/Course/old_sky_agbTex.carc",
+          "length": 68134,
+          "sha256": "663105451F7E58C681D31D2CF0CEFC80FF9E646A89A46D660533EA1541B0B276"
+        },
+        {
+          "path": "data/data/Course/old_yoshi_gc.carc",
+          "length": 191253,
+          "sha256": "E77B4A8DA4D3639667FF27B400C811D64E0199B5B36307C2FA29A45454B17AF9"
+        },
+        {
+          "path": "data/data/Course/old_yoshi_gcTex.carc",
+          "length": 86355,
+          "sha256": "4D8F37E1FDEABAA13204ACAE0F0201451FEBBCC64B73968D46A16A236237786C"
+        },
+        {
+          "path": "data/data/Course/pinball_course.carc",
+          "length": 169105,
+          "sha256": "B5449FCE7CC24218DAF0CFE453034B75B47FBA2509C6576007E9E09B2E0D8624"
+        },
+        {
+          "path": "data/data/Course/pinball_courseTex.carc",
+          "length": 78329,
+          "sha256": "7B1EA4DC5CF1BB1346F69CC168AEA42263E4AD4D7934A86FAE359AD854072D9D"
+        },
+        {
+          "path": "data/data/Course/rainbow_course.carc",
+          "length": 202463,
+          "sha256": "687AC3EBAE48A4D3117D317C1CAFA81361C9BF816A8B11072B92A427238C55AB"
+        },
+        {
+          "path": "data/data/Course/rainbow_courseTex.carc",
+          "length": 89000,
+          "sha256": "96623AAD42EB4B3CB229C14F026438B2F037754F80D979F7D30DCD0E7D56C905"
+        },
+        {
+          "path": "data/data/Course/ridge_course.carc",
+          "length": 164604,
+          "sha256": "C7B29C45EF2D1BB75668BCB6D9035B190AAFBF9539865971A554DE4C79A42741"
+        },
+        {
+          "path": "data/data/Course/ridge_courseTex.carc",
+          "length": 116846,
+          "sha256": "75BD67AA0DFBE706564661287B52E643627972EB84465A70E33FE98F9B314350"
+        },
+        {
+          "path": "data/data/Course/snow_course.carc",
+          "length": 173203,
+          "sha256": "8E61D224C1C8833421F50E5D0CB8BDD04122E6EC23723CD1113EA3CC27E09F0A"
+        },
+        {
+          "path": "data/data/Course/snow_courseTex.carc",
+          "length": 112120,
+          "sha256": "694264CE188BDC14D310793CFE1C5B6CF34307A17080D6BB334EEE9024A9F880"
+        },
+        {
+          "path": "data/data/Course/stadium_course.carc",
+          "length": 178273,
+          "sha256": "FE7E1AA0BA40DC640E8D606826D3C466CB99AA805AB19DE28EB110AC504120A3"
+        },
+        {
+          "path": "data/data/Course/stadium_courseTex.carc",
+          "length": 107084,
+          "sha256": "2F673A29148F3B06544BDAD35D1C74C916DDB4DB7AC19A15DCFB43245FA38EE3"
+        },
+        {
+          "path": "data/data/Course/test1_course.carc",
+          "length": 212657,
+          "sha256": "EA62BE7065AC566DE2CAD8F1EE86DE8E840F7CBC723C0E263F53FD9F902AA6BB"
+        },
+        {
+          "path": "data/data/Course/test1_courseTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/Course/test_circle.carc",
+          "length": 22053,
+          "sha256": "815EB5C4BBEDC55A2E5191BFA7B88F50633E411FE28FD04555488556EB8A4CB5"
+        },
+        {
+          "path": "data/data/Course/test_circleTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/Course/town_course.carc",
+          "length": 162943,
+          "sha256": "87CE03A262A28427004B39DB8CC145DB80CA138104161012A5B8E57187CD842D"
+        },
+        {
+          "path": "data/data/Course/town_courseTex.carc",
+          "length": 133077,
+          "sha256": "5B712294F579B946A0C3F4FEACDC23385CAFED3EFD0A6396E05488B69385224F"
+        },
+        {
+          "path": "data/data/Course/wario_course.carc",
+          "length": 228131,
+          "sha256": "0BE712DBBA1B390AB60F0E5C53F0E1CCBE9BCC9500CAFC974C01AD1FE718DB4B"
+        },
+        {
+          "path": "data/data/Course/wario_courseTex.carc",
+          "length": 29327,
+          "sha256": "BB1FC3B7E58109E24791C40647F8E467F87EC81BAC792F09E0A9E9DA9E867BDD"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro01_m_b.NCGR",
+          "length": 3584,
+          "sha256": "B52F27C3D6A0180736693C8A7E23DD57D63E3E40408F2D92B19241466654E2D5"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro01_m_b.NCLR",
+          "length": 552,
+          "sha256": "137A3B536A209AB81BE65B2CD2FDE55FA472E0F6EB1CA539D68BB986946856BE"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro01_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "33411B521E6A933EA432D21205CA843BDC4B025B0125BAC0DC3C3189340F72F9"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro02_m_b.NCGR",
+          "length": 3584,
+          "sha256": "C82B6CE38A3C318B238E1F573745F23EF367D4A1399D19ECF601BE058E7DCD35"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro02_m_b.NCLR",
+          "length": 552,
+          "sha256": "579CB3A1C23AAEB0D77BC1667DF64A62781AD89A9A8BDDE92C631221AAD3C9DB"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro02_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "C0509069F3B553BC6089B517DC1415EFE81611411DB7BFD1611AD961D54421F6"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro03_m_b.NCGR",
+          "length": 3584,
+          "sha256": "162D81CC68CEF50B8B1DC6C8358116D261280E9D7F4BB0E7702F06A0274F9600"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro03_m_b.NCLR",
+          "length": 552,
+          "sha256": "7295CB07737BB14CB1F71EBE7352B5DC4B0BE71BF908DB65A5C1666D4356420F"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro03_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "D47E82EC97D3A3F6C9BBB2CB41C218B397E341B03C3A744E4172470D6567AB3A"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro04_m_b.NCGR",
+          "length": 3584,
+          "sha256": "9CB4DD50D66823A1627292814DFC95E35ABAF91F91416C3DA08432A88163F2E1"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro04_m_b.NCLR",
+          "length": 552,
+          "sha256": "1BA7FE7CCBD7A4BFCF2AC60FD8AB55952A86C8872669EECB1CBFE3911AE8D0B6"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro04_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "E7C1460456B22D6BB5D06D62EAB8ED03C5A2E97086A7CB9AF324B62D7A258835"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro05_m_b.NCGR",
+          "length": 3584,
+          "sha256": "2CDAA304B349C36530AFFE99FFCEDB792FDF85ACF61D22F80A5F079AB5C55382"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro05_m_b.NCLR",
+          "length": 552,
+          "sha256": "A82727115FEEAD20D74024810CF8F430655BA1E1122D98C7C016C1727EA845B6"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro05_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "2E2090914F730DF9AFB7385152592C588C491F94D235ECFF35A105380613188F"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro06_m_b.NCGR",
+          "length": 3584,
+          "sha256": "2C3F4DEEB9A7E533F7085F1A241C24F4EF89FE5F49AC8E185AF975F68E64E080"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro06_m_b.NCLR",
+          "length": 552,
+          "sha256": "10B768583A64D1820DBFFC2C26756828EB8E01589F221F6C45903A8F9BBA81DA"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro06_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "6B825B73298B2CF6B76833195C853E363A09984369CD5DF45CF2956DCEE711BF"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro07_m_b.NCGR",
+          "length": 3584,
+          "sha256": "602C109A774F3989A5D85306F4F8E8EDA843023546A80174EA7F6012696758BB"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro07_m_b.NCLR",
+          "length": 552,
+          "sha256": "E54759DB1600A723D7171D9C97C7E326029E2057E75944285662B86BCFE6D4CD"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro07_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "5AAB28255E8BF58C9A927565DA54A0D937808BA3CEDBD87FF16703A3F4B204EB"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro08_m_b.NCGR",
+          "length": 3584,
+          "sha256": "0FBD035EC0679E323D184912B57400D33E457D567110A197FC492920E397B56E"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro08_m_b.NCLR",
+          "length": 552,
+          "sha256": "A0E03B85D9111AE2D73171E508E66A0D75250C2C8366D9761AEDCBC4EE27F3DA"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro08_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "9FF82A26F28A3B5336C396854B0D6EECE5E5E21D6DC2AAD3EA63AEA88E82D672"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro09_m_b.NCGR",
+          "length": 3584,
+          "sha256": "C5EFE4DC98A94B7A963937665855CEBC4C27ADD08E79464B173231332DBB6606"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro09_m_b.NCLR",
+          "length": 552,
+          "sha256": "DA9B939FF96E455064E1ADC2F5D831D5158D52CCECB51AEBC9446594BFBCE83A"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro09_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "476086F4149574DCF072EA66065F629F4B019F2A74339B7D204FE3D1D70C4752"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro10_m_b.NCGR",
+          "length": 3584,
+          "sha256": "A4EF53F7ABC52B56E5F1DED755D7F13AC99C5E3E6D83B5FDEE354A6875336F16"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro10_m_b.NCLR",
+          "length": 552,
+          "sha256": "EFB2F4CC662242F5F5971954F16CBB90B9617C63CEDA96A98DCFFF16F05E7CDC"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro10_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "0040E99A0FF298C806B29532A3EC98AA8F938B59D5B05C9D40252816C713FABE"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro11_m_b.NCGR",
+          "length": 3584,
+          "sha256": "CA5395D4C0EBD867457B58148A69456A06F23F0537F8CD297841774C88FADD45"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro11_m_b.NCLR",
+          "length": 552,
+          "sha256": "1A2EB45150DD507A2CE038B5D40E4DF9965D8A60FF0E23754F9145E028AF1B1C"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro11_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "81EAE29E9D30698300348C0C0E370F75D70ECF59203E7E071AB705337BD1F0B0"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro12_m_b.NCGR",
+          "length": 3584,
+          "sha256": "A66DB07CE6868A16C6861464EB5B610BCE141A60B451AFFC59CD13ECEB568916"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro12_m_b.NCLR",
+          "length": 552,
+          "sha256": "5AC13BCDCCEED4CDA5EB1347B611D5A08A0CA776079CA234560D4AEACA31F5A5"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro12_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "AF43073D198FDE089A38DD76B0608E48D02E829E02F177001726DEA1BAA53C82"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro13_m_b.NCGR",
+          "length": 3584,
+          "sha256": "33787E5F10F8BE5AAFF08FF5FE01B730173C361299A1A025FE59445EA5744666"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro13_m_b.NCLR",
+          "length": 552,
+          "sha256": "2343E1C594B1088C0C441B14E813DC054BD521341537346E9793C8ACFDAD17EB"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro13_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "AF65E1DA26A8A97DCE1CE1319D9F37FD1A255B0CA071EAC1DB3AB6B56185B170"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro14_m_b.NCGR",
+          "length": 3584,
+          "sha256": "1C52469A23DA2F592B019F3EA7B862D7D396F0A937B792E34DDE91B40B3E7F92"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro14_m_b.NCLR",
+          "length": 552,
+          "sha256": "DB563A793315E44EF66E53AB3389A4B3F22BC0005BD6BA360505881CCBC5258D"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro14_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "9029174E3DF5CBE1120547CD499BE2DEDB4494A3E1ECA1A1879396279D5E0C46"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro15_m_b.NCGR",
+          "length": 3584,
+          "sha256": "3DE3D924E346937B39E7F0BBDAFA8ECDA1B453E0AC7AE5899A873411A524A154"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro15_m_b.NCLR",
+          "length": 552,
+          "sha256": "F62583061C576B47F67D987DB529496B1E54E3E8FB1FDF4414E5B59C08814951"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro15_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "9ED8C84D40816BAA427C8284C94614B181CE93208EE9CB60682903B2CCCCC1B5"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro16_m_b.NCGR",
+          "length": 3584,
+          "sha256": "496549B932C6CE0262D1E49FD5F9778A35ABB4A919D6C75D9BD8CF9F568FBF34"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro16_m_b.NCLR",
+          "length": 552,
+          "sha256": "F5BB4B8A535C1ABFB28ABE928E59D1365D6AC727FA10AA9DFE4E849583A803E4"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_nitro16_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "4B704868CB04F7E6A601BA6D6E686DF09C6D5F7D13BB1CAEBC3EF10FE78FC536"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro01_m_b.NCGR",
+          "length": 3584,
+          "sha256": "F3CADEF261DB1B04BA01A2048E56F4BE41EA5F9EBA8F5E2A6171C2BDA90AFD51"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro01_m_b.NCLR",
+          "length": 552,
+          "sha256": "6B841F346C51B3521B5B0C10E8B7110D810F3CD40FC52F940B18D70C803562F4"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro01_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "CF0562912D1F3D1DF7205DCEA76510CBA4EE9BFB69A9169E6D1D443D01E1FAF0"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro02_m_b.NCGR",
+          "length": 3584,
+          "sha256": "9BF777E0298EC6F4E11B78CB576876001FB4F4711BCE9EEC2D160F6A00041CDC"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro02_m_b.NCLR",
+          "length": 552,
+          "sha256": "045F68986FD1E23C4AD091006E201FFD50C427DD5E790864397B66A0EBBB0080"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro02_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "1BE23987218F11737A0B8C8F6770F4755D960AD4B754F927D4781C9D2E36C254"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro03_m_b.NCGR",
+          "length": 3584,
+          "sha256": "7B098A667AADDBFA341C2971BADC67258A40668D5E47E0CEC29EB131619FE3B4"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro03_m_b.NCLR",
+          "length": 552,
+          "sha256": "652E63D506EF20178EDDD9BABACCD43073499751FC175EAAC15F0CE86ED442DB"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro03_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "7D9317C68299A67CB6ED0C0F984756C64D1257FC50B7148EB224B1FEAD2E3BCC"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro04_m_b.NCGR",
+          "length": 3584,
+          "sha256": "329388BABE3B60E214733F92EB2D2BCB7810DD8F354F0E0AE9AA5CE856AB5DED"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro04_m_b.NCLR",
+          "length": 552,
+          "sha256": "00631DFF05E7C67F7CEA954B5126E2862B9450EC8F9FB4FBAB20FD913E7DDF20"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro04_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "73C9829FD708CA7F6BD939B9033AF32F3A4D11E1DAD91826F81B19AB617741E3"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro05_m_b.NCGR",
+          "length": 3584,
+          "sha256": "8564AAC76984F9EAE32693E7DB75BC054AEB277C97B45F4C1D9C9BCE4F0592A3"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro05_m_b.NCLR",
+          "length": 552,
+          "sha256": "422E26E19E57D53A2EF8DE6AB0AB08D4F69FB9A93A0F254EAE09797BD4703459"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro05_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "C232B23ABF5BBCF8EC3C4431DCA3AB8175B1795DCB910F05A7BFB8EBBD2A5290"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro06_m_b.NCGR",
+          "length": 3584,
+          "sha256": "741137237198B1748E387187580AC19B05C67AC0D3AF229CD3B7D0BEBE5E13C0"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro06_m_b.NCLR",
+          "length": 552,
+          "sha256": "79CA40963D31C77B868531ED2429493C094E0143D273424F7F3173962CD20F89"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro06_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "A7B3542CBA49FEE67A8C968FFA1C9B75FC0551762A2050761EAC828B27757AA0"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro07_m_b.NCGR",
+          "length": 3584,
+          "sha256": "7B0C9ED610C7C3D8C0373252DBDE4D01BC1BB830B114843C16DD7878BAF72252"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro07_m_b.NCLR",
+          "length": 552,
+          "sha256": "B40E193167396259595DDD5509D8162E58315EE33430BEBF1357B62D916F4396"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro07_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "36AD9CFFAEAF9E7B27854A07C15EBA6B8146EBC0DC8F9DBC3505B5712C9E27C5"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro08_m_b.NCGR",
+          "length": 3584,
+          "sha256": "A5A2693B88D66A6AB6C54295B8D9D68533E1CAD6626F13D3C4E0C00DD2A15364"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro08_m_b.NCLR",
+          "length": 552,
+          "sha256": "F44F71EC5E348457E439A8E9FB376C6FAF686EA85EF5EFD954B857C6AE3D4BA6"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro08_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "0B9D8EDBE322EEF28B3C7E1C41C12350F958A98D3FA6503C96614945392424C1"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro09_m_b.NCGR",
+          "length": 3584,
+          "sha256": "17596B3811265C6427BA9AE06E8CE71486953EFBCA59B25376BA18DCE972F963"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro09_m_b.NCLR",
+          "length": 552,
+          "sha256": "64AA30DC218C6BDFC568E5E6AF126D9B8D2CCE537F4F8494752D85A340DC9F0F"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro09_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "1B5F77D1EB8350B810CC09F90941DA018F221F337B59665220D8557F7D899121"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro10_m_b.NCGR",
+          "length": 3584,
+          "sha256": "B477BDE4C541B48B273CED8C25EAACB93F1EA81855613872498328600D51D716"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro10_m_b.NCLR",
+          "length": 552,
+          "sha256": "83975AD6532336D06FB9F971AADE6019C752797F99DA3C8BE9F062720AF794FE"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro10_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "FBDF5AA544401A3F9B51391A60D7CED9DCDDB5F9AC54900A0F5A106BAA0E1F3C"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro11_m_b.NCGR",
+          "length": 3584,
+          "sha256": "C54A5CC8277D406CEA1DDCCE00AAD9DD70A84E97317E59B4B4848292E6304FBE"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro11_m_b.NCLR",
+          "length": 552,
+          "sha256": "23ED88BE4ED8EACB93A46FB7013909E2892DBE7190601E8F3DE06E5EF15793A5"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro11_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "B53D08CC8A052EC336D9455629ED026A1E42B611507FFD55EFB8C54768F54E3C"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro12_m_b.NCGR",
+          "length": 3584,
+          "sha256": "43F9BD2E721DC176E027683CBDE67A5ABE734CB6ADDBB404375D91D955848740"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro12_m_b.NCLR",
+          "length": 552,
+          "sha256": "FE0860FD8E234332B5C80378EFE2E31F5F3CCD46A3C7B012550FBAB5B82B7A1E"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro12_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "3BEAD01BCA40DC864FADD83DF136A5F09997CFA549FEE6A23923124C54CE4E47"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro13_m_b.NCGR",
+          "length": 3584,
+          "sha256": "2DE0BD1FFB24DFD72F9F0E64B37F2D1169EFD6F3A65B9FAA5E4BCB85A907FBE0"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro13_m_b.NCLR",
+          "length": 552,
+          "sha256": "0B4C4F54007279EA7D89460729366485B7CA8BB7F17DAC28A0C58EE58B88B19E"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro13_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "C4929357CD827D632DD51ECB83BBA873693E45CCC8B6B0D02709B2807D2E3EDA"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro14_m_b.NCGR",
+          "length": 3584,
+          "sha256": "4ED74687C4C11CEE33042A29366F562D69C1E950CB5D7846DEA4C4D5B418BE2A"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro14_m_b.NCLR",
+          "length": 552,
+          "sha256": "E272E27B845523E6FE19414526737958A16998764127657ABB1DC3B71B43A61D"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro14_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "4369E8E23C84DB91350BC4D6DC58CB39C082745F3541FB4A155829AF0A8538A6"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro15_m_b.NCGR",
+          "length": 3584,
+          "sha256": "6AB9A99CA81B24F19C47AC2296CE00F457DA3673738534988B0A9D9CD4C3F3C1"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro15_m_b.NCLR",
+          "length": 552,
+          "sha256": "8EE5CC1EB27C6A4F1FB3EC5DAE62C2E49E6E77154140C3FEDE067B6ADFF01813"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro15_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "5E10088ACD1FE97D6CFF042EE7C871A20A9B9FB11F40065A36F34577EF22BD6D"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro16_m_b.NCGR",
+          "length": 3584,
+          "sha256": "F0309F55C2BEAE8F95826A12D2A470420C3BBE4480064ADF60F94DECC57CE79A"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro16_m_b.NCLR",
+          "length": 552,
+          "sha256": "8FE98250176BDF56932C874787AC78C6896537C62D2920F5E1FF1044A3351BDD"
+        },
+        {
+          "path": "data/data/CupPicture/select_cup_retro16_m_picture.NSCR",
+          "length": 2084,
+          "sha256": "0FE0A18A752E71F8BE4488FB9CD08A77FA83D568629A2D9AF2BD20FF30D48026"
+        },
+        {
+          "path": "data/data/GeneralMenu.carc",
+          "length": 22828,
+          "sha256": "9CBFD4047BADBE0D69A86E6CCBCCF7DED3D711D2F64289DF3A13AE6EF25D8B5C"
+        },
+        {
+          "path": "data/data/GeneralMenu_es.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/GeneralMenu_fr.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/GeneralMenu_ge.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/GeneralMenu_it.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/GeneralMenu_us.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Ghost/ghost_000.bin",
+          "length": 4096,
+          "sha256": "7996680E5036B18CDBD3CD1AC51377177AD2DE37AE304694F32C35B3F7D4458C"
+        },
+        {
+          "path": "data/data/Ghost/ghost_001.bin",
+          "length": 4096,
+          "sha256": "62C0EA9599C395ADB50B2552AEAC147972ACF67B742F6BBD61021A62D58D8E5C"
+        },
+        {
+          "path": "data/data/Ghost/ghost_002.bin",
+          "length": 4096,
+          "sha256": "C9B1A0C7B9C7C2DC6AB3B104ADA6773E2BFDF75729C7D62A7F4DC9FD5F2BA219"
+        },
+        {
+          "path": "data/data/Ghost/ghost_003.bin",
+          "length": 4096,
+          "sha256": "5DD993EBA3A3F1A0434B4533F41D6C2AB9586508497B4A3FFF928E1C365078D6"
+        },
+        {
+          "path": "data/data/Ghost/ghost_004.bin",
+          "length": 4096,
+          "sha256": "5704E80D1427DA68481B2D9B523A3B8498683D37618E93FBD3BDEA8DD1420C43"
+        },
+        {
+          "path": "data/data/Ghost/ghost_005.bin",
+          "length": 4096,
+          "sha256": "84DBA323EE3A32B545FDC29CB68FF82F3862E208745CBA88047350C8861869B1"
+        },
+        {
+          "path": "data/data/Ghost/ghost_006.bin",
+          "length": 4096,
+          "sha256": "33AB6396C9ED1EB03DC2AD8E35B23CD623AD6744390D38184CDE1FC49BEBF1F9"
+        },
+        {
+          "path": "data/data/Ghost/ghost_007.bin",
+          "length": 4096,
+          "sha256": "B2311941EBA23551D2393983B98DB46072B4195B63DCD250F90635F365832204"
+        },
+        {
+          "path": "data/data/Ghost/ghost_008.bin",
+          "length": 4096,
+          "sha256": "17345F9DB077CA09BB3C09AC67977D9A5D71165F7CEEE92302EE17FBCBCF9799"
+        },
+        {
+          "path": "data/data/Ghost/ghost_009.bin",
+          "length": 4096,
+          "sha256": "91432FF28AA5583089725DAED2EA72B8ABEEBDE272BF281B3491DA0C5EEFFAAB"
+        },
+        {
+          "path": "data/data/Ghost/ghost_010.bin",
+          "length": 4096,
+          "sha256": "3D2F3D4A5D35BAF15F580029F7AC4C1F5F3D234C35338531CBDAE66137091FDE"
+        },
+        {
+          "path": "data/data/Ghost/ghost_011.bin",
+          "length": 4096,
+          "sha256": "D82C353478A5E8599784E5E425783D3A0AF83CF0E40F2E30AC823B71A6C2A17E"
+        },
+        {
+          "path": "data/data/Ghost/ghost_012.bin",
+          "length": 4096,
+          "sha256": "791B7AD3ADAB872C381F2760B16CCFB5855EB0317615DB319D9A0807FAC0F724"
+        },
+        {
+          "path": "data/data/Ghost/ghost_013.bin",
+          "length": 4096,
+          "sha256": "AB4FFB23FA65392D576EE646599B5608E5D3B30435D1E2BF20F089A04AFB63C3"
+        },
+        {
+          "path": "data/data/Ghost/ghost_014.bin",
+          "length": 4096,
+          "sha256": "646DF27FF858FF3C930F28581D928164D323332F94F1A5A27A33A159074CFDD3"
+        },
+        {
+          "path": "data/data/Ghost/ghost_015.bin",
+          "length": 4096,
+          "sha256": "3EF546BB993F0E637D57F62949166C4040CEA7D81934BBECAC0A0078A9D3BC46"
+        },
+        {
+          "path": "data/data/Ghost/ghost_016.bin",
+          "length": 4096,
+          "sha256": "6FD94EE7F8D63E29D682B731304C1BFBC6CF5423B45D51338E0B695FEBFBA82C"
+        },
+        {
+          "path": "data/data/Ghost/ghost_017.bin",
+          "length": 4096,
+          "sha256": "4565E4FC9CCD93364DB543DF10C570C1D65A055EC26CCC85574A64E663E36DD2"
+        },
+        {
+          "path": "data/data/Ghost/ghost_018.bin",
+          "length": 4096,
+          "sha256": "76A9559611552A61DF28432F2E0ED51271A8561E1BC6D8749D1052A11B0EE01E"
+        },
+        {
+          "path": "data/data/Ghost/ghost_019.bin",
+          "length": 4096,
+          "sha256": "2B7357892FC1DCD82EE5C48F2A8F632C285536867C2B4AD8FBF0C84E8F3BEC10"
+        },
+        {
+          "path": "data/data/Ghost/ghost_020.bin",
+          "length": 4096,
+          "sha256": "9495C492A9A40CF196289AB963EFC38F20B7D91421B7E3D733E9FBC6D120D6D7"
+        },
+        {
+          "path": "data/data/Ghost/ghost_021.bin",
+          "length": 4096,
+          "sha256": "CD87D73A0788A0128FDCB0D377B1614E43E42693E1F697A506F5851ED59733C3"
+        },
+        {
+          "path": "data/data/Ghost/ghost_022.bin",
+          "length": 4096,
+          "sha256": "572BA5889F3BAC45B11CF416786D1449974054DD92348C8CE5C472E3AC220B09"
+        },
+        {
+          "path": "data/data/Ghost/ghost_023.bin",
+          "length": 4096,
+          "sha256": "1C3A11B6D817918EECF008CCC87549DF315937B4BD2902EC09BAE1B1F3CC0F24"
+        },
+        {
+          "path": "data/data/Ghost/ghost_024.bin",
+          "length": 4096,
+          "sha256": "E829A272586E8640477ED5313700F777C2557C09E81D3CB1BAB80E24281C4CEC"
+        },
+        {
+          "path": "data/data/Ghost/ghost_025.bin",
+          "length": 4096,
+          "sha256": "C1666A3805133EC3B9EC7EFA3399937A5ABA2277CAA0B70482FAEED9BBBFF7B0"
+        },
+        {
+          "path": "data/data/Ghost/ghost_026.bin",
+          "length": 4096,
+          "sha256": "04885280F8972090939AD7375135FDA26444BBE6D75B8988D5E8607488BD29E2"
+        },
+        {
+          "path": "data/data/Ghost/ghost_027.bin",
+          "length": 4096,
+          "sha256": "036B5AF6BDC6AE8324D459C8AC627A40540465DDB9A62623C5E2C66A770F6F04"
+        },
+        {
+          "path": "data/data/Ghost/ghost_028.bin",
+          "length": 4096,
+          "sha256": "EE6438F03D4C2EA30011AB5213EFD82E7055B9DE6C2D8FE3839E756894545648"
+        },
+        {
+          "path": "data/data/Ghost/ghost_029.bin",
+          "length": 4096,
+          "sha256": "39729ED36F664DEF0EDF0DFC9F9F0BF345D3EDFA036F6F6457F706FD54F2C0BF"
+        },
+        {
+          "path": "data/data/Ghost/ghost_030.bin",
+          "length": 4096,
+          "sha256": "D86987DEBF2AD6D7270B1B8083825B1E3B063B286480D9AE3F2606E3ABA4D296"
+        },
+        {
+          "path": "data/data/Ghost/ghost_031.bin",
+          "length": 4096,
+          "sha256": "A1F80F9AD189B43367280594D15175903740C575E2ECB40BD078C74EB58782D3"
+        },
+        {
+          "path": "data/data/Ghost/staff_ghost_time.bin",
+          "length": 160,
+          "sha256": "54DBA8D6E7F128B184CD03459C2AF859268894CEAB3B04FEE333E9702E90426B"
+        },
+        {
+          "path": "data/data/KartModelMain.carc",
+          "length": 265833,
+          "sha256": "AB01DEA9C0E3E0AEFF0CC00FD82D0C292C0D5143D76EF29F5CD3FAA704E66564"
+        },
+        {
+          "path": "data/data/KartModelMainA.carc",
+          "length": 170953,
+          "sha256": "8A59FF06E48DE8C6FC4F15F92E5EB7D1C53BD7E6BDBD6455B74DF0D05E332693"
+        },
+        {
+          "path": "data/data/KartModelMainB.carc",
+          "length": 110057,
+          "sha256": "252F358FE9F56127FB7D78C3A9426C22A40D563D057CFEB6F0164E7C32A59420"
+        },
+        {
+          "path": "data/data/KartModelMenu.carc",
+          "length": 372728,
+          "sha256": "33FCCAAD7F0C00E5C8FF1A9B730B42657318BE951A845DE33AE6D06552B231D8"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/daisy/P_DS.nsbmd",
+          "length": 9008,
+          "sha256": "812855A69C32DCB2EA16CDFAB6CC949E95A6CC15019456D4538ACE83BF34EB61"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/daisy/P_DS.nsbtx",
+          "length": 2412,
+          "sha256": "8164371F6C1C39B1E8D330080696C0D8348B29625E78D3EF7047BEDB68B6EC4C"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/daisy/P_DS_win.nsbca",
+          "length": 8768,
+          "sha256": "C43383BF48907CA16A2F708A3B2B1A3F4060BB05AEA0B5A5FA710051A7A21296"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/donkey/P_DK.nsbmd",
+          "length": 8380,
+          "sha256": "C3536A9CF291C15C3992E5C2D8F1DDBDB8DDC9B248C518B0585E3124FBC728B9"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/donkey/P_DK.nsbtx",
+          "length": 2412,
+          "sha256": "E667D1D336BEE89704627B20414796F07939C72EB4EB3E0C621F9B9CDEEBAE61"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/donkey/P_DK_win.nsbca",
+          "length": 6752,
+          "sha256": "7E4E1226A2E03FA84166F552AEA948BE5F4A23D2F40E6DF863DC1E685EE75481"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/karon/P_KA.nsbmd",
+          "length": 7696,
+          "sha256": "4EDDD2E46A8FAC5E0D11AB48651ABCC5C3765FD1FCD0451CD36B0A05A7C95E9D"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/karon/P_KA.nsbtx",
+          "length": 1220,
+          "sha256": "DD15EB5C2A5D4C21F7D3238BA2FF4223332FC8C2A08B01D50EEB67E2FF367B37"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/karon/P_KA_win.nsbca",
+          "length": 8568,
+          "sha256": "D25A4E4AC95FFAA96CE6E747DCB47DE51389F507E82F6320D266C473408B9B60"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/kinopio/P_KO.nsbmd",
+          "length": 7188,
+          "sha256": "F8687CFCDEF32C57736A3740914496A10F0E876EC5827398E2DC118FB6FCA935"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/kinopio/P_KO.nsbtx",
+          "length": 1388,
+          "sha256": "84A35EEC4797C5F7F09BC1526877CF7E2C464AB651F3C395C810600A43B4BE1F"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/kinopio/P_KO_win.nsbca",
+          "length": 8520,
+          "sha256": "4219377E20D232C1803DA946214FE31B32846F5D22B0A787B2BAEFFCDE0F6CFA"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/koopa/P_KP.nsbmd",
+          "length": 11084,
+          "sha256": "F5267EA2030414A88F9601A184DA462001FBA279C7EEC945023F231BB88F9D2C"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/koopa/P_KP.nsbtx",
+          "length": 2412,
+          "sha256": "32496D55B53EA6065D7DFC5C61408C0CCF20B229EE33551DDE8A144C574A1909"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/koopa/P_KP_win.nsbca",
+          "length": 7720,
+          "sha256": "A662E4CF8AC205A7F87CDC04E868CE9C09CC741344241F5A8CE110982732FD3E"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/luigi/P_LG.nsbmd",
+          "length": 6408,
+          "sha256": "6CE05C8D28FB0AAD11F6A7ED356B0CD3F099FC53A8F4D39D2935E962EC76CED3"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/luigi/P_LG.nsbtx",
+          "length": 2412,
+          "sha256": "A08239E2A15212E7F74975A86C0C20DA37EC96A6E919CF816A3C870B7E0C2D43"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/luigi/P_LG_win.nsbca",
+          "length": 3996,
+          "sha256": "5B58AB0F26EA41D51BB5BA0F1541D113F9887FEEB7699359D43E828139C01560"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/mario/P_MR.nsbmd",
+          "length": 6464,
+          "sha256": "420CC9B561FE93E6904E6B4EE432B02F41E744D397935E384337B518820C3EFC"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/mario/P_MR.nsbtx",
+          "length": 2412,
+          "sha256": "9BF922A3EA690EFE2FA216882C3B9D93ADDBE467803F3684A4FFA94B287D3E92"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/mario/P_MR_win.nsbca",
+          "length": 6288,
+          "sha256": "540F208771028D2A66043069917CC3F94367AB79C44E195BE7FD3B3BE0612D63"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/peach/P_PC.nsbmd",
+          "length": 9032,
+          "sha256": "EE33EB271B43836BC82EAE6D848E0A0609B105C7A457D5E9A4CAFA85DD69CC64"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/peach/P_PC.nsbtx",
+          "length": 2412,
+          "sha256": "5D71C983EC4BD7DF39D90EC4D7E30ADC1ED2ABD6570AFC7528102B820A9C8C9E"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/peach/P_PC_win.nsbca",
+          "length": 10792,
+          "sha256": "1FC5E655B36B6DAF233AF49473720B407D1D142F463538E9F0975C4B07F2CA3C"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/robo/P_RB.nsbmd",
+          "length": 8432,
+          "sha256": "181801D0ECB6C37C65B8FC0D06B0140055F9F1366E922EFD5AD7B09FEBA9F7C1"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/robo/P_RB.nsbtx",
+          "length": 1644,
+          "sha256": "66C47BFA3D2DFB28C17B46D07657ABE8B7B793FB9A4E5D1ECE5C4283E607401F"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/robo/P_RB_win.nsbca",
+          "length": 2540,
+          "sha256": "C34E5176DC4D2DCE6A34C3E1C918E11DB0BB8DAE25972A0C8798EA8068522D88"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/waluigi/P_WL.nsbmd",
+          "length": 8844,
+          "sha256": "5DDAAC393E01921045DC7E9434572F89489D0B9E4C4CD8661BCBEB573AB8B1CF"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/waluigi/P_WL.nsbtx",
+          "length": 2412,
+          "sha256": "72874C164355F73F0B31BBDFABCC9B12137E7C8FE1FD40BAC47E6830EDCE6F93"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/waluigi/P_WL_win.nsbca",
+          "length": 9176,
+          "sha256": "E9E0F2D0DED7B0FF9F2622989B242F0F6195356A9EF664D44A0FF79EC48F5535"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/wario/P_WR.nsbmd",
+          "length": 8292,
+          "sha256": "472DFCD50F3A0187A98D13075132BDB7AE7B9001923EEBB1256407E5DC83D6FA"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/wario/P_WR.nsbtx",
+          "length": 2380,
+          "sha256": "9F2933526C7E493565EAD7A1BB80BA5433782FECB70B37E6E6B587CAF27EBE3A"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/wario/P_WR_win.nsbca",
+          "length": 11712,
+          "sha256": "D6EB3C8F2B0F7A2E244A2B95611BD623952A27E53BF27523E4C4DFECCAF344FB"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/yoshi/P_YS.nsbmd",
+          "length": 6268,
+          "sha256": "06DA7B13463C2648722619119F4EB482428536CFFBF235F67E16968349937605"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/yoshi/P_YS.nsbtx",
+          "length": 1132,
+          "sha256": "95418F64BEAE41D64B00C2771A1C87B1E43F70E74F755B275A3218E5D0586C05"
+        },
+        {
+          "path": "data/data/KartModelMenu/character/yoshi/P_YS_win.nsbca",
+          "length": 3412,
+          "sha256": "15FC7B52EC461E45D5590B10B4E3CA7DEEA4404601A2CE9F5121F47AB57DC253"
+        },
+        {
+          "path": "data/data/KartModelMenu/charmenuparam.bin",
+          "length": 26,
+          "sha256": "74FE629755EEE678605CE16D2614333AC20FC41C1B96BEEBB6B1DCB62F5827BC"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/DK_emblem.nsbtx",
+          "length": 708,
+          "sha256": "29B5CE78455FAF54FA110910721DE29C38B33600CBF85895C9A85AA4D33594AD"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/DS_emblem.nsbtx",
+          "length": 708,
+          "sha256": "9275B361BF14211376D7AFF99093AA8C3DEC70EE782E8BC3DC4AEB0FC8DF0B80"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/HH_emblem.nsbtx",
+          "length": 708,
+          "sha256": "6EB4EB36F4C4BD517D28800076F3DE46ABF98065E4DBE48039E942A4222E5916"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/KA_emblem.nsbtx",
+          "length": 708,
+          "sha256": "4E9BBDFCF5B2567963E9830D18818C4176D855DD4688373CD50042BE464D9065"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/KO_emblem.nsbtx",
+          "length": 708,
+          "sha256": "76B8F88F15CF4FB43D856B110B652398C0EDFCD16B319CC7FC15E3C9BDACD333"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/KP_emblem.nsbtx",
+          "length": 708,
+          "sha256": "425CB67A75EBE23A47BD26FE158B78F89C7DA469587A7EA39B5B5B40344B0A31"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/LG_emblem.nsbtx",
+          "length": 708,
+          "sha256": "783A5FD907C8949652A9628D0B581A5CD61BE91BABCABF555939EC83A95C1EFC"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/MR_emblem.nsbtx",
+          "length": 708,
+          "sha256": "7D1A4494C334EBD47674604B6CE911DCBA78B84AC2B9466C37C33B040DA144FA"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/PC_emblem.nsbtx",
+          "length": 708,
+          "sha256": "8BA4AF5A71DDB21DD89039E801AE40CC197582FDCE051CF0D1635CBEE42A3266"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/RB_emblem.nsbtx",
+          "length": 708,
+          "sha256": "86DF54A738A944EFA265329181BDC66987A39E7D59FE47FBE566BA49F1B222C6"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/TeamBlue_emblem.nsbtx",
+          "length": 708,
+          "sha256": "5AC0B5E1FEE3155DE10AAEC750C64F1B61BD6553EAC70FD94BEC5276A5C8F160"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/TeamRed_emblem.nsbtx",
+          "length": 708,
+          "sha256": "00C0071167860062BA99F6D59B64C62AE00521B4FF1B9C1C74EEC22A469976A8"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/WL_emblem.nsbtx",
+          "length": 708,
+          "sha256": "2EA6B5A5D630174EEDDF891682C214424F0B33603519CFEFDC6A0BFF51931034"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/WR_emblem.nsbtx",
+          "length": 708,
+          "sha256": "55E91554B2B666DFD3F3162EFABFD66522C97964CC76AD1653DD8FD346AB4BC6"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem/YS_emblem.nsbtx",
+          "length": 708,
+          "sha256": "F2710114698CB21570FC525A9E8DBD6AD0895849575E51C385E7C7FDE9007E06"
+        },
+        {
+          "path": "data/data/KartModelMenu/emblem_s_b.NCLR",
+          "length": 552,
+          "sha256": "974B52163DE863C96FAC0324E53EB750E09AACB76AA701B364A00C3C6F67BBF4"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/daisy/kart_DS_b.nsbmd",
+          "length": 6452,
+          "sha256": "88439F460AB38705F7B7ED59996D31F6837072143C139B872166E2E3B9D371A5"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/daisy/kart_DS_b.nsbtx",
+          "length": 1820,
+          "sha256": "5473485ECB9FF15914B64B3CA017145F0040014EBB011A3DB2821AE5EAB70DB4"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/daisy/kart_DS_c.nsbmd",
+          "length": 7012,
+          "sha256": "F7005F098010E7929759A5E8A5AB48055B7D566B4D4D3A4B0CB3FC3103BD9DBF"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/daisy/kart_DS_c.nsbtx",
+          "length": 2572,
+          "sha256": "E554CDC3A4F4CD50DBE89E7DA17882784C0F2D41A7A5BBBA2CC282840EB90956"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/donkey/kart_DK_b.nsbmd",
+          "length": 6900,
+          "sha256": "50E3F2742DFDD07662EAA49308B11FD0DC06AD75E6E8EFFFD207BAFDD4CCFC9B"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/donkey/kart_DK_b.nsbtx",
+          "length": 2332,
+          "sha256": "26A3EB95C65E4112C259590EFAE70B77A5A81DD11A68BD3A067A3B66E1153D4D"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/donkey/kart_DK_c.nsbmd",
+          "length": 7048,
+          "sha256": "50663FF22E648634C647902ED865EAD159BA839ADB5E196671939CDA348F3AFC"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/donkey/kart_DK_c.nsbtx",
+          "length": 2060,
+          "sha256": "30E11AC510E8F63DB1165B268323B5ADDAD334611503FCBCEE903780746CF450"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/karon/kart_KA_b.nsbmd",
+          "length": 5760,
+          "sha256": "5A7A31C2F0258085DD0F2E2D7C58980C20084C4FFC6577B0FF9E78F1ABB2EC75"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/karon/kart_KA_b.nsbtx",
+          "length": 1820,
+          "sha256": "4AC78214804E9DD275FEF91664DBE5134D012D33D2B738022AAA5433A8424457"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/karon/kart_KA_c.nsbmd",
+          "length": 7028,
+          "sha256": "29B4F350B89CBC84EA4E56C7D0C586CA99EA7BDC49A9ED08DFDA2B9682BA4F12"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/karon/kart_KA_c.nsbtx",
+          "length": 2572,
+          "sha256": "4F29027E4CAA88C6893D58F15E10FF8E17BFD7C0177E7DCB058AAB95D8CFFC76"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/kinopio/kart_KO_b.nsbmd",
+          "length": 6364,
+          "sha256": "91769FFD77FDFB95D2D1E111F8B335F7B0DDF7F777066832FE8F53D0B7E2F125"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/kinopio/kart_KO_b.nsbtx",
+          "length": 1820,
+          "sha256": "BCA57068151B91CE6B73FD97E721719217081341F50A21DB21F0CF48F4EB9E1D"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/kinopio/kart_KO_c.nsbmd",
+          "length": 7324,
+          "sha256": "C6B93CDBA653554659D83406D36DB036D360C7249E355AE6F1C839FC93D10B81"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/kinopio/kart_KO_c.nsbtx",
+          "length": 2060,
+          "sha256": "5DE1C27C79F8BB6A77DCDD6BB971EE2C9882749205AE1DCF50061E2867EFCEF6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/koopa/kart_KP_b.nsbmd",
+          "length": 6952,
+          "sha256": "630A68CE6A6EB512E17F4A575F1E52A8C9616220A5B506E6D0CA31DB5B635403"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/koopa/kart_KP_b.nsbtx",
+          "length": 2332,
+          "sha256": "AF91E1DF9A3F20ECCA082B89B939B15ABAAEBFA79BB49D964106FC086E30798C"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/koopa/kart_KP_c.nsbmd",
+          "length": 6232,
+          "sha256": "29BE34649FD438AA3715811813D34BB5C808B502E4E92931BE47C7262539DCA0"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/koopa/kart_KP_c.nsbtx",
+          "length": 2060,
+          "sha256": "337AECCBECB8DCFE918B850355457EDFFD8832C1968446B5BB035E31485BF5CF"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/luigi/kart_LG_b.nsbmd",
+          "length": 6052,
+          "sha256": "36EAC31A09FF8C654B55B2DB3DC5C4C9B34EBF8E4DAFE186BCDAB6A93CEFE6AE"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/luigi/kart_LG_b.nsbtx",
+          "length": 1820,
+          "sha256": "3B04B1B65926F11CE0B54B8FC1F7C163A8E3F954A5247E6B9FA4340ABA21A9BD"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/luigi/kart_LG_c.nsbmd",
+          "length": 5740,
+          "sha256": "4B66534733A4EE709810BE1024938BA68FD15E24A5127A6595B13ED021F29A85"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/luigi/kart_LG_c.nsbtx",
+          "length": 2060,
+          "sha256": "80C900643B6C0D88E90CFB22032451394A200F837B7F18F78483742F5F1A3DD2"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/mario/kart_MR_a.nsbmd",
+          "length": 6416,
+          "sha256": "901D7D1DCB0193843E8CB515C390F419A0EC4AEC2C256A258C35ABFAB0023614"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/mario/kart_MR_a.nsbtx",
+          "length": 2060,
+          "sha256": "9C02B797B31D539D0095EEC123F19F84C40C03B58BFAF33F9FC77CD43DF3335C"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/mario/kart_MR_b.nsbmd",
+          "length": 6708,
+          "sha256": "16FB9FAAE6E7E27E2A8AEF553D23DC01241FA760729D2A5D40D6CDB22DA25152"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/mario/kart_MR_b.nsbtx",
+          "length": 1564,
+          "sha256": "624802611B7BB467661D1EB3EFFA0847422FE3B911D977DBE8D3A3B9F8EEF6EF"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/mario/kart_MR_c.nsbmd",
+          "length": 6312,
+          "sha256": "2D31C214BE8571345AA34A341E57E36EAAFAAF5BB81C9C3BD1816D6AD3F3745A"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/mario/kart_MR_c.nsbtx",
+          "length": 2060,
+          "sha256": "9E107006F72BC5C6BDFC774E59A47258E6786AABEA877DD1A5B05F677321AA4B"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/palette/kart_a.NCLR",
+          "length": 552,
+          "sha256": "9D19CDEECE2FD1837F1529CAF1F0C6C567B99F9AFFADB81547BC991850DA2C07"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/peach/kart_PC_b.nsbmd",
+          "length": 6452,
+          "sha256": "472E9A1F59ADFF330C16824E8A6689DC6079CF3630C1149389DFE2CAF013EDC3"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/peach/kart_PC_b.nsbtx",
+          "length": 1820,
+          "sha256": "CEA78B5081DA28ADCDA0F210F6FE5F2A189290CCE3F9A7F64782D46C142E856F"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/peach/kart_PC_c.nsbmd",
+          "length": 6500,
+          "sha256": "D0A008F8BB65A415AE85DC79B9B7F936C3F0F79F674D091E7E673F6BC4C5D114"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/peach/kart_PC_c.nsbtx",
+          "length": 2572,
+          "sha256": "4FEFB6D24DB8B9641E57D9A7D24E1429A8809592BA252CA9B280B54C666C6D61"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/robo/kart_RB_b.nsbmd",
+          "length": 6472,
+          "sha256": "E00BE0BCF6299323EFE807B96B5E480F4505E9A1655DBD02A1E5CCD4F41D8DB3"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/robo/kart_RB_b.nsbtx",
+          "length": 1820,
+          "sha256": "CAE8AC33248E78B35B2EB975EB7D489214D159F85B962BDA17149DF2249E7215"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/robo/kart_RB_c.nsbmd",
+          "length": 7276,
+          "sha256": "ABB7366FBF743968E8CFD36771B7FA29241B8311CC127BCD826BE859CA5CF25D"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/robo/kart_RB_c.nsbtx",
+          "length": 2060,
+          "sha256": "389322D45831C01AD12BB0ACC7C7DFE92771183FABAD637A17C1839D04B7EA7B"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/select/select.nsbmd",
+          "length": 1384,
+          "sha256": "442C38347E1D76D931804004C059DAF633A65013889F28030CBE3DE120F391F6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/select/select.nsbtx",
+          "length": 308,
+          "sha256": "1D2456B3F5145DB6B1FC93D41A8AC267DECDBA32A5FDDF95769929948BABA750"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_DK_b.nsbmd",
+          "length": 696,
+          "sha256": "30EBEFBF4D6CB4FEAE27D27317D06CE6459244D57AF2E25C66299F1672F47EC4"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_DK_c.nsbmd",
+          "length": 740,
+          "sha256": "582F9A45F97A9713B9DFB77973EDEEB5908740A32A48AFC89A8BBDB54F1EFBB6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_DS_b.nsbmd",
+          "length": 756,
+          "sha256": "041DA47DCE3CAFF974EAAC8A7978AC14F3C69E17B0D0035B11CE4E14123779CE"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_DS_c.nsbmd",
+          "length": 752,
+          "sha256": "21D461A999EBBAA850F6577D8F0E5C5D9F5434FE39C4C4EAEA7511F9AB8E55E2"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_KA_b.nsbmd",
+          "length": 572,
+          "sha256": "3B8C30C21345185F7505DB51B8B4FD247CFDCFFB94C55F387936811EA8A63310"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_KA_c.nsbmd",
+          "length": 804,
+          "sha256": "E7FB99C3E90AF7409DAEE032029280917A49AC1664442BC7E70A8C80143DB64B"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_KO_b.nsbmd",
+          "length": 844,
+          "sha256": "CA2193B8D260B6E5704C6288263CD6D20735CE53E8E8E2454FB5009FBBD9F1D6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_KO_c.nsbmd",
+          "length": 748,
+          "sha256": "52B30E7D6F530AB5A1C1AD32537F067657CC210F44455888DB36B7A7BB444DE6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_KP_b.nsbmd",
+          "length": 804,
+          "sha256": "4CBF8858DC214D9F2A0BE59ABCC6E0D36EB97F460A15D67B132292170CEA92ED"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_KP_c.nsbmd",
+          "length": 888,
+          "sha256": "BDC21A3B4729C2590ADAA7709CEF7430316B9A15AD9E571D516BB3D7B00A7555"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_LG_b.nsbmd",
+          "length": 904,
+          "sha256": "50E243B9D316BB568AC5B48B72D1F851813C691F09C34F35DFCCF6A84673E504"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_LG_c.nsbmd",
+          "length": 660,
+          "sha256": "34CA18495B500458A7070E05B375772107CF95C56FB7E5600230B4D4F6999332"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_MR_a.nsbmd",
+          "length": 644,
+          "sha256": "D82DCC0B82B0E76DD7BB078EA3B38E9FB9915BBF8D79877DDEAD063B58F82D2E"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_MR_b.nsbmd",
+          "length": 692,
+          "sha256": "1B257EDD87D137C6130A122B3A5B123E9ED4D59518F273F2918D1B179836244E"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_MR_c.nsbmd",
+          "length": 812,
+          "sha256": "041B909B5184681C59756321CD2DF738FBE6E2EC4CC80E3E037CE002A0CAD0FC"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_PC_b.nsbmd",
+          "length": 756,
+          "sha256": "9F67886E31E4AB6DD94ED7DCBD82C3BCDDEBAC5F999C40B2A12AE3429C729DD9"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_PC_c.nsbmd",
+          "length": 688,
+          "sha256": "77702AFE4C13AF388FCFD81B9ECB5BB4DD9BB77E9C1B2C1B506B70377F833D53"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_RB_b.nsbmd",
+          "length": 544,
+          "sha256": "49DEA5707B3FBC9BB43555719CD2789731C66C0B4152E912B728437872693D03"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_RB_c.nsbmd",
+          "length": 548,
+          "sha256": "068447CAD5A2523C9576F6E2A023806FFC77322DB6BF6A09BD46AF8C72DF096F"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_WL_b.nsbmd",
+          "length": 572,
+          "sha256": "68F25ADD7CD03F0396A6A1AEDBA9370130B4901ED9BBD4A6EAF5C37702F391E8"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_WL_c.nsbmd",
+          "length": 740,
+          "sha256": "E06B0B82C4508699B25DF28FB597610A6A9DD594A84A88F3B7BA1CCD4ED3293B"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_WR_b.nsbmd",
+          "length": 632,
+          "sha256": "D167B153D1623ACB81AE1A53DF659263FC584A3C3C596B9EC23362A33C1D47D3"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_WR_c.nsbmd",
+          "length": 720,
+          "sha256": "B93226E2DB95D526729F6CFE4F815BE13D2F3E4E03BEA1E2E560A98971C71F4F"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_YS_b.nsbmd",
+          "length": 792,
+          "sha256": "767E99C7062132D54B719BFA3CF29016AEABF2D70036C174869D30100E990165"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/shadow/sh_YS_c.nsbmd",
+          "length": 872,
+          "sha256": "9FACE08F915E89DCE0974F1DECF0C4413A3A8FAD984066503387E23A57A0B1FB"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/tire/kart_tire_L.nsbmd",
+          "length": 2028,
+          "sha256": "4EA97B18B44413D62A7D6B0F6D81B488973746268931006BCA7A5403C947A1C6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/tire/kart_tire_L.nsbtx",
+          "length": 1012,
+          "sha256": "0D247747B3047FD8406B2C4E4D76BFEE5C5661AC322862D069D647D0FDE5B94E"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/tire/kart_tire_M.nsbmd",
+          "length": 2028,
+          "sha256": "2A91D6248C930B2C800C674F9AAC0D967C0796C2256338BF297A7CDC350BB608"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/tire/kart_tire_M.nsbtx",
+          "length": 1028,
+          "sha256": "E24F47F781BA408741AA5E3B27FE63851EBC526A90320CBCC81549D15D33052D"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/tire/kart_tire_S.nsbmd",
+          "length": 1960,
+          "sha256": "21962C3C7C8079BD2C99794C922BF0D0289AFFD5CF66AC45307665796D055CD6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/tire/kart_tire_S.nsbtx",
+          "length": 1012,
+          "sha256": "A9C4D0BBD4CE7AB796BB9A9F7C090C179C81F987BDCBB3E09FEF511EDFC1FC8B"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/waluigi/kart_WL_b.nsbmd",
+          "length": 6616,
+          "sha256": "7D0542DC069F1468765514DF2CB8B09294EE69CCF3C43C9541A70C1459564CA0"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/waluigi/kart_WL_b.nsbtx",
+          "length": 2332,
+          "sha256": "FB34CEA90C889DC5730317E79FD753F7938BB5EDA050CC6DB4A95FC7D8BE496D"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/waluigi/kart_WL_c.nsbmd",
+          "length": 6404,
+          "sha256": "A6225C66461EB2BE5036A76DC34D9243BA6EA60F6574D769522D8CD8655D63F0"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/waluigi/kart_WL_c.nsbtx",
+          "length": 2572,
+          "sha256": "6C5768EDDB2C721A899726B9607519D00D753593F6594372984E5B350B25E565"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/wario/kart_WR_b.nsbmd",
+          "length": 6216,
+          "sha256": "B592D0E40745198FA6FDFB0F39B90089C15FE7007931308B910C1D43AB26922C"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/wario/kart_WR_b.nsbtx",
+          "length": 2332,
+          "sha256": "9C1C3E8FE146A55F011C2DAB576E2DBC1ED7880E7966A0D788FA43AEBC6E35D2"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/wario/kart_WR_c.nsbmd",
+          "length": 6824,
+          "sha256": "F0A23C01AA7B0281FC7838D8EAFD603B5F1AD8331277A1B864570225E7369340"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/wario/kart_WR_c.nsbtx",
+          "length": 2060,
+          "sha256": "1340CFF58254710D7C54A1D25DD12C40E20B8D7E3364B2C7DC341BCF981BAFD6"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/yoshi/kart_YS_b.nsbmd",
+          "length": 6916,
+          "sha256": "CAA8F5404587BD3891E8B9DDAAAA18EDDDA7B945C24C15AF8C8D662250F2DFED"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/yoshi/kart_YS_b.nsbtx",
+          "length": 2332,
+          "sha256": "54516941053077DF59A38377A50253823FA2417819F701DCB3E8211C36C7C73C"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/yoshi/kart_YS_c.nsbmd",
+          "length": 7004,
+          "sha256": "A84F70C091ACDEC3011ADCA60B5C3F41DEE8B73CA0724865E8BF138FC7B637FD"
+        },
+        {
+          "path": "data/data/KartModelMenu/kart/yoshi/kart_YS_c.nsbtx",
+          "length": 2060,
+          "sha256": "CCED14728F23878487E8E8613BAC732EDBA84B9B0887F8F724FCC91C75AF0386"
+        },
+        {
+          "path": "data/data/KartModelMenu/kartmenuparam.bin",
+          "length": 600,
+          "sha256": "B13885436DF2AAE612F5D28998F08C8B188438099059EEB83ED52F76DFE81FFA"
+        },
+        {
+          "path": "data/data/KartModelMenu/kartoffsetdata.bin",
+          "length": 8288,
+          "sha256": "15C733FC60F4C3BBCCDCB19DF8BF3A3FE94A386ABD0F913FEAEF3D92182B71A7"
+        },
+        {
+          "path": "data/data/KartModelMenu/kartphysicalparam.bin",
+          "length": 7600,
+          "sha256": "AB00412CA92F250AF1DDD313CB521FED2D234B10EA2918C32009E344F13350AE"
+        },
+        {
+          "path": "data/data/KartModelSub.carc",
+          "length": 296663,
+          "sha256": "1D1159AF34526EDA4B386DA02C2F0187183AE502BDDAE62BF08EDAEEF8A02C5E"
+        },
+        {
+          "path": "data/data/Main2D.carc",
+          "length": 23097,
+          "sha256": "7332D277D84A47B7F18A4D3317135C511BABDB5A735A2C77012A5A8822431C13"
+        },
+        {
+          "path": "data/data/Main2D_es.carc",
+          "length": 19346,
+          "sha256": "871E51B7518CA7690DF1EDC9662EC07007D4A4BB1AF5CC160C15A5B08E96957E"
+        },
+        {
+          "path": "data/data/Main2D_fr.carc",
+          "length": 19344,
+          "sha256": "711A7CFA51B9EDB64EE789DD1233BA218B0757969071386CB6F83D5CE26F1D72"
+        },
+        {
+          "path": "data/data/Main2D_ge.carc",
+          "length": 19494,
+          "sha256": "8051CC9384931C9085F46C48195CB9E39CFCC7E30F96CBB9F6194B86EBAF91BC"
+        },
+        {
+          "path": "data/data/Main2D_it.carc",
+          "length": 19405,
+          "sha256": "7A54F76EB2F6BA4BAEA1942FF5E38366E0C6B7BFC51F7B6FE8F77EACAA8082C5"
+        },
+        {
+          "path": "data/data/Main2D_us.carc",
+          "length": 19145,
+          "sha256": "A114F06EF5B3A3F59268D4D58FABBE0BAA2E904225C7171D415622E41BDBF569"
+        },
+        {
+          "path": "data/data/MainEffect.carc",
+          "length": 30482,
+          "sha256": "8D65135CE31A02C133C5F24247B78DF5E9180730C319E58014C7F520D3AB420D"
+        },
+        {
+          "path": "data/data/MainRace.carc",
+          "length": 25424,
+          "sha256": "D07BBB6D7F0D267CB8E21DD39B53795E18CD2C71861C7CBFEA0979A6F5627870"
+        },
+        {
+          "path": "data/data/Main/MapObj.carc",
+          "length": 14059,
+          "sha256": "B50198F820B7482998B6ACB663C7E7779C19B2E47CAE82EA706FF68AB3C6C88B"
+        },
+        {
+          "path": "data/data/MissionRun/MissionEffect.spa",
+          "length": 45268,
+          "sha256": "6296810B226274DE7FB6445BD9C064D462BEFC047A0531915BA651681E7AC6DC"
+        },
+        {
+          "path": "data/data/MissionRun/MissionGate.nsbma",
+          "length": 144,
+          "sha256": "64ED754EFCFF81DFBD250FE4870C6DFCE13564F2CBFC8A17A84111CADC8EED15"
+        },
+        {
+          "path": "data/data/MissionRun/MissionGate.nsbmd",
+          "length": 7908,
+          "sha256": "F37CA0660AD4DE6A0DE6E9006510F4AE300113AF74D49C99C1AE3D823DD36CCC"
+        },
+        {
+          "path": "data/data/MissionRun/MissionGate.nsbtp",
+          "length": 520,
+          "sha256": "CF28916C113FD15C024E8157B14BEC762ABAEA32B3FDFD80DD127F674E09B957"
+        },
+        {
+          "path": "data/data/MissionRun/StopSign.nsbmd",
+          "length": 5988,
+          "sha256": "D99A3BCC4FB6687D42E239BF4832CCCB4DEEC0320FF6916107456A1E96A54A3E"
+        },
+        {
+          "path": "data/data/MissionRun/bomb_king.nsbca",
+          "length": 76668,
+          "sha256": "6E3B2DFBE426A1E21090AFCB929C4D9058648C382E717FB43EB51F226CB3469B"
+        },
+        {
+          "path": "data/data/MissionRun/bomb_king.nsbmd",
+          "length": 16208,
+          "sha256": "E5675259A3DB1DEBED217D8DD3686854EFF1CA79D854355AD3759FD618DB8FD3"
+        },
+        {
+          "path": "data/data/MissionRun/bomb_king.prm",
+          "length": 528,
+          "sha256": "7CF545967F5DF3AF9CA14488BF18FD5F9B0FC78FFA1D3EF67A1A1D1813F34F4E"
+        },
+        {
+          "path": "data/data/MissionRun/boss_donketu.nsbca",
+          "length": 19892,
+          "sha256": "62C824C136418D922EEF62873B31E624AAA94BDF9DD00C7C56EBD35BC408D33E"
+        },
+        {
+          "path": "data/data/MissionRun/boss_donketu.nsbmd",
+          "length": 5724,
+          "sha256": "29D4DA1E689BDD7454E2D6D38949672A4E55E6B059F73FB65AD85EC3DB7EFF29"
+        },
+        {
+          "path": "data/data/MissionRun/boss_donketu.prm",
+          "length": 580,
+          "sha256": "8E26BB09F15A42E3BF108FD4B7BD5C197BF8B697B4FFFEDF78589EF60C2EACCE"
+        },
+        {
+          "path": "data/data/MissionRun/coin.nsbmd",
+          "length": 17496,
+          "sha256": "4637BC2E87502CD1C149383BC843BFCFA3D1422B842F4061E171D6D81077E6C2"
+        },
+        {
+          "path": "data/data/MissionRun/coin.nsbtp",
+          "length": 412,
+          "sha256": "4563AC664F590744F3BCACA7E96AD06765ED7C137F50D6DC8EFA4254DDF9D057"
+        },
+        {
+          "path": "data/data/MissionRun/common.prm",
+          "length": 128,
+          "sha256": "38723A2E5E8A17AA7950DC008209944E898F69A7BD10A23C839D341E935FD5CA"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan.nsbca",
+          "length": 16668,
+          "sha256": "0A6808B3ADCAC79B51C2DEEA445E0E782157C5FD893FCB0432682D6BCF90E709"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan.nsbmd",
+          "length": 12212,
+          "sha256": "FC06BA547347B8B0601F2A7D3B44A37C64B97ECE6AB0329C897F6CCBEA7B6F8F"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan.nsbtp",
+          "length": 368,
+          "sha256": "3DC5850670286A61838867AB9EA2554B07C707E3FF65DE62D290E022052B6393"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan.prm",
+          "length": 308,
+          "sha256": "1DF15767E4CB9A527FF86A2CAAE8A2E0D26E0B12D1632A84E9C46CDF53A20EBF"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan_1.nsbca",
+          "length": 23424,
+          "sha256": "8CC3703D3A485A3FF5271DC9EA472A13D1F8B7A8AA967E4B6A824CBBA84D54AE"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan_1.nsbmd",
+          "length": 7036,
+          "sha256": "BEFBB1B7F18B323DA946CCB2FB1D1D386FA3629142135F69E80ACCFECBCB0A4A"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan_1.nsbtp",
+          "length": 296,
+          "sha256": "2861641138EE7C303610A5598B8CAFC52369E7336733143B4CDD500EF78A9E24"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan_2.nsbca",
+          "length": 23424,
+          "sha256": "87DE5896470C1F5FF2CC7171E57C1D50D16ECEB0A6237C9F0421071F93490909"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan_2.nsbmd",
+          "length": 7312,
+          "sha256": "24013F1F3EA10A348A1FAC956AABD9052FDC9B753E392F24B36678A717E1AC23"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan_3.nsbmd",
+          "length": 6884,
+          "sha256": "B6C5C836555B49D26A01FA1F804A6A22D6331FD28574AF911292BF10C780A8D8"
+        },
+        {
+          "path": "data/data/MissionRun/hanachan_4.nsbmd",
+          "length": 7268,
+          "sha256": "6BE457C1689C538E1E56A84253D5F48B28D30900FAE9EAE9968155C675BC6CE3"
+        },
+        {
+          "path": "data/data/MissionRun/iwante_l.nsbca",
+          "length": 60984,
+          "sha256": "27D5424F949662D47ED27D64A862C11CA38F9F57955CD2716BC1A334E5434D8D"
+        },
+        {
+          "path": "data/data/MissionRun/iwante_l.nsbmd",
+          "length": 10960,
+          "sha256": "363E8AF9AEA40671106C4F8B2BF1E948DEB5F6E4168612BF69164435D83EE069"
+        },
+        {
+          "path": "data/data/MissionRun/iwante_l.nsbtp",
+          "length": 232,
+          "sha256": "C4034C19A4D48D78F456B624E209179569A0536581CE4E35C84024FE57CD0DE8"
+        },
+        {
+          "path": "data/data/MissionRun/iwante_l.prm",
+          "length": 720,
+          "sha256": "77AFCA3FF28B01BE813C03DBD2CBB970C060AAE16AFA940224172DD28BBAF4EF"
+        },
+        {
+          "path": "data/data/MissionRun/king_ice_donketu.nsbca",
+          "length": 15248,
+          "sha256": "D22056149F62A3ABB2F40FE431F02A623205CFE34FBEB62533A276FB65594677"
+        },
+        {
+          "path": "data/data/MissionRun/king_ice_donketu.nsbmd",
+          "length": 15316,
+          "sha256": "E5BDB575E004DE490719D4997CD5B94EE552AAD6CF57D35B82F8E980446D0050"
+        },
+        {
+          "path": "data/data/MissionRun/king_ice_donketu.prm",
+          "length": 580,
+          "sha256": "0524643D89DD67A951FDA290EFBA9AB7E3F619C83EF630A0A592F07A0DEA8ED0"
+        },
+        {
+          "path": "data/data/MissionRun/king_teresa.nsbca",
+          "length": 17648,
+          "sha256": "CB6134F920736520AC7C373A825E8F2703CD8B187C491A2DE5825AFB9AF31A68"
+        },
+        {
+          "path": "data/data/MissionRun/king_teresa.nsbmd",
+          "length": 8420,
+          "sha256": "B203CDD2E8C38766BEF43401830EB36742BBC11D989A0C8BC154CF2E28B66319"
+        },
+        {
+          "path": "data/data/MissionRun/king_teresa.prm",
+          "length": 580,
+          "sha256": "915FD6801E319709DFBF928AC1ABF1187F57D25C75B2464069CC24183BE3966B"
+        },
+        {
+          "path": "data/data/MissionRun/kuriking.nsbca",
+          "length": 60364,
+          "sha256": "1E2F35CF36F4F7D4B1A51269FE10DA125BF97B127A2DEE89BEE39E9186813AFA"
+        },
+        {
+          "path": "data/data/MissionRun/kuriking.nsbma",
+          "length": 492,
+          "sha256": "6113BDD4B9EF535FADB6B888533BD30BDF4A3204025ECECF9D00519B3CB91B23"
+        },
+        {
+          "path": "data/data/MissionRun/kuriking.nsbmd",
+          "length": 27236,
+          "sha256": "FB755915278EA41858898C64ECA4D80393400758DA56BA8A0180BE3BF45CFBC7"
+        },
+        {
+          "path": "data/data/MissionRun/kuriking.nsbta",
+          "length": 1548,
+          "sha256": "FD8F698CC308B0E505A23A6C834ADADDC45D4B06B1C4F9DBD2323A25CCC879FC"
+        },
+        {
+          "path": "data/data/MissionRun/kuriking.nsbtp",
+          "length": 272,
+          "sha256": "8A7867D7F3D24BAE18DDD71BC06A3A7FEB84CE3778F64A5C7BE4296F02499212"
+        },
+        {
+          "path": "data/data/MissionRun/kuriking.prm",
+          "length": 536,
+          "sha256": "947CD78A33215ED38E25986EE18133C6D9414A7467FAB96B8E11C9BAE86B9A41"
+        },
+        {
+          "path": "data/data/MissionRun/sh_circle.nsbmd",
+          "length": 976,
+          "sha256": "9E41D466DE86BD62A2522551F098340DF8DEB5155EB790ABDBC44F4668996450"
+        },
+        {
+          "path": "data/data/MissionRun/sh_iwante.nsbmd",
+          "length": 476,
+          "sha256": "6C5AABB7F8CE62B1501BE3660A7DE82331140C3FCE925170C4815D65B6F8D4BC"
+        },
+        {
+          "path": "data/data/Scene/Edit.carc",
+          "length": 33493,
+          "sha256": "BD3EF8B560AA1B68577191DE4CFA06B5903C3C39F9833C7ABBC540EE5B2E4DCE"
+        },
+        {
+          "path": "data/data/Scene/Emblem.carc",
+          "length": 33850,
+          "sha256": "D754F6B1DDC86070E6AAE0C0280B134A40C6C67CB731287D4DCFB1C2446F0575"
+        },
+        {
+          "path": "data/data/Scene/Emblem_es.carc",
+          "length": 21401,
+          "sha256": "91025A361BB0E182E6B6599C942B09D25F241E3C374AFDEF09BAF1C3F35E1809"
+        },
+        {
+          "path": "data/data/Scene/Emblem_fr.carc",
+          "length": 20764,
+          "sha256": "6FE684B2389C96FD7611F8AD555DBF0C7B83936220607DD91D9086995A8C92CA"
+        },
+        {
+          "path": "data/data/Scene/Emblem_ge.carc",
+          "length": 21514,
+          "sha256": "71F6BFE7AC4074A465AC22CAFB3F0ABEA042C0136787AC9F075B09AF4C6A32F7"
+        },
+        {
+          "path": "data/data/Scene/Emblem_it.carc",
+          "length": 21410,
+          "sha256": "6A6AD526F578917D4CA96DD490F4F3E63D8CD8BBF9FD222E9B43C81F9F8DB767"
+        },
+        {
+          "path": "data/data/Scene/Emblem_us.carc",
+          "length": 20466,
+          "sha256": "6B98579584E8139566B87A751D4AB5707F2143EB26C3AD948CA402CF08FA55C3"
+        },
+        {
+          "path": "data/data/Scene/Ending.carc",
+          "length": 123295,
+          "sha256": "EBF525A0B52C09506CDC2CDD9B1287448ABDF35E07325D8F94D7CECF4A3156C6"
+        },
+        {
+          "path": "data/data/Scene/Ending_es.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Ending_fr.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Ending_ge.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Ending_it.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Ending_us.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Ghost.carc",
+          "length": 24365,
+          "sha256": "F80AD6C57DD7C86A3B5E3EE0C4DDAFDFBA45D2B7BF25C19B5A1C8033AE3DAFB2"
+        },
+        {
+          "path": "data/data/Scene/Ghost_es.carc",
+          "length": 5434,
+          "sha256": "579A24A7DC73CE6F556272FEA92DD1DB643915F2BBCBAD170E741CFBCE68A32E"
+        },
+        {
+          "path": "data/data/Scene/Ghost_fr.carc",
+          "length": 5394,
+          "sha256": "D1592F619CFEA3B84E260004050CDE61FC127359B9EBF601B999B2649C594DDE"
+        },
+        {
+          "path": "data/data/Scene/Ghost_ge.carc",
+          "length": 5284,
+          "sha256": "46C0BE020E816AC9CEFED3233CF66DA8AC362840DD3E6F24022F804AAB8CD242"
+        },
+        {
+          "path": "data/data/Scene/Ghost_it.carc",
+          "length": 5423,
+          "sha256": "8BF712663895EA59B84B3F1D44AEAFCF2A18FC68868CC1B6D069A6700E5BAEBA"
+        },
+        {
+          "path": "data/data/Scene/Ghost_us.carc",
+          "length": 5256,
+          "sha256": "B7A8072974A8C54A58D2B2588503440605A1AC5AD8792AE62906E3F8B90A84B3"
+        },
+        {
+          "path": "data/data/Scene/Keyboard.carc",
+          "length": 36855,
+          "sha256": "FCB039C7DDC64B3ED6ABF8953B55D90A3D3EA0C6CED592B48967E52A7F3AD4EB"
+        },
+        {
+          "path": "data/data/Scene/Keyboard_es.carc",
+          "length": 1052,
+          "sha256": "2F09AF00B553AE7774AD9308E3291F436A49B36B036B3AA543FC486D07EB848D"
+        },
+        {
+          "path": "data/data/Scene/Keyboard_fr.carc",
+          "length": 1052,
+          "sha256": "2F09AF00B553AE7774AD9308E3291F436A49B36B036B3AA543FC486D07EB848D"
+        },
+        {
+          "path": "data/data/Scene/Keyboard_ge.carc",
+          "length": 1052,
+          "sha256": "2F09AF00B553AE7774AD9308E3291F436A49B36B036B3AA543FC486D07EB848D"
+        },
+        {
+          "path": "data/data/Scene/Keyboard_it.carc",
+          "length": 1052,
+          "sha256": "2F09AF00B553AE7774AD9308E3291F436A49B36B036B3AA543FC486D07EB848D"
+        },
+        {
+          "path": "data/data/Scene/Keyboard_us.carc",
+          "length": 1032,
+          "sha256": "A56DAC1BA73E3CC3FFB7DF2B1C4BC69AB09F585A9325943BEF53AA857A154849"
+        },
+        {
+          "path": "data/data/Scene/Logo.carc",
+          "length": 22248,
+          "sha256": "0632808BF6D719E061E9C258E28C458798D84D825771BD46F04EC12A247A5A58"
+        },
+        {
+          "path": "data/data/Scene/Logo_es.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Logo_fr.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Logo_ge.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Logo_it.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Logo_us.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Menu.carc",
+          "length": 80289,
+          "sha256": "02B16B19539D5B3E310C80628049BE11E86C3B6A9D06B5D72647139B0E152699"
+        },
+        {
+          "path": "data/data/Scene/MenuDL.carc",
+          "length": 16292,
+          "sha256": "B9C89B4B4EC0F6C3ACBAD346621C735C71A30259A2C521F9A831E071C0DC3887"
+        },
+        {
+          "path": "data/data/Scene/MenuDL_es.carc",
+          "length": 13564,
+          "sha256": "365C882F3C333B38414AC175556B6925DA7722CCD5BE92D7049A1DB27AA4A34A"
+        },
+        {
+          "path": "data/data/Scene/MenuDL_fr.carc",
+          "length": 13364,
+          "sha256": "BD472545C293F18CEED2AC20E2734349A046DA69EC95FD8F7FE5F18D702442B7"
+        },
+        {
+          "path": "data/data/Scene/MenuDL_ge.carc",
+          "length": 13446,
+          "sha256": "C64FFC11A1C524B86C7773A83D2B80A665A66E4B5A53D7C12283F04E5C339477"
+        },
+        {
+          "path": "data/data/Scene/MenuDL_it.carc",
+          "length": 13637,
+          "sha256": "C0C1C7665315E944926A83697F97323C594E4140979F0B899B8C45AC14DF1C38"
+        },
+        {
+          "path": "data/data/Scene/MenuDL_us.carc",
+          "length": 13042,
+          "sha256": "981790F0A3AC827D7CDF1319D5DB8778A3CEA16EFFF9D17AC3E8F4463B686026"
+        },
+        {
+          "path": "data/data/Scene/Menu_es.carc",
+          "length": 87698,
+          "sha256": "378DE0FEB30C7756D108DA3AD9A0832CB188E0FBC09D42A626DE2D8BC9CCEF39"
+        },
+        {
+          "path": "data/data/Scene/Menu_fr.carc",
+          "length": 87002,
+          "sha256": "6CD885FA984223BFF826B5F2AB20999854AFBD149D6F3B1961AC31D669C5D103"
+        },
+        {
+          "path": "data/data/Scene/Menu_ge.carc",
+          "length": 86602,
+          "sha256": "125ABAFBD9262812579E57A98394A6AADB4DA6719DB237E720C8AED82D6AD1A5"
+        },
+        {
+          "path": "data/data/Scene/Menu_it.carc",
+          "length": 87846,
+          "sha256": "135E3E93CD618BEA949064CCC14AB47ED0CB2ECE3DCE7997BEF90449B2476E43"
+        },
+        {
+          "path": "data/data/Scene/Menu_us.carc",
+          "length": 85462,
+          "sha256": "C0A1E1DB00651547C8A8351D7F4F262CB3060E91908BB9EE68D4CC6979452DA4"
+        },
+        {
+          "path": "data/data/Scene/Name.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Nickname.carc",
+          "length": 34747,
+          "sha256": "318D53F406455D15DDACA3B3D8BBB032BB3A4F487C8355D6F694E4F1F2A21B07"
+        },
+        {
+          "path": "data/data/Scene/Nickname_es.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Nickname_fr.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Nickname_ge.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Nickname_it.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Nickname_us.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Option.carc",
+          "length": 3959,
+          "sha256": "24E8B9C73738837BF7B6A2C2877AD8CC443E23491818E8A29864D5DE799D7387"
+        },
+        {
+          "path": "data/data/Scene/Option_es.carc",
+          "length": 16581,
+          "sha256": "347C900C7066650C046298FBE9D5F90FA5F693020B66E9C2E9D04F27DA7E6E23"
+        },
+        {
+          "path": "data/data/Scene/Option_fr.carc",
+          "length": 16767,
+          "sha256": "CCA3F8A95D8BB8256146DBC594F74FCFE6526DC5E9498DDDB7318C1954BA5809"
+        },
+        {
+          "path": "data/data/Scene/Option_ge.carc",
+          "length": 16711,
+          "sha256": "5ADBEFADE33F5B1D7AB920EA435CE10B610148CF5406FE86948423AEC8763B70"
+        },
+        {
+          "path": "data/data/Scene/Option_it.carc",
+          "length": 16631,
+          "sha256": "C764AB4976D4930100C8B4A1F5C61D394B123186222375DF38A5258CFD4E5FC6"
+        },
+        {
+          "path": "data/data/Scene/Option_us.carc",
+          "length": 16227,
+          "sha256": "D7E0BA6880AE0B893B576367D77548BB6EBB6FBE87E2090D3C194E9FFB743475"
+        },
+        {
+          "path": "data/data/Scene/Race.carc",
+          "length": 53737,
+          "sha256": "D439BB9BE676F3823AB0AB5F51C1B2FD58CCDFFA9E300C1F54C543E388BF250B"
+        },
+        {
+          "path": "data/data/Scene/Race_es.carc",
+          "length": 42969,
+          "sha256": "78542A3F5CBBCC9082D6B8C7AFFA427A2EFC7EF908D6C96CE2AF3AFBBD0E2925"
+        },
+        {
+          "path": "data/data/Scene/Race_fr.carc",
+          "length": 42508,
+          "sha256": "3398721F61C1BF34E76DD1C0839A99ECFE74046A2977AF2254FFA6FDC16AC580"
+        },
+        {
+          "path": "data/data/Scene/Race_ge.carc",
+          "length": 41946,
+          "sha256": "A9021F30E36F2EE3B58A13DBF159D53536D80749B67868E4EF7F2999A3ABBC75"
+        },
+        {
+          "path": "data/data/Scene/Race_gp.carc",
+          "length": 791,
+          "sha256": "4BC035AA749D0DFDF78E5221F11077B9CA8D68CD61CFEBC3F67073139D75E417"
+        },
+        {
+          "path": "data/data/Scene/Race_gp_es.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_gp_fr.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_gp_ge.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_gp_it.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_gp_us.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_it.carc",
+          "length": 42759,
+          "sha256": "D61AF05CC986D18F68E673C43CF743411A2BF3D4BDF2857AB274C376DA9A8B7C"
+        },
+        {
+          "path": "data/data/Scene/Race_mg.carc",
+          "length": 2225,
+          "sha256": "922A8E40945A9A5E2CDCF01F2868CA040957EC9DFBD704D5BD32821354C87389"
+        },
+        {
+          "path": "data/data/Scene/Race_mg_es.carc",
+          "length": 1542,
+          "sha256": "337805664B1F2932B2422BFCBB3B0A26E5DC7D2D5B044B98C92ED0F5907347E5"
+        },
+        {
+          "path": "data/data/Scene/Race_mg_fr.carc",
+          "length": 1456,
+          "sha256": "3390F482AA4366F34839C96AFAB75EBF74BE52CC0ED0E86C0835B71B73D62611"
+        },
+        {
+          "path": "data/data/Scene/Race_mg_ge.carc",
+          "length": 1563,
+          "sha256": "B8140928499BD2790C74F4FBC0AB1F8884656CD83547DE0F39B2CE01DAC25EBD"
+        },
+        {
+          "path": "data/data/Scene/Race_mg_it.carc",
+          "length": 1615,
+          "sha256": "EF80F2EDE09AFBD3FD948604BDCAA1FD614F5DC82EDE5D9B4FC67726BA7654B8"
+        },
+        {
+          "path": "data/data/Scene/Race_mg_us.carc",
+          "length": 1517,
+          "sha256": "4665BD548E5053E96831A23712AEE7511BB14DBE7ACF57FEB9120DAC467E9566"
+        },
+        {
+          "path": "data/data/Scene/Race_mr.carc",
+          "length": 13146,
+          "sha256": "D9EAC3B1039472759B67389B8572561530638DBC60D527AC0CBF7CEC2BF23C13"
+        },
+        {
+          "path": "data/data/Scene/Race_mr_es.carc",
+          "length": 6853,
+          "sha256": "AF24159F899095431851E3C98EA37F37D25AE95C84A0CCC56543DE9064BAF8A7"
+        },
+        {
+          "path": "data/data/Scene/Race_mr_fr.carc",
+          "length": 7475,
+          "sha256": "D51DDA49E9F52A913E729CC51A75D222462F17AF90794DC169866FDEC064F661"
+        },
+        {
+          "path": "data/data/Scene/Race_mr_ge.carc",
+          "length": 8100,
+          "sha256": "B4F1505EB32EA25633494551CACBD3F7139E52F53B4C3C25059F084CABA8438D"
+        },
+        {
+          "path": "data/data/Scene/Race_mr_it.carc",
+          "length": 7411,
+          "sha256": "866C7FF7EF2E63E44052DE6FB55DD2A8FB01ADA52451770412631CA620F50CE6"
+        },
+        {
+          "path": "data/data/Scene/Race_mr_us.carc",
+          "length": 7077,
+          "sha256": "ED24995CAEAD091A8FDE25E7FB931CC150615E45D62A1D6DD80493C2E3EDAEA4"
+        },
+        {
+          "path": "data/data/Scene/Race_nt.carc",
+          "length": 825,
+          "sha256": "F3B2D0C30F83D43AC7C86299644B0329A41776BD73C61694F7C232E91F165568"
+        },
+        {
+          "path": "data/data/Scene/Race_nt_es.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_nt_fr.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_nt_ge.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_nt_it.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_nt_us.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_ta.carc",
+          "length": 5179,
+          "sha256": "0E488CCAD4090A72DDD9DEF8ECFDFDE97CF7424C3F50696899BA5B05AAB8CB40"
+        },
+        {
+          "path": "data/data/Scene/Race_ta_es.carc",
+          "length": 4471,
+          "sha256": "4B9385540755FF646CBCC270A0DFD8428224B09E6A69493C01A9711B3DB5CBA2"
+        },
+        {
+          "path": "data/data/Scene/Race_ta_fr.carc",
+          "length": 4647,
+          "sha256": "FE7A3C3CEA7AECB426B889145C6A2123A294D3538AFD6AD4F611DCB322E5A943"
+        },
+        {
+          "path": "data/data/Scene/Race_ta_ge.carc",
+          "length": 4266,
+          "sha256": "D8574839328C5268AC0CBDB126B8FFD107DD4EEF396AFA9927FB4B3CFA11BC59"
+        },
+        {
+          "path": "data/data/Scene/Race_ta_it.carc",
+          "length": 4389,
+          "sha256": "9C5CCFA672A6CA9477EC0D2ED4A54DD9089E41A74A71B05A64270F917D95A400"
+        },
+        {
+          "path": "data/data/Scene/Race_ta_us.carc",
+          "length": 4339,
+          "sha256": "63F1B3047B1090D267052F09294879449963C71D9EED38D1FCDFC1EBDEBDB226"
+        },
+        {
+          "path": "data/data/Scene/Race_us.carc",
+          "length": 42656,
+          "sha256": "301972EFCEB29A1342C777FC6061BCCA23913BDCE9E456C6EBB5BB2C1ADDCF17"
+        },
+        {
+          "path": "data/data/Scene/Race_vs.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_vs_es.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_vs_fr.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_vs_ge.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_vs_it.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Race_vs_us.carc",
+          "length": 85,
+          "sha256": "E98C7DDD9AB60C227AE4026F59295A69D72B80A4E54D282951DA61463E6A56E5"
+        },
+        {
+          "path": "data/data/Scene/Record.carc",
+          "length": 43676,
+          "sha256": "F7615D75E42F8ECC5AEA563DD83C8DDA68F50A4B5A821EEE6A7427BB96218663"
+        },
+        {
+          "path": "data/data/Scene/Record_es.carc",
+          "length": 41704,
+          "sha256": "12DBD214FA4EC879E097C753B88FA70FDA81DC3EC8B7F5206CE29591B4EC9D34"
+        },
+        {
+          "path": "data/data/Scene/Record_fr.carc",
+          "length": 41678,
+          "sha256": "A1C093C944A742144309B5FE7E57C303955663DA0D0CEE720729D1C90CD7FD14"
+        },
+        {
+          "path": "data/data/Scene/Record_ge.carc",
+          "length": 41014,
+          "sha256": "4BA4B5B6D3F59F704B79099BCFA29C8D4BE8DCAFC03EC6B9C199936D426DE8A9"
+        },
+        {
+          "path": "data/data/Scene/Record_it.carc",
+          "length": 41529,
+          "sha256": "E50C1814EB4652875BC73AC240E5E55B9A8B3E1AD2EA86DBE7B03EFE3863943B"
+        },
+        {
+          "path": "data/data/Scene/Record_us.carc",
+          "length": 41307,
+          "sha256": "8FFDD3EE27BE6C62761070F4425D31458BA7DCF2C1A8AB89F01470A2ED0D5FA0"
+        },
+        {
+          "path": "data/data/Scene/Result.carc",
+          "length": 402151,
+          "sha256": "878C059D8B4C99365965A64994E745682EADF97567C5B1725738BBEBE0F83BB9"
+        },
+        {
+          "path": "data/data/Scene/ResultDL.carc",
+          "length": 38128,
+          "sha256": "C54B78C926E51392002B9CA4BF09AF8075EF4FE580C73AF572336370C54C2E76"
+        },
+        {
+          "path": "data/data/Scene/ResultDL_es.carc",
+          "length": 34841,
+          "sha256": "13F431215B92DDF05B77466EDF7301BB51E69E68A6FEFC2035F9245979358F85"
+        },
+        {
+          "path": "data/data/Scene/ResultDL_fr.carc",
+          "length": 34846,
+          "sha256": "BE814E4D863AEA9BE400142E16B8976FEA6272E1D5ED3B2F1CB07CBEC7232DCF"
+        },
+        {
+          "path": "data/data/Scene/ResultDL_ge.carc",
+          "length": 35385,
+          "sha256": "E5DCFA4607FB2EC5309223FF688C76BD6D005CF11186D7B538E7B7C0D2A398A5"
+        },
+        {
+          "path": "data/data/Scene/ResultDL_it.carc",
+          "length": 35899,
+          "sha256": "79F4C6ED0D2B8CC7B8E8E2064C72E904A63B9FFBD1DE5A4C4EE841679FCD5A58"
+        },
+        {
+          "path": "data/data/Scene/ResultDL_us.carc",
+          "length": 35312,
+          "sha256": "3C52116E6E71EB21EC2A194BEDA1ECFC6FC85219FFA152BEA4CE0B437C12C92B"
+        },
+        {
+          "path": "data/data/Scene/Result_es.carc",
+          "length": 15334,
+          "sha256": "4F4865949DFD3534C9D9E2B9103B3B0B8E63A24447E47F41E27B1EA2F6483D94"
+        },
+        {
+          "path": "data/data/Scene/Result_fr.carc",
+          "length": 15623,
+          "sha256": "2E9A036CD6714E24EFA4DCF8E78EA78F84E9973376A14362FAE309C75E05C519"
+        },
+        {
+          "path": "data/data/Scene/Result_ge.carc",
+          "length": 14713,
+          "sha256": "B133E06350C8CB1D638015CF166B3E056CC892CB614F6D133391B9295496490B"
+        },
+        {
+          "path": "data/data/Scene/Result_it.carc",
+          "length": 15277,
+          "sha256": "5E5D9F8CB2A46F18A50C1EBF0695625B5719EF02D8ED68105E31E3185D76F88A"
+        },
+        {
+          "path": "data/data/Scene/Result_us.carc",
+          "length": 15380,
+          "sha256": "47266A63E8C8F575EAE45204101DEBA3C3467C04ED26E016029AFF104E8EA8CB"
+        },
+        {
+          "path": "data/data/Scene/StaffRoll.carc",
+          "length": 3942,
+          "sha256": "2AC542659E5A996C2097E63B7061F6271AF2DA72A1E8A3E18E91B4594E31DE38"
+        },
+        {
+          "path": "data/data/Scene/StaffRoll_es.carc",
+          "length": 2864,
+          "sha256": "C865DC940889DBA9BDD1D61D147224126B9229D8C5C84E129090C3E0EF7ACCBD"
+        },
+        {
+          "path": "data/data/Scene/StaffRoll_fr.carc",
+          "length": 2864,
+          "sha256": "C865DC940889DBA9BDD1D61D147224126B9229D8C5C84E129090C3E0EF7ACCBD"
+        },
+        {
+          "path": "data/data/Scene/StaffRoll_ge.carc",
+          "length": 2864,
+          "sha256": "C865DC940889DBA9BDD1D61D147224126B9229D8C5C84E129090C3E0EF7ACCBD"
+        },
+        {
+          "path": "data/data/Scene/StaffRoll_it.carc",
+          "length": 2864,
+          "sha256": "C865DC940889DBA9BDD1D61D147224126B9229D8C5C84E129090C3E0EF7ACCBD"
+        },
+        {
+          "path": "data/data/Scene/StaffRoll_us.carc",
+          "length": 2864,
+          "sha256": "C865DC940889DBA9BDD1D61D147224126B9229D8C5C84E129090C3E0EF7ACCBD"
+        },
+        {
+          "path": "data/data/Scene/Test.carc",
+          "length": 42083,
+          "sha256": "E3DB324F706494AEF1DCB799DB990A8A7A7512F0E07290EC33292725903D74D2"
+        },
+        {
+          "path": "data/data/Scene/Title.carc",
+          "length": 8829,
+          "sha256": "EB0289FAA717D72E9B4277EF10BACA2059B7CF77976CCC80A3D8AFC3AC0B8624"
+        },
+        {
+          "path": "data/data/Scene/Title_es.carc",
+          "length": 90852,
+          "sha256": "529D6CE6C60C3832E237F8BA7789922A39ED068DFDD8C6EB04A1F68B800D9524"
+        },
+        {
+          "path": "data/data/Scene/Title_fr.carc",
+          "length": 90945,
+          "sha256": "906F7DEBE1B3E6FF34CE87B2690473C6149B80F1A1817989E80A88DE7B7BB597"
+        },
+        {
+          "path": "data/data/Scene/Title_ge.carc",
+          "length": 91169,
+          "sha256": "F165870E61AB3DE74F4C87441C160AD42CE2C696611E71532B24FFCA093C75F0"
+        },
+        {
+          "path": "data/data/Scene/Title_it.carc",
+          "length": 91481,
+          "sha256": "69853B6FE53FC4BB6A3EEA53787D4640EDCC0918C91FA444BDC3F19EB51AF103"
+        },
+        {
+          "path": "data/data/Scene/Title_us.carc",
+          "length": 91166,
+          "sha256": "06F2A383A0D16A93A8EC9271F130A607B0A8F3880D0D397FEC0FECDA9779E3A9"
+        },
+        {
+          "path": "data/data/Scene/WLMenu.carc",
+          "length": 6203,
+          "sha256": "4BCA958AEEC03F3C6452CEBC0B2D0CAE9FCDA7B2EC82D6C667C1307F67EF4E7C"
+        },
+        {
+          "path": "data/data/Scene/WLMenu_es.carc",
+          "length": 10627,
+          "sha256": "EF1EE122E6D6BF63DB0B8D56A973C812D71A85E313C2A91D44414331182AEB79"
+        },
+        {
+          "path": "data/data/Scene/WLMenu_fr.carc",
+          "length": 10712,
+          "sha256": "982D4F9FC80E57EECDB8B162C59116FFF7FA88B38AC691137D56C12AE9E03470"
+        },
+        {
+          "path": "data/data/Scene/WLMenu_ge.carc",
+          "length": 10427,
+          "sha256": "25DD706C71EB103CE82F7181FC334F22BDD2150DE613DB2A5001DFF11485C272"
+        },
+        {
+          "path": "data/data/Scene/WLMenu_it.carc",
+          "length": 10807,
+          "sha256": "D916AEDDA19BA6F4E8A09AD4B474BF3E8AB41A4A38B7E2544768155B60CCB208"
+        },
+        {
+          "path": "data/data/Scene/WLMenu_us.carc",
+          "length": 10534,
+          "sha256": "69F4657CDC466EC47DE8EF1E5A97C992DFF4239A24323F097740D4A2C42AD48B"
+        },
+        {
+          "path": "data/data/Scene/WiFiMenu.carc",
+          "length": 18176,
+          "sha256": "B5912ED17CFF363C471FC9CF6C8FF04DE53422749A4C73A1AC74BF65997B7187"
+        },
+        {
+          "path": "data/data/Scene/WiFiMenu_es.carc",
+          "length": 15881,
+          "sha256": "1026496189D6B613335021074F652D1BAB12D14CBA3B06A459372544A0A04C39"
+        },
+        {
+          "path": "data/data/Scene/WiFiMenu_fr.carc",
+          "length": 16267,
+          "sha256": "C04F0B08963F816B6BADD201A74CFB30B15B145556E27375516079A1FA09C666"
+        },
+        {
+          "path": "data/data/Scene/WiFiMenu_ge.carc",
+          "length": 16125,
+          "sha256": "B30A800747411B169D6AF5756D75DB1476FE0F3FEE1A61C2D2434D356EB0A2DF"
+        },
+        {
+          "path": "data/data/Scene/WiFiMenu_it.carc",
+          "length": 16161,
+          "sha256": "F87727627AA948744C8379477C00FC1FE65D58936ECDF79B1C4ABDDC1730168B"
+        },
+        {
+          "path": "data/data/Scene/WiFiMenu_us.carc",
+          "length": 15797,
+          "sha256": "DF97184D4F6303794070247C32BE8773C5CF0D6DFED1DBBAC7BA9E4E18701932"
+        },
+        {
+          "path": "data/data/Sound/sound_data.sdat",
+          "length": 3321568,
+          "sha256": "8EDE08FBF97647C06A88B06F86FCEE8AB74024AEA9B87D1D5572F4239792D9EB"
+        },
+        {
+          "path": "data/data/Static2D.carc",
+          "length": 5022,
+          "sha256": "CA59F554D7A530CB13DC9477DD5589C41B5D1C13BE5280CE16DFE3386B3FDF93"
+        },
+        {
+          "path": "data/data/dwc/utility.bin",
+          "length": 1069000,
+          "sha256": "3566C133F22189086235B940A9F482D963A9B892D6AA91331737294A611EE668"
+        },
+        {
+          "path": "data/dwc/utility.bin",
+          "length": 1069000,
+          "sha256": "3566C133F22189086235B940A9F482D963A9B892D6AA91331737294A611EE668"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "287B73179F4042BF2D3F20176B8503CE076CE328965C764A153340BE54918E6A"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 152340,
+          "sha256": "7BE02AAC8E7FEC0800BE215E7E775E2D039989E2285CE228A1F99E152D3AFEA6"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 91348,
+          "sha256": "9D0F7B34ABF533882A656A83F315EE39B2E4C7486E9F59E5C1B5748194E4C312"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 106844,
+          "sha256": "9534CCCB47507C0ED93DFC95AFFDDAEF02A199DAC99F93B1BA8132B2BF3658AB"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 25561544,
+          "sha256": "90E935AFBF3DB25FF483B01900324A25BB45031A807252833F70516F0A1202B1"
+        }
+      ]
+    },
+    {
+      "name": "create-elf",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-elf.nds",
+          "length": 26633,
+          "sha256": "4FD71F12997BB95745AA77A517B80EEF3234487324ACDA0A30A901CE49C49352"
+        }
+      ]
+    },
+    {
+      "name": "create-bitmaps",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-bitmaps.nds",
+          "length": 29248,
+          "sha256": "253B6FB8927A03F65E0419DAB7B2EE87CC89963EBDFEFE47A269F85D5C0244A9"
+        }
+      ]
+    },
+    {
+      "name": "dsi-options-probe",
+      "exitCode": 1,
+      "standardOutputSha256": "4B9A60048447E5B7F089814F08EE526141144DDD4B549113EED6CD0D46997161",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 33554432,
+          "sha256": "492C717C5E140F34CC5658980D31689B85781C6C28A85E13AE855947D7D8CBAC"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 33554432,
+          "sha256": "E2F9D496EF7457A926680CAF9479BED54821D16D26AF8C4B7847D00E0A3C1A1B"
+        }
+      ]
+    },
+    {
+      "name": "secure-decrypt",
+      "exitCode": 0,
+      "standardOutputSha256": "2D91FE422AD3060CE4E5B32FCB9EFCB1C75F8F5D9381DD5449B41115F14B2B53",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-decrypted.nds",
+          "length": 33554432,
+          "sha256": "0EA8A91A0AE3E9DB26337C25A6A8568F6737FA36C1E0761988C0FA0ECBF210ED"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-nintendo",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-nintendo.nds",
+          "length": 33554432,
+          "sha256": "0656817284EE4982139517910C99BEF68815F73FCF9FD3946DEA4A426A30DF0C"
+        }
+      ]
+    },
+    {
+      "name": "secure-encrypt-other",
+      "exitCode": 0,
+      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "secure-encrypted-other.nds",
+          "length": 33554432,
+          "sha256": "23F9E3A72470920A5857DC3DE419C987B02E90DB7D0CBAB01025313710B13CCB"
+        }
+      ]
+    },
+    {
+      "name": "verbose-list",
+      "exitCode": 0,
+      "standardOutputSha256": "238A38FF0EC938BC7BB55B147E1C5522D011427CF26E458EAD2587ED1231BA87",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    },
+    {
+      "name": "post-oracle-info",
+      "exitCode": 0,
+      "standardOutputSha256": "E50C7E56F0865BFA52C742CAB3DEC11A423913D8C8E8AC420B9C84C353665116",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": []
+    }
+  ]
+}
