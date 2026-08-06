@@ -11,9 +11,9 @@ public sealed record NdsProgram(
     uint EntryAddress,
     uint LoadAddress)
 {
-    /// <summary>Gets the optional 12-byte Nitro code footer following an ARM9 program.</summary>
+    /// <summary>Identifies the optional 12-byte SDK footer recognized by its <c>0xDEC00621</c> marker after ARM9.</summary>
     public NdsRegion? Footer { get; internal set; }
 
-    /// <summary>Gets the program region including its recognized footer.</summary>
+    /// <summary>Extends the executable region through a recognized SDK footer for byte-compatible extraction.</summary>
     public NdsRegion CompleteData => Footer is null ? Data : new(Data.Offset, Data.Length + Footer.Value.Length);
 }

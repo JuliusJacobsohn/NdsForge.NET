@@ -1,9 +1,16 @@
 namespace NdsForge;
 
+/// <summary>Reconciles the linked FNT hierarchy with the flat FAT allocation array under explicit safety limits.</summary>
 internal static class NitroFileSystemParser
 {
+    /// <summary>Distinguishes directory references from ordinary zero-based file identifiers.</summary>
     private const ushort RootDirectoryId = 0xF000;
 
+    /// <summary>Reads and decodes both filesystem tables synchronously after validating declared allocation sizes.</summary>
+    /// <param name="source">Image source retained by every resulting <see cref="NdsFile"/>.</param>
+    /// <param name="header">Header regions locating the FNT and FAT.</param>
+    /// <param name="options">Limits for allocation, directory count, and recursion.</param>
+    /// <returns>A fully linked tree plus all FAT allocations.</returns>
     public static NdsFileSystem Parse(
         IImageDataSource source,
         NdsHeader header,
@@ -13,6 +20,12 @@ internal static class NitroFileSystemParser
         return ParseTables(source, fnt, fat, options);
     }
 
+    /// <summary>Reads both filesystem tables asynchronously, then performs deterministic in-memory decoding.</summary>
+    /// <param name="source">Image source retained by every resulting <see cref="NdsFile"/>.</param>
+    /// <param name="header">Header regions locating the FNT and FAT.</param>
+    /// <param name="options">Limits for allocation, directory count, and recursion.</param>
+    /// <param name="cancellationToken">Cancels table I/O before object publication.</param>
+    /// <returns>A fully linked tree plus all FAT allocations.</returns>
     public static async ValueTask<NdsFileSystem> ParseAsync(
         IImageDataSource source,
         NdsHeader header,
@@ -33,6 +46,11 @@ internal static class NitroFileSystemParser
         return ParseTables(source, fnt, fat, options);
     }
 
+    /// <summary>Materializes validated table regions for the synchronous parser without accepting partial reads.</summary>
+    /// <param name="source">Random-access image bytes.</param>
+    /// <param name="header">Source offsets and lengths decoded from the base header.</param>
+    /// <param name="options">Allocation ceilings checked before creating arrays.</param>
+    /// <returns>Independent FNT and FAT buffers safe for recursive decoding.</returns>
     private static (byte[] Fnt, byte[] Fat) ReadTables(
         IImageDataSource source,
         NdsHeader header,
@@ -46,6 +64,12 @@ internal static class NitroFileSystemParser
         return (fnt, fat);
     }
 
+    /// <summary>Traverses reachable directory IDs, assigns sequential file IDs, and rejects cycles or dangling records.</summary>
+    /// <param name="source">Shared source later used for lazy payload reads.</param>
+    /// <param name="fnt">Complete filename table containing main records and variable-length subtables.</param>
+    /// <param name="fat">Complete array of eight-byte start/end records.</param>
+    /// <param name="options">Traversal depth and directory-count ceilings.</param>
+    /// <returns>A filesystem published only after every declared directory is reachable exactly once.</returns>
     private static NdsFileSystem ParseTables(
         IImageDataSource source,
         byte[] fnt,
@@ -84,6 +108,8 @@ internal static class NitroFileSystemParser
         NdsFile[] orderedFiles = files.OrderBy(static file => file.Id).ToArray();
         return new(root, directories, orderedFiles, allocations);
 
+        // This local recursion shares the cycle set and partially built indexes above. Keeping that
+        // state lexical prevents malformed images from observing or retaining an incomplete tree.
         NdsDirectory ReadDirectory(
             ushort directoryId,
             string name,
@@ -169,6 +195,10 @@ internal static class NitroFileSystemParser
         }
     }
 
+    /// <summary>Decodes FAT half-open ranges and proves that no start/end pair escapes the physical image.</summary>
+    /// <param name="imageLength">Authoritative source length rather than the header's claimed used size.</param>
+    /// <param name="fat">Bytes whose length must be an exact multiple of the eight-byte record size.</param>
+    /// <returns>Allocations indexed so array position always equals <see cref="NdsFileAllocation.FileId"/>.</returns>
     private static NdsFileAllocation[] ParseAllocations(long imageLength, ReadOnlySpan<byte> fat)
     {
         if (fat.Length % 8 != 0)
@@ -193,6 +223,9 @@ internal static class NitroFileSystemParser
         return allocations;
     }
 
+    /// <summary>Guards allocations and requires the FNT/FAT pair to be jointly present or jointly absent.</summary>
+    /// <param name="header">Declared table lengths from offsets <c>0x40</c> through <c>0x4F</c>.</param>
+    /// <param name="options">Caller-controlled ceilings already checked for positive values.</param>
     private static void ValidateTableLengths(NdsHeader header, NdsReadOptions options)
     {
         if (header.FileNameTable.Length > options.MaximumFileNameTableBytes ||
@@ -209,6 +242,9 @@ internal static class NitroFileSystemParser
         }
     }
 
+    /// <summary>Rejects names unsafe for logical lookup or extraction and enforces uniqueness within one subtable.</summary>
+    /// <param name="name">Decoded ASCII entry segment without directory-ID metadata.</param>
+    /// <param name="siblingNames">Ordinal set shared by both file and directory children of one parent.</param>
     private static void ValidateName(string name, HashSet<string> siblingNames)
     {
         if (string.IsNullOrEmpty(name) ||

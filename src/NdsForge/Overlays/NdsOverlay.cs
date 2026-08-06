@@ -3,6 +3,10 @@ namespace NdsForge;
 /// <summary>Describes an ARM overlay-table entry and its referenced FAT payload.</summary>
 public sealed class NdsOverlay
 {
+    /// <summary>Decodes one 32-byte table record and resolves its FAT identifier without confusing it with the overlay ID.</summary>
+    /// <param name="processor">Processor whose separate overlay table contained the record.</param>
+    /// <param name="data">Exactly one little-endian 32-byte overlay record.</param>
+    /// <param name="fileSystem">FAT allocations and optional FNT names used to resolve the payload.</param>
     internal NdsOverlay(NdsProcessor processor, ReadOnlySpan<byte> data, NdsFileSystem fileSystem)
     {
         Processor = processor;
@@ -25,40 +29,39 @@ public sealed class NdsOverlay
         }
     }
 
-    /// <summary>Gets the processor that owns the overlay table.</summary>
+    /// <summary>Distinguishes the independent ARM9 and ARM7 overlay namespaces and load environments.</summary>
     public NdsProcessor Processor { get; }
 
-    /// <summary>Gets the logical overlay ID.</summary>
+    /// <summary>Identifies runtime overlay metadata and is not required to equal the payload's <see cref="FileId"/>.</summary>
     public uint Id { get; }
 
-    /// <summary>Gets the runtime load address.</summary>
+    /// <summary>Specifies the ARM memory address at which the overlay loader places initialized payload bytes.</summary>
     public uint LoadAddress { get; }
 
-    /// <summary>Gets the runtime initialized-data size.</summary>
+    /// <summary>Declares initialized runtime bytes after decompression, so it may exceed the stored payload length.</summary>
     public uint RamSize { get; }
 
-    /// <summary>Gets the zero-initialized BSS size.</summary>
+    /// <summary>Reserves additional zero-filled runtime memory that is absent from the cartridge payload.</summary>
     public uint BssSize { get; }
 
-    /// <summary>Gets the first static-initializer address.</summary>
+    /// <summary>Marks the inclusive start of the runtime constructor pointer list for this overlay.</summary>
     public uint StaticInitializerStart { get; }
 
-    /// <summary>Gets the first address after the static-initializer list.</summary>
+    /// <summary>Marks the exclusive end of the constructor pointer list and should not precede its start.</summary>
     public uint StaticInitializerEnd { get; }
 
     /// <summary>Gets the referenced FAT file ID, which is independent of <see cref="Id"/>.</summary>
     public uint FileId { get; }
 
-    /// <summary>Gets the compressed payload size stored in the low 24 bits.</summary>
+    /// <summary>Decodes the low 24 bits of the packed control word; zero commonly indicates an uncompressed payload.</summary>
     public uint CompressedSize { get; }
 
-    /// <summary>Gets the overlay flags stored in the high eight bits.</summary>
+    /// <summary>Preserves the packed control word's high byte, including compression and authentication-related bits.</summary>
     public byte Flags { get; }
 
     /// <summary>Gets the resolved payload region, or <see langword="null"/> for an invalid file ID.</summary>
     public NdsRegion? Data { get; }
 
-    /// <summary>Gets the named NitroFS file when the referenced FAT entry also appears in the FNT.</summary>
+    /// <summary>Links to a navigable FNT entry only when the FAT payload is also named; valid overlays may remain unnamed.</summary>
     public NdsFile? File { get; }
 }
-

@@ -5,12 +5,15 @@ namespace NdsForge;
 /// <param name="Length">The number of bytes in the region.</param>
 public readonly record struct NdsRegion(long Offset, long Length)
 {
-    /// <summary>Gets the first offset after the region.</summary>
+    /// <summary>Computes the exclusive end offset used by FAT records and overflow-safe bounds checks.</summary>
     public long End => checked(Offset + Length);
 
     /// <summary>Gets whether the region contains no bytes.</summary>
     public bool IsEmpty => Length == 0;
 
+    /// <summary>Widens the unsigned 32-bit offset/length pairs stored in DS headers without sign conversion.</summary>
+    /// <param name="offset">Little-endian on-cartridge offset already decoded as unsigned.</param>
+    /// <param name="length">Little-endian on-cartridge byte count already decoded as unsigned.</param>
+    /// <returns>A region usable by the library's 64-bit source abstraction.</returns>
     internal static NdsRegion FromUInt32(uint offset, uint length) => new(offset, length);
 }
-

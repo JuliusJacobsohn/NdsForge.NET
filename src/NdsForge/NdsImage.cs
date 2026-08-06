@@ -3,9 +3,18 @@ namespace NdsForge;
 /// <summary>Provides structured, random-access inspection of a Nintendo DS-family image.</summary>
 public sealed class NdsImage : IDisposable, IAsyncDisposable
 {
+    /// <summary>Backs every lazy file and region read; disposing the image closes it according to the open overload's ownership rules.</summary>
     private readonly IImageDataSource _source;
+    /// <summary>Prevents use-after-close while making synchronous and asynchronous disposal idempotent.</summary>
     private bool _disposed;
 
+    /// <summary>Publishes a complete object graph only after all required component parsers succeed.</summary>
+    /// <param name="source">Random-access source transferred to this image for lifetime management.</param>
+    /// <param name="header">Losslessly parsed DS or DSi header.</param>
+    /// <param name="fileSystem">Validated FNT hierarchy and FAT allocations.</param>
+    /// <param name="arm9Overlays">ARM9 table entries in encoded order.</param>
+    /// <param name="arm7Overlays">ARM7 table entries in encoded order.</param>
+    /// <param name="banner">Optional versioned menu metadata and icon.</param>
     internal NdsImage(
         IImageDataSource source,
         NdsHeader header,
@@ -22,10 +31,10 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         Banner = banner;
     }
 
-    /// <summary>Gets the parsed image header.</summary>
+    /// <summary>Preserves both typed DS/DSi fields and the raw bytes required for checksums and lossless edits.</summary>
     public NdsHeader Header { get; }
 
-    /// <summary>Gets the parsed NitroFS tree and allocations.</summary>
+    /// <summary>Connects navigable FNT paths with every FAT allocation, including unnamed overlay payloads.</summary>
     public NdsFileSystem FileSystem { get; }
 
     /// <summary>Gets ARM9 overlays in table order.</summary>
@@ -37,7 +46,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <summary>Gets the parsed menu banner, or <see langword="null"/> when absent.</summary>
     public NdsBanner? Banner { get; }
 
-    /// <summary>Gets the total length of the source image in bytes.</summary>
+    /// <summary>Reports physical source bytes, which may exceed the header's used-ROM size because cartridges are capacity padded.</summary>
     public long Length => _source.Length;
 
     /// <summary>Opens an image from a filesystem path without loading the entire file into memory.</summary>
@@ -149,6 +158,9 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         _disposed = true;
     }
 
+    /// <summary>Proves a caller-supplied slice is a non-negative, overflow-safe interval within the physical source.</summary>
+    /// <param name="region">Proposed half-open interval in absolute image bytes.</param>
+    /// <param name="imageLength">Physical source boundary used instead of mutable header claims.</param>
     private static void ValidateRegion(NdsRegion region, long imageLength)
     {
         if (region.Offset < 0 || region.Length < 0 || region.Offset > imageLength - region.Length)
