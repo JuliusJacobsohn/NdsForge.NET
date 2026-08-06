@@ -236,9 +236,9 @@ internal static class NitroFileSystemParser
             throw new InvalidDataException("A NitroFS table exceeds the configured parsing limits.");
         }
 
-        if (header.FileNameTable.IsEmpty != header.FileAllocationTable.IsEmpty)
+        if (header.FileNameTable.IsEmpty && !header.FileAllocationTable.IsEmpty)
         {
-            throw new InvalidDataException("NitroFS filename and allocation tables must either both be present or both be absent.");
+            throw new InvalidDataException("A NitroFS allocation table cannot be interpreted without a filename table.");
         }
     }
 

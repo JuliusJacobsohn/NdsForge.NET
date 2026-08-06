@@ -1,0 +1,101 @@
+namespace NdsForge.Tests;
+
+public sealed class NdsImageBuilderTests
+{
+    [Fact]
+    public async Task BuildsDeterministicValidatedImageWithProgramsBannerAndNitroFs()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.FileSystem.AddFile("/data/two.bin", [2]);
+        builder.FileSystem.AddFile("/data/one.bin", [1, 1]);
+        builder.Banner = new NdsBannerBuilder()
+            .SetTitle(NdsBannerLanguage.English, "Builder Test")
+            .Build();
+
+        byte[] first = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        byte[] second = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(first);
+
+        Assert.Equal(first, second);
+        Assert.True(image.Validate().IsValid);
+        Assert.Equal("BUILD TEST", image.Header.Title);
+        Assert.Equal("BT01", image.Header.GameCode);
+        Assert.Equal("HB", image.Header.MakerCode);
+        Assert.Equal("Builder Test", image.Banner!.Titles[NdsBannerLanguage.English]);
+        Assert.Equal(["/data/one.bin", "/data/two.bin"], image.FileSystem.Files.Select(static file => file.FullPath));
+        Assert.Equal(
+            [1, 1],
+            await image.FileSystem.GetFile(0).ReadAllBytesAsync(TestContext.Current.CancellationToken));
+        Assert.Equal(
+            [0xA9, 0x01, 0x02],
+            await ReadRegionAsync(image, image.Header.Arm9.Data, TestContext.Current.CancellationToken));
+    }
+
+    [Fact]
+    public async Task BuildsExplicitEmptyNitroFsDirectoriesWithoutFatEntries()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.FileSystem.CreateDirectory("/empty/child");
+
+        byte[] data = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(data);
+
+        Assert.Equal(["/", "/empty", "/empty/child"], image.FileSystem.Directories.Select(static value => value.FullPath));
+        Assert.Empty(image.FileSystem.Files);
+        Assert.True(image.Header.FileAllocationTable.IsEmpty);
+    }
+
+    [Fact]
+    public async Task ReportsConcreteLayoutAndLeavesDestinationOpen()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.FileSystem.AddFile("asset.bin", [4, 5, 6]);
+        using var destination = new MemoryStream();
+
+        NdsImageBuildResult result = await builder.WriteAsync(
+            destination,
+            cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.True(destination.CanRead);
+        Assert.Equal(destination.Length, result.PhysicalSize);
+        Assert.Equal(1, result.FileCount);
+        Assert.Equal(0x4000, result.Arm9.Offset);
+        Assert.True(result.FileAllocationTable.Offset > result.FileNameTable.Offset);
+    }
+
+    [Fact]
+    public async Task RejectsMissingOrMismatchedProgramsBeforeTruncatingDestination()
+    {
+        var builder = new NdsImageBuilder
+        {
+            Arm9 = new(NdsProcessor.Arm7, [1], 0x02000000, 0x02000000),
+            Arm7 = new(NdsProcessor.Arm7, [2], 0x02380000, 0x02380000),
+        };
+        using var destination = new MemoryStream([9, 8, 7], writable: true);
+
+        await Assert.ThrowsAsync<InvalidDataException>(async () =>
+            await builder.WriteAsync(destination, cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true));
+        Assert.Equal([9, 8, 7], destination.ToArray());
+    }
+
+    private static NdsImageBuilder CreateBuilder() => new()
+    {
+        Title = "BUILD TEST",
+        GameCode = "BT01",
+        MakerCode = "HB",
+        Version = 2,
+        Arm9 = new(NdsProcessor.Arm9, [0xA9, 0x01, 0x02], 0x02000000, 0x02000000),
+        Arm7 = new(NdsProcessor.Arm7, [0xA7, 0x03], 0x02380000, 0x02380000),
+    };
+
+    private static async ValueTask<byte[]> ReadRegionAsync(
+        NdsImage image,
+        NdsRegion region,
+        CancellationToken cancellationToken)
+    {
+        using Stream stream = image.OpenRead(region);
+        byte[] data = new byte[region.Length];
+        await stream.ReadExactlyAsync(data, cancellationToken).ConfigureAwait(true);
+        return data;
+    }
+}
