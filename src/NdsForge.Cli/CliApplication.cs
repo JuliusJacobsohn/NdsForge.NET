@@ -28,6 +28,8 @@ internal static class CliApplication
                 "LIST" or "LS" => await ListAsync(args, cancellation.Token).ConfigureAwait(false),
                 "EXTRACT" => await ExtractAsync(args, cancellation.Token).ConfigureAwait(false),
                 "REPLACE" => await ReplaceAsync(args, cancellation.Token).ConfigureAwait(false),
+                "MANIFEST" => await ManifestAsync(args, cancellation.Token).ConfigureAwait(false),
+                "DIFF" => await DiffAsync(args, cancellation.Token).ConfigureAwait(false),
                 _ => InvalidArguments($"Unknown command '{args[0]}'."),
             };
         }
@@ -185,6 +187,65 @@ internal static class CliApplication
         return 0;
     }
 
+    private static async Task<int> ManifestAsync(string[] args, CancellationToken cancellationToken)
+    {
+        if (args.Length is < 2 or > 3)
+        {
+            return InvalidArguments("Usage: ndsforge manifest <image.nds> [output.json]");
+        }
+
+        using NdsImage image = await NdsImage.OpenAsync(args[1], cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+        NdsImageManifest manifest = await image.CreateManifestAsync(cancellationToken).ConfigureAwait(false);
+        if (args.Length == 2)
+        {
+            Console.WriteLine(manifest.ToJson());
+            return 0;
+        }
+
+        var stream = new FileStream(
+            args[2],
+            FileMode.CreateNew,
+            FileAccess.Write,
+            FileShare.None,
+            64 * 1024,
+            FileOptions.Asynchronous);
+        await using (stream.ConfigureAwait(false))
+        {
+            await manifest.WriteJsonAsync(stream, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        Console.WriteLine($"Wrote manifest for {manifest.Header.GameCode} to {Path.GetFullPath(args[2])}.");
+        return 0;
+    }
+
+    private static async Task<int> DiffAsync(string[] args, CancellationToken cancellationToken)
+    {
+        if (args.Length != 3)
+        {
+            return InvalidArguments("Usage: ndsforge diff <left.nds> <right.nds>");
+        }
+
+        using NdsImage left = await NdsImage.OpenAsync(args[1], cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+        using NdsImage right = await NdsImage.OpenAsync(args[2], cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+        NdsImageDiff diff = await left.CompareAsync(right, cancellationToken).ConfigureAwait(false);
+        foreach (NdsSemanticDifference difference in diff.Differences)
+        {
+            Console.WriteLine($"{difference.Kind,-10} {difference.Path}: {difference.Before ?? "<absent>"} -> {difference.After ?? "<absent>"}");
+        }
+
+        if (diff.AreEquivalent)
+        {
+            Console.WriteLine("Images are semantically and physically equivalent.");
+            return 0;
+        }
+
+        Console.WriteLine($"{diff.Differences.Count:N0} difference(s).");
+        return 1;
+    }
+
     private static NdsFileChange AssertSingleChange(NdsImageEditor editor)
     {
         if (editor.Changes.Count != 1)
@@ -227,5 +288,7 @@ internal static class CliApplication
         Console.WriteLine("                                       Safely export all image components");
         Console.WriteLine("  replace <image.nds> <path> <file> <output.nds> [--overwrite]");
         Console.WriteLine("                                       Replace one NitroFS file and verify output");
+        Console.WriteLine("  manifest <image.nds> [output.json]   Emit a strict SHA-256 image manifest");
+        Console.WriteLine("  diff <left.nds> <right.nds>          Compare content, identities, and layout");
     }
 }
