@@ -1,8 +1,10 @@
 namespace NdsForge;
 
-/// <summary>Represents the lossless typed extension in a DSi-capable image header.</summary>
+/// <summary>Projects DSi security, digest, memory, title, and save metadata while preserving the complete extension.</summary>
 public sealed class NdsDsiHeader
 {
+    /// <summary>Slices typed fields from a complete 0x1000-byte DSi header without copying each fixed byte array.</summary>
+    /// <param name="rawHeader">Immutable header memory retained by the parent <see cref="NdsHeader"/>.</param>
     internal NdsDsiHeader(ReadOnlyMemory<byte> rawHeader)
     {
         ReadOnlySpan<byte> data = rawHeader.Span;
@@ -40,7 +42,7 @@ public sealed class NdsDsiHeader
         RsaSignature = rawHeader.Slice(0xF80, 0x80);
     }
 
-    /// <summary>Gets the complete unmodified extended-header bytes from 0x180 through 0xFFF.</summary>
+    /// <summary>Preserves bytes <c>0x180</c>-<c>0xFFF</c>, including reserved and cryptographic fields not yet interpreted.</summary>
     public ReadOnlyMemory<byte> RawData { get; }
 
     /// <summary>Gets raw global, ARM9, ARM7, and WRAM memory-bank settings.</summary>
@@ -52,85 +54,88 @@ public sealed class NdsDsiHeader
     /// <summary>Gets DSi access-control flags.</summary>
     public uint AccessControl { get; }
 
-    /// <summary>Gets the SCFG_EXT mask.</summary>
+    /// <summary>Preserves the SCFG_EXT mask controlling which DSi hardware configuration bits software may change.</summary>
     public uint ScfgExtMask { get; }
 
     /// <summary>Gets DSi application flags.</summary>
     public byte ApplicationFlags { get; }
 
-    /// <summary>Gets the ARM7 device-list address.</summary>
+    /// <summary>Identifies the runtime ARM7 address of the DSi device-list structure used during service initialization.</summary>
     public uint Arm7DeviceListAddress { get; }
 
-    /// <summary>Gets the Nintendo DS-mode digest region.</summary>
+    /// <summary>Locates the NTR-mode content range covered by the hierarchical DSi digest tables.</summary>
     public NdsRegion NtrDigest { get; }
 
-    /// <summary>Gets the DSi-mode digest region.</summary>
+    /// <summary>Locates the TWL-mode content range covered by the hierarchical DSi digest tables.</summary>
     public NdsRegion TwlDigest { get; }
 
-    /// <summary>Gets the sector hash-table region.</summary>
+    /// <summary>Locates the SHA-1 sector digest array whose grouping is defined by <see cref="DigestSectorSize"/>.</summary>
     public NdsRegion SectorHashTable { get; }
 
-    /// <summary>Gets the block hash-table region.</summary>
+    /// <summary>Locates the second-level SHA-1 array covering groups of sector hashes.</summary>
     public NdsRegion BlockHashTable { get; }
 
-    /// <summary>Gets the digest sector size in bytes.</summary>
+    /// <summary>Defines the content byte granularity represented by each entry in <see cref="SectorHashTable"/>.</summary>
     public uint DigestSectorSize { get; }
 
-    /// <summary>Gets the number of sectors represented by each digest block.</summary>
+    /// <summary>Defines how many sector digests contribute to each entry in <see cref="BlockHashTable"/>.</summary>
     public uint DigestBlockSectorCount { get; }
 
-    /// <summary>Gets the extended banner size.</summary>
+    /// <summary>Declares the DSi banner allocation, including animated data when the version is <c>0x0103</c>.</summary>
     public uint BannerSize { get; }
 
-    /// <summary>Gets the DSi total image size field.</summary>
+    /// <summary>Reports the DSi metadata's total content extent, distinct from physical padding and the common used-size field.</summary>
     public uint TotalImageSize { get; }
 
-    /// <summary>Gets the first modcrypt area.</summary>
+    /// <summary>Locates the first optional region transformed by DSi modcrypt when corresponding flags enable it.</summary>
     public NdsRegion ModcryptArea1 { get; }
 
-    /// <summary>Gets the second modcrypt area.</summary>
+    /// <summary>Locates the second optional region transformed by DSi modcrypt when corresponding flags enable it.</summary>
     public NdsRegion ModcryptArea2 { get; }
 
-    /// <summary>Gets the 64-bit DSi title ID.</summary>
+    /// <summary>Combines low and high words into the platform title identifier used by DSi services and save storage.</summary>
     public ulong TitleId { get; }
 
-    /// <summary>Gets the requested public save size.</summary>
+    /// <summary>Declares public writable storage bytes requested by DSi software, not an embedded ROM region.</summary>
     public uint PublicSaveSize { get; }
 
-    /// <summary>Gets the requested private save size.</summary>
+    /// <summary>Declares private writable storage bytes requested by DSi software, not an embedded ROM region.</summary>
     public uint PrivateSaveSize { get; }
 
-    /// <summary>Gets the 16 raw age-rating bytes.</summary>
+    /// <summary>Preserves sixteen territory-specific rating bytes because their flags and authorities vary by slot.</summary>
     public ReadOnlyMemory<byte> AgeRatings { get; }
 
-    /// <summary>Gets the stored ARM9 HMAC.</summary>
+    /// <summary>Contains the 20-byte SHA-1 HMAC authenticating the common ARM9 payload; no key-validity claim is implied.</summary>
     public ReadOnlyMemory<byte> Arm9Hmac { get; }
 
-    /// <summary>Gets the stored ARM7 HMAC.</summary>
+    /// <summary>Contains the 20-byte SHA-1 HMAC authenticating the common ARM7 payload; no key-validity claim is implied.</summary>
     public ReadOnlyMemory<byte> Arm7Hmac { get; }
 
-    /// <summary>Gets the stored digest-master HMAC.</summary>
+    /// <summary>Contains the 20-byte SHA-1 HMAC authenticating the digest hierarchy's master data.</summary>
     public ReadOnlyMemory<byte> DigestMasterHmac { get; }
 
-    /// <summary>Gets the stored banner HMAC.</summary>
+    /// <summary>Contains the 20-byte SHA-1 HMAC authenticating DSi banner bytes when required by title metadata.</summary>
     public ReadOnlyMemory<byte> BannerHmac { get; }
 
-    /// <summary>Gets the stored ARM9i HMAC.</summary>
+    /// <summary>Contains the 20-byte SHA-1 HMAC authenticating the DSi-mode ARM9i payload.</summary>
     public ReadOnlyMemory<byte> Arm9iHmac { get; }
 
-    /// <summary>Gets the stored ARM7i HMAC.</summary>
+    /// <summary>Contains the 20-byte SHA-1 HMAC authenticating the DSi-mode ARM7i payload.</summary>
     public ReadOnlyMemory<byte> Arm7iHmac { get; }
 
-    /// <summary>Gets the ARM9-without-secure-area HMAC.</summary>
+    /// <summary>Contains the alternate ARM9 HMAC calculated with its secure-area portion excluded.</summary>
     public ReadOnlyMemory<byte> Arm9WithoutSecureAreaHmac { get; }
 
     /// <summary>Gets raw DSi debug arguments.</summary>
     public ReadOnlyMemory<byte> DebugArguments { get; }
 
-    /// <summary>Gets the stored RSA signature bytes without making an authenticity claim.</summary>
+    /// <summary>Preserves the 128-byte header signature for later verification without claiming trust or key provenance.</summary>
     public ReadOnlyMemory<byte> RsaSignature { get; }
 
+    /// <summary>Decodes an extended-header offset/length pair without conflating zero length with absent metadata.</summary>
+    /// <param name="data">Complete DSi header beginning at cartridge offset zero.</param>
+    /// <param name="offset">Byte offset of the unsigned start word.</param>
+    /// <returns>A widened half-open region whose physical bounds are validated separately.</returns>
     private static NdsRegion ReadRegion(ReadOnlySpan<byte> data, int offset) =>
         NdsRegion.FromUInt32(NdsBinary.ReadUInt32(data, offset), NdsBinary.ReadUInt32(data, offset + 4));
 }
-

@@ -1,8 +1,10 @@
 namespace NdsForge;
 
-/// <summary>Represents the typed fields in a Nintendo DS-family image header.</summary>
+/// <summary>Projects the common cartridge header into typed fields while retaining every byte needed for lossless work.</summary>
 public sealed class NdsHeader
 {
+    /// <summary>Decodes the 0x200-byte DS prefix and, when selected by unit code, its 0xE00-byte DSi extension.</summary>
+    /// <param name="rawData">Exactly the header span selected by the loader: 0x200 bytes for DS or 0x1000 for DSi.</param>
     internal NdsHeader(ReadOnlyMemory<byte> rawData)
     {
         RawData = rawData;
@@ -44,105 +46,108 @@ public sealed class NdsHeader
         }
     }
 
-    /// <summary>Gets the unmodified bytes used to parse this header.</summary>
+    /// <summary>Preserves reserved and currently unmodeled fields for byte-exact extraction and copy-on-write editing.</summary>
     public ReadOnlyMemory<byte> RawData { get; }
 
-    /// <summary>Gets the application title.</summary>
+    /// <summary>Decodes the padded 12-byte ASCII label shown by low-level cartridge inspection tools.</summary>
     public string Title { get; }
 
-    /// <summary>Gets the four-character game code.</summary>
+    /// <summary>Decodes the four-byte product code used for title identity, region suffixes, and encryption derivation.</summary>
     public string GameCode { get; }
 
-    /// <summary>Gets the two-character maker code.</summary>
+    /// <summary>Decodes the two-byte publisher identifier; Nintendo-authored retail images commonly use <c>01</c>.</summary>
     public string MakerCode { get; }
 
-    /// <summary>Gets the hardware family targeted by the image.</summary>
+    /// <summary>Interprets unit code <c>0</c>, <c>2</c>, or <c>3</c> as DS, DSi-enhanced, or DSi-exclusive.</summary>
     public NdsImageKind Kind { get; }
 
-    /// <summary>Gets the encryption seed selection value.</summary>
+    /// <summary>Preserves the raw seed-selection byte consumed by cartridge secure-area protocols.</summary>
     public byte EncryptionSeedSelect { get; }
 
-    /// <summary>Gets the device-capacity exponent encoded by the header.</summary>
+    /// <summary>Stores the power-of-two exponent that scales the 128 KiB base cartridge capacity.</summary>
     public byte DeviceCapacityExponent { get; }
 
-    /// <summary>Gets the nominal device capacity in bytes.</summary>
+    /// <summary>Computes the nominal power-of-two cartridge capacity independently from physical or used image length.</summary>
     public long DeviceCapacityBytes => 128L * 1024L << DeviceCapacityExponent;
 
-    /// <summary>Gets the DSi feature flags.</summary>
+    /// <summary>Preserves the DSi flags at offset <c>0x1C</c>; DS-only software normally leaves them zero.</summary>
     public byte DsiFlags { get; }
 
-    /// <summary>Gets the region code byte.</summary>
+    /// <summary>Preserves the header's region byte, whose defined interpretation depends on DS versus DSi mode.</summary>
     public byte RegionCode { get; }
 
-    /// <summary>Gets the application version.</summary>
+    /// <summary>Exposes the publisher-controlled one-byte software revision rather than the banner or format version.</summary>
     public byte Version { get; }
 
-    /// <summary>Gets the autostart flag byte.</summary>
+    /// <summary>Preserves the boot-control byte at offset <c>0x1F</c>, including reserved bits for lossless rewriting.</summary>
     public byte AutoStart { get; }
 
-    /// <summary>Gets the ARM9 program.</summary>
+    /// <summary>Locates the primary processor payload and its entry/load addresses from header offsets <c>0x20</c>-<c>0x2F</c>.</summary>
     public NdsProgram Arm9 { get; }
 
-    /// <summary>Gets the ARM7 program.</summary>
+    /// <summary>Locates the secondary processor payload and its entry/load addresses from header offsets <c>0x30</c>-<c>0x3F</c>.</summary>
     public NdsProgram Arm7 { get; }
 
-    /// <summary>Gets the optional DSi-mode ARM9 program.</summary>
+    /// <summary>Locates the DSi-mode ARM9i payload when the unit code selects an extended header.</summary>
     public NdsProgram? Arm9i { get; }
 
-    /// <summary>Gets the optional DSi-mode ARM7 program.</summary>
+    /// <summary>Locates the DSi-mode ARM7i payload when the unit code selects an extended header.</summary>
     public NdsProgram? Arm7i { get; }
 
     /// <summary>Gets the extended DSi header, or <see langword="null"/> for DS-only images.</summary>
     public NdsDsiHeader? Dsi { get; }
 
-    /// <summary>Gets the filename-table region.</summary>
+    /// <summary>Locates the FNT main records and name subtables that give FAT identifiers a hierarchy and names.</summary>
     public NdsRegion FileNameTable { get; }
 
-    /// <summary>Gets the file-allocation-table region.</summary>
+    /// <summary>Locates the flat array of eight-byte start/end records used by NitroFS files and overlays.</summary>
     public NdsRegion FileAllocationTable { get; }
 
-    /// <summary>Gets the ARM9 overlay-table region.</summary>
+    /// <summary>Locates fixed 32-byte records describing dynamically loaded ARM9 code and their FAT payload IDs.</summary>
     public NdsRegion Arm9OverlayTable { get; }
 
-    /// <summary>Gets the ARM7 overlay-table region.</summary>
+    /// <summary>Locates fixed 32-byte records describing dynamically loaded ARM7 code and their FAT payload IDs.</summary>
     public NdsRegion Arm7OverlayTable { get; }
 
-    /// <summary>Gets the normal card-control setting.</summary>
+    /// <summary>Preserves the raw ROM-control timing word used for ordinary cartridge transfers.</summary>
     public uint NormalCardControl { get; }
 
-    /// <summary>Gets the secure card-control setting.</summary>
+    /// <summary>Preserves the raw ROM-control timing word used during secure-area cartridge transfers.</summary>
     public uint SecureCardControl { get; }
 
     /// <summary>Gets the banner offset, or zero when no banner is present.</summary>
     public uint BannerOffset { get; }
 
-    /// <summary>Gets the stored secure-area checksum.</summary>
+    /// <summary>Contains the header's CRC16 for the secure area; interpretation requires secure-area encryption state.</summary>
     public ushort SecureAreaCrc { get; }
 
-    /// <summary>Gets the secure-area transfer timeout.</summary>
+    /// <summary>Preserves the cartridge-transfer timeout value used while accessing the secure area.</summary>
     public ushort SecureTransferTimeout { get; }
 
-    /// <summary>Gets the ARM9 autoload address.</summary>
+    /// <summary>Identifies the ARM9 SDK autoload-list address used by the runtime initialization process.</summary>
     public uint Arm9AutoLoad { get; }
 
-    /// <summary>Gets the ARM7 autoload address.</summary>
+    /// <summary>Identifies the ARM7 SDK autoload-list address used by the runtime initialization process.</summary>
     public uint Arm7AutoLoad { get; }
 
-    /// <summary>Gets the secure-area disable value.</summary>
+    /// <summary>Combines the two header words forming the raw 64-bit secure-area disable token.</summary>
     public ulong SecureDisable { get; }
 
-    /// <summary>Gets the used image size recorded in the header.</summary>
+    /// <summary>Reports the builder-declared meaningful end of image, excluding optional capacity padding.</summary>
     public uint UsedImageSize { get; }
 
-    /// <summary>Gets the declared header size.</summary>
+    /// <summary>Reports the header byte count claimed on cartridge, commonly <c>0x4000</c> despite a smaller parsed prefix.</summary>
     public uint HeaderSize { get; }
 
-    /// <summary>Gets the stored Nintendo logo checksum.</summary>
+    /// <summary>Contains the CRC16 protecting the 156-byte Nintendo logo at header offset <c>0xC0</c>.</summary>
     public ushort NintendoLogoCrc { get; }
 
-    /// <summary>Gets the stored header checksum.</summary>
+    /// <summary>Contains the CRC16 over bytes <c>0x000</c>-<c>0x15D</c>, excluding this field itself.</summary>
     public ushort HeaderCrc { get; }
 
+    /// <summary>Restricts unit codes to hardware modes whose header and program layouts this library understands.</summary>
+    /// <param name="value">Raw unit code from header offset <c>0x12</c>.</param>
+    /// <returns>The corresponding DS-family execution target.</returns>
     private static NdsImageKind ParseKind(byte value) => value switch
     {
         0 => NdsImageKind.NintendoDs,
@@ -151,6 +156,11 @@ public sealed class NdsHeader
         _ => throw new InvalidDataException($"Unsupported Nintendo DS unit code 0x{value:X2}."),
     };
 
+    /// <summary>Decodes the four-word offset, entry, load, and size tuple used by original DS programs.</summary>
+    /// <param name="data">Common header bytes.</param>
+    /// <param name="processor">ARM9 or ARM7 identity attached to the model.</param>
+    /// <param name="offset">First tuple byte, normally <c>0x20</c> or <c>0x30</c>.</param>
+    /// <returns>A program with independent entry and load addresses.</returns>
     private static NdsProgram ReadProgram(ReadOnlySpan<byte> data, NdsProcessor processor, int offset) =>
         new(
             processor,
@@ -158,6 +168,11 @@ public sealed class NdsHeader
             NdsBinary.ReadUInt32(data, offset + 4),
             NdsBinary.ReadUInt32(data, offset + 8));
 
+    /// <summary>Decodes the DSi program tuple whose single RAM address serves as both load and entry address.</summary>
+    /// <param name="data">Extended header bytes.</param>
+    /// <param name="processor">ARM9i or ARM7i identity attached to the model.</param>
+    /// <param name="offset">First tuple byte, normally <c>0x1C0</c> or <c>0x1D0</c>.</param>
+    /// <returns>A DSi program whose entry and load addresses intentionally match.</returns>
     private static NdsProgram ReadDsiProgram(ReadOnlySpan<byte> data, NdsProcessor processor, int offset)
     {
         uint loadAddress = NdsBinary.ReadUInt32(data, offset + 8);
@@ -168,6 +183,10 @@ public sealed class NdsHeader
             loadAddress);
     }
 
+    /// <summary>Decodes adjacent unsigned offset and length words into the library's 64-bit region model.</summary>
+    /// <param name="data">Header containing the pair.</param>
+    /// <param name="offset">Byte offset of the region's start word.</param>
+    /// <returns>A half-open image interval; bounds are validated against the source separately.</returns>
     private static NdsRegion ReadRegion(ReadOnlySpan<byte> data, int offset) =>
         NdsRegion.FromUInt32(NdsBinary.ReadUInt32(data, offset), NdsBinary.ReadUInt32(data, offset + 4));
 }
