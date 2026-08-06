@@ -139,6 +139,27 @@ public sealed class NdsImageBuilderTests
     }
 
     [Fact]
+    public async Task PreservesArm9SdkFooterOutsideDeclaredProgramLength()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.Arm9!.SetFooter([
+            0x21, 0x06, 0xC0, 0xDE,
+            1, 2, 3, 4,
+            5, 6, 7, 8,
+        ]);
+
+        byte[] data = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(data);
+
+        Assert.Equal(3, image.Header.Arm9.Data.Length);
+        Assert.Equal(new NdsRegion(image.Header.Arm9.Data.End, 12), image.Header.Arm9.Footer);
+        Assert.Equal(15, image.Header.Arm9.CompleteData.Length);
+        Assert.Equal(
+            [0xA9, 0x01, 0x02, 0x21, 0x06, 0xC0, 0xDE, 1, 2, 3, 4, 5, 6, 7, 8],
+            await ReadRegionAsync(image, image.Header.Arm9.CompleteData, TestContext.Current.CancellationToken));
+    }
+
+    [Fact]
     public async Task RejectsMissingOrMismatchedProgramsBeforeTruncatingDestination()
     {
         var builder = new NdsImageBuilder

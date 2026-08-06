@@ -51,6 +51,15 @@ internal static class NdsImageBuildWriter
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
         await WriteAtAsync(destination, layout.Arm9.Offset, builder.Arm9!.Contents, options.PaddingByte, cancellationToken)
             .ConfigureAwait(false);
+        if (layout.Arm9Footer is not null)
+        {
+            await WriteAtAsync(
+                destination,
+                layout.Arm9Footer.Value.Offset,
+                builder.Arm9.Footer,
+                options.PaddingByte,
+                cancellationToken).ConfigureAwait(false);
+        }
         await WriteAtAsync(
             destination,
             layout.Arm9OverlayTable.Offset,
@@ -102,6 +111,7 @@ internal static class NdsImageBuildWriter
             layout.UsedSize,
             layout.PhysicalSize,
             layout.Arm9,
+            layout.Arm9Footer,
             layout.Arm9OverlayTable,
             layout.Arm7,
             layout.Arm7OverlayTable,
@@ -207,6 +217,9 @@ internal static class NdsImageBuildWriter
     {
         long cursor = options.HeaderSize;
         NdsRegion arm9 = Place(ref cursor, builder.Arm9!.Contents.Length, options.SectionAlignment);
+        NdsRegion? arm9Footer = builder.Arm9.Footer.IsEmpty
+            ? null
+            : Place(ref cursor, builder.Arm9.Footer.Length, alignment: 1);
         NdsRegion arm9Overlays = Place(ref cursor, arm9OverlayTableLength, options.SectionAlignment);
         NdsRegion arm7 = Place(ref cursor, builder.Arm7!.Contents.Length, options.SectionAlignment);
         NdsRegion arm7Overlays = Place(ref cursor, arm7OverlayTableLength, options.SectionAlignment);
@@ -228,7 +241,7 @@ internal static class NdsImageBuildWriter
             throw new InvalidDataException("The generated image exceeds the DS header's 32-bit offset and size fields.");
         }
 
-        return new(arm9, arm9Overlays, arm7, arm7Overlays, fnt, fat, banner, files, usedSize, physicalSize);
+        return new(arm9, arm9Footer, arm9Overlays, arm7, arm7Overlays, fnt, fat, banner, files, usedSize, physicalSize);
     }
 
     /// <summary>Writes File ID-indexed half-open payload intervals in the eight-byte FAT record format.</summary>

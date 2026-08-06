@@ -7,6 +7,7 @@ public sealed class NdsImageBuildResult
     /// <param name="usedSize">Exclusive end of meaningful image content recorded in the header.</param>
     /// <param name="physicalSize">Actual destination length, including deterministic final alignment.</param>
     /// <param name="arm9">Final ARM9 cartridge Region.</param>
+    /// <param name="arm9Footer">Optional SDK footer excluded from the Program size tuple.</param>
     /// <param name="arm9OverlayTable">Generated ARM9 Overlay table Region.</param>
     /// <param name="arm7">Final ARM7 cartridge Region.</param>
     /// <param name="arm7OverlayTable">Generated ARM7 Overlay table Region.</param>
@@ -19,6 +20,7 @@ public sealed class NdsImageBuildResult
         long usedSize,
         long physicalSize,
         NdsRegion arm9,
+        NdsRegion? arm9Footer,
         NdsRegion arm9OverlayTable,
         NdsRegion arm7,
         NdsRegion arm7OverlayTable,
@@ -31,6 +33,7 @@ public sealed class NdsImageBuildResult
         UsedSize = usedSize;
         PhysicalSize = physicalSize;
         Arm9 = arm9;
+        Arm9Footer = arm9Footer;
         Arm9OverlayTable = arm9OverlayTable;
         Arm7 = arm7;
         Arm7OverlayTable = arm7OverlayTable;
@@ -49,6 +52,9 @@ public sealed class NdsImageBuildResult
 
     /// <summary>Locates the primary processor payload selected by header offsets <c>0x20</c>-<c>0x2F</c>.</summary>
     public NdsRegion Arm9 { get; }
+
+    /// <summary>Locates a recognized SDK footer immediately after ARM9 while excluding it from executable length.</summary>
+    public NdsRegion? Arm9Footer { get; }
 
     /// <summary>Locates generated 32-byte ARM9 Overlay records in caller insertion order.</summary>
     public NdsRegion Arm9OverlayTable { get; }
