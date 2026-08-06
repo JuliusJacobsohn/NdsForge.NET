@@ -1,6 +1,6 @@
 namespace NdsForge;
 
-/// <summary>Connects a human-readable FNT path and stable FAT identifier to lazily read cartridge bytes.</summary>
+/// <summary>Connects a byte-preserving FNT path and stable FAT identifier to lazily read cartridge bytes.</summary>
 public sealed class NdsFile
 {
     /// <summary>Retains the shared image source so opening a file never requires copying its payload during parsing.</summary>
@@ -32,7 +32,10 @@ public sealed class NdsFile
     /// <summary>Indexes the FAT allocation and is also the identifier referenced by overlay table entries.</summary>
     public int Id { get; }
 
-    /// <summary>Preserves the case-sensitive ASCII segment stored in the parent directory's FNT subtable.</summary>
+    /// <summary>
+    /// Projects each case-sensitive FNT name byte directly to the same-valued Unicode code point. Conventional ASCII
+    /// remains readable, while values <c>0x80</c>-<c>0xFF</c> can be recovered losslessly with Latin-1 encoding.
+    /// </summary>
     public string Name { get; }
 
     /// <summary>Identifies the entry with ordinal, slash-delimited semantics such as <c>/data/maps/map.bin</c>.</summary>

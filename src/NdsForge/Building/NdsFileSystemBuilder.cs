@@ -83,7 +83,7 @@ public sealed class NdsFileSystemBuilder
     /// </summary>
     /// <param name="path">
     /// An absolute or root-relative NitroFS path. Separators are normalized to <c>/</c>; each segment
-    /// must be 1-127 ASCII characters and may not be <c>.</c> or <c>..</c>.
+    /// must be 1-127 eight-bit characters and may not be <c>.</c> or <c>..</c>.
     /// </param>
     /// <returns>The same builder, allowing several tree edits to be chained.</returns>
     /// <exception cref="IOException">A file occupies the directory or one of its parent paths.</exception>
@@ -98,7 +98,7 @@ public sealed class NdsFileSystemBuilder
     /// <summary>
     /// Adds a payload that must not already exist, creating its parent directories as needed.
     /// </summary>
-    /// <param name="path">An absolute or root-relative path subject to NitroFS ASCII name limits.</param>
+    /// <param name="path">An absolute or root-relative path whose segments must map one-to-one to FNT bytes.</param>
     /// <param name="contents">
     /// Exact uncompressed payload bytes. They are copied before this method returns and may therefore
     /// come from stack memory, pooled storage, or a mutable caller buffer.
@@ -123,7 +123,7 @@ public sealed class NdsFileSystemBuilder
     /// <summary>
     /// Defines the payload at a path, replacing an existing file while preserving directory validity.
     /// </summary>
-    /// <param name="path">An absolute or root-relative path subject to NitroFS ASCII name limits.</param>
+    /// <param name="path">An absolute or root-relative path whose segments must map one-to-one to FNT bytes.</param>
     /// <param name="contents">Exact uncompressed bytes, copied immediately into builder-owned memory.</param>
     /// <returns>The same builder, allowing several tree edits to be chained.</returns>
     /// <exception cref="IOException">The path names a directory or a parent component is a file.</exception>
@@ -375,7 +375,7 @@ public sealed class NdsFileSystemBuilder
     /// <param name="path">A root-relative or absolute logical path.</param>
     /// <param name="allowRoot">Whether <c>/</c> is a meaningful value for the requested operation.</param>
     /// <returns>A slash-delimited absolute path containing only valid NitroFS name bytes.</returns>
-    /// <exception cref="ArgumentException">The path is empty, ambiguous, traversing, non-ASCII, or exceeds a segment limit.</exception>
+    /// <exception cref="ArgumentException">The path is empty, ambiguous, traversing, contains a non-byte character, or exceeds a segment limit.</exception>
     internal static string NormalizePath(string path, bool allowRoot)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(path);
@@ -395,9 +395,9 @@ public sealed class NdsFileSystemBuilder
         foreach (string segment in normalized.Split('/', StringSplitOptions.RemoveEmptyEntries))
         {
             if (segment is "." or ".." || segment.Length > 127 ||
-                segment.Any(static value => value > 0x7F || value is '/' or '\\'))
+                segment.Any(static value => value > 0xFF || value is '/' or '\\'))
             {
-                throw new ArgumentException("NitroFS path contains an invalid ASCII name.", nameof(path));
+                throw new ArgumentException("NitroFS path contains a name that cannot be represented as one-byte FNT data.", nameof(path));
             }
         }
 

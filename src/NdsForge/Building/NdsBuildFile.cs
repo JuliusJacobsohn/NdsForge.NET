@@ -7,7 +7,7 @@ namespace NdsForge;
 /// Instances are owned by <see cref="NdsFileSystemBuilder"/>. The builder copies input bytes, so a
 /// caller may reuse or modify its original buffer after adding the file without changing a future
 /// image. Paths use the canonical form <c>/directory/name.ext</c> and are compared byte-for-byte
-/// using ordinal semantics because NitroFS names are case-sensitive ASCII data.
+/// using ordinal semantics because NitroFS names are case-sensitive eight-bit data rather than culture-aware text.
 /// </remarks>
 public sealed class NdsBuildFile
 {
@@ -23,7 +23,7 @@ public sealed class NdsBuildFile
     }
 
     /// <summary>
-    /// Identifies the file in NitroFS using a leading slash and ASCII path segments.
+    /// Identifies the file in NitroFS using a leading slash and one-byte path segments; Latin-1 code points preserve raw FNT values.
     /// </summary>
     /// <remarks>
     /// This is a logical image path, not a host-filesystem path. It changes when the owning builder

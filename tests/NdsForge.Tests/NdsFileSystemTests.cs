@@ -17,6 +17,24 @@ public sealed class NdsFileSystemTests
     }
 
     [Fact]
+    public async Task EightBitNameBytesSurviveStructuralRebuild()
+    {
+        byte[] data = SyntheticImage.CreateHeaderOnly();
+        data[0x211] = 0x91;
+        using NdsImage source = NdsImage.Load(data);
+        NdsFile sourceFile = Assert.Single(source.FileSystem.Files);
+        Assert.Equal('\u0091', sourceFile.Name[0]);
+
+        NdsImageBuilder builder = await NdsImageBuilder.FromImageAsync(
+            source,
+            TestContext.Current.CancellationToken).ConfigureAwait(true);
+        byte[] rebuiltBytes = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        using NdsImage rebuilt = NdsImage.Load(rebuiltBytes);
+
+        Assert.Equal(sourceFile.Name, Assert.Single(rebuilt.FileSystem.Files).Name);
+    }
+
+    [Fact]
     public void FileStreamIsBoundedAndSeekable()
     {
         using NdsImage image = NdsImage.Load(SyntheticImage.CreateHeaderOnly());

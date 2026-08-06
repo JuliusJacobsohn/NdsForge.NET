@@ -8,8 +8,12 @@ namespace NdsForge;
 /// </summary>
 public static class NdsLegacyArm7Hook
 {
-    /// <summary>Applies the compatibility transform to a complete DS image without mutating caller memory.</summary>
-    /// <param name="image">Complete original or previously hooked DS image.</param>
+    /// <summary>Applies the compatibility transform to a complete DS-family image without mutating caller memory.</summary>
+    /// <remarks>
+    /// DSi-enhanced images retain their extended header and DSi-mode programs; the historical hook redirects only the
+    /// original DS-mode ARM7 boot path, matching ndstool 1.50.3 behavior.
+    /// </remarks>
+    /// <param name="image">Complete original or previously hooked DS or DSi-enhanced image.</param>
     /// <param name="hook">Non-empty ARM7 machine code; zero padding extends it to a four-byte boundary.</param>
     /// <returns>Detached transformed bytes, introduced regions, and preserved CRC32.</returns>
     public static NdsLegacyArm7HookResult Apply(ReadOnlySpan<byte> image, ReadOnlySpan<byte> hook)
@@ -25,11 +29,6 @@ public static class NdsLegacyArm7Hook
         }
 
         byte[] originalHeader = image[..0x200].ToArray();
-        if (originalHeader[0x12] != 0)
-        {
-            throw new InvalidDataException("The legacy ARM7 hook operation supports original DS images only.");
-        }
-
         RestoreHeaderBackupIfPresent(image, originalHeader);
         uint arm7Offset = ReadUInt32(originalHeader, 0x30);
         uint arm7Entry = ReadUInt32(originalHeader, 0x34);

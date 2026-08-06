@@ -24,7 +24,7 @@ public sealed class NdsDirectory
     /// <summary>Combines the <c>0xF000</c> directory tag with the main-table record index in its low 12 bits.</summary>
     public ushort Id { get; }
 
-    /// <summary>Gets the entry name, or an empty string for the root.</summary>
+    /// <summary>Gets the byte-preserving Latin-1 name projection, or an empty string for the synthetic root.</summary>
     public string Name { get; }
 
     /// <summary>Uses ordinal slash-separated semantics and represents the root with exactly <c>/</c>.</summary>

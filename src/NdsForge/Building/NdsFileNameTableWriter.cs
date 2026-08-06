@@ -106,14 +106,14 @@ internal static class NdsFileNameTableWriter
     }
 
     /// <summary>
-    /// Writes the length/type prefix and ASCII bytes shared by file and directory name entries.
+    /// Writes the length/type prefix and one-to-one eight-bit name bytes shared by file and directory entries.
     /// </summary>
     /// <param name="stream">The in-memory subtable receiving bytes at its current position.</param>
     /// <param name="name">A previously validated single NitroFS path segment.</param>
     /// <param name="isDirectory">Selects bit 7 of the prefix; directory IDs are written by the caller.</param>
     private static void WriteName(Stream stream, string name, bool isDirectory)
     {
-        byte[] bytes = Encoding.ASCII.GetBytes(name);
+        byte[] bytes = Encoding.Latin1.GetBytes(name);
         stream.WriteByte((byte)(bytes.Length | (isDirectory ? 0x80 : 0)));
         stream.Write(bytes);
     }
@@ -127,7 +127,7 @@ internal static class NdsFileNameTableWriter
         return separator == 0 ? "/" : path[..separator];
     }
 
-    /// <summary>Extracts the ASCII name bytes represented by the final path segment.</summary>
+    /// <summary>Extracts the one-byte name projection represented by the final path segment.</summary>
     /// <param name="path">A validated absolute NitroFS path.</param>
     /// <returns>The segment serialized into a directory subtable.</returns>
     private static string GetName(string path) => path[(path.LastIndexOf('/') + 1)..];

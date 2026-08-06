@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace NdsForge;
 
 /// <summary>Reconciles the linked FNT hierarchy with the flat FAT allocation array under explicit safety limits.</summary>
@@ -161,7 +163,7 @@ internal static class NitroFileSystemParser
                     throw new InvalidDataException($"NitroFS directory 0x{directoryId:X4} contains a truncated name.");
                 }
 
-                string childName = NdsBinary.ReadAscii(fnt, cursor, nameLength);
+                string childName = Encoding.Latin1.GetString(fnt.AsSpan(cursor, nameLength));
                 cursor += nameLength;
                 ValidateName(childName, childNames);
                 string childPath = fullPath == "/" ? "/" + childName : fullPath + "/" + childName;
@@ -243,7 +245,7 @@ internal static class NitroFileSystemParser
     }
 
     /// <summary>Rejects names unsafe for logical lookup or extraction and enforces uniqueness within one subtable.</summary>
-    /// <param name="name">Decoded ASCII entry segment without directory-ID metadata.</param>
+    /// <param name="name">Byte-preserving Latin-1 projection of the entry segment without directory-ID metadata.</param>
     /// <param name="siblingNames">Ordinal set shared by both file and directory children of one parent.</param>
     private static void ValidateName(string name, HashSet<string> siblingNames)
     {
