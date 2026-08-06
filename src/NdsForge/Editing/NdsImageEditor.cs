@@ -11,7 +11,11 @@ public sealed class NdsImageEditor
     internal NdsImageEditor(NdsImage image)
     {
         _image = image;
+        Header = new(image.Header);
     }
+
+    /// <summary>Gets editable identity and card-control header fields.</summary>
+    public NdsHeaderEdit Header { get; }
 
     /// <summary>Gets pending changes in ascending FAT file-ID order.</summary>
     public IReadOnlyList<NdsFileChange> Changes => _replacements
@@ -211,6 +215,7 @@ public sealed class NdsImageEditor
         destination.Position = _image.Header.FileAllocationTable.Offset;
         await destination.WriteAsync(fat, cancellationToken).ConfigureAwait(false);
         byte[] header = _image.Header.RawData.ToArray();
+        Header.Apply(header);
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)usedSize));
         header[0x14] = CalculateDeviceCapacity(usedSize, _image.Header.DeviceCapacityExponent);
         BinaryPrimitives.WriteUInt16LittleEndian(

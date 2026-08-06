@@ -71,4 +71,40 @@ public sealed class NdsImageEditorTests
         Assert.Equal(8, change.ReplacementLength);
         Assert.True(change.RequiresRelocation);
     }
+
+    [Fact]
+    public async Task HeaderEditsAreValidatedAndChecksummed()
+    {
+        using NdsImage image = NdsImage.Load(SyntheticImage.CreateHeaderOnly());
+        using var destination = new MemoryStream();
+        NdsImageEditor editor = image.Edit();
+        editor.Header.Title = "NEW TITLE";
+        editor.Header.GameCode = "ABCD";
+        editor.Header.MakerCode = "ZZ";
+        editor.Header.Version = 7;
+
+        await editor.SaveAsync(
+            destination,
+            cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
+        using NdsImage output = NdsImage.Load(destination.ToArray());
+
+        Assert.Equal("NEW TITLE", output.Header.Title);
+        Assert.Equal("ABCD", output.Header.GameCode);
+        Assert.Equal("ZZ", output.Header.MakerCode);
+        Assert.Equal(7, output.Header.Version);
+        Assert.True(output.Validate().IsValid);
+    }
+
+    [Fact]
+    public async Task InvalidHeaderTextIsRejectedBeforeWritingMetadata()
+    {
+        using NdsImage image = NdsImage.Load(SyntheticImage.CreateHeaderOnly());
+        using var destination = new MemoryStream();
+        NdsImageEditor editor = image.Edit();
+        editor.Header.GameCode = "TOO-LONG";
+
+        await Assert.ThrowsAsync<InvalidDataException>(async () => await editor.SaveAsync(
+            destination,
+            cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true));
+    }
 }
