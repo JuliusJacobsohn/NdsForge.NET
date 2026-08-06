@@ -31,6 +31,9 @@ internal static class CorpusExpectations
         }
     }
 
+    /// <summary>Exposes the complete reviewed index for aggregate feature-distribution guards.</summary>
+    public static IReadOnlyList<CorpusExpectationIndexEntry> Entries => ReadIndex().Cases;
+
     /// <summary>Reads and schema-checks one payload-free document selected by the trusted public index.</summary>
     public static CorpusExpectation Read(CorpusExpectationIndexEntry entry)
     {
@@ -38,6 +41,12 @@ internal static class CorpusExpectations
         CorpusExpectation expectation = Deserialize<CorpusExpectation>(path);
         Assert.Equal(1, expectation.SchemaVersion);
         Assert.Equal(entry.RomSha256, expectation.Rom.Sha256, ignoreCase: true);
+        Assert.Equal(ReadIndex().NdstoolSha256, expectation.NdstoolSha256, ignoreCase: true);
+        Assert.All(expectation.Operations, static operation => Assert.All(operation.Artifacts, static artifact =>
+        {
+            Assert.True(artifact.Length >= 0, $"Oracle artifact has a negative length: {artifact.Path}");
+            Assert.True(IsSha256(artifact.Sha256), $"Oracle artifact has an invalid SHA-256: {artifact.Path}");
+        }));
         return expectation;
     }
 
@@ -66,6 +75,7 @@ internal static class CorpusExpectations
         CorpusExpectationIndex index = Deserialize<CorpusExpectationIndex>(Path.Combine(GetExpectationRoot(), "index.json"));
         Assert.Equal(1, index.SchemaVersion);
         Assert.Equal(57, index.Cases.Count);
+        Assert.True(IsSha256(index.NdstoolSha256), "Corpus index does not identify its exact ndstool executable.");
         Assert.Equal(index.Cases.Count, index.Cases.Select(static item => item.RomSha256).Distinct(StringComparer.OrdinalIgnoreCase).Count());
         return index;
     }
@@ -135,4 +145,7 @@ internal static class CorpusExpectations
         options.Converters.Add(new JsonStringEnumConverter());
         return options;
     }
+
+    /// <summary>Recognizes a complete hexadecimal SHA-256 without constraining the publisher's display casing.</summary>
+    private static bool IsSha256(string value) => value.Length == 64 && value.All(char.IsAsciiHexDigit);
 }

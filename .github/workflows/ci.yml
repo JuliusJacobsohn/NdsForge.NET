@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Build
+        run: dotnet build NdsForge.slnx --configuration Release
+      - name: Test
+        run: dotnet test NdsForge.slnx --configuration Release --no-build
+      - name: Pack
+        run: dotnet pack NdsForge.slnx --configuration Release --no-build --output artifacts/packages

@@ -31,6 +31,22 @@ retain exit status and hashes of normalized output streams, not command lines or
 raw text. Private full logs and generated outputs stay under the ignored
 `fixtures/private` tree.
 
+The test contract distinguishes assertion strength rather than presenting every
+recorded command as equivalent coverage:
+
+- `hook-arm7` is a whole-image byte-equality differential;
+- `extract-all`, `create-binary`, and `repair-header-crc` have explicit semantic
+  differential assertions, with known ndstool defects kept separate;
+- information, listing, ELF, bitmap, DSi-probe, and real-image secure-area records
+  are corpus smoke evidence until dedicated assertions consume their hashes.
+
+An enforced feature inventory currently records 51 DS images, six DSi-enhanced
+images, six animated banners, 51 images with ARM9 Overlays, 855 Overlay-ID/File-ID
+mismatches, 5,209 unnamed FAT allocations, 51 ARM9 SDK footers, and one high-byte
+FNT name. It also deliberately records zero real ARM7 Overlay tables. That last
+value is a known fixture gap, not claimed coverage; an exact legal fixture should
+be added when available.
+
 Normal test runs skip cases whose hash is unavailable. Maintainer and private CI
 should set both variables:
 
@@ -46,7 +62,10 @@ Byte equality is required when both tools define the same deterministic output.
 All 57 ARM7-hook images are byte-equal. All 139,289 common extraction artifacts
 match after modeling historical host-filename conversion. NdsForge structural
 rebuild tests additionally compare every program, named file, unnamed allocation,
-overlay payload, directory, and banner by semantic identity and hash.
+Overlay payload and metadata, directory, banner, common identity, and DSi policy
+field by semantic identity and hash. Rebuilt validation may retain a known source
+error but may not introduce a new error category. Imported modcrypt intervals
+anchored to a relocated Program are remapped to that Program's final offset.
 
 Some ndstool behavior must not become NdsForge's default:
 
@@ -58,8 +77,8 @@ Some ndstool behavior must not become NdsForge's default:
   payloads through `NdsOverlay.FileId`.
 - ndstool's CRC-repair path writes the header-declared size from a smaller in-memory
   header object. On this corpus it changes bytes even when the original CRC is
-  already valid. NdsForge's preservation editor leaves all 57 valid headers
-  byte-identical.
+  already valid. The differential test corrupts the same stored CRC byte used by
+  the oracle and requires NdsForge to restore the exact original full-image SHA-256.
 - ndstool's create-from-directory workflow derives FNT ordering from host directory
   enumeration. NdsForge recipes use deterministic ordinal ordering and test semantic
   payload/overlay preservation rather than treating host-dependent file IDs as an

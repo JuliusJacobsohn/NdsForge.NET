@@ -71,4 +71,27 @@ public sealed class PrivateCorpusIdentityTests
             Assert.Equal(operation.Artifacts.Count, operation.Artifacts.Select(static artifact => artifact.Path).Distinct(StringComparer.Ordinal).Count());
         });
     }
+
+    /// <summary>Prevents a newly recorded command from being mistaken for differential coverage until an assertion consumes its result.</summary>
+    [Theory]
+    [MemberData(nameof(CorpusExpectations.Cases), MemberType = typeof(CorpusExpectations))]
+    public void ClassifiesEveryRecordedOperationByAssertionStrength(CorpusExpectationIndexEntry entry)
+    {
+        ArgumentNullException.ThrowIfNull(entry);
+        CorpusExpectation expected = CorpusExpectations.Read(entry);
+        string[] byteEqual = ["hook-arm7"];
+        string[] semanticDifferential = ["extract-all", "create-binary", "repair-header-crc"];
+        string[] corpusSmokeOnly =
+        [
+            "info", "verbose-info", "list", "wildcard-list", "create-elf", "create-bitmaps",
+            "dsi-options-probe", "secure-decrypt", "secure-encrypt-nintendo", "secure-encrypt-other",
+            "verbose-list", "post-oracle-info",
+        ];
+
+        string[] classified = byteEqual.Concat(semanticDifferential).Concat(corpusSmokeOnly)
+            .Order(StringComparer.Ordinal)
+            .ToArray();
+        Assert.Equal(expected.Operations.Select(static operation => operation.Name).Order(StringComparer.Ordinal), classified);
+        Assert.Equal(classified.Length, classified.Distinct(StringComparer.Ordinal).Count());
+    }
 }

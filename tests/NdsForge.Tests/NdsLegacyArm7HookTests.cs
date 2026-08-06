@@ -46,7 +46,7 @@ public sealed class NdsLegacyArm7HookTests
     }
 
     [Fact]
-    public async Task RejectsEmptyDsiAndOutOfBoundsInputs()
+    public async Task HooksDsiDsModeArm7AndRejectsEmptyOrOutOfBoundsInputs()
     {
         byte[] source = await BuildImageAsync().ConfigureAwait(true);
         Assert.Throws<ArgumentException>(() => NdsLegacyArm7Hook.Apply(source, []));
@@ -54,7 +54,9 @@ public sealed class NdsLegacyArm7HookTests
 
         byte[] dsi = source.ToArray();
         dsi[0x12] = 2;
-        Assert.Throws<InvalidDataException>(() => NdsLegacyArm7Hook.Apply(dsi, [1]));
+        NdsLegacyArm7HookResult dsiResult = NdsLegacyArm7Hook.Apply(dsi, [1]);
+        Assert.Equal(2, dsiResult.Image.Span[0x12]);
+        Assert.Equal(1, dsiResult.Image.Span[checked((int)dsiResult.Hook.Offset)]);
 
         byte[] invalid = source.ToArray();
         BinaryPrimitives.WriteUInt32LittleEndian(invalid.AsSpan(0x30), checked((uint)invalid.Length));
