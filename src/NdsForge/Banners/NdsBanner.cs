@@ -114,6 +114,36 @@ public sealed class NdsBanner
             _data.Span.Slice(AnimatedPalettesOffset + (paletteFrame * 0x20), 0x20));
     }
 
+    /// <summary>
+    /// Renders the exact pose described by a typed sequence entry, including hardware horizontal and vertical
+    /// mirroring. Duration remains metadata for the caller's playback clock and does not alter pixel output.
+    /// </summary>
+    /// <param name="step">Validated frame selectors and flip flags, typically obtained from <see cref="GetAnimationSteps"/>.</param>
+    /// <returns>A 4096-byte row-major RGBA32 pose ready for display or image encoding.</returns>
+    public byte[] RenderAnimationStepRgba32(NdsBannerAnimationStep step)
+    {
+        step.Validate();
+        byte[] pixels = RenderAnimatedIconRgba32(step.TileFrame, step.PaletteFrame);
+        if (!step.FlipHorizontal && !step.FlipVertical)
+        {
+            return pixels;
+        }
+
+        var flipped = new byte[pixels.Length];
+        for (int y = 0; y < 32; y++)
+        {
+            int destinationY = step.FlipVertical ? 31 - y : y;
+            for (int x = 0; x < 32; x++)
+            {
+                int destinationX = step.FlipHorizontal ? 31 - x : x;
+                pixels.AsSpan(((y * 32) + x) * 4, 4)
+                    .CopyTo(flipped.AsSpan(((destinationY * 32) + destinationX) * 4, 4));
+            }
+        }
+
+        return flipped;
+    }
+
     /// <summary>Returns the 64 packed DSi sequence words without interpreting duration, frame, palette, or flip bitfields.</summary>
     /// <returns>An empty array for non-animated banners.</returns>
     public ushort[] GetAnimationSequence()
@@ -130,6 +160,32 @@ public sealed class NdsBanner
         }
 
         return sequence;
+    }
+
+    /// <summary>
+    /// Decodes meaningful DSi animation poses up to the first zero terminator. This excludes unused fixed-capacity
+    /// entries while <see cref="GetAnimationSequence"/> remains available for byte-level inspection.
+    /// </summary>
+    /// <returns>Typed poses in playback order, or an empty list for a static or unanimated banner.</returns>
+    public IReadOnlyList<NdsBannerAnimationStep> GetAnimationSteps()
+    {
+        if (!IsAnimated)
+        {
+            return [];
+        }
+
+        var steps = new List<NdsBannerAnimationStep>();
+        foreach (ushort word in GetAnimationSequence())
+        {
+            if (word == 0)
+            {
+                break;
+            }
+
+            steps.Add(NdsBannerAnimationStep.FromPacked(word));
+        }
+
+        return steps.AsReadOnly();
     }
 
     /// <summary>Validates every cumulative CRC slot defined by the version and reports its absolute protected region.</summary>
