@@ -59,8 +59,42 @@ public sealed class NdsImageBuilderTests
         Assert.True(destination.CanRead);
         Assert.Equal(destination.Length, result.PhysicalSize);
         Assert.Equal(1, result.FileCount);
+        Assert.Equal(1, result.AllocationCount);
         Assert.Equal(0x4000, result.Arm9.Offset);
         Assert.True(result.FileAllocationTable.Offset > result.FileNameTable.Offset);
+    }
+
+    [Fact]
+    public async Task BuildsOverlayTablesWithFileIdsIndependentFromOverlayIds()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.FileSystem.AddFile("named.bin", [1]);
+        builder.AddOverlay(new(
+            NdsProcessor.Arm9,
+            id: 77,
+            contents: [7, 7, 7],
+            loadAddress: 0x02001000,
+            ramSize: 3));
+        builder.AddOverlay(new(
+            NdsProcessor.Arm7,
+            id: 12,
+            contents: [8, 8],
+            loadAddress: 0x02390000,
+            ramSize: 2,
+            bssSize: 4));
+
+        byte[] data = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(data);
+
+        Assert.Equal((uint)77, image.Arm9Overlays[0].Id);
+        Assert.Equal((uint)1, image.Arm9Overlays[0].FileId);
+        Assert.Null(image.Arm9Overlays[0].File);
+        Assert.Equal((uint)12, image.Arm7Overlays[0].Id);
+        Assert.Equal((uint)2, image.Arm7Overlays[0].FileId);
+        Assert.Equal((uint)4, image.Arm7Overlays[0].BssSize);
+        Assert.Equal(
+            [7, 7, 7],
+            await ReadRegionAsync(image, image.Arm9Overlays[0].Data!.Value, TestContext.Current.CancellationToken));
     }
 
     [Fact]

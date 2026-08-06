@@ -14,6 +14,12 @@ public sealed class NdsImageBuilder
     /// <summary>Stores a validated caller-supplied logo copy; an absent logo remains zeroed for synthetic images.</summary>
     private byte[]? _nintendoLogo;
 
+    /// <summary>Retains ARM9 definitions in caller insertion order, which becomes deterministic table order.</summary>
+    private readonly List<NdsOverlayDefinition> _arm9Overlays = [];
+
+    /// <summary>Retains ARM7 definitions in caller insertion order after separating the processor namespaces.</summary>
+    private readonly List<NdsOverlayDefinition> _arm7Overlays = [];
+
     /// <summary>Establishes deterministic identity defaults and an explicit empty NitroFS root for a new Image.</summary>
     public NdsImageBuilder()
     {
@@ -43,6 +49,22 @@ public sealed class NdsImageBuilder
 
     /// <summary>Supplies optional pre-checksummed menu metadata; static and animated supported versions remain lossless.</summary>
     public NdsBanner? Banner { get; set; }
+
+    /// <summary>Exposes ARM9 Overlay definitions in the exact order used by the generated table.</summary>
+    public IReadOnlyList<NdsOverlayDefinition> Arm9Overlays => _arm9Overlays;
+
+    /// <summary>Exposes ARM7 Overlay definitions in the exact order used by the generated table.</summary>
+    public IReadOnlyList<NdsOverlayDefinition> Arm7Overlays => _arm7Overlays;
+
+    /// <summary>Adds an Overlay whose private Allocation receives a File ID after all named NitroFS files.</summary>
+    /// <param name="overlay">Immutable definition whose payload is already independent from caller buffers.</param>
+    /// <returns>The same builder for fluent recipe construction.</returns>
+    public NdsImageBuilder AddOverlay(NdsOverlayDefinition overlay)
+    {
+        ArgumentNullException.ThrowIfNull(overlay);
+        (overlay.Processor == NdsProcessor.Arm9 ? _arm9Overlays : _arm7Overlays).Add(overlay);
+        return this;
+    }
 
     /// <summary>Copies the 156-byte encoded cartridge logo block without embedding or sourcing proprietary assets.</summary>
     /// <param name="data">Exactly the native bytes stored at header offsets <c>0xC0</c>-<c>0x15B</c>.</param>

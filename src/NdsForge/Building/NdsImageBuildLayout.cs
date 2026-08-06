@@ -2,7 +2,9 @@ namespace NdsForge;
 
 /// <summary>Freezes every Region used jointly by header, table, and sequential byte serialization.</summary>
 /// <param name="Arm9">Final primary Program Region.</param>
+/// <param name="Arm9OverlayTable">Final ARM9 Overlay table Region.</param>
 /// <param name="Arm7">Final secondary Program Region.</param>
+/// <param name="Arm7OverlayTable">Final ARM7 Overlay table Region.</param>
 /// <param name="FileNameTable">Generated FNT Region.</param>
 /// <param name="FileAllocationTable">Generated FAT Region.</param>
 /// <param name="Banner">Optional menu metadata Region.</param>
@@ -11,7 +13,9 @@ namespace NdsForge;
 /// <param name="PhysicalSize">Final aligned stream length.</param>
 internal sealed record NdsImageBuildLayout(
     NdsRegion Arm9,
+    NdsRegion Arm9OverlayTable,
     NdsRegion Arm7,
+    NdsRegion Arm7OverlayTable,
     NdsRegion FileNameTable,
     NdsRegion FileAllocationTable,
     NdsRegion? Banner,

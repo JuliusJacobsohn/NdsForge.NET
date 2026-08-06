@@ -27,7 +27,18 @@ internal static class NdsImageBuildWriter
         options.Validate();
         ValidateRecipe(builder);
         NdsFileSystemBuildSnapshot fileSystem = builder.FileSystem.BuildSnapshot();
-        NdsImageBuildLayout layout = CalculateLayout(builder, fileSystem, options);
+        ReadOnlyMemory<byte>[] allocations = CollectAllocations(builder, fileSystem);
+        byte[] arm9OverlayTable = BuildOverlayTable(builder.Arm9Overlays, fileSystem.FilesInIdOrder.Count);
+        byte[] arm7OverlayTable = BuildOverlayTable(
+            builder.Arm7Overlays,
+            checked(fileSystem.FilesInIdOrder.Count + builder.Arm9Overlays.Count));
+        NdsImageBuildLayout layout = CalculateLayout(
+            builder,
+            fileSystem,
+            allocations,
+            arm9OverlayTable.Length,
+            arm7OverlayTable.Length,
+            options);
         byte[] fat = BuildFat(layout.FileRegions);
         byte[] header = BuildHeader(builder, layout, options);
 
@@ -36,8 +47,20 @@ internal static class NdsImageBuildWriter
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
         await WriteAtAsync(destination, layout.Arm9.Offset, builder.Arm9!.Contents, options.PaddingByte, cancellationToken)
             .ConfigureAwait(false);
+        await WriteAtAsync(
+            destination,
+            layout.Arm9OverlayTable.Offset,
+            arm9OverlayTable,
+            options.PaddingByte,
+            cancellationToken).ConfigureAwait(false);
         await WriteAtAsync(destination, layout.Arm7.Offset, builder.Arm7!.Contents, options.PaddingByte, cancellationToken)
             .ConfigureAwait(false);
+        await WriteAtAsync(
+            destination,
+            layout.Arm7OverlayTable.Offset,
+            arm7OverlayTable,
+            options.PaddingByte,
+            cancellationToken).ConfigureAwait(false);
         await WriteAtAsync(destination, layout.FileNameTable.Offset, fileSystem.FileNameTable, options.PaddingByte, cancellationToken)
             .ConfigureAwait(false);
         await WriteAtAsync(destination, layout.FileAllocationTable.Offset, fat, options.PaddingByte, cancellationToken)
@@ -52,12 +75,12 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
-        for (int fileId = 0; fileId < fileSystem.FilesInIdOrder.Count; fileId++)
+        for (int fileId = 0; fileId < allocations.Length; fileId++)
         {
             await WriteAtAsync(
                 destination,
                 layout.FileRegions[fileId].Offset,
-                fileSystem.FilesInIdOrder[fileId].Contents,
+                allocations[fileId],
                 options.PaddingByte,
                 cancellationToken).ConfigureAwait(false);
         }
@@ -67,7 +90,7 @@ internal static class NdsImageBuildWriter
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
         if (options.VerifyOutput)
         {
-            await VerifyAsync(destination, fileSystem, cancellationToken).ConfigureAwait(false);
+            await NdsImageBuildVerifier.VerifyAsync(destination, builder, fileSystem, cancellationToken).ConfigureAwait(false);
         }
 
         destination.Position = layout.PhysicalSize;
@@ -75,10 +98,13 @@ internal static class NdsImageBuildWriter
             layout.UsedSize,
             layout.PhysicalSize,
             layout.Arm9,
+            layout.Arm9OverlayTable,
             layout.Arm7,
+            layout.Arm7OverlayTable,
             layout.FileNameTable,
             layout.FileAllocationTable,
             layout.Banner,
+            fileSystem.FilesInIdOrder.Count,
             layout.FileRegions.Count);
     }
 
@@ -101,28 +127,72 @@ internal static class NdsImageBuildWriter
         ValidateAscii(builder.MakerCode, 2, 2, nameof(builder.MakerCode));
     }
 
+    /// <summary>Combines named FNT payloads with private ARM9 then ARM7 Overlay Allocations in final File ID order.</summary>
+    /// <param name="builder">Recipe supplying processor-separated Overlay definitions.</param>
+    /// <param name="fileSystem">Snapshot supplying named payloads in encoded FNT order.</param>
+    /// <returns>Immutable memory views whose array positions become FAT File IDs.</returns>
+    private static ReadOnlyMemory<byte>[] CollectAllocations(
+        NdsImageBuilder builder,
+        NdsFileSystemBuildSnapshot fileSystem) =>
+        fileSystem.FilesInIdOrder.Select(static file => file.Contents)
+            .Concat(builder.Arm9Overlays.Select(static overlay => overlay.Contents))
+            .Concat(builder.Arm7Overlays.Select(static overlay => overlay.Contents))
+            .ToArray();
+
+    /// <summary>Serializes fixed Overlay records and assigns consecutive private payload File IDs from a known base.</summary>
+    /// <param name="overlays">One processor's definitions in desired table order.</param>
+    /// <param name="firstFileId">FAT index assigned to the first definition's private Allocation.</param>
+    /// <returns>Complete table bytes whose length is exactly 32 times the definition count.</returns>
+    private static byte[] BuildOverlayTable(IReadOnlyList<NdsOverlayDefinition> overlays, int firstFileId)
+    {
+        byte[] data = new byte[checked(overlays.Count * 32)];
+        for (int index = 0; index < overlays.Count; index++)
+        {
+            NdsOverlayDefinition overlay = overlays[index];
+            Span<byte> entry = data.AsSpan(index * 32, 32);
+            NdsBinary.WriteUInt32(entry, 0x00, overlay.Id);
+            NdsBinary.WriteUInt32(entry, 0x04, overlay.LoadAddress);
+            NdsBinary.WriteUInt32(entry, 0x08, overlay.RamSize);
+            NdsBinary.WriteUInt32(entry, 0x0C, overlay.BssSize);
+            NdsBinary.WriteUInt32(entry, 0x10, overlay.StaticInitializerStart);
+            NdsBinary.WriteUInt32(entry, 0x14, overlay.StaticInitializerEnd);
+            NdsBinary.WriteUInt32(entry, 0x18, checked((uint)(firstFileId + index)));
+            NdsBinary.WriteUInt32(entry, 0x1C, overlay.CompressedSize | ((uint)overlay.Flags << 24));
+        }
+
+        return data;
+    }
+
     /// <summary>Assigns monotonically increasing aligned Regions without consulting mutable stream state.</summary>
     /// <param name="builder">Recipe supplying component sizes.</param>
     /// <param name="fileSystem">Frozen FNT bytes and deterministic File ID payload order.</param>
+    /// <param name="allocations">Named and Overlay-private payloads in final File ID order.</param>
+    /// <param name="arm9OverlayTableLength">Bytes reserved for ARM9 records.</param>
+    /// <param name="arm7OverlayTableLength">Bytes reserved for ARM7 records.</param>
     /// <param name="options">Section and file alignment policy.</param>
     /// <returns>A Layout used unchanged by both metadata and byte writers.</returns>
     private static NdsImageBuildLayout CalculateLayout(
         NdsImageBuilder builder,
         NdsFileSystemBuildSnapshot fileSystem,
+        ReadOnlyMemory<byte>[] allocations,
+        int arm9OverlayTableLength,
+        int arm7OverlayTableLength,
         NdsImageBuildOptions options)
     {
         long cursor = options.HeaderSize;
         NdsRegion arm9 = Place(ref cursor, builder.Arm9!.Contents.Length, options.SectionAlignment);
+        NdsRegion arm9Overlays = Place(ref cursor, arm9OverlayTableLength, options.SectionAlignment);
         NdsRegion arm7 = Place(ref cursor, builder.Arm7!.Contents.Length, options.SectionAlignment);
+        NdsRegion arm7Overlays = Place(ref cursor, arm7OverlayTableLength, options.SectionAlignment);
         NdsRegion fnt = Place(ref cursor, fileSystem.FileNameTable.Length, options.SectionAlignment);
-        NdsRegion fat = Place(ref cursor, checked(fileSystem.FilesInIdOrder.Count * 8), options.SectionAlignment);
+        NdsRegion fat = Place(ref cursor, checked(allocations.Length * 8), options.SectionAlignment);
         NdsRegion? banner = builder.Banner is null
             ? null
             : Place(ref cursor, builder.Banner.RawData.Length, options.SectionAlignment);
-        var files = new NdsRegion[fileSystem.FilesInIdOrder.Count];
+        var files = new NdsRegion[allocations.Length];
         for (int fileId = 0; fileId < files.Length; fileId++)
         {
-            files[fileId] = Place(ref cursor, fileSystem.FilesInIdOrder[fileId].Contents.Length, options.FileAlignment);
+            files[fileId] = Place(ref cursor, allocations[fileId].Length, options.FileAlignment);
         }
 
         long usedSize = cursor;
@@ -132,7 +202,7 @@ internal static class NdsImageBuildWriter
             throw new InvalidDataException("The generated image exceeds the DS header's 32-bit offset and size fields.");
         }
 
-        return new(arm9, arm7, fnt, fat, banner, files, usedSize, physicalSize);
+        return new(arm9, arm9Overlays, arm7, arm7Overlays, fnt, fat, banner, files, usedSize, physicalSize);
     }
 
     /// <summary>Writes File ID-indexed half-open payload intervals in the eight-byte FAT record format.</summary>
@@ -170,6 +240,8 @@ internal static class NdsImageBuildWriter
         WriteProgram(header, 0x30, layout.Arm7, builder.Arm7!);
         WriteRegion(header, 0x40, layout.FileNameTable);
         WriteRegion(header, 0x48, layout.FileAllocationTable);
+        WriteRegion(header, 0x50, layout.Arm9OverlayTable);
+        WriteRegion(header, 0x58, layout.Arm7OverlayTable);
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x68), checked((uint)(layout.Banner?.Offset ?? 0)));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)layout.UsedSize));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x84), checked((uint)options.HeaderSize));
@@ -310,34 +382,4 @@ internal static class NdsImageBuildWriter
         }
     }
 
-    /// <summary>Uses the production reader to prove checksums, paths, File IDs, Regions, and payload bytes agree with the recipe.</summary>
-    /// <param name="destination">Completed readable stream left open by the loader.</param>
-    /// <param name="fileSystem">Frozen expected path and payload order.</param>
-    /// <param name="cancellationToken">Cancels reopen parsing or payload comparisons.</param>
-    private static async ValueTask VerifyAsync(
-        Stream destination,
-        NdsFileSystemBuildSnapshot fileSystem,
-        CancellationToken cancellationToken)
-    {
-        destination.Position = 0;
-        using NdsImage image = await NdsImage.OpenAsync(
-            destination,
-            leaveOpen: true,
-            cancellationToken: cancellationToken).ConfigureAwait(false);
-        NdsValidationResult validation = image.Validate();
-        if (!validation.IsValid)
-        {
-            throw new InvalidDataException(
-                $"Generated image verification failed: {string.Join("; ", validation.Diagnostics.Select(static item => item.Message))}");
-        }
-
-        for (int fileId = 0; fileId < fileSystem.FilesInIdOrder.Count; fileId++)
-        {
-            byte[] actual = await image.FileSystem.GetFile(fileId).ReadAllBytesAsync(cancellationToken).ConfigureAwait(false);
-            if (!actual.AsSpan().SequenceEqual(fileSystem.FilesInIdOrder[fileId].Contents.Span))
-            {
-                throw new InvalidDataException($"Generated image payload verification failed for File ID {fileId}.");
-            }
-        }
-    }
 }
