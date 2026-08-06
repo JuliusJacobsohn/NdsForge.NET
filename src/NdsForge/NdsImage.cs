@@ -93,6 +93,98 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         }
     }
 
+    /// <summary>Opens an image from a caller-supplied readable, seekable stream.</summary>
+    /// <param name="stream">The stream positioned anywhere; offset zero is treated as the image start.</param>
+    /// <param name="leaveOpen">Whether disposing the image leaves the source stream open.</param>
+    /// <param name="options">Optional parser resource limits.</param>
+    /// <returns>The opened image. The caller must dispose it.</returns>
+    public static NdsImage Open(
+        Stream stream,
+        bool leaveOpen = false,
+        NdsReadOptions? options = null)
+    {
+        var source = new StreamImageDataSource(stream, leaveOpen);
+        try
+        {
+            options ??= NdsReadOptions.Default;
+            options.Validate();
+            NdsHeader header = ReadHeader(source);
+            DetectArm9Footer(source, header);
+            NdsFileSystem fileSystem = NitroFileSystemParser.Parse(source, header, options);
+            IReadOnlyList<NdsOverlay> arm9Overlays = NdsOverlayParser.Parse(
+                source,
+                header.Arm9OverlayTable,
+                NdsProcessor.Arm9,
+                fileSystem,
+                options);
+            IReadOnlyList<NdsOverlay> arm7Overlays = NdsOverlayParser.Parse(
+                source,
+                header.Arm7OverlayTable,
+                NdsProcessor.Arm7,
+                fileSystem,
+                options);
+            NdsBanner? banner = NdsBannerParser.Parse(source, header.BannerOffset, options);
+            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
+        }
+        catch
+        {
+            source.Dispose();
+            throw;
+        }
+    }
+
+    /// <summary>Asynchronously opens an image from a caller-supplied readable, seekable stream.</summary>
+    /// <param name="stream">The stream positioned anywhere; offset zero is treated as the image start.</param>
+    /// <param name="leaveOpen">Whether disposing the image leaves the source stream open.</param>
+    /// <param name="options">Optional parser resource limits.</param>
+    /// <param name="cancellationToken">A token used to cancel parsing.</param>
+    /// <returns>The opened image. The caller must dispose it.</returns>
+    public static async ValueTask<NdsImage> OpenAsync(
+        Stream stream,
+        bool leaveOpen = false,
+        NdsReadOptions? options = null,
+        CancellationToken cancellationToken = default)
+    {
+        var source = new StreamImageDataSource(stream, leaveOpen);
+        try
+        {
+            options ??= NdsReadOptions.Default;
+            options.Validate();
+            NdsHeader header = await ReadHeaderAsync(source, cancellationToken).ConfigureAwait(false);
+            await DetectArm9FooterAsync(source, header, cancellationToken).ConfigureAwait(false);
+            NdsFileSystem fileSystem = await NitroFileSystemParser.ParseAsync(
+                source,
+                header,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            IReadOnlyList<NdsOverlay> arm9Overlays = await NdsOverlayParser.ParseAsync(
+                source,
+                header.Arm9OverlayTable,
+                NdsProcessor.Arm9,
+                fileSystem,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            IReadOnlyList<NdsOverlay> arm7Overlays = await NdsOverlayParser.ParseAsync(
+                source,
+                header.Arm7OverlayTable,
+                NdsProcessor.Arm7,
+                fileSystem,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            NdsBanner? banner = await NdsBannerParser.ParseAsync(
+                source,
+                header.BannerOffset,
+                options,
+                cancellationToken).ConfigureAwait(false);
+            return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
+        }
+        catch
+        {
+            await source.DisposeAsync().ConfigureAwait(false);
+            throw;
+        }
+    }
+
     /// <summary>Loads an image from caller-owned memory.</summary>
     /// <remarks>The memory must not be mutated while the returned image is in use.</remarks>
     /// <param name="data">The complete image data.</param>

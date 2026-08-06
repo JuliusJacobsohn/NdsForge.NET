@@ -72,4 +72,32 @@ public sealed class NdsImageTests
         Assert.Equal(new NdsRegion(0x204, 12), image.Header.Arm9.Footer);
         Assert.Equal(new NdsRegion(0x200, 16), image.Header.Arm9.CompleteData);
     }
+
+    [Fact]
+    public void OpenReadsSeekableStreamAndHonorsOwnership()
+    {
+        using var stream = new MemoryStream(SyntheticImage.CreateHeaderOnly());
+
+        using (NdsImage image = NdsImage.Open(stream, leaveOpen: true))
+        {
+            Assert.Equal("TEST", image.Header.GameCode);
+        }
+
+        Assert.True(stream.CanRead);
+    }
+
+    [Fact]
+    public async Task OpenAsyncDisposesOwnedStream()
+    {
+        var stream = new MemoryStream(SyntheticImage.CreateHeaderOnly());
+
+        using (NdsImage image = await NdsImage.OpenAsync(
+            stream,
+            cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true))
+        {
+            Assert.Equal("TEST", image.Header.GameCode);
+        }
+
+        Assert.False(stream.CanRead);
+    }
 }
