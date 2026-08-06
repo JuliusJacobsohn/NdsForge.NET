@@ -25,34 +25,6 @@
   "validationDiagnostics": [],
   "operations": [
     {
-      "name": "info",
-      "exitCode": 0,
-      "standardOutputSha256": "997D96E204BDEEE0363EE271CA5889532885149D6DEA574C12C3FB4F55D264B8",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": []
-    },
-    {
-      "name": "verbose-info",
-      "exitCode": 0,
-      "standardOutputSha256": "61FC73EE6467C2A69DE5D8785F4B1228D58BFF2B57D9C836FD484CFC62E5A640",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": []
-    },
-    {
-      "name": "list",
-      "exitCode": 0,
-      "standardOutputSha256": "925F5B80D9BB4FFDC44EE3A2BAB7C05E238D91190B171A70B2E5A88AD3DD4033",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": []
-    },
-    {
-      "name": "wildcard-list",
-      "exitCode": 0,
-      "standardOutputSha256": "778C583477DD86F14A50D98198291E2C385617B137168A634DBDC9A43A2C5BD0",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": []
-    },
-    {
       "name": "extract-all",
       "exitCode": 0,
       "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
@@ -48369,39 +48341,6 @@
       ]
     },
     {
-      "name": "create-elf",
-      "exitCode": 0,
-      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
-      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
-      "artifacts": [
-        {
-          "path": "rebuilt-elf.nds",
-          "length": 26633,
-          "sha256": "B5D9842E7DE78450C68C48C492ECB49BFC116DCF74BDBCABA3BA1CBC8FD897C2"
-        }
-      ]
-    },
-    {
-      "name": "create-bitmaps",
-      "exitCode": 0,
-      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
-      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
-      "artifacts": [
-        {
-          "path": "rebuilt-bitmaps.nds",
-          "length": 29248,
-          "sha256": "15C6CF138694B28AC6B08CAD2EC4DCD32D46E6AF5068A9BF251C855C54E5D031"
-        }
-      ]
-    },
-    {
-      "name": "dsi-options-probe",
-      "exitCode": 1,
-      "standardOutputSha256": "4B9A60048447E5B7F089814F08EE526141144DDD4B549113EED6CD0D46997161",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": []
-    },
-    {
       "name": "repair-header-crc",
       "exitCode": 0,
       "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
@@ -48410,7 +48349,7 @@
         {
           "path": "repaired-header.nds",
           "length": 33554432,
-          "sha256": "6E775DF96E56A00840DE833EEB943F9C4DF1D33FDA539178D031793CE0CA5CD2"
+          "sha256": "E21F619F10910859E5FB36A8C7762CD9CE9A7E1B94C45A62C7FBE28F751970E3"
         }
       ]
     },
@@ -48431,59 +48370,6 @@
           "sha256": "C9C2F8E301BEAE6D1D88B8B75B056F6C93F99F0CC992BD45A4092CE6D8E84045"
         }
       ]
-    },
-    {
-      "name": "secure-decrypt",
-      "exitCode": 0,
-      "standardOutputSha256": "2D91FE422AD3060CE4E5B32FCB9EFCB1C75F8F5D9381DD5449B41115F14B2B53",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": [
-        {
-          "path": "secure-decrypted.nds",
-          "length": 33554432,
-          "sha256": "B2B7031F1D08DD0544952757A1AB2164501B16FAE2A44B64954A03A76E31FB87"
-        }
-      ]
-    },
-    {
-      "name": "secure-encrypt-nintendo",
-      "exitCode": 0,
-      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": [
-        {
-          "path": "secure-encrypted-nintendo.nds",
-          "length": 33554432,
-          "sha256": "98B15844FE7513EF3D7C6A5397ABC17053C38EFE6C6939CCD730C712B6F99851"
-        }
-      ]
-    },
-    {
-      "name": "secure-encrypt-other",
-      "exitCode": 0,
-      "standardOutputSha256": "E7C6454DB8180DAD24C53A4578D6DAE4AD67E89E9ECE2A1ACCF19F610E669804",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": [
-        {
-          "path": "secure-encrypted-other.nds",
-          "length": 33554432,
-          "sha256": "F8F246D57B5F831A5707BA83E2FD77AF5BC090945C73691FA00D0279D84AA198"
-        }
-      ]
-    },
-    {
-      "name": "verbose-list",
-      "exitCode": 0,
-      "standardOutputSha256": "925F5B80D9BB4FFDC44EE3A2BAB7C05E238D91190B171A70B2E5A88AD3DD4033",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": []
-    },
-    {
-      "name": "post-oracle-info",
-      "exitCode": 0,
-      "standardOutputSha256": "61FC73EE6467C2A69DE5D8785F4B1228D58BFF2B57D9C836FD484CFC62E5A640",
-      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
-      "artifacts": []
     }
   ]
 }

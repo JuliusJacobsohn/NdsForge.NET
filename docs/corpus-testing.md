@@ -14,31 +14,22 @@ Six cases are DSi-enhanced.
 
 ## Recorded operation matrix
 
-The private generator runs these ndstool 1.50.3 operations for every image:
+The private generator runs only these ndstool 1.50.3 operations for every image:
 
-1. ordinary and verbose information;
-2. ordinary, verbose, and wildcard-filtered listing;
-3. complete program, table, banner, header, logo, overlay, and NitroFS extraction;
-4. binary-input, ELF-input, and bitmap-input image creation;
-5. DSi-option probing;
-6. header-CRC repair after deliberate corruption;
-7. an aligned ARM7 trainer hook;
-8. secure-area decrypt, Nintendo-table encrypt, and alternate-table encrypt.
+1. complete program, table, banner, header, logo, Overlay, and NitroFS extraction;
+2. binary-input image creation from the extracted components;
+3. header-CRC repair after deliberate corruption;
+4. an aligned ARM7 trainer hook.
+
+Every recorded operation is consumed by a NdsForge byte-equality or semantic
+differential assertion. Commands that merely run ndstool without testing NdsForge
+are deliberately excluded from both the generator and compatibility totals.
 
 The committed expectations contain 139,289 extraction artifacts. Each artifact
 stores only a normalized relative path, byte length, and SHA-256. Operation records
 retain exit status and hashes of normalized output streams, not command lines or
 raw text. Private full logs and generated outputs stay under the ignored
 `fixtures/private` tree.
-
-The test contract distinguishes assertion strength rather than presenting every
-recorded command as equivalent coverage:
-
-- `hook-arm7` is a whole-image byte-equality differential;
-- `extract-all`, `create-binary`, and `repair-header-crc` have explicit semantic
-  differential assertions, with known ndstool defects kept separate;
-- information, listing, ELF, bitmap, DSi-probe, and real-image secure-area records
-  are corpus smoke evidence until dedicated assertions consume their hashes.
 
 An enforced feature inventory currently records 51 DS images, six DSi-enhanced
 images, six animated banners, 51 images with ARM9 Overlays, 855 Overlay-ID/File-ID
@@ -84,9 +75,6 @@ Some ndstool behavior must not become NdsForge's default:
   payload/overlay preservation rather than treating host-dependent file IDs as an
   oracle. Used-image length is compared for original DS images; the 1.50.3 profile
   deliberately rejects DSi creation because that historical tool predates it.
-- the tested 1.50.3 executable rejects newer DSi switches that are present in the
-  current source tree. The probe exit is retained so a future oracle upgrade is an
-  explicit reviewed change.
 
 These conclusions are cross-checked against devkitPro's upstream tracker. The
 [overlay misnumbering report](https://github.com/devkitPro/ndstool/issues/16)

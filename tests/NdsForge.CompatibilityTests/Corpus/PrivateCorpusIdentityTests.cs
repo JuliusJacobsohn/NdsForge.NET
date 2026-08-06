@@ -46,7 +46,7 @@ public sealed class PrivateCorpusIdentityTests
         Assert.Equal(expected.ValidationDiagnostics, actualDiagnostics);
     }
 
-    /// <summary>Guards the recorded feature matrix and the intentional failure of unsupported DSi switches in historical ndstool 1.50.3.</summary>
+    /// <summary>Guards the rule that every recorded operation has a corresponding NdsForge differential assertion.</summary>
     [Theory]
     [MemberData(nameof(CorpusExpectations.Cases), MemberType = typeof(CorpusExpectations))]
     public void RecordsCompleteNdstoolOperationContract(CorpusExpectationIndexEntry entry)
@@ -56,42 +56,15 @@ public sealed class PrivateCorpusIdentityTests
         string[] operationNames = expected.Operations.Select(static operation => operation.Name).ToArray();
         Assert.Equal(
             [
-                "info", "verbose-info", "list", "wildcard-list", "extract-all", "create-binary", "create-elf",
-                "create-bitmaps", "dsi-options-probe", "repair-header-crc", "hook-arm7", "secure-decrypt",
-                "secure-encrypt-nintendo", "secure-encrypt-other", "verbose-list", "post-oracle-info",
+                "extract-all", "create-binary", "repair-header-crc", "hook-arm7",
             ],
             operationNames);
-        Assert.All(expected.Operations.Where(static operation => operation.Name != "dsi-options-probe"),
-            static operation => Assert.Equal(0, operation.ExitCode));
-        Assert.Equal(1, expected.Operations.Single(static operation => operation.Name == "dsi-options-probe").ExitCode);
+        Assert.All(expected.Operations, static operation => Assert.Equal(0, operation.ExitCode));
         Assert.All(expected.Operations, static operation =>
         {
             Assert.Equal(64, operation.StandardOutputSha256.Length);
             Assert.Equal(64, operation.StandardErrorSha256.Length);
             Assert.Equal(operation.Artifacts.Count, operation.Artifacts.Select(static artifact => artifact.Path).Distinct(StringComparer.Ordinal).Count());
         });
-    }
-
-    /// <summary>Prevents a newly recorded command from being mistaken for differential coverage until an assertion consumes its result.</summary>
-    [Theory]
-    [MemberData(nameof(CorpusExpectations.Cases), MemberType = typeof(CorpusExpectations))]
-    public void ClassifiesEveryRecordedOperationByAssertionStrength(CorpusExpectationIndexEntry entry)
-    {
-        ArgumentNullException.ThrowIfNull(entry);
-        CorpusExpectation expected = CorpusExpectations.Read(entry);
-        string[] byteEqual = ["hook-arm7"];
-        string[] semanticDifferential = ["extract-all", "create-binary", "repair-header-crc"];
-        string[] corpusSmokeOnly =
-        [
-            "info", "verbose-info", "list", "wildcard-list", "create-elf", "create-bitmaps",
-            "dsi-options-probe", "secure-decrypt", "secure-encrypt-nintendo", "secure-encrypt-other",
-            "verbose-list", "post-oracle-info",
-        ];
-
-        string[] classified = byteEqual.Concat(semanticDifferential).Concat(corpusSmokeOnly)
-            .Order(StringComparer.Ordinal)
-            .ToArray();
-        Assert.Equal(expected.Operations.Select(static operation => operation.Name).Order(StringComparer.Ordinal), classified);
-        Assert.Equal(classified.Length, classified.Distinct(StringComparer.Ordinal).Count());
     }
 }

@@ -6,7 +6,7 @@ namespace NdsForge.Corpus;
 /// <summary>Builds resumable per-ROM ndstool evidence while limiting temporary proprietary duplication to one image at a time.</summary>
 internal static class CorpusOracleGenerator
 {
-    /// <summary>Runs the complete operation matrix for every cataloged image and atomically stores compact oracle JSON.</summary>
+    /// <summary>Runs every asserted differential operation and atomically stores compact oracle JSON.</summary>
     /// <param name="libraryPath">Canonical private ROM directory produced by the catalog command.</param>
     /// <param name="oraclePath">Ignored destination for one JSON record per distinct image.</param>
     /// <param name="ndstoolPath">Historical executable used as the behavioral oracle.</param>
