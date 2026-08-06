@@ -169,6 +169,28 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         return NdsImageValidator.Validate(this, options);
     }
 
+    /// <summary>Captures a detached, SHA-256-addressed automation manifest without transferring image ownership.</summary>
+    /// <param name="cancellationToken">Cancels hashing of Programs, files, allocations, and the complete image.</param>
+    /// <returns>A serialization-stable manifest containing no payload bytes.</returns>
+    public ValueTask<NdsImageManifest> CreateManifestAsync(CancellationToken cancellationToken = default)
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        return NdsImageManifest.CaptureAsync(this, cancellationToken);
+    }
+
+    /// <summary>Compares this image with another live image at semantic, numeric-identity, and physical-layout levels.</summary>
+    /// <param name="other">Target image that remains caller-owned and live through hashing.</param>
+    /// <param name="cancellationToken">Cancels either manifest capture.</param>
+    /// <returns>A deterministic structured diff rather than console text or an undifferentiated byte offset.</returns>
+    public ValueTask<NdsImageDiff> CompareAsync(
+        NdsImage other,
+        CancellationToken cancellationToken = default)
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        ArgumentNullException.ThrowIfNull(other);
+        return NdsImageComparer.CompareAsync(this, other, cancellationToken);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
