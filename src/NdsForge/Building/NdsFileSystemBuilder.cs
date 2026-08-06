@@ -39,6 +39,33 @@ public sealed class NdsFileSystemBuilder
     public IReadOnlyCollection<NdsBuildFile> Files => new ReadOnlyCollection<NdsBuildFile>(
         _files.Values.OrderBy(static file => file.Path, StringComparer.Ordinal).ToArray());
 
+    /// <summary>
+    /// Stages and transactionally merges a host directory into this NitroFS recipe. Calling the method repeatedly
+    /// provides ordered multi-root composition under an explicit file-collision policy; a failed stage changes nothing.
+    /// </summary>
+    /// <param name="sourceDirectory">Existing host root read without following links implicitly.</param>
+    /// <param name="destinationDirectory">NitroFS directory receiving the source root's contents, commonly <c>/</c>.</param>
+    /// <param name="options">Optional link, collision, file-count, and total-byte policy.</param>
+    /// <param name="cancellationToken">Cancels host enumeration and file reads before application begins.</param>
+    /// <returns>Counts and bytes actually applied, plus policy-skipped entries.</returns>
+    public async ValueTask<NdsDirectoryImportResult> ImportDirectoryAsync(
+        string sourceDirectory,
+        string destinationDirectory = "/",
+        NdsDirectoryImportOptions? options = null,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(sourceDirectory);
+        string destination = NormalizePath(destinationDirectory, allowRoot: true);
+        options ??= NdsDirectoryImportOptions.Default;
+        options.Validate();
+        NdsHostDirectorySnapshot snapshot = await NdsHostDirectoryImporter.StageAsync(
+            sourceDirectory,
+            destination,
+            options,
+            cancellationToken).ConfigureAwait(false);
+        return ApplyImport(snapshot, options.CollisionPolicy);
+    }
+
     /// <summary>Resolves a builder-owned payload so other recipe components can retain its identity across path moves.</summary>
     /// <param name="path">Canonical or root-relative NitroFS file path.</param>
     /// <returns>The stable payload object whose <see cref="NdsBuildFile.Path"/> follows later move operations.</returns>
@@ -262,6 +289,62 @@ public sealed class NdsFileSystemBuilder
         }
 
         return NdsFileNameTableWriter.Write(directories, _files.Values.ToArray(), firstFileId);
+    }
+
+    /// <summary>Validates a complete staged tree against current structure, then applies it without fallible I/O.</summary>
+    /// <param name="snapshot">Detached host content whose paths and allocation bounds already passed staging.</param>
+    /// <param name="collisionPolicy">Behavior for exact file-path duplicates.</param>
+    /// <returns>Applied and skipped counts suitable for build logs.</returns>
+    private NdsDirectoryImportResult ApplyImport(
+        NdsHostDirectorySnapshot snapshot,
+        NdsFileCollisionPolicy collisionPolicy)
+    {
+        foreach (string directory in snapshot.Directories)
+        {
+            if (_files.ContainsKey(directory) ||
+                _files.Keys.Any(file => directory.StartsWith(file + "/", StringComparison.Ordinal)))
+            {
+                throw new IOException($"A file blocks imported directory path {directory}.");
+            }
+        }
+
+        foreach (NdsHostFileSnapshot file in snapshot.Files)
+        {
+            if (_directories.Contains(file.Path) ||
+                _files.Keys.Any(existing => file.Path.StartsWith(existing + "/", StringComparison.Ordinal)))
+            {
+                throw new IOException($"A directory or parent file conflicts with imported payload {file.Path}.");
+            }
+
+            if (collisionPolicy == NdsFileCollisionPolicy.Fail && _files.ContainsKey(file.Path))
+            {
+                throw new IOException($"A NitroFS file already exists at imported path {file.Path}.");
+            }
+        }
+
+        int directoryCount = snapshot.Directories.Count(directory => !_directories.Contains(directory));
+        foreach (string directory in snapshot.Directories)
+        {
+            CreateDirectory(directory);
+        }
+
+        int fileCount = 0;
+        int skipped = snapshot.SkippedLinks;
+        long bytes = 0;
+        foreach (NdsHostFileSnapshot file in snapshot.Files)
+        {
+            if (_files.ContainsKey(file.Path) && collisionPolicy == NdsFileCollisionPolicy.KeepExisting)
+            {
+                skipped++;
+                continue;
+            }
+
+            SetFile(file.Path, file.Contents);
+            fileCount++;
+            bytes = checked(bytes + file.Contents.LongLength);
+        }
+
+        return new(fileCount, directoryCount, bytes, skipped);
     }
 
     /// <summary>
