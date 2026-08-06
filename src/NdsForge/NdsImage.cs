@@ -248,6 +248,14 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
             .ExtractAsync(cancellationToken);
     }
 
+    /// <summary>Begins an explicit, non-mutating edit session for this source image.</summary>
+    /// <returns>A new editor with no pending changes.</returns>
+    public NdsImageEditor Edit()
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        return new(this);
+    }
+
     /// <summary>Validates header checksums and top-level region bounds.</summary>
     /// <returns>All detected diagnostics.</returns>
     public NdsValidationResult Validate()
