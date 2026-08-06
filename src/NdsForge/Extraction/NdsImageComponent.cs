@@ -4,7 +4,7 @@ namespace NdsForge;
 [Flags]
 public enum NdsImageComponent
 {
-    /// <summary>No components.</summary>
+    /// <summary>Suppresses all output and is useful when composing a selection conditionally.</summary>
     None = 0,
 
     /// <summary>The parsed header bytes.</summary>
@@ -16,13 +16,13 @@ public enum NdsImageComponent
     /// <summary>The raw filename and file-allocation tables.</summary>
     FileSystemTables = 1 << 2,
 
-    /// <summary>Named NitroFS files.</summary>
+    /// <summary>Exports named FNT entries beneath <c>data/</c> while preserving their logical directory hierarchy.</summary>
     NitroFileSystem = 1 << 3,
 
     /// <summary>Overlay tables and resolved payloads.</summary>
     Overlays = 1 << 4,
 
-    /// <summary>The raw banner.</summary>
+    /// <summary>Exports the complete version-sized banner structure, including reserved and animated DSi bytes.</summary>
     Banner = 1 << 5,
 
     /// <summary>The raw Nintendo logo data from the header.</summary>
@@ -31,4 +31,3 @@ public enum NdsImageComponent
     /// <summary>Every supported component.</summary>
     All = Header | Programs | FileSystemTables | NitroFileSystem | Overlays | Banner | Logo,
 }
-

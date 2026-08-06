@@ -2,16 +2,28 @@ using System.Buffers;
 
 namespace NdsForge;
 
+/// <summary>Maps selected image structures to a hardened, portable directory tree using atomic per-file writes.</summary>
 internal sealed class NdsImageExtractor
 {
+    /// <summary>Rejects the cross-platform superset of Windows-reserved punctuation before host path construction.</summary>
     private static readonly SearchValues<char> PortableInvalidNameCharacters = SearchValues.Create("<>:\"/\\|?*");
+    /// <summary>Supplies parsed regions and keeps their underlying source alive for streamed copies.</summary>
     private readonly NdsImage _image;
+    /// <summary>Controls components, overwrite behavior, and optional named-file filtering.</summary>
     private readonly NdsExtractionOptions _options;
+    /// <summary>Canonical host destination used as the prefix boundary for every resolved output.</summary>
     private readonly string _root;
+    /// <summary>Counts files successfully moved from temporary names into final locations.</summary>
     private int _writtenFiles;
+    /// <summary>Counts existing targets intentionally retained under the skip policy.</summary>
     private int _skippedFiles;
+    /// <summary>Accumulates logical payload bytes committed to final files, excluding skipped output.</summary>
     private long _writtenBytes;
 
+    /// <summary>Captures an absolute destination root while deferring filesystem mutation until extraction starts.</summary>
+    /// <param name="image">Live parsed source whose regions are streamed on demand.</param>
+    /// <param name="destination">Host directory interpreted relative to the current process only once.</param>
+    /// <param name="options">Immutable extraction selection and collision policy.</param>
     public NdsImageExtractor(NdsImage image, string destination, NdsExtractionOptions options)
     {
         _image = image;
@@ -19,6 +31,9 @@ internal sealed class NdsImageExtractor
         _root = Path.GetFullPath(destination);
     }
 
+    /// <summary>Exports selected top-level components in stable order, followed by filtered NitroFS files in file-ID order.</summary>
+    /// <param name="cancellationToken">Stops before or during atomic file creation; completed files remain valid.</param>
+    /// <returns>Counts of committed, skipped, and committed-byte output.</returns>
     public async ValueTask<NdsExtractionResult> ExtractAsync(CancellationToken cancellationToken)
     {
         EnsureSafeDirectory(_root, create: true);
@@ -78,6 +93,8 @@ internal sealed class NdsImageExtractor
         return new(_writtenFiles, _skippedFiles, _writtenBytes);
     }
 
+    /// <summary>Exports both raw overlay tables and each resolvable payload with processor, overlay ID, and FAT ID in its name.</summary>
+    /// <param name="cancellationToken">Cancels between records or during region streaming.</param>
     private async ValueTask ExtractOverlaysAsync(CancellationToken cancellationToken)
     {
         await WriteRegionAsync(
@@ -104,6 +121,10 @@ internal sealed class NdsImageExtractor
         }
     }
 
+    /// <summary>Commits already materialized metadata bytes under the same safety and overwrite rules as streamed regions.</summary>
+    /// <param name="relativePath">Library-controlled portable output path below the root.</param>
+    /// <param name="data">Immutable source bytes such as a header or banner.</param>
+    /// <param name="cancellationToken">Cancels the temporary write before final rename.</param>
     private async ValueTask WriteMemoryAsync(
         string relativePath,
         ReadOnlyMemory<byte> data,
@@ -123,6 +144,10 @@ internal sealed class NdsImageExtractor
         _writtenBytes += data.Length;
     }
 
+    /// <summary>Streams a bounded image region to disk without allocating its complete contents.</summary>
+    /// <param name="relativePath">Portable output path derived from a component or validated NitroFS path.</param>
+    /// <param name="region">Previously validated source interval.</param>
+    /// <param name="cancellationToken">Cancels copying and removes the incomplete temporary file.</param>
     private async ValueTask WriteRegionAsync(
         string relativePath,
         NdsRegion region,
@@ -146,6 +171,9 @@ internal sealed class NdsImageExtractor
         _writtenBytes += region.Length;
     }
 
+    /// <summary>Validates every segment, proves containment, creates safe parents, and applies the existing-file policy.</summary>
+    /// <param name="relativePath">Logical slash-delimited output path that must name a file beneath the root.</param>
+    /// <returns>An absolute safe target, or <see langword="null"/> when skip policy retains an existing file.</returns>
     private string? PrepareOutput(string relativePath)
     {
         string[] segments = relativePath.Replace('\\', '/').Split('/', StringSplitOptions.RemoveEmptyEntries);
@@ -191,6 +219,10 @@ internal sealed class NdsImageExtractor
         }
     }
 
+    /// <summary>Writes beside the target under a unique name, flushes it, then performs one final move or replacement.</summary>
+    /// <param name="output">Validated absolute regular-file target.</param>
+    /// <param name="write">Producer that writes complete contents to a newly created exclusive stream.</param>
+    /// <param name="cancellationToken">Cancels production or flushing; cleanup removes the temporary path.</param>
     private async ValueTask WriteAtomicallyAsync(
         string output,
         Func<FileStream, CancellationToken, Task> write,
@@ -220,6 +252,9 @@ internal sealed class NdsImageExtractor
         }
     }
 
+    /// <summary>Walks from the nearest existing ancestor and rejects reparse points before and after creating each missing level.</summary>
+    /// <param name="directory">Absolute directory path previously proven beneath the extraction root.</param>
+    /// <param name="create">Whether missing levels should be created after ancestor validation.</param>
     private static void EnsureSafeDirectory(string directory, bool create)
     {
         string? parent = directory;
@@ -247,6 +282,8 @@ internal sealed class NdsImageExtractor
         }
     }
 
+    /// <summary>Prevents junctions and symbolic links from redirecting extraction after lexical containment checks.</summary>
+    /// <param name="path">Existing file or directory whose host attributes are inspected.</param>
     private static void RejectReparsePoint(string path)
     {
         if ((File.GetAttributes(path) & FileAttributes.ReparsePoint) != 0)
@@ -255,6 +292,8 @@ internal sealed class NdsImageExtractor
         }
     }
 
+    /// <summary>Rejects traversal, control characters, ambiguous trailing characters, and reserved punctuation across major hosts.</summary>
+    /// <param name="name">One NitroFS or library-generated path segment, never a complete path.</param>
     private static void ValidatePortableName(string name)
     {
         if (name is "." or ".." ||
@@ -268,5 +307,8 @@ internal sealed class NdsImageExtractor
         }
     }
 
+    /// <summary>Tests a single component flag against the immutable selection captured for this extraction.</summary>
+    /// <param name="component">One atomic export group rather than a composite mask.</param>
+    /// <returns><see langword="true"/> when the group participates in this run.</returns>
     private bool Includes(NdsImageComponent component) => (_options.Components & component) != 0;
 }

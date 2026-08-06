@@ -5,6 +5,8 @@ namespace NdsForge;
 /// <summary>Collects validated mutable identity and card-control header fields.</summary>
 public sealed class NdsHeaderEdit
 {
+    /// <summary>Seeds editable fields from a parsed header while deliberately excluding structural offsets and security bytes.</summary>
+    /// <param name="source">Header whose developer-safe identity and card-control values become initial edits.</param>
     internal NdsHeaderEdit(NdsHeader source)
     {
         Title = source.Title;
@@ -18,22 +20,22 @@ public sealed class NdsHeaderEdit
         SecureTransferTimeout = source.SecureTransferTimeout;
     }
 
-    /// <summary>Gets or sets the ASCII application title of at most 12 characters.</summary>
+    /// <summary>Controls the padded 12-byte printable-ASCII application label; shorter values receive zero padding.</summary>
     public string Title { get; set; }
 
-    /// <summary>Gets or sets the exact four-character ASCII game code.</summary>
+    /// <summary>Controls the exact four-character printable-ASCII product code used for title identity and region conventions.</summary>
     public string GameCode { get; set; }
 
-    /// <summary>Gets or sets the exact two-character ASCII maker code.</summary>
+    /// <summary>Controls the exact two-character printable-ASCII publisher code stored at header offset <c>0x10</c>.</summary>
     public string MakerCode { get; set; }
 
-    /// <summary>Gets or sets the application version.</summary>
+    /// <summary>Controls the publisher-defined one-byte software revision without changing any format version.</summary>
     public byte Version { get; set; }
 
-    /// <summary>Gets or sets the region-code byte.</summary>
+    /// <summary>Controls the raw region byte whose defined bits depend on the image's DS or DSi unit code.</summary>
     public byte RegionCode { get; set; }
 
-    /// <summary>Gets or sets the autostart byte.</summary>
+    /// <summary>Controls the complete boot-policy byte and preserves responsibility for reserved bits with the caller.</summary>
     public byte AutoStart { get; set; }
 
     /// <summary>Gets or sets normal card-control timing and flags.</summary>
@@ -42,9 +44,11 @@ public sealed class NdsHeaderEdit
     /// <summary>Gets or sets secure card-control timing and flags.</summary>
     public uint SecureCardControl { get; set; }
 
-    /// <summary>Gets or sets the secure transfer timeout.</summary>
+    /// <summary>Controls the raw 16-bit timeout applied to secure-area cartridge transfers.</summary>
     public ushort SecureTransferTimeout { get; set; }
 
+    /// <summary>Validates and overlays only supported mutable fields onto a lossless header copy before CRC recalculation.</summary>
+    /// <param name="header">Complete mutable common header prefix containing all destination offsets.</param>
     internal void Apply(Span<byte> header)
     {
         WriteAscii(header.Slice(0x00, 12), Title, 0, 12, nameof(Title));
@@ -58,6 +62,12 @@ public sealed class NdsHeaderEdit
         NdsBinary.WriteUInt16(header, 0x6E, SecureTransferTimeout);
     }
 
+    /// <summary>Encodes a fixed-width header identity field after enforcing printable ASCII and exact/minimum lengths.</summary>
+    /// <param name="destination">Exact fixed-width field, cleared first to produce deterministic NUL padding.</param>
+    /// <param name="value">Developer-supplied visible text.</param>
+    /// <param name="minimumLength">Required visible characters; nonzero for fixed identifiers.</param>
+    /// <param name="maximumLength">Field width and maximum visible characters.</param>
+    /// <param name="propertyName">Public property named in validation failures.</param>
     private static void WriteAscii(
         Span<byte> destination,
         string value,
@@ -77,4 +87,3 @@ public sealed class NdsHeaderEdit
         Encoding.ASCII.GetBytes(value, destination);
     }
 }
-

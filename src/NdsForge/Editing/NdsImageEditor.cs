@@ -5,10 +5,15 @@ namespace NdsForge;
 /// <summary>Collects explicit image changes and saves them without mutating the source.</summary>
 public sealed class NdsImageEditor
 {
+    /// <summary>Remains the immutable byte source and ownership anchor throughout the copy-on-write session.</summary>
     private readonly NdsImage _image;
+    /// <summary>Stores caller-independent payload copies keyed by stable FAT ID, with later replacements winning.</summary>
     private readonly Dictionary<int, byte[]> _replacements = [];
+    /// <summary>Holds a checksummed banner to overwrite in place or append when its layout grows.</summary>
     private NdsBanner? _bannerReplacement;
 
+    /// <summary>Begins a non-mutating session and initializes the restricted header-edit projection from the source.</summary>
+    /// <param name="image">Live source image retained for lazy copying and final verification.</param>
     internal NdsImageEditor(NdsImage image)
     {
         _image = image;
@@ -209,6 +214,10 @@ public sealed class NdsImageEditor
         return new(_replacements.Count, relocated, usedSize, physicalSize);
     }
 
+    /// <summary>Projects internal replacement bytes into public size, path, and relocation metadata without exposing mutable buffers.</summary>
+    /// <param name="fileId">FAT index whose original allocation supplies name and length.</param>
+    /// <param name="replacement">Private payload copy used only for its length.</param>
+    /// <returns>A read-only pending-change description.</returns>
     private NdsFileChange CreateChange(int fileId, byte[] replacement)
     {
         NdsFileAllocation allocation = _image.FileSystem.Allocations[fileId];
@@ -221,6 +230,12 @@ public sealed class NdsImageEditor
             replacement.LongLength > allocation.Data.Length);
     }
 
+    /// <summary>Rewrites synchronized FAT ranges and common-header fields after all payload positions are final.</summary>
+    /// <param name="destination">Output stream already containing copied and replaced payload bytes.</param>
+    /// <param name="allocations">Final FAT intervals, including unchanged and relocated entries.</param>
+    /// <param name="usedSize">Exclusive meaningful image end written to header offset <c>0x80</c>.</param>
+    /// <param name="bannerOffset">Original or relocated banner address written to offset <c>0x68</c>.</param>
+    /// <param name="cancellationToken">Cancels metadata writes before verification.</param>
     private async ValueTask WriteMetadataAsync(
         Stream destination,
         NdsRegion[] allocations,
@@ -255,6 +270,9 @@ public sealed class NdsImageEditor
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
     }
 
+    /// <summary>Reopens the completed stream through production parsers, validates it, and byte-checks every requested change.</summary>
+    /// <param name="destination">Readable output left open and repositioned by the verification loader.</param>
+    /// <param name="cancellationToken">Cancels reparsing or payload comparisons.</param>
     private async ValueTask VerifyAsync(Stream destination, CancellationToken cancellationToken)
     {
         destination.Position = 0;
@@ -288,6 +306,11 @@ public sealed class NdsImageEditor
         }
     }
 
+    /// <summary>Materializes deterministic padding up to an aligned append offset without allocating the entire gap.</summary>
+    /// <param name="destination">Output positioned internally at its current physical end.</param>
+    /// <param name="targetOffset">Desired payload start; values within current length require no work.</param>
+    /// <param name="paddingByte">Repeated byte used for every newly materialized position.</param>
+    /// <param name="cancellationToken">Cancels chunked writes.</param>
     private static async ValueTask FillGapAsync(
         Stream destination,
         long targetOffset,
@@ -311,6 +334,10 @@ public sealed class NdsImageEditor
         }
     }
 
+    /// <summary>Raises, but never shrinks, the encoded cartridge-capacity exponent until it contains all meaningful bytes.</summary>
+    /// <param name="usedSize">Exclusive meaningful output end.</param>
+    /// <param name="original">Source exponent preserved when its declared capacity remains sufficient.</param>
+    /// <returns>The smallest non-decreasing exponent whose 128 KiB-scaled capacity covers the output.</returns>
     private static byte CalculateDeviceCapacity(long usedSize, byte original)
     {
         byte exponent = original;
@@ -324,6 +351,10 @@ public sealed class NdsImageEditor
         return exponent;
     }
 
+    /// <summary>Rounds a non-negative image offset upward using the validated power-of-two alignment.</summary>
+    /// <param name="value">Current exclusive used end.</param>
+    /// <param name="alignment">Positive power of two from <see cref="NdsWriteOptions"/>.</param>
+    /// <returns>The first aligned position at or after <paramref name="value"/>.</returns>
     private static long Align(long value, int alignment) =>
         checked((value + alignment - 1) & -alignment);
 }
