@@ -18,10 +18,12 @@ internal static class NdsFileNameTableWriter
     /// </summary>
     /// <param name="directories">Canonical directories in their desired numeric-ID order, with root first.</param>
     /// <param name="files">Validated files whose parent paths occur in <paramref name="directories"/>.</param>
+    /// <param name="firstFileId">FAT ID assigned to the first visible payload; lower IDs may belong to hidden Overlays.</param>
     /// <returns>A synchronized table, payload order, and directory-ID map for subsequent ROM layout.</returns>
     public static NdsFileSystemBuildSnapshot Write(
         IReadOnlyList<string> directories,
-        IReadOnlyCollection<NdsBuildFile> files)
+        IReadOnlyCollection<NdsBuildFile> files,
+        int firstFileId)
     {
         var directoryIds = directories
             .Select((path, index) => (path, id: checked((ushort)(RootDirectoryId + index))))
@@ -45,7 +47,7 @@ internal static class NdsFileNameTableWriter
         for (int index = 0; index < directories.Count; index++)
         {
             string directory = directories[index];
-            firstFileIds[index] = checked((ushort)orderedFiles.Count);
+            firstFileIds[index] = checked((ushort)(firstFileId + orderedFiles.Count));
             NdsBuildFile[] directoryFiles = filesByDirectory.GetValueOrDefault(directory) ?? [];
             string[] childDirectories = childrenByDirectory.GetValueOrDefault(directory) ?? [];
             orderedFiles.AddRange(directoryFiles);
@@ -70,7 +72,7 @@ internal static class NdsFileNameTableWriter
             subtableOffset += subtables[index].Length;
         }
 
-        return new(fnt, orderedFiles, directoryIds);
+        return new(fnt, orderedFiles, directoryIds, firstFileId);
     }
 
     /// <summary>

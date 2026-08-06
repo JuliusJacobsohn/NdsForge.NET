@@ -250,17 +250,18 @@ public sealed class NdsFileSystemBuilder
     /// <summary>
     /// Freezes the logical tree into an FNT and the exact payload order required by the corresponding FAT.
     /// </summary>
+    /// <param name="firstFileId">FAT identifier reserved for the first named file after any profile-owned hidden allocations.</param>
     /// <returns>Immutable build inputs whose IDs and byte representation are deterministic.</returns>
-    /// <exception cref="InvalidDataException">The tree exceeds the 12-bit NitroFS directory-ID space.</exception>
-    internal NdsFileSystemBuildSnapshot BuildSnapshot()
+    /// <exception cref="InvalidDataException">The tree exceeds the directory or 16-bit file-ID space.</exception>
+    internal NdsFileSystemBuildSnapshot BuildSnapshot(int firstFileId = 0)
     {
         string[] directories = _directories.Order(StringComparer.Ordinal).ToArray();
-        if (directories.Length > 4096)
+        if (directories.Length > 4096 || firstFileId < 0 || firstFileId + _files.Count > ushort.MaxValue + 1)
         {
-            throw new InvalidDataException("NitroFS cannot contain more than 4096 directories.");
+            throw new InvalidDataException("NitroFS exceeds its 12-bit directory or 16-bit file-ID space.");
         }
 
-        return NdsFileNameTableWriter.Write(directories, _files.Values.ToArray());
+        return NdsFileNameTableWriter.Write(directories, _files.Values.ToArray(), firstFileId);
     }
 
     /// <summary>

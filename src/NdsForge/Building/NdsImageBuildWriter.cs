@@ -25,27 +25,8 @@ internal static class NdsImageBuildWriter
 
         options.Validate();
         ValidateRecipe(builder);
-        NdsFileSystemBuildSnapshot fileSystem = builder.FileSystem.BuildSnapshot();
-        ReadOnlyMemory<byte> arm9Data = PrepareProgram(builder.Arm9!, isArm9: true, options.Profile);
-        ReadOnlyMemory<byte> arm7Data = PrepareProgram(builder.Arm7!, isArm9: false, options.Profile);
-        ReadOnlyMemory<byte>[] allocations = CollectAllocations(builder, fileSystem);
-        byte[] arm9OverlayTable = BuildOverlayTable(
-            builder.Arm9Overlays,
-            fileSystem,
-            fileSystem.FilesInIdOrder.Count);
-        byte[] arm7OverlayTable = BuildOverlayTable(
-            builder.Arm7Overlays,
-            fileSystem,
-            checked(fileSystem.FilesInIdOrder.Count + builder.Arm9Overlays.Count(static overlay => overlay.HasPrivateAllocation)));
-        NdsImageBuildLayout layout = CalculateLayout(
-            builder,
-            fileSystem,
-            arm9Data.Length,
-            arm7Data.Length,
-            allocations,
-            arm9OverlayTable.Length,
-            arm7OverlayTable.Length,
-            options);
+        NdsImageBuildContent content = NdsImageBuildContentPreparer.Prepare(builder, options);
+        NdsImageBuildLayout layout = CalculateLayout(builder, content, options);
         byte[] fat = BuildFat(layout.FileRegions);
         byte[] header = NdsImageHeaderWriter.Write(builder, layout, options);
 
@@ -53,32 +34,32 @@ internal static class NdsImageBuildWriter
         destination.SetLength(0);
         byte paddingByte = options.Profile == NdsImageBuildProfile.Ndstool1503 ? (byte)0 : options.PaddingByte;
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
-        await WriteAtAsync(destination, layout.Arm9.Offset, arm9Data, paddingByte, cancellationToken)
+        await WriteAtAsync(destination, layout.Arm9.Offset, content.Arm9Data, paddingByte, cancellationToken)
             .ConfigureAwait(false);
         if (layout.Arm9Footer is not null)
         {
             await WriteAtAsync(
                 destination,
                 layout.Arm9Footer.Value.Offset,
-                builder.Arm9!.Footer,
+                content.Arm9TrailingData,
                 paddingByte,
                 cancellationToken).ConfigureAwait(false);
         }
         await WriteAtAsync(
             destination,
             layout.Arm9OverlayTable.Offset,
-            arm9OverlayTable,
+            content.Arm9OverlayTable,
             paddingByte,
             cancellationToken).ConfigureAwait(false);
-        await WriteAtAsync(destination, layout.Arm7.Offset, arm7Data, paddingByte, cancellationToken)
+        await WriteAtAsync(destination, layout.Arm7.Offset, content.Arm7Data, paddingByte, cancellationToken)
             .ConfigureAwait(false);
         await WriteAtAsync(
             destination,
             layout.Arm7OverlayTable.Offset,
-            arm7OverlayTable,
+            content.Arm7OverlayTable,
             paddingByte,
             cancellationToken).ConfigureAwait(false);
-        await WriteAtAsync(destination, layout.FileNameTable.Offset, fileSystem.FileNameTable, paddingByte, cancellationToken)
+        await WriteAtAsync(destination, layout.FileNameTable.Offset, content.FileSystem.FileNameTable, paddingByte, cancellationToken)
             .ConfigureAwait(false);
         await WriteAtAsync(destination, layout.FileAllocationTable.Offset, fat, paddingByte, cancellationToken)
             .ConfigureAwait(false);
@@ -92,12 +73,12 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
-        for (int fileId = 0; fileId < allocations.Length; fileId++)
+        for (int fileId = 0; fileId < content.Allocations.Length; fileId++)
         {
             await WriteAtAsync(
                 destination,
                 layout.FileRegions[fileId].Offset,
-                allocations[fileId],
+                content.Allocations[fileId],
                 paddingByte,
                 cancellationToken).ConfigureAwait(false);
         }
@@ -107,7 +88,7 @@ internal static class NdsImageBuildWriter
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
         if (options.VerifyOutput)
         {
-            await NdsImageBuildVerifier.VerifyAsync(destination, builder, fileSystem, cancellationToken).ConfigureAwait(false);
+            await NdsImageBuildVerifier.VerifyAsync(destination, builder, content.FileSystem, cancellationToken).ConfigureAwait(false);
         }
 
         destination.Position = layout.PhysicalSize;
@@ -122,7 +103,7 @@ internal static class NdsImageBuildWriter
             layout.FileNameTable,
             layout.FileAllocationTable,
             layout.Banner,
-            fileSystem.FilesInIdOrder.Count,
+            content.FileSystem.FilesInIdOrder.Count,
             layout.FileRegions.Count);
     }
 
@@ -145,149 +126,54 @@ internal static class NdsImageBuildWriter
         ValidateAscii(builder.MakerCode, 2, 2, nameof(builder.MakerCode));
     }
 
-    /// <summary>Applies storage transformations belonging to a named compatibility profile without mutating Program definitions.</summary>
-    /// <param name="program">Logical raw executable supplied by the recipe.</param>
-    /// <param name="isArm9">Selects the legacy 2 KiB secure-area placeholder required only before ARM9 input.</param>
-    /// <param name="profile">Layout personality controlling transformations.</param>
-    /// <returns>Exact header-declared Program bytes, excluding an optional SDK footer.</returns>
-    private static ReadOnlyMemory<byte> PrepareProgram(
-        NdsProgramDefinition program,
-        bool isArm9,
-        NdsImageBuildProfile profile)
-    {
-        if (profile != NdsImageBuildProfile.Ndstool1503)
-        {
-            return program.Contents;
-        }
-
-        int prefixLength = isArm9 ? 0x800 : 0;
-        int length = checked((program.Contents.Length + prefixLength + 3) & ~3);
-        byte[] data = new byte[length];
-        if (isArm9)
-        {
-            for (int offset = 0; offset < prefixLength; offset += 4)
-            {
-                data[offset] = 0xFF;
-                data[offset + 1] = 0xDE;
-                data[offset + 2] = 0xFF;
-                data[offset + 3] = 0xE7;
-            }
-        }
-
-        program.Contents.Span.CopyTo(data.AsSpan(prefixLength));
-        return data;
-    }
-
-    /// <summary>Combines named FNT payloads with private ARM9 then ARM7 Overlay Allocations in final File ID order.</summary>
-    /// <param name="builder">Recipe supplying processor-separated Overlay definitions.</param>
-    /// <param name="fileSystem">Snapshot supplying named payloads in encoded FNT order.</param>
-    /// <returns>Immutable memory views whose array positions become FAT File IDs.</returns>
-    private static ReadOnlyMemory<byte>[] CollectAllocations(
-        NdsImageBuilder builder,
-        NdsFileSystemBuildSnapshot fileSystem) =>
-        fileSystem.FilesInIdOrder.Select(static file => file.Contents)
-            .Concat(builder.Arm9Overlays.Where(static overlay => overlay.HasPrivateAllocation).Select(static overlay => overlay.Contents))
-            .Concat(builder.Arm7Overlays.Where(static overlay => overlay.HasPrivateAllocation).Select(static overlay => overlay.Contents))
-            .ToArray();
-
-    /// <summary>Serializes fixed Overlay records and assigns consecutive private payload File IDs from a known base.</summary>
-    /// <param name="overlays">One processor's definitions in desired table order.</param>
-    /// <param name="fileSystem">Named payload order used to resolve shared NitroFS paths.</param>
-    /// <param name="firstPrivateFileId">FAT index assigned to the first definition requiring a private Allocation.</param>
-    /// <returns>Complete table bytes whose length is exactly 32 times the definition count.</returns>
-    private static byte[] BuildOverlayTable(
-        IReadOnlyList<NdsOverlayDefinition> overlays,
-        NdsFileSystemBuildSnapshot fileSystem,
-        int firstPrivateFileId)
-    {
-        Dictionary<string, int> namedFileIds = fileSystem.FilesInIdOrder
-            .Select((file, fileId) => (file.Path, fileId))
-            .ToDictionary(static item => item.Path, static item => item.fileId, StringComparer.Ordinal);
-        byte[] data = new byte[checked(overlays.Count * 32)];
-        int nextPrivateFileId = firstPrivateFileId;
-        for (int index = 0; index < overlays.Count; index++)
-        {
-            NdsOverlayDefinition overlay = overlays[index];
-            int fileId;
-            string? linkedFilePath = overlay.EffectiveLinkedFilePath;
-            if (linkedFilePath is not null)
-            {
-                if (!namedFileIds.TryGetValue(linkedFilePath, out fileId))
-                {
-                    throw new InvalidDataException(
-                        $"Overlay {overlay.Id} links missing NitroFS file '{linkedFilePath}'.");
-                }
-            }
-            else
-            {
-                fileId = nextPrivateFileId++;
-            }
-
-            Span<byte> entry = data.AsSpan(index * 32, 32);
-            NdsBinary.WriteUInt32(entry, 0x00, overlay.Id);
-            NdsBinary.WriteUInt32(entry, 0x04, overlay.LoadAddress);
-            NdsBinary.WriteUInt32(entry, 0x08, overlay.RamSize);
-            NdsBinary.WriteUInt32(entry, 0x0C, overlay.BssSize);
-            NdsBinary.WriteUInt32(entry, 0x10, overlay.StaticInitializerStart);
-            NdsBinary.WriteUInt32(entry, 0x14, overlay.StaticInitializerEnd);
-            NdsBinary.WriteUInt32(entry, 0x18, checked((uint)fileId));
-            NdsBinary.WriteUInt32(entry, 0x1C, overlay.CompressedSize | ((uint)overlay.Flags << 24));
-        }
-
-        return data;
-    }
-
     /// <summary>Assigns monotonically increasing aligned Regions without consulting mutable stream state.</summary>
     /// <param name="builder">Recipe supplying component sizes.</param>
-    /// <param name="fileSystem">Frozen FNT bytes and deterministic File ID payload order.</param>
-    /// <param name="arm9DataLength">Profile-transformed ARM9 length excluding footer.</param>
-    /// <param name="arm7DataLength">Profile-transformed ARM7 length.</param>
-    /// <param name="allocations">Named and Overlay-private payloads in final File ID order.</param>
-    /// <param name="arm9OverlayTableLength">Bytes reserved for ARM9 records.</param>
-    /// <param name="arm7OverlayTableLength">Bytes reserved for ARM7 records.</param>
+    /// <param name="content">Frozen bytes, declared Program lengths, and final File ID payload order.</param>
     /// <param name="options">Section and file alignment policy.</param>
     /// <returns>A Layout used unchanged by both metadata and byte writers.</returns>
     private static NdsImageBuildLayout CalculateLayout(
         NdsImageBuilder builder,
-        NdsFileSystemBuildSnapshot fileSystem,
-        int arm9DataLength,
-        int arm7DataLength,
-        ReadOnlyMemory<byte>[] allocations,
-        int arm9OverlayTableLength,
-        int arm7OverlayTableLength,
+        NdsImageBuildContent content,
         NdsImageBuildOptions options)
     {
+        bool ndstoolProfile = options.Profile == NdsImageBuildProfile.Ndstool1503;
         long cursor = options.HeaderSize;
-        NdsRegion arm9 = Place(ref cursor, arm9DataLength, options.SectionAlignment);
-        NdsRegion? arm9Footer = builder.Arm9!.Footer.IsEmpty
+        NdsRegion arm9 = PlaceProgram(
+            ref cursor,
+            content.Arm9Data.Length,
+            content.Arm9DeclaredLength,
+            options.SectionAlignment);
+        NdsRegion? arm9Footer = content.Arm9TrailingData.IsEmpty
             ? null
-            : Place(ref cursor, builder.Arm9.Footer.Length, alignment: 1);
-        NdsRegion arm9Overlays = arm9OverlayTableLength == 0
+            : Place(ref cursor, content.Arm9TrailingData.Length, alignment: 1);
+        NdsRegion arm9Overlays = content.Arm9OverlayTable.Length == 0
             ? default
-            : Place(ref cursor, arm9OverlayTableLength, options.SectionAlignment);
-        NdsRegion arm7 = Place(ref cursor, arm7DataLength, options.SectionAlignment);
-        NdsRegion arm7Overlays = arm7OverlayTableLength == 0
+            : Place(ref cursor, content.Arm9OverlayTable.Length, ndstoolProfile ? 1 : options.SectionAlignment);
+        NdsRegion arm7 = PlaceProgram(
+            ref cursor,
+            content.Arm7Data.Length,
+            content.Arm7DeclaredLength,
+            options.SectionAlignment);
+        NdsRegion arm7Overlays = content.Arm7OverlayTable.Length == 0
             ? default
-            : Place(ref cursor, arm7OverlayTableLength, options.SectionAlignment);
-        NdsRegion fnt = Place(ref cursor, fileSystem.FileNameTable.Length, options.SectionAlignment);
-        NdsRegion fat = Place(ref cursor, checked(allocations.Length * 8), options.SectionAlignment);
+            : Place(ref cursor, content.Arm7OverlayTable.Length, ndstoolProfile ? 1 : options.SectionAlignment);
+        NdsRegion fnt = Place(ref cursor, content.FileSystem.FileNameTable.Length, options.SectionAlignment);
+        NdsRegion fat = Place(ref cursor, checked(content.Allocations.Length * 8), options.SectionAlignment);
         NdsRegion? banner = builder.Banner is null
             ? null
             : Place(ref cursor, builder.Banner.RawData.Length, options.SectionAlignment);
-        if (options.Profile == NdsImageBuildProfile.Ndstool1503 && allocations.Length > 0)
-        {
-            cursor = Align(cursor, options.SectionAlignment);
-        }
-
-        var files = new NdsRegion[allocations.Length];
+        var files = new NdsRegion[content.Allocations.Length];
+        int allocationAlignment = ndstoolProfile
+            ? options.SectionAlignment
+            : options.FileAlignment;
         for (int fileId = 0; fileId < files.Length; fileId++)
         {
-            files[fileId] = Place(ref cursor, allocations[fileId].Length, options.FileAlignment);
+            files[fileId] = Place(ref cursor, content.Allocations[fileId].Length, allocationAlignment);
         }
 
         long contentEnd = cursor;
         long physicalSize = Align(contentEnd, options.FileAlignment);
-        long usedSize = options.Profile == NdsImageBuildProfile.Ndstool1503 ? physicalSize : contentEnd;
+        long usedSize = ndstoolProfile ? physicalSize : contentEnd;
         if (physicalSize > uint.MaxValue)
         {
             throw new InvalidDataException("The generated image exceeds the DS header's 32-bit offset and size fields.");
@@ -321,6 +207,32 @@ internal static class NdsImageBuildWriter
         cursor = Align(cursor, alignment);
         var region = new NdsRegion(cursor, length);
         cursor = region.End;
+        return region;
+    }
+
+    /// <summary>
+    /// Advances by bytes actually written while reporting the potentially rounded Program length encoded in the
+    /// header. This models ndstool's legacy footer overlap without introducing phantom bytes into the output stream.
+    /// </summary>
+    /// <param name="cursor">Current physical end aligned and advanced by <paramref name="physicalLength"/>.</param>
+    /// <param name="physicalLength">Number of program bytes supplied to the writer.</param>
+    /// <param name="declaredLength">Header-visible size, which must not be smaller than physical data.</param>
+    /// <param name="alignment">Boundary applied to the Program start.</param>
+    /// <returns>A header-facing Region whose end may extend past the current physical cursor.</returns>
+    private static NdsRegion PlaceProgram(
+        ref long cursor,
+        int physicalLength,
+        int declaredLength,
+        int alignment)
+    {
+        if (declaredLength < physicalLength)
+        {
+            throw new InvalidDataException("A Program's declared length cannot exclude physical executable bytes.");
+        }
+
+        cursor = Align(cursor, alignment);
+        var region = new NdsRegion(cursor, declaredLength);
+        cursor = checked(cursor + physicalLength);
         return region;
     }
 

@@ -98,6 +98,58 @@ public sealed class NdsImageBuilderTests
     }
 
     [Fact]
+    public async Task NdstoolProfilePlacesHiddenOverlaysBeforeNamedFiles()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.Version = 0;
+        builder.FileSystem.AddFile("/named.bin", [1, 2]);
+        builder.AddOverlay(new(
+            NdsProcessor.Arm9,
+            id: 77,
+            contents: [7, 7, 7],
+            loadAddress: 0x02001000,
+            ramSize: 3));
+        builder.AddOverlay(new(
+            NdsProcessor.Arm7,
+            id: 12,
+            contents: [8, 8],
+            loadAddress: 0x02390000,
+            ramSize: 2));
+
+        byte[] data = await builder.BuildAsync(
+            new() { Profile = NdsImageBuildProfile.Ndstool1503 },
+            TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(data);
+
+        Assert.Equal((uint)0, image.Arm9Overlays[0].FileId);
+        Assert.Equal((uint)1, image.Arm7Overlays[0].FileId);
+        Assert.Equal(2, image.FileSystem.GetFile("/named.bin").Id);
+        Assert.Equal(image.Header.Arm9.Data.Offset + 0x800 + 3 + 12, image.Header.Arm9OverlayTable.Offset);
+        Assert.True(image.Validate().IsValid);
+    }
+
+    [Fact]
+    public async Task NdstoolProfileRejectsRelationshipsItsCliCannotRepresent()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.FileSystem.AddFile("/shared.bin", [1]);
+        builder.AddOverlay(NdsOverlayDefinition.LinkToFile(
+            NdsProcessor.Arm9,
+            id: 1,
+            filePath: "/shared.bin",
+            loadAddress: 0x02002000,
+            ramSize: 1));
+        using var destination = new MemoryStream([9, 8, 7], writable: true);
+
+        await Assert.ThrowsAsync<InvalidDataException>(async () =>
+            await builder.WriteAsync(
+                destination,
+                new() { Profile = NdsImageBuildProfile.Ndstool1503 },
+                TestContext.Current.CancellationToken).ConfigureAwait(true));
+        Assert.Equal([9, 8, 7], destination.ToArray());
+    }
+
+    [Fact]
     public async Task OverlayCanShareNamedNitroFsAllocationWithoutDuplication()
     {
         NdsImageBuilder builder = CreateBuilder();

@@ -9,14 +9,17 @@ internal sealed record NdsFileSystemBuildSnapshot
     /// <param name="fileNameTable">Complete serialized FNT bytes.</param>
     /// <param name="filesInIdOrder">Payloads ordered by the file IDs encoded in the FNT.</param>
     /// <param name="directoryIds">Canonical paths paired with the IDs encoded in child entries.</param>
+    /// <param name="firstFileId">Numeric FAT ID represented by list position zero.</param>
     public NdsFileSystemBuildSnapshot(
         byte[] fileNameTable,
         IReadOnlyList<NdsBuildFile> filesInIdOrder,
-        IReadOnlyDictionary<string, ushort> directoryIds)
+        IReadOnlyDictionary<string, ushort> directoryIds,
+        int firstFileId)
     {
         FileNameTable = fileNameTable;
         FilesInIdOrder = filesInIdOrder;
         DirectoryIds = directoryIds;
+        FirstFileId = firstFileId;
     }
 
     /// <summary>
@@ -25,9 +28,15 @@ internal sealed record NdsFileSystemBuildSnapshot
     public byte[] FileNameTable { get; }
 
     /// <summary>
-    /// Couples each zero-based list position to the FAT file ID used by directory records.
+    /// Orders named payloads by FAT ID; list position zero maps to <see cref="FirstFileId"/> rather than necessarily ID zero.
     /// </summary>
     public IReadOnlyList<NdsBuildFile> FilesInIdOrder { get; }
+
+    /// <summary>
+    /// Identifies the FAT record used by <see cref="FilesInIdOrder"/> position zero, allowing compatibility
+    /// profiles to reserve lower IDs for unnamed Overlay payloads without corrupting FNT traversal.
+    /// </summary>
+    public int FirstFileId { get; }
 
     /// <summary>
     /// Records the stable NitroFS directory IDs, beginning with root at <c>0xF000</c>.

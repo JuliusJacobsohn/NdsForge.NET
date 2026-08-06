@@ -26,12 +26,14 @@ internal static class NdsImageBuildVerifier
                 $"Generated image verification failed: {string.Join("; ", validation.Diagnostics.Select(static item => item.Message))}");
         }
 
-        for (int fileId = 0; fileId < fileSystem.FilesInIdOrder.Count; fileId++)
+        foreach (NdsBuildFile expectedFile in fileSystem.FilesInIdOrder)
         {
-            byte[] actual = await image.FileSystem.GetFile(fileId).ReadAllBytesAsync(cancellationToken).ConfigureAwait(false);
-            if (!actual.AsSpan().SequenceEqual(fileSystem.FilesInIdOrder[fileId].Contents.Span))
+            NdsFile actualFile = image.FileSystem.GetFile(expectedFile.Path);
+            byte[] actual = await actualFile.ReadAllBytesAsync(cancellationToken).ConfigureAwait(false);
+            if (!actual.AsSpan().SequenceEqual(expectedFile.Contents.Span))
             {
-                throw new InvalidDataException($"Generated image payload verification failed for File ID {fileId}.");
+                throw new InvalidDataException(
+                    $"Generated image payload verification failed for '{expectedFile.Path}' at File ID {actualFile.Id}.");
             }
         }
 
