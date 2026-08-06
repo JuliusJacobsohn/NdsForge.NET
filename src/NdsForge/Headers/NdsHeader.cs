@@ -40,6 +40,7 @@ public sealed class NdsHeader
         {
             Arm9i = ReadDsiProgram(data, NdsProcessor.Arm9i, 0x1C0);
             Arm7i = ReadDsiProgram(data, NdsProcessor.Arm7i, 0x1D0);
+            Dsi = new(rawData);
         }
     }
 
@@ -90,6 +91,9 @@ public sealed class NdsHeader
 
     /// <summary>Gets the optional DSi-mode ARM7 program.</summary>
     public NdsProgram? Arm7i { get; }
+
+    /// <summary>Gets the extended DSi header, or <see langword="null"/> for DS-only images.</summary>
+    public NdsDsiHeader? Dsi { get; }
 
     /// <summary>Gets the filename-table region.</summary>
     public NdsRegion FileNameTable { get; }
