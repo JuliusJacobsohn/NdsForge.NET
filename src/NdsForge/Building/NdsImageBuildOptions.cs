@@ -6,6 +6,9 @@ public sealed record NdsImageBuildOptions
     /// <summary>Uses a 16 KiB header area, 512-byte component boundaries, four-byte file boundaries, and verification.</summary>
     public static NdsImageBuildOptions Default { get; } = new();
 
+    /// <summary>Selects NdsForge defaults or a precisely versioned external-tool Layout contract.</summary>
+    public NdsImageBuildProfile Profile { get; init; }
+
     /// <summary>Reserves bytes before the first Program; DS homebrew conventionally uses <c>0x4000</c>.</summary>
     public int HeaderSize { get; init; } = 0x4000;
 

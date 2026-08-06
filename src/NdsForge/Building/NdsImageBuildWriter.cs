@@ -1,5 +1,4 @@
 using System.Buffers.Binary;
-using System.Text;
 
 namespace NdsForge;
 
@@ -27,6 +26,8 @@ internal static class NdsImageBuildWriter
         options.Validate();
         ValidateRecipe(builder);
         NdsFileSystemBuildSnapshot fileSystem = builder.FileSystem.BuildSnapshot();
+        ReadOnlyMemory<byte> arm9Data = PrepareProgram(builder.Arm9!, isArm9: true, options.Profile);
+        ReadOnlyMemory<byte> arm7Data = PrepareProgram(builder.Arm7!, isArm9: false, options.Profile);
         ReadOnlyMemory<byte>[] allocations = CollectAllocations(builder, fileSystem);
         byte[] arm9OverlayTable = BuildOverlayTable(
             builder.Arm9Overlays,
@@ -39,44 +40,47 @@ internal static class NdsImageBuildWriter
         NdsImageBuildLayout layout = CalculateLayout(
             builder,
             fileSystem,
+            arm9Data.Length,
+            arm7Data.Length,
             allocations,
             arm9OverlayTable.Length,
             arm7OverlayTable.Length,
             options);
         byte[] fat = BuildFat(layout.FileRegions);
-        byte[] header = BuildHeader(builder, layout, options);
+        byte[] header = NdsImageHeaderWriter.Write(builder, layout, options);
 
         destination.Position = 0;
         destination.SetLength(0);
+        byte paddingByte = options.Profile == NdsImageBuildProfile.Ndstool1503 ? (byte)0 : options.PaddingByte;
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
-        await WriteAtAsync(destination, layout.Arm9.Offset, builder.Arm9!.Contents, options.PaddingByte, cancellationToken)
+        await WriteAtAsync(destination, layout.Arm9.Offset, arm9Data, paddingByte, cancellationToken)
             .ConfigureAwait(false);
         if (layout.Arm9Footer is not null)
         {
             await WriteAtAsync(
                 destination,
                 layout.Arm9Footer.Value.Offset,
-                builder.Arm9.Footer,
-                options.PaddingByte,
+                builder.Arm9!.Footer,
+                paddingByte,
                 cancellationToken).ConfigureAwait(false);
         }
         await WriteAtAsync(
             destination,
             layout.Arm9OverlayTable.Offset,
             arm9OverlayTable,
-            options.PaddingByte,
+            paddingByte,
             cancellationToken).ConfigureAwait(false);
-        await WriteAtAsync(destination, layout.Arm7.Offset, builder.Arm7!.Contents, options.PaddingByte, cancellationToken)
+        await WriteAtAsync(destination, layout.Arm7.Offset, arm7Data, paddingByte, cancellationToken)
             .ConfigureAwait(false);
         await WriteAtAsync(
             destination,
             layout.Arm7OverlayTable.Offset,
             arm7OverlayTable,
-            options.PaddingByte,
+            paddingByte,
             cancellationToken).ConfigureAwait(false);
-        await WriteAtAsync(destination, layout.FileNameTable.Offset, fileSystem.FileNameTable, options.PaddingByte, cancellationToken)
+        await WriteAtAsync(destination, layout.FileNameTable.Offset, fileSystem.FileNameTable, paddingByte, cancellationToken)
             .ConfigureAwait(false);
-        await WriteAtAsync(destination, layout.FileAllocationTable.Offset, fat, options.PaddingByte, cancellationToken)
+        await WriteAtAsync(destination, layout.FileAllocationTable.Offset, fat, paddingByte, cancellationToken)
             .ConfigureAwait(false);
         if (layout.Banner is not null)
         {
@@ -84,7 +88,7 @@ internal static class NdsImageBuildWriter
                 destination,
                 layout.Banner.Value.Offset,
                 builder.Banner!.RawData,
-                options.PaddingByte,
+                paddingByte,
                 cancellationToken).ConfigureAwait(false);
         }
 
@@ -94,11 +98,11 @@ internal static class NdsImageBuildWriter
                 destination,
                 layout.FileRegions[fileId].Offset,
                 allocations[fileId],
-                options.PaddingByte,
+                paddingByte,
                 cancellationToken).ConfigureAwait(false);
         }
 
-        await FillToAsync(destination, layout.PhysicalSize, options.PaddingByte, cancellationToken).ConfigureAwait(false);
+        await FillToAsync(destination, layout.PhysicalSize, paddingByte, cancellationToken).ConfigureAwait(false);
         destination.SetLength(layout.PhysicalSize);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
         if (options.VerifyOutput)
@@ -139,6 +143,39 @@ internal static class NdsImageBuildWriter
         ValidateAscii(builder.Title, 0, 12, nameof(builder.Title));
         ValidateAscii(builder.GameCode, 4, 4, nameof(builder.GameCode));
         ValidateAscii(builder.MakerCode, 2, 2, nameof(builder.MakerCode));
+    }
+
+    /// <summary>Applies storage transformations belonging to a named compatibility profile without mutating Program definitions.</summary>
+    /// <param name="program">Logical raw executable supplied by the recipe.</param>
+    /// <param name="isArm9">Selects the legacy 2 KiB secure-area placeholder required only before ARM9 input.</param>
+    /// <param name="profile">Layout personality controlling transformations.</param>
+    /// <returns>Exact header-declared Program bytes, excluding an optional SDK footer.</returns>
+    private static ReadOnlyMemory<byte> PrepareProgram(
+        NdsProgramDefinition program,
+        bool isArm9,
+        NdsImageBuildProfile profile)
+    {
+        if (profile != NdsImageBuildProfile.Ndstool1503)
+        {
+            return program.Contents;
+        }
+
+        int prefixLength = isArm9 ? 0x800 : 0;
+        int length = checked((program.Contents.Length + prefixLength + 3) & ~3);
+        byte[] data = new byte[length];
+        if (isArm9)
+        {
+            for (int offset = 0; offset < prefixLength; offset += 4)
+            {
+                data[offset] = 0xFF;
+                data[offset + 1] = 0xDE;
+                data[offset + 2] = 0xFF;
+                data[offset + 3] = 0xE7;
+            }
+        }
+
+        program.Contents.Span.CopyTo(data.AsSpan(prefixLength));
+        return data;
     }
 
     /// <summary>Combines named FNT payloads with private ARM9 then ARM7 Overlay Allocations in final File ID order.</summary>
@@ -203,6 +240,8 @@ internal static class NdsImageBuildWriter
     /// <summary>Assigns monotonically increasing aligned Regions without consulting mutable stream state.</summary>
     /// <param name="builder">Recipe supplying component sizes.</param>
     /// <param name="fileSystem">Frozen FNT bytes and deterministic File ID payload order.</param>
+    /// <param name="arm9DataLength">Profile-transformed ARM9 length excluding footer.</param>
+    /// <param name="arm7DataLength">Profile-transformed ARM7 length.</param>
     /// <param name="allocations">Named and Overlay-private payloads in final File ID order.</param>
     /// <param name="arm9OverlayTableLength">Bytes reserved for ARM9 records.</param>
     /// <param name="arm7OverlayTableLength">Bytes reserved for ARM7 records.</param>
@@ -211,32 +250,44 @@ internal static class NdsImageBuildWriter
     private static NdsImageBuildLayout CalculateLayout(
         NdsImageBuilder builder,
         NdsFileSystemBuildSnapshot fileSystem,
+        int arm9DataLength,
+        int arm7DataLength,
         ReadOnlyMemory<byte>[] allocations,
         int arm9OverlayTableLength,
         int arm7OverlayTableLength,
         NdsImageBuildOptions options)
     {
         long cursor = options.HeaderSize;
-        NdsRegion arm9 = Place(ref cursor, builder.Arm9!.Contents.Length, options.SectionAlignment);
-        NdsRegion? arm9Footer = builder.Arm9.Footer.IsEmpty
+        NdsRegion arm9 = Place(ref cursor, arm9DataLength, options.SectionAlignment);
+        NdsRegion? arm9Footer = builder.Arm9!.Footer.IsEmpty
             ? null
             : Place(ref cursor, builder.Arm9.Footer.Length, alignment: 1);
-        NdsRegion arm9Overlays = Place(ref cursor, arm9OverlayTableLength, options.SectionAlignment);
-        NdsRegion arm7 = Place(ref cursor, builder.Arm7!.Contents.Length, options.SectionAlignment);
-        NdsRegion arm7Overlays = Place(ref cursor, arm7OverlayTableLength, options.SectionAlignment);
+        NdsRegion arm9Overlays = arm9OverlayTableLength == 0
+            ? default
+            : Place(ref cursor, arm9OverlayTableLength, options.SectionAlignment);
+        NdsRegion arm7 = Place(ref cursor, arm7DataLength, options.SectionAlignment);
+        NdsRegion arm7Overlays = arm7OverlayTableLength == 0
+            ? default
+            : Place(ref cursor, arm7OverlayTableLength, options.SectionAlignment);
         NdsRegion fnt = Place(ref cursor, fileSystem.FileNameTable.Length, options.SectionAlignment);
         NdsRegion fat = Place(ref cursor, checked(allocations.Length * 8), options.SectionAlignment);
         NdsRegion? banner = builder.Banner is null
             ? null
             : Place(ref cursor, builder.Banner.RawData.Length, options.SectionAlignment);
+        if (options.Profile == NdsImageBuildProfile.Ndstool1503 && allocations.Length > 0)
+        {
+            cursor = Align(cursor, options.SectionAlignment);
+        }
+
         var files = new NdsRegion[allocations.Length];
         for (int fileId = 0; fileId < files.Length; fileId++)
         {
             files[fileId] = Place(ref cursor, allocations[fileId].Length, options.FileAlignment);
         }
 
-        long usedSize = cursor;
-        long physicalSize = Align(usedSize, options.FileAlignment);
+        long contentEnd = cursor;
+        long physicalSize = Align(contentEnd, options.FileAlignment);
+        long usedSize = options.Profile == NdsImageBuildProfile.Ndstool1503 ? physicalSize : contentEnd;
         if (physicalSize > uint.MaxValue)
         {
             throw new InvalidDataException("The generated image exceeds the DS header's 32-bit offset and size fields.");
@@ -260,78 +311,6 @@ internal static class NdsImageBuildWriter
         return fat;
     }
 
-    /// <summary>Serializes the common DS header from the final Layout and computes logo/header CRCs last.</summary>
-    /// <param name="builder">Typed identity, Program addresses, logo, and Banner source.</param>
-    /// <param name="layout">Final component offsets shared with the byte writer.</param>
-    /// <param name="options">Declared header size policy.</param>
-    /// <returns>A zero-initialized reserved header area ending exactly at the first allowed Program offset.</returns>
-    private static byte[] BuildHeader(
-        NdsImageBuilder builder,
-        NdsImageBuildLayout layout,
-        NdsImageBuildOptions options)
-    {
-        byte[] header = new byte[options.HeaderSize];
-        WriteAscii(header.AsSpan(0x00, 12), builder.Title);
-        WriteAscii(header.AsSpan(0x0C, 4), builder.GameCode);
-        WriteAscii(header.AsSpan(0x10, 2), builder.MakerCode);
-        header[0x13] = builder.EncryptionSeedSelect;
-        header[0x14] = CalculateDeviceCapacity(layout.PhysicalSize);
-        header[0x1D] = builder.RegionCode;
-        header[0x1E] = builder.Version;
-        header[0x1F] = builder.AutoStart;
-        WriteProgram(header, 0x20, layout.Arm9, builder.Arm9!);
-        WriteProgram(header, 0x30, layout.Arm7, builder.Arm7!);
-        WriteRegion(header, 0x40, layout.FileNameTable);
-        WriteRegion(header, 0x48, layout.FileAllocationTable);
-        WriteRegion(header, 0x50, layout.Arm9OverlayTable);
-        WriteRegion(header, 0x58, layout.Arm7OverlayTable);
-        NdsBinary.WriteUInt32(header, 0x60, builder.NormalCardControl);
-        NdsBinary.WriteUInt32(header, 0x64, builder.SecureCardControl);
-        BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x68), checked((uint)(layout.Banner?.Offset ?? 0)));
-        NdsBinary.WriteUInt16(header, 0x6E, builder.SecureTransferTimeout);
-        NdsBinary.WriteUInt32(header, 0x70, builder.Arm9AutoLoad);
-        NdsBinary.WriteUInt32(header, 0x74, builder.Arm7AutoLoad);
-        NdsBinary.WriteUInt32(header, 0x78, (uint)builder.SecureDisable);
-        NdsBinary.WriteUInt32(header, 0x7C, (uint)(builder.SecureDisable >> 32));
-        BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)layout.UsedSize));
-        BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x84), checked((uint)options.HeaderSize));
-        if (!builder.NintendoLogo.IsEmpty)
-        {
-            builder.NintendoLogo.Span.CopyTo(header.AsSpan(0xC0, 156));
-        }
-
-        BinaryPrimitives.WriteUInt16LittleEndian(
-            header.AsSpan(0x15C),
-            NdsChecksums.ComputeCrc16(header.AsSpan(0xC0, 156)));
-        BinaryPrimitives.WriteUInt16LittleEndian(
-            header.AsSpan(0x15E),
-            NdsChecksums.ComputeCrc16(header.AsSpan(0, 0x15E)));
-        return header;
-    }
-
-    /// <summary>Writes a DS Program's cartridge offset, entry address, load address, and byte count tuple.</summary>
-    /// <param name="header">Mutable common header prefix.</param>
-    /// <param name="offset">Tuple offset: <c>0x20</c> for ARM9 or <c>0x30</c> for ARM7.</param>
-    /// <param name="region">Final cartridge payload Region.</param>
-    /// <param name="program">Runtime addresses and payload length.</param>
-    private static void WriteProgram(Span<byte> header, int offset, NdsRegion region, NdsProgramDefinition program)
-    {
-        NdsBinary.WriteUInt32(header, offset, checked((uint)region.Offset));
-        NdsBinary.WriteUInt32(header, offset + 4, program.EntryAddress);
-        NdsBinary.WriteUInt32(header, offset + 8, program.LoadAddress);
-        NdsBinary.WriteUInt32(header, offset + 12, checked((uint)region.Length));
-    }
-
-    /// <summary>Writes one adjacent offset/length pair used by common-header table fields.</summary>
-    /// <param name="header">Mutable common header prefix.</param>
-    /// <param name="offset">Byte offset of the destination start word.</param>
-    /// <param name="region">Final Region converted only after checked 32-bit validation.</param>
-    private static void WriteRegion(Span<byte> header, int offset, NdsRegion region)
-    {
-        NdsBinary.WriteUInt32(header, offset, checked((uint)region.Offset));
-        NdsBinary.WriteUInt32(header, offset + 4, checked((uint)region.Length));
-    }
-
     /// <summary>Places a component at the next aligned offset and advances the exclusive Layout cursor.</summary>
     /// <param name="cursor">Current exclusive end updated to the new Region end.</param>
     /// <param name="length">Non-negative component byte count.</param>
@@ -351,22 +330,6 @@ internal static class NdsImageBuildWriter
     /// <returns>The first compatible offset at or after <paramref name="value"/>.</returns>
     private static long Align(long value, int alignment) => checked((value + alignment - 1) & -alignment);
 
-    /// <summary>Derives the smallest 128 KiB-scaled capacity exponent that contains the physical output.</summary>
-    /// <param name="physicalSize">Final destination length.</param>
-    /// <returns>A header byte whose nominal capacity is at least the generated length.</returns>
-    private static byte CalculateDeviceCapacity(long physicalSize)
-    {
-        byte exponent = 0;
-        long capacity = 128 * 1024;
-        while (capacity < physicalSize && exponent < 31)
-        {
-            exponent++;
-            capacity <<= 1;
-        }
-
-        return exponent;
-    }
-
     /// <summary>Validates printable fixed-field text before the destination is truncated.</summary>
     /// <param name="value">Proposed visible ASCII characters.</param>
     /// <param name="minimum">Minimum field length, including exact identifiers.</param>
@@ -380,11 +343,6 @@ internal static class NdsImageBuildWriter
             throw new InvalidDataException($"{name} must contain {minimum} through {maximum} printable ASCII characters.");
         }
     }
-
-    /// <summary>Writes validated text and leaves the remainder of a zero-initialized fixed-width field padded with NUL bytes.</summary>
-    /// <param name="destination">Exact header field width.</param>
-    /// <param name="value">Printable ASCII text no longer than the destination.</param>
-    private static void WriteAscii(Span<byte> destination, string value) => Encoding.ASCII.GetBytes(value, destination);
 
     /// <summary>Fills any forward gap before committing bytes at their precomputed absolute offset.</summary>
     /// <param name="destination">Sequential output whose current length is the committed Layout end.</param>
