@@ -29,6 +29,80 @@ public sealed class NdsOverlayDefinition
         uint staticInitializerEnd = 0,
         uint compressedSize = 0,
         byte flags = 0)
+        : this(
+            processor,
+            id,
+            contents.ToArray(),
+            linkedFilePath: null,
+            loadAddress,
+            ramSize,
+            bssSize,
+            staticInitializerStart,
+            staticInitializerEnd,
+            compressedSize,
+            flags)
+    {
+    }
+
+    /// <summary>Links an Overlay record to a named NitroFS payload so both identities share one FAT Allocation.</summary>
+    /// <param name="processor">ARM9 or ARM7 table receiving the record.</param>
+    /// <param name="id">Runtime Overlay identity, independent from the linked file's generated File ID.</param>
+    /// <param name="filePath">Canonical or root-relative NitroFS path that must exist when the recipe is built.</param>
+    /// <param name="loadAddress">First runtime address populated by the Overlay loader.</param>
+    /// <param name="ramSize">Initialized runtime size after any decompression.</param>
+    /// <param name="bssSize">Additional zero-initialized bytes absent from the stored payload.</param>
+    /// <param name="staticInitializerStart">Inclusive runtime start of the constructor pointer list.</param>
+    /// <param name="staticInitializerEnd">Exclusive runtime end of the constructor pointer list.</param>
+    /// <param name="compressedSize">Low 24 bits of the packed control word.</param>
+    /// <param name="flags">High eight bits of the packed control word.</param>
+    /// <returns>An immutable record definition that allocates no duplicate payload.</returns>
+    public static NdsOverlayDefinition LinkToFile(
+        NdsProcessor processor,
+        uint id,
+        string filePath,
+        uint loadAddress,
+        uint ramSize,
+        uint bssSize = 0,
+        uint staticInitializerStart = 0,
+        uint staticInitializerEnd = 0,
+        uint compressedSize = 0,
+        byte flags = 0) => new(
+            processor,
+            id,
+            contents: null,
+            NdsFileSystemBuilder.NormalizePath(filePath, allowRoot: false),
+            loadAddress,
+            ramSize,
+            bssSize,
+            staticInitializerStart,
+            staticInitializerEnd,
+            compressedSize,
+            flags);
+
+    /// <summary>Initializes shared metadata after selecting exactly one private or linked payload source.</summary>
+    /// <param name="processor">Validated table ownership.</param>
+    /// <param name="id">Runtime Overlay identity.</param>
+    /// <param name="contents">Private payload copy, or <see langword="null"/> for a named link.</param>
+    /// <param name="linkedFilePath">Canonical named-file path, or <see langword="null"/> for a private Allocation.</param>
+    /// <param name="loadAddress">Runtime payload start.</param>
+    /// <param name="ramSize">Initialized runtime byte count.</param>
+    /// <param name="bssSize">Zero-filled runtime byte count.</param>
+    /// <param name="staticInitializerStart">Inclusive constructor-list start.</param>
+    /// <param name="staticInitializerEnd">Exclusive constructor-list end.</param>
+    /// <param name="compressedSize">Packed low 24-bit stored size.</param>
+    /// <param name="flags">Packed high control byte.</param>
+    private NdsOverlayDefinition(
+        NdsProcessor processor,
+        uint id,
+        byte[]? contents,
+        string? linkedFilePath,
+        uint loadAddress,
+        uint ramSize,
+        uint bssSize,
+        uint staticInitializerStart,
+        uint staticInitializerEnd,
+        uint compressedSize,
+        byte flags)
     {
         if (processor is not NdsProcessor.Arm9 and not NdsProcessor.Arm7)
         {
@@ -42,7 +116,8 @@ public sealed class NdsOverlayDefinition
 
         Processor = processor;
         Id = id;
-        Contents = contents.ToArray();
+        Contents = contents ?? [];
+        LinkedFilePath = linkedFilePath;
         LoadAddress = loadAddress;
         RamSize = ramSize;
         BssSize = bssSize;
@@ -58,8 +133,14 @@ public sealed class NdsOverlayDefinition
     /// <summary>Identifies the Overlay to runtime code without determining its FAT File ID.</summary>
     public uint Id { get; }
 
-    /// <summary>Contains definition-owned stored bytes placed in an unnamed FAT Allocation.</summary>
+    /// <summary>Contains definition-owned stored bytes for a private Allocation, or empty memory for a named-file link.</summary>
     public ReadOnlyMemory<byte> Contents { get; }
+
+    /// <summary>Identifies a shared named NitroFS payload, or remains <see langword="null"/> for a private Allocation.</summary>
+    public string? LinkedFilePath { get; }
+
+    /// <summary>Distinguishes payloads that add a FAT record from records that reuse an existing named File ID.</summary>
+    internal bool HasPrivateAllocation => LinkedFilePath is null;
 
     /// <summary>Specifies the first runtime address receiving initialized Overlay bytes.</summary>
     public uint LoadAddress { get; }

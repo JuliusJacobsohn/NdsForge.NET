@@ -28,10 +28,14 @@ internal static class NdsImageBuildWriter
         ValidateRecipe(builder);
         NdsFileSystemBuildSnapshot fileSystem = builder.FileSystem.BuildSnapshot();
         ReadOnlyMemory<byte>[] allocations = CollectAllocations(builder, fileSystem);
-        byte[] arm9OverlayTable = BuildOverlayTable(builder.Arm9Overlays, fileSystem.FilesInIdOrder.Count);
+        byte[] arm9OverlayTable = BuildOverlayTable(
+            builder.Arm9Overlays,
+            fileSystem,
+            fileSystem.FilesInIdOrder.Count);
         byte[] arm7OverlayTable = BuildOverlayTable(
             builder.Arm7Overlays,
-            checked(fileSystem.FilesInIdOrder.Count + builder.Arm9Overlays.Count));
+            fileSystem,
+            checked(fileSystem.FilesInIdOrder.Count + builder.Arm9Overlays.Count(static overlay => overlay.HasPrivateAllocation)));
         NdsImageBuildLayout layout = CalculateLayout(
             builder,
             fileSystem,
@@ -135,20 +139,42 @@ internal static class NdsImageBuildWriter
         NdsImageBuilder builder,
         NdsFileSystemBuildSnapshot fileSystem) =>
         fileSystem.FilesInIdOrder.Select(static file => file.Contents)
-            .Concat(builder.Arm9Overlays.Select(static overlay => overlay.Contents))
-            .Concat(builder.Arm7Overlays.Select(static overlay => overlay.Contents))
+            .Concat(builder.Arm9Overlays.Where(static overlay => overlay.HasPrivateAllocation).Select(static overlay => overlay.Contents))
+            .Concat(builder.Arm7Overlays.Where(static overlay => overlay.HasPrivateAllocation).Select(static overlay => overlay.Contents))
             .ToArray();
 
     /// <summary>Serializes fixed Overlay records and assigns consecutive private payload File IDs from a known base.</summary>
     /// <param name="overlays">One processor's definitions in desired table order.</param>
-    /// <param name="firstFileId">FAT index assigned to the first definition's private Allocation.</param>
+    /// <param name="fileSystem">Named payload order used to resolve shared NitroFS paths.</param>
+    /// <param name="firstPrivateFileId">FAT index assigned to the first definition requiring a private Allocation.</param>
     /// <returns>Complete table bytes whose length is exactly 32 times the definition count.</returns>
-    private static byte[] BuildOverlayTable(IReadOnlyList<NdsOverlayDefinition> overlays, int firstFileId)
+    private static byte[] BuildOverlayTable(
+        IReadOnlyList<NdsOverlayDefinition> overlays,
+        NdsFileSystemBuildSnapshot fileSystem,
+        int firstPrivateFileId)
     {
+        Dictionary<string, int> namedFileIds = fileSystem.FilesInIdOrder
+            .Select((file, fileId) => (file.Path, fileId))
+            .ToDictionary(static item => item.Path, static item => item.fileId, StringComparer.Ordinal);
         byte[] data = new byte[checked(overlays.Count * 32)];
+        int nextPrivateFileId = firstPrivateFileId;
         for (int index = 0; index < overlays.Count; index++)
         {
             NdsOverlayDefinition overlay = overlays[index];
+            int fileId;
+            if (overlay.LinkedFilePath is not null)
+            {
+                if (!namedFileIds.TryGetValue(overlay.LinkedFilePath, out fileId))
+                {
+                    throw new InvalidDataException(
+                        $"Overlay {overlay.Id} links missing NitroFS file '{overlay.LinkedFilePath}'.");
+                }
+            }
+            else
+            {
+                fileId = nextPrivateFileId++;
+            }
+
             Span<byte> entry = data.AsSpan(index * 32, 32);
             NdsBinary.WriteUInt32(entry, 0x00, overlay.Id);
             NdsBinary.WriteUInt32(entry, 0x04, overlay.LoadAddress);
@@ -156,7 +182,7 @@ internal static class NdsImageBuildWriter
             NdsBinary.WriteUInt32(entry, 0x0C, overlay.BssSize);
             NdsBinary.WriteUInt32(entry, 0x10, overlay.StaticInitializerStart);
             NdsBinary.WriteUInt32(entry, 0x14, overlay.StaticInitializerEnd);
-            NdsBinary.WriteUInt32(entry, 0x18, checked((uint)(firstFileId + index)));
+            NdsBinary.WriteUInt32(entry, 0x18, checked((uint)fileId));
             NdsBinary.WriteUInt32(entry, 0x1C, overlay.CompressedSize | ((uint)overlay.Flags << 24));
         }
 

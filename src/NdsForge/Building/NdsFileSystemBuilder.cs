@@ -280,7 +280,7 @@ public sealed class NdsFileSystemBuilder
     /// <param name="allowRoot">Whether <c>/</c> is a meaningful value for the requested operation.</param>
     /// <returns>A slash-delimited absolute path containing only valid NitroFS name bytes.</returns>
     /// <exception cref="ArgumentException">The path is empty, ambiguous, traversing, non-ASCII, or exceeds a segment limit.</exception>
-    private static string NormalizePath(string path, bool allowRoot)
+    internal static string NormalizePath(string path, bool allowRoot)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(path);
         string normalized = path.Replace('\\', '/');

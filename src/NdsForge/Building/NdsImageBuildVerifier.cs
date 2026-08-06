@@ -62,6 +62,16 @@ internal static class NdsImageBuildVerifier
                 throw new InvalidDataException($"Generated Overlay record {index} did not round-trip.");
             }
 
+            if (expected[index].LinkedFilePath is not null)
+            {
+                if (actual[index].File?.FullPath != expected[index].LinkedFilePath)
+                {
+                    throw new InvalidDataException($"Generated Overlay file link {index} did not round-trip.");
+                }
+
+                continue;
+            }
+
             using Stream stream = image.OpenRead(actual[index].Data!.Value);
             byte[] contents = new byte[expected[index].Contents.Length];
             await stream.ReadExactlyAsync(contents, cancellationToken).ConfigureAwait(false);

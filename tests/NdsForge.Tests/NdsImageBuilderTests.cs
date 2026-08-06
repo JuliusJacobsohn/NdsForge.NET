@@ -98,6 +98,47 @@ public sealed class NdsImageBuilderTests
     }
 
     [Fact]
+    public async Task OverlayCanShareNamedNitroFsAllocationWithoutDuplication()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.FileSystem.AddFile("/overlays/shared.bin", [9, 8, 7]);
+        builder.AddOverlay(NdsOverlayDefinition.LinkToFile(
+            NdsProcessor.Arm9,
+            id: 42,
+            filePath: "/overlays/shared.bin",
+            loadAddress: 0x02002000,
+            ramSize: 3));
+        using var destination = new MemoryStream();
+
+        NdsImageBuildResult result = await builder.WriteAsync(
+            destination,
+            cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage image = NdsImage.Load(destination.ToArray());
+
+        Assert.Equal(1, result.FileCount);
+        Assert.Equal(1, result.AllocationCount);
+        Assert.Equal((uint)0, image.Arm9Overlays[0].FileId);
+        Assert.Same(image.FileSystem.GetFile("/overlays/shared.bin"), image.Arm9Overlays[0].File);
+    }
+
+    [Fact]
+    public async Task MissingLinkedOverlayFileFailsBeforeDestinationMutation()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.AddOverlay(NdsOverlayDefinition.LinkToFile(
+            NdsProcessor.Arm9,
+            id: 1,
+            filePath: "/missing.bin",
+            loadAddress: 0x02002000,
+            ramSize: 1));
+        using var destination = new MemoryStream([1, 2, 3], writable: true);
+
+        await Assert.ThrowsAsync<InvalidDataException>(async () =>
+            await builder.WriteAsync(destination, cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true));
+        Assert.Equal([1, 2, 3], destination.ToArray());
+    }
+
+    [Fact]
     public async Task RejectsMissingOrMismatchedProgramsBeforeTruncatingDestination()
     {
         var builder = new NdsImageBuilder
