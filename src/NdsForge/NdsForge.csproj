@@ -1,19 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>NdsForge</PackageId>
-    <Version>0.1.0-alpha.1</Version>
-    <Description>Pure C# toolkit for inspecting, editing, extracting, and building Nintendo DS and DSi images.</Description>
+    <Version>1.0.0</Version>
+    <Title>NdsForge.NET</Title>
+    <Description>Production-grade pure C# library for reading, validating, editing, extracting, comparing, and building Nintendo DS and DSi images.</Description>
     <Authors>NdsForge.NET contributors</Authors>
-    <PackageTags>nintendo-ds;nds;dsi;nitrofs;rom-hacking</PackageTags>
+    <PackageTags>nintendo-ds;nds;dsi;nitrofs;rom-hacking;cartridge-image</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>First stable release; see CHANGELOG.md for the complete capability summary.</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EnablePackageValidation>true</EnablePackageValidation>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
   <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../CHANGELOG.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 </Project>
-

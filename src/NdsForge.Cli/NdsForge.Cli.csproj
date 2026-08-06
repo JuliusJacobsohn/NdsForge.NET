@@ -4,17 +4,22 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>ndsforge</ToolCommandName>
     <PackageId>NdsForge.Cli</PackageId>
-    <Version>0.1.0-alpha.1</Version>
-    <Description>Command-line interface for NdsForge.NET.</Description>
+    <Version>1.0.0</Version>
+    <Title>NdsForge.NET command-line tool</Title>
+    <Description>Command-line inspection, validation, extraction, editing, manifest, and diff workflows powered by NdsForge.NET.</Description>
     <Authors>NdsForge.NET contributors</Authors>
     <PackageTags>nintendo-ds;nds;dsi;nitrofs;rom-hacking;dotnet-tool</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>First stable release; see CHANGELOG.md for the complete capability summary.</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <EnablePackageValidation>true</EnablePackageValidation>
     <IsPackable>true</IsPackable>
     <NoWarn>$(NoWarn);CA1303;CA1849</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../NdsForge/NdsForge.csproj" />
     <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../CHANGELOG.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 </Project>
