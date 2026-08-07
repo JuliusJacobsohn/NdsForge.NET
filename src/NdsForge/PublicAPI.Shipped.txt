@@ -1,0 +1,985 @@
+#nullable enable
+const NdsForge.NdsImageManifest.CurrentSchemaVersion = 1 -> int
+const NdsForge.NdsKey1KeyTable.ByteLength = 4168 -> int
+const NdsForge.NdsModcrypt.BlockSize = 16 -> int
+const NdsForge.NdsSecureArea.ByteLength = 16384 -> int
+const NdsForge.NdsSecureArea.Offset = 16384 -> int
+NdsForge.INdsDsiSignatureProvider
+NdsForge.INdsDsiSignatureProvider.SignHeader(System.ReadOnlySpan<byte> signedHeader, System.Span<byte> destination) -> void
+NdsForge.NdsBanner
+NdsForge.NdsBanner.GetAnimationSequence() -> ushort[]!
+NdsForge.NdsBanner.GetAnimationSteps() -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsBannerAnimationStep>!
+NdsForge.NdsBanner.IsAnimated.get -> bool
+NdsForge.NdsBanner.LanguageCount.get -> int
+NdsForge.NdsBanner.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsBanner.RenderAnimatedIconRgba32(int tileFrame, int paletteFrame) -> byte[]!
+NdsForge.NdsBanner.RenderAnimationStepRgba32(NdsForge.NdsBannerAnimationStep step) -> byte[]!
+NdsForge.NdsBanner.RenderIconRgba32() -> byte[]!
+NdsForge.NdsBanner.StoredCrcs.get -> System.Collections.Generic.IReadOnlyList<ushort>!
+NdsForge.NdsBanner.Titles.get -> System.Collections.Generic.IReadOnlyDictionary<NdsForge.NdsBannerLanguage, string!>!
+NdsForge.NdsBanner.Version.get -> ushort
+NdsForge.NdsBanner.WithRepairedCrcs() -> NdsForge.NdsBanner!
+NdsForge.NdsBannerAnimationStep
+NdsForge.NdsBannerAnimationStep.Deconstruct(out byte Duration, out byte TileFrame, out byte PaletteFrame, out bool FlipHorizontal, out bool FlipVertical) -> void
+NdsForge.NdsBannerAnimationStep.Duration.get -> byte
+NdsForge.NdsBannerAnimationStep.Duration.init -> void
+NdsForge.NdsBannerAnimationStep.Equals(NdsForge.NdsBannerAnimationStep other) -> bool
+NdsForge.NdsBannerAnimationStep.FlipHorizontal.get -> bool
+NdsForge.NdsBannerAnimationStep.FlipHorizontal.init -> void
+NdsForge.NdsBannerAnimationStep.FlipVertical.get -> bool
+NdsForge.NdsBannerAnimationStep.FlipVertical.init -> void
+NdsForge.NdsBannerAnimationStep.NdsBannerAnimationStep() -> void
+NdsForge.NdsBannerAnimationStep.NdsBannerAnimationStep(byte Duration, byte TileFrame, byte PaletteFrame, bool FlipHorizontal = false, bool FlipVertical = false) -> void
+NdsForge.NdsBannerAnimationStep.Pack() -> ushort
+NdsForge.NdsBannerAnimationStep.PaletteFrame.get -> byte
+NdsForge.NdsBannerAnimationStep.PaletteFrame.init -> void
+NdsForge.NdsBannerAnimationStep.TileFrame.get -> byte
+NdsForge.NdsBannerAnimationStep.TileFrame.init -> void
+NdsForge.NdsBannerBuilder
+NdsForge.NdsBannerBuilder.Build() -> NdsForge.NdsBanner!
+NdsForge.NdsBannerBuilder.NdsBannerBuilder(ushort version = 1) -> void
+NdsForge.NdsBannerBuilder.SetAnimatedFrame(int frame, System.ReadOnlySpan<byte> paletteIndices, System.ReadOnlySpan<ushort> bgr555Palette) -> NdsForge.NdsBannerBuilder!
+NdsForge.NdsBannerBuilder.SetAnimationSequence(System.Collections.Generic.IEnumerable<NdsForge.NdsBannerAnimationStep>! steps) -> NdsForge.NdsBannerBuilder!
+NdsForge.NdsBannerBuilder.SetIndexedIcon(System.ReadOnlySpan<byte> paletteIndices, System.ReadOnlySpan<ushort> bgr555Palette) -> NdsForge.NdsBannerBuilder!
+NdsForge.NdsBannerBuilder.SetTitle(NdsForge.NdsBannerLanguage language, string! title) -> NdsForge.NdsBannerBuilder!
+NdsForge.NdsBannerBuilder.Version.get -> ushort
+NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.Chinese = 6 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.English = 1 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.French = 2 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.German = 3 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.Italian = 4 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.Japanese = 0 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.Korean = 7 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBannerLanguage.Spanish = 5 -> NdsForge.NdsBannerLanguage
+NdsForge.NdsBuildFile
+NdsForge.NdsBuildFile.Contents.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsBuildFile.Path.get -> string!
+NdsForge.NdsChecksums
+NdsForge.NdsDiagnostic
+NdsForge.NdsDiagnostic.<Clone>$() -> NdsForge.NdsDiagnostic!
+NdsForge.NdsDiagnostic.Code.get -> string!
+NdsForge.NdsDiagnostic.Code.init -> void
+NdsForge.NdsDiagnostic.Deconstruct(out string! Code, out NdsForge.NdsDiagnosticSeverity Severity, out string! Message, out NdsForge.NdsRegion? Region) -> void
+NdsForge.NdsDiagnostic.Equals(NdsForge.NdsDiagnostic? other) -> bool
+NdsForge.NdsDiagnostic.Message.get -> string!
+NdsForge.NdsDiagnostic.Message.init -> void
+NdsForge.NdsDiagnostic.NdsDiagnostic(string! Code, NdsForge.NdsDiagnosticSeverity Severity, string! Message, NdsForge.NdsRegion? Region = null) -> void
+NdsForge.NdsDiagnostic.Region.get -> NdsForge.NdsRegion?
+NdsForge.NdsDiagnostic.Region.init -> void
+NdsForge.NdsDiagnostic.Severity.get -> NdsForge.NdsDiagnosticSeverity
+NdsForge.NdsDiagnostic.Severity.init -> void
+NdsForge.NdsDiagnosticSeverity
+NdsForge.NdsDiagnosticSeverity.Error = 2 -> NdsForge.NdsDiagnosticSeverity
+NdsForge.NdsDiagnosticSeverity.Information = 0 -> NdsForge.NdsDiagnosticSeverity
+NdsForge.NdsDiagnosticSeverity.Warning = 1 -> NdsForge.NdsDiagnosticSeverity
+NdsForge.NdsDifferenceKind
+NdsForge.NdsDifferenceKind.Added = 0 -> NdsForge.NdsDifferenceKind
+NdsForge.NdsDifferenceKind.Modified = 2 -> NdsForge.NdsDifferenceKind
+NdsForge.NdsDifferenceKind.Moved = 5 -> NdsForge.NdsDifferenceKind
+NdsForge.NdsDifferenceKind.Relocated = 3 -> NdsForge.NdsDifferenceKind
+NdsForge.NdsDifferenceKind.Removed = 1 -> NdsForge.NdsDifferenceKind
+NdsForge.NdsDifferenceKind.Renumbered = 4 -> NdsForge.NdsDifferenceKind
+NdsForge.NdsDirectory
+NdsForge.NdsDirectory.Directories.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDirectory!>!
+NdsForge.NdsDirectory.EnumerateDirectories(bool recursive = true) -> System.Collections.Generic.IEnumerable<NdsForge.NdsDirectory!>!
+NdsForge.NdsDirectory.EnumerateFiles(bool recursive = true) -> System.Collections.Generic.IEnumerable<NdsForge.NdsFile!>!
+NdsForge.NdsDirectory.Files.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsFile!>!
+NdsForge.NdsDirectory.FullPath.get -> string!
+NdsForge.NdsDirectory.Id.get -> ushort
+NdsForge.NdsDirectory.Name.get -> string!
+NdsForge.NdsDirectory.Parent.get -> NdsForge.NdsDirectory?
+NdsForge.NdsDirectoryImportOptions
+NdsForge.NdsDirectoryImportOptions.<Clone>$() -> NdsForge.NdsDirectoryImportOptions!
+NdsForge.NdsDirectoryImportOptions.CollisionPolicy.get -> NdsForge.NdsFileCollisionPolicy
+NdsForge.NdsDirectoryImportOptions.CollisionPolicy.init -> void
+NdsForge.NdsDirectoryImportOptions.Equals(NdsForge.NdsDirectoryImportOptions? other) -> bool
+NdsForge.NdsDirectoryImportOptions.LinkPolicy.get -> NdsForge.NdsHostLinkPolicy
+NdsForge.NdsDirectoryImportOptions.LinkPolicy.init -> void
+NdsForge.NdsDirectoryImportOptions.MaximumFiles.get -> int
+NdsForge.NdsDirectoryImportOptions.MaximumFiles.init -> void
+NdsForge.NdsDirectoryImportOptions.MaximumTotalBytes.get -> long
+NdsForge.NdsDirectoryImportOptions.MaximumTotalBytes.init -> void
+NdsForge.NdsDirectoryImportOptions.NdsDirectoryImportOptions() -> void
+NdsForge.NdsDirectoryImportResult
+NdsForge.NdsDirectoryImportResult.<Clone>$() -> NdsForge.NdsDirectoryImportResult!
+NdsForge.NdsDirectoryImportResult.BytesImported.get -> long
+NdsForge.NdsDirectoryImportResult.BytesImported.init -> void
+NdsForge.NdsDirectoryImportResult.Deconstruct(out int FilesImported, out int DirectoriesImported, out long BytesImported, out int EntriesSkipped) -> void
+NdsForge.NdsDirectoryImportResult.DirectoriesImported.get -> int
+NdsForge.NdsDirectoryImportResult.DirectoriesImported.init -> void
+NdsForge.NdsDirectoryImportResult.EntriesSkipped.get -> int
+NdsForge.NdsDirectoryImportResult.EntriesSkipped.init -> void
+NdsForge.NdsDirectoryImportResult.Equals(NdsForge.NdsDirectoryImportResult? other) -> bool
+NdsForge.NdsDirectoryImportResult.FilesImported.get -> int
+NdsForge.NdsDirectoryImportResult.FilesImported.init -> void
+NdsForge.NdsDirectoryImportResult.NdsDirectoryImportResult(int FilesImported, int DirectoriesImported, long BytesImported, int EntriesSkipped) -> void
+NdsForge.NdsDsiBuildMetadata
+NdsForge.NdsDsiBuildMetadata.AccessControl.get -> uint
+NdsForge.NdsDsiBuildMetadata.AccessControl.set -> void
+NdsForge.NdsDsiBuildMetadata.ApplicationFlags.get -> byte
+NdsForge.NdsDsiBuildMetadata.ApplicationFlags.set -> void
+NdsForge.NdsDsiBuildMetadata.Arm7DeviceListAddress.get -> uint
+NdsForge.NdsDsiBuildMetadata.Arm7DeviceListAddress.set -> void
+NdsForge.NdsDsiBuildMetadata.Digests.get -> NdsForge.NdsDsiDigestOptions?
+NdsForge.NdsDsiBuildMetadata.Digests.set -> void
+NdsForge.NdsDsiBuildMetadata.DsiFlags.get -> byte
+NdsForge.NdsDsiBuildMetadata.DsiFlags.set -> void
+NdsForge.NdsDsiBuildMetadata.Integrity.get -> NdsForge.NdsDsiIntegrityOptions!
+NdsForge.NdsDsiBuildMetadata.Integrity.set -> void
+NdsForge.NdsDsiBuildMetadata.ModcryptArea1.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiBuildMetadata.ModcryptArea1.set -> void
+NdsForge.NdsDsiBuildMetadata.ModcryptArea2.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiBuildMetadata.ModcryptArea2.set -> void
+NdsForge.NdsDsiBuildMetadata.NdsDsiBuildMetadata() -> void
+NdsForge.NdsDsiBuildMetadata.PrivateSaveSize.get -> uint
+NdsForge.NdsDsiBuildMetadata.PrivateSaveSize.set -> void
+NdsForge.NdsDsiBuildMetadata.PublicSaveSize.get -> uint
+NdsForge.NdsDsiBuildMetadata.PublicSaveSize.set -> void
+NdsForge.NdsDsiBuildMetadata.RegionFlags.get -> uint
+NdsForge.NdsDsiBuildMetadata.RegionFlags.set -> void
+NdsForge.NdsDsiBuildMetadata.ScfgExtMask.get -> uint
+NdsForge.NdsDsiBuildMetadata.ScfgExtMask.set -> void
+NdsForge.NdsDsiBuildMetadata.SetAgeRatings(System.ReadOnlySpan<byte> ratings) -> NdsForge.NdsDsiBuildMetadata!
+NdsForge.NdsDsiBuildMetadata.SetMemoryBankSettings(System.ReadOnlySpan<byte> settings) -> NdsForge.NdsDsiBuildMetadata!
+NdsForge.NdsDsiBuildMetadata.TitleId.get -> ulong
+NdsForge.NdsDsiBuildMetadata.TitleId.set -> void
+NdsForge.NdsDsiDigestOptions
+NdsForge.NdsDsiDigestOptions.<Clone>$() -> NdsForge.NdsDsiDigestOptions!
+NdsForge.NdsDsiDigestOptions.BlockSectorCount.get -> int
+NdsForge.NdsDsiDigestOptions.BlockSectorCount.init -> void
+NdsForge.NdsDsiDigestOptions.Equals(NdsForge.NdsDsiDigestOptions? other) -> bool
+NdsForge.NdsDsiDigestOptions.NdsDsiDigestOptions() -> void
+NdsForge.NdsDsiDigestOptions.SectorSize.get -> int
+NdsForge.NdsDsiDigestOptions.SectorSize.init -> void
+NdsForge.NdsDsiHeader
+NdsForge.NdsDsiHeader.AccessControl.get -> uint
+NdsForge.NdsDsiHeader.AgeRatings.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.ApplicationFlags.get -> byte
+NdsForge.NdsDsiHeader.Arm7DeviceListAddress.get -> uint
+NdsForge.NdsDsiHeader.Arm7Hmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.Arm7iHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.Arm9Hmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.Arm9iHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.Arm9WithoutSecureAreaHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.BannerHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.BannerSize.get -> uint
+NdsForge.NdsDsiHeader.BlockHashTable.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiHeader.DebugArguments.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.DigestBlockSectorCount.get -> uint
+NdsForge.NdsDsiHeader.DigestMasterHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.DigestSectorSize.get -> uint
+NdsForge.NdsDsiHeader.GetModcryptArea(NdsForge.NdsModcryptArea area) -> NdsForge.NdsRegion
+NdsForge.NdsDsiHeader.HasModcryptAreas.get -> bool
+NdsForge.NdsDsiHeader.MemoryBankSettings.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.ModcryptArea1.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiHeader.ModcryptArea2.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiHeader.NtrDigest.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiHeader.PrivateSaveSize.get -> uint
+NdsForge.NdsDsiHeader.PublicSaveSize.get -> uint
+NdsForge.NdsDsiHeader.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.RegionFlags.get -> uint
+NdsForge.NdsDsiHeader.RsaSignature.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiHeader.ScfgExtMask.get -> uint
+NdsForge.NdsDsiHeader.SectorHashTable.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiHeader.TitleId.get -> ulong
+NdsForge.NdsDsiHeader.TotalImageSize.get -> uint
+NdsForge.NdsDsiHeader.TwlDigest.get -> NdsForge.NdsRegion
+NdsForge.NdsDsiHeader.UsesInsecureModcryptKey.get -> bool
+NdsForge.NdsDsiHeader.VerifyRsaSignature(NdsForge.NdsDsiRsaPublicKey! publicKey) -> bool
+NdsForge.NdsDsiIntegrityOptions
+NdsForge.NdsDsiIntegrityOptions.ComputesHmacSha1.get -> bool
+NdsForge.NdsDsiIntegrityOptions.SignatureMode.get -> NdsForge.NdsDsiSignatureMode
+NdsForge.NdsDsiKeyScrambler
+NdsForge.NdsDsiRsaPublicKey
+NdsForge.NdsDsiRsaPublicKey.Exponent.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiRsaPublicKey.Modulus.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiRsaPublicKey.NdsDsiRsaPublicKey(System.ReadOnlySpan<byte> modulus, System.ReadOnlySpan<byte> exponent) -> void
+NdsForge.NdsDsiRsaPublicKey.VerifyHeader(System.ReadOnlySpan<byte> signedHeader, System.ReadOnlySpan<byte> signature) -> bool
+NdsForge.NdsDsiRsaSignatureProvider
+NdsForge.NdsDsiRsaSignatureProvider.Dispose() -> void
+NdsForge.NdsDsiRsaSignatureProvider.NdsDsiRsaSignatureProvider(System.Security.Cryptography.RSA! rsa) -> void
+NdsForge.NdsDsiRsaSignatureProvider.SignHeader(System.ReadOnlySpan<byte> signedHeader, System.Span<byte> destination) -> void
+NdsForge.NdsDsiSignatureMode
+NdsForge.NdsDsiSignatureMode.Cleared = 0 -> NdsForge.NdsDsiSignatureMode
+NdsForge.NdsDsiSignatureMode.NoGbaDevelopmentMarker = 1 -> NdsForge.NdsDsiSignatureMode
+NdsForge.NdsDsiSignatureMode.RsaSha1 = 2 -> NdsForge.NdsDsiSignatureMode
+NdsForge.NdsEditPlan
+NdsForge.NdsEditPlan.<Clone>$() -> NdsForge.NdsEditPlan!
+NdsForge.NdsEditPlan.BannerReplaced.get -> bool
+NdsForge.NdsEditPlan.BannerReplaced.init -> void
+NdsForge.NdsEditPlan.Deconstruct(out System.Collections.Generic.IReadOnlyList<NdsForge.NdsFileChange!>! Files, out bool HeaderFieldsChanged, out bool BannerReplaced, out NdsForge.NdsRepairKind Repairs) -> void
+NdsForge.NdsEditPlan.Equals(NdsForge.NdsEditPlan? other) -> bool
+NdsForge.NdsEditPlan.Files.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsFileChange!>!
+NdsForge.NdsEditPlan.Files.init -> void
+NdsForge.NdsEditPlan.HasChanges.get -> bool
+NdsForge.NdsEditPlan.HeaderFieldsChanged.get -> bool
+NdsForge.NdsEditPlan.HeaderFieldsChanged.init -> void
+NdsForge.NdsEditPlan.NdsEditPlan(System.Collections.Generic.IReadOnlyList<NdsForge.NdsFileChange!>! Files, bool HeaderFieldsChanged, bool BannerReplaced, NdsForge.NdsRepairKind Repairs) -> void
+NdsForge.NdsEditPlan.Repairs.get -> NdsForge.NdsRepairKind
+NdsForge.NdsEditPlan.Repairs.init -> void
+NdsForge.NdsElfImportOptions
+NdsForge.NdsElfImportOptions.ImportOverlays.get -> bool
+NdsForge.NdsElfImportOptions.ImportOverlays.set -> void
+NdsForge.NdsElfImportOptions.MaxInputBytes.get -> long
+NdsForge.NdsElfImportOptions.MaxInputBytes.set -> void
+NdsForge.NdsElfImportOptions.MaxOverlays.get -> int
+NdsForge.NdsElfImportOptions.MaxOverlays.set -> void
+NdsForge.NdsElfImportOptions.MaxProgramBytes.get -> int
+NdsForge.NdsElfImportOptions.MaxProgramBytes.set -> void
+NdsForge.NdsElfImportOptions.MaxProgramHeaders.get -> int
+NdsForge.NdsElfImportOptions.MaxProgramHeaders.set -> void
+NdsForge.NdsElfImportOptions.NdsElfImportOptions() -> void
+NdsForge.NdsElfImportResult
+NdsForge.NdsElfImportResult.ApplyTo(NdsForge.NdsImageBuilder! builder) -> NdsForge.NdsImageBuilder!
+NdsForge.NdsElfImportResult.Arm7WramAddress.get -> uint?
+NdsForge.NdsElfImportResult.HasOverlaySegments.get -> bool
+NdsForge.NdsElfImportResult.Overlays.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsOverlayDefinition!>!
+NdsForge.NdsElfImportResult.Program.get -> NdsForge.NdsProgramDefinition!
+NdsForge.NdsElfProgramImporter
+NdsForge.NdsExtractionOptions
+NdsForge.NdsExtractionOptions.<Clone>$() -> NdsForge.NdsExtractionOptions!
+NdsForge.NdsExtractionOptions.Components.get -> NdsForge.NdsImageComponent
+NdsForge.NdsExtractionOptions.Components.init -> void
+NdsForge.NdsExtractionOptions.Equals(NdsForge.NdsExtractionOptions? other) -> bool
+NdsForge.NdsExtractionOptions.FileFilter.get -> System.Func<NdsForge.NdsFile!, bool>?
+NdsForge.NdsExtractionOptions.FileFilter.init -> void
+NdsForge.NdsExtractionOptions.NdsExtractionOptions() -> void
+NdsForge.NdsExtractionOptions.OverwritePolicy.get -> NdsForge.NdsOverwritePolicy
+NdsForge.NdsExtractionOptions.OverwritePolicy.init -> void
+NdsForge.NdsExtractionResult
+NdsForge.NdsExtractionResult.<Clone>$() -> NdsForge.NdsExtractionResult!
+NdsForge.NdsExtractionResult.Deconstruct(out int WrittenFiles, out int SkippedFiles, out long WrittenBytes) -> void
+NdsForge.NdsExtractionResult.Equals(NdsForge.NdsExtractionResult? other) -> bool
+NdsForge.NdsExtractionResult.NdsExtractionResult(int WrittenFiles, int SkippedFiles, long WrittenBytes) -> void
+NdsForge.NdsExtractionResult.SkippedFiles.get -> int
+NdsForge.NdsExtractionResult.SkippedFiles.init -> void
+NdsForge.NdsExtractionResult.WrittenBytes.get -> long
+NdsForge.NdsExtractionResult.WrittenBytes.init -> void
+NdsForge.NdsExtractionResult.WrittenFiles.get -> int
+NdsForge.NdsExtractionResult.WrittenFiles.init -> void
+NdsForge.NdsFile
+NdsForge.NdsFile.CopyToAsync(System.IO.Stream! destination, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+NdsForge.NdsFile.Data.get -> NdsForge.NdsRegion
+NdsForge.NdsFile.FullPath.get -> string!
+NdsForge.NdsFile.Id.get -> int
+NdsForge.NdsFile.Name.get -> string!
+NdsForge.NdsFile.OpenRead() -> System.IO.Stream!
+NdsForge.NdsFile.Parent.get -> NdsForge.NdsDirectory!
+NdsForge.NdsFile.ReadAllBytesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<byte[]!>
+NdsForge.NdsFileAllocation
+NdsForge.NdsFileAllocation.<Clone>$() -> NdsForge.NdsFileAllocation!
+NdsForge.NdsFileAllocation.Data.get -> NdsForge.NdsRegion
+NdsForge.NdsFileAllocation.Data.init -> void
+NdsForge.NdsFileAllocation.Deconstruct(out int FileId, out NdsForge.NdsRegion Data) -> void
+NdsForge.NdsFileAllocation.Equals(NdsForge.NdsFileAllocation? other) -> bool
+NdsForge.NdsFileAllocation.FileId.get -> int
+NdsForge.NdsFileAllocation.FileId.init -> void
+NdsForge.NdsFileAllocation.NdsFileAllocation(int FileId, NdsForge.NdsRegion Data) -> void
+NdsForge.NdsFileChange
+NdsForge.NdsFileChange.<Clone>$() -> NdsForge.NdsFileChange!
+NdsForge.NdsFileChange.Deconstruct(out int FileId, out string? Path, out long OriginalLength, out long ReplacementLength, out bool RequiresRelocation) -> void
+NdsForge.NdsFileChange.Equals(NdsForge.NdsFileChange? other) -> bool
+NdsForge.NdsFileChange.FileId.get -> int
+NdsForge.NdsFileChange.FileId.init -> void
+NdsForge.NdsFileChange.NdsFileChange(int FileId, string? Path, long OriginalLength, long ReplacementLength, bool RequiresRelocation) -> void
+NdsForge.NdsFileChange.OriginalLength.get -> long
+NdsForge.NdsFileChange.OriginalLength.init -> void
+NdsForge.NdsFileChange.Path.get -> string?
+NdsForge.NdsFileChange.Path.init -> void
+NdsForge.NdsFileChange.ReplacementLength.get -> long
+NdsForge.NdsFileChange.ReplacementLength.init -> void
+NdsForge.NdsFileChange.RequiresRelocation.get -> bool
+NdsForge.NdsFileChange.RequiresRelocation.init -> void
+NdsForge.NdsFileCollisionPolicy
+NdsForge.NdsFileCollisionPolicy.Fail = 0 -> NdsForge.NdsFileCollisionPolicy
+NdsForge.NdsFileCollisionPolicy.KeepExisting = 1 -> NdsForge.NdsFileCollisionPolicy
+NdsForge.NdsFileCollisionPolicy.Replace = 2 -> NdsForge.NdsFileCollisionPolicy
+NdsForge.NdsFileSystem
+NdsForge.NdsFileSystem.Allocations.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsFileAllocation!>!
+NdsForge.NdsFileSystem.Directories.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDirectory!>!
+NdsForge.NdsFileSystem.Files.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsFile!>!
+NdsForge.NdsFileSystem.GetDirectory(string! path) -> NdsForge.NdsDirectory!
+NdsForge.NdsFileSystem.GetFile(int fileId) -> NdsForge.NdsFile!
+NdsForge.NdsFileSystem.GetFile(string! path) -> NdsForge.NdsFile!
+NdsForge.NdsFileSystem.Root.get -> NdsForge.NdsDirectory!
+NdsForge.NdsFileSystem.TryGetDirectory(string! path, out NdsForge.NdsDirectory? directory) -> bool
+NdsForge.NdsFileSystem.TryGetFile(string! path, out NdsForge.NdsFile? file) -> bool
+NdsForge.NdsFileSystemBuilder
+NdsForge.NdsFileSystemBuilder.AddFile(string! path, System.ReadOnlySpan<byte> contents) -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsFileSystemBuilder.CreateDirectory(string! path) -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsFileSystemBuilder.Directories.get -> System.Collections.Generic.IReadOnlyCollection<string!>!
+NdsForge.NdsFileSystemBuilder.Files.get -> System.Collections.Generic.IReadOnlyCollection<NdsForge.NdsBuildFile!>!
+NdsForge.NdsFileSystemBuilder.GetFile(string! path) -> NdsForge.NdsBuildFile!
+NdsForge.NdsFileSystemBuilder.ImportDirectoryAsync(string! sourceDirectory, string! destinationDirectory = "/", NdsForge.NdsDirectoryImportOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsDirectoryImportResult!>
+NdsForge.NdsFileSystemBuilder.MoveDirectory(string! sourcePath, string! destinationPath) -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsFileSystemBuilder.MoveFile(string! sourcePath, string! destinationPath) -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsFileSystemBuilder.NdsFileSystemBuilder() -> void
+NdsForge.NdsFileSystemBuilder.RemoveDirectory(string! path) -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsFileSystemBuilder.RemoveFile(string! path) -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsFileSystemBuilder.SetFile(string! path, System.ReadOnlySpan<byte> contents) -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsHeader
+NdsForge.NdsHeader.Arm7.get -> NdsForge.NdsProgram!
+NdsForge.NdsHeader.Arm7AutoLoad.get -> uint
+NdsForge.NdsHeader.Arm7i.get -> NdsForge.NdsProgram?
+NdsForge.NdsHeader.Arm7OverlayTable.get -> NdsForge.NdsRegion
+NdsForge.NdsHeader.Arm9.get -> NdsForge.NdsProgram!
+NdsForge.NdsHeader.Arm9AutoLoad.get -> uint
+NdsForge.NdsHeader.Arm9i.get -> NdsForge.NdsProgram?
+NdsForge.NdsHeader.Arm9OverlayTable.get -> NdsForge.NdsRegion
+NdsForge.NdsHeader.AutoStart.get -> byte
+NdsForge.NdsHeader.BannerOffset.get -> uint
+NdsForge.NdsHeader.DeviceCapacityBytes.get -> long
+NdsForge.NdsHeader.DeviceCapacityExponent.get -> byte
+NdsForge.NdsHeader.Dsi.get -> NdsForge.NdsDsiHeader?
+NdsForge.NdsHeader.DsiFlags.get -> byte
+NdsForge.NdsHeader.EncryptionSeedSelect.get -> byte
+NdsForge.NdsHeader.FileAllocationTable.get -> NdsForge.NdsRegion
+NdsForge.NdsHeader.FileNameTable.get -> NdsForge.NdsRegion
+NdsForge.NdsHeader.GameCode.get -> string!
+NdsForge.NdsHeader.HeaderCrc.get -> ushort
+NdsForge.NdsHeader.HeaderSize.get -> uint
+NdsForge.NdsHeader.Kind.get -> NdsForge.NdsImageKind
+NdsForge.NdsHeader.MakerCode.get -> string!
+NdsForge.NdsHeader.NintendoLogoCrc.get -> ushort
+NdsForge.NdsHeader.NormalCardControl.get -> uint
+NdsForge.NdsHeader.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsHeader.RegionCode.get -> byte
+NdsForge.NdsHeader.SecureAreaCrc.get -> ushort
+NdsForge.NdsHeader.SecureCardControl.get -> uint
+NdsForge.NdsHeader.SecureDisable.get -> ulong
+NdsForge.NdsHeader.SecureTransferTimeout.get -> ushort
+NdsForge.NdsHeader.Title.get -> string!
+NdsForge.NdsHeader.UsedImageSize.get -> uint
+NdsForge.NdsHeader.Version.get -> byte
+NdsForge.NdsHeaderEdit
+NdsForge.NdsHeaderEdit.AutoStart.get -> byte
+NdsForge.NdsHeaderEdit.AutoStart.set -> void
+NdsForge.NdsHeaderEdit.GameCode.get -> string!
+NdsForge.NdsHeaderEdit.GameCode.set -> void
+NdsForge.NdsHeaderEdit.MakerCode.get -> string!
+NdsForge.NdsHeaderEdit.MakerCode.set -> void
+NdsForge.NdsHeaderEdit.NormalCardControl.get -> uint
+NdsForge.NdsHeaderEdit.NormalCardControl.set -> void
+NdsForge.NdsHeaderEdit.RegionCode.get -> byte
+NdsForge.NdsHeaderEdit.RegionCode.set -> void
+NdsForge.NdsHeaderEdit.SecureCardControl.get -> uint
+NdsForge.NdsHeaderEdit.SecureCardControl.set -> void
+NdsForge.NdsHeaderEdit.SecureTransferTimeout.get -> ushort
+NdsForge.NdsHeaderEdit.SecureTransferTimeout.set -> void
+NdsForge.NdsHeaderEdit.Title.get -> string!
+NdsForge.NdsHeaderEdit.Title.set -> void
+NdsForge.NdsHeaderEdit.Version.get -> byte
+NdsForge.NdsHeaderEdit.Version.set -> void
+NdsForge.NdsHostLinkPolicy
+NdsForge.NdsHostLinkPolicy.Reject = 0 -> NdsForge.NdsHostLinkPolicy
+NdsForge.NdsHostLinkPolicy.Skip = 1 -> NdsForge.NdsHostLinkPolicy
+NdsForge.NdsImage
+NdsForge.NdsImage.Arm7Overlays.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsOverlay!>!
+NdsForge.NdsImage.Arm9Overlays.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsOverlay!>!
+NdsForge.NdsImage.Banner.get -> NdsForge.NdsBanner?
+NdsForge.NdsImage.CompareAsync(NdsForge.NdsImage! other, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageDiff!>
+NdsForge.NdsImage.CopyToAsync(NdsForge.NdsRegion region, System.IO.Stream! destination, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+NdsForge.NdsImage.CreateManifestAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageManifest!>
+NdsForge.NdsImage.Dispose() -> void
+NdsForge.NdsImage.DisposeAsync() -> System.Threading.Tasks.ValueTask
+NdsForge.NdsImage.Edit() -> NdsForge.NdsImageEditor!
+NdsForge.NdsImage.ExtractAsync(string! destination, NdsForge.NdsExtractionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsExtractionResult!>
+NdsForge.NdsImage.FileSystem.get -> NdsForge.NdsFileSystem!
+NdsForge.NdsImage.Header.get -> NdsForge.NdsHeader!
+NdsForge.NdsImage.Length.get -> long
+NdsForge.NdsImage.OpenRead(NdsForge.NdsRegion region) -> System.IO.Stream!
+NdsForge.NdsImage.TransformModcryptAreaAsync(NdsForge.NdsModcryptArea area, System.IO.Stream! destination, NdsForge.NdsModcryptContext! context, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+NdsForge.NdsImage.Validate(NdsForge.NdsValidationOptions? options = null) -> NdsForge.NdsValidationResult!
+NdsForge.NdsImageBuilder
+NdsForge.NdsImageBuilder.AddOverlay(NdsForge.NdsOverlayDefinition! overlay) -> NdsForge.NdsImageBuilder!
+NdsForge.NdsImageBuilder.Arm7.get -> NdsForge.NdsProgramDefinition?
+NdsForge.NdsImageBuilder.Arm7.set -> void
+NdsForge.NdsImageBuilder.Arm7AutoLoad.get -> uint
+NdsForge.NdsImageBuilder.Arm7AutoLoad.set -> void
+NdsForge.NdsImageBuilder.Arm7i.get -> NdsForge.NdsProgramDefinition?
+NdsForge.NdsImageBuilder.Arm7i.set -> void
+NdsForge.NdsImageBuilder.Arm7Overlays.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsOverlayDefinition!>!
+NdsForge.NdsImageBuilder.Arm9.get -> NdsForge.NdsProgramDefinition?
+NdsForge.NdsImageBuilder.Arm9.set -> void
+NdsForge.NdsImageBuilder.Arm9AutoLoad.get -> uint
+NdsForge.NdsImageBuilder.Arm9AutoLoad.set -> void
+NdsForge.NdsImageBuilder.Arm9i.get -> NdsForge.NdsProgramDefinition?
+NdsForge.NdsImageBuilder.Arm9i.set -> void
+NdsForge.NdsImageBuilder.Arm9Overlays.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsOverlayDefinition!>!
+NdsForge.NdsImageBuilder.AutoStart.get -> byte
+NdsForge.NdsImageBuilder.AutoStart.set -> void
+NdsForge.NdsImageBuilder.Banner.get -> NdsForge.NdsBanner?
+NdsForge.NdsImageBuilder.Banner.set -> void
+NdsForge.NdsImageBuilder.BuildAsync(NdsForge.NdsImageBuildOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<byte[]!>
+NdsForge.NdsImageBuilder.DsiMetadata.get -> NdsForge.NdsDsiBuildMetadata?
+NdsForge.NdsImageBuilder.DsiMetadata.set -> void
+NdsForge.NdsImageBuilder.EncryptionSeedSelect.get -> byte
+NdsForge.NdsImageBuilder.EncryptionSeedSelect.set -> void
+NdsForge.NdsImageBuilder.FileSystem.get -> NdsForge.NdsFileSystemBuilder!
+NdsForge.NdsImageBuilder.GameCode.get -> string!
+NdsForge.NdsImageBuilder.GameCode.set -> void
+NdsForge.NdsImageBuilder.Kind.get -> NdsForge.NdsImageKind
+NdsForge.NdsImageBuilder.Kind.set -> void
+NdsForge.NdsImageBuilder.MakerCode.get -> string!
+NdsForge.NdsImageBuilder.MakerCode.set -> void
+NdsForge.NdsImageBuilder.NdsImageBuilder() -> void
+NdsForge.NdsImageBuilder.NormalCardControl.get -> uint
+NdsForge.NdsImageBuilder.NormalCardControl.set -> void
+NdsForge.NdsImageBuilder.RegionCode.get -> byte
+NdsForge.NdsImageBuilder.RegionCode.set -> void
+NdsForge.NdsImageBuilder.SecureCardControl.get -> uint
+NdsForge.NdsImageBuilder.SecureCardControl.set -> void
+NdsForge.NdsImageBuilder.SecureDisable.get -> ulong
+NdsForge.NdsImageBuilder.SecureDisable.set -> void
+NdsForge.NdsImageBuilder.SecureTransferTimeout.get -> ushort
+NdsForge.NdsImageBuilder.SecureTransferTimeout.set -> void
+NdsForge.NdsImageBuilder.SetNintendoLogo(System.ReadOnlySpan<byte> data) -> NdsForge.NdsImageBuilder!
+NdsForge.NdsImageBuilder.Title.get -> string!
+NdsForge.NdsImageBuilder.Title.set -> void
+NdsForge.NdsImageBuilder.Version.get -> byte
+NdsForge.NdsImageBuilder.Version.set -> void
+NdsForge.NdsImageBuilder.WriteAsync(string! path, NdsForge.NdsImageBuildOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageBuildResult!>
+NdsForge.NdsImageBuilder.WriteAsync(System.IO.Stream! destination, NdsForge.NdsImageBuildOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageBuildResult!>
+NdsForge.NdsImageBuildOptions
+NdsForge.NdsImageBuildOptions.<Clone>$() -> NdsForge.NdsImageBuildOptions!
+NdsForge.NdsImageBuildOptions.Equals(NdsForge.NdsImageBuildOptions? other) -> bool
+NdsForge.NdsImageBuildOptions.FileAlignment.get -> int
+NdsForge.NdsImageBuildOptions.FileAlignment.init -> void
+NdsForge.NdsImageBuildOptions.HeaderSize.get -> int
+NdsForge.NdsImageBuildOptions.HeaderSize.init -> void
+NdsForge.NdsImageBuildOptions.NdsImageBuildOptions() -> void
+NdsForge.NdsImageBuildOptions.OverwriteDestination.get -> bool
+NdsForge.NdsImageBuildOptions.OverwriteDestination.init -> void
+NdsForge.NdsImageBuildOptions.PaddingByte.get -> byte
+NdsForge.NdsImageBuildOptions.PaddingByte.init -> void
+NdsForge.NdsImageBuildOptions.Profile.get -> NdsForge.NdsImageBuildProfile
+NdsForge.NdsImageBuildOptions.Profile.init -> void
+NdsForge.NdsImageBuildOptions.SectionAlignment.get -> int
+NdsForge.NdsImageBuildOptions.SectionAlignment.init -> void
+NdsForge.NdsImageBuildOptions.VerifyOutput.get -> bool
+NdsForge.NdsImageBuildOptions.VerifyOutput.init -> void
+NdsForge.NdsImageBuildProfile
+NdsForge.NdsImageBuildProfile.Deterministic = 0 -> NdsForge.NdsImageBuildProfile
+NdsForge.NdsImageBuildProfile.Ndstool1503 = 1 -> NdsForge.NdsImageBuildProfile
+NdsForge.NdsImageBuildResult
+NdsForge.NdsImageBuildResult.AllocationCount.get -> int
+NdsForge.NdsImageBuildResult.Arm7.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.Arm7i.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageBuildResult.Arm7OverlayTable.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.Arm9.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.Arm9Footer.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageBuildResult.Arm9i.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageBuildResult.Arm9OverlayTable.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.Banner.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageBuildResult.BlockHashTable.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.FileAllocationTable.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.FileCount.get -> int
+NdsForge.NdsImageBuildResult.FileNameTable.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.PhysicalSize.get -> long
+NdsForge.NdsImageBuildResult.SectorHashTable.get -> NdsForge.NdsRegion
+NdsForge.NdsImageBuildResult.UsedSize.get -> long
+NdsForge.NdsImageComparer
+NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.All = NdsForge.NdsImageComponent.Header | NdsForge.NdsImageComponent.Programs | NdsForge.NdsImageComponent.FileSystemTables | NdsForge.NdsImageComponent.NitroFileSystem | NdsForge.NdsImageComponent.Overlays | NdsForge.NdsImageComponent.Banner | NdsForge.NdsImageComponent.Logo -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.Banner = 32 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.FileSystemTables = 4 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.Header = 1 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.Logo = 64 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.NitroFileSystem = 8 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.None = 0 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.Overlays = 16 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageComponent.Programs = 2 -> NdsForge.NdsImageComponent
+NdsForge.NdsImageDiff
+NdsForge.NdsImageDiff.AreEquivalent.get -> bool
+NdsForge.NdsImageDiff.Differences.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsSemanticDifference!>!
+NdsForge.NdsImageDiff.LeftImageSha256.get -> string!
+NdsForge.NdsImageDiff.RightImageSha256.get -> string!
+NdsForge.NdsImageEditor
+NdsForge.NdsImageEditor.Changes.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsFileChange!>!
+NdsForge.NdsImageEditor.Header.get -> NdsForge.NdsHeaderEdit!
+NdsForge.NdsImageEditor.Plan.get -> NdsForge.NdsEditPlan!
+NdsForge.NdsImageEditor.RepairBannerCrcs() -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.RepairHeaderCrc() -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.RepairNintendoLogoCrc() -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.RepairSecureAreaCrc(NdsForge.NdsKey1KeyTable! keyTable) -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.ReplaceAllocation(int fileId, System.ReadOnlySpan<byte> contents) -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.ReplaceBanner(NdsForge.NdsBanner! banner) -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.ReplaceFile(NdsForge.NdsFile! file, System.ReadOnlySpan<byte> contents) -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.ReplaceFile(string! path, System.ReadOnlySpan<byte> contents) -> NdsForge.NdsImageEditor!
+NdsForge.NdsImageEditor.Revert(int fileId) -> bool
+NdsForge.NdsImageEditor.SaveAsync(string! path, NdsForge.NdsWriteOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsSaveResult!>
+NdsForge.NdsImageEditor.SaveAsync(System.IO.Stream! destination, NdsForge.NdsWriteOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsSaveResult!>
+NdsForge.NdsImageKind
+NdsForge.NdsImageKind.NintendoDs = 0 -> NdsForge.NdsImageKind
+NdsForge.NdsImageKind.NintendoDsiEnhanced = 2 -> NdsForge.NdsImageKind
+NdsForge.NdsImageKind.NintendoDsiExclusive = 3 -> NdsForge.NdsImageKind
+NdsForge.NdsImageManifest
+NdsForge.NdsImageManifest.Allocations.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsManifestAllocation!>!
+NdsForge.NdsImageManifest.Allocations.init -> void
+NdsForge.NdsImageManifest.Banner.get -> NdsForge.NdsManifestBanner?
+NdsForge.NdsImageManifest.Banner.init -> void
+NdsForge.NdsImageManifest.Directories.get -> System.Collections.Generic.IReadOnlyList<string!>!
+NdsForge.NdsImageManifest.Directories.init -> void
+NdsForge.NdsImageManifest.Dsi.get -> NdsForge.NdsManifestDsi?
+NdsForge.NdsImageManifest.Dsi.init -> void
+NdsForge.NdsImageManifest.Files.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsManifestFile!>!
+NdsForge.NdsImageManifest.Files.init -> void
+NdsForge.NdsImageManifest.Header.get -> NdsForge.NdsManifestHeader!
+NdsForge.NdsImageManifest.Header.init -> void
+NdsForge.NdsImageManifest.ImageSha256.get -> string!
+NdsForge.NdsImageManifest.ImageSha256.init -> void
+NdsForge.NdsImageManifest.NdsImageManifest() -> void
+NdsForge.NdsImageManifest.Overlays.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsManifestOverlay!>!
+NdsForge.NdsImageManifest.Overlays.init -> void
+NdsForge.NdsImageManifest.PhysicalLength.get -> long
+NdsForge.NdsImageManifest.PhysicalLength.init -> void
+NdsForge.NdsImageManifest.Programs.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsManifestProgram!>!
+NdsForge.NdsImageManifest.Programs.init -> void
+NdsForge.NdsImageManifest.SchemaVersion.get -> int
+NdsForge.NdsImageManifest.SchemaVersion.init -> void
+NdsForge.NdsImageManifest.ToJson(bool indented = true) -> string!
+NdsForge.NdsImageManifest.WriteJsonAsync(System.IO.Stream! destination, bool indented = true, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+NdsForge.NdsKey1KeyTable
+NdsForge.NdsKey1KeyTable.Export() -> byte[]!
+NdsForge.NdsKey1KeyTable.NdsKey1KeyTable(System.ReadOnlySpan<byte> data) -> void
+NdsForge.NdsLegacyArm7Hook
+NdsForge.NdsLegacyArm7HookResult
+NdsForge.NdsLegacyArm7HookResult.Crc32.get -> uint
+NdsForge.NdsLegacyArm7HookResult.HeaderBackup.get -> NdsForge.NdsRegion
+NdsForge.NdsLegacyArm7HookResult.Hook.get -> NdsForge.NdsRegion
+NdsForge.NdsLegacyArm7HookResult.Image.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsLegacyArm7HookResult.RelocatedArm7.get -> NdsForge.NdsRegion
+NdsForge.NdsManifestAllocation
+NdsForge.NdsManifestAllocation.FileId.get -> int
+NdsForge.NdsManifestAllocation.FileId.init -> void
+NdsForge.NdsManifestAllocation.Length.get -> long
+NdsForge.NdsManifestAllocation.Length.init -> void
+NdsForge.NdsManifestAllocation.NdsManifestAllocation() -> void
+NdsForge.NdsManifestAllocation.Offset.get -> long
+NdsForge.NdsManifestAllocation.Offset.init -> void
+NdsForge.NdsManifestAllocation.Sha256.get -> string!
+NdsForge.NdsManifestAllocation.Sha256.init -> void
+NdsForge.NdsManifestBanner
+NdsForge.NdsManifestBanner.IsAnimated.get -> bool
+NdsForge.NdsManifestBanner.IsAnimated.init -> void
+NdsForge.NdsManifestBanner.Length.get -> long
+NdsForge.NdsManifestBanner.Length.init -> void
+NdsForge.NdsManifestBanner.NdsManifestBanner() -> void
+NdsForge.NdsManifestBanner.Offset.get -> long
+NdsForge.NdsManifestBanner.Offset.init -> void
+NdsForge.NdsManifestBanner.Sha256.get -> string!
+NdsForge.NdsManifestBanner.Sha256.init -> void
+NdsForge.NdsManifestBanner.Titles.get -> System.Collections.Generic.IReadOnlyDictionary<string!, string!>!
+NdsForge.NdsManifestBanner.Titles.init -> void
+NdsForge.NdsManifestBanner.Version.get -> ushort
+NdsForge.NdsManifestBanner.Version.init -> void
+NdsForge.NdsManifestDsi
+NdsForge.NdsManifestDsi.AccessControl.get -> uint
+NdsForge.NdsManifestDsi.AccessControl.init -> void
+NdsForge.NdsManifestDsi.HasModcryptAreas.get -> bool
+NdsForge.NdsManifestDsi.HasModcryptAreas.init -> void
+NdsForge.NdsManifestDsi.ModcryptArea1.get -> NdsForge.NdsManifestRegion!
+NdsForge.NdsManifestDsi.ModcryptArea1.init -> void
+NdsForge.NdsManifestDsi.ModcryptArea2.get -> NdsForge.NdsManifestRegion!
+NdsForge.NdsManifestDsi.ModcryptArea2.init -> void
+NdsForge.NdsManifestDsi.NdsManifestDsi() -> void
+NdsForge.NdsManifestDsi.RegionFlags.get -> uint
+NdsForge.NdsManifestDsi.RegionFlags.init -> void
+NdsForge.NdsManifestDsi.TitleId.get -> ulong
+NdsForge.NdsManifestDsi.TitleId.init -> void
+NdsForge.NdsManifestDsi.TotalImageSize.get -> uint
+NdsForge.NdsManifestDsi.TotalImageSize.init -> void
+NdsForge.NdsManifestDsi.UsesInsecureModcryptKey.get -> bool
+NdsForge.NdsManifestDsi.UsesInsecureModcryptKey.init -> void
+NdsForge.NdsManifestFile
+NdsForge.NdsManifestFile.FileId.get -> int
+NdsForge.NdsManifestFile.FileId.init -> void
+NdsForge.NdsManifestFile.Length.get -> long
+NdsForge.NdsManifestFile.Length.init -> void
+NdsForge.NdsManifestFile.NdsManifestFile() -> void
+NdsForge.NdsManifestFile.Offset.get -> long
+NdsForge.NdsManifestFile.Offset.init -> void
+NdsForge.NdsManifestFile.Path.get -> string!
+NdsForge.NdsManifestFile.Path.init -> void
+NdsForge.NdsManifestFile.Sha256.get -> string!
+NdsForge.NdsManifestFile.Sha256.init -> void
+NdsForge.NdsManifestHeader
+NdsForge.NdsManifestHeader.AutoStart.get -> byte
+NdsForge.NdsManifestHeader.AutoStart.init -> void
+NdsForge.NdsManifestHeader.DeviceCapacityBytes.get -> long
+NdsForge.NdsManifestHeader.DeviceCapacityBytes.init -> void
+NdsForge.NdsManifestHeader.GameCode.get -> string!
+NdsForge.NdsManifestHeader.GameCode.init -> void
+NdsForge.NdsManifestHeader.Kind.get -> NdsForge.NdsImageKind
+NdsForge.NdsManifestHeader.Kind.init -> void
+NdsForge.NdsManifestHeader.MakerCode.get -> string!
+NdsForge.NdsManifestHeader.MakerCode.init -> void
+NdsForge.NdsManifestHeader.NdsManifestHeader() -> void
+NdsForge.NdsManifestHeader.NormalCardControl.get -> uint
+NdsForge.NdsManifestHeader.NormalCardControl.init -> void
+NdsForge.NdsManifestHeader.RegionCode.get -> byte
+NdsForge.NdsManifestHeader.RegionCode.init -> void
+NdsForge.NdsManifestHeader.SecureCardControl.get -> uint
+NdsForge.NdsManifestHeader.SecureCardControl.init -> void
+NdsForge.NdsManifestHeader.Sha256.get -> string!
+NdsForge.NdsManifestHeader.Sha256.init -> void
+NdsForge.NdsManifestHeader.Title.get -> string!
+NdsForge.NdsManifestHeader.Title.init -> void
+NdsForge.NdsManifestHeader.UsedImageSize.get -> uint
+NdsForge.NdsManifestHeader.UsedImageSize.init -> void
+NdsForge.NdsManifestHeader.Version.get -> byte
+NdsForge.NdsManifestHeader.Version.init -> void
+NdsForge.NdsManifestOverlay
+NdsForge.NdsManifestOverlay.BssSize.get -> uint
+NdsForge.NdsManifestOverlay.BssSize.init -> void
+NdsForge.NdsManifestOverlay.CompressedSize.get -> uint
+NdsForge.NdsManifestOverlay.CompressedSize.init -> void
+NdsForge.NdsManifestOverlay.FileId.get -> uint
+NdsForge.NdsManifestOverlay.FileId.init -> void
+NdsForge.NdsManifestOverlay.FilePath.get -> string?
+NdsForge.NdsManifestOverlay.FilePath.init -> void
+NdsForge.NdsManifestOverlay.Flags.get -> byte
+NdsForge.NdsManifestOverlay.Flags.init -> void
+NdsForge.NdsManifestOverlay.Length.get -> long?
+NdsForge.NdsManifestOverlay.Length.init -> void
+NdsForge.NdsManifestOverlay.LoadAddress.get -> uint
+NdsForge.NdsManifestOverlay.LoadAddress.init -> void
+NdsForge.NdsManifestOverlay.NdsManifestOverlay() -> void
+NdsForge.NdsManifestOverlay.Offset.get -> long?
+NdsForge.NdsManifestOverlay.Offset.init -> void
+NdsForge.NdsManifestOverlay.OverlayId.get -> uint
+NdsForge.NdsManifestOverlay.OverlayId.init -> void
+NdsForge.NdsManifestOverlay.Processor.get -> NdsForge.NdsProcessor
+NdsForge.NdsManifestOverlay.Processor.init -> void
+NdsForge.NdsManifestOverlay.RamSize.get -> uint
+NdsForge.NdsManifestOverlay.RamSize.init -> void
+NdsForge.NdsManifestOverlay.Sha256.get -> string?
+NdsForge.NdsManifestOverlay.Sha256.init -> void
+NdsForge.NdsManifestOverlay.StaticInitializerEnd.get -> uint
+NdsForge.NdsManifestOverlay.StaticInitializerEnd.init -> void
+NdsForge.NdsManifestOverlay.StaticInitializerStart.get -> uint
+NdsForge.NdsManifestOverlay.StaticInitializerStart.init -> void
+NdsForge.NdsManifestProgram
+NdsForge.NdsManifestProgram.EntryAddress.get -> uint
+NdsForge.NdsManifestProgram.EntryAddress.init -> void
+NdsForge.NdsManifestProgram.Length.get -> long
+NdsForge.NdsManifestProgram.Length.init -> void
+NdsForge.NdsManifestProgram.LoadAddress.get -> uint
+NdsForge.NdsManifestProgram.LoadAddress.init -> void
+NdsForge.NdsManifestProgram.NdsManifestProgram() -> void
+NdsForge.NdsManifestProgram.Offset.get -> long
+NdsForge.NdsManifestProgram.Offset.init -> void
+NdsForge.NdsManifestProgram.Processor.get -> NdsForge.NdsProcessor
+NdsForge.NdsManifestProgram.Processor.init -> void
+NdsForge.NdsManifestProgram.Sha256.get -> string!
+NdsForge.NdsManifestProgram.Sha256.init -> void
+NdsForge.NdsManifestRegion
+NdsForge.NdsManifestRegion.Length.get -> long
+NdsForge.NdsManifestRegion.Length.init -> void
+NdsForge.NdsManifestRegion.NdsManifestRegion() -> void
+NdsForge.NdsManifestRegion.Offset.get -> long
+NdsForge.NdsManifestRegion.Offset.init -> void
+NdsForge.NdsModcrypt
+NdsForge.NdsModcryptArea
+NdsForge.NdsModcryptArea.First = 0 -> NdsForge.NdsModcryptArea
+NdsForge.NdsModcryptArea.Second = 1 -> NdsForge.NdsModcryptArea
+NdsForge.NdsModcryptContext
+NdsForge.NdsModcryptContext.ExportCounter(NdsForge.NdsModcryptArea area) -> System.ReadOnlyMemory<byte>
+NdsForge.NdsModcryptContext.ExportKey() -> System.ReadOnlyMemory<byte>
+NdsForge.NdsModcryptContext.KeyMode.get -> NdsForge.NdsModcryptKeyMode
+NdsForge.NdsModcryptContext.NdsModcryptContext(System.ReadOnlySpan<byte> key, System.ReadOnlySpan<byte> area1Counter, System.ReadOnlySpan<byte> area2Counter, NdsForge.NdsModcryptKeyMode keyMode = NdsForge.NdsModcryptKeyMode.SecureNormalKey) -> void
+NdsForge.NdsModcryptKeyMode
+NdsForge.NdsModcryptKeyMode.InsecureHeaderKey = 0 -> NdsForge.NdsModcryptKeyMode
+NdsForge.NdsModcryptKeyMode.SecureNormalKey = 1 -> NdsForge.NdsModcryptKeyMode
+NdsForge.NdsOverlay
+NdsForge.NdsOverlay.BssSize.get -> uint
+NdsForge.NdsOverlay.CompressedSize.get -> uint
+NdsForge.NdsOverlay.Data.get -> NdsForge.NdsRegion?
+NdsForge.NdsOverlay.File.get -> NdsForge.NdsFile?
+NdsForge.NdsOverlay.FileId.get -> uint
+NdsForge.NdsOverlay.Flags.get -> byte
+NdsForge.NdsOverlay.Id.get -> uint
+NdsForge.NdsOverlay.LoadAddress.get -> uint
+NdsForge.NdsOverlay.Processor.get -> NdsForge.NdsProcessor
+NdsForge.NdsOverlay.RamSize.get -> uint
+NdsForge.NdsOverlay.StaticInitializerEnd.get -> uint
+NdsForge.NdsOverlay.StaticInitializerStart.get -> uint
+NdsForge.NdsOverlayDefinition
+NdsForge.NdsOverlayDefinition.BssSize.get -> uint
+NdsForge.NdsOverlayDefinition.CompressedSize.get -> uint
+NdsForge.NdsOverlayDefinition.Contents.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsOverlayDefinition.Flags.get -> byte
+NdsForge.NdsOverlayDefinition.Id.get -> uint
+NdsForge.NdsOverlayDefinition.LinkedFilePath.get -> string?
+NdsForge.NdsOverlayDefinition.LoadAddress.get -> uint
+NdsForge.NdsOverlayDefinition.NdsOverlayDefinition(NdsForge.NdsProcessor processor, uint id, System.ReadOnlySpan<byte> contents, uint loadAddress, uint ramSize, uint bssSize = 0, uint staticInitializerStart = 0, uint staticInitializerEnd = 0, uint compressedSize = 0, byte flags = 0) -> void
+NdsForge.NdsOverlayDefinition.Processor.get -> NdsForge.NdsProcessor
+NdsForge.NdsOverlayDefinition.RamSize.get -> uint
+NdsForge.NdsOverlayDefinition.StaticInitializerEnd.get -> uint
+NdsForge.NdsOverlayDefinition.StaticInitializerStart.get -> uint
+NdsForge.NdsOverwritePolicy
+NdsForge.NdsOverwritePolicy.Fail = 0 -> NdsForge.NdsOverwritePolicy
+NdsForge.NdsOverwritePolicy.Overwrite = 1 -> NdsForge.NdsOverwritePolicy
+NdsForge.NdsOverwritePolicy.Skip = 2 -> NdsForge.NdsOverwritePolicy
+NdsForge.NdsProcessor
+NdsForge.NdsProcessor.Arm7 = 1 -> NdsForge.NdsProcessor
+NdsForge.NdsProcessor.Arm7i = 3 -> NdsForge.NdsProcessor
+NdsForge.NdsProcessor.Arm9 = 0 -> NdsForge.NdsProcessor
+NdsForge.NdsProcessor.Arm9i = 2 -> NdsForge.NdsProcessor
+NdsForge.NdsProgram
+NdsForge.NdsProgram.<Clone>$() -> NdsForge.NdsProgram!
+NdsForge.NdsProgram.CompleteData.get -> NdsForge.NdsRegion
+NdsForge.NdsProgram.Data.get -> NdsForge.NdsRegion
+NdsForge.NdsProgram.Data.init -> void
+NdsForge.NdsProgram.Deconstruct(out NdsForge.NdsProcessor Processor, out NdsForge.NdsRegion Data, out uint EntryAddress, out uint LoadAddress) -> void
+NdsForge.NdsProgram.EntryAddress.get -> uint
+NdsForge.NdsProgram.EntryAddress.init -> void
+NdsForge.NdsProgram.Equals(NdsForge.NdsProgram? other) -> bool
+NdsForge.NdsProgram.Footer.get -> NdsForge.NdsRegion?
+NdsForge.NdsProgram.LoadAddress.get -> uint
+NdsForge.NdsProgram.LoadAddress.init -> void
+NdsForge.NdsProgram.NdsProgram(NdsForge.NdsProcessor Processor, NdsForge.NdsRegion Data, uint EntryAddress, uint LoadAddress) -> void
+NdsForge.NdsProgram.Processor.get -> NdsForge.NdsProcessor
+NdsForge.NdsProgram.Processor.init -> void
+NdsForge.NdsProgramDefinition
+NdsForge.NdsProgramDefinition.Contents.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsProgramDefinition.EntryAddress.get -> uint
+NdsForge.NdsProgramDefinition.Footer.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsProgramDefinition.LoadAddress.get -> uint
+NdsForge.NdsProgramDefinition.NdsProgramDefinition(NdsForge.NdsProcessor processor, System.ReadOnlySpan<byte> contents, uint loadAddress, uint entryAddress) -> void
+NdsForge.NdsProgramDefinition.Processor.get -> NdsForge.NdsProcessor
+NdsForge.NdsProgramDefinition.SetFooter(System.ReadOnlySpan<byte> footer) -> NdsForge.NdsProgramDefinition!
+NdsForge.NdsReadOptions
+NdsForge.NdsReadOptions.<Clone>$() -> NdsForge.NdsReadOptions!
+NdsForge.NdsReadOptions.Equals(NdsForge.NdsReadOptions? other) -> bool
+NdsForge.NdsReadOptions.MaximumBannerBytes.get -> int
+NdsForge.NdsReadOptions.MaximumBannerBytes.init -> void
+NdsForge.NdsReadOptions.MaximumDirectoryCount.get -> int
+NdsForge.NdsReadOptions.MaximumDirectoryCount.init -> void
+NdsForge.NdsReadOptions.MaximumDirectoryDepth.get -> int
+NdsForge.NdsReadOptions.MaximumDirectoryDepth.init -> void
+NdsForge.NdsReadOptions.MaximumFileAllocationTableBytes.get -> int
+NdsForge.NdsReadOptions.MaximumFileAllocationTableBytes.init -> void
+NdsForge.NdsReadOptions.MaximumFileNameTableBytes.get -> int
+NdsForge.NdsReadOptions.MaximumFileNameTableBytes.init -> void
+NdsForge.NdsReadOptions.MaximumOverlayCount.get -> int
+NdsForge.NdsReadOptions.MaximumOverlayCount.init -> void
+NdsForge.NdsReadOptions.NdsReadOptions() -> void
+NdsForge.NdsRegion
+NdsForge.NdsRegion.Deconstruct(out long Offset, out long Length) -> void
+NdsForge.NdsRegion.End.get -> long
+NdsForge.NdsRegion.Equals(NdsForge.NdsRegion other) -> bool
+NdsForge.NdsRegion.IsEmpty.get -> bool
+NdsForge.NdsRegion.Length.get -> long
+NdsForge.NdsRegion.Length.init -> void
+NdsForge.NdsRegion.NdsRegion() -> void
+NdsForge.NdsRegion.NdsRegion(long Offset, long Length) -> void
+NdsForge.NdsRegion.Offset.get -> long
+NdsForge.NdsRegion.Offset.init -> void
+NdsForge.NdsRepairKind
+NdsForge.NdsRepairKind.BannerCrcs = 4 -> NdsForge.NdsRepairKind
+NdsForge.NdsRepairKind.HeaderCrc = 1 -> NdsForge.NdsRepairKind
+NdsForge.NdsRepairKind.NintendoLogoCrc = 2 -> NdsForge.NdsRepairKind
+NdsForge.NdsRepairKind.None = 0 -> NdsForge.NdsRepairKind
+NdsForge.NdsRepairKind.SecureAreaCrc = 8 -> NdsForge.NdsRepairKind
+NdsForge.NdsSaveResult
+NdsForge.NdsSaveResult.<Clone>$() -> NdsForge.NdsSaveResult!
+NdsForge.NdsSaveResult.AppliedChanges.get -> int
+NdsForge.NdsSaveResult.AppliedChanges.init -> void
+NdsForge.NdsSaveResult.Deconstruct(out int AppliedChanges, out int RelocatedFiles, out long UsedImageSize, out long PhysicalImageSize) -> void
+NdsForge.NdsSaveResult.Equals(NdsForge.NdsSaveResult? other) -> bool
+NdsForge.NdsSaveResult.NdsSaveResult(int AppliedChanges, int RelocatedFiles, long UsedImageSize, long PhysicalImageSize) -> void
+NdsForge.NdsSaveResult.PhysicalImageSize.get -> long
+NdsForge.NdsSaveResult.PhysicalImageSize.init -> void
+NdsForge.NdsSaveResult.RelocatedFiles.get -> int
+NdsForge.NdsSaveResult.RelocatedFiles.init -> void
+NdsForge.NdsSaveResult.UsedImageSize.get -> long
+NdsForge.NdsSaveResult.UsedImageSize.init -> void
+NdsForge.NdsSecureArea
+NdsForge.NdsSecureAreaInspection
+NdsForge.NdsSecureAreaInspection.<Clone>$() -> NdsForge.NdsSecureAreaInspection!
+NdsForge.NdsSecureAreaInspection.CalculatedCrc.get -> ushort?
+NdsForge.NdsSecureAreaInspection.CalculatedCrc.init -> void
+NdsForge.NdsSecureAreaInspection.Deconstruct(out NdsForge.NdsSecureAreaState State, out NdsForge.NdsRegion Region, out ushort StoredCrc, out ushort? CalculatedCrc) -> void
+NdsForge.NdsSecureAreaInspection.Equals(NdsForge.NdsSecureAreaInspection? other) -> bool
+NdsForge.NdsSecureAreaInspection.IsCrcValid.get -> bool?
+NdsForge.NdsSecureAreaInspection.IsTransformable.get -> bool
+NdsForge.NdsSecureAreaInspection.NdsSecureAreaInspection(NdsForge.NdsSecureAreaState State, NdsForge.NdsRegion Region, ushort StoredCrc, ushort? CalculatedCrc) -> void
+NdsForge.NdsSecureAreaInspection.Region.get -> NdsForge.NdsRegion
+NdsForge.NdsSecureAreaInspection.Region.init -> void
+NdsForge.NdsSecureAreaInspection.State.get -> NdsForge.NdsSecureAreaState
+NdsForge.NdsSecureAreaInspection.State.init -> void
+NdsForge.NdsSecureAreaInspection.StoredCrc.get -> ushort
+NdsForge.NdsSecureAreaInspection.StoredCrc.init -> void
+NdsForge.NdsSecureAreaState
+NdsForge.NdsSecureAreaState.Absent = 0 -> NdsForge.NdsSecureAreaState
+NdsForge.NdsSecureAreaState.Decrypted = 1 -> NdsForge.NdsSecureAreaState
+NdsForge.NdsSecureAreaState.Encrypted = 2 -> NdsForge.NdsSecureAreaState
+NdsForge.NdsSecureAreaState.Malformed = 5 -> NdsForge.NdsSecureAreaState
+NdsForge.NdsSecureAreaState.Multiboot = 3 -> NdsForge.NdsSecureAreaState
+NdsForge.NdsSecureAreaState.Unrecognized = 4 -> NdsForge.NdsSecureAreaState
+NdsForge.NdsSemanticDifference
+NdsForge.NdsSemanticDifference.After.get -> string?
+NdsForge.NdsSemanticDifference.Before.get -> string?
+NdsForge.NdsSemanticDifference.Kind.get -> NdsForge.NdsDifferenceKind
+NdsForge.NdsSemanticDifference.Path.get -> string!
+NdsForge.NdsValidationOptions
+NdsForge.NdsValidationOptions.MaxDsiDigestFailures.get -> int
+NdsForge.NdsValidationOptions.MaxDsiDigestFailures.init -> void
+NdsForge.NdsValidationOptions.MaxDsiDigestTableBytes.get -> int
+NdsForge.NdsValidationOptions.MaxDsiDigestTableBytes.init -> void
+NdsForge.NdsValidationOptions.NdsValidationOptions() -> void
+NdsForge.NdsValidationOptions.SetDsiHmacKey(System.ReadOnlySpan<byte> key) -> NdsForge.NdsValidationOptions!
+NdsForge.NdsValidationOptions.SetDsiRsaPublicKey(NdsForge.NdsDsiRsaPublicKey! publicKey) -> NdsForge.NdsValidationOptions!
+NdsForge.NdsValidationOptions.SetSecureAreaKeyTable(NdsForge.NdsKey1KeyTable! keyTable) -> NdsForge.NdsValidationOptions!
+NdsForge.NdsValidationOptions.ValidateDsiDevelopmentSignature.get -> bool
+NdsForge.NdsValidationOptions.ValidateDsiDevelopmentSignature.init -> void
+NdsForge.NdsValidationResult
+NdsForge.NdsValidationResult.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
+NdsForge.NdsValidationResult.IsValid.get -> bool
+NdsForge.NdsWriteOptions
+NdsForge.NdsWriteOptions.<Clone>$() -> NdsForge.NdsWriteOptions!
+NdsForge.NdsWriteOptions.Equals(NdsForge.NdsWriteOptions? other) -> bool
+NdsForge.NdsWriteOptions.NdsWriteOptions() -> void
+NdsForge.NdsWriteOptions.OverwriteDestination.get -> bool
+NdsForge.NdsWriteOptions.OverwriteDestination.init -> void
+NdsForge.NdsWriteOptions.PaddingByte.get -> byte
+NdsForge.NdsWriteOptions.PaddingByte.init -> void
+NdsForge.NdsWriteOptions.RelocatedFileAlignment.get -> int
+NdsForge.NdsWriteOptions.RelocatedFileAlignment.init -> void
+NdsForge.NdsWriteOptions.VerifyOutput.get -> bool
+NdsForge.NdsWriteOptions.VerifyOutput.init -> void
+override NdsForge.NdsBannerAnimationStep.GetHashCode() -> int
+override NdsForge.NdsDiagnostic.Equals(object? obj) -> bool
+override NdsForge.NdsDiagnostic.GetHashCode() -> int
+override NdsForge.NdsDiagnostic.ToString() -> string!
+override NdsForge.NdsDirectoryImportOptions.Equals(object? obj) -> bool
+override NdsForge.NdsDirectoryImportOptions.GetHashCode() -> int
+override NdsForge.NdsDirectoryImportOptions.ToString() -> string!
+override NdsForge.NdsDirectoryImportResult.Equals(object? obj) -> bool
+override NdsForge.NdsDirectoryImportResult.GetHashCode() -> int
+override NdsForge.NdsDirectoryImportResult.ToString() -> string!
+override NdsForge.NdsDsiDigestOptions.Equals(object? obj) -> bool
+override NdsForge.NdsDsiDigestOptions.GetHashCode() -> int
+override NdsForge.NdsDsiDigestOptions.ToString() -> string!
+override NdsForge.NdsEditPlan.Equals(object? obj) -> bool
+override NdsForge.NdsEditPlan.GetHashCode() -> int
+override NdsForge.NdsEditPlan.ToString() -> string!
+override NdsForge.NdsExtractionOptions.Equals(object? obj) -> bool
+override NdsForge.NdsExtractionOptions.GetHashCode() -> int
+override NdsForge.NdsExtractionOptions.ToString() -> string!
+override NdsForge.NdsExtractionResult.Equals(object? obj) -> bool
+override NdsForge.NdsExtractionResult.GetHashCode() -> int
+override NdsForge.NdsExtractionResult.ToString() -> string!
+override NdsForge.NdsFileAllocation.Equals(object? obj) -> bool
+override NdsForge.NdsFileAllocation.GetHashCode() -> int
+override NdsForge.NdsFileAllocation.ToString() -> string!
+override NdsForge.NdsFileChange.Equals(object? obj) -> bool
+override NdsForge.NdsFileChange.GetHashCode() -> int
+override NdsForge.NdsFileChange.ToString() -> string!
+override NdsForge.NdsImageBuildOptions.Equals(object? obj) -> bool
+override NdsForge.NdsImageBuildOptions.GetHashCode() -> int
+override NdsForge.NdsImageBuildOptions.ToString() -> string!
+override NdsForge.NdsProgram.Equals(object? obj) -> bool
+override NdsForge.NdsProgram.GetHashCode() -> int
+override NdsForge.NdsProgram.ToString() -> string!
+override NdsForge.NdsReadOptions.Equals(object? obj) -> bool
+override NdsForge.NdsReadOptions.GetHashCode() -> int
+override NdsForge.NdsReadOptions.ToString() -> string!
+override NdsForge.NdsRegion.GetHashCode() -> int
+override NdsForge.NdsSaveResult.Equals(object? obj) -> bool
+override NdsForge.NdsSaveResult.GetHashCode() -> int
+override NdsForge.NdsSaveResult.ToString() -> string!
+override NdsForge.NdsSecureAreaInspection.Equals(object? obj) -> bool
+override NdsForge.NdsSecureAreaInspection.GetHashCode() -> int
+override NdsForge.NdsSecureAreaInspection.ToString() -> string!
+override NdsForge.NdsWriteOptions.Equals(object? obj) -> bool
+override NdsForge.NdsWriteOptions.GetHashCode() -> int
+override NdsForge.NdsWriteOptions.ToString() -> string!
+static NdsForge.NdsBanner.Parse(System.ReadOnlyMemory<byte> data) -> NdsForge.NdsBanner!
+static NdsForge.NdsBannerAnimationStep.FromPacked(ushort value) -> NdsForge.NdsBannerAnimationStep
+static NdsForge.NdsBannerAnimationStep.operator !=(NdsForge.NdsBannerAnimationStep left, NdsForge.NdsBannerAnimationStep right) -> bool
+static NdsForge.NdsBannerAnimationStep.operator ==(NdsForge.NdsBannerAnimationStep left, NdsForge.NdsBannerAnimationStep right) -> bool
+static NdsForge.NdsChecksums.ComputeCrc16(System.ReadOnlySpan<byte> data, ushort seed = 65535) -> ushort
+static NdsForge.NdsDiagnostic.operator !=(NdsForge.NdsDiagnostic? left, NdsForge.NdsDiagnostic? right) -> bool
+static NdsForge.NdsDiagnostic.operator ==(NdsForge.NdsDiagnostic? left, NdsForge.NdsDiagnostic? right) -> bool
+static NdsForge.NdsDirectoryImportOptions.Default.get -> NdsForge.NdsDirectoryImportOptions!
+static NdsForge.NdsDirectoryImportOptions.operator !=(NdsForge.NdsDirectoryImportOptions? left, NdsForge.NdsDirectoryImportOptions? right) -> bool
+static NdsForge.NdsDirectoryImportOptions.operator ==(NdsForge.NdsDirectoryImportOptions? left, NdsForge.NdsDirectoryImportOptions? right) -> bool
+static NdsForge.NdsDirectoryImportResult.operator !=(NdsForge.NdsDirectoryImportResult? left, NdsForge.NdsDirectoryImportResult? right) -> bool
+static NdsForge.NdsDirectoryImportResult.operator ==(NdsForge.NdsDirectoryImportResult? left, NdsForge.NdsDirectoryImportResult? right) -> bool
+static NdsForge.NdsDsiBuildMetadata.FromHeader(NdsForge.NdsDsiHeader! header) -> NdsForge.NdsDsiBuildMetadata!
+static NdsForge.NdsDsiDigestOptions.Default.get -> NdsForge.NdsDsiDigestOptions!
+static NdsForge.NdsDsiDigestOptions.operator !=(NdsForge.NdsDsiDigestOptions? left, NdsForge.NdsDsiDigestOptions? right) -> bool
+static NdsForge.NdsDsiDigestOptions.operator ==(NdsForge.NdsDsiDigestOptions? left, NdsForge.NdsDsiDigestOptions? right) -> bool
+static NdsForge.NdsDsiIntegrityOptions.CreateHmacSha1(System.ReadOnlySpan<byte> key, NdsForge.NdsDsiSignatureMode signatureMode = NdsForge.NdsDsiSignatureMode.Cleared) -> NdsForge.NdsDsiIntegrityOptions!
+static NdsForge.NdsDsiIntegrityOptions.CreateSignedHmacSha1(System.ReadOnlySpan<byte> hmacKey, NdsForge.INdsDsiSignatureProvider! signatureProvider) -> NdsForge.NdsDsiIntegrityOptions!
+static NdsForge.NdsDsiIntegrityOptions.NdstoolHomebrew.get -> NdsForge.NdsDsiIntegrityOptions!
+static NdsForge.NdsDsiIntegrityOptions.Unauthenticated.get -> NdsForge.NdsDsiIntegrityOptions!
+static NdsForge.NdsDsiKeyScrambler.CreateModcryptKeyX(string! gameCode) -> byte[]!
+static NdsForge.NdsDsiKeyScrambler.DeriveModcryptNormalKey(NdsForge.NdsHeader! header) -> byte[]!
+static NdsForge.NdsDsiKeyScrambler.DeriveNormalKey(System.ReadOnlySpan<byte> keyX, System.ReadOnlySpan<byte> keyY) -> byte[]!
+static NdsForge.NdsDsiRsaPublicKey.FromRsa(System.Security.Cryptography.RSA! rsa) -> NdsForge.NdsDsiRsaPublicKey!
+static NdsForge.NdsEditPlan.operator !=(NdsForge.NdsEditPlan? left, NdsForge.NdsEditPlan? right) -> bool
+static NdsForge.NdsEditPlan.operator ==(NdsForge.NdsEditPlan? left, NdsForge.NdsEditPlan? right) -> bool
+static NdsForge.NdsElfImportOptions.Default.get -> NdsForge.NdsElfImportOptions!
+static NdsForge.NdsElfProgramImporter.Import(System.ReadOnlyMemory<byte> data, NdsForge.NdsProcessor processor, NdsForge.NdsElfImportOptions? options = null) -> NdsForge.NdsElfImportResult!
+static NdsForge.NdsElfProgramImporter.ImportAsync(string! path, NdsForge.NdsProcessor processor, NdsForge.NdsElfImportOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsElfImportResult!>
+static NdsForge.NdsElfProgramImporter.ImportAsync(System.IO.Stream! stream, NdsForge.NdsProcessor processor, bool leaveOpen = false, NdsForge.NdsElfImportOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsElfImportResult!>
+static NdsForge.NdsExtractionOptions.Default.get -> NdsForge.NdsExtractionOptions!
+static NdsForge.NdsExtractionOptions.operator !=(NdsForge.NdsExtractionOptions? left, NdsForge.NdsExtractionOptions? right) -> bool
+static NdsForge.NdsExtractionOptions.operator ==(NdsForge.NdsExtractionOptions? left, NdsForge.NdsExtractionOptions? right) -> bool
+static NdsForge.NdsExtractionResult.operator !=(NdsForge.NdsExtractionResult? left, NdsForge.NdsExtractionResult? right) -> bool
+static NdsForge.NdsExtractionResult.operator ==(NdsForge.NdsExtractionResult? left, NdsForge.NdsExtractionResult? right) -> bool
+static NdsForge.NdsFileAllocation.operator !=(NdsForge.NdsFileAllocation? left, NdsForge.NdsFileAllocation? right) -> bool
+static NdsForge.NdsFileAllocation.operator ==(NdsForge.NdsFileAllocation? left, NdsForge.NdsFileAllocation? right) -> bool
+static NdsForge.NdsFileChange.operator !=(NdsForge.NdsFileChange? left, NdsForge.NdsFileChange? right) -> bool
+static NdsForge.NdsFileChange.operator ==(NdsForge.NdsFileChange? left, NdsForge.NdsFileChange? right) -> bool
+static NdsForge.NdsImage.Load(System.ReadOnlyMemory<byte> data, NdsForge.NdsReadOptions? options = null) -> NdsForge.NdsImage!
+static NdsForge.NdsImage.Open(System.IO.Stream! stream, bool leaveOpen = false, NdsForge.NdsReadOptions? options = null) -> NdsForge.NdsImage!
+static NdsForge.NdsImage.OpenAsync(string! path, NdsForge.NdsReadOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImage!>
+static NdsForge.NdsImage.OpenAsync(System.IO.Stream! stream, bool leaveOpen = false, NdsForge.NdsReadOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImage!>
+static NdsForge.NdsImageBuilder.FromImageAsync(NdsForge.NdsImage! image, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageBuilder!>
+static NdsForge.NdsImageBuildOptions.Default.get -> NdsForge.NdsImageBuildOptions!
+static NdsForge.NdsImageBuildOptions.operator !=(NdsForge.NdsImageBuildOptions? left, NdsForge.NdsImageBuildOptions? right) -> bool
+static NdsForge.NdsImageBuildOptions.operator ==(NdsForge.NdsImageBuildOptions? left, NdsForge.NdsImageBuildOptions? right) -> bool
+static NdsForge.NdsImageComparer.Compare(NdsForge.NdsImageManifest! left, NdsForge.NdsImageManifest! right) -> NdsForge.NdsImageDiff!
+static NdsForge.NdsImageComparer.CompareAsync(NdsForge.NdsImage! left, NdsForge.NdsImage! right, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageDiff!>
+static NdsForge.NdsImageManifest.CaptureAsync(NdsForge.NdsImage! image, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageManifest!>
+static NdsForge.NdsImageManifest.ParseJson(string! json) -> NdsForge.NdsImageManifest!
+static NdsForge.NdsImageManifest.ReadJsonAsync(System.IO.Stream! source, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageManifest!>
+static NdsForge.NdsLegacyArm7Hook.Apply(System.ReadOnlySpan<byte> image, System.ReadOnlySpan<byte> hook) -> NdsForge.NdsLegacyArm7HookResult!
+static NdsForge.NdsModcrypt.Transform(System.ReadOnlySpan<byte> data, NdsForge.NdsModcryptContext! context, NdsForge.NdsModcryptArea area, long byteOffset = 0) -> byte[]!
+static NdsForge.NdsModcrypt.Transform(System.ReadOnlySpan<byte> data, System.ReadOnlySpan<byte> key, System.ReadOnlySpan<byte> initialCounter, long byteOffset = 0) -> byte[]!
+static NdsForge.NdsModcrypt.TransformAsync(System.IO.Stream! source, System.IO.Stream! destination, long length, NdsForge.NdsModcryptContext! context, NdsForge.NdsModcryptArea area, long byteOffset = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+static NdsForge.NdsModcrypt.TransformAsync(System.IO.Stream! source, System.IO.Stream! destination, long length, System.ReadOnlyMemory<byte> key, System.ReadOnlyMemory<byte> initialCounter, long byteOffset = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+static NdsForge.NdsModcryptContext.FromHeader(NdsForge.NdsHeader! header) -> NdsForge.NdsModcryptContext!
+static NdsForge.NdsModcryptContext.FromHeader(NdsForge.NdsHeader! header, System.ReadOnlySpan<byte> secureNormalKey) -> NdsForge.NdsModcryptContext!
+static NdsForge.NdsOverlayDefinition.LinkToFile(NdsForge.NdsProcessor processor, uint id, NdsForge.NdsBuildFile! file, uint loadAddress, uint ramSize, uint bssSize = 0, uint staticInitializerStart = 0, uint staticInitializerEnd = 0, uint compressedSize = 0, byte flags = 0) -> NdsForge.NdsOverlayDefinition!
+static NdsForge.NdsOverlayDefinition.LinkToFile(NdsForge.NdsProcessor processor, uint id, string! filePath, uint loadAddress, uint ramSize, uint bssSize = 0, uint staticInitializerStart = 0, uint staticInitializerEnd = 0, uint compressedSize = 0, byte flags = 0) -> NdsForge.NdsOverlayDefinition!
+static NdsForge.NdsProgram.operator !=(NdsForge.NdsProgram? left, NdsForge.NdsProgram? right) -> bool
+static NdsForge.NdsProgram.operator ==(NdsForge.NdsProgram? left, NdsForge.NdsProgram? right) -> bool
+static NdsForge.NdsReadOptions.Default.get -> NdsForge.NdsReadOptions!
+static NdsForge.NdsReadOptions.operator !=(NdsForge.NdsReadOptions? left, NdsForge.NdsReadOptions? right) -> bool
+static NdsForge.NdsReadOptions.operator ==(NdsForge.NdsReadOptions? left, NdsForge.NdsReadOptions? right) -> bool
+static NdsForge.NdsRegion.operator !=(NdsForge.NdsRegion left, NdsForge.NdsRegion right) -> bool
+static NdsForge.NdsRegion.operator ==(NdsForge.NdsRegion left, NdsForge.NdsRegion right) -> bool
+static NdsForge.NdsSaveResult.operator !=(NdsForge.NdsSaveResult? left, NdsForge.NdsSaveResult? right) -> bool
+static NdsForge.NdsSaveResult.operator ==(NdsForge.NdsSaveResult? left, NdsForge.NdsSaveResult? right) -> bool
+static NdsForge.NdsSecureArea.Decrypt(System.ReadOnlySpan<byte> area, string! gameCode, NdsForge.NdsKey1KeyTable! keyTable) -> byte[]!
+static NdsForge.NdsSecureArea.DecryptAsync(System.IO.Stream! source, System.IO.Stream! destination, string! gameCode, NdsForge.NdsKey1KeyTable! keyTable, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+static NdsForge.NdsSecureArea.Encrypt(System.ReadOnlySpan<byte> area, string! gameCode, NdsForge.NdsKey1KeyTable! keyTable) -> byte[]!
+static NdsForge.NdsSecureArea.EncryptAsync(System.IO.Stream! source, System.IO.Stream! destination, string! gameCode, NdsForge.NdsKey1KeyTable! keyTable, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask
+static NdsForge.NdsSecureArea.Inspect(NdsForge.NdsImage! image, NdsForge.NdsKey1KeyTable? keyTable = null) -> NdsForge.NdsSecureAreaInspection!
+static NdsForge.NdsSecureArea.Inspect(System.ReadOnlySpan<byte> area, string! gameCode, ushort storedCrc, NdsForge.NdsKey1KeyTable? keyTable = null) -> NdsForge.NdsSecureAreaInspection!
+static NdsForge.NdsSecureAreaInspection.operator !=(NdsForge.NdsSecureAreaInspection? left, NdsForge.NdsSecureAreaInspection? right) -> bool
+static NdsForge.NdsSecureAreaInspection.operator ==(NdsForge.NdsSecureAreaInspection? left, NdsForge.NdsSecureAreaInspection? right) -> bool
+static NdsForge.NdsValidationOptions.Default.get -> NdsForge.NdsValidationOptions!
+static NdsForge.NdsWriteOptions.Default.get -> NdsForge.NdsWriteOptions!
+static NdsForge.NdsWriteOptions.operator !=(NdsForge.NdsWriteOptions? left, NdsForge.NdsWriteOptions? right) -> bool
+static NdsForge.NdsWriteOptions.operator ==(NdsForge.NdsWriteOptions? left, NdsForge.NdsWriteOptions? right) -> bool
+~override NdsForge.NdsBannerAnimationStep.Equals(object obj) -> bool
+~override NdsForge.NdsBannerAnimationStep.ToString() -> string
+~override NdsForge.NdsRegion.Equals(object obj) -> bool
+~override NdsForge.NdsRegion.ToString() -> string
