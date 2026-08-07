@@ -1,0 +1,20 @@
+name: Feature request
+description: Propose a developer workflow, format, or compatibility improvement.
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Developer use case
+      description: Describe the outcome a caller needs, not only a proposed method signature.
+    validations:
+      required: true
+  - type: textarea
+    id: format-impact
+    attributes:
+      label: Format and compatibility implications
+      description: Note relevant DS/DSi structures, ndstool behavior, or preservation requirements.
+  - type: textarea
+    id: api-shape
+    attributes:
+      label: Suggested API shape
+      description: Optional examples are welcome when they clarify ownership, streaming, or error behavior.

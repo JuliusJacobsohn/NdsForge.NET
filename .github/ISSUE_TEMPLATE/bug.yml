@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a reproducible NdsForge problem without sharing copyrighted images or key material.
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Explain what happened and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: NdsForge, .NET, ndstool, and OS versions
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Prefer synthetic builder input or hashes and metadata that contain no game payload.
+    validations:
+      required: true
+  - type: checkboxes
+    id: legal-material
+    attributes:
+      label: Shared material
+      options:
+        - label: I have not attached ROM data, keys, certificates, or other proprietary material.
+          required: true

@@ -260,7 +260,7 @@ full upstream parity, and `P2` is a high-value modern extension.
 | Integrity/authenticity report | Partial CRC/SHA-1/Download Play checks | Structured CRC, SHA, Download Play, and DSi digest-tree checks with clear trust semantics | Known-answer vectors and tamper-at-each-layer tests | P0 |
 | Edit/replace NitroFS files | Rebuild from directory | `NdsRomEditor.ReplaceFile` preserving IDs | Grow/shrink/same-size round trips | P0 |
 | Add/remove/move/rename files and directories | Indirect via rebuild | Editor operations with collision/ID policy | Property-based tree rebuild tests | P0 |
-| Deterministic DS image build | Yes | Builder + deterministic/preserve/compact layout profiles | Rebuild twice => identical bytes; emulator smoke test | P0 |
+| Deterministic DS image build | Yes | Builder + deterministic/preserve/compact layout profiles | Rebuild twice => identical bytes; emulator boot acceptance test | P0 |
 | Overlay parsing/editing | Extract/build | ARM9/ARM7 typed overlay collections and file links | File-ID linkage and invalid-reference tests | P0 |
 | Banner read/edit/render | Raw/BMP/GRF build | Typed languages, raw icon/palette, RGBA conversion | Versions 1/2/3/0x103 round trips | P0 |
 | Modern/multilingual banner import | BlocksDS BMP/GIF/PNG, static/animated, per-language text | Optional codec adapter feeding `NdsBanner` | Static/animated and every-language goldens | P1 |
@@ -398,11 +398,11 @@ Required test layers:
    intentional deviations, especially security fixes and deterministic ordering.
 7. **Runtime quality**: fuzz campaigns, cancellation, parallel reads, handle/stream
    ownership, Windows/Linux/macOS path behavior, large sparse test files, package
-   install smoke test, API compatibility check, and `dotnet pack` validation.
+   clean install-and-run acceptance test, API compatibility check, and `dotnet pack` validation.
 8. **Integration**: boot independently generated homebrew images in at least two
-   actively maintained DS emulators and, when the owner can lawfully do so, smoke
-   test on hardware. Emulator success supplements rather than replaces structural
-   assertions.
+   actively maintained DS emulators and, when the owner can lawfully do so, run a
+   hardware boot acceptance test. Emulator success supplements rather than
+   replaces structural assertions.
 
 Production-ready acceptance means every P0/P1 matrix row is implemented or has a
 written, owner-approved exclusion; public APIs are documented; malformed-input
