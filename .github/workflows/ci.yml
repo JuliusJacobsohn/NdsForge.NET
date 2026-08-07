@@ -2,26 +2,91 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  test:
+  build-test-pack:
+    name: Build, test, and pack (${{ matrix.os }})
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
-      - name: Build
-        run: dotnet build NdsForge.slnx --configuration Release
-      - name: Test
-        run: dotnet test NdsForge.slnx --configuration Release --no-build
-      - name: Pack
-        run: dotnet pack NdsForge.slnx --configuration Release --no-build --output artifacts/packages
+      - name: Restore locked dependencies
+        run: dotnet restore NdsForge.slnx --locked-mode
+      - name: Resolve package version
+        shell: pwsh
+        run: |
+          $output = & dotnet msbuild src/NdsForge/NdsForge.csproj -nologo -getProperty:PackageVersion
+          if ($LASTEXITCODE -ne 0) { throw "Package version resolution failed." }
+          $version = ($output | Select-Object -Last 1).Trim()
+          if ([string]::IsNullOrWhiteSpace($version)) { throw "Package version is empty." }
+          "PACKAGE_VERSION=$version" >> $env:GITHUB_ENV
+      - name: Audit dependencies
+        shell: pwsh
+        run: ./build/verify-dependencies.ps1
+      - name: Verify formatting
+        run: dotnet format NdsForge.slnx --verify-no-changes --no-restore
+      - name: Enforce source-size limit
+        shell: pwsh
+        run: ./build/verify-source-size.ps1
+      - name: Build solution
+        run: dotnet build NdsForge.slnx --configuration Release --no-restore
+      - name: Run portable tests with coverage
+        shell: pwsh
+        run: ./build/test-portable.ps1
+      - name: Build merged coverage report
+        run: |
+          dotnet tool restore
+          dotnet tool run reportgenerator "-reports:artifacts/test-results/**/coverage.cobertura.xml" "-targetdir:artifacts/coverage" "-reporttypes:Cobertura;Html"
+      - name: Enforce coverage
+        shell: pwsh
+        run: ./build/verify-coverage.ps1 artifacts/coverage/Cobertura.xml
+      - name: Pack library and tool
+        run: |
+          dotnet pack src/NdsForge/NdsForge.csproj --configuration Release --no-build --output artifacts/packages
+          dotnet pack src/NdsForge.Cli/NdsForge.Cli.csproj --configuration Release --no-build --output artifacts/packages
+      - name: Validate packages and symbols
+        shell: pwsh
+        run: |
+          ./build/validate-package.ps1 "artifacts/packages/NdsForge.$env:PACKAGE_VERSION.nupkg" NdsForge $env:PACKAGE_VERSION
+          ./build/validate-package.ps1 "artifacts/packages/NdsForge.Cli.$env:PACKAGE_VERSION.nupkg" NdsForge.Cli $env:PACKAGE_VERSION
+      - name: Test clean package consumers
+        shell: pwsh
+        run: ./build/test-package-consumer.ps1 artifacts/packages $env:PACKAGE_VERSION
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: artifacts-${{ matrix.os }}
+          path: artifacts
+          if-no-files-found: warn
+          retention-days: 7
+
+  docs:
+    name: Strict API documentation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Build Doxygen documentation
+        shell: pwsh
+        run: ./build/build-docs.ps1
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: documentation
+          path: artifacts/docs/html
+          if-no-files-found: warn
+          retention-days: 7

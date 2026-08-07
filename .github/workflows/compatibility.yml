@@ -1,0 +1,42 @@
+name: Private image compatibility
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compatibility:
+    runs-on: [self-hosted, windows, ndsforge-compatibility]
+    env:
+      NDSFORGE_REQUIRE_CORPUS: "1"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Require locally supplied legal fixtures and oracle
+        shell: pwsh
+        run: |
+          foreach ($variable in @('NDSFORGE_CORPUS', 'NDSFORGE_NDSTOOL', 'NDSFORGE_NDSTOOL_SOURCE', 'NDSFORGE_TEST_ROM')) {
+            $value = [Environment]::GetEnvironmentVariable($variable)
+            if ([string]::IsNullOrWhiteSpace($value)) { throw "The self-hosted runner must define $variable." }
+          }
+          if (-not (Test-Path -LiteralPath $env:NDSFORGE_CORPUS -PathType Container)) { throw "NDSFORGE_CORPUS is not a directory." }
+          if (-not (Test-Path -LiteralPath $env:NDSFORGE_NDSTOOL -PathType Leaf)) { throw "NDSFORGE_NDSTOOL is not a file." }
+          if (-not (Test-Path -LiteralPath $env:NDSFORGE_NDSTOOL_SOURCE -PathType Container)) { throw "NDSFORGE_NDSTOOL_SOURCE is not a directory." }
+          if (-not (Test-Path -LiteralPath $env:NDSFORGE_TEST_ROM -PathType Leaf)) { throw "NDSFORGE_TEST_ROM is not a file." }
+      - run: dotnet restore tests/NdsForge.CompatibilityTests/NdsForge.CompatibilityTests.csproj --locked-mode
+      - name: Run full hash-bound compatibility suite
+        run: dotnet test tests/NdsForge.CompatibilityTests/NdsForge.CompatibilityTests.csproj --configuration Release --no-restore --results-directory artifacts/compatibility --logger "trx;LogFileName=compatibility.trx"
+      - name: Verify compatibility-test discovery
+        shell: pwsh
+        run: ./build/verify-test-result.ps1 artifacts/compatibility/compatibility.trx "private image compatibility"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: private-image-compatibility
+          path: artifacts/compatibility/compatibility.trx
+          if-no-files-found: warn
+          retention-days: 14

@@ -3,6 +3,21 @@
 All notable changes to NdsForge.NET are documented here. The project follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+### Changed
+
+- Reworked the package README into a concise developer-facing introduction and
+  moved detailed guidance into focused documentation pages.
+- Added strict, deployable API documentation with broken-reference and warning
+  checks.
+- Added locked dependency resolution, public API compatibility tracking,
+  Source Link symbols, package-content validation, clean-consumer tests, and
+  enforceable coverage and source-size gates.
+- Added cross-platform CI, documentation deployment, scheduled security scans,
+  private-corpus compatibility automation, and an explicitly authorized release
+  workflow for both NuGet packages.
+
 ## 1.0.0 - 2026-08-06
 
 First stable release.

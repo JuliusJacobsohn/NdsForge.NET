@@ -1,0 +1,159 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Publish both NuGet packages and create the stable GitHub release
+        required: true
+        default: false
+        type: boolean
+
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+
+permissions:
+  actions: read
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    name: Verify and prepare package release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Resolve and validate release identity
+        id: identity
+        shell: pwsh
+        env:
+          WORKFLOW_REF: ${{ github.ref }}
+        run: |
+          if ($env:WORKFLOW_REF -ne 'refs/heads/main') { throw "Releases must run from main." }
+          $output = & dotnet msbuild src/NdsForge/NdsForge.csproj -nologo -getProperty:PackageVersion
+          if ($LASTEXITCODE -ne 0) { throw "Package version resolution failed." }
+          $version = ($output | Select-Object -Last 1).Trim()
+          if ($version -notmatch '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$') {
+            throw "Package version '$version' must be a stable normalized SemVer version."
+          }
+          $tag = "v$version"
+          git fetch --force --tags
+          if ($LASTEXITCODE -ne 0) { throw "Fetching tags failed." }
+          git show-ref --verify --quiet "refs/tags/$tag"
+          $lookup = $LASTEXITCODE
+          if ($lookup -ne 0 -and $lookup -ne 1) { throw "Looking up '$tag' failed." }
+          $tagExisted = $lookup -eq 0
+          $global:LASTEXITCODE = 0
+          if ($tagExisted) {
+            $commit = & git rev-parse --verify "refs/tags/$tag^{commit}"
+            if ($LASTEXITCODE -ne 0 -or $commit.Trim() -ne $env:GITHUB_SHA) {
+              throw "Existing tag '$tag' does not identify this commit."
+            }
+          }
+          "PACKAGE_VERSION=$version" >> $env:GITHUB_ENV
+          "RELEASE_TAG=$tag" >> $env:GITHUB_ENV
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "tag_existed=$($tagExisted.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
+      - name: Run complete release gate
+        shell: pwsh
+        run: ./build/build.ps1
+      - name: Assemble and revalidate payload
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path artifacts/release -Force | Out-Null
+          foreach ($id in @('NdsForge', 'NdsForge.Cli')) {
+            Copy-Item -LiteralPath "artifacts/packages/$id.$env:PACKAGE_VERSION.nupkg" -Destination artifacts/release
+            Copy-Item -LiteralPath "artifacts/packages/$id.$env:PACKAGE_VERSION.snupkg" -Destination artifacts/release
+            ./build/validate-package.ps1 "artifacts/release/$id.$env:PACKAGE_VERSION.nupkg" $id $env:PACKAGE_VERSION
+          }
+          ./build/test-package-consumer.ps1 artifacts/release $env:PACKAGE_VERSION
+      - name: Create checksums
+        shell: pwsh
+        run: |
+          $lines = Get-ChildItem -LiteralPath artifacts/release -File |
+            Sort-Object Name |
+            ForEach-Object { "{0}  {1}" -f (Get-FileHash -Algorithm SHA256 -LiteralPath $_.FullName).Hash.ToLowerInvariant(), $_.Name }
+          [System.IO.File]::WriteAllLines('artifacts/release/SHA256SUMS', $lines, [System.Text.UTF8Encoding]::new($false))
+      - name: Require successful cross-platform CI
+        if: inputs.release == true
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $json = & gh run list --repo $env:GITHUB_REPOSITORY --workflow ci.yml --commit $env:GITHUB_SHA --limit 10 --json status,conclusion
+          if ($LASTEXITCODE -ne 0) { throw "Querying CI failed." }
+          $runs = @($json | ConvertFrom-Json)
+          if (-not ($runs | Where-Object { $_.status -eq 'completed' -and $_.conclusion -eq 'success' })) {
+            throw "Publishing requires a successful cross-platform CI run for this exact commit."
+          }
+      - name: Guard immutable NuGet identities
+        if: inputs.release == true
+        shell: pwsh
+        env:
+          TAG_EXISTED: ${{ steps.identity.outputs.tag_existed }}
+        run: |
+          foreach ($id in @('ndsforge', 'ndsforge.cli')) {
+            $published = $false
+            try {
+              $index = Invoke-RestMethod -Uri "https://api.nuget.org/v3-flatcontainer/$id/index.json"
+              $published = @($index.versions) -contains $env:PACKAGE_VERSION
+            } catch {
+              if ($null -eq $_.Exception.Response -or [int]$_.Exception.Response.StatusCode -ne 404) { throw }
+            }
+            if ($published -and $env:TAG_EXISTED -ne 'true') {
+              throw "$id $env:PACKAGE_VERSION exists on NuGet without the matching pre-existing release tag."
+            }
+          }
+      - name: Bind release tag to verified commit
+        if: inputs.release == true
+        shell: pwsh
+        run: |
+          git show-ref --verify --quiet "refs/tags/$env:RELEASE_TAG"
+          $exists = $LASTEXITCODE -eq 0
+          $global:LASTEXITCODE = 0
+          if (-not $exists) {
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git tag $env:RELEASE_TAG $env:GITHUB_SHA
+            if ($LASTEXITCODE -ne 0) { throw "Creating release tag failed." }
+            git push origin "refs/tags/$env:RELEASE_TAG"
+            if ($LASTEXITCODE -ne 0) { throw "Publishing release tag failed." }
+          }
+      - name: Authenticate with NuGet.org
+        if: inputs.release == true
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: JuliusJacobsohn
+      - name: Publish NuGet packages
+        if: inputs.release == true
+        shell: bash
+        env:
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
+        run: |
+          dotnet nuget push "artifacts/release/NdsForge.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push "artifacts/release/NdsForge.Cli.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Create stable GitHub release
+        if: inputs.release == true
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" artifacts/release/* --clobber
+          else
+            gh release create "$RELEASE_TAG" artifacts/release/* --title "NdsForge.NET $PACKAGE_VERSION" --generate-notes --verify-tag
+          fi
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: release-${{ steps.identity.outputs.version }}-${{ github.run_number }}-${{ github.run_attempt }}
+          path: artifacts/release
+          if-no-files-found: warn
+          retention-days: 14
