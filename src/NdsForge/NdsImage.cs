@@ -106,6 +106,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <param name="region">Half-open physical interval, commonly obtained from a typed component or allocation.</param>
     /// <param name="destination">Writable caller-owned stream positioned at the desired output location.</param>
     /// <param name="cancellationToken">Cancels bounded source reads and destination writes without closing either owner.</param>
+    /// <returns>A task-like value that completes after the requested region has been copied.</returns>
     public async ValueTask CopyToAsync(
         NdsRegion region,
         Stream destination,
@@ -131,6 +132,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <param name="destination">Writable stream positioned where transformed area bytes should begin.</param>
     /// <param name="context">Detached normal-key and HMAC-counter context.</param>
     /// <param name="cancellationToken">Cancels bounded image reads and destination writes.</param>
+    /// <returns>A task-like value that completes after the complete declared area has been transformed.</returns>
     public async ValueTask TransformModcryptAreaAsync(
         NdsModcryptArea area,
         Stream destination,
@@ -211,7 +213,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         return NdsImageComparer.CompareAsync(this, other, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>Synchronously releases the image source and prevents further payload access.</summary>
     public void Dispose()
     {
         if (_disposed)
@@ -223,7 +225,8 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         _disposed = true;
     }
 
-    /// <inheritdoc />
+    /// <summary>Asynchronously releases the image source and prevents further payload access.</summary>
+    /// <returns>A task-like value that completes after an asynchronously disposable source has been released.</returns>
     public async ValueTask DisposeAsync()
     {
         if (_disposed)

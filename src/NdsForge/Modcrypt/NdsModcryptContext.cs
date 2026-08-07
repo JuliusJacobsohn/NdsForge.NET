@@ -42,6 +42,7 @@ public sealed class NdsModcryptContext
     public NdsModcryptKeyMode KeyMode { get; }
 
     /// <summary>Returns an independent copy of the resolved AES key so callers can persist or clear it on their own terms.</summary>
+    /// <returns>Sixteen normal-key bytes backed by a new array that does not expose the context's retained key.</returns>
     public ReadOnlyMemory<byte> ExportKey() => _key.ToArray();
 
     /// <summary>Returns an independent copy of the initial counter selected for one declared modcrypt area.</summary>

@@ -71,6 +71,7 @@ public sealed class NdsImageManifest
     /// <param name="destination">Writable caller-owned stream.</param>
     /// <param name="indented">Whether human-facing whitespace is included.</param>
     /// <param name="cancellationToken">Cancels JSON serialization and stream output.</param>
+    /// <returns>A task-like value that completes after the full JSON document has been written.</returns>
     public async ValueTask WriteJsonAsync(
         Stream destination,
         bool indented = true,

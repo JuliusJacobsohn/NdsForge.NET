@@ -54,6 +54,7 @@ public sealed class NdsFile
     /// <summary>Streams this allocation into a caller-owned destination without buffering the complete file in memory.</summary>
     /// <param name="destination">Writable stream positioned where the first payload byte should be copied.</param>
     /// <param name="cancellationToken">Cancels reads and writes while leaving the destination open.</param>
+    /// <returns>A task-like value that completes after the bounded allocation has been copied.</returns>
     public async ValueTask CopyToAsync(Stream destination, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(destination);

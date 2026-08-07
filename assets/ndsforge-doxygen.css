@@ -1,0 +1,40 @@
+:root {
+    --ndsforge-accent: #6f4cff;
+    --ndsforge-accent-soft: rgba(111, 76, 255, 0.12);
+}
+
+#projectname {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+#projectbrief {
+    max-width: 54rem;
+}
+
+div.contents {
+    max-width: 76rem;
+}
+
+.contents a,
+.textblock a {
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.16em;
+}
+
+.textblock blockquote {
+    border-left: 0.25rem solid var(--ndsforge-accent);
+    background: var(--ndsforge-accent-soft);
+    padding: 0.75rem 1rem;
+}
+
+.textblock code,
+.memdoc code {
+    border-radius: 0.2rem;
+}
+
+@media (max-width: 760px) {
+    div.contents {
+        padding-inline: 0.75rem;
+    }
+}

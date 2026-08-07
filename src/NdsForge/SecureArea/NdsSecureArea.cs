@@ -123,6 +123,7 @@ public static class NdsSecureArea
     /// <param name="gameCode">Exactly four ASCII product-code bytes.</param>
     /// <param name="keyTable">Explicit seed schedule from an authorized source.</param>
     /// <param name="cancellationToken">Cancels input and output I/O.</param>
+    /// <returns>A task-like value that completes after the verified 16 KiB result has been written.</returns>
     public static ValueTask EncryptAsync(
         Stream source,
         Stream destination,
@@ -140,6 +141,7 @@ public static class NdsSecureArea
     /// <param name="gameCode">Exactly four ASCII product-code bytes.</param>
     /// <param name="keyTable">Explicit seed schedule from an authorized source.</param>
     /// <param name="cancellationToken">Cancels input and output I/O.</param>
+    /// <returns>A task-like value that completes after the verified 16 KiB result has been written.</returns>
     public static ValueTask DecryptAsync(
         Stream source,
         Stream destination,

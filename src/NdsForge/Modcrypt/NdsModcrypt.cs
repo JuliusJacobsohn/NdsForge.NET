@@ -59,6 +59,7 @@ public static class NdsModcrypt
     /// <param name="area">First or second modcrypt area.</param>
     /// <param name="byteOffset">Logical slice offset within the selected area.</param>
     /// <param name="cancellationToken">Cancels reads, cryptographic chunk processing, or writes.</param>
+    /// <returns>A task-like value that completes after exactly <paramref name="length"/> bytes have been transformed.</returns>
     public static async ValueTask TransformAsync(
         Stream source,
         Stream destination,
@@ -90,6 +91,7 @@ public static class NdsModcrypt
     /// <param name="initialCounter">Exactly sixteen initial counter bytes.</param>
     /// <param name="byteOffset">Logical source position relative to the area's first byte.</param>
     /// <param name="cancellationToken">Cancels reads, cryptographic chunk processing, or writes.</param>
+    /// <returns>A task-like value that completes after exactly <paramref name="length"/> bytes have been transformed.</returns>
     public static async ValueTask TransformAsync(
         Stream source,
         Stream destination,

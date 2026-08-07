@@ -3,7 +3,11 @@ namespace NdsForge;
 /// <summary>Identifies a bounded range of bytes in an image.</summary>
 /// <param name="Offset">The zero-based byte offset.</param>
 /// <param name="Length">The number of bytes in the region.</param>
+#if DOXYGEN
+public record NdsRegion(long Offset, long Length)
+#else
 public readonly record struct NdsRegion(long Offset, long Length)
+#endif
 {
     /// <summary>Computes the exclusive end offset used by FAT records and overflow-safe bounds checks.</summary>
     public long End => checked(Offset + Length);

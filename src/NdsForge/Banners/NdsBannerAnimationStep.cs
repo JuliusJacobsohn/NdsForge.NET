@@ -10,7 +10,11 @@ namespace NdsForge;
 /// <param name="PaletteFrame">Animated palette slot from zero through seven.</param>
 /// <param name="FlipHorizontal">Mirrors the selected tile frame around its vertical axis.</param>
 /// <param name="FlipVertical">Mirrors the selected tile frame around its horizontal axis.</param>
+#if DOXYGEN
+public record NdsBannerAnimationStep(
+#else
 public readonly record struct NdsBannerAnimationStep(
+#endif
     byte Duration,
     byte TileFrame,
     byte PaletteFrame,
