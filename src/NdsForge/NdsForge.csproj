@@ -6,6 +6,7 @@
     <Authors>Julius Jacobsohn;NdsForge.NET contributors</Authors>
     <PackageTags>nintendo-ds;nds;dsi;nitrofs;rom-hacking;cartridge-image</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>See CHANGELOG.md for release details, compatibility, and safety guidance.</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -24,6 +25,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+    <None Include="../../assets/branding/ndsforge-icon.png" Pack="true" PackagePath="icon.png" />
     <None Include="../../README.md" Pack="true" PackagePath="/" />
     <None Include="../../CHANGELOG.md" Pack="true" PackagePath="/" />
     <None Include="../../LICENSE" Link="LICENSE.txt" Pack="true" PackagePath="/" />

@@ -5,8 +5,12 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ## Unreleased
 
+## 1.0.1 - 2026-08-18
+
 ### Changed
 
+- Added a dedicated NdsForge visual identity, with a compact dual-screen package
+  icon for both NuGet packages and a matching `FORGE` repository wordmark.
 - Streamlined hosted automation to a complete Ubuntu release gate and focused
   Windows portability run. Removed duplicate macOS, documentation, artifact,
   and scheduled secret-scan work while retaining dependency auditing in CI.
@@ -17,9 +21,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Added locked dependency resolution, public API compatibility tracking,
   Source Link symbols, package-content validation, clean-consumer tests, and
   enforceable coverage and source-size gates.
-- Added cross-platform CI, documentation deployment, scheduled security scans,
-  private-corpus compatibility automation, and an explicitly authorized release
-  workflow for both NuGet packages.
+- Added cross-platform CI, documentation deployment, private-corpus compatibility
+  automation, and an explicitly authorized release workflow for both NuGet
+  packages.
 
 ## 1.0.0 - 2026-08-06
 
