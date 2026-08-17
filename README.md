@@ -5,7 +5,6 @@
 
 [![CI](https://github.com/JuliusJacobsohn/NdsForge.NET/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/JuliusJacobsohn/NdsForge.NET/actions/workflows/ci.yml)
 [![Documentation](https://github.com/JuliusJacobsohn/NdsForge.NET/actions/workflows/docs.yml/badge.svg?branch=main)](https://juliusjacobsohn.github.io/NdsForge.NET/)
-[![Security](https://github.com/JuliusJacobsohn/NdsForge.NET/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/JuliusJacobsohn/NdsForge.NET/actions/workflows/security.yml)
 [![NuGet](https://img.shields.io/nuget/v/NdsForge.svg)](https://www.nuget.org/packages/NdsForge)
 [![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)

@@ -10,13 +10,9 @@ permissions:
   contents: read
 
 jobs:
-  build-test-pack:
-    name: Build, test, and pack (${{ matrix.os }})
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+  release-gate:
+    name: Ubuntu release gate
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v6
@@ -45,7 +41,7 @@ jobs:
       - name: Run portable tests with coverage
         shell: pwsh
         run: ./build/test-portable.ps1
-      - name: Build merged coverage report
+      - name: Build coverage report
         run: |
           dotnet tool restore
           dotnet tool run reportgenerator "-reports:artifacts/test-results/**/coverage.cobertura.xml" "-targetdir:artifacts/coverage" "-reporttypes:Cobertura;Html"
@@ -67,26 +63,25 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: artifacts-${{ matrix.os }}
+          name: ci-ubuntu
           path: artifacts
           if-no-files-found: warn
-          retention-days: 7
+          retention-days: 3
 
-  docs:
-    name: Strict API documentation
-    runs-on: ubuntu-latest
+  windows-portability:
+    name: Windows portability
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
-      - name: Build Doxygen documentation
+      - name: Restore locked dependencies
+        run: dotnet restore NdsForge.slnx --locked-mode
+      - name: Build solution
+        run: dotnet build NdsForge.slnx --configuration Release --no-restore
+      - name: Run Windows tests
+        run: dotnet test tests/NdsForge.Tests/NdsForge.Tests.csproj --configuration Release --no-build --no-restore --results-directory artifacts/windows --logger "trx;LogFileName=windows.trx"
+      - name: Verify Windows test discovery
         shell: pwsh
-        run: ./build/build-docs.ps1
-      - uses: actions/upload-artifact@v7
-        if: always()
-        with:
-          name: documentation
-          path: artifacts/docs/html
-          if-no-files-found: warn
-          retention-days: 7
+        run: ./build/verify-test-result.ps1 artifacts/windows/windows.trx "Windows portability"

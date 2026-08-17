@@ -4,11 +4,11 @@ $ErrorActionPreference = "Stop"
 $repository = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
 $doxygenVersion = "1.17.0"
 $toolRoot = Join-Path $repository "artifacts/tools/doxygen-$doxygenVersion"
-$isWindows = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::Windows)
-$isLinux = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::Linux)
+$runningOnWindows = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::Windows)
+$runningOnLinux = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::Linux)
 
 function Get-VerifiedDoxygen {
-    if ($isWindows) {
+    if ($runningOnWindows) {
         $archiveName = "doxygen-$doxygenVersion.windows.x64.bin.zip"
         $downloadUri = "https://www.doxygen.nl/files/$archiveName"
         $expectedHash = "94594407c4cbca3049d76aacbb05d4a6f7d0f4e93c0de410b825d25ca5621c83"
@@ -26,7 +26,7 @@ function Get-VerifiedDoxygen {
             Expand-Archive -LiteralPath $archivePath -DestinationPath $toolRoot -Force
         }
     }
-    elseif ($isLinux) {
+    elseif ($runningOnLinux) {
         $archiveName = "doxygen-$doxygenVersion.linux.bin.tar.gz"
         $downloadUri = "https://www.doxygen.nl/files/$archiveName"
         $expectedHash = "75419ef4f446fc1c24ef12514b574e66e898ee6f527c6ae2ad84f91a905823c2"

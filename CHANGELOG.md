@@ -7,6 +7,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Changed
 
+- Streamlined hosted automation to a complete Ubuntu release gate and focused
+  Windows portability run. Removed duplicate macOS, documentation, artifact,
+  and scheduled secret-scan work while retaining dependency auditing in CI.
 - Reworked the package README into a concise developer-facing introduction and
   moved detailed guidance into focused documentation pages.
 - Added strict, deployable API documentation with broken-reference and warning
