@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 420" role="img" aria-labelledby="title description">
+  <title id="title">NdsForge wordmark</title>
+  <desc id="description">The NdsForge dual-screen icon followed by the word Forge.</desc>
+  <rect width="1460" height="420" fill="#ffffff"/>
+
+  <g transform="translate(18 18) scale(0.75)">
+    <rect x="128" y="56" width="256" height="184" rx="42" fill="none" stroke="#221f1f" stroke-width="32"/>
+    <rect x="128" y="272" width="256" height="184" rx="42" fill="none" stroke="#929497" stroke-width="32"/>
+    <path
+      d="M256 184 C264 224 280 244 324 256 C280 268 264 288 256 328 C248 288 232 268 188 256 C232 244 248 224 256 184 Z"
+      fill="#ff920f"
+      stroke="#ffffff"
+      stroke-width="18"
+      stroke-linejoin="round"/>
+  </g>
+
+  <path d="M440 90 H620 V130 H488 V185 H600 V225 H488 V330 H440 Z" fill="#221f1f"/>
+  <rect x="640" y="90" width="185" height="240" rx="38" fill="#221f1f"/>
+  <rect x="688" y="132" width="89" height="156" rx="16" fill="#ffffff"/>
+  <path
+    d="M850 90 H990 C1045 90 1075 118 1075 164 C1075 201 1056 225 1020 234 L1085 330 H1030 L970 240 H898 V330 H850 Z
+       M898 132 V200 H985 C1012 200 1027 188 1027 166 C1027 144 1012 132 985 132 Z"
+    fill="#221f1f"
+    fill-rule="evenodd"/>
+  <rect x="1100" y="90" width="190" height="240" rx="38" fill="#221f1f"/>
+  <rect x="1148" y="132" width="94" height="156" rx="16" fill="#ffffff"/>
+  <rect x="1215" y="128" width="90" height="77" fill="#ffffff"/>
+  <path d="M1195 205 H1290 V330 H1250 V245 H1195 Z" fill="#221f1f"/>
+  <path d="M1315 90 H1450 V130 H1363 V185 H1440 V225 H1363 V290 H1450 V330 H1315 Z" fill="#221f1f"/>
+</svg>

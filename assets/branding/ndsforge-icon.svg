@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">NdsForge icon</title>
+  <desc id="description">Two Nintendo DS-inspired screens joined by an orange forge spark.</desc>
+  <rect width="512" height="512" fill="#ffffff"/>
+  <rect x="128" y="56" width="256" height="184" rx="42" fill="none" stroke="#221f1f" stroke-width="32"/>
+  <rect x="128" y="272" width="256" height="184" rx="42" fill="none" stroke="#929497" stroke-width="32"/>
+  <path
+    d="M256 184 C264 224 280 244 324 256 C280 268 264 288 256 328 C248 288 232 268 188 256 C232 244 248 224 256 184 Z"
+    fill="#ff920f"
+    stroke="#ffffff"
+    stroke-width="18"
+    stroke-linejoin="round"/>
+</svg>

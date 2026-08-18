@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JuliusJacobsohn/NdsForge.NET/main/assets/branding/ndsforge-wordmark.png" alt="NdsForge: a dual-screen mark joined by a forge spark" width="720">
+  <img src="https://raw.githubusercontent.com/JuliusJacobsohn/NdsForge.NET/main/assets/branding/ndsforge-wordmark.svg" alt="NdsForge: a dual-screen mark joined by a forge spark" width="720">
 </p>
 
 # NdsForge.NET
