@@ -18,6 +18,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Add shared Nitro compression inspection and dispatch, bounded LZ10, LZ11,
   four- and eight-bit Huffman, and run-length decoders, plus deterministic LZ10,
   LZ11, and run-length encoders.
+- Add bounded NARC parsing, stable-ID and hierarchical filename models,
+  byte-exact preservation writes, payload replacement, and deterministic aligned
+  reconstruction in `NdsForge.Nitro`.
 
 ## 1.0.1 - 2026-08-18
 

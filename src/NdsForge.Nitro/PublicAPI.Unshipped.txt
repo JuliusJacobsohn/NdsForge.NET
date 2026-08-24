@@ -1,6 +1,49 @@
 #nullable enable
 const NdsForge.Nitro.Compression.BlzCodec.DefaultMaximumDecodedLength = 2147483591 -> int
 const NdsForge.Nitro.Compression.NitroCompression.DefaultMaximumDecodedLength = 2147483591 -> int
+NdsForge.Nitro.Archives.NarcArchive
+NdsForge.Nitro.Archives.NarcArchive.CreateBuilder() -> NdsForge.Nitro.Archives.NarcArchiveBuilder!
+NdsForge.Nitro.Archives.NarcArchive.Directories.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Archives.NarcDirectory!>!
+NdsForge.Nitro.Archives.NarcArchive.Files.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Archives.NarcFile!>!
+NdsForge.Nitro.Archives.NarcArchive.FindFile(string! fullPath) -> NdsForge.Nitro.Archives.NarcFile?
+NdsForge.Nitro.Archives.NarcArchive.GetFile(int fileId) -> NdsForge.Nitro.Archives.NarcFile!
+NdsForge.Nitro.Archives.NarcArchive.HeaderByteOrder.get -> NdsForge.Nitro.Containers.NitroByteOrder
+NdsForge.Nitro.Archives.NarcArchive.Root.get -> NdsForge.Nitro.Archives.NarcDirectory!
+NdsForge.Nitro.Archives.NarcArchiveBuilder
+NdsForge.Nitro.Archives.NarcArchiveBuilder.Build(NdsForge.Nitro.Archives.NarcWriteOptions? options = null) -> byte[]!
+NdsForge.Nitro.Archives.NarcArchiveBuilder.ReplaceFile(int fileId, System.ReadOnlySpan<byte> data) -> NdsForge.Nitro.Archives.NarcArchiveBuilder!
+NdsForge.Nitro.Archives.NarcArchiveBuilder.ReplaceFile(string! fullPath, System.ReadOnlySpan<byte> data) -> NdsForge.Nitro.Archives.NarcArchiveBuilder!
+NdsForge.Nitro.Archives.NarcDirectory
+NdsForge.Nitro.Archives.NarcDirectory.Directories.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Archives.NarcDirectory!>!
+NdsForge.Nitro.Archives.NarcDirectory.Files.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Archives.NarcFile!>!
+NdsForge.Nitro.Archives.NarcDirectory.FullPath.get -> string!
+NdsForge.Nitro.Archives.NarcDirectory.Id.get -> ushort
+NdsForge.Nitro.Archives.NarcDirectory.Name.get -> string!
+NdsForge.Nitro.Archives.NarcDirectory.Parent.get -> NdsForge.Nitro.Archives.NarcDirectory?
+NdsForge.Nitro.Archives.NarcFile
+NdsForge.Nitro.Archives.NarcFile.Data.get -> System.ReadOnlyMemory<byte>
+NdsForge.Nitro.Archives.NarcFile.FullPath.get -> string?
+NdsForge.Nitro.Archives.NarcFile.Id.get -> int
+NdsForge.Nitro.Archives.NarcFile.Name.get -> string?
+NdsForge.Nitro.Archives.NarcFile.Parent.get -> NdsForge.Nitro.Archives.NarcDirectory?
+NdsForge.Nitro.Archives.NarcReadOptions
+NdsForge.Nitro.Archives.NarcReadOptions.MaximumDirectoryCount.get -> int
+NdsForge.Nitro.Archives.NarcReadOptions.MaximumDirectoryCount.init -> void
+NdsForge.Nitro.Archives.NarcReadOptions.MaximumDirectoryDepth.get -> int
+NdsForge.Nitro.Archives.NarcReadOptions.MaximumDirectoryDepth.init -> void
+NdsForge.Nitro.Archives.NarcReadOptions.MaximumFileCount.get -> int
+NdsForge.Nitro.Archives.NarcReadOptions.MaximumFileCount.init -> void
+NdsForge.Nitro.Archives.NarcReadOptions.NarcReadOptions() -> void
+NdsForge.Nitro.Archives.NarcWriteOptions
+NdsForge.Nitro.Archives.NarcWriteOptions.FileAlignment.get -> int
+NdsForge.Nitro.Archives.NarcWriteOptions.FileAlignment.init -> void
+NdsForge.Nitro.Archives.NarcWriteOptions.HeaderByteOrder.get -> NdsForge.Nitro.Containers.NitroByteOrder?
+NdsForge.Nitro.Archives.NarcWriteOptions.HeaderByteOrder.init -> void
+NdsForge.Nitro.Archives.NarcWriteOptions.NarcWriteOptions() -> void
+NdsForge.Nitro.Archives.NarcWriteOptions.PaddingByte.get -> byte
+NdsForge.Nitro.Archives.NarcWriteOptions.PaddingByte.init -> void
+NdsForge.Nitro.Archives.NarcWriteOptions.PreserveSourceLayout.get -> bool
+NdsForge.Nitro.Archives.NarcWriteOptions.PreserveSourceLayout.init -> void
 NdsForge.Nitro.Compression.BlzCodec
 NdsForge.Nitro.Compression.BlzInfo
 NdsForge.Nitro.Compression.BlzInfo.AdditionalLength.get -> int
@@ -31,8 +74,13 @@ NdsForge.Nitro.Compression.NitroCompressionType.Lz11 = 17 -> NdsForge.Nitro.Comp
 NdsForge.Nitro.Compression.NitroCompressionType.None = 0 -> NdsForge.Nitro.Compression.NitroCompressionType
 NdsForge.Nitro.Compression.NitroCompressionType.RunLength = 48 -> NdsForge.Nitro.Compression.NitroCompressionType
 NdsForge.Nitro.Compression.RleCodec
+NdsForge.Nitro.Containers.NitroByteOrder
+NdsForge.Nitro.Containers.NitroByteOrder.BigEndian = 1 -> NdsForge.Nitro.Containers.NitroByteOrder
+NdsForge.Nitro.Containers.NitroByteOrder.LittleEndian = 0 -> NdsForge.Nitro.Containers.NitroByteOrder
 override NdsForge.Nitro.Compression.BlzInfo.GetHashCode() -> int
 override NdsForge.Nitro.Compression.NitroCompressionInfo.GetHashCode() -> int
+static NdsForge.Nitro.Archives.NarcArchive.CreateUnnamed(System.Collections.Generic.IReadOnlyList<System.ReadOnlyMemory<byte>>! files, NdsForge.Nitro.Containers.NitroByteOrder headerByteOrder = NdsForge.Nitro.Containers.NitroByteOrder.BigEndian) -> NdsForge.Nitro.Archives.NarcArchive!
+static NdsForge.Nitro.Archives.NarcArchive.Parse(System.ReadOnlySpan<byte> data, NdsForge.Nitro.Archives.NarcReadOptions? options = null) -> NdsForge.Nitro.Archives.NarcArchive!
 static NdsForge.Nitro.Compression.BlzCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
 static NdsForge.Nitro.Compression.BlzCodec.TryCompress(System.ReadOnlySpan<byte> data, out byte[]! encoded, int uncompressedPrefixLength = 0) -> bool
 static NdsForge.Nitro.Compression.BlzCodec.TryInspect(System.ReadOnlySpan<byte> data, out NdsForge.Nitro.Compression.BlzInfo info) -> bool
