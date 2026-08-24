@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $true)][string]$PackagePath,
-    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Cli")][string]$PackageId,
+    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Nitro", "NdsForge.Cli")][string]$PackageId,
     [string]$ExpectedVersion
 )
 
@@ -60,15 +60,15 @@ try {
     foreach ($entry in $archive.Entries) { $entries[$entry.FullName] = $entry }
 
     $common = @("README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md")
-    $specific = if ($PackageId -eq "NdsForge") {
-        @("lib/net10.0/NdsForge.dll", "lib/net10.0/NdsForge.xml")
-    } else {
-        @(
+    $specific = switch ($PackageId) {
+        "NdsForge" { @("lib/net10.0/NdsForge.dll", "lib/net10.0/NdsForge.xml") }
+        "NdsForge.Nitro" { @("lib/net10.0/NdsForge.Nitro.dll", "lib/net10.0/NdsForge.Nitro.xml") }
+        "NdsForge.Cli" { @(
             "tools/net10.0/any/DotnetToolSettings.xml",
             "tools/net10.0/any/NdsForge.Cli.dll",
             "tools/net10.0/any/NdsForge.Cli.xml",
             "tools/net10.0/any/NdsForge.dll",
-            "tools/net10.0/any/NdsForge.xml")
+            "tools/net10.0/any/NdsForge.xml") }
     }
     foreach ($required in @($common + $specific)) {
         if (-not $entries.ContainsKey($required) -or $entries[$required].Length -eq 0) {
@@ -76,10 +76,10 @@ try {
         }
     }
 
-    $documentationPath = if ($PackageId -eq "NdsForge") {
-        "lib/net10.0/NdsForge.xml"
-    } else {
-        "tools/net10.0/any/NdsForge.Cli.xml"
+    $documentationPath = switch ($PackageId) {
+        "NdsForge" { "lib/net10.0/NdsForge.xml" }
+        "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.xml" }
+        "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.xml" }
     }
     if ((Read-Text $entries[$documentationPath]) -notmatch '<members>') {
         throw "$PackageId XML documentation does not contain API members."
@@ -134,10 +134,10 @@ if (-not (Test-Path -LiteralPath $symbolPath -PathType Leaf)) { throw "Symbol pa
 $symbolArchive = [System.IO.Compression.ZipFile]::OpenRead($symbolPath)
 try {
     Assert-SafeArchive $symbolArchive "Symbol package"
-    $pdbPath = if ($PackageId -eq "NdsForge") {
-        "lib/net10.0/NdsForge.pdb"
-    } else {
-        "tools/net10.0/any/NdsForge.Cli.pdb"
+    $pdbPath = switch ($PackageId) {
+        "NdsForge" { "lib/net10.0/NdsForge.pdb" }
+        "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.pdb" }
+        "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.pdb" }
     }
     $pdb = $symbolArchive.GetEntry($pdbPath)
     if ($null -eq $pdb -or $pdb.Length -eq 0) { throw "Symbol package is missing '$pdbPath'." }

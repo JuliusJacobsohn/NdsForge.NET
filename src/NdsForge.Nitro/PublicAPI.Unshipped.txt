@@ -1,0 +1,21 @@
+#nullable enable
+const NdsForge.Nitro.Compression.BlzCodec.DefaultMaximumDecodedLength = 2147483591 -> int
+NdsForge.Nitro.Compression.BlzCodec
+NdsForge.Nitro.Compression.BlzInfo
+NdsForge.Nitro.Compression.BlzInfo.AdditionalLength.get -> int
+NdsForge.Nitro.Compression.BlzInfo.BlzInfo() -> void
+NdsForge.Nitro.Compression.BlzInfo.BlzInfo(int encodedLength, int decodedLength, int uncompressedPrefixLength, int compressedRegionLength, byte headerLength, int additionalLength) -> void
+NdsForge.Nitro.Compression.BlzInfo.CompressedRegionLength.get -> int
+NdsForge.Nitro.Compression.BlzInfo.DecodedLength.get -> int
+NdsForge.Nitro.Compression.BlzInfo.EncodedLength.get -> int
+NdsForge.Nitro.Compression.BlzInfo.Equals(NdsForge.Nitro.Compression.BlzInfo other) -> bool
+NdsForge.Nitro.Compression.BlzInfo.HeaderLength.get -> byte
+NdsForge.Nitro.Compression.BlzInfo.UncompressedPrefixLength.get -> int
+override NdsForge.Nitro.Compression.BlzInfo.GetHashCode() -> int
+static NdsForge.Nitro.Compression.BlzCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
+static NdsForge.Nitro.Compression.BlzCodec.TryCompress(System.ReadOnlySpan<byte> data, out byte[]! encoded, int uncompressedPrefixLength = 0) -> bool
+static NdsForge.Nitro.Compression.BlzCodec.TryInspect(System.ReadOnlySpan<byte> data, out NdsForge.Nitro.Compression.BlzInfo info) -> bool
+static NdsForge.Nitro.Compression.BlzInfo.operator !=(NdsForge.Nitro.Compression.BlzInfo left, NdsForge.Nitro.Compression.BlzInfo right) -> bool
+static NdsForge.Nitro.Compression.BlzInfo.operator ==(NdsForge.Nitro.Compression.BlzInfo left, NdsForge.Nitro.Compression.BlzInfo right) -> bool
+~override NdsForge.Nitro.Compression.BlzInfo.Equals(object obj) -> bool
+~override NdsForge.Nitro.Compression.BlzInfo.ToString() -> string

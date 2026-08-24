@@ -57,15 +57,11 @@ NdsForge.NdsProgramParameters.TcmBlockInfoStartAddress.get -> uint
 NdsForge.NdsProgramParameters.TcmInputDataAddress.get -> uint
 NdsForge.NdsSdkVersion
 NdsForge.NdsSdkVersion.Build.get -> ushort
-NdsForge.NdsSdkVersion.Build.init -> void
-NdsForge.NdsSdkVersion.Deconstruct(out byte Major, out byte Minor, out ushort Build) -> void
 NdsForge.NdsSdkVersion.Equals(NdsForge.NdsSdkVersion other) -> bool
 NdsForge.NdsSdkVersion.Major.get -> byte
-NdsForge.NdsSdkVersion.Major.init -> void
 NdsForge.NdsSdkVersion.Minor.get -> byte
-NdsForge.NdsSdkVersion.Minor.init -> void
 NdsForge.NdsSdkVersion.NdsSdkVersion() -> void
-NdsForge.NdsSdkVersion.NdsSdkVersion(byte Major, byte Minor, ushort Build) -> void
+NdsForge.NdsSdkVersion.NdsSdkVersion(byte major, byte minor, ushort build) -> void
 NdsForge.NdsSdkVersion.PackedValue.get -> uint
 override NdsForge.NdsProgramFooter.Equals(object? obj) -> bool
 override NdsForge.NdsProgramFooter.GetHashCode() -> int

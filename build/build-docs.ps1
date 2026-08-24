@@ -70,12 +70,14 @@ function Get-VerifiedDoxygen {
 Push-Location $repository
 try {
     if (-not $NoRestore) {
-        dotnet restore src/NdsForge/NdsForge.csproj --locked-mode
+        dotnet restore NdsForge.slnx --locked-mode
         if ($LASTEXITCODE -ne 0) { throw "Library restore failed." }
     }
 
     dotnet build src/NdsForge/NdsForge.csproj --configuration Release --no-restore
     if ($LASTEXITCODE -ne 0) { throw "Library build for API documentation failed." }
+    dotnet build src/NdsForge.Nitro/NdsForge.Nitro.csproj --configuration Release --no-restore
+    if ($LASTEXITCODE -ne 0) { throw "Nitro library build for API documentation failed." }
 
     $versionOutput = & dotnet msbuild src/NdsForge/NdsForge.csproj -nologo -getProperty:PackageVersion
     if ($LASTEXITCODE -ne 0) { throw "Package version resolution failed." }

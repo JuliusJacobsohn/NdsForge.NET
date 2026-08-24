@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release:
-        description: Publish both NuGet packages and create the stable GitHub release
+        description: Publish all NuGet packages and create the stable GitHub release
         required: true
         default: false
         type: boolean
@@ -67,7 +67,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Path artifacts/release -Force | Out-Null
-          foreach ($id in @('NdsForge', 'NdsForge.Cli')) {
+          foreach ($id in @('NdsForge', 'NdsForge.Nitro', 'NdsForge.Cli')) {
             Copy-Item -LiteralPath "artifacts/packages/$id.$env:PACKAGE_VERSION.nupkg" -Destination artifacts/release
             Copy-Item -LiteralPath "artifacts/packages/$id.$env:PACKAGE_VERSION.snupkg" -Destination artifacts/release
             ./build/validate-package.ps1 "artifacts/release/$id.$env:PACKAGE_VERSION.nupkg" $id $env:PACKAGE_VERSION
@@ -98,7 +98,7 @@ jobs:
         env:
           TAG_EXISTED: ${{ steps.identity.outputs.tag_existed }}
         run: |
-          foreach ($id in @('ndsforge', 'ndsforge.cli')) {
+          foreach ($id in @('ndsforge', 'ndsforge.nitro', 'ndsforge.cli')) {
             $published = $false
             try {
               $index = Invoke-RestMethod -Uri "https://api.nuget.org/v3-flatcontainer/$id/index.json"
@@ -138,6 +138,7 @@ jobs:
           NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         run: |
           dotnet nuget push "artifacts/release/NdsForge.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push "artifacts/release/NdsForge.Nitro.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
           dotnet nuget push "artifacts/release/NdsForge.Cli.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
       - name: Create stable GitHub release
         if: inputs.release == true

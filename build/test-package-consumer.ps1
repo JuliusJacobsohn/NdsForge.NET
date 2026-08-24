@@ -24,6 +24,8 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "Clean consumer creation failed." }
     dotnet add $consumer package NdsForge --version $Version --no-restore
     if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge $Version failed." }
+    dotnet add $consumer package NdsForge.Nitro --version $Version --no-restore
+    if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge.Nitro $Version failed." }
 
     $escapedPackages = [System.Security.SecurityElement]::Escape($resolvedPackages)
     $config = @"
@@ -43,6 +45,7 @@ try {
 
     $program = @'
 using NdsForge;
+using NdsForge.Nitro.Compression;
 
 var builder = new NdsImageBuilder
 {
@@ -57,6 +60,9 @@ byte[] bytes = await builder.BuildAsync();
 using NdsImage image = NdsImage.Load(bytes);
 if (image.Header.GameCode != "CS01" || image.FileSystem.GetFile("/hello.txt").Data.Length != 5)
     throw new InvalidOperationException("Package consumer round trip failed.");
+byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
+if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
+    throw new InvalidOperationException("Nitro package consumer round trip failed.");
 Console.WriteLine("PACKAGE_CONSUMER_OK");
 '@
     [System.IO.File]::WriteAllText((Join-Path $consumer "Program.cs"), $program, [System.Text.UTF8Encoding]::new($false))

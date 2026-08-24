@@ -15,7 +15,7 @@
 
 **[Get NdsForge on NuGet](https://www.nuget.org/packages/NdsForge)** · **[Browse the API documentation →](https://juliusjacobsohn.github.io/NdsForge.NET/)**
 
-[Getting started](docs/getting-started.md) · [Formats and safety](docs/formats-and-safety.md) · [CLI reference](docs/cli.md) · [Corpus testing](docs/corpus-testing.md)
+[Getting started](docs/getting-started.md) · [Formats and safety](docs/formats-and-safety.md) · [Nitro codecs](docs/nitro-codecs.md) · [CLI reference](docs/cli.md) · [Corpus testing](docs/corpus-testing.md)
 
 NdsForge is a pure C# library for inspecting, validating, extracting, editing, comparing, and building Nintendo DS and DSi software images. Its object-oriented API supports path, stream, and in-memory workflows without shelling out to native tools.
 
@@ -25,6 +25,12 @@ Install the library:
 
 ```shell
 dotnet add package NdsForge
+```
+
+Install `NdsForge.Nitro` separately when an application needs reusable Nitro compression or container codecs without the ROM-image model:
+
+```shell
+dotnet add package NdsForge.Nitro
 ```
 
 ```csharp
@@ -55,6 +61,7 @@ Parsing creates a navigable image model without modifying the source. Validation
 - Stable JSON manifests and semantic image comparison
 - Caller-supplied KEY1, DSi digest, HMAC, modcrypt, and RSA operations
 - An optional `Ndstool1503` build profile for verified interoperability cases
+- A dependency-free `NdsForge.Nitro` companion package for BLZ and other reusable Nitro formats
 - A cross-platform `ndsforge` .NET command-line tool over the same library
 
 ## Edit an image

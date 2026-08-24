@@ -1,11 +1,28 @@
 namespace NdsForge;
 
 /// <summary>Decodes the four-byte Nintendo SDK version stored as major, minor, and sixteen-bit build components.</summary>
-/// <param name="Major">Major SDK generation.</param>
-/// <param name="Minor">Minor SDK generation.</param>
-/// <param name="Build">SDK build number.</param>
-public readonly record struct NdsSdkVersion(byte Major, byte Minor, ushort Build)
+public readonly record struct NdsSdkVersion
 {
+    /// <summary>Creates independently addressable SDK version components.</summary>
+    /// <param name="major">Major SDK generation.</param>
+    /// <param name="minor">Minor SDK generation.</param>
+    /// <param name="build">SDK build number.</param>
+    public NdsSdkVersion(byte major, byte minor, ushort build)
+    {
+        Major = major;
+        Minor = minor;
+        Build = build;
+    }
+
+    /// <summary>Distinguishes SDK generations with incompatible runtime conventions.</summary>
+    public byte Major { get; }
+
+    /// <summary>Tracks the feature revision within one compatible SDK generation.</summary>
+    public byte Minor { get; }
+
+    /// <summary>Identifies the exact toolchain release within the major and minor revision.</summary>
+    public ushort Build { get; }
+
     /// <summary>Creates a typed version from the header's little-endian packed integer.</summary>
     /// <param name="value">Packed value whose most significant bytes hold major and minor.</param>
     /// <returns>The separated SDK components.</returns>

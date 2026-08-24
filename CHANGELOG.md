@@ -12,6 +12,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
   footers without requiring DSi unit mode.
 - Expose overlay compression, authentication, and reserved control bits on both
   loaded overlays and build definitions.
+- Add the dependency-free `NdsForge.Nitro` companion package and independently
+  implemented BLZ inspection, bounded decompression, and deterministic
+  compression APIs.
 
 ## 1.0.1 - 2026-08-18
 
