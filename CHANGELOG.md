@@ -26,6 +26,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Add the optional `NdsForge.Graphics` feature package with dependency-free
   RGBA/BGR555 colors and verified NCLR parsing, creation, editing, preservation,
   PCMP mapping, and canonical reconstruction.
+- Add verified NCGR character graphics and NSCR screen maps with 4/8-bpp and
+  tiled/linear storage, affine/text/extended entries, palette selection, flips,
+  lossless editing, canonical writing, and dependency-free RGBA composition.
 
 ## 1.0.1 - 2026-08-18
 

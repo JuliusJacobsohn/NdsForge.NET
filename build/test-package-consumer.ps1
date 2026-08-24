@@ -48,7 +48,9 @@ try {
     $program = @'
 using NdsForge;
 using NdsForge.Graphics.Colors;
+using NdsForge.Graphics.Maps;
 using NdsForge.Graphics.Palettes;
+using NdsForge.Graphics.Tiles;
 using NdsForge.Nitro.Compression;
 
 var builder = new NdsImageBuilder
@@ -70,6 +72,10 @@ if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(
 NclrPalette palette = NclrPalette.Create(NitroColorDepth.Indexed4Bpp, [new NitroColor555(0), new NitroColor555(0x7FFF)]);
 if (NclrPalette.Parse(palette.CreateBuilder().Build()).Colors[1].ToRgba32() != new RgbaColor32(255, 255, 255))
     throw new InvalidOperationException("Graphics package consumer round trip failed.");
+NcgrCharacterGraphics tiles = NcgrCharacterGraphics.Create(8, 8, NitroColorDepth.Indexed4Bpp, new byte[64]);
+NscrScreenMap map = NscrScreenMap.Create(8, 8, NitroPaletteSelection.SixteenBySixteen, NitroBackgroundKind.Text, [new NscrMapEntry()]);
+if (map.Render(tiles, palette).Pixels.Count != 64)
+    throw new InvalidOperationException("Graphics composition package consumer round trip failed.");
 Console.WriteLine("PACKAGE_CONSUMER_OK");
 '@
     [System.IO.File]::WriteAllText((Join-Path $consumer "Program.cs"), $program, [System.Text.UTF8Encoding]::new($false))
