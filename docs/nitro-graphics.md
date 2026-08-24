@@ -44,3 +44,9 @@ byte[] editedMap = map.CreateBuilder()
 ```
 
 Differential verification covers 5,035 valid NCGR files containing 126,167,104 indexed pixels and 1,231 NSCR files containing 1,274,624 map entries. Every interpreted pixel, dimension, depth, storage order, mapping boundary, background mode, palette mode, tile number, flip, and palette selector matched the separately compiled current Texim implementation. Thirteen unrelated allocations beginning with the bytes `RGCN` are intentionally rejected because they do not contain a valid standard-file byte-order marker.
+
+## NCER sprite cells and OAM
+
+`NcerCellBank` reads bounded CEBK cell tables, optional boundaries and UACT values, all three exact OAM words, object-character mapping metadata, and opaque LABL/UEXT payloads. `NitroObjectEntry` projects signed coordinates, every legal hardware size/shape, depth, priority, palette, flip, affine group, mosaic, disabled/double-size state, and rendering mode without discarding reserved bits. Builders can patch one OAM object byte-exactly or emit a deterministic NCER while retaining ambiguous label data opaquely.
+
+The corpus test covers 3,126 NCER files, 50,509 cells, and 178,097 objects. All typed OAM fields match compiled Texim, while exact raw-word digests, no-op preservation, opaque auxiliary blocks, cell bounds, and canonical reparse are independently locked by the NdsForge suite.

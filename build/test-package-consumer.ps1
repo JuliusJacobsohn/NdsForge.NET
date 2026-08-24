@@ -51,6 +51,7 @@ using NdsForge.Graphics.Colors;
 using NdsForge.Graphics.Maps;
 using NdsForge.Graphics.Palettes;
 using NdsForge.Graphics.Tiles;
+using NdsForge.Graphics.Sprites;
 using NdsForge.Nitro.Compression;
 
 var builder = new NdsImageBuilder
@@ -76,6 +77,8 @@ NcgrCharacterGraphics tiles = NcgrCharacterGraphics.Create(8, 8, NitroColorDepth
 NscrScreenMap map = NscrScreenMap.Create(8, 8, NitroPaletteSelection.SixteenBySixteen, NitroBackgroundKind.Text, [new NscrMapEntry()]);
 if (map.Render(tiles, palette).Pixels.Count != 64)
     throw new InvalidOperationException("Graphics composition package consumer round trip failed.");
+if (NitroObjectEntry.Create(0, 0, 8, 8, 0, NitroColorDepth.Indexed4Bpp).Width != 8)
+    throw new InvalidOperationException("Graphics OAM package consumer round trip failed.");
 Console.WriteLine("PACKAGE_CONSUMER_OK");
 '@
     [System.IO.File]::WriteAllText((Join-Path $consumer "Program.cs"), $program, [System.Text.UTF8Encoding]::new($false))

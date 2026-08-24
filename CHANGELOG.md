@@ -29,6 +29,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Add verified NCGR character graphics and NSCR screen maps with 4/8-bpp and
   tiled/linear storage, affine/text/extended entries, palette selection, flips,
   lossless editing, canonical writing, and dependency-free RGBA composition.
+- Add verified NCER cell-bank parsing, exact OAM word preservation and typed
+  projection, lossless object replacement, and deterministic reconstruction.
 
 ## 1.0.1 - 2026-08-18
 
