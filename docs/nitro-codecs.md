@@ -2,6 +2,23 @@
 
 `NdsForge.Nitro` is a separate, dependency-free package for reusable Nintendo DS software formats that do not require the ROM-image object model. Applications that only inspect, edit, or build cartridge images can continue to reference `NdsForge` alone.
 
+## Forward BIOS compression
+
+The shared compression envelope records a type byte and exact decoded length. `NitroCompression.TryInspect` reads that metadata without allocating output, while `NitroCompression.Decompress` dispatches LZ10 (`0x10`), LZ11 (`0x11`), four- or eight-bit Huffman (`0x24` and `0x28`), and run-length (`0x30`) streams.
+
+```csharp
+using NdsForge.Nitro.Compression;
+
+byte[] stored = File.ReadAllBytes("resource.bin");
+if (NitroCompression.TryInspect(stored, out NitroCompressionInfo info))
+{
+    byte[] decoded = NitroCompression.Decompress(stored, maximumDecodedLength: 64 * 1024 * 1024);
+    Console.WriteLine($"{info.Type}: {stored.Length} -> {decoded.Length} bytes");
+}
+```
+
+`Lz10Codec`, `Lz11Codec`, and `RleCodec` also expose deterministic encoders. Huffman is currently decode-only. All decoders reject truncated tokens, invalid look-behinds or trees, blocks that cross the declared output, and caller-defined allocation limits. LZ10, LZ11, and eight-bit Huffman output has been compared byte-for-byte with an independently compiled implementation for every structurally valid candidate in the private ROM corpus. The corpus contains no genuine four-bit Huffman or run-length allocation, so those paths additionally use hand-authored grammar vectors and cross-decoding against the compiled reference encoder.
+
 ## Bottom-up LZ
 
 BLZ stores tokens in reverse order and may retain an arbitrary leading prefix verbatim. Programs commonly preserve at least the 0x4000-byte ARM9 secure area, while overlays may retain a much shorter prefix selected by the original compressor.

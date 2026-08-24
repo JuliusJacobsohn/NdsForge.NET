@@ -61,7 +61,7 @@ Parsing creates a navigable image model without modifying the source. Validation
 - Stable JSON manifests and semantic image comparison
 - Caller-supplied KEY1, DSi digest, HMAC, modcrypt, and RSA operations
 - An optional `Ndstool1503` build profile for verified interoperability cases
-- A dependency-free `NdsForge.Nitro` companion package for BLZ and other reusable Nitro formats
+- A dependency-free `NdsForge.Nitro` companion package for BLZ, BIOS compression, and other reusable Nitro formats
 - A cross-platform `ndsforge` .NET command-line tool over the same library
 
 ## Edit an image

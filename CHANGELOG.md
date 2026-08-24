@@ -15,6 +15,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Add the dependency-free `NdsForge.Nitro` companion package and independently
   implemented BLZ inspection, bounded decompression, and deterministic
   compression APIs.
+- Add shared Nitro compression inspection and dispatch, bounded LZ10, LZ11,
+  four- and eight-bit Huffman, and run-length decoders, plus deterministic LZ10,
+  LZ11, and run-length encoders.
 
 ## 1.0.1 - 2026-08-18
 

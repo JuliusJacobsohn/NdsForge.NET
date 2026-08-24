@@ -1,5 +1,6 @@
 #nullable enable
 const NdsForge.Nitro.Compression.BlzCodec.DefaultMaximumDecodedLength = 2147483591 -> int
+const NdsForge.Nitro.Compression.NitroCompression.DefaultMaximumDecodedLength = 2147483591 -> int
 NdsForge.Nitro.Compression.BlzCodec
 NdsForge.Nitro.Compression.BlzInfo
 NdsForge.Nitro.Compression.BlzInfo.AdditionalLength.get -> int
@@ -11,11 +12,44 @@ NdsForge.Nitro.Compression.BlzInfo.EncodedLength.get -> int
 NdsForge.Nitro.Compression.BlzInfo.Equals(NdsForge.Nitro.Compression.BlzInfo other) -> bool
 NdsForge.Nitro.Compression.BlzInfo.HeaderLength.get -> byte
 NdsForge.Nitro.Compression.BlzInfo.UncompressedPrefixLength.get -> int
+NdsForge.Nitro.Compression.HuffmanCodec
+NdsForge.Nitro.Compression.Lz10Codec
+NdsForge.Nitro.Compression.Lz11Codec
+NdsForge.Nitro.Compression.NitroCompression
+NdsForge.Nitro.Compression.NitroCompressionInfo
+NdsForge.Nitro.Compression.NitroCompressionInfo.DecodedLength.get -> int
+NdsForge.Nitro.Compression.NitroCompressionInfo.Equals(NdsForge.Nitro.Compression.NitroCompressionInfo other) -> bool
+NdsForge.Nitro.Compression.NitroCompressionInfo.HeaderLength.get -> int
+NdsForge.Nitro.Compression.NitroCompressionInfo.NitroCompressionInfo() -> void
+NdsForge.Nitro.Compression.NitroCompressionInfo.NitroCompressionInfo(NdsForge.Nitro.Compression.NitroCompressionType type, int decodedLength, int headerLength) -> void
+NdsForge.Nitro.Compression.NitroCompressionInfo.Type.get -> NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.NitroCompressionType.Huffman4 = 36 -> NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.NitroCompressionType.Huffman8 = 40 -> NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.NitroCompressionType.Lz10 = 16 -> NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.NitroCompressionType.Lz11 = 17 -> NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.NitroCompressionType.None = 0 -> NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.NitroCompressionType.RunLength = 48 -> NdsForge.Nitro.Compression.NitroCompressionType
+NdsForge.Nitro.Compression.RleCodec
 override NdsForge.Nitro.Compression.BlzInfo.GetHashCode() -> int
+override NdsForge.Nitro.Compression.NitroCompressionInfo.GetHashCode() -> int
 static NdsForge.Nitro.Compression.BlzCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
 static NdsForge.Nitro.Compression.BlzCodec.TryCompress(System.ReadOnlySpan<byte> data, out byte[]! encoded, int uncompressedPrefixLength = 0) -> bool
 static NdsForge.Nitro.Compression.BlzCodec.TryInspect(System.ReadOnlySpan<byte> data, out NdsForge.Nitro.Compression.BlzInfo info) -> bool
 static NdsForge.Nitro.Compression.BlzInfo.operator !=(NdsForge.Nitro.Compression.BlzInfo left, NdsForge.Nitro.Compression.BlzInfo right) -> bool
 static NdsForge.Nitro.Compression.BlzInfo.operator ==(NdsForge.Nitro.Compression.BlzInfo left, NdsForge.Nitro.Compression.BlzInfo right) -> bool
+static NdsForge.Nitro.Compression.HuffmanCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
+static NdsForge.Nitro.Compression.Lz10Codec.Compress(System.ReadOnlySpan<byte> data) -> byte[]!
+static NdsForge.Nitro.Compression.Lz10Codec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
+static NdsForge.Nitro.Compression.Lz11Codec.Compress(System.ReadOnlySpan<byte> data) -> byte[]!
+static NdsForge.Nitro.Compression.Lz11Codec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
+static NdsForge.Nitro.Compression.NitroCompression.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
+static NdsForge.Nitro.Compression.NitroCompression.TryInspect(System.ReadOnlySpan<byte> data, out NdsForge.Nitro.Compression.NitroCompressionInfo info) -> bool
+static NdsForge.Nitro.Compression.NitroCompressionInfo.operator !=(NdsForge.Nitro.Compression.NitroCompressionInfo left, NdsForge.Nitro.Compression.NitroCompressionInfo right) -> bool
+static NdsForge.Nitro.Compression.NitroCompressionInfo.operator ==(NdsForge.Nitro.Compression.NitroCompressionInfo left, NdsForge.Nitro.Compression.NitroCompressionInfo right) -> bool
+static NdsForge.Nitro.Compression.RleCodec.Compress(System.ReadOnlySpan<byte> data) -> byte[]!
+static NdsForge.Nitro.Compression.RleCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
 ~override NdsForge.Nitro.Compression.BlzInfo.Equals(object obj) -> bool
 ~override NdsForge.Nitro.Compression.BlzInfo.ToString() -> string
+~override NdsForge.Nitro.Compression.NitroCompressionInfo.Equals(object obj) -> bool
+~override NdsForge.Nitro.Compression.NitroCompressionInfo.ToString() -> string
