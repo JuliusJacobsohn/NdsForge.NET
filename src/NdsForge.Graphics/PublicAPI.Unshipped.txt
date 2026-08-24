@@ -1,0 +1,43 @@
+#nullable enable
+NdsForge.Graphics.Colors.NitroColor555
+NdsForge.Graphics.Colors.NitroColor555.Equals(NdsForge.Graphics.Colors.NitroColor555 other) -> bool
+NdsForge.Graphics.Colors.NitroColor555.NitroColor555() -> void
+NdsForge.Graphics.Colors.NitroColor555.NitroColor555(ushort packedValue) -> void
+NdsForge.Graphics.Colors.NitroColor555.PackedValue.get -> ushort
+NdsForge.Graphics.Colors.NitroColor555.ToRgba32() -> NdsForge.Graphics.Colors.RgbaColor32
+NdsForge.Graphics.Colors.RgbaColor32
+NdsForge.Graphics.Colors.RgbaColor32.Alpha.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.Blue.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.Equals(NdsForge.Graphics.Colors.RgbaColor32 other) -> bool
+NdsForge.Graphics.Colors.RgbaColor32.Green.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.Red.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.RgbaColor32() -> void
+NdsForge.Graphics.Colors.RgbaColor32.RgbaColor32(byte red, byte green, byte blue, byte alpha = 255) -> void
+NdsForge.Graphics.Palettes.NclrPalette
+NdsForge.Graphics.Palettes.NclrPalette.Colors.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Colors.NitroColor555>!
+NdsForge.Graphics.Palettes.NclrPalette.CreateBuilder() -> NdsForge.Graphics.Palettes.NclrPaletteBuilder!
+NdsForge.Graphics.Palettes.NclrPalette.DeclaredColorDataLength.get -> uint
+NdsForge.Graphics.Palettes.NclrPalette.Depth.get -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NclrPalette.IsExtendedPalette.get -> bool
+NdsForge.Graphics.Palettes.NclrPalette.PaletteMapping.get -> System.Collections.Generic.IReadOnlyList<ushort>?
+NdsForge.Graphics.Palettes.NclrPalette.Version.get -> ushort
+NdsForge.Graphics.Palettes.NclrPaletteBuilder
+NdsForge.Graphics.Palettes.NclrPaletteBuilder.Build(bool preserveSourceLayout = true) -> byte[]!
+NdsForge.Graphics.Palettes.NclrPaletteBuilder.ReplaceColor(int index, NdsForge.Graphics.Colors.NitroColor555 color) -> NdsForge.Graphics.Palettes.NclrPaletteBuilder!
+NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NitroColorDepth.Indexed4Bpp = 3 -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NitroColorDepth.Indexed8Bpp = 4 -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NitroColorDepth.None = 0 -> NdsForge.Graphics.Palettes.NitroColorDepth
+override NdsForge.Graphics.Colors.NitroColor555.GetHashCode() -> int
+override NdsForge.Graphics.Colors.RgbaColor32.GetHashCode() -> int
+static NdsForge.Graphics.Colors.NitroColor555.FromRgba32(NdsForge.Graphics.Colors.RgbaColor32 color, bool highBit = false) -> NdsForge.Graphics.Colors.NitroColor555
+static NdsForge.Graphics.Colors.NitroColor555.operator !=(NdsForge.Graphics.Colors.NitroColor555 left, NdsForge.Graphics.Colors.NitroColor555 right) -> bool
+static NdsForge.Graphics.Colors.NitroColor555.operator ==(NdsForge.Graphics.Colors.NitroColor555 left, NdsForge.Graphics.Colors.NitroColor555 right) -> bool
+static NdsForge.Graphics.Colors.RgbaColor32.operator !=(NdsForge.Graphics.Colors.RgbaColor32 left, NdsForge.Graphics.Colors.RgbaColor32 right) -> bool
+static NdsForge.Graphics.Colors.RgbaColor32.operator ==(NdsForge.Graphics.Colors.RgbaColor32 left, NdsForge.Graphics.Colors.RgbaColor32 right) -> bool
+static NdsForge.Graphics.Palettes.NclrPalette.Create(NdsForge.Graphics.Palettes.NitroColorDepth depth, System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Colors.NitroColor555>! colors, bool isExtendedPalette = false, System.Collections.Generic.IReadOnlyList<ushort>? paletteMapping = null) -> NdsForge.Graphics.Palettes.NclrPalette!
+static NdsForge.Graphics.Palettes.NclrPalette.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Palettes.NclrPalette!
+~override NdsForge.Graphics.Colors.NitroColor555.Equals(object obj) -> bool
+~override NdsForge.Graphics.Colors.NitroColor555.ToString() -> string
+~override NdsForge.Graphics.Colors.RgbaColor32.Equals(object obj) -> bool
+~override NdsForge.Graphics.Colors.RgbaColor32.ToString() -> string

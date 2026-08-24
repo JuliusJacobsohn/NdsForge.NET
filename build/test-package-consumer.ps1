@@ -26,6 +26,8 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge $Version failed." }
     dotnet add $consumer package NdsForge.Nitro --version $Version --no-restore
     if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge.Nitro $Version failed." }
+    dotnet add $consumer package NdsForge.Graphics --version $Version --no-restore
+    if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge.Graphics $Version failed." }
 
     $escapedPackages = [System.Security.SecurityElement]::Escape($resolvedPackages)
     $config = @"
@@ -45,6 +47,8 @@ try {
 
     $program = @'
 using NdsForge;
+using NdsForge.Graphics.Colors;
+using NdsForge.Graphics.Palettes;
 using NdsForge.Nitro.Compression;
 
 var builder = new NdsImageBuilder
@@ -63,6 +67,9 @@ if (image.Header.GameCode != "CS01" || image.FileSystem.GetFile("/hello.txt").Da
 byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
 if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
     throw new InvalidOperationException("Nitro package consumer round trip failed.");
+NclrPalette palette = NclrPalette.Create(NitroColorDepth.Indexed4Bpp, [new NitroColor555(0), new NitroColor555(0x7FFF)]);
+if (NclrPalette.Parse(palette.CreateBuilder().Build()).Colors[1].ToRgba32() != new RgbaColor32(255, 255, 255))
+    throw new InvalidOperationException("Graphics package consumer round trip failed.");
 Console.WriteLine("PACKAGE_CONSUMER_OK");
 '@
     [System.IO.File]::WriteAllText((Join-Path $consumer "Program.cs"), $program, [System.Text.UTF8Encoding]::new($false))

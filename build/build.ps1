@@ -52,6 +52,7 @@ try {
     foreach ($project in @(
         "src/NdsForge/NdsForge.csproj",
         "src/NdsForge.Nitro/NdsForge.Nitro.csproj",
+        "src/NdsForge.Graphics/NdsForge.Graphics.csproj",
         "src/NdsForge.Cli/NdsForge.Cli.csproj")) {
         dotnet pack $project --configuration $Configuration --no-build --output $packageOutput
         Assert-NativeSuccess "Packing $project"
@@ -60,7 +61,7 @@ try {
     Assert-NativeSuccess "Package version resolution"
     $version = ($versionOutput | Select-Object -Last 1).Trim()
     if ([string]::IsNullOrWhiteSpace($version)) { throw "Package version resolution returned an empty value." }
-    foreach ($packageId in @("NdsForge", "NdsForge.Nitro", "NdsForge.Cli")) {
+    foreach ($packageId in @("NdsForge", "NdsForge.Nitro", "NdsForge.Graphics", "NdsForge.Cli")) {
         $path = Join-Path $packageOutput "$packageId.$version.nupkg"
         ./build/validate-package.ps1 -PackagePath $path -PackageId $packageId -ExpectedVersion $version
         if (-not $?) { throw "$packageId package validation failed." }

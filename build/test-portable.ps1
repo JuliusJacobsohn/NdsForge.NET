@@ -16,7 +16,8 @@ Push-Location $repository
 try {
     $suites = @(
         @{ Project = "tests/NdsForge.Tests/NdsForge.Tests.csproj"; Name = "core" },
-        @{ Project = "tests/NdsForge.Nitro.Tests/NdsForge.Nitro.Tests.csproj"; Name = "nitro" }
+        @{ Project = "tests/NdsForge.Nitro.Tests/NdsForge.Nitro.Tests.csproj"; Name = "nitro" },
+        @{ Project = "tests/NdsForge.Graphics.Tests/NdsForge.Graphics.Tests.csproj"; Name = "graphics" }
     )
     foreach ($suite in $suites) {
         $trxPath = Join-Path $resolvedResults "$($suite.Name).trx"

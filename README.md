@@ -15,7 +15,7 @@
 
 **[Get NdsForge on NuGet](https://www.nuget.org/packages/NdsForge)** · **[Browse the API documentation →](https://juliusjacobsohn.github.io/NdsForge.NET/)**
 
-[Getting started](docs/getting-started.md) · [Formats and safety](docs/formats-and-safety.md) · [Nitro codecs](docs/nitro-codecs.md) · [CLI reference](docs/cli.md) · [Corpus testing](docs/corpus-testing.md)
+[Getting started](docs/getting-started.md) · [Formats and safety](docs/formats-and-safety.md) · [Nitro codecs](docs/nitro-codecs.md) · [Nitro graphics](docs/nitro-graphics.md) · [CLI reference](docs/cli.md) · [Corpus testing](docs/corpus-testing.md)
 
 NdsForge is a pure C# library for inspecting, validating, extracting, editing, comparing, and building Nintendo DS and DSi software images. Its object-oriented API supports path, stream, and in-memory workflows without shelling out to native tools.
 
@@ -31,6 +31,12 @@ Install `NdsForge.Nitro` separately when an application needs reusable Nitro com
 
 ```shell
 dotnet add package NdsForge.Nitro
+```
+
+Install `NdsForge.Graphics` for dependency-light native indexed graphics, palettes, tiles, maps, and sprites. Host raster codecs remain separate adapters:
+
+```shell
+dotnet add package NdsForge.Graphics
 ```
 
 ```csharp
@@ -62,6 +68,7 @@ Parsing creates a navigable image model without modifying the source. Validation
 - Caller-supplied KEY1, DSi digest, HMAC, modcrypt, and RSA operations
 - An optional `Ndstool1503` build profile for verified interoperability cases
 - A dependency-free `NdsForge.Nitro` companion package for BLZ, BIOS compression, and other reusable Nitro formats
+- An optional `NdsForge.Graphics` feature package for native indexed graphics without host image-codec dependencies
 - A cross-platform `ndsforge` .NET command-line tool over the same library
 
 ## Edit an image
@@ -98,7 +105,7 @@ See the [CLI reference](docs/cli.md) for commands, options, and exit codes.
 
 ## Compatibility and scope
 
-NdsForge targets .NET 10 and has no runtime NuGet dependencies. It handles Nintendo DS image/container structures; it is not an emulator, disassembler, save editor, or game-specific archive library. PNG/GIF authoring and proprietary game compression belong in separate adapters.
+NdsForge targets .NET 10. The core image and Nitro packages have no runtime NuGet dependencies; graphics depends only on `NdsForge.Nitro`. The project handles Nintendo DS image/container structures; it is not an emulator, disassembler, save editor, or game-specific archive library. PNG/GIF authoring and proprietary game compression belong in separate adapters.
 
 No ROMs, firmware, keys, certificates, or proprietary logo data are included. Cryptographic operations require caller-owned key material. Some authenticity checks cannot be completed from public image data alone, and validation distinguishes missing trust inputs from invalid content.
 

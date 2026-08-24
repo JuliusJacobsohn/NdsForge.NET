@@ -23,6 +23,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
   reconstruction in `NdsForge.Nitro`.
 - Generate and validate the alternate DSi ARM9 HMAC whose input excludes the
   first 16 KiB secure area.
+- Add the optional `NdsForge.Graphics` feature package with dependency-free
+  RGBA/BGR555 colors and verified NCLR parsing, creation, editing, preservation,
+  PCMP mapping, and canonical reconstruction.
 
 ## 1.0.1 - 2026-08-18
 

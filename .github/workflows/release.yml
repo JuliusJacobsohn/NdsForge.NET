@@ -67,7 +67,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Path artifacts/release -Force | Out-Null
-          foreach ($id in @('NdsForge', 'NdsForge.Nitro', 'NdsForge.Cli')) {
+          foreach ($id in @('NdsForge', 'NdsForge.Nitro', 'NdsForge.Graphics', 'NdsForge.Cli')) {
             Copy-Item -LiteralPath "artifacts/packages/$id.$env:PACKAGE_VERSION.nupkg" -Destination artifacts/release
             Copy-Item -LiteralPath "artifacts/packages/$id.$env:PACKAGE_VERSION.snupkg" -Destination artifacts/release
             ./build/validate-package.ps1 "artifacts/release/$id.$env:PACKAGE_VERSION.nupkg" $id $env:PACKAGE_VERSION
@@ -98,7 +98,7 @@ jobs:
         env:
           TAG_EXISTED: ${{ steps.identity.outputs.tag_existed }}
         run: |
-          foreach ($id in @('ndsforge', 'ndsforge.nitro', 'ndsforge.cli')) {
+          foreach ($id in @('ndsforge', 'ndsforge.nitro', 'ndsforge.graphics', 'ndsforge.cli')) {
             $published = $false
             try {
               $index = Invoke-RestMethod -Uri "https://api.nuget.org/v3-flatcontainer/$id/index.json"
@@ -139,6 +139,7 @@ jobs:
         run: |
           dotnet nuget push "artifacts/release/NdsForge.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
           dotnet nuget push "artifacts/release/NdsForge.Nitro.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push "artifacts/release/NdsForge.Graphics.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
           dotnet nuget push "artifacts/release/NdsForge.Cli.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
       - name: Create stable GitHub release
         if: inputs.release == true

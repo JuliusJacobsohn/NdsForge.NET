@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $true)][string]$PackagePath,
-    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Nitro", "NdsForge.Cli")][string]$PackageId,
+    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Nitro", "NdsForge.Graphics", "NdsForge.Cli")][string]$PackageId,
     [string]$ExpectedVersion
 )
 
@@ -63,6 +63,7 @@ try {
     $specific = switch ($PackageId) {
         "NdsForge" { @("lib/net10.0/NdsForge.dll", "lib/net10.0/NdsForge.xml") }
         "NdsForge.Nitro" { @("lib/net10.0/NdsForge.Nitro.dll", "lib/net10.0/NdsForge.Nitro.xml") }
+        "NdsForge.Graphics" { @("lib/net10.0/NdsForge.Graphics.dll", "lib/net10.0/NdsForge.Graphics.xml") }
         "NdsForge.Cli" { @(
             "tools/net10.0/any/DotnetToolSettings.xml",
             "tools/net10.0/any/NdsForge.Cli.dll",
@@ -79,6 +80,7 @@ try {
     $documentationPath = switch ($PackageId) {
         "NdsForge" { "lib/net10.0/NdsForge.xml" }
         "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.xml" }
+        "NdsForge.Graphics" { "lib/net10.0/NdsForge.Graphics.xml" }
         "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.xml" }
     }
     if ((Read-Text $entries[$documentationPath]) -notmatch '<members>') {
@@ -120,7 +122,11 @@ try {
     $namespaces = [System.Xml.XmlNamespaceManager]::new($nuspec.NameTable)
     $namespaces.AddNamespace("n", $nuspec.DocumentElement.NamespaceURI)
     $dependencies = @($nuspec.SelectNodes("/n:package/n:metadata/n:dependencies//n:dependency", $namespaces))
-    if ($dependencies.Count -ne 0) { throw "$PackageId unexpectedly exposes runtime NuGet dependencies." }
+    if ($PackageId -eq "NdsForge.Graphics") {
+        if ($dependencies.Count -ne 1 -or $dependencies[0].GetAttribute("id") -ne "NdsForge.Nitro") {
+            throw "$PackageId must expose exactly its NdsForge.Nitro package dependency."
+        }
+    } elseif ($dependencies.Count -ne 0) { throw "$PackageId unexpectedly exposes runtime NuGet dependencies." }
     $toolTypes = @($nuspec.SelectNodes("/n:package/n:metadata/n:packageTypes/n:packageType[@name='DotnetTool']", $namespaces))
     if (($PackageId -eq "NdsForge.Cli") -ne ($toolTypes.Count -eq 1)) {
         throw "$PackageId has incorrect dotnet-tool package metadata."
@@ -137,6 +143,7 @@ try {
     $pdbPath = switch ($PackageId) {
         "NdsForge" { "lib/net10.0/NdsForge.pdb" }
         "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.pdb" }
+        "NdsForge.Graphics" { "lib/net10.0/NdsForge.Graphics.pdb" }
         "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.pdb" }
     }
     $pdb = $symbolArchive.GetEntry($pdbPath)

@@ -78,6 +78,8 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "Library build for API documentation failed." }
     dotnet build src/NdsForge.Nitro/NdsForge.Nitro.csproj --configuration Release --no-restore
     if ($LASTEXITCODE -ne 0) { throw "Nitro library build for API documentation failed." }
+    dotnet build src/NdsForge.Graphics/NdsForge.Graphics.csproj --configuration Release --no-restore
+    if ($LASTEXITCODE -ne 0) { throw "Graphics library build for API documentation failed." }
 
     $versionOutput = & dotnet msbuild src/NdsForge/NdsForge.csproj -nologo -getProperty:PackageVersion
     if ($LASTEXITCODE -ne 0) { throw "Package version resolution failed." }
