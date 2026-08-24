@@ -21,6 +21,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Add bounded NARC parsing, stable-ID and hierarchical filename models,
   byte-exact preservation writes, payload replacement, and deterministic aligned
   reconstruction in `NdsForge.Nitro`.
+- Generate and validate the alternate DSi ARM9 HMAC whose input excludes the
+  first 16 KiB secure area.
 
 ## 1.0.1 - 2026-08-18
 

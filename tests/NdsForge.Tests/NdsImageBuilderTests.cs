@@ -52,6 +52,10 @@ public sealed class NdsImageBuilderTests
     {
         byte[] hmacKey = [1, 2, 3, 4];
         NdsImageBuilder builder = CreateBuilder();
+        byte[] arm9Data = Enumerable.Range(0, NdsSecureArea.ByteLength + 32)
+            .Select(static index => (byte)(index * 17))
+            .ToArray();
+        builder.Arm9 = new(NdsProcessor.Arm9, arm9Data, 0x02000000, 0x02000000);
         builder.Kind = NdsImageKind.NintendoDsiEnhanced;
         builder.Arm9i = new(NdsProcessor.Arm9i, [0x91, 1, 2, 3, 4], 0x02E00000, 0x02E00000);
         builder.Arm7i = new(NdsProcessor.Arm7i, [0x71, 5, 6], 0x02E80000, 0x02E80000);
@@ -90,6 +94,9 @@ public sealed class NdsImageBuilderTests
             await ReadRegionAsync(image, image.Header.Arm9i.Data, TestContext.Current.CancellationToken));
 #pragma warning disable CA5350 // The test independently verifies the DSi format's mandated HMAC-SHA1 bytes.
         Assert.Equal(HMACSHA1.HashData(hmacKey, new byte[] { 0x91, 1, 2, 3, 4 }), dsi.Arm9iHmac.ToArray());
+        Assert.Equal(
+            HMACSHA1.HashData(hmacKey, arm9Data.AsSpan(NdsSecureArea.ByteLength)),
+            dsi.Arm9WithoutSecureAreaHmac.ToArray());
         byte[] firstSector = await ReadRegionAsync(
             image,
             new(dsi.NtrDigest.Offset, Math.Min(dsi.DigestSectorSize, dsi.NtrDigest.Length)),
@@ -106,6 +113,26 @@ public sealed class NdsImageBuilderTests
         Assert.Equal(1, dsi.RsaSignature.Span[1]);
         Assert.True(image.Validate().IsValid);
         Assert.True(image.Validate(new NdsValidationOptions().SetDsiHmacKey(hmacKey)).IsValid);
+
+        byte[] secureAreaTamper = data.ToArray();
+        secureAreaTamper[checked((int)image.Header.Arm9.Data.Offset + 0x100)] ^= 0xFF;
+        using (NdsImage tamperedSecureArea = NdsImage.Load(secureAreaTamper))
+        {
+            NdsValidationResult validation = tamperedSecureArea.Validate(
+                new NdsValidationOptions().SetDsiHmacKey(hmacKey));
+            Assert.Contains(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1310");
+            Assert.DoesNotContain(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1322");
+        }
+
+        byte[] nonSecureAreaTamper = data.ToArray();
+        nonSecureAreaTamper[checked((int)image.Header.Arm9.Data.Offset + NdsSecureArea.ByteLength)] ^= 0xFF;
+        using (NdsImage tamperedNonSecureArea = NdsImage.Load(nonSecureAreaTamper))
+        {
+            NdsValidationResult validation = tamperedNonSecureArea.Validate(
+                new NdsValidationOptions().SetDsiHmacKey(hmacKey));
+            Assert.Contains(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1310");
+            Assert.Contains(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1322");
+        }
 
         byte[] tamperedData = data.ToArray();
         tamperedData[checked((int)image.Header.Arm9i.Data.Offset)] ^= 0xFF;

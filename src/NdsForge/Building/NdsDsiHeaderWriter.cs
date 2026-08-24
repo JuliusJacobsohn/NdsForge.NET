@@ -128,8 +128,8 @@ internal static class NdsDsiHeaderWriter
     }
 
     /// <summary>
-    /// Removes authentication bytes inherited from a template before any selected hashes are calculated. Digest
-    /// master and alternate ARM9 HMACs stay clear because this builder does not yet emit their dependent structures.
+    /// Removes authentication bytes inherited from a template before any selected hashes are calculated. The digest
+    /// master stays clear until its generated hierarchy is available.
     /// </summary>
     /// <param name="header">Mutable extended header containing possibly stale template fields.</param>
     private static void ClearAuthenticationFields(Span<byte> header)
@@ -140,7 +140,7 @@ internal static class NdsDsiHeaderWriter
     }
 
     /// <summary>Computes component HMAC-SHA1 values only when the caller selected a concrete key policy.</summary>
-    /// <param name="header">Mutable extended header receiving five 20-byte digests.</param>
+    /// <param name="header">Mutable extended header receiving six 20-byte digests.</param>
     /// <param name="builder">Recipe supplying optional Banner bytes.</param>
     /// <param name="content">Frozen common and DSi Program bytes.</param>
     /// <param name="integrity">Policy containing copied key material or explicit unauthenticated behavior.</param>
@@ -161,6 +161,8 @@ internal static class NdsDsiHeaderWriter
         WriteHmac(header[0x33C..0x350], integrity.HmacKey.Span, bannerData);
         WriteHmac(header[0x350..0x364], integrity.HmacKey.Span, content.Arm9iData.Span);
         WriteHmac(header[0x364..0x378], integrity.HmacKey.Span, content.Arm7iData.Span);
+        int secureAreaLength = Math.Min(NdsSecureArea.ByteLength, content.Arm9Data.Length);
+        WriteHmac(header[0x3A0..0x3B4], integrity.HmacKey.Span, content.Arm9Data.Span[secureAreaLength..]);
     }
 
     /// <summary>Runs HMAC-SHA1 over one exact component and copies its fixed 20-byte result into the header.</summary>
