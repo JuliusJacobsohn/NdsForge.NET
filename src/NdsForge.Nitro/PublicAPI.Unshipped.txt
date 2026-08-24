@@ -77,6 +77,42 @@ NdsForge.Nitro.Compression.RleCodec
 NdsForge.Nitro.Containers.NitroByteOrder
 NdsForge.Nitro.Containers.NitroByteOrder.BigEndian = 1 -> NdsForge.Nitro.Containers.NitroByteOrder
 NdsForge.Nitro.Containers.NitroByteOrder.LittleEndian = 0 -> NdsForge.Nitro.Containers.NitroByteOrder
+NdsForge.Nitro.Text.BmgAuxiliarySection
+NdsForge.Nitro.Text.BmgAuxiliarySection.Data.get -> System.ReadOnlyMemory<byte>
+NdsForge.Nitro.Text.BmgAuxiliarySection.Signature.get -> string!
+NdsForge.Nitro.Text.BmgEncoding
+NdsForge.Nitro.Text.BmgEncoding.None = 0 -> NdsForge.Nitro.Text.BmgEncoding
+NdsForge.Nitro.Text.BmgEncoding.ShiftJis = 3 -> NdsForge.Nitro.Text.BmgEncoding
+NdsForge.Nitro.Text.BmgEncoding.Utf16 = 2 -> NdsForge.Nitro.Text.BmgEncoding
+NdsForge.Nitro.Text.BmgEncoding.Utf8 = 4 -> NdsForge.Nitro.Text.BmgEncoding
+NdsForge.Nitro.Text.BmgEncoding.Windows1252 = 1 -> NdsForge.Nitro.Text.BmgEncoding
+NdsForge.Nitro.Text.BmgMessage
+NdsForge.Nitro.Text.BmgMessage.Attributes.get -> System.ReadOnlyMemory<byte>
+NdsForge.Nitro.Text.BmgMessage.DataOffset.get -> uint
+NdsForge.Nitro.Text.BmgMessage.GetText(System.Text.Encoding? shiftJisEncoding = null) -> string!
+NdsForge.Nitro.Text.BmgMessage.IsNull.get -> bool
+NdsForge.Nitro.Text.BmgMessage.Parts.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Text.BmgMessagePart!>!
+NdsForge.Nitro.Text.BmgMessageBundle
+NdsForge.Nitro.Text.BmgMessageBundle.AuxiliarySections.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Text.BmgAuxiliarySection!>!
+NdsForge.Nitro.Text.BmgMessageBundle.ByteOrder.get -> NdsForge.Nitro.Containers.NitroByteOrder
+NdsForge.Nitro.Text.BmgMessageBundle.DeclaredSectionCount.get -> uint
+NdsForge.Nitro.Text.BmgMessageBundle.Encoding.get -> NdsForge.Nitro.Text.BmgEncoding
+NdsForge.Nitro.Text.BmgMessageBundle.HasMissingTrailingPadding.get -> bool
+NdsForge.Nitro.Text.BmgMessageBundle.HasMissingTrailingSection.get -> bool
+NdsForge.Nitro.Text.BmgMessageBundle.HeaderField14.get -> uint
+NdsForge.Nitro.Text.BmgMessageBundle.HeaderField18.get -> uint
+NdsForge.Nitro.Text.BmgMessageBundle.HeaderField1C.get -> uint
+NdsForge.Nitro.Text.BmgMessageBundle.MessageId.get -> uint
+NdsForge.Nitro.Text.BmgMessageBundle.Messages.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Text.BmgMessage!>!
+NdsForge.Nitro.Text.BmgMessageBundle.WritePreserved() -> byte[]!
+NdsForge.Nitro.Text.BmgMessagePart
+NdsForge.Nitro.Text.BmgMessagePart.ControlCode.get -> byte?
+NdsForge.Nitro.Text.BmgMessagePart.Data.get -> System.ReadOnlyMemory<byte>
+NdsForge.Nitro.Text.BmgMessagePart.Kind.get -> NdsForge.Nitro.Text.BmgMessagePartKind
+NdsForge.Nitro.Text.BmgMessagePart.SerializedLength.get -> byte
+NdsForge.Nitro.Text.BmgMessagePartKind
+NdsForge.Nitro.Text.BmgMessagePartKind.Control = 1 -> NdsForge.Nitro.Text.BmgMessagePartKind
+NdsForge.Nitro.Text.BmgMessagePartKind.Text = 0 -> NdsForge.Nitro.Text.BmgMessagePartKind
 override NdsForge.Nitro.Compression.BlzInfo.GetHashCode() -> int
 override NdsForge.Nitro.Compression.NitroCompressionInfo.GetHashCode() -> int
 static NdsForge.Nitro.Archives.NarcArchive.CreateUnnamed(System.Collections.Generic.IReadOnlyList<System.ReadOnlyMemory<byte>>! files, NdsForge.Nitro.Containers.NitroByteOrder headerByteOrder = NdsForge.Nitro.Containers.NitroByteOrder.BigEndian) -> NdsForge.Nitro.Archives.NarcArchive!
@@ -97,6 +133,7 @@ static NdsForge.Nitro.Compression.NitroCompressionInfo.operator !=(NdsForge.Nitr
 static NdsForge.Nitro.Compression.NitroCompressionInfo.operator ==(NdsForge.Nitro.Compression.NitroCompressionInfo left, NdsForge.Nitro.Compression.NitroCompressionInfo right) -> bool
 static NdsForge.Nitro.Compression.RleCodec.Compress(System.ReadOnlySpan<byte> data) -> byte[]!
 static NdsForge.Nitro.Compression.RleCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
+static NdsForge.Nitro.Text.BmgMessageBundle.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Nitro.Text.BmgMessageBundle!
 ~override NdsForge.Nitro.Compression.BlzInfo.Equals(object obj) -> bool
 ~override NdsForge.Nitro.Compression.BlzInfo.ToString() -> string
 ~override NdsForge.Nitro.Compression.NitroCompressionInfo.Equals(object obj) -> bool

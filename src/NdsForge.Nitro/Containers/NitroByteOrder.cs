@@ -1,11 +1,11 @@
 namespace NdsForge.Nitro.Containers;
 
-/// <summary>Identifies the byte-order marker used by a Nitro standard-file header.</summary>
+/// <summary>Identifies the integer byte order used by a Nintendo DS resource.</summary>
 public enum NitroByteOrder
 {
-    /// <summary>The header stores the ordinary <c>0xFEFF</c> marker and version representation.</summary>
+    /// <summary>Multi-byte integers store their least-significant byte first.</summary>
     LittleEndian,
 
-    /// <summary>The header stores the swapped marker and version representation used by some NARC producers.</summary>
+    /// <summary>Multi-byte integers store their most-significant byte first.</summary>
     BigEndian,
 }

@@ -21,6 +21,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Add bounded NARC parsing, stable-ID and hierarchical filename models,
   byte-exact preservation writes, payload replacement, and deterministic aligned
   reconstruction in `NdsForge.Nitro`.
+- Add conservative BMG message-bundle reading with both byte orders, all standard
+  encoding declarations, opaque metadata and auxiliary sections, lossless typed
+  control sequences, and byte-exact preservation.
 - Generate and validate the alternate DSi ARM9 HMAC whose input excludes the
   first 16 KiB secure area.
 - Add the optional `NdsForge.Graphics` feature package with dependency-free
