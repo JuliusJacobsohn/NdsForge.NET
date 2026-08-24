@@ -209,4 +209,10 @@ public sealed class NdsOverlayDefinition
 
     /// <summary>Occupies the high byte of the packed table control word without reinterpretation.</summary>
     public byte Flags { get; }
+
+    /// <summary>Reports whether the output table marks the payload as BLZ-compressed.</summary>
+    public bool IsCompressed => (Flags & 0x01) != 0;
+
+    /// <summary>Reports whether the output table marks the overlay for Download Play authentication.</summary>
+    public bool IsAuthenticated => (Flags & 0x02) != 0;
 }

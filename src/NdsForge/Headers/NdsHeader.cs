@@ -3,8 +3,8 @@ namespace NdsForge;
 /// <summary>Projects the common cartridge header into typed fields while retaining every byte needed for lossless work.</summary>
 public sealed class NdsHeader
 {
-    /// <summary>Decodes the 0x200-byte DS prefix and, when selected by unit code, its 0xE00-byte DSi extension.</summary>
-    /// <param name="rawData">Exactly the header span selected by the loader: 0x200 bytes for DS or 0x1000 for DSi.</param>
+    /// <summary>Decodes the common DS prefix and an authentication or DSi extension when declared.</summary>
+    /// <param name="rawData">Exactly the 0x200-byte classic header or a complete 0x1000-byte extended header.</param>
     internal NdsHeader(ReadOnlyMemory<byte> rawData)
     {
         RawData = rawData;
@@ -37,6 +37,14 @@ public sealed class NdsHeader
         HeaderSize = NdsBinary.ReadUInt32(data, 0x84);
         NintendoLogoCrc = NdsBinary.ReadUInt16(data, 0x15C);
         HeaderCrc = NdsBinary.ReadUInt16(data, 0x15E);
+
+        ProgramFeatures = (NdsProgramFeatures)data[0x1BF];
+
+        if (data.Length >= 0x1000 && Kind == NdsImageKind.NintendoDs &&
+            (ProgramFeatures & (NdsProgramFeatures.AuthenticatesBanner | NdsProgramFeatures.AuthenticatesPrograms)) != 0)
+        {
+            DsExtended = new(rawData);
+        }
 
         if (data.Length >= 0x1E0 && Kind != NdsImageKind.NintendoDs)
         {
@@ -96,6 +104,12 @@ public sealed class NdsHeader
 
     /// <summary>Gets the extended DSi header, or <see langword="null"/> for DS-only images.</summary>
     public NdsDsiHeader? Dsi { get; }
+
+    /// <summary>Gets the DSi-era authentication extension used by late DS software, or <see langword="null"/> when absent.</summary>
+    public NdsDsExtendedHeader? DsExtended { get; }
+
+    /// <summary>Interprets launcher and authentication capabilities stored in the common feature byte at <c>0x1BF</c>.</summary>
+    public NdsProgramFeatures ProgramFeatures { get; }
 
     /// <summary>Locates the FNT main records and name subtables that give FAT identifiers a hierarchy and names.</summary>
     public NdsRegion FileNameTable { get; }

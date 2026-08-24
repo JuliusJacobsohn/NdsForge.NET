@@ -5,6 +5,14 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ## Unreleased
 
+### Added
+
+- Model late-generation DS authentication headers, program feature flags, stored
+  HMAC/signature fields, canonical ARM9 SDK parameter tables, and typed SDK
+  footers without requiring DSi unit mode.
+- Expose overlay compression, authentication, and reserved control bits on both
+  loaded overlays and build definitions.
+
 ## 1.0.1 - 2026-08-18
 
 ### Changed

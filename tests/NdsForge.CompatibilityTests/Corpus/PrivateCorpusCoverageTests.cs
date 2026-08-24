@@ -17,6 +17,11 @@ public sealed class PrivateCorpusCoverageTests
         int highByteNames = 0;
         int unnamedAllocations = 0;
         int sdkFooters = 0;
+        int lateDsExtensions = 0;
+        int programParameterTables = 0;
+        int compressedPrograms = 0;
+        int compressedOverlays = 0;
+        int authenticatedOverlays = 0;
         foreach (CorpusExpectationIndexEntry entry in CorpusExpectations.Entries)
         {
             using NdsImage image = await NdsImage.OpenAsync(
@@ -33,6 +38,11 @@ public sealed class PrivateCorpusCoverageTests
                 static file => file.FullPath.Any(static character => character > 0x7F));
             unnamedAllocations += image.FileSystem.Allocations.Count - image.FileSystem.Files.Count;
             sdkFooters += image.Header.Arm9.Footer is not null ? 1 : 0;
+            lateDsExtensions += image.Header.DsExtended is not null ? 1 : 0;
+            programParameterTables += image.Header.Arm9.Parameters is not null ? 1 : 0;
+            compressedPrograms += image.Header.Arm9.Parameters?.IsCompressed == true ? 1 : 0;
+            compressedOverlays += image.Arm9Overlays.Concat(image.Arm7Overlays).Count(static overlay => overlay.IsCompressed);
+            authenticatedOverlays += image.Arm9Overlays.Concat(image.Arm7Overlays).Count(static overlay => overlay.IsAuthenticated);
         }
 
         Assert.Equal(51, dsImages);
@@ -44,5 +54,10 @@ public sealed class PrivateCorpusCoverageTests
         Assert.Equal(1, highByteNames);
         Assert.Equal(5209, unnamedAllocations);
         Assert.Equal(51, sdkFooters);
+        Assert.Equal(28, lateDsExtensions);
+        Assert.Equal(56, programParameterTables);
+        Assert.Equal(28, compressedPrograms);
+        Assert.Equal(3642, compressedOverlays);
+        Assert.Equal(2240, authenticatedOverlays);
     }
 }

@@ -1,1 +1,80 @@
 #nullable enable
+NdsForge.NdsDsExtendedHeader
+NdsForge.NdsDsExtendedHeader.Arm7ParametersOffset.get -> uint
+NdsForge.NdsDsExtendedHeader.Arm9OverlaysHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsExtendedHeader.Arm9ParametersOffset.get -> uint
+NdsForge.NdsDsExtendedHeader.BannerHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsExtendedHeader.HasBannerAuthentication.get -> bool
+NdsForge.NdsDsExtendedHeader.HasProgramAuthentication.get -> bool
+NdsForge.NdsDsExtendedHeader.ProgramFeatures.get -> NdsForge.NdsProgramFeatures
+NdsForge.NdsDsExtendedHeader.ProgramsHmac.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsExtendedHeader.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsExtendedHeader.RsaSignature.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsExtendedHeader.VerifyRsaSignature(NdsForge.NdsDsiRsaPublicKey! publicKey) -> bool
+NdsForge.NdsHeader.DsExtended.get -> NdsForge.NdsDsExtendedHeader?
+NdsForge.NdsHeader.ProgramFeatures.get -> NdsForge.NdsProgramFeatures
+NdsForge.NdsOverlay.IsAuthenticated.get -> bool
+NdsForge.NdsOverlay.IsCompressed.get -> bool
+NdsForge.NdsOverlay.ReservedFlags.get -> byte
+NdsForge.NdsOverlayDefinition.IsAuthenticated.get -> bool
+NdsForge.NdsOverlayDefinition.IsCompressed.get -> bool
+NdsForge.NdsProgram.FooterMetadata.get -> NdsForge.NdsProgramFooter?
+NdsForge.NdsProgram.Parameters.get -> NdsForge.NdsProgramParameters?
+NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.AuthenticatesBanner = 32 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.AuthenticatesPrograms = 64 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.DevelopmentApplication = 128 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.DsiTouchscreenAndSound = 1 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.None = 0 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.RequiresEula = 2 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.ShowsWifiIcon = 8 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.ShowsWirelessIcon = 16 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFeatures.UsesSavedBannerIcon = 4 -> NdsForge.NdsProgramFeatures
+NdsForge.NdsProgramFooter
+NdsForge.NdsProgramFooter.<Clone>$() -> NdsForge.NdsProgramFooter!
+NdsForge.NdsProgramFooter.Data.get -> NdsForge.NdsRegion
+NdsForge.NdsProgramFooter.Data.init -> void
+NdsForge.NdsProgramFooter.Deconstruct(out NdsForge.NdsRegion Data, out uint ParametersOffset, out uint OverlayHmacTableOffset) -> void
+NdsForge.NdsProgramFooter.Equals(NdsForge.NdsProgramFooter? other) -> bool
+NdsForge.NdsProgramFooter.NdsProgramFooter(NdsForge.NdsRegion Data, uint ParametersOffset, uint OverlayHmacTableOffset) -> void
+NdsForge.NdsProgramFooter.OverlayHmacTableOffset.get -> uint
+NdsForge.NdsProgramFooter.OverlayHmacTableOffset.init -> void
+NdsForge.NdsProgramFooter.ParametersOffset.get -> uint
+NdsForge.NdsProgramFooter.ParametersOffset.init -> void
+NdsForge.NdsProgramParameters
+NdsForge.NdsProgramParameters.BigEndianMarker.get -> uint
+NdsForge.NdsProgramParameters.BssEndAddress.get -> uint
+NdsForge.NdsProgramParameters.BssStartAddress.get -> uint
+NdsForge.NdsProgramParameters.CompressedEndAddress.get -> uint
+NdsForge.NdsProgramParameters.CompressedLength.get -> uint?
+NdsForge.NdsProgramParameters.Data.get -> NdsForge.NdsRegion
+NdsForge.NdsProgramParameters.IsCompressed.get -> bool
+NdsForge.NdsProgramParameters.LittleEndianMarker.get -> uint
+NdsForge.NdsProgramParameters.RelativeOffset.get -> uint
+NdsForge.NdsProgramParameters.SdkVersion.get -> NdsForge.NdsSdkVersion
+NdsForge.NdsProgramParameters.TcmBlockInfoEndAddress.get -> uint
+NdsForge.NdsProgramParameters.TcmBlockInfoStartAddress.get -> uint
+NdsForge.NdsProgramParameters.TcmInputDataAddress.get -> uint
+NdsForge.NdsSdkVersion
+NdsForge.NdsSdkVersion.Build.get -> ushort
+NdsForge.NdsSdkVersion.Build.init -> void
+NdsForge.NdsSdkVersion.Deconstruct(out byte Major, out byte Minor, out ushort Build) -> void
+NdsForge.NdsSdkVersion.Equals(NdsForge.NdsSdkVersion other) -> bool
+NdsForge.NdsSdkVersion.Major.get -> byte
+NdsForge.NdsSdkVersion.Major.init -> void
+NdsForge.NdsSdkVersion.Minor.get -> byte
+NdsForge.NdsSdkVersion.Minor.init -> void
+NdsForge.NdsSdkVersion.NdsSdkVersion() -> void
+NdsForge.NdsSdkVersion.NdsSdkVersion(byte Major, byte Minor, ushort Build) -> void
+NdsForge.NdsSdkVersion.PackedValue.get -> uint
+override NdsForge.NdsProgramFooter.Equals(object? obj) -> bool
+override NdsForge.NdsProgramFooter.GetHashCode() -> int
+override NdsForge.NdsProgramFooter.ToString() -> string!
+override NdsForge.NdsSdkVersion.GetHashCode() -> int
+override NdsForge.NdsSdkVersion.ToString() -> string!
+static NdsForge.NdsProgramFooter.operator !=(NdsForge.NdsProgramFooter? left, NdsForge.NdsProgramFooter? right) -> bool
+static NdsForge.NdsProgramFooter.operator ==(NdsForge.NdsProgramFooter? left, NdsForge.NdsProgramFooter? right) -> bool
+static NdsForge.NdsSdkVersion.FromPacked(uint value) -> NdsForge.NdsSdkVersion
+static NdsForge.NdsSdkVersion.operator !=(NdsForge.NdsSdkVersion left, NdsForge.NdsSdkVersion right) -> bool
+static NdsForge.NdsSdkVersion.operator ==(NdsForge.NdsSdkVersion left, NdsForge.NdsSdkVersion right) -> bool
+~override NdsForge.NdsSdkVersion.Equals(object obj) -> bool

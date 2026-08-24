@@ -2,7 +2,9 @@
 
 ## Supported image families
 
-NdsForge reads and models original Nintendo DS images, DSi-enhanced images, and DSi-exclusive images. Support covers interpreted headers, programs, overlays, NitroFS tables and payloads, banner families, secure-area state, and the DSi regions represented by the public API.
+NdsForge reads and models original Nintendo DS images, DSi-enhanced images, and DSi-exclusive images. Support covers interpreted headers, programs, overlays, NitroFS tables and payloads, banner families, secure-area state, and the DSi regions represented by the public API. Late-generation DS images that opt into DSi-era banner or program authentication retain their complete 0x1000-byte header and expose the declared HMAC and signature fields separately from the DSi unit model.
+
+Canonical ARM9 SDK parameter tables are recognized only when both byte-order markers are present and the complete fixed prefix lies inside the program. This prevents a legacy tool-generated footer placeholder or an arbitrary in-range pointer from being reported as SDK metadata. Stored authentication bytes are evidence from the image, not proof of authenticity; verification still requires caller-selected trust material.
 
 The library does not emulate software, interpret instructions, edit save files, or decode game-specific archives and compression. An image can also contain publisher-specific data that NdsForge preserves as opaque regions rather than claiming to understand it.
 
