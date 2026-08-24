@@ -31,6 +31,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
   lossless editing, canonical writing, and dependency-free RGBA composition.
 - Add verified NCER cell-bank parsing, exact OAM word preservation and typed
   projection, lossless object replacement, and deterministic reconstruction.
+- Add bounded, read-only NANR animation-bank parsing with exact sequence,
+  frame-descriptor, and NCER cell-reference metadata plus byte preservation.
 
 ## 1.0.1 - 2026-08-18
 

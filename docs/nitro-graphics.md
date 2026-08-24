@@ -21,7 +21,7 @@ File.WriteAllBytes("icon-edited.NCLR", edited);
 
 NCLR parsing validates the standard header, PLTT bounds and color depth, and optional PCMP target-palette map. The declared color byte count is exposed because some producers leave it inconsistent; the bounded PLTT section and data offset determine the actual stored words. Preservation builds retain unknown blocks, padding, and allocation trailing bytes, while canonical builds emit deterministic PLTT/PCMP structures.
 
-The private compatibility suite covers all 4,006 direct NCLR files and 1,042,096 colors in the ROM corpus. Every file must preserve exactly and canonically rebuild/reparse. Color expansion, depth, extended-palette state, target mapping, palette partitioning, and every interpreted color were compared against the separately compiled current Texim implementation.
+The private compatibility suite covers all 4,006 direct NCLR files and 1,042,096 colors in the ROM corpus. Every file must preserve exactly and canonically rebuild/reparse. Color expansion, depth, extended-palette state, target mapping, palette partitioning, and every interpreted color are locked to a reviewed compatibility baseline.
 
 ## NCGR tiles and NSCR maps
 
@@ -43,10 +43,27 @@ byte[] editedMap = map.CreateBuilder()
     .Build();
 ```
 
-Differential verification covers 5,035 valid NCGR files containing 126,167,104 indexed pixels and 1,231 NSCR files containing 1,274,624 map entries. Every interpreted pixel, dimension, depth, storage order, mapping boundary, background mode, palette mode, tile number, flip, and palette selector matched the separately compiled current Texim implementation. Thirteen unrelated allocations beginning with the bytes `RGCN` are intentionally rejected because they do not contain a valid standard-file byte-order marker.
+Differential verification covers 5,035 valid NCGR files containing 126,167,104 indexed pixels and 1,231 NSCR files containing 1,274,624 map entries. Every interpreted pixel, dimension, depth, storage order, mapping boundary, background mode, palette mode, tile number, flip, and palette selector is locked to a reviewed compatibility baseline. Thirteen unrelated allocations beginning with the bytes `RGCN` are intentionally rejected because they do not contain a valid standard-file byte-order marker.
 
 ## NCER sprite cells and OAM
 
 `NcerCellBank` reads bounded CEBK cell tables, optional boundaries and UACT values, all three exact OAM words, object-character mapping metadata, and opaque LABL/UEXT payloads. `NitroObjectEntry` projects signed coordinates, every legal hardware size/shape, depth, priority, palette, flip, affine group, mosaic, disabled/double-size state, and rendering mode without discarding reserved bits. Builders can patch one OAM object byte-exactly or emit a deterministic NCER while retaining ambiguous label data opaquely.
 
-The corpus test covers 3,126 NCER files, 50,509 cells, and 178,097 objects. All typed OAM fields match compiled Texim, while exact raw-word digests, no-op preservation, opaque auxiliary blocks, cell bounds, and canonical reparse are independently locked by the NdsForge suite.
+The corpus test covers 3,126 NCER files, 50,509 cells, and 178,097 objects. All typed OAM fields are locked to a reviewed compatibility baseline, while exact raw-word digests, no-op preservation, opaque auxiliary blocks, cell bounds, and canonical reparse are independently locked by the NdsForge suite.
+
+## NANR cell animations
+
+`NanrAnimationBank` provides a bounded read-only view of ABNK animation sequences. Each sequence retains its payload variant, playback and loop words, flags, descriptor offset, and ordered frames. Each `NanrFrame` exposes duration, descriptor flags, payload offset, and the referenced NCER cell index. Ambiguous LABL and UEXT payloads remain opaque, and `WritePreserved` returns an isolated byte-exact copy of the original allocation.
+
+```csharp
+using NdsForge.Graphics.Animations;
+
+NanrAnimationBank animation = NanrAnimationBank.Parse(File.ReadAllBytes("sprite.NANR"));
+foreach (NanrSequence sequence in animation.Sequences)
+{
+    foreach (NanrFrame frame in sequence.Frames)
+        Console.WriteLine($"cell {frame.CellIndex}, duration {frame.Duration}");
+}
+```
+
+The private compatibility suite covers all 2,454 direct NANR files, 17,370 sequences, and 88,311 frame references in the ROM corpus. It locks all three observed payload variants, every exposed sequence and descriptor word, every cell reference, opaque auxiliary sections, and byte-exact preservation to a reviewed semantic digest.

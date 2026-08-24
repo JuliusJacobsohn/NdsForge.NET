@@ -1,4 +1,26 @@
 #nullable enable
+NdsForge.Graphics.Animations.NanrAnimationBank
+NdsForge.Graphics.Animations.NanrAnimationBank.BankConstant.get -> uint
+NdsForge.Graphics.Animations.NanrAnimationBank.DeclaredFrameCount.get -> ushort
+NdsForge.Graphics.Animations.NanrAnimationBank.FrameDescriptorOffset.get -> uint
+NdsForge.Graphics.Animations.NanrAnimationBank.FramePayloadOffset.get -> uint
+NdsForge.Graphics.Animations.NanrAnimationBank.LabelData.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Animations.NanrAnimationBank.Sequences.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Animations.NanrSequence!>!
+NdsForge.Graphics.Animations.NanrAnimationBank.UserExtendedInfo.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Animations.NanrAnimationBank.Version.get -> ushort
+NdsForge.Graphics.Animations.NanrAnimationBank.WritePreserved() -> byte[]!
+NdsForge.Graphics.Animations.NanrFrame
+NdsForge.Graphics.Animations.NanrFrame.CellIndex.get -> ushort
+NdsForge.Graphics.Animations.NanrFrame.DataOffset.get -> uint
+NdsForge.Graphics.Animations.NanrFrame.DescriptorFlags.get -> ushort
+NdsForge.Graphics.Animations.NanrFrame.Duration.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence
+NdsForge.Graphics.Animations.NanrSequence.DataType.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence.FrameOffset.get -> uint
+NdsForge.Graphics.Animations.NanrSequence.Frames.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Animations.NanrFrame!>!
+NdsForge.Graphics.Animations.NanrSequence.LoopStartFrame.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence.PlaybackMode.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence.SequenceFlags.get -> ushort
 NdsForge.Graphics.Colors.NitroColor555
 NdsForge.Graphics.Colors.NitroColor555.Equals(NdsForge.Graphics.Colors.NitroColor555 other) -> bool
 NdsForge.Graphics.Colors.NitroColor555.NitroColor555() -> void
@@ -168,6 +190,7 @@ override NdsForge.Graphics.Maps.NscrMapEntry.GetHashCode() -> int
 override NdsForge.Graphics.Sprites.NcerCellBounds.GetHashCode() -> int
 override NdsForge.Graphics.Sprites.NitroObjectEntry.GetHashCode() -> int
 override NdsForge.Graphics.Tiles.NcgrSourceRegion.GetHashCode() -> int
+static NdsForge.Graphics.Animations.NanrAnimationBank.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Animations.NanrAnimationBank!
 static NdsForge.Graphics.Colors.NitroColor555.FromRgba32(NdsForge.Graphics.Colors.RgbaColor32 color, bool highBit = false) -> NdsForge.Graphics.Colors.NitroColor555
 static NdsForge.Graphics.Colors.NitroColor555.operator !=(NdsForge.Graphics.Colors.NitroColor555 left, NdsForge.Graphics.Colors.NitroColor555 right) -> bool
 static NdsForge.Graphics.Colors.NitroColor555.operator ==(NdsForge.Graphics.Colors.NitroColor555 left, NdsForge.Graphics.Colors.NitroColor555 right) -> bool

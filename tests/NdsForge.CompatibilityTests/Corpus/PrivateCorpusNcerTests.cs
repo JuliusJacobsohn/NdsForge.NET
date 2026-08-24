@@ -8,7 +8,7 @@ namespace NdsForge.CompatibilityTests.Corpus;
 [Collection(PrivateCorpusSerialGroup.Name)]
 public sealed class PrivateCorpusNcerTests
 {
-    /// <summary>Locks exact OAM semantics after field-for-field comparison with compiled Texim.</summary>
+    /// <summary>Locks exact OAM semantics to the reviewed compatibility baseline.</summary>
     [Fact]
     public async Task EveryNcerPreservesAndCanonicallyRebuilds()
     {

@@ -38,7 +38,7 @@ File.WriteAllBytes("resources-edited.narc", rebuilt);
 
 A no-op build is byte-identical, including allocation padding and bytes after the header-declared archive. Same-size replacements patch the preserved layout. Size-changing replacements deterministically rebuild the payload with caller-selected alignment and padding while retaining file IDs and the original filename table. Both standard header-marker representations are supported; block integers remain little-endian as required by the container.
 
-The private compatibility suite covers 6,762 valid NARC allocations and all 826,541 contained files. It verifies exact preservation, canonical rebuild/reparse semantics, and a payload-and-path aggregate digest after every file was byte-compared with the separately compiled TinkeDSi unpacker.
+The private compatibility suite covers 6,762 valid NARC allocations and all 826,541 contained files. It verifies exact preservation, canonical rebuild/reparse semantics, and a payload-and-path aggregate digest locked to a reviewed compatibility baseline.
 
 ## Bottom-up LZ
 

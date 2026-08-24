@@ -9,7 +9,7 @@ namespace NdsForge.CompatibilityTests.Corpus;
 [Collection(PrivateCorpusSerialGroup.Name)]
 public sealed class PrivateCorpusNitroGraphicsTests
 {
-    /// <summary>Locks exact indexed pixels and map entries after comparison with the independently compiled Texim parser.</summary>
+    /// <summary>Locks exact indexed pixels and map entries to the reviewed compatibility baseline.</summary>
     [Fact]
     public async Task EveryNcgrAndNscrPreservesAndCanonicallyRebuilds()
     {
