@@ -23,6 +23,7 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="../Shared/BlzEngine.cs" Link="Internal/BlzEngine.cs" />
     <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
     <None Include="../../assets/branding/ndsforge-icon.png" Pack="true" PackagePath="icon.png" />
