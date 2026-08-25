@@ -67,3 +67,39 @@ foreach (NanrSequence sequence in animation.Sequences)
 ```
 
 The private compatibility suite covers all 2,454 direct NANR files, 17,370 sequences, and 88,311 frame references in the ROM corpus. It locks all three observed payload variants, every exposed sequence and descriptor word, every cell reference, opaque auxiliary sections, and byte-exact preservation to a reviewed semantic digest.
+
+## NFTR bitmap fonts
+
+`NftrFont` provides a bounded model of FINF metadata, indexed CGLP glyph cells,
+per-glyph CWDH placement and advance metrics, and linked CMAP character maps.
+Direct, table, and sparse map methods are normalized to character/glyph pairs;
+unmapped table entries remain absent from lookup results. Glyph pixels are
+exposed as row-major indices in their stored orientation, while the original
+rotation flags remain available for consumers that need to apply a display
+transform.
+
+```csharp
+using NdsForge.Graphics.Fonts;
+
+NftrFont font = NftrFont.Parse(File.ReadAllBytes("dialog.nftr"));
+if (font.TryGetGlyphIndex(0x41, out ushort glyphIndex))
+{
+    NftrGlyph glyph = font.Glyphs[glyphIndex];
+    Console.WriteLine($"{glyph.Metrics.BearingX}, {glyph.Metrics.AdvanceWidth}");
+}
+
+byte[] pixels = font.Glyphs[0].StoredPixels.ToArray();
+pixels[0] = (byte)((1 << font.BitsPerPixel) - 1);
+byte[] edited = font.CreateBuilder().ReplaceGlyphPixels(0, pixels).Build();
+```
+
+Preservation builds patch only explicitly changed glyph bytes and metric
+records, retaining linked-block layout, unknown bytes, padding, and trailing
+allocation data. Canonical builds deterministically reconstruct FINF, CGLP,
+CWDH, and CMAP blocks and are intended for normalized output. The compatibility
+suite covers all 10 direct NFTR files in the private corpus: 7,296 glyphs,
+7,999 character-map slots (7,296 mapped characters), every observed text
+encoding, all three CMAP methods, and one-, two-, and three-bit indexed cells.
+The semantic baseline includes every exposed metadata field, glyph metric,
+pixel index, and resolved mapping, and canonical outputs must reparse to the
+same model.

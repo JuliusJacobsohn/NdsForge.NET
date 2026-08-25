@@ -68,7 +68,7 @@ Parsing creates a navigable image model without modifying the source. Validation
 - Caller-supplied KEY1, DSi digest, HMAC, modcrypt, and RSA operations
 - An optional `Ndstool1503` build profile for verified interoperability cases
 - A dependency-free `NdsForge.Nitro` companion package for BLZ, BIOS compression, archives, messages, and other reusable Nitro formats
-- An optional `NdsForge.Graphics` feature package for native indexed graphics, sprites, and animations without host image-codec dependencies
+- An optional `NdsForge.Graphics` feature package for native indexed graphics, sprites, animations, and bitmap fonts without host image-codec dependencies
 - A cross-platform `ndsforge` .NET command-line tool over the same library
 
 ## Edit an image

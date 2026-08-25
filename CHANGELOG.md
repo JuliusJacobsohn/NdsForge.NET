@@ -36,6 +36,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
   projection, lossless object replacement, and deterministic reconstruction.
 - Add bounded, read-only NANR animation-bank parsing with exact sequence,
   frame-descriptor, and NCER cell-reference metadata plus byte preservation.
+- Add verified NFTR bitmap fonts with typed FINF metadata, indexed CGLP glyphs,
+  CWDH metrics, all three CMAP methods, exact preservation edits, and
+  deterministic canonical reconstruction.
 
 ## 1.0.1 - 2026-08-18
 

@@ -48,6 +48,7 @@ try {
     $program = @'
 using NdsForge;
 using NdsForge.Graphics.Colors;
+using NdsForge.Graphics.Fonts;
 using NdsForge.Graphics.Maps;
 using NdsForge.Graphics.Palettes;
 using NdsForge.Graphics.Tiles;
@@ -79,6 +80,8 @@ if (map.Render(tiles, palette).Pixels.Count != 64)
     throw new InvalidOperationException("Graphics composition package consumer round trip failed.");
 if (NitroObjectEntry.Create(0, 0, 8, 8, 0, NitroColorDepth.Indexed4Bpp).Width != 8)
     throw new InvalidOperationException("Graphics OAM package consumer round trip failed.");
+if (new NftrGlyphMetrics(-1, 8, 9).AdvanceWidth != 9)
+    throw new InvalidOperationException("Graphics font package consumer API failed.");
 Console.WriteLine("PACKAGE_CONSUMER_OK");
 '@
     [System.IO.File]::WriteAllText((Join-Path $consumer "Program.cs"), $program, [System.Text.UTF8Encoding]::new($false))

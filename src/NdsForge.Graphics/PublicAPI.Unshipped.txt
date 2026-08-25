@@ -35,6 +35,79 @@ NdsForge.Graphics.Colors.RgbaColor32.Green.get -> byte
 NdsForge.Graphics.Colors.RgbaColor32.Red.get -> byte
 NdsForge.Graphics.Colors.RgbaColor32.RgbaColor32() -> void
 NdsForge.Graphics.Colors.RgbaColor32.RgbaColor32(byte red, byte green, byte blue, byte alpha = 255) -> void
+NdsForge.Graphics.Fonts.NftrCharacterMap
+NdsForge.Graphics.Fonts.NftrCharacterMap.FirstCharacter.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMap.LastCharacter.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMap.Mappings.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Fonts.NftrCharacterMapping>!
+NdsForge.Graphics.Fonts.NftrCharacterMap.Method.get -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod.Direct = 0 -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod.Scan = 2 -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod.Table = 1 -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapping
+NdsForge.Graphics.Fonts.NftrCharacterMapping.CharacterCode.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMapping.CharacterCode.init -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.Deconstruct(out ushort CharacterCode, out ushort GlyphIndex) -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.Equals(NdsForge.Graphics.Fonts.NftrCharacterMapping other) -> bool
+NdsForge.Graphics.Fonts.NftrCharacterMapping.GlyphIndex.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMapping.GlyphIndex.init -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.NftrCharacterMapping() -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.NftrCharacterMapping(ushort CharacterCode, ushort GlyphIndex) -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingX.get -> sbyte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingX.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingY.get -> sbyte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingY.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.Deconstruct(out byte FontHeight, out byte FontWidth, out sbyte BearingY, out sbyte BearingX) -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.Equals(NdsForge.Graphics.Fonts.NftrExtendedMetrics other) -> bool
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontHeight.get -> byte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontHeight.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontWidth.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.NftrExtendedMetrics() -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.NftrExtendedMetrics(byte FontHeight, byte FontWidth, sbyte BearingY, sbyte BearingX) -> void
+NdsForge.Graphics.Fonts.NftrFont
+NdsForge.Graphics.Fonts.NftrFont.BitsPerPixel.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.CellHeight.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.CellWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.CharacterMaps.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Fonts.NftrCharacterMap!>!
+NdsForge.Graphics.Fonts.NftrFont.CreateBuilder() -> NdsForge.Graphics.Fonts.NftrFontBuilder!
+NdsForge.Graphics.Fonts.NftrFont.DefaultMetrics.get -> NdsForge.Graphics.Fonts.NftrGlyphMetrics
+NdsForge.Graphics.Fonts.NftrFont.Encoding.get -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrFont.ExtendedMetrics.get -> NdsForge.Graphics.Fonts.NftrExtendedMetrics?
+NdsForge.Graphics.Fonts.NftrFont.FallbackGlyphIndex.get -> ushort
+NdsForge.Graphics.Fonts.NftrFont.FontType.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.GlyphDataLength.get -> ushort
+NdsForge.Graphics.Fonts.NftrFont.GlyphFlags.get -> ushort
+NdsForge.Graphics.Fonts.NftrFont.Glyphs.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Fonts.NftrGlyph!>!
+NdsForge.Graphics.Fonts.NftrFont.LineHeight.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.RotationFlags.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.TryGetGlyphIndex(ushort characterCode, out ushort glyphIndex) -> bool
+NdsForge.Graphics.Fonts.NftrFont.Version.get -> ushort
+NdsForge.Graphics.Fonts.NftrFontBuilder
+NdsForge.Graphics.Fonts.NftrFontBuilder.Build(bool preserveSourceLayout = true) -> byte[]!
+NdsForge.Graphics.Fonts.NftrFontBuilder.ReplaceGlyphMetrics(int glyphIndex, NdsForge.Graphics.Fonts.NftrGlyphMetrics metrics) -> NdsForge.Graphics.Fonts.NftrFontBuilder!
+NdsForge.Graphics.Fonts.NftrFontBuilder.ReplaceGlyphPixels(int glyphIndex, System.Collections.Generic.IReadOnlyList<byte>! pixels) -> NdsForge.Graphics.Fonts.NftrFontBuilder!
+NdsForge.Graphics.Fonts.NftrGlyph
+NdsForge.Graphics.Fonts.NftrGlyph.Index.get -> int
+NdsForge.Graphics.Fonts.NftrGlyph.Metrics.get -> NdsForge.Graphics.Fonts.NftrGlyphMetrics
+NdsForge.Graphics.Fonts.NftrGlyph.StoredPixels.get -> System.Collections.Generic.IReadOnlyList<byte>!
+NdsForge.Graphics.Fonts.NftrGlyphMetrics
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.AdvanceWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.AdvanceWidth.init -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.BearingX.get -> sbyte
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.BearingX.init -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.Deconstruct(out sbyte BearingX, out byte GlyphWidth, out byte AdvanceWidth) -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.Equals(NdsForge.Graphics.Fonts.NftrGlyphMetrics other) -> bool
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.GlyphWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.GlyphWidth.init -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.NftrGlyphMetrics() -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.NftrGlyphMetrics(sbyte BearingX, byte GlyphWidth, byte AdvanceWidth) -> void
+NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.ShiftJis = 2 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.Utf16 = 1 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.Utf8 = 0 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.Windows1252 = 3 -> NdsForge.Graphics.Fonts.NftrTextEncoding
 NdsForge.Graphics.Images.RgbaImage32
 NdsForge.Graphics.Images.RgbaImage32.GetPixel(int x, int y) -> NdsForge.Graphics.Colors.RgbaColor32
 NdsForge.Graphics.Images.RgbaImage32.Height.get -> int
@@ -186,6 +259,9 @@ NdsForge.Graphics.Tiles.NitroTileMapping.OneDimensional64K = 1048592 -> NdsForge
 NdsForge.Graphics.Tiles.NitroTileMapping.TwoDimensional = 0 -> NdsForge.Graphics.Tiles.NitroTileMapping
 override NdsForge.Graphics.Colors.NitroColor555.GetHashCode() -> int
 override NdsForge.Graphics.Colors.RgbaColor32.GetHashCode() -> int
+override NdsForge.Graphics.Fonts.NftrCharacterMapping.GetHashCode() -> int
+override NdsForge.Graphics.Fonts.NftrExtendedMetrics.GetHashCode() -> int
+override NdsForge.Graphics.Fonts.NftrGlyphMetrics.GetHashCode() -> int
 override NdsForge.Graphics.Maps.NscrMapEntry.GetHashCode() -> int
 override NdsForge.Graphics.Sprites.NcerCellBounds.GetHashCode() -> int
 override NdsForge.Graphics.Sprites.NitroObjectEntry.GetHashCode() -> int
@@ -196,6 +272,13 @@ static NdsForge.Graphics.Colors.NitroColor555.operator !=(NdsForge.Graphics.Colo
 static NdsForge.Graphics.Colors.NitroColor555.operator ==(NdsForge.Graphics.Colors.NitroColor555 left, NdsForge.Graphics.Colors.NitroColor555 right) -> bool
 static NdsForge.Graphics.Colors.RgbaColor32.operator !=(NdsForge.Graphics.Colors.RgbaColor32 left, NdsForge.Graphics.Colors.RgbaColor32 right) -> bool
 static NdsForge.Graphics.Colors.RgbaColor32.operator ==(NdsForge.Graphics.Colors.RgbaColor32 left, NdsForge.Graphics.Colors.RgbaColor32 right) -> bool
+static NdsForge.Graphics.Fonts.NftrCharacterMapping.operator !=(NdsForge.Graphics.Fonts.NftrCharacterMapping left, NdsForge.Graphics.Fonts.NftrCharacterMapping right) -> bool
+static NdsForge.Graphics.Fonts.NftrCharacterMapping.operator ==(NdsForge.Graphics.Fonts.NftrCharacterMapping left, NdsForge.Graphics.Fonts.NftrCharacterMapping right) -> bool
+static NdsForge.Graphics.Fonts.NftrExtendedMetrics.operator !=(NdsForge.Graphics.Fonts.NftrExtendedMetrics left, NdsForge.Graphics.Fonts.NftrExtendedMetrics right) -> bool
+static NdsForge.Graphics.Fonts.NftrExtendedMetrics.operator ==(NdsForge.Graphics.Fonts.NftrExtendedMetrics left, NdsForge.Graphics.Fonts.NftrExtendedMetrics right) -> bool
+static NdsForge.Graphics.Fonts.NftrFont.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Fonts.NftrFont!
+static NdsForge.Graphics.Fonts.NftrGlyphMetrics.operator !=(NdsForge.Graphics.Fonts.NftrGlyphMetrics left, NdsForge.Graphics.Fonts.NftrGlyphMetrics right) -> bool
+static NdsForge.Graphics.Fonts.NftrGlyphMetrics.operator ==(NdsForge.Graphics.Fonts.NftrGlyphMetrics left, NdsForge.Graphics.Fonts.NftrGlyphMetrics right) -> bool
 static NdsForge.Graphics.Maps.NscrMapEntry.FromPackedValue(ushort value) -> NdsForge.Graphics.Maps.NscrMapEntry
 static NdsForge.Graphics.Maps.NscrMapEntry.operator !=(NdsForge.Graphics.Maps.NscrMapEntry left, NdsForge.Graphics.Maps.NscrMapEntry right) -> bool
 static NdsForge.Graphics.Maps.NscrMapEntry.operator ==(NdsForge.Graphics.Maps.NscrMapEntry left, NdsForge.Graphics.Maps.NscrMapEntry right) -> bool
@@ -217,6 +300,12 @@ static NdsForge.Graphics.Tiles.NcgrSourceRegion.operator ==(NdsForge.Graphics.Ti
 ~override NdsForge.Graphics.Colors.NitroColor555.ToString() -> string
 ~override NdsForge.Graphics.Colors.RgbaColor32.Equals(object obj) -> bool
 ~override NdsForge.Graphics.Colors.RgbaColor32.ToString() -> string
+~override NdsForge.Graphics.Fonts.NftrCharacterMapping.Equals(object obj) -> bool
+~override NdsForge.Graphics.Fonts.NftrCharacterMapping.ToString() -> string
+~override NdsForge.Graphics.Fonts.NftrExtendedMetrics.Equals(object obj) -> bool
+~override NdsForge.Graphics.Fonts.NftrExtendedMetrics.ToString() -> string
+~override NdsForge.Graphics.Fonts.NftrGlyphMetrics.Equals(object obj) -> bool
+~override NdsForge.Graphics.Fonts.NftrGlyphMetrics.ToString() -> string
 ~override NdsForge.Graphics.Maps.NscrMapEntry.Equals(object obj) -> bool
 ~override NdsForge.Graphics.Maps.NscrMapEntry.ToString() -> string
 ~override NdsForge.Graphics.Sprites.NcerCellBounds.Equals(object obj) -> bool
