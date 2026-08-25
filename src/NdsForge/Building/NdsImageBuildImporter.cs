@@ -44,6 +44,12 @@ internal static class NdsImageBuildImporter
                     .OfType<NdsProgram>());
         }
 
+        NdsDebugProgramDefinition? debugProgram = image.Header.DebugRomSize == 0
+            ? null
+            : new(
+                await ReadRegionAsync(image, image.Header.DebugRom, cancellationToken).ConfigureAwait(false),
+                image.Header.DebugLoadAddress);
+
         var builder = new NdsImageBuilder
         {
             Kind = image.Header.Kind,
@@ -60,6 +66,7 @@ internal static class NdsImageBuildImporter
             Arm9AutoLoad = image.Header.Arm9AutoLoad,
             Arm7AutoLoad = image.Header.Arm7AutoLoad,
             SecureDisable = image.Header.SecureDisable,
+            DebugProgram = debugProgram,
             Arm9 = arm9Definition,
             Arm7 = new(
                 NdsProcessor.Arm7,

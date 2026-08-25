@@ -1,4 +1,8 @@
 #nullable enable
+NdsForge.NdsDebugProgramDefinition
+NdsForge.NdsDebugProgramDefinition.Contents.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDebugProgramDefinition.LoadAddress.get -> uint
+NdsForge.NdsDebugProgramDefinition.NdsDebugProgramDefinition(System.ReadOnlySpan<byte> contents, uint loadAddress) -> void
 NdsForge.NdsDsExtendedHeader
 NdsForge.NdsDsExtendedHeader.Arm7ParametersOffset.get -> uint
 NdsForge.NdsDsExtendedHeader.Arm9OverlaysHmac.get -> System.ReadOnlyMemory<byte>
@@ -11,8 +15,173 @@ NdsForge.NdsDsExtendedHeader.ProgramsHmac.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsDsExtendedHeader.RawData.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsDsExtendedHeader.RsaSignature.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsDsExtendedHeader.VerifyRsaSignature(NdsForge.NdsDsiRsaPublicKey! publicKey) -> bool
+NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.AesSlotB = 2 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.AesSlotC = 4 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.CommonClientKey = 1 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.DebuggerCommonClientKey = 2147483648 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.GameCardDsMode = 256 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.GameCardPower = 32 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.GameCardSaveRead = 32768 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.GameCardSaveWrite = 65536 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.LauncherJpegSigning = 128 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.Nand = 16 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.None = 0 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.PhotoRead = 2048 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.PhotoWrite = 4096 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.SdCard = 8 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.SdCardRead = 8192 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.SdCardWrite = 16384 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.SharedDataFiles = 64 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.SslClientCertificate = 512 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAccessCapabilities.UserJpegSigning = 1024 -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiAgeRating
+NdsForge.NdsDsiAgeRating.Authority.get -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRating.Authority.init -> void
+NdsForge.NdsDsiAgeRating.Deconstruct(out NdsForge.NdsDsiAgeRatingAuthority Authority, out byte RawValue) -> void
+NdsForge.NdsDsiAgeRating.Equals(NdsForge.NdsDsiAgeRating other) -> bool
+NdsForge.NdsDsiAgeRating.HasReservedBit.get -> bool
+NdsForge.NdsDsiAgeRating.IsEnabled.get -> bool
+NdsForge.NdsDsiAgeRating.IsProhibitedOrPending.get -> bool
+NdsForge.NdsDsiAgeRating.MinimumAge.get -> byte
+NdsForge.NdsDsiAgeRating.NdsDsiAgeRating() -> void
+NdsForge.NdsDsiAgeRating.NdsDsiAgeRating(NdsForge.NdsDsiAgeRatingAuthority Authority, byte RawValue) -> void
+NdsForge.NdsDsiAgeRating.RawValue.get -> byte
+NdsForge.NdsDsiAgeRating.RawValue.init -> void
+NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Australia = 8 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Cero = 0 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Esrb = 1 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Korea = 9 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Pegi = 4 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.PegiPortugal = 6 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned10 = 10 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned11 = 11 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned12 = 12 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned13 = 13 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned14 = 14 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned15 = 15 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned2 = 2 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Unassigned5 = 5 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.UnitedKingdom = 7 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiAgeRatingAuthority.Usk = 3 -> NdsForge.NdsDsiAgeRatingAuthority
+NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.AuthenticatesBanner = 32 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.AuthenticatesPrograms = 64 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.DevelopmentApplication = 128 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.DsiPeripheralMode = 1 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.None = 0 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.RequiresEula = 2 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.ShowsNetworkIcon = 8 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.ShowsWirelessIcon = 16 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiApplicationFeatures.UsesExternalBanner = 4 -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiBuildMetadata.AccessControlFlags.get -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiBuildMetadata.AccessControlFlags.set -> void
+NdsForge.NdsDsiBuildMetadata.AgeRatingsUsage.get -> byte
+NdsForge.NdsDsiBuildMetadata.AgeRatingsUsage.set -> void
+NdsForge.NdsDsiBuildMetadata.ApplicationFeatures.get -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiBuildMetadata.ApplicationFeatures.set -> void
+NdsForge.NdsDsiBuildMetadata.CryptoPolicy.get -> NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsDsiBuildMetadata.CryptoPolicy.set -> void
+NdsForge.NdsDsiBuildMetadata.EulaVersion.get -> byte
+NdsForge.NdsDsiBuildMetadata.EulaVersion.set -> void
+NdsForge.NdsDsiBuildMetadata.MemoryBanks.get -> NdsForge.NdsDsiMemoryBankConfiguration!
+NdsForge.NdsDsiBuildMetadata.Ratings.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDsiAgeRating>!
+NdsForge.NdsDsiBuildMetadata.Regions.get -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiBuildMetadata.Regions.set -> void
+NdsForge.NdsDsiBuildMetadata.SetAgeRating(NdsForge.NdsDsiAgeRating rating) -> NdsForge.NdsDsiBuildMetadata!
+NdsForge.NdsDsiBuildMetadata.SetSharedDataFileSizes(System.ReadOnlySpan<byte> sizes) -> NdsForge.NdsDsiBuildMetadata!
+NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsDsiCryptoPolicy.DisablesDebugging = 8 -> NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsDsiCryptoPolicy.HasDsiRegion = 1 -> NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsDsiCryptoPolicy.None = 0 -> NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsDsiCryptoPolicy.UsesDevelopmentModcryptKey = 4 -> NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsDsiCryptoPolicy.UsesModcrypt = 2 -> NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsDsiHeader.AccessControlFlags.get -> NdsForge.NdsDsiAccessCapabilities
+NdsForge.NdsDsiHeader.AgeRatingsUsage.get -> byte
+NdsForge.NdsDsiHeader.ApplicationFeatures.get -> NdsForge.NdsDsiApplicationFeatures
+NdsForge.NdsDsiHeader.EulaVersion.get -> byte
+NdsForge.NdsDsiHeader.MemoryBanks.get -> NdsForge.NdsDsiMemoryBankConfiguration!
+NdsForge.NdsDsiHeader.Ratings.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDsiAgeRating>!
+NdsForge.NdsDsiHeader.Regions.get -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiHeader.SharedDataFileSizes.get -> System.Collections.Generic.IReadOnlyList<byte>!
+NdsForge.NdsDsiHeader.UnknownAccessControlBits.get -> uint
+NdsForge.NdsDsiHeader.UnknownRegionFlagBits.get -> uint
+NdsForge.NdsDsiHeader.UsesAgeRatings.get -> bool
+NdsForge.NdsDsiLaunchPolicy
+NdsForge.NdsDsiLaunchPolicy.Jump = 1 -> NdsForge.NdsDsiLaunchPolicy
+NdsForge.NdsDsiLaunchPolicy.None = 0 -> NdsForge.NdsDsiLaunchPolicy
+NdsForge.NdsDsiLaunchPolicy.TemporaryJump = 2 -> NdsForge.NdsDsiLaunchPolicy
+NdsForge.NdsDsiMemoryBankConfiguration
+NdsForge.NdsDsiMemoryBankConfiguration.Arm7LocalBanks.get -> System.Collections.Generic.IReadOnlyList<uint>!
+NdsForge.NdsDsiMemoryBankConfiguration.Arm9LocalBanks.get -> System.Collections.Generic.IReadOnlyList<uint>!
+NdsForge.NdsDsiMemoryBankConfiguration.Bank9WriteProtection.get -> uint
+NdsForge.NdsDsiMemoryBankConfiguration.GlobalBanks.get -> System.Collections.Generic.IReadOnlyList<uint>!
+NdsForge.NdsDsiMemoryBankConfiguration.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDsiMemoryBankConfiguration.WramControl.get -> byte
+NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiRegionPermissions.Australia = 8 -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiRegionPermissions.China = 16 -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiRegionPermissions.Europe = 4 -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiRegionPermissions.Japan = 1 -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiRegionPermissions.Korea = 32 -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiRegionPermissions.None = 0 -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsDsiRegionPermissions.NorthAmerica = 2 -> NdsForge.NdsDsiRegionPermissions
+NdsForge.NdsHeader.DebugLoadAddress.get -> uint
+NdsForge.NdsHeader.DebugRom.get -> NdsForge.NdsRegion
+NdsForge.NdsHeader.DebugRomOffset.get -> uint
+NdsForge.NdsHeader.DebugRomSize.get -> uint
 NdsForge.NdsHeader.DsExtended.get -> NdsForge.NdsDsExtendedHeader?
+NdsForge.NdsHeader.DsiCryptoPolicy.get -> NdsForge.NdsDsiCryptoPolicy
+NdsForge.NdsHeader.DsiLaunchPolicy.get -> NdsForge.NdsDsiLaunchPolicy
+NdsForge.NdsHeader.LegacyRegion.get -> NdsForge.NdsLegacyRegion
 NdsForge.NdsHeader.ProgramFeatures.get -> NdsForge.NdsProgramFeatures
+NdsForge.NdsHeader.UnknownDsiFlagBits.get -> byte
+NdsForge.NdsHeader.UnknownDsiLaunchBits.get -> byte
+NdsForge.NdsHeaderEdit.DebugLoadAddress.get -> uint
+NdsForge.NdsHeaderEdit.DebugLoadAddress.set -> void
+NdsForge.NdsHeaderEdit.DebugRomOffset.get -> uint
+NdsForge.NdsHeaderEdit.DebugRomOffset.set -> void
+NdsForge.NdsHeaderEdit.DebugRomSize.get -> uint
+NdsForge.NdsHeaderEdit.DebugRomSize.set -> void
+NdsForge.NdsImageBuilder.DebugProgram.get -> NdsForge.NdsDebugProgramDefinition?
+NdsForge.NdsImageBuilder.DebugProgram.set -> void
+NdsForge.NdsImageBuilder.DsiLaunchPolicy.get -> NdsForge.NdsDsiLaunchPolicy
+NdsForge.NdsImageBuilder.DsiLaunchPolicy.set -> void
+NdsForge.NdsImageBuilder.LegacyRegion.get -> NdsForge.NdsLegacyRegion
+NdsForge.NdsImageBuilder.LegacyRegion.set -> void
+NdsForge.NdsImageBuildResult.DebugProgram.get -> NdsForge.NdsRegion?
+NdsForge.NdsLegacyRegion
+NdsForge.NdsLegacyRegion.Deconstruct(out byte RawValue) -> void
+NdsForge.NdsLegacyRegion.Equals(NdsForge.NdsLegacyRegion other) -> bool
+NdsForge.NdsLegacyRegion.NdsLegacyRegion() -> void
+NdsForge.NdsLegacyRegion.NdsLegacyRegion(byte RawValue) -> void
+NdsForge.NdsLegacyRegion.RawValue.get -> byte
+NdsForge.NdsLegacyRegion.RawValue.init -> void
+NdsForge.NdsManifestDsi.AgeRatingsHex.get -> string!
+NdsForge.NdsManifestDsi.AgeRatingsHex.init -> void
+NdsForge.NdsManifestDsi.AgeRatingsUsage.get -> byte
+NdsForge.NdsManifestDsi.AgeRatingsUsage.init -> void
+NdsForge.NdsManifestDsi.ApplicationFlags.get -> byte
+NdsForge.NdsManifestDsi.ApplicationFlags.init -> void
+NdsForge.NdsManifestDsi.EulaVersion.get -> byte
+NdsForge.NdsManifestDsi.EulaVersion.init -> void
+NdsForge.NdsManifestDsi.MemoryBankSettingsHex.get -> string!
+NdsForge.NdsManifestDsi.MemoryBankSettingsHex.init -> void
+NdsForge.NdsManifestDsi.ScfgExtMask.get -> uint
+NdsForge.NdsManifestDsi.ScfgExtMask.init -> void
+NdsForge.NdsManifestDsi.SharedDataFileSizesHex.get -> string!
+NdsForge.NdsManifestDsi.SharedDataFileSizesHex.init -> void
+NdsForge.NdsManifestHeader.DebugLoadAddress.get -> uint
+NdsForge.NdsManifestHeader.DebugLoadAddress.init -> void
+NdsForge.NdsManifestHeader.DebugRomOffset.get -> uint
+NdsForge.NdsManifestHeader.DebugRomOffset.init -> void
+NdsForge.NdsManifestHeader.DebugRomSha256.get -> string?
+NdsForge.NdsManifestHeader.DebugRomSha256.init -> void
+NdsForge.NdsManifestHeader.DebugRomSize.get -> uint
+NdsForge.NdsManifestHeader.DebugRomSize.init -> void
+NdsForge.NdsManifestHeader.DsiFlags.get -> byte
+NdsForge.NdsManifestHeader.DsiFlags.init -> void
 NdsForge.NdsOverlay.IsAuthenticated.get -> bool
 NdsForge.NdsOverlay.IsCompressed.get -> bool
 NdsForge.NdsOverlay.ReservedFlags.get -> byte
@@ -63,14 +232,27 @@ NdsForge.NdsSdkVersion.Minor.get -> byte
 NdsForge.NdsSdkVersion.NdsSdkVersion() -> void
 NdsForge.NdsSdkVersion.NdsSdkVersion(byte major, byte minor, ushort build) -> void
 NdsForge.NdsSdkVersion.PackedValue.get -> uint
+override NdsForge.NdsDsiAgeRating.GetHashCode() -> int
+override NdsForge.NdsLegacyRegion.GetHashCode() -> int
 override NdsForge.NdsProgramFooter.Equals(object? obj) -> bool
 override NdsForge.NdsProgramFooter.GetHashCode() -> int
 override NdsForge.NdsProgramFooter.ToString() -> string!
 override NdsForge.NdsSdkVersion.GetHashCode() -> int
 override NdsForge.NdsSdkVersion.ToString() -> string!
+static NdsForge.NdsDsiAgeRating.operator !=(NdsForge.NdsDsiAgeRating left, NdsForge.NdsDsiAgeRating right) -> bool
+static NdsForge.NdsDsiAgeRating.operator ==(NdsForge.NdsDsiAgeRating left, NdsForge.NdsDsiAgeRating right) -> bool
+static NdsForge.NdsLegacyRegion.China.get -> NdsForge.NdsLegacyRegion
+static NdsForge.NdsLegacyRegion.Korea.get -> NdsForge.NdsLegacyRegion
+static NdsForge.NdsLegacyRegion.operator !=(NdsForge.NdsLegacyRegion left, NdsForge.NdsLegacyRegion right) -> bool
+static NdsForge.NdsLegacyRegion.operator ==(NdsForge.NdsLegacyRegion left, NdsForge.NdsLegacyRegion right) -> bool
+static NdsForge.NdsLegacyRegion.Worldwide.get -> NdsForge.NdsLegacyRegion
 static NdsForge.NdsProgramFooter.operator !=(NdsForge.NdsProgramFooter? left, NdsForge.NdsProgramFooter? right) -> bool
 static NdsForge.NdsProgramFooter.operator ==(NdsForge.NdsProgramFooter? left, NdsForge.NdsProgramFooter? right) -> bool
 static NdsForge.NdsSdkVersion.FromPacked(uint value) -> NdsForge.NdsSdkVersion
 static NdsForge.NdsSdkVersion.operator !=(NdsForge.NdsSdkVersion left, NdsForge.NdsSdkVersion right) -> bool
 static NdsForge.NdsSdkVersion.operator ==(NdsForge.NdsSdkVersion left, NdsForge.NdsSdkVersion right) -> bool
+~override NdsForge.NdsDsiAgeRating.Equals(object obj) -> bool
+~override NdsForge.NdsDsiAgeRating.ToString() -> string
+~override NdsForge.NdsLegacyRegion.Equals(object obj) -> bool
+~override NdsForge.NdsLegacyRegion.ToString() -> string
 ~override NdsForge.NdsSdkVersion.Equals(object obj) -> bool

@@ -37,6 +37,9 @@ public sealed class NdsHeader
         HeaderSize = NdsBinary.ReadUInt32(data, 0x84);
         NintendoLogoCrc = NdsBinary.ReadUInt16(data, 0x15C);
         HeaderCrc = NdsBinary.ReadUInt16(data, 0x15E);
+        DebugRomOffset = NdsBinary.ReadUInt32(data, 0x160);
+        DebugRomSize = NdsBinary.ReadUInt32(data, 0x164);
+        DebugLoadAddress = NdsBinary.ReadUInt32(data, 0x168);
 
         ProgramFeatures = (NdsProgramFeatures)data[0x1BF];
 
@@ -81,8 +84,23 @@ public sealed class NdsHeader
     /// <summary>Preserves the DSi flags at offset <c>0x1C</c>; DS-only software normally leaves them zero.</summary>
     public byte DsiFlags { get; }
 
+    /// <summary>Projects defined DSi execution and modcrypt bits while <see cref="DsiFlags"/> retains the raw byte.</summary>
+    public NdsDsiCryptoPolicy DsiCryptoPolicy => (NdsDsiCryptoPolicy)DsiFlags;
+
+    /// <summary>Gets currently unassigned high bits from <see cref="DsiFlags"/>.</summary>
+    public byte UnknownDsiFlagBits => (byte)(DsiFlags & 0xF0);
+
     /// <summary>Preserves the header's region byte, whose defined interpretation depends on DS versus DSi mode.</summary>
     public byte RegionCode { get; }
+
+    /// <summary>Projects the original-DS region value; inspect <see cref="RegionCode"/> for undefined values.</summary>
+    public NdsLegacyRegion LegacyRegion => new(RegionCode);
+
+    /// <summary>Projects DSi launch-policy bits when <see cref="Kind"/> selects DSi execution.</summary>
+    public NdsDsiLaunchPolicy DsiLaunchPolicy => (NdsDsiLaunchPolicy)RegionCode;
+
+    /// <summary>Gets launch-byte bits not currently assigned by the DSi header format.</summary>
+    public byte UnknownDsiLaunchBits => (byte)(RegionCode & 0xFC);
 
     /// <summary>Exposes the publisher-controlled one-byte software revision rather than the banner or format version.</summary>
     public byte Version { get; }
@@ -158,6 +176,18 @@ public sealed class NdsHeader
 
     /// <summary>Contains the CRC16 over bytes <c>0x000</c>-<c>0x15D</c>, excluding this field itself.</summary>
     public ushort HeaderCrc { get; }
+
+    /// <summary>Gets the absolute source offset of an optional debug program, or zero when absent.</summary>
+    public uint DebugRomOffset { get; }
+
+    /// <summary>Reports the stored byte length of the optional debug executable.</summary>
+    public uint DebugRomSize { get; }
+
+    /// <summary>Identifies the runtime address receiving the first optional debug executable byte.</summary>
+    public uint DebugLoadAddress { get; }
+
+    /// <summary>Combines the debug source offset and size into a half-open image region.</summary>
+    public NdsRegion DebugRom => NdsRegion.FromUInt32(DebugRomOffset, DebugRomSize);
 
     /// <summary>Restricts unit codes to hardware modes whose header and program layouts this library understands.</summary>
     /// <param name="value">Raw unit code from header offset <c>0x12</c>.</param>

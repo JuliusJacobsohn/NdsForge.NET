@@ -39,6 +39,13 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Add verified NFTR bitmap fonts with typed FINF metadata, indexed CGLP glyphs,
   CWDH metrics, all three CMAP methods, exact preservation edits, and
   deterministic canonical reconstruction.
+- Complete common and DSi header semantics for optional debug executables,
+  territory and launch policy, crypto and access capabilities, application
+  policy, MBK/WRAM registers, shared-data metadata, EULA revision, and all
+  parental-rating slots while preserving unknown and reserved bits.
+- Preserve debug executable bytes through structural builds, validate malformed
+  debug ranges, and include the expanded header semantics in JSON manifests and
+  semantic image comparison.
 
 ## 1.0.1 - 2026-08-18
 

@@ -82,6 +82,16 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
+        if (layout.DebugProgram is not null)
+        {
+            await WriteAtAsync(
+                destination,
+                layout.DebugProgram.Value.Offset,
+                builder.DebugProgram!.Contents,
+                paddingByte,
+                cancellationToken).ConfigureAwait(false);
+        }
+
         if (layout.Arm9i is not null)
         {
             await WriteAtAsync(
@@ -148,6 +158,7 @@ internal static class NdsImageBuildWriter
             layout.FileNameTable,
             layout.FileAllocationTable,
             layout.Banner,
+            layout.DebugProgram,
             layout.Arm9i,
             layout.Arm7i,
             layout.SectorHashTable,

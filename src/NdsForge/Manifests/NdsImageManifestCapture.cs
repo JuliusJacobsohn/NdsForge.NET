@@ -71,6 +71,9 @@ internal static class NdsImageManifestCapture
         }
 
         NdsHeader header = image.Header;
+        string? debugRomHash = header.DebugRomSize == 0
+            ? null
+            : await HashRegionAsync(image, header.DebugRom, cancellationToken).ConfigureAwait(false);
         var manifest = new NdsImageManifest
         {
             PhysicalLength = image.Length,
@@ -83,11 +86,16 @@ internal static class NdsImageManifestCapture
                 Kind = header.Kind,
                 Version = header.Version,
                 RegionCode = header.RegionCode,
+                DsiFlags = header.DsiFlags,
                 AutoStart = header.AutoStart,
                 UsedImageSize = header.UsedImageSize,
                 DeviceCapacityBytes = header.DeviceCapacityBytes,
                 NormalCardControl = header.NormalCardControl,
                 SecureCardControl = header.SecureCardControl,
+                DebugRomOffset = header.DebugRomOffset,
+                DebugRomSize = header.DebugRomSize,
+                DebugLoadAddress = header.DebugLoadAddress,
+                DebugRomSha256 = debugRomHash,
                 Sha256 = HashMemory(header.RawData.Span),
             },
             Dsi = CaptureDsi(header.Dsi),
@@ -142,6 +150,13 @@ internal static class NdsImageManifestCapture
         TotalImageSize = dsi.TotalImageSize,
         RegionFlags = dsi.RegionFlags,
         AccessControl = dsi.AccessControl,
+        ScfgExtMask = dsi.ScfgExtMask,
+        ApplicationFlags = dsi.ApplicationFlags,
+        EulaVersion = dsi.EulaVersion,
+        AgeRatingsUsage = dsi.AgeRatingsUsage,
+        MemoryBankSettingsHex = Convert.ToHexStringLower(dsi.MemoryBankSettings.Span),
+        SharedDataFileSizesHex = Convert.ToHexStringLower(dsi.SharedDataFileSizes.ToArray()),
+        AgeRatingsHex = Convert.ToHexStringLower(dsi.AgeRatings.Span),
         HasModcryptAreas = dsi.HasModcryptAreas,
         UsesInsecureModcryptKey = dsi.UsesInsecureModcryptKey,
         ModcryptArea1 = CaptureRegion(dsi.ModcryptArea1),

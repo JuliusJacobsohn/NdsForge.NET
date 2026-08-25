@@ -1,3 +1,5 @@
+using System.Buffers.Binary;
+
 namespace NdsForge.Tests;
 
 public sealed class NdsImageTests
@@ -40,6 +42,25 @@ public sealed class NdsImageTests
         NdsDiagnostic diagnostic = Assert.Single(result.Diagnostics);
         Assert.Equal("NDS1001", diagnostic.Code);
         Assert.Equal(NdsDiagnosticSeverity.Error, diagnostic.Severity);
+    }
+
+    [Theory]
+    [InlineData(0x300u, 0u)]
+    [InlineData(0u, 3u)]
+    [InlineData(0x3FFFu, 3u)]
+    public void ValidateReportsMalformedDebugProgramRange(uint offset, uint size)
+    {
+        byte[] data = SyntheticImage.CreateHeaderOnly();
+        BinaryPrimitives.WriteUInt32LittleEndian(data.AsSpan(0x160), offset);
+        BinaryPrimitives.WriteUInt32LittleEndian(data.AsSpan(0x164), size);
+        BinaryPrimitives.WriteUInt16LittleEndian(
+            data.AsSpan(0x15E),
+            NdsChecksums.ComputeCrc16(data.AsSpan(0, 0x15E)));
+        using NdsImage image = NdsImage.Load(data);
+
+        NdsValidationResult result = image.Validate();
+
+        Assert.Contains(result.Diagnostics, static diagnostic => diagnostic.Code == "NDS1109");
     }
 
     [Fact]

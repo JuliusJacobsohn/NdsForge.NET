@@ -69,11 +69,16 @@ public static class NdsImageComparer
         AddValue(output, "Header.Kind", left.Kind, right.Kind);
         AddValue(output, "Header.Version", left.Version, right.Version);
         AddValue(output, "Header.RegionCode", left.RegionCode, right.RegionCode);
+        AddValue(output, "Header.DsiFlags", left.DsiFlags, right.DsiFlags);
         AddValue(output, "Header.AutoStart", left.AutoStart, right.AutoStart);
         AddValue(output, "Header.UsedImageSize", left.UsedImageSize, right.UsedImageSize, NdsDifferenceKind.Relocated);
         AddValue(output, "Header.DeviceCapacityBytes", left.DeviceCapacityBytes, right.DeviceCapacityBytes, NdsDifferenceKind.Relocated);
         AddValue(output, "Header.NormalCardControl", left.NormalCardControl, right.NormalCardControl);
         AddValue(output, "Header.SecureCardControl", left.SecureCardControl, right.SecureCardControl);
+        AddValue(output, "Header.DebugRomOffset", left.DebugRomOffset, right.DebugRomOffset, NdsDifferenceKind.Relocated);
+        AddValue(output, "Header.DebugRomSize", left.DebugRomSize, right.DebugRomSize);
+        AddValue(output, "Header.DebugLoadAddress", left.DebugLoadAddress, right.DebugLoadAddress);
+        AddValue(output, "Header.DebugRomSha256", left.DebugRomSha256, right.DebugRomSha256);
         AddValue(output, "Header.Sha256", left.Sha256, right.Sha256);
     }
 
@@ -90,6 +95,13 @@ public static class NdsImageComparer
         AddValue(output, "Dsi.TotalImageSize", left.TotalImageSize, right.TotalImageSize, NdsDifferenceKind.Relocated);
         AddValue(output, "Dsi.RegionFlags", left.RegionFlags, right.RegionFlags);
         AddValue(output, "Dsi.AccessControl", left.AccessControl, right.AccessControl);
+        AddValue(output, "Dsi.ScfgExtMask", left.ScfgExtMask, right.ScfgExtMask);
+        AddValue(output, "Dsi.ApplicationFlags", left.ApplicationFlags, right.ApplicationFlags);
+        AddValue(output, "Dsi.EulaVersion", left.EulaVersion, right.EulaVersion);
+        AddValue(output, "Dsi.AgeRatingsUsage", left.AgeRatingsUsage, right.AgeRatingsUsage);
+        AddValue(output, "Dsi.MemoryBankSettingsHex", left.MemoryBankSettingsHex, right.MemoryBankSettingsHex);
+        AddValue(output, "Dsi.SharedDataFileSizesHex", left.SharedDataFileSizesHex, right.SharedDataFileSizesHex);
+        AddValue(output, "Dsi.AgeRatingsHex", left.AgeRatingsHex, right.AgeRatingsHex);
         AddValue(output, "Dsi.HasModcryptAreas", left.HasModcryptAreas, right.HasModcryptAreas);
         AddValue(output, "Dsi.UsesInsecureModcryptKey", left.UsesInsecureModcryptKey, right.UsesInsecureModcryptKey);
         CompareRegion("Dsi.ModcryptArea1", left.ModcryptArea1, right.ModcryptArea1, output);

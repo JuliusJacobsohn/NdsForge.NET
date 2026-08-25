@@ -28,6 +28,20 @@ public sealed class NdsManifestDsi
     public uint RegionFlags { get; init; }
     /// <summary>Records DSi service and hardware access-control bits.</summary>
     public uint AccessControl { get; init; }
+    /// <summary>Records the complete mask of SCFG_EXT bits the application may modify.</summary>
+    public uint ScfgExtMask { get; init; }
+    /// <summary>Records the complete application-policy byte.</summary>
+    public byte ApplicationFlags { get; init; }
+    /// <summary>Records the required EULA revision byte.</summary>
+    public byte EulaVersion { get; init; }
+    /// <summary>Records the exact byte controlling parental-rating evaluation.</summary>
+    public byte AgeRatingsUsage { get; init; }
+    /// <summary>Encodes all 48 native MBK and WRAM bytes as canonical lowercase hexadecimal text.</summary>
+    public string MemoryBankSettingsHex { get; init; } = string.Empty;
+    /// <summary>Encodes the six shared-data file-size unit bytes in native slot order.</summary>
+    public string SharedDataFileSizesHex { get; init; } = string.Empty;
+    /// <summary>Encodes all sixteen authority-specific rating bytes without interpreting reserved bits.</summary>
+    public string AgeRatingsHex { get; init; } = string.Empty;
     /// <summary>Records whether either header-declared modcrypt interval contains bytes.</summary>
     public bool HasModcryptAreas { get; init; }
     /// <summary>Records whether public header bytes replace the securely scrambled normal key.</summary>

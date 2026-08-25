@@ -125,6 +125,17 @@ public sealed class NdsImageManifest
 
         ValidateHash(ImageSha256, nameof(ImageSha256));
         ValidateHash(Header.Sha256, "Header.Sha256");
+        if ((Header.DebugRomOffset == 0) != (Header.DebugRomSize == 0) ||
+            (Header.DebugRomSize == 0) != (Header.DebugRomSha256 is null))
+        {
+            throw new InvalidDataException("The manifest debug program fields are incomplete or contradictory.");
+        }
+
+        if (Header.DebugRomSha256 is not null)
+        {
+            ValidateHash(Header.DebugRomSha256, "Header.DebugRomSha256");
+        }
+
         if (Header.Title is null || Header.GameCode is null || Header.MakerCode is null ||
             !Enum.IsDefined(Header.Kind) ||
             Programs.Any(static value => value is null) ||
@@ -202,9 +213,12 @@ public sealed class NdsImageManifest
         if (Dsi is not null &&
             (Dsi.ModcryptArea1 is null || Dsi.ModcryptArea2 is null ||
              Dsi.ModcryptArea1.Offset < 0 || Dsi.ModcryptArea1.Length < 0 ||
-             Dsi.ModcryptArea2.Offset < 0 || Dsi.ModcryptArea2.Length < 0))
+             Dsi.ModcryptArea2.Offset < 0 || Dsi.ModcryptArea2.Length < 0 ||
+             !IsCanonicalHex(Dsi.MemoryBankSettingsHex, 48) ||
+             !IsCanonicalHex(Dsi.SharedDataFileSizesHex, 6) ||
+             !IsCanonicalHex(Dsi.AgeRatingsHex, 16)))
         {
-            throw new InvalidDataException("The manifest DSi modcrypt regions are incomplete or negative.");
+            throw new InvalidDataException("The manifest DSi fields are incomplete, malformed, or negative.");
         }
     }
 
@@ -219,6 +233,11 @@ public sealed class NdsImageManifest
             throw new InvalidDataException($"Manifest field {name} is not a canonical lowercase SHA-256 digest.");
         }
     }
+
+    /// <summary>Checks an exact byte count represented by lowercase hexadecimal text.</summary>
+    private static bool IsCanonicalHex(string? value, int byteCount) =>
+        value is not null && value.Length == byteCount * 2 &&
+        value.All(static character => char.IsAsciiHexDigit(character) && !char.IsUpper(character));
 
     /// <summary>Builds isolated options so one caller's indentation choice cannot mutate global serializer state.</summary>
     /// <param name="indented">Human-readable whitespace policy.</param>

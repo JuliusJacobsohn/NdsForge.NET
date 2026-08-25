@@ -53,8 +53,34 @@ internal static class NdsImageBuildVerifier
             await VerifyProgramAsync(image, image.Header.Arm7i, builder.Arm7i, cancellationToken).ConfigureAwait(false);
         }
 
+        if (builder.DebugProgram is not null)
+        {
+            await VerifyDebugProgramAsync(image, builder.DebugProgram, cancellationToken).ConfigureAwait(false);
+        }
+
         await VerifyOverlaysAsync(image, image.Arm9Overlays, builder.Arm9Overlays, cancellationToken).ConfigureAwait(false);
         await VerifyOverlaysAsync(image, image.Arm7Overlays, builder.Arm7Overlays, cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>Byte-compares the optional debug executable and verifies its runtime address.</summary>
+    private static async ValueTask VerifyDebugProgramAsync(
+        NdsImage image,
+        NdsDebugProgramDefinition expected,
+        CancellationToken cancellationToken)
+    {
+        if (image.Header.DebugRomSize != expected.Contents.Length ||
+            image.Header.DebugLoadAddress != expected.LoadAddress)
+        {
+            throw new InvalidDataException("Generated debug program metadata did not round-trip.");
+        }
+
+        using Stream stream = image.OpenRead(image.Header.DebugRom);
+        byte[] contents = new byte[expected.Contents.Length];
+        await stream.ReadExactlyAsync(contents, cancellationToken).ConfigureAwait(false);
+        if (!contents.AsSpan().SequenceEqual(expected.Contents.Span))
+        {
+            throw new InvalidDataException("Generated debug program payload did not round-trip.");
+        }
     }
 
     /// <summary>Proves one DSi Program retained processor identity, runtime address, and exact payload bytes.</summary>

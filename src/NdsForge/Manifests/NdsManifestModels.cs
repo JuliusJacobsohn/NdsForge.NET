@@ -15,6 +15,8 @@ public sealed class NdsManifestHeader
     public byte Version { get; init; }
     /// <summary>Records the raw region byte whose interpretation depends on execution mode.</summary>
     public byte RegionCode { get; init; }
+    /// <summary>Records the complete DSi execution and modcrypt policy byte, including unassigned bits.</summary>
+    public byte DsiFlags { get; init; }
     /// <summary>Records the complete boot-control byte, including reserved bits retained by the parser.</summary>
     public byte AutoStart { get; init; }
     /// <summary>Separates the meaningful image extent claimed by the header from physical padding.</summary>
@@ -25,6 +27,14 @@ public sealed class NdsManifestHeader
     public uint NormalCardControl { get; init; }
     /// <summary>Records secure-transfer cartridge bus timing and control bits as an uninterpreted hardware word.</summary>
     public uint SecureCardControl { get; init; }
+    /// <summary>Records the optional debug program's absolute source offset.</summary>
+    public uint DebugRomOffset { get; init; }
+    /// <summary>Records the optional debug program's header-declared byte length.</summary>
+    public uint DebugRomSize { get; init; }
+    /// <summary>Records the optional debug program's runtime load address.</summary>
+    public uint DebugLoadAddress { get; init; }
+    /// <summary>Hashes optional debug executable bytes, or remains absent when no region is declared.</summary>
+    public string? DebugRomSha256 { get; init; }
     /// <summary>Hashes every parsed common or extended header byte, including reserved fields, with SHA-256.</summary>
     public string Sha256 { get; init; } = string.Empty;
 }

@@ -14,6 +14,7 @@ public sealed class NdsImageBuildResult
     /// <param name="fileNameTable">Final FNT Region.</param>
     /// <param name="fileAllocationTable">Final FAT Region.</param>
     /// <param name="banner">Final Banner Region, or <see langword="null"/> when absent.</param>
+    /// <param name="debugProgram">Final debug executable Region, or <see langword="null"/> when absent.</param>
     /// <param name="arm9i">Final ARM9i Region, or <see langword="null"/> for a DS-only build.</param>
     /// <param name="arm7i">Final ARM7i Region, or <see langword="null"/> for a DS-only build.</param>
     /// <param name="sectorHashTable">Generated first-level DSi digest table, or an empty region.</param>
@@ -31,6 +32,7 @@ public sealed class NdsImageBuildResult
         NdsRegion fileNameTable,
         NdsRegion fileAllocationTable,
         NdsRegion? banner,
+        NdsRegion? debugProgram,
         NdsRegion? arm9i,
         NdsRegion? arm7i,
         NdsRegion sectorHashTable,
@@ -48,6 +50,7 @@ public sealed class NdsImageBuildResult
         FileNameTable = fileNameTable;
         FileAllocationTable = fileAllocationTable;
         Banner = banner;
+        DebugProgram = debugProgram;
         Arm9i = arm9i;
         Arm7i = arm7i;
         SectorHashTable = sectorHashTable;
@@ -85,6 +88,9 @@ public sealed class NdsImageBuildResult
 
     /// <summary>Locates optional checksummed menu metadata after final alignment.</summary>
     public NdsRegion? Banner { get; }
+
+    /// <summary>Locates the optional debug executable referenced by common-header debug fields.</summary>
+    public NdsRegion? DebugProgram { get; }
 
     /// <summary>Locates the DSi-mode ARM9 payload appended after common content, or remains absent for DS images.</summary>
     public NdsRegion? Arm9i { get; }

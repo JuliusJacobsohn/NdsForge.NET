@@ -124,9 +124,11 @@ public sealed class PrivateCorpusTransformTests
     {
         Assert.Equal(
             (source.Header.Title, source.Header.GameCode, source.Header.MakerCode, source.Header.Kind,
-                source.Header.Version, source.Header.RegionCode, source.Header.AutoStart),
+                source.Header.Version, source.Header.RegionCode, source.Header.DsiFlags, source.Header.AutoStart,
+                source.Header.DebugRomSize, source.Header.DebugLoadAddress, source.Header.DebugRomSha256),
             (rebuilt.Header.Title, rebuilt.Header.GameCode, rebuilt.Header.MakerCode, rebuilt.Header.Kind,
-                rebuilt.Header.Version, rebuilt.Header.RegionCode, rebuilt.Header.AutoStart));
+                rebuilt.Header.Version, rebuilt.Header.RegionCode, rebuilt.Header.DsiFlags, rebuilt.Header.AutoStart,
+                rebuilt.Header.DebugRomSize, rebuilt.Header.DebugLoadAddress, rebuilt.Header.DebugRomSha256));
         if (profile != NdsImageBuildProfile.Ndstool1503)
         {
             Assert.Equal(
@@ -166,9 +168,15 @@ public sealed class PrivateCorpusTransformTests
         {
             Assert.Equal(
                 (source.Dsi.TitleId, source.Dsi.RegionFlags, source.Dsi.AccessControl,
+                    source.Dsi.ScfgExtMask, source.Dsi.ApplicationFlags, source.Dsi.EulaVersion,
+                    source.Dsi.AgeRatingsUsage, source.Dsi.MemoryBankSettingsHex,
+                    source.Dsi.SharedDataFileSizesHex, source.Dsi.AgeRatingsHex,
                     source.Dsi.HasModcryptAreas, source.Dsi.UsesInsecureModcryptKey,
                     source.Dsi.ModcryptArea1.Length, source.Dsi.ModcryptArea2.Length),
                 (rebuilt.Dsi.TitleId, rebuilt.Dsi.RegionFlags, rebuilt.Dsi.AccessControl,
+                    rebuilt.Dsi.ScfgExtMask, rebuilt.Dsi.ApplicationFlags, rebuilt.Dsi.EulaVersion,
+                    rebuilt.Dsi.AgeRatingsUsage, rebuilt.Dsi.MemoryBankSettingsHex,
+                    rebuilt.Dsi.SharedDataFileSizesHex, rebuilt.Dsi.AgeRatingsHex,
                     rebuilt.Dsi.HasModcryptAreas, rebuilt.Dsi.UsesInsecureModcryptKey,
                     rebuilt.Dsi.ModcryptArea1.Length, rebuilt.Dsi.ModcryptArea2.Length));
         }

@@ -82,6 +82,9 @@ public sealed class NdsImageEditorTests
         editor.Header.GameCode = "ABCD";
         editor.Header.MakerCode = "ZZ";
         editor.Header.Version = 7;
+        editor.Header.DebugRomOffset = 0x300;
+        editor.Header.DebugRomSize = 3;
+        editor.Header.DebugLoadAddress = 0x027F_1000;
 
         await editor.SaveAsync(
             destination,
@@ -92,6 +95,8 @@ public sealed class NdsImageEditorTests
         Assert.Equal("ABCD", output.Header.GameCode);
         Assert.Equal("ZZ", output.Header.MakerCode);
         Assert.Equal(7, output.Header.Version);
+        Assert.Equal(new NdsRegion(0x300, 3), output.Header.DebugRom);
+        Assert.Equal(0x027F_1000U, output.Header.DebugLoadAddress);
         Assert.True(output.Validate().IsValid);
     }
 

@@ -35,6 +35,8 @@ internal static class NdsImageValidator
             ValidateRegion(diagnostics, image.Length, "NDS1108", "ARM7i program", image.Header.Arm7i.Data);
         }
 
+        ValidateDebugProgram(diagnostics, image.Length, image.Header);
+
         ValidateOverlays(diagnostics, image.Arm9Overlays);
         ValidateOverlays(diagnostics, image.Arm7Overlays);
         if (image.Banner is not null)
@@ -46,6 +48,25 @@ internal static class NdsImageValidator
         NdsDsiIntegrityValidator.Validate(image, diagnostics, options);
 
         return new NdsValidationResult(diagnostics);
+    }
+
+    /// <summary>Requires debug source offset and length to be jointly absent or a physically bounded interval.</summary>
+    private static void ValidateDebugProgram(List<NdsDiagnostic> diagnostics, long imageLength, NdsHeader header)
+    {
+        if ((header.DebugRomOffset == 0) != (header.DebugRomSize == 0))
+        {
+            diagnostics.Add(new(
+                "NDS1109",
+                NdsDiagnosticSeverity.Error,
+                "The optional debug program must declare both a nonzero source offset and a nonzero length, or neither.",
+                header.DebugRom));
+            return;
+        }
+
+        if (header.DebugRomSize != 0)
+        {
+            ValidateRegion(diagnostics, imageLength, "NDS1109", "debug program", header.DebugRom);
+        }
     }
 
     /// <summary>Compares one stored little-endian CRC16 with the library's Modbus-polynomial calculation.</summary>

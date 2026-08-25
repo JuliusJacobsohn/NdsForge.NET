@@ -40,6 +40,9 @@ internal static class NdsImageLayoutPlanner
             ? null
             : Place(ref cursor, builder.Banner.RawData.Length, options.SectionAlignment);
         NdsRegion[] files = PlaceAllocations(ref cursor, content, options, ndstoolProfile);
+        NdsRegion? debugProgram = builder.DebugProgram is null
+            ? null
+            : Place(ref cursor, builder.DebugProgram.Contents.Length, options.SectionAlignment);
         return PlanImageEnd(
             builder,
             content,
@@ -53,6 +56,7 @@ internal static class NdsImageLayoutPlanner
             fat,
             banner,
             files,
+            debugProgram,
             cursor,
             ndstoolProfile);
     }
@@ -92,6 +96,7 @@ internal static class NdsImageLayoutPlanner
     /// <param name="fat">Common allocation table.</param>
     /// <param name="banner">Optional menu metadata.</param>
     /// <param name="files">Final FAT payload Regions.</param>
+    /// <param name="debugProgram">Optional debug executable included in common content.</param>
     /// <param name="commonContentEnd">Exclusive end before any DSi-only data.</param>
     /// <param name="ndstoolProfile">Controls the DS used-size convention.</param>
     /// <returns>The complete DS or DSi Layout.</returns>
@@ -108,6 +113,7 @@ internal static class NdsImageLayoutPlanner
         NdsRegion fat,
         NdsRegion? banner,
         NdsRegion[] files,
+        NdsRegion? debugProgram,
         long commonContentEnd,
         bool ndstoolProfile)
     {
@@ -162,6 +168,7 @@ internal static class NdsImageLayoutPlanner
             fat,
             banner,
             files,
+            debugProgram,
             arm9i,
             arm7i,
             ntrDigest,

@@ -10,6 +10,7 @@ namespace NdsForge;
 /// <param name="FileAllocationTable">Generated FAT Region.</param>
 /// <param name="Banner">Optional menu metadata Region.</param>
 /// <param name="FileRegions">FAT payload Regions in File ID order.</param>
+/// <param name="DebugProgram">Optional debug executable placed after common file payloads.</param>
 /// <param name="Arm9i">Optional DSi-mode ARM9 Region placed after common DS content.</param>
 /// <param name="Arm7i">Optional DSi-mode ARM7 Region placed after ARM9i.</param>
 /// <param name="NtrDigest">Common-mode content interval covered by sector hashes.</param>
@@ -28,6 +29,7 @@ internal sealed record NdsImageBuildLayout(
     NdsRegion FileAllocationTable,
     NdsRegion? Banner,
     IReadOnlyList<NdsRegion> FileRegions,
+    NdsRegion? DebugProgram,
     NdsRegion? Arm9i,
     NdsRegion? Arm7i,
     NdsRegion NtrDigest,

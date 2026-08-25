@@ -61,6 +61,9 @@ internal static class NdsImageHeaderWriter
         {
             builder.NintendoLogo.Span.CopyTo(header.AsSpan(0xC0, 156));
         }
+        NdsBinary.WriteUInt32(header, 0x160, checked((uint)(layout.DebugProgram?.Offset ?? 0)));
+        NdsBinary.WriteUInt32(header, 0x164, checked((uint)(layout.DebugProgram?.Length ?? 0)));
+        NdsBinary.WriteUInt32(header, 0x168, builder.DebugProgram?.LoadAddress ?? 0);
 
         if (builder.Kind != NdsImageKind.NintendoDs)
         {

@@ -21,6 +21,9 @@ public sealed class NdsHeaderEdit
         NormalCardControl = source.NormalCardControl;
         SecureCardControl = source.SecureCardControl;
         SecureTransferTimeout = source.SecureTransferTimeout;
+        DebugRomOffset = source.DebugRomOffset;
+        DebugRomSize = source.DebugRomSize;
+        DebugLoadAddress = source.DebugLoadAddress;
     }
 
     /// <summary>Controls the padded 12-byte printable-ASCII application label; shorter values receive zero padding.</summary>
@@ -50,6 +53,15 @@ public sealed class NdsHeaderEdit
     /// <summary>Controls the raw 16-bit timeout applied to secure-area cartridge transfers.</summary>
     public ushort SecureTransferTimeout { get; set; }
 
+    /// <summary>Gets or sets the optional debug program's absolute source offset.</summary>
+    public uint DebugRomOffset { get; set; }
+
+    /// <summary>Gets or sets the optional debug program's declared byte length.</summary>
+    public uint DebugRomSize { get; set; }
+
+    /// <summary>Gets or sets the optional debug program's runtime load address.</summary>
+    public uint DebugLoadAddress { get; set; }
+
     /// <summary>Compares every editable projection value without serializing or normalizing caller text.</summary>
     internal bool HasChanges =>
         Title != _source.Title ||
@@ -60,7 +72,10 @@ public sealed class NdsHeaderEdit
         AutoStart != _source.AutoStart ||
         NormalCardControl != _source.NormalCardControl ||
         SecureCardControl != _source.SecureCardControl ||
-        SecureTransferTimeout != _source.SecureTransferTimeout;
+        SecureTransferTimeout != _source.SecureTransferTimeout ||
+        DebugRomOffset != _source.DebugRomOffset ||
+        DebugRomSize != _source.DebugRomSize ||
+        DebugLoadAddress != _source.DebugLoadAddress;
 
     /// <summary>Validates and overlays only supported mutable fields onto a lossless header copy before CRC recalculation.</summary>
     /// <param name="header">Complete mutable common header prefix containing all destination offsets.</param>
@@ -75,6 +90,9 @@ public sealed class NdsHeaderEdit
         NdsBinary.WriteUInt32(header, 0x60, NormalCardControl);
         NdsBinary.WriteUInt32(header, 0x64, SecureCardControl);
         NdsBinary.WriteUInt16(header, 0x6E, SecureTransferTimeout);
+        NdsBinary.WriteUInt32(header, 0x160, DebugRomOffset);
+        NdsBinary.WriteUInt32(header, 0x164, DebugRomSize);
+        NdsBinary.WriteUInt32(header, 0x168, DebugLoadAddress);
     }
 
     /// <summary>Encodes a fixed-width header identity field after enforcing printable ASCII and exact/minimum lengths.</summary>

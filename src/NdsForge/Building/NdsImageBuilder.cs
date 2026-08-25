@@ -48,6 +48,20 @@ public sealed class NdsImageBuilder
     /// <summary>Controls the hardware-dependent region byte without interpreting reserved bits.</summary>
     public byte RegionCode { get; set; }
 
+    /// <summary>Interprets the complete raw <see cref="RegionCode"/> byte using original-DS territory values.</summary>
+    public NdsLegacyRegion LegacyRegion
+    {
+        get => new(RegionCode);
+        set => RegionCode = value.RawValue;
+    }
+
+    /// <summary>Gets or sets DSi launch-policy bits through the complete raw <see cref="RegionCode"/> byte.</summary>
+    public NdsDsiLaunchPolicy DsiLaunchPolicy
+    {
+        get => (NdsDsiLaunchPolicy)RegionCode;
+        set => RegionCode = (byte)((RegionCode & 0xFC) | ((int)value & 0x03));
+    }
+
     /// <summary>Controls the complete boot-policy byte at header offset <c>0x1F</c>.</summary>
     public byte AutoStart { get; set; }
 
@@ -68,6 +82,9 @@ public sealed class NdsImageBuilder
 
     /// <summary>Preserves the raw 64-bit secure-area disable token across structural rebuilds.</summary>
     public ulong SecureDisable { get; set; }
+
+    /// <summary>Supplies an optional debug executable whose physical offset is assigned by the final layout.</summary>
+    public NdsDebugProgramDefinition? DebugProgram { get; set; }
 
     /// <summary>Supplies the required primary processor payload and its runtime addresses.</summary>
     public NdsProgramDefinition? Arm9 { get; set; }

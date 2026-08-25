@@ -3,6 +3,38 @@ namespace NdsForge.Tests;
 public sealed class NdsManifestDiffTests
 {
     [Fact]
+    public async Task DsiManifestCarriesLosslessHeaderSemanticsAndDiffsThem()
+    {
+        byte[] leftBytes = SyntheticImage.CreateDsiEnhanced();
+        byte[] rightBytes = leftBytes.ToArray();
+        rightBytes[0x180] ^= 0x40;
+        using NdsImage left = NdsImage.Load(leftBytes);
+        using NdsImage right = NdsImage.Load(rightBytes);
+
+        NdsImageManifest manifest = await left.CreateManifestAsync(TestContext.Current.CancellationToken);
+        NdsManifestDsi dsi = Assert.IsType<NdsManifestDsi>(manifest.Dsi);
+        NdsImageManifest parsed = NdsImageManifest.ParseJson(manifest.ToJson());
+        NdsImageDiff diff = await NdsImageComparer.CompareAsync(
+            left,
+            right,
+            TestContext.Current.CancellationToken);
+
+        Assert.Equal(0xA3, manifest.Header.DsiFlags);
+        Assert.Equal(0U, manifest.Header.DebugRomOffset);
+        Assert.Equal(0x99AABBCCU, dsi.ScfgExtMask);
+        Assert.Equal("010203040506", dsi.SharedDataFileSizesHex);
+        Assert.Equal(Convert.ToHexStringLower(leftBytes.AsSpan(0x180, 0x30)), dsi.MemoryBankSettingsHex);
+        Assert.Equal(Convert.ToHexStringLower(leftBytes.AsSpan(0x2F0, 0x10)), dsi.AgeRatingsHex);
+        Assert.True(NdsImageComparer.Compare(manifest, parsed).AreEquivalent);
+        Assert.Contains(diff.Differences, static value => value.Path == "Dsi.MemoryBankSettingsHex");
+        Assert.Throws<InvalidDataException>(() => NdsImageManifest.ParseJson(
+            manifest.ToJson(indented: false).Replace(
+                dsi.MemoryBankSettingsHex,
+                "zz" + dsi.MemoryBankSettingsHex[2..],
+                StringComparison.Ordinal)));
+    }
+
+    [Fact]
     public async Task CaptureProducesStableHashesAndRoundTripsStrictJson()
     {
         byte[] bytes = SyntheticImage.CreateWithBanner();

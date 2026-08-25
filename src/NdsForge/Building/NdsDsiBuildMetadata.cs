@@ -12,6 +12,8 @@ public sealed class NdsDsiBuildMetadata
     private byte[] _memoryBankSettings = CreateDefaultMemoryBankSettings();
     /// <summary>Stores all sixteen authority-specific rating slots; <c>0x80</c> is the conventional unrated value.</summary>
     private byte[] _ageRatings = Enumerable.Repeat((byte)0x80, 0x10).ToArray();
+    /// <summary>Stores six shared-data file-size unit bytes in native slot order.</summary>
+    private byte[] _sharedDataFileSizes = new byte[6];
     /// <summary>Tracks a parsed component-relative first modcrypt interval across structural relocation.</summary>
     private NdsProcessor? _modcryptArea1Anchor;
     /// <summary>Tracks a parsed component-relative second modcrypt interval across structural relocation.</summary>
@@ -28,17 +30,51 @@ public sealed class NdsDsiBuildMetadata
     /// <summary>Preserves common-header DSi behavior flags separately from the application flags in the extension.</summary>
     public byte DsiFlags { get; set; } = 0x01;
 
+    /// <summary>Gets or sets defined execution and modcrypt bits through the complete raw <see cref="DsiFlags"/> byte.</summary>
+    public NdsDsiCryptoPolicy CryptoPolicy
+    {
+        get => (NdsDsiCryptoPolicy)DsiFlags;
+        set => DsiFlags = (byte)((DsiFlags & 0xF0) | ((int)value & 0x0F));
+    }
+
     /// <summary>Defines the DSi territories in which system software may expose the title; all bits set is homebrew-friendly.</summary>
     public uint RegionFlags { get; set; } = uint.MaxValue;
 
+    /// <summary>Gets or sets named territory permissions through the complete raw <see cref="RegionFlags"/> word.</summary>
+    public NdsDsiRegionPermissions Regions
+    {
+        get => (NdsDsiRegionPermissions)RegionFlags;
+        set => RegionFlags = (RegionFlags & ~0x3Fu) | ((uint)value & 0x3Fu);
+    }
+
     /// <summary>Controls service and hardware capabilities requested from the DSi execution environment.</summary>
     public uint AccessControl { get; set; }
+
+    /// <summary>Gets or sets named capabilities through the complete raw <see cref="AccessControl"/> word.</summary>
+    public NdsDsiAccessCapabilities AccessControlFlags
+    {
+        get => (NdsDsiAccessCapabilities)(long)AccessControl;
+        set => AccessControl = (AccessControl & ~0x8001FFFFu) | ((uint)(long)value & 0x8001FFFFu);
+    }
 
     /// <summary>Limits which SCFG_EXT hardware-configuration bits the application may change at runtime.</summary>
     public uint ScfgExtMask { get; set; }
 
     /// <summary>Preserves the application-policy byte at extended-header offset <c>0x1BF</c>.</summary>
     public byte ApplicationFlags { get; set; }
+
+    /// <summary>Gets or sets named application capabilities through the complete raw <see cref="ApplicationFlags"/> byte.</summary>
+    public NdsDsiApplicationFeatures ApplicationFeatures
+    {
+        get => (NdsDsiApplicationFeatures)ApplicationFlags;
+        set => ApplicationFlags = (byte)value;
+    }
+
+    /// <summary>Gets or sets the title's required EULA revision byte.</summary>
+    public byte EulaVersion { get; set; } = 1;
+
+    /// <summary>Controls whether system software evaluates the sixteen parental-rating slots.</summary>
+    public byte AgeRatingsUsage { get; set; }
 
     /// <summary>Points ARM7i services to their runtime device-list structure rather than to a cartridge region.</summary>
     public uint Arm7DeviceListAddress { get; set; }
@@ -99,10 +135,13 @@ public sealed class NdsDsiBuildMetadata
             _extensionTemplate = header.RawData.ToArray(),
             _memoryBankSettings = header.MemoryBankSettings.ToArray(),
             _ageRatings = header.AgeRatings.ToArray(),
+            _sharedDataFileSizes = header.SharedDataFileSizes.ToArray(),
             RegionFlags = header.RegionFlags,
             AccessControl = header.AccessControl,
             ScfgExtMask = header.ScfgExtMask,
             ApplicationFlags = header.ApplicationFlags,
+            EulaVersion = header.EulaVersion,
+            AgeRatingsUsage = header.AgeRatingsUsage,
             Arm7DeviceListAddress = header.Arm7DeviceListAddress,
             TitleId = header.TitleId,
             PublicSaveSize = header.PublicSaveSize,
@@ -127,6 +166,20 @@ public sealed class NdsDsiBuildMetadata
         return this;
     }
 
+    /// <summary>Copies six shared-data file-size units in their native slot order.</summary>
+    /// <param name="sizes">Exactly six unit bytes corresponding to shared-data files zero through five.</param>
+    /// <returns>The same metadata object for fluent recipe configuration.</returns>
+    public NdsDsiBuildMetadata SetSharedDataFileSizes(ReadOnlySpan<byte> sizes)
+    {
+        if (sizes.Length != 6)
+        {
+            throw new ArgumentException("DSi shared-data sizes must contain exactly six bytes.", nameof(sizes));
+        }
+
+        _sharedDataFileSizes = sizes.ToArray();
+        return this;
+    }
+
     /// <summary>Copies the sixteen raw authority slots without guessing territory-specific flag interpretation.</summary>
     /// <param name="ratings">Exactly sixteen bytes corresponding to header offsets <c>0x2F0</c>-<c>0x2FF</c>.</param>
     /// <returns>The same metadata object for fluent recipe configuration.</returns>
@@ -141,11 +194,36 @@ public sealed class NdsDsiBuildMetadata
         return this;
     }
 
+    /// <summary>Replaces one authority slot with its exact typed rating byte.</summary>
+    /// <param name="rating">Authority index and complete stored byte.</param>
+    /// <returns>The same metadata object for fluent recipe configuration.</returns>
+    public NdsDsiBuildMetadata SetAgeRating(NdsDsiAgeRating rating)
+    {
+        if (!Enum.IsDefined(rating.Authority))
+        {
+            throw new ArgumentOutOfRangeException(nameof(rating), rating.Authority, "Unknown DSi rating authority.");
+        }
+
+        _ageRatings[(int)rating.Authority] = rating.RawValue;
+        return this;
+    }
+
+    /// <summary>Projects copied native MBK bytes without exposing writable builder storage.</summary>
+    public NdsDsiMemoryBankConfiguration MemoryBanks => new(_memoryBankSettings);
+
+    /// <summary>Projects all authority slots without exposing writable builder storage.</summary>
+    public IReadOnlyList<NdsDsiAgeRating> Ratings => Array.AsReadOnly(Enumerable.Range(0, 16)
+        .Select(index => new NdsDsiAgeRating((NdsDsiAgeRatingAuthority)index, _ageRatings[index]))
+        .ToArray());
+
     /// <summary>Returns the detached extension template to the serializer without exposing writable storage publicly.</summary>
     internal ReadOnlyMemory<byte> ExtensionTemplate => _extensionTemplate;
 
     /// <summary>Returns copied native MBK bytes to the serializer without permitting external mutation.</summary>
     internal ReadOnlyMemory<byte> MemoryBankSettings => _memoryBankSettings;
+
+    /// <summary>Returns copied shared-data size units to the serializer without permitting external mutation.</summary>
+    internal ReadOnlyMemory<byte> SharedDataFileSizes => _sharedDataFileSizes;
 
     /// <summary>Returns copied raw rating slots to the serializer without interpreting their authority-dependent bits.</summary>
     internal ReadOnlyMemory<byte> AgeRatings => _ageRatings;

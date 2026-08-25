@@ -98,11 +98,18 @@ internal static class SyntheticImage
         byte[] data = CreateHeaderOnly();
         byte[] fnt = data.AsSpan(0x208, 19).ToArray();
         data[0x12] = 2;
+        data[0x1C] = 0xA3;
+        data[0x1D] = 0xF3;
         WriteUInt32(data, 0x20, 0x1000);
         WriteUInt32(data, 0x30, 0x1004);
         WriteUInt32(data, 0x40, 0x1008);
         WriteUInt32(data, 0x48, 0x1020);
         WriteUInt32(data, 0x80, 0x102D);
+        for (int index = 0; index < 0x30; index++)
+        {
+            data[0x180 + index] = (byte)(index * 3 + 1);
+        }
+
         fnt.CopyTo(data, 0x1008);
         WriteUInt32(data, 0x1020, 0x1028);
         WriteUInt32(data, 0x1024, 0x102D);
@@ -115,12 +122,25 @@ internal static class SyntheticImage
         WriteUInt32(data, 0x1C8, 0x02E00000);
         WriteUInt32(data, 0x1CC, 0x80);
         WriteUInt32(data, 0x208, 0x23C0);
+        data[0x20C] = 1;
+        data[0x20D] = 2;
+        data[0x20E] = 7;
+        data[0x20F] = 0x81;
         WriteUInt32(data, 0x210, 0x4000);
+        data[0x214] = 3;
+        data[0x215] = 4;
+        data[0x216] = 5;
+        data[0x217] = 6;
         WriteUInt32(data, 0x230, 0x01234567);
         WriteUInt32(data, 0x234, 0x89ABCDEF);
         WriteUInt32(data, 0x238, 0x10000);
         WriteUInt32(data, 0x23C, 0x20000);
-        data[0x2F0] = 0x80;
+        for (int index = 0; index < 0x10; index++)
+        {
+            data[0x2F0 + index] = (byte)(0x80 | index);
+        }
+
+        data[0x2F1] = 0xEA;
         data[0xF80] = 0xA5;
         WriteUInt16(data, 0x15E, NdsChecksums.ComputeCrc16(data.AsSpan(0, 0x15E)));
         return data;
