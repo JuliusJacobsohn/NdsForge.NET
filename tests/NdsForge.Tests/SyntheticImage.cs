@@ -1,5 +1,7 @@
 using System.Buffers.Binary;
+using System.Security.Cryptography;
 using System.Text;
+using NdsForge.Shared;
 
 namespace NdsForge.Tests;
 
@@ -54,6 +56,86 @@ internal static class SyntheticImage
         WriteUInt32(data, 0x244, 0x02001088);
         WriteUInt32(data, 0x248, 0);
         WriteUInt32(data, 0x24C, 0x01000005);
+        WriteUInt16(data, 0x15E, NdsChecksums.ComputeCrc16(data.AsSpan(0, 0x15E)));
+        return data;
+    }
+
+    public static byte[] CreateWithOverlayAuthentication(uint tableOffset = 0x100)
+    {
+        byte[] data = CreateHeaderOnly();
+        byte[] fnt = data.AsSpan(0x208, 19).ToArray();
+        byte[] overlayPayload = "auth!"u8.ToArray();
+        byte[] key = CreateOverlayAuthenticationKey();
+
+        WriteUInt32(data, 0x20, 0x1000);
+        WriteUInt32(data, 0x24, 0x02000000);
+        WriteUInt32(data, 0x28, 0x02000000);
+        WriteUInt32(data, 0x2C, 0x400);
+        WriteUInt32(data, 0x30, 0x1500);
+        WriteUInt32(data, 0x3C, 4);
+        WriteUInt32(data, 0x40, 0x1640);
+        WriteUInt32(data, 0x44, 19);
+        WriteUInt32(data, 0x48, 0x1660);
+        WriteUInt32(data, 0x4C, 8);
+        WriteUInt32(data, 0x50, 0x1600);
+        WriteUInt32(data, 0x54, 32);
+        WriteUInt32(data, 0x80, 0x1685);
+        data[0x1BF] = 0x40;
+
+        if (tableOffset <= 0x400 - 20)
+        {
+#pragma warning disable CA5350 // The synthetic fixture models format-mandated HMAC-SHA1 bytes.
+            HMACSHA1.HashData(key, overlayPayload, data.AsSpan(0x1000 + checked((int)tableOffset), 20));
+#pragma warning restore CA5350
+        }
+
+        key.CopyTo(data, 0x1180);
+        WriteUInt32(data, 0x1400, 0xDEC00621);
+        WriteUInt32(data, 0x1404, 0);
+        WriteUInt32(data, 0x1408, tableOffset);
+
+        WriteUInt32(data, 0x1600, 7);
+        WriteUInt32(data, 0x1604, 0x02001000);
+        WriteUInt32(data, 0x1608, (uint)overlayPayload.Length);
+        WriteUInt32(data, 0x1610, 0x02001000);
+        WriteUInt32(data, 0x1614, 0x02001004);
+        WriteUInt32(data, 0x1618, 0);
+        WriteUInt32(data, 0x161C, 0x02000000);
+        fnt.CopyTo(data, 0x1640);
+        WriteUInt32(data, 0x1660, 0x1680);
+        WriteUInt32(data, 0x1664, 0x1685);
+        overlayPayload.CopyTo(data, 0x1680);
+        WriteUInt16(data, 0x15E, NdsChecksums.ComputeCrc16(data.AsSpan(0, 0x15E)));
+        return data;
+    }
+
+    public static byte[] CreateOverlayAuthenticationKey()
+    {
+        byte[] key = Enumerable.Range(0, 64).Select(static index => (byte)(index * 13 + 7)).ToArray();
+        key[0] = 0x21;
+        key[1] = 0x06;
+        key[2] = 0xC0;
+        key[3] = 0xDE;
+        return key;
+    }
+
+    public static byte[] CreateWithCompressedArm9OverlayAuthentication()
+    {
+        byte[] data = CreateWithOverlayAuthentication();
+        byte[] decoded = data.AsSpan(0x1000, 0x400).ToArray();
+        WriteUInt32(decoded, 0x34, 0);
+        WriteUInt32(decoded, 0x38, 0x05057533);
+        WriteUInt32(decoded, 0x3C, 0xDEC00621);
+        WriteUInt32(decoded, 0x40, 0x2106C0DE);
+        Assert.True(BlzEngine.TryCompress(decoded, out byte[] encoded, uncompressedPrefixLength: 0x44));
+        WriteUInt32(encoded, 0x34, checked(0x02000000u + (uint)encoded.Length));
+        data.AsSpan(0x1000, 0x500).Clear();
+        encoded.CopyTo(data, 0x1000);
+        int footer = 0x1000 + encoded.Length;
+        WriteUInt32(data, footer, 0xDEC00621);
+        WriteUInt32(data, footer + 4, 0x20);
+        WriteUInt32(data, footer + 8, 0x100);
+        WriteUInt32(data, 0x2C, checked((uint)encoded.Length));
         WriteUInt16(data, 0x15E, NdsChecksums.ComputeCrc16(data.AsSpan(0, 0x15E)));
         return data;
     }

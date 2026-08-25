@@ -1,4 +1,6 @@
 using System.Buffers.Binary;
+using System.Security.Cryptography;
+using NdsForge.Shared;
 
 namespace NdsForge;
 
@@ -73,12 +75,15 @@ internal static class NdsImageBuildContentPreparer
         int arm7PrivateBase = checked(arm9PrivateBase + arm9PrivateCount);
         byte[] arm9OverlayTable = BuildOverlayTable(builder.Arm9Overlays, fileSystem, arm9PrivateBase);
         byte[] arm7OverlayTable = BuildOverlayTable(builder.Arm7Overlays, fileSystem, arm7PrivateBase);
+        ReadOnlyMemory<byte> authenticatedArm9 = PrepareAuthenticatedArm9(builder, fileSystem, ndstoolProfile);
         (ReadOnlyMemory<byte> arm9Data, int arm9DeclaredLength) = PrepareProgram(
             builder.Arm9!,
+            authenticatedArm9,
             isArm9: true,
             ndstoolProfile);
         (ReadOnlyMemory<byte> arm7Data, int arm7DeclaredLength) = PrepareProgram(
             builder.Arm7!,
+            builder.Arm7!.Contents,
             isArm9: false,
             ndstoolProfile);
         ReadOnlyMemory<byte> arm9TrailingData = PrepareArm9TrailingData(
@@ -105,27 +110,29 @@ internal static class NdsImageBuildContentPreparer
     /// 1.50.3 prefixes raw ARM9 binaries with secure-area syscall stubs unless they already begin with that pattern.
     /// </summary>
     /// <param name="program">Logical executable bytes and processor identity.</param>
+    /// <param name="contents">Authentication-adjusted bytes, or the unchanged definition payload.</param>
     /// <param name="isArm9">Enables the ARM9-only secure-area prefix.</param>
     /// <param name="ndstoolProfile">Selects legacy prefix and four-byte declared-size rounding.</param>
     /// <returns>Physical data plus the potentially rounded length written to the header.</returns>
     private static (ReadOnlyMemory<byte> Data, int DeclaredLength) PrepareProgram(
         NdsProgramDefinition program,
+        ReadOnlyMemory<byte> contents,
         bool isArm9,
         bool ndstoolProfile)
     {
         if (!ndstoolProfile)
         {
-            return (program.Contents, program.Contents.Length);
+            return (contents, contents.Length);
         }
 
         bool alreadyHasSecureStubs = isArm9 &&
-            program.Contents.Length >= 4 &&
-            program.Contents.Span[0] == 0xFF &&
-            program.Contents.Span[1] == 0xDE &&
-            program.Contents.Span[2] == 0xFF &&
-            program.Contents.Span[3] == 0xE7;
+            contents.Length >= 4 &&
+            contents.Span[0] == 0xFF &&
+            contents.Span[1] == 0xDE &&
+            contents.Span[2] == 0xFF &&
+            contents.Span[3] == 0xE7;
         int prefixLength = isArm9 && !alreadyHasSecureStubs ? 0x800 : 0;
-        byte[] data = new byte[checked(program.Contents.Length + prefixLength)];
+        byte[] data = new byte[checked(contents.Length + prefixLength)];
         for (int offset = 0; offset < prefixLength; offset += 4)
         {
             data[offset] = 0xFF;
@@ -134,9 +141,168 @@ internal static class NdsImageBuildContentPreparer
             data[offset + 3] = 0xE7;
         }
 
-        program.Contents.Span.CopyTo(data.AsSpan(prefixLength));
+        contents.Span.CopyTo(data.AsSpan(prefixLength));
         int declaredLength = checked((data.Length + 3) & ~3);
         return (data, declaredLength);
+    }
+
+    /// <summary>Recomputes changed per-overlay records before layout freezes the ARM9 size and every downstream offset.</summary>
+    private static ReadOnlyMemory<byte> PrepareAuthenticatedArm9(
+        NdsImageBuilder builder,
+        NdsFileSystemBuildSnapshot fileSystem,
+        bool ndstoolProfile)
+    {
+        if (builder.Kind != NdsImageKind.NintendoDs ||
+            !builder.Arm9Overlays.Any(static overlay => overlay.IsAuthenticated))
+        {
+            return builder.Arm9!.Contents;
+        }
+
+        ReadOnlySpan<byte> originalArm9 = builder.Arm9!.Contents.Span;
+        bool ndstoolWouldPrefixProgram = ndstoolProfile &&
+            (originalArm9.Length < 4 ||
+                originalArm9[0] != 0xFF ||
+                originalArm9[1] != 0xDE ||
+                originalArm9[2] != 0xFF ||
+                originalArm9[3] != 0xE7);
+        if (ndstoolWouldPrefixProgram)
+        {
+            throw new InvalidDataException(
+                "The ndstool 1.50.3 secure-area prefix would relocate decoded ARM9 overlay authentication records.");
+        }
+
+        NdsOverlayAuthenticationBuildOptions options = builder.Arm9OverlayAuthentication ??
+            throw new InvalidDataException(
+                "Authenticated ARM9 overlays require explicit overlay-authentication build options.");
+        if (!options.CanRegenerate)
+        {
+            throw new InvalidDataException(
+                $"ARM9 overlay authentication cannot be regenerated: {options.UnrepairableReason}");
+        }
+
+        NdsProgramDefinition program = builder.Arm9!;
+        ValidateAuthenticationFooter(program, options.TableRelativeOffset);
+        ReadOnlySpan<byte> stored = program.Contents.Span;
+        byte[] decoded;
+        if (options.ProgramStorage == NdsProgramStorageEncoding.Blz)
+        {
+            if (!BlzEngine.TryInspect(stored, out BlzEngineInfo sourceInfo))
+            {
+                throw new InvalidDataException("Overlay authentication expects BLZ ARM9 storage, but its envelope is invalid.");
+            }
+
+            if (sourceInfo.UncompressedPrefixLength < options.UncompressedPrefixLength)
+            {
+                throw new InvalidDataException(
+                    "The stored ARM9 BLZ prefix is shorter than the authenticated build policy requires.");
+            }
+
+            decoded = BlzEngine.Decompress(stored, BlzEngine.DefaultMaximumDecodedLength);
+        }
+        else
+        {
+            decoded = stored.ToArray();
+        }
+
+        long tableLength = checked(builder.Arm9Overlays.Count * 20L);
+        if (options.TableRelativeOffset > decoded.LongLength ||
+            tableLength > decoded.LongLength - options.TableRelativeOffset)
+        {
+            throw new InvalidDataException(
+                $"The overlay authentication table at decoded offset 0x{options.TableRelativeOffset:X} is not large enough for {builder.Arm9Overlays.Count} records.");
+        }
+
+        bool changed = false;
+        for (int index = 0; index < builder.Arm9Overlays.Count; index++)
+        {
+            NdsOverlayDefinition overlay = builder.Arm9Overlays[index];
+            if (!overlay.IsAuthenticated)
+            {
+                continue;
+            }
+
+            ReadOnlyMemory<byte> payload = ResolveOverlayPayload(overlay, fileSystem);
+            Span<byte> record = decoded.AsSpan(checked((int)options.TableRelativeOffset + index * 20), 20);
+#pragma warning disable CA5350 // Classic DS Download Play records are defined as HMAC-SHA1.
+            byte[] calculated = HMACSHA1.HashData(options.HmacKey.Span, payload.Span);
+#pragma warning restore CA5350
+            if (!record.SequenceEqual(calculated))
+            {
+                calculated.CopyTo(record);
+                changed = true;
+            }
+        }
+
+        if (!changed)
+        {
+            return program.Contents;
+        }
+
+        if (options.ProgramStorage == NdsProgramStorageEncoding.Plain)
+        {
+            return decoded;
+        }
+
+        if (!BlzEngine.TryCompress(decoded, out byte[] encoded, options.UncompressedPrefixLength))
+        {
+            throw new InvalidDataException(
+                "Updated ARM9 authentication records cannot be represented by a smaller BLZ stream.");
+        }
+
+        UpdateCompressedEndAddress(program, encoded);
+        return encoded;
+    }
+
+    /// <summary>Requires the physical footer pointer to agree with the caller/imported decoded table identity.</summary>
+    private static void ValidateAuthenticationFooter(NdsProgramDefinition program, uint tableRelativeOffset)
+    {
+        ReadOnlySpan<byte> footer = program.Footer.Span;
+        if (footer.Length != 12 ||
+            BinaryPrimitives.ReadUInt32LittleEndian(footer) != 0xDEC00621 ||
+            BinaryPrimitives.ReadUInt32LittleEndian(footer[8..]) != tableRelativeOffset)
+        {
+            throw new InvalidDataException(
+                "The ARM9 SDK footer is missing or disagrees with the overlay-authentication table offset.");
+        }
+    }
+
+    /// <summary>Resolves private bytes directly and named links through the frozen filesystem snapshot.</summary>
+    private static ReadOnlyMemory<byte> ResolveOverlayPayload(
+        NdsOverlayDefinition overlay,
+        NdsFileSystemBuildSnapshot fileSystem)
+    {
+        if (overlay.HasPrivateAllocation)
+        {
+            return overlay.Contents;
+        }
+
+        string path = overlay.EffectiveLinkedFilePath!;
+        NdsBuildFile? file = fileSystem.FilesInIdOrder.FirstOrDefault(
+            candidate => candidate.Path.Equals(path, StringComparison.Ordinal));
+        return file?.Contents ??
+            throw new InvalidDataException($"Overlay {overlay.Id} links missing NitroFS file '{path}'.");
+    }
+
+    /// <summary>Synchronizes the decoded SDK compressed-end word after deterministic BLZ output changes length.</summary>
+    private static void UpdateCompressedEndAddress(NdsProgramDefinition program, byte[] encoded)
+    {
+        uint parametersOffset = BinaryPrimitives.ReadUInt32LittleEndian(program.Footer.Span[4..]);
+        if (parametersOffset == 0 || parametersOffset > int.MaxValue - 0x18 ||
+            !BlzEngine.TryInspect(encoded, out BlzEngineInfo info))
+        {
+            throw new InvalidDataException(
+                "A recompressed authenticated ARM9 requires a bounded SDK parameter table in its verbatim prefix.");
+        }
+
+        int compressedEndOffset = checked((int)parametersOffset + 0x14);
+        if (compressedEndOffset > info.UncompressedPrefixLength - sizeof(uint))
+        {
+            throw new InvalidDataException(
+                "The ARM9 compressed-end field lies outside the BLZ verbatim prefix and cannot be repaired atomically.");
+        }
+
+        uint compressedEnd = checked(program.LoadAddress + (uint)encoded.Length);
+        BinaryPrimitives.WriteUInt32LittleEndian(encoded.AsSpan(compressedEndOffset), compressedEnd);
     }
 
     /// <summary>

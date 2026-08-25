@@ -12,6 +12,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
   footers without requiring DSi unit mode.
 - Expose overlay compression, authentication, and reserved control bits on both
   loaded overlays and build definitions.
+- Parse classic-DS Download Play HMAC tables from plain or BLZ ARM9 programs,
+  validate embedded or caller-supplied keys, and atomically repair records when
+  overlays are replaced or deterministically recompressed.
 - Add the dependency-free `NdsForge.Nitro` companion package and independently
   implemented BLZ inspection, bounded decompression, and deterministic
   compression APIs.

@@ -145,12 +145,16 @@ NdsForge.NdsHeaderEdit.DebugRomOffset.set -> void
 NdsForge.NdsHeaderEdit.DebugRomSize.get -> uint
 NdsForge.NdsHeaderEdit.DebugRomSize.set -> void
 NdsForge.NdsImageBuilder.DebugProgram.get -> NdsForge.NdsDebugProgramDefinition?
+NdsForge.NdsImageBuilder.Arm9OverlayAuthentication.get -> NdsForge.NdsOverlayAuthenticationBuildOptions?
+NdsForge.NdsImageBuilder.Arm9OverlayAuthentication.set -> void
 NdsForge.NdsImageBuilder.DebugProgram.set -> void
 NdsForge.NdsImageBuilder.DsiLaunchPolicy.get -> NdsForge.NdsDsiLaunchPolicy
 NdsForge.NdsImageBuilder.DsiLaunchPolicy.set -> void
 NdsForge.NdsImageBuilder.LegacyRegion.get -> NdsForge.NdsLegacyRegion
 NdsForge.NdsImageBuilder.LegacyRegion.set -> void
+NdsForge.NdsImageBuilder.ReplaceOverlay(NdsForge.NdsProcessor processor, uint id, System.ReadOnlySpan<byte> contents, NdsForge.NdsOverlayCompressionMode compressionMode = NdsForge.NdsOverlayCompressionMode.PreserveStorage) -> NdsForge.NdsImageBuilder!
 NdsForge.NdsImageBuildResult.DebugProgram.get -> NdsForge.NdsRegion?
+NdsForge.NdsImage.Arm9OverlayAuthentication.get -> NdsForge.NdsOverlayAuthenticationTable?
 NdsForge.NdsLegacyRegion
 NdsForge.NdsLegacyRegion.Deconstruct(out byte RawValue) -> void
 NdsForge.NdsLegacyRegion.Equals(NdsForge.NdsLegacyRegion other) -> bool
@@ -183,12 +187,42 @@ NdsForge.NdsManifestHeader.DebugRomSize.init -> void
 NdsForge.NdsManifestHeader.DsiFlags.get -> byte
 NdsForge.NdsManifestHeader.DsiFlags.init -> void
 NdsForge.NdsOverlay.IsAuthenticated.get -> bool
+NdsForge.NdsOverlay.AuthenticationRecord.get -> NdsForge.NdsOverlayAuthenticationRecord?
 NdsForge.NdsOverlay.IsCompressed.get -> bool
+NdsForge.NdsOverlayAuthenticationBuildOptions
+NdsForge.NdsOverlayAuthenticationBuildOptions.CanRegenerate.get -> bool
+NdsForge.NdsOverlayAuthenticationBuildOptions.ProgramStorage.get -> NdsForge.NdsProgramStorageEncoding
+NdsForge.NdsOverlayAuthenticationBuildOptions.TableRelativeOffset.get -> uint
+NdsForge.NdsOverlayAuthenticationBuildOptions.UncompressedPrefixLength.get -> int
 NdsForge.NdsOverlay.ReservedFlags.get -> byte
+NdsForge.NdsOverlayAuthenticationRecord
+NdsForge.NdsOverlayAuthenticationRecord.HmacSha1.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsOverlayAuthenticationRecord.OverlayId.get -> uint
+NdsForge.NdsOverlayAuthenticationRecord.OverlayIndex.get -> int
+NdsForge.NdsOverlayAuthenticationTable
+NdsForge.NdsOverlayAuthenticationTable.DecodedProgramLength.get -> int
+NdsForge.NdsOverlayAuthenticationTable.DecodedProgramRegion.get -> NdsForge.NdsRegion
+NdsForge.NdsOverlayAuthenticationTable.ProgramStorage.get -> NdsForge.NdsProgramStorageEncoding
+NdsForge.NdsOverlayAuthenticationTable.Records.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsOverlayAuthenticationRecord!>!
+NdsForge.NdsOverlayAuthenticationTable.RelativeOffset.get -> uint
+NdsForge.NdsOverlayAuthenticationTable.State.get -> NdsForge.NdsOverlayAuthenticationTableState
+NdsForge.NdsOverlayAuthenticationTable.UncompressedPrefixLength.get -> int
+NdsForge.NdsOverlayAuthenticationTableState
+NdsForge.NdsOverlayAuthenticationTableState.Complete = 0 -> NdsForge.NdsOverlayAuthenticationTableState
+NdsForge.NdsOverlayAuthenticationTableState.MissingFooter = 1 -> NdsForge.NdsOverlayAuthenticationTableState
+NdsForge.NdsOverlayAuthenticationTableState.MissingTablePointer = 2 -> NdsForge.NdsOverlayAuthenticationTableState
+NdsForge.NdsOverlayAuthenticationTableState.TableOutOfRange = 3 -> NdsForge.NdsOverlayAuthenticationTableState
+NdsForge.NdsOverlayCompressionMode
+NdsForge.NdsOverlayCompressionMode.Blz = 2 -> NdsForge.NdsOverlayCompressionMode
+NdsForge.NdsOverlayCompressionMode.PreserveStorage = 0 -> NdsForge.NdsOverlayCompressionMode
+NdsForge.NdsOverlayCompressionMode.Uncompressed = 1 -> NdsForge.NdsOverlayCompressionMode
 NdsForge.NdsOverlayDefinition.IsAuthenticated.get -> bool
 NdsForge.NdsOverlayDefinition.IsCompressed.get -> bool
 NdsForge.NdsProgram.FooterMetadata.get -> NdsForge.NdsProgramFooter?
 NdsForge.NdsProgram.Parameters.get -> NdsForge.NdsProgramParameters?
+NdsForge.NdsProgramStorageEncoding
+NdsForge.NdsProgramStorageEncoding.Blz = 1 -> NdsForge.NdsProgramStorageEncoding
+NdsForge.NdsProgramStorageEncoding.Plain = 0 -> NdsForge.NdsProgramStorageEncoding
 NdsForge.NdsProgramFeatures
 NdsForge.NdsProgramFeatures.AuthenticatesBanner = 32 -> NdsForge.NdsProgramFeatures
 NdsForge.NdsProgramFeatures.AuthenticatesPrograms = 64 -> NdsForge.NdsProgramFeatures
@@ -232,6 +266,9 @@ NdsForge.NdsSdkVersion.Minor.get -> byte
 NdsForge.NdsSdkVersion.NdsSdkVersion() -> void
 NdsForge.NdsSdkVersion.NdsSdkVersion(byte major, byte minor, ushort build) -> void
 NdsForge.NdsSdkVersion.PackedValue.get -> uint
+NdsForge.NdsReadOptions.MaximumDecodedProgramBytes.get -> int
+NdsForge.NdsReadOptions.MaximumDecodedProgramBytes.init -> void
+NdsForge.NdsValidationOptions.SetArm9OverlayHmacKey(System.ReadOnlySpan<byte> key) -> NdsForge.NdsValidationOptions!
 override NdsForge.NdsDsiAgeRating.GetHashCode() -> int
 override NdsForge.NdsLegacyRegion.GetHashCode() -> int
 override NdsForge.NdsProgramFooter.Equals(object? obj) -> bool
@@ -240,6 +277,7 @@ override NdsForge.NdsProgramFooter.ToString() -> string!
 override NdsForge.NdsSdkVersion.GetHashCode() -> int
 override NdsForge.NdsSdkVersion.ToString() -> string!
 static NdsForge.NdsDsiAgeRating.operator !=(NdsForge.NdsDsiAgeRating left, NdsForge.NdsDsiAgeRating right) -> bool
+static NdsForge.NdsOverlayAuthenticationBuildOptions.CreateHmacSha1(uint tableRelativeOffset, System.ReadOnlySpan<byte> hmacKey, NdsForge.NdsProgramStorageEncoding programStorage = NdsForge.NdsProgramStorageEncoding.Plain, int uncompressedPrefixLength = 0) -> NdsForge.NdsOverlayAuthenticationBuildOptions!
 static NdsForge.NdsDsiAgeRating.operator ==(NdsForge.NdsDsiAgeRating left, NdsForge.NdsDsiAgeRating right) -> bool
 static NdsForge.NdsLegacyRegion.China.get -> NdsForge.NdsLegacyRegion
 static NdsForge.NdsLegacyRegion.Korea.get -> NdsForge.NdsLegacyRegion

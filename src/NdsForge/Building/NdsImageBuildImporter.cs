@@ -76,6 +76,7 @@ internal static class NdsImageBuildImporter
             Arm9i = arm9iDefinition,
             Arm7i = arm7iDefinition,
             DsiMetadata = dsiMetadata,
+            Arm9OverlayAuthentication = ImportOverlayAuthentication(image),
             Banner = image.Banner,
         };
         builder.SetNintendoLogo(image.Header.RawData.Span.Slice(0xC0, 156));
@@ -107,6 +108,29 @@ internal static class NdsImageBuildImporter
         }
 
         return builder;
+    }
+
+    /// <summary>Retains repairable embedded-key state or an exact failure reason for a malformed/stale source table.</summary>
+    private static NdsOverlayAuthenticationBuildOptions? ImportOverlayAuthentication(NdsImage image)
+    {
+        NdsOverlayAuthenticationTable? table = image.Arm9OverlayAuthentication;
+        if (table is null)
+        {
+            return null;
+        }
+
+        if (table.State != NdsOverlayAuthenticationTableState.Complete)
+        {
+            return NdsOverlayAuthenticationBuildOptions.CreateUnrepairable(
+                table,
+                $"The source ARM9 overlay authentication table state is {table.State}.");
+        }
+
+        return NdsOverlayAuthenticationValidator.TryFindEmbeddedKey(image, table, out byte[] key, out _)
+            ? NdsOverlayAuthenticationBuildOptions.FromImported(table, key)
+            : NdsOverlayAuthenticationBuildOptions.CreateUnrepairable(
+                table,
+                "No conventional embedded ARM9 key block validates every stored overlay authentication record.");
     }
 
     /// <summary>Materializes one optional DSi Program while retaining its single-address tuple semantics.</summary>

@@ -8,6 +8,8 @@ public sealed class NdsValidationOptions
 {
     /// <summary>Retains a copied DSi HMAC key so validation cannot observe later caller buffer mutation.</summary>
     private byte[]? _dsiHmacKey;
+    /// <summary>Retains an optional classic-DS per-overlay key for layouts whose program does not expose it conventionally.</summary>
+    private byte[]? _arm9OverlayHmacKey;
     /// <summary>Retains the immutable caller table used to distinguish and checksum KEY1 secure-area states.</summary>
     private NdsKey1KeyTable? _secureAreaKeyTable;
     /// <summary>Retains immutable caller trust material for DSi header authenticity checks.</summary>
@@ -30,6 +32,23 @@ public sealed class NdsValidationOptions
         }
 
         _dsiHmacKey = key.ToArray();
+        return this;
+    }
+
+    /// <summary>
+    /// Verifies classic-DS Download Play records with an explicit HMAC-SHA1 key instead of discovering a matching
+    /// 64-byte key block inside decoded ARM9 bytes.
+    /// </summary>
+    /// <param name="key">Non-empty caller-owned key bytes, copied immediately.</param>
+    /// <returns>The same options object for fluent validation configuration.</returns>
+    public NdsValidationOptions SetArm9OverlayHmacKey(ReadOnlySpan<byte> key)
+    {
+        if (key.IsEmpty)
+        {
+            throw new ArgumentException("An ARM9 overlay validation HMAC key cannot be empty.", nameof(key));
+        }
+
+        _arm9OverlayHmacKey = key.ToArray();
         return this;
     }
 
@@ -74,6 +93,9 @@ public sealed class NdsValidationOptions
 
     /// <summary>Exposes optional copied key bytes only to the internal integrity validator.</summary>
     internal ReadOnlyMemory<byte> DsiHmacKey => _dsiHmacKey;
+
+    /// <summary>Exposes optional classic-DS overlay key bytes only to the format-specific validator.</summary>
+    internal ReadOnlyMemory<byte> Arm9OverlayHmacKey => _arm9OverlayHmacKey;
 
     /// <summary>Exposes optional KEY1 material only to the internal secure-area validator.</summary>
     internal NdsKey1KeyTable? SecureAreaKeyTable => _secureAreaKeyTable;

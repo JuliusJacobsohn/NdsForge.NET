@@ -215,4 +215,23 @@ public sealed class NdsOverlayDefinition
 
     /// <summary>Reports whether the output table marks the overlay for Download Play authentication.</summary>
     public bool IsAuthenticated => (Flags & 0x02) != 0;
+
+    /// <summary>Clones runtime metadata while replacing private storage or retaining the same named-file identity.</summary>
+    internal NdsOverlayDefinition WithStorage(
+        ReadOnlySpan<byte> storedContents,
+        uint ramSize,
+        uint compressedSize,
+        byte flags) => new(
+            Processor,
+            Id,
+            HasPrivateAllocation ? storedContents.ToArray() : null,
+            LinkedFilePath,
+            LinkedFile,
+            LoadAddress,
+            ramSize,
+            BssSize,
+            StaticInitializerStart,
+            StaticInitializerEnd,
+            compressedSize,
+            flags);
 }

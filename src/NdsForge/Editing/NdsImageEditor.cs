@@ -71,6 +71,15 @@ public sealed class NdsImageEditor
             throw new ArgumentOutOfRangeException(nameof(fileId), "The FAT file ID does not exist.");
         }
 
+        NdsOverlay? authenticated = _image.Arm9Overlays.FirstOrDefault(
+            overlay => overlay.IsAuthenticated && overlay.FileId == fileId);
+        if (authenticated is not null && _image.Header.Kind == NdsImageKind.NintendoDs)
+        {
+            throw new InvalidOperationException(
+                $"ARM9 overlay {authenticated.Id} has a Download Play authentication record. " +
+                "Use NdsImageBuilder.FromImageAsync and ReplaceOverlay so ARM9 recompression and HMAC repair are atomic.");
+        }
+
         _replacements[fileId] = contents.ToArray();
         return this;
     }

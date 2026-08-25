@@ -39,6 +39,7 @@ internal static class NdsImageValidator
 
         ValidateOverlays(diagnostics, image.Arm9Overlays);
         ValidateOverlays(diagnostics, image.Arm7Overlays);
+        NdsOverlayAuthenticationValidator.Validate(image, diagnostics, options);
         if (image.Banner is not null)
         {
             diagnostics.AddRange(image.Banner.ValidateCrcs(image.Header.BannerOffset));

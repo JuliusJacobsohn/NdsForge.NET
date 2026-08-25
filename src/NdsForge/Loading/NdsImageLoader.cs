@@ -110,8 +110,17 @@ internal static class NdsImageLoader
             source, header.Arm9OverlayTable, NdsProcessor.Arm9, fileSystem, options);
         IReadOnlyList<NdsOverlay> arm7Overlays = NdsOverlayParser.Parse(
             source, header.Arm7OverlayTable, NdsProcessor.Arm7, fileSystem, options);
+        NdsOverlayAuthenticationTable? arm9OverlayAuthentication = NdsOverlayAuthenticationParser.Parse(
+            source, header, arm9Overlays, options);
         NdsBanner? banner = NdsBannerParser.Parse(source, header.BannerOffset, options);
-        return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
+        return new NdsImage(
+            source,
+            header,
+            fileSystem,
+            arm9Overlays,
+            arm7Overlays,
+            arm9OverlayAuthentication,
+            banner);
     }
 
     /// <summary>Runs asynchronous component parsers in dependency order against one validated source.</summary>
@@ -136,9 +145,22 @@ internal static class NdsImageLoader
         IReadOnlyList<NdsOverlay> arm7Overlays = await NdsOverlayParser.ParseAsync(
             source, header.Arm7OverlayTable, NdsProcessor.Arm7, fileSystem, options, cancellationToken)
             .ConfigureAwait(false);
+        NdsOverlayAuthenticationTable? arm9OverlayAuthentication = await NdsOverlayAuthenticationParser.ParseAsync(
+            source,
+            header,
+            arm9Overlays,
+            options,
+            cancellationToken).ConfigureAwait(false);
         NdsBanner? banner = await NdsBannerParser.ParseAsync(
             source, header.BannerOffset, options, cancellationToken).ConfigureAwait(false);
-        return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
+        return new NdsImage(
+            source,
+            header,
+            fileSystem,
+            arm9Overlays,
+            arm7Overlays,
+            arm9OverlayAuthentication,
+            banner);
     }
 
     /// <summary>Reads a classic header or a declared late-DS/DSi 0x1000-byte extension.</summary>

@@ -10,6 +10,10 @@ Territory, launch, crypto, access-control, application-policy, memory-bank, shar
 
 Canonical ARM9 SDK parameter tables are recognized only when both byte-order markers are present and the complete fixed prefix lies inside the program. This prevents a legacy tool-generated footer placeholder or an arbitrary in-range pointer from being reported as SDK metadata. Stored authentication bytes are evidence from the image, not proof of authenticity; verification still requires caller-selected trust material.
 
+Classic-DS overlays whose control record enables Download Play authentication are linked to the positional 20-byte records inside decoded ARM9. `NdsImage.Arm9OverlayAuthentication` reports whether the SDK footer pointer is complete, missing, or outside the decoded program, as well as plain-versus-BLZ storage and the retained prefix. Validation accepts an explicit key through `SetArm9OverlayHmacKey`; without one, it considers a conventional 64-byte ARM9 key block usable only after that candidate reproduces every flagged record. A marked block is never trusted merely because its prefix looks familiar.
+
+Structural imports retain verified table and key state privately. `NdsImageBuilder.ReplaceOverlay` can preserve stored bytes, store decoded bytes directly, or apply deterministic BLZ encoding. Before layout assigns offsets, the builder updates the stored-size and compression fields, hashes the exact stored overlay payloads, patches decoded ARM9, re-encodes ARM9 when required, and repairs its SDK compressed-end address. A missing key, stale source table, bad footer pointer, unrepresentable BLZ output, or compressed-end field outside the verbatim prefix fails before output is written. The local preservation editor deliberately rejects authenticated ARM9 overlay replacement because it cannot relocate a newly compressed ARM9 atomically; use a structural builder for that operation.
+
 The library does not emulate software, interpret instructions, edit save files, or decode game-specific archives and compression. An image can also contain publisher-specific data that NdsForge preserves as opaque regions rather than claiming to understand it.
 
 ## Reading untrusted images
@@ -22,7 +26,7 @@ Extraction applies portable host-name rules and rejects traversal, collisions, a
 
 CRCs, hashes, digest trees, HMACs, and RSA signatures answer different questions. A matching checksum establishes consistency with the stored checksum; it does not establish who produced the image. Authenticity validation requires a public key or secret material supplied by the caller where the format requires it.
 
-NdsForge contains no boot ROM data, KEY1 tables, DSi common keys, HMAC keys, private keys, certificates, or proprietary logo data. Key-bearing APIs copy caller input into private buffers and do not include it in manifests or diagnostic messages. Callers remain responsible for secure key storage, access control, and disposal of their own copies.
+NdsForge contains no boot ROM data, KEY1 tables, retail trust keys, private keys, certificates, or proprietary logo data. A structural import may temporarily retain key bytes already embedded in the caller's ARM9 program solely to maintain its own verified Download Play records. Key-bearing APIs copy caller input into private buffers and do not include it in manifests or diagnostic messages. Callers remain responsible for secure key storage, access control, and disposal of their own copies.
 
 ## ndstool interoperability
 

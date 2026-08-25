@@ -14,6 +14,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <param name="fileSystem">Validated FNT hierarchy and FAT allocations.</param>
     /// <param name="arm9Overlays">ARM9 table entries in encoded order.</param>
     /// <param name="arm7Overlays">ARM7 table entries in encoded order.</param>
+    /// <param name="arm9OverlayAuthentication">Decoded classic-DS Download Play records, or no declaration.</param>
     /// <param name="banner">Optional versioned menu metadata and icon.</param>
     internal NdsImage(
         IImageDataSource source,
@@ -21,6 +22,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         NdsFileSystem fileSystem,
         IReadOnlyList<NdsOverlay> arm9Overlays,
         IReadOnlyList<NdsOverlay> arm7Overlays,
+        NdsOverlayAuthenticationTable? arm9OverlayAuthentication,
         NdsBanner? banner)
     {
         _source = source;
@@ -28,6 +30,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         FileSystem = fileSystem;
         Arm9Overlays = arm9Overlays;
         Arm7Overlays = arm7Overlays;
+        Arm9OverlayAuthentication = arm9OverlayAuthentication;
         Banner = banner;
     }
 
@@ -42,6 +45,9 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
 
     /// <summary>Gets ARM7 overlays in table order.</summary>
     public IReadOnlyList<NdsOverlay> Arm7Overlays { get; }
+
+    /// <summary>Gets the classic-DS ARM9 Download Play authentication table, including malformed declaration state.</summary>
+    public NdsOverlayAuthenticationTable? Arm9OverlayAuthentication { get; }
 
     /// <summary>Gets the parsed menu banner, or <see langword="null"/> when absent.</summary>
     public NdsBanner? Banner { get; }

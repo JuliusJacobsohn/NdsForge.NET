@@ -104,6 +104,12 @@ public sealed class NdsImageBuilder
     /// </summary>
     public NdsDsiBuildMetadata? DsiMetadata { get; set; }
 
+    /// <summary>
+    /// Supplies classic-DS Download Play table repair settings. It is required when ARM9 overlay definitions retain
+    /// their authentication bit and ignored for DSi images, whose digest hierarchy has separate semantics.
+    /// </summary>
+    public NdsOverlayAuthenticationBuildOptions? Arm9OverlayAuthentication { get; set; }
+
     /// <summary>Provides structural NitroFS operations whose stable snapshot becomes the generated FNT and FAT.</summary>
     public NdsFileSystemBuilder FileSystem { get; }
 
@@ -123,6 +129,82 @@ public sealed class NdsImageBuilder
     {
         ArgumentNullException.ThrowIfNull(overlay);
         (overlay.Processor == NdsProcessor.Arm9 ? _arm9Overlays : _arm7Overlays).Add(overlay);
+        return this;
+    }
+
+    /// <summary>Replaces one uniquely identified overlay and synchronizes compression flags, stored size, and RAM size.</summary>
+    /// <param name="processor">ARM9 or ARM7 namespace containing the runtime identifier.</param>
+    /// <param name="id">Runtime overlay identifier, independent from its generated FAT file ID.</param>
+    /// <param name="contents">Stored bytes for preservation mode or decoded bytes for explicit compression modes.</param>
+    /// <param name="compressionMode">Storage transformation applied before the next build.</param>
+    /// <returns>The same builder for fluent recipe editing.</returns>
+    public NdsImageBuilder ReplaceOverlay(
+        NdsProcessor processor,
+        uint id,
+        ReadOnlySpan<byte> contents,
+        NdsOverlayCompressionMode compressionMode = NdsOverlayCompressionMode.PreserveStorage)
+    {
+        List<NdsOverlayDefinition> overlays = processor switch
+        {
+            NdsProcessor.Arm9 => _arm9Overlays,
+            NdsProcessor.Arm7 => _arm7Overlays,
+            _ => throw new ArgumentOutOfRangeException(nameof(processor), "Only ARM9 and ARM7 have overlay tables."),
+        };
+        int index = overlays.FindIndex(overlay => overlay.Id == id);
+        if (index < 0)
+        {
+            throw new KeyNotFoundException($"{processor} overlay {id} does not exist in the build recipe.");
+        }
+
+        if (overlays.FindIndex(index + 1, overlay => overlay.Id == id) >= 0)
+        {
+            throw new InvalidDataException($"{processor} overlay ID {id} is ambiguous in the build recipe.");
+        }
+
+        NdsOverlayDefinition original = overlays[index];
+        byte[] stored;
+        uint ramSize;
+        uint compressedSize;
+        byte flags;
+        switch (compressionMode)
+        {
+            case NdsOverlayCompressionMode.PreserveStorage:
+                stored = contents.ToArray();
+                ramSize = original.RamSize;
+                compressedSize = original.IsCompressed ? checked((uint)stored.Length) : original.CompressedSize;
+                flags = original.Flags;
+                break;
+            case NdsOverlayCompressionMode.Uncompressed:
+                stored = contents.ToArray();
+                ramSize = checked((uint)stored.Length);
+                compressedSize = 0;
+                flags = (byte)(original.Flags & ~0x01);
+                break;
+            case NdsOverlayCompressionMode.Blz:
+                if (!NdsForge.Shared.BlzEngine.TryCompress(contents, out stored, uncompressedPrefixLength: 0))
+                {
+                    throw new InvalidDataException("The replacement overlay does not produce a smaller BLZ payload.");
+                }
+
+                ramSize = checked((uint)contents.Length);
+                compressedSize = checked((uint)stored.Length);
+                flags = (byte)(original.Flags | 0x01);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(compressionMode), compressionMode, "Unknown overlay compression mode.");
+        }
+
+        if (compressedSize > 0x00FF_FFFF)
+        {
+            throw new InvalidDataException("The replacement overlay stored size exceeds its 24-bit table field.");
+        }
+
+        if (!original.HasPrivateAllocation)
+        {
+            FileSystem.SetFile(original.EffectiveLinkedFilePath!, stored);
+        }
+
+        overlays[index] = original.WithStorage(stored, ramSize, compressedSize, flags);
         return this;
     }
 
