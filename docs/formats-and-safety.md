@@ -94,9 +94,50 @@ outputs. File writes retain the atomic path-overwrite contract. Arbitrary stream
 can still fail during I/O or allocation and are not transactional.
 
 These options construct a new layout. They do not preserve an input image's
-unknown trailing bytes and are not an in-place trim operation. Use the existing
-no-op preservation save when every original byte must survive. Dedicated
-source-preserving trim/expansion and CLI build policies are separate capabilities.
+unknown trailing bytes and are not an in-place trim operation. Use the resizing
+API below or a no-op preservation save when retained bytes must remain exact.
+
+### Source-preserving physical resizing
+
+`NdsImageResizer.WriteAsync(image, stream, options)` and
+`WriteFileAsync(image, path, options)` resize without moving components or editing
+any header byte. `NdsImageResizeOptions.Mode` selects one of four contracts:
+
+| Mode | Output length | Preserved bytes |
+| --- | --- | --- |
+| `Preserve` (default) | Physical input length | Every byte, including unknown trailing data |
+| `Trim` | `SizeInfo.DeclaredContentEnd` | All declared content, including DSi programs, digest coverage, and recognized trailers |
+| `PadToDeviceCapacity` | Existing header capacity | Every source byte, followed by `PaddingByte` |
+| `ExactLength` | Required `OutputLengthBytes` | Every byte before the selected boundary; any expansion uses `PaddingByte` |
+
+An exact length cannot remove declared content or exceed a cartridge's unchanged
+header capacity. Capacity padding is expansion-only: it rejects an input already
+larger than capacity. Digital SRLs support preservation, trimming, and explicit
+physical lengths, but reject cartridge-capacity expansion. Explicit lengths and
+capacity expansion are bounded to 4 GiB; contiguous-memory limits still apply.
+
+Shrinking defaults to `TrailingDataPolicy.RequirePadding`: the complete removed
+interval must equal `PaddingByte` (default `0xFF`) before the destination changes.
+All-FF file contents are retained because trimming uses declared boundaries, not
+a backward search for the last non-FF byte. `TrailingDataPolicy.Discard` explicitly
+permits dropping unclassified trailing bytes and returns warning `NDS1580` with
+the affected range. It never permits deleting known declared components.
+
+Verification validates the source before writing, compares the entire retained
+prefix and all added padding afterward, and reparses the result. No new keys or
+authentication generation are needed: covered bytes remain exact. This does not
+turn unverified stored signatures into trusted signatures. If late-DS coverage
+cannot be resolved, its existing warning conservatively retains the full input.
+Missing declared content and ambiguous/malformed carrier layouts cannot be
+repaired by padding and are rejected even with verification disabled. An explicit
+`Preserve` operation with `VerifyOutput = false` can still copy a damaged image.
+
+Streams must have independent storage, including through wrappers. Direct use of
+the source stream as destination is rejected. Path writes reject detected
+reparse-point destinations and ancestors, use a temporary sibling, and require
+`OverwriteDestination` to replace an existing regular file. They do not provide a
+filesystem-wide defense against hostile concurrent path replacement. Keep the
+source immutable and use an output directory you control.
 
 `NdsImage.CarrierLayout` distinguishes `NdsCartridgeLayout`, `NdsDigitalSrlLayout`, and `NdsUnknownCarrierLayout`. Storage carrier and `Header.Kind` are separate: the latter describes execution mode. Detection uses executable title categories and declared layout, never the filename extension. An absent title category retains ordinary cartridge/homebrew conventions. Unsupported categories and digital titles with nonzero cartridge access boundaries produce explicit errors rather than an inferred digital layout.
 

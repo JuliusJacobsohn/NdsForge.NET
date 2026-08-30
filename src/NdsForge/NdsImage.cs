@@ -80,6 +80,16 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <summary>Reports independent size declarations and unclassified trailing ranges without scanning or discarding data.</summary>
     public NdsImageSizeInfo SizeInfo { get; }
 
+    /// <summary>Rejects disposed images and direct source/destination stream aliasing before a resizing write.</summary>
+    internal void ValidateIndependentDestination(Stream destination)
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        if (_source is StreamImageDataSource source && source.UsesStream(destination))
+        {
+            throw new ArgumentException("The output stream must not be the image's source stream.", nameof(destination));
+        }
+    }
+
     /// <summary>Opens an image from a filesystem path without loading the entire file into memory.</summary>
     /// <param name="path">The image path.</param>
     /// <param name="options">Optional parser resource limits.</param>

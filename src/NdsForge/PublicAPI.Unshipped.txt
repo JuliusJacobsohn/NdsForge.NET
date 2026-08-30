@@ -3,6 +3,34 @@ NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.get -> long?
 NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.init -> void
 NdsForge.NdsImageBuildOptions.PadToDeviceCapacity.get -> bool
 NdsForge.NdsImageBuildOptions.PadToDeviceCapacity.init -> void
+NdsForge.NdsImageResizeMode
+NdsForge.NdsImageResizeMode.ExactLength = 3 -> NdsForge.NdsImageResizeMode
+NdsForge.NdsImageResizeMode.PadToDeviceCapacity = 2 -> NdsForge.NdsImageResizeMode
+NdsForge.NdsImageResizeMode.Preserve = 0 -> NdsForge.NdsImageResizeMode
+NdsForge.NdsImageResizeMode.Trim = 1 -> NdsForge.NdsImageResizeMode
+NdsForge.NdsImageResizeOptions
+NdsForge.NdsImageResizeOptions.<Clone>$() -> NdsForge.NdsImageResizeOptions!
+NdsForge.NdsImageResizeOptions.Equals(NdsForge.NdsImageResizeOptions? other) -> bool
+NdsForge.NdsImageResizeOptions.Mode.get -> NdsForge.NdsImageResizeMode
+NdsForge.NdsImageResizeOptions.Mode.init -> void
+NdsForge.NdsImageResizeOptions.NdsImageResizeOptions() -> void
+NdsForge.NdsImageResizeOptions.OutputLengthBytes.get -> long?
+NdsForge.NdsImageResizeOptions.OutputLengthBytes.init -> void
+NdsForge.NdsImageResizeOptions.OverwriteDestination.get -> bool
+NdsForge.NdsImageResizeOptions.OverwriteDestination.init -> void
+NdsForge.NdsImageResizeOptions.PaddingByte.get -> byte
+NdsForge.NdsImageResizeOptions.PaddingByte.init -> void
+NdsForge.NdsImageResizeOptions.TrailingDataPolicy.get -> NdsForge.NdsTrailingDataPolicy
+NdsForge.NdsImageResizeOptions.TrailingDataPolicy.init -> void
+NdsForge.NdsImageResizeOptions.VerifyOutput.get -> bool
+NdsForge.NdsImageResizeOptions.VerifyOutput.init -> void
+NdsForge.NdsImageResizer
+NdsForge.NdsImageResizeResult
+NdsForge.NdsImageResizeResult.AddedData.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageResizeResult.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
+NdsForge.NdsImageResizeResult.InputLength.get -> long
+NdsForge.NdsImageResizeResult.OutputLength.get -> long
+NdsForge.NdsImageResizeResult.RemovedData.get -> NdsForge.NdsRegion?
 NdsForge.NdsManifestHeader.DeviceCapacityExponent.get -> byte
 NdsForge.NdsManifestHeader.DeviceCapacityExponent.init -> void
 NdsForge.NdsImage.SizeInfo.get -> NdsForge.NdsImageSizeInfo!
@@ -30,6 +58,9 @@ NdsForge.NdsCarrierLayout.PostHeaderData.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsCarrierLayout.PostHeaderRegion.get -> NdsForge.NdsRegion?
 NdsForge.NdsCarrierLayout.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
 NdsForge.NdsCartridgeLayout
+NdsForge.NdsTrailingDataPolicy
+NdsForge.NdsTrailingDataPolicy.Discard = 1 -> NdsForge.NdsTrailingDataPolicy
+NdsForge.NdsTrailingDataPolicy.RequirePadding = 0 -> NdsForge.NdsTrailingDataPolicy
 override NdsForge.NdsCartridgeLayout.Kind.get -> NdsForge.NdsImageCarrier
 NdsForge.NdsCartridgeLayout.NtrRegionEnd.get -> long
 NdsForge.NdsCartridgeLayout.TwlRegionStart.get -> long
@@ -37,6 +68,9 @@ NdsForge.NdsDigitalSrlLayout
 override NdsForge.NdsDigitalSrlLayout.Kind.get -> NdsForge.NdsImageCarrier
 NdsForge.NdsDigitalSrlLayout.TitleId.get -> ulong
 NdsForge.NdsUnknownCarrierLayout
+override NdsForge.NdsImageResizeOptions.Equals(object? obj) -> bool
+override NdsForge.NdsImageResizeOptions.GetHashCode() -> int
+override NdsForge.NdsImageResizeOptions.ToString() -> string!
 override NdsForge.NdsUnknownCarrierLayout.Kind.get -> NdsForge.NdsImageCarrier
 NdsForge.NdsImage.CarrierLayout.get -> NdsForge.NdsCarrierLayout!
 NdsForge.NdsImageBuilder.Carrier.get -> NdsForge.NdsImageCarrier
@@ -371,6 +405,11 @@ override NdsForge.NdsProgramFooter.ToString() -> string!
 override NdsForge.NdsSdkVersion.GetHashCode() -> int
 override NdsForge.NdsSdkVersion.ToString() -> string!
 static NdsForge.NdsDsiAgeRating.operator !=(NdsForge.NdsDsiAgeRating left, NdsForge.NdsDsiAgeRating right) -> bool
+static NdsForge.NdsImageResizeOptions.Default.get -> NdsForge.NdsImageResizeOptions!
+static NdsForge.NdsImageResizeOptions.operator !=(NdsForge.NdsImageResizeOptions? left, NdsForge.NdsImageResizeOptions? right) -> bool
+static NdsForge.NdsImageResizeOptions.operator ==(NdsForge.NdsImageResizeOptions? left, NdsForge.NdsImageResizeOptions? right) -> bool
+static NdsForge.NdsImageResizer.WriteFileAsync(NdsForge.NdsImage! image, string! path, NdsForge.NdsImageResizeOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageResizeResult!>
+static NdsForge.NdsImageResizer.WriteAsync(NdsForge.NdsImage! image, System.IO.Stream! destination, NdsForge.NdsImageResizeOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageResizeResult!>
 static NdsForge.NdsOverlayAuthenticationBuildOptions.CreateHmacSha1(uint tableRelativeOffset, System.ReadOnlySpan<byte> hmacKey, NdsForge.NdsProgramStorageEncoding programStorage = NdsForge.NdsProgramStorageEncoding.Plain, int uncompressedPrefixLength = 0) -> NdsForge.NdsOverlayAuthenticationBuildOptions!
 static NdsForge.NdsDsiAgeRating.operator ==(NdsForge.NdsDsiAgeRating left, NdsForge.NdsDsiAgeRating right) -> bool
 static NdsForge.NdsLegacyRegion.China.get -> NdsForge.NdsLegacyRegion

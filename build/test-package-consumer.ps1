@@ -72,6 +72,13 @@ if (image.Header.GameCode != "CS01" || image.FileSystem.GetFile("/hello.txt").Da
 if (image.SizeInfo.PhysicalSize != bytes.Length || image.SizeInfo.DeviceCapacityBytes != 131072 ||
     image.SizeInfo.DeclaredContentEnd > bytes.Length || image.SizeInfo.Diagnostics.Count != 0)
     throw new InvalidOperationException("Size inspection package consumer failed.");
+using (var resized = new MemoryStream())
+{
+    NdsImageResizeResult resize = await NdsImageResizer.WriteAsync(image, resized,
+        new() { Mode = NdsImageResizeMode.Trim, TrailingDataPolicy = NdsTrailingDataPolicy.RequirePadding });
+    if (resize.OutputLength != image.SizeInfo.DeclaredContentEnd || resize.AddedData is not null)
+        throw new InvalidOperationException("Resize policy package consumer failed.");
+}
 byte[] capacityBytes = await builder.BuildAsync(new()
 {
     RequestedDeviceCapacityBytes = 0x40000,
@@ -177,9 +184,12 @@ if (NitroObjectEntry.Create(0, 0, 8, 8, 0, NitroColorDepth.Indexed4Bpp).Width !=
 if (new NftrGlyphMetrics(-1, 8, 9).AdvanceWidth != 9)
     throw new InvalidOperationException("Graphics font package consumer API failed.");
 Console.WriteLine("PACKAGE_CONSUMER_OK");
+await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-source.nds"), capacityBytes);
+capacityBytes[^1] = 37;
+await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-unclassified.nds"), capacityBytes);
 '@
     [System.IO.File]::WriteAllText((Join-Path $consumer "Program.cs"), $program, [System.Text.UTF8Encoding]::new($false))
-    dotnet run --project $consumer --configuration Release --no-restore
+    dotnet run --project $consumer --configuration Release --no-restore -- $workspace
     if ($LASTEXITCODE -ne 0) { throw "Clean NdsForge package consumer failed." }
 
     dotnet tool install NdsForge.Cli --version $Version --tool-path $toolPath `
@@ -189,6 +199,46 @@ Console.WriteLine("PACKAGE_CONSUMER_OK");
     $executable = Join-Path $toolPath $executableName
     & $executable --help
     if ($LASTEXITCODE -ne 0) { throw "The packaged ndsforge tool did not start successfully." }
+    $resizeSource = Join-Path $workspace 'resize-source.nds'
+    $resizeUnclassified = Join-Path $workspace 'resize-unclassified.nds'
+    $resizeCopy = Join-Path $workspace 'resize-copy.nds'
+    $resizeTrimmed = Join-Path $workspace 'resize-trimmed.nds'
+    $resizeExpanded = Join-Path $workspace 'resize-expanded.nds'
+    $resizeExact = Join-Path $workspace 'resize-exact.nds'
+    $resizeRejected = Join-Path $workspace 'resize-rejected.nds'
+    $resizeDiscarded = Join-Path $workspace 'resize-discarded.nds'
+    function Invoke-ResizeCheck([int]$expectedExit, [string[]]$arguments) {
+        & $executable @arguments
+        if ($LASTEXITCODE -ne $expectedExit) { throw "CLI resize exit was $LASTEXITCODE, expected $expectedExit." }
+    }
+    Invoke-ResizeCheck 0 @('resize', $resizeSource, $resizeCopy, 'preserve')
+    Invoke-ResizeCheck 1 @('resize', $resizeSource, $resizeCopy, 'preserve')
+    Invoke-ResizeCheck 0 @('resize', $resizeSource, $resizeCopy, 'preserve', '--overwrite')
+    Invoke-ResizeCheck 0 @('resize', $resizeSource, $resizeTrimmed, 'trim', '--padding-byte', 'A5')
+    Invoke-ResizeCheck 0 @('resize', $resizeTrimmed, $resizeExpanded, 'pad', '--padding-byte', 'A5')
+    Invoke-ResizeCheck 0 @('resize', $resizeSource, $resizeExact, 'exact', '--length', '0x30000', '--padding-byte', 'A5')
+    Invoke-ResizeCheck 1 @('resize', $resizeSource, $resizeRejected, 'exact', '--length', '1')
+    Invoke-ResizeCheck 1 @('resize', $resizeUnclassified, $resizeRejected, 'trim', '--padding-byte', 'A5')
+    Invoke-ResizeCheck 0 @('resize', $resizeUnclassified, $resizeDiscarded, 'trim', '--discard-trailing')
+    Invoke-ResizeCheck 1 @('resize', $resizeSource, $resizeSource, 'preserve', '--overwrite')
+    foreach ($invalid in @(
+        @('exact'), @('unknown'), @('trim', '--length', '1000'),
+        @('trim', '--padding-byte', 'GG'), @('trim', '--padding-byte'),
+        @('trim', '--overwrite', '--overwrite'), @('pad', '--discard-trailing'),
+        @('exact', '--length', '0x100000001'), @('exact', '--length', '-1'))) {
+        Invoke-ResizeCheck 2 (@('resize', $resizeSource, $resizeRejected) + $invalid)
+    }
+    if (Test-Path -LiteralPath $resizeRejected) { throw 'Rejected CLI resize created output.' }
+    $sourceDigest = (Get-FileHash -LiteralPath $resizeSource -Algorithm SHA256).Hash
+    if ((Get-FileHash -LiteralPath $resizeCopy -Algorithm SHA256).Hash -ne $sourceDigest -or
+        (Get-FileHash -LiteralPath $resizeExpanded -Algorithm SHA256).Hash -ne $sourceDigest) {
+        throw 'CLI preserve/trim/expand did not retain exact source bytes.'
+    }
+    $usedLength = [BitConverter]::ToUInt32([IO.File]::ReadAllBytes($resizeSource), 0x80)
+    if ((Get-Item -LiteralPath $resizeTrimmed).Length -ne $usedLength -or
+        (Get-Item -LiteralPath $resizeDiscarded).Length -ne $usedLength -or
+        (Get-Item -LiteralPath $resizeExact).Length -ne 0x30000) { throw 'CLI resize length mismatch.' }
+    Write-Output 'CLI_RESIZE_CONSUMER_OK'
     Write-Output "TOOL_CONSUMER_OK"
 } finally {
     if ([System.IO.Directory]::Exists($workspace)) { [System.IO.Directory]::Delete($workspace, $true) }

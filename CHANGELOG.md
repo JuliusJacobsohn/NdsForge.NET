@@ -7,6 +7,11 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Add source-preserving resize APIs and a `resize` CLI command with explicit
+  preserve, trim, capacity-pad, and exact-length modes. Verify removed padding by
+  default; require explicit discard for unclassified trailing bytes. Preserve
+  headers, authentication coverage, and known post-used content, and verify every
+  retained/output byte with bounded buffers and transactional path writes.
 - Request an explicit cartridge capacity independently from physical output size,
   or pad structural builds to the selected capacity without changing used-size
   declarations. Reject undersized, nonrepresentable, digital-carrier, and
