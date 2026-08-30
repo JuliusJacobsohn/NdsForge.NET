@@ -109,7 +109,8 @@ public sealed class NdsEditRegionProtectionTests
         using NdsImage source = NdsImage.Load(SyntheticImage.CreateHeaderOnly());
         NdsImageBuilder builder = await NdsImageBuilder.FromImageAsync(source, TestContext.Current.CancellationToken).ConfigureAwait(true);
         builder.Kind = NdsImageKind.NintendoDsiEnhanced;
-        builder.DsiMetadata = new();
+        builder.Carrier = NdsImageCarrier.DigitalSrl;
+        builder.DsiMetadata = new() { TitleId = 0x0003000454455354 };
         builder.Arm9i = new(NdsProcessor.Arm9i, [9, 8, 7], 0x02400000, 0x02400000);
         builder.Arm7i = new(NdsProcessor.Arm7i, [6, 5, 4], 0x02E80000, 0x02E80000);
         if (trailer)

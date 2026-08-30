@@ -7,6 +7,10 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Apply DSi cartridge access boundaries separately from digital-SRL packing; retain
+  opaque TWL reservation bytes, reserve the ARM9i secure window, and place optional
+  digest tables inside common content. Diagnose malformed reservations and protect
+  them from overlapping preservation edits.
 - Distinguish cartridge, digital-SRL, and unresolved carriers independently of
   execution mode; retain opaque post-header material and reject contradictory or
   malformed carrier declarations with explicit diagnostics.

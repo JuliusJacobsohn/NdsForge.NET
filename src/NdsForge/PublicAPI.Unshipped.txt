@@ -1,4 +1,8 @@
 #nullable enable
+NdsForge.NdsCartridgeLayout.TwlReservedData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsCartridgeLayout.TwlReservedRegion.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageBuilder.TwlReservedData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsImageBuilder.SetTwlReservedData(System.ReadOnlySpan<byte> data) -> NdsForge.NdsImageBuilder!
 NdsForge.NdsImageCarrier
 NdsForge.NdsImageCarrier.Unknown = 0 -> NdsForge.NdsImageCarrier
 NdsForge.NdsImageCarrier.Cartridge = 1 -> NdsForge.NdsImageCarrier

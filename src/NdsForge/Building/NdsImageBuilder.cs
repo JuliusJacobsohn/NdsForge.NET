@@ -18,6 +18,9 @@ public sealed class NdsImageBuilder
     /// <summary>Retains a detached copy of carrier-only bytes between the extended header and program storage.</summary>
     private byte[] _postHeaderData = [];
 
+    /// <summary>Stores an explicit TWL reservation; absent bytes request deterministic mirror generation.</summary>
+    private byte[] _twlReservedData = [];
+
     /// <summary>Retains an imported digital title's informational capacity byte independently of output file length.</summary>
     internal byte? ImportedDigitalCapacity { get; set; }
 
@@ -44,6 +47,19 @@ public sealed class NdsImageBuilder
 
     /// <summary>Retains opaque carrier material beginning at 0x1000 without interpreting it as program bytes.</summary>
     public ReadOnlyMemory<byte> PostHeaderData => _postHeaderData;
+
+    /// <summary>Supplies exactly 12 KiB of opaque TWL reservation data; empty means generate three copies of image bytes 0x8000–0x8FFF.</summary>
+    public ReadOnlyMemory<byte> TwlReservedData => _twlReservedData;
+
+    /// <summary>Copies an explicit TWL reservation for DSi cartridges, or selects generated mirror bytes when empty.</summary>
+    /// <param name="data">Exactly 0x3000 bytes, or empty to select deterministic mirror generation.</param>
+    /// <returns>This recipe with independently owned reservation bytes.</returns>
+    public NdsImageBuilder SetTwlReservedData(ReadOnlySpan<byte> data)
+    {
+        if (data.Length is not (0 or 0x3000)) { throw new ArgumentException("A TWL reservation must contain exactly 0x3000 bytes or be empty.", nameof(data)); }
+        _twlReservedData = data.ToArray();
+        return this;
+    }
 
     /// <summary>Copies at most 0x3000 opaque bytes into the independently reserved post-header region.</summary>
     /// <param name="data">Carrier material; an empty span requests a zero-filled reservation.</param>

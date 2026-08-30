@@ -110,7 +110,7 @@ public sealed class NdsDsiBuilderValidationTests
         NdsImageBuilder imported = await NdsImageBuilder.FromImageAsync(
             source,
             TestContext.Current.CancellationToken).ConfigureAwait(true);
-        imported.FileSystem.AddFile("/shift.bin", new byte[0x1000]);
+        imported.FileSystem.AddFile("/shift.bin", new byte[0x80000]);
 
         byte[] rebuiltBytes = await imported.BuildAsync(
             cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);

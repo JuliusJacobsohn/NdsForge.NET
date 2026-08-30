@@ -124,7 +124,7 @@ internal static class NdsImageLoader
             banner,
             signature,
             truncatedSignature,
-            NdsCarrierLayoutParser.Parse(source, header, fileSystem, banner));
+            NdsCarrierLayoutParser.Parse(source, header, fileSystem, banner, signature));
     }
 
     /// <summary>Runs asynchronous component parsers in dependency order against one validated source.</summary>
@@ -169,7 +169,7 @@ internal static class NdsImageLoader
             banner,
             signature,
             truncatedSignature,
-            await NdsCarrierLayoutParser.ParseAsync(source, header, fileSystem, banner, cancellationToken).ConfigureAwait(false));
+            await NdsCarrierLayoutParser.ParseAsync(source, header, fileSystem, banner, signature, cancellationToken).ConfigureAwait(false));
     }
 
     /// <summary>Reads a classic header or a declared late-DS/DSi 0x1000-byte extension.</summary>

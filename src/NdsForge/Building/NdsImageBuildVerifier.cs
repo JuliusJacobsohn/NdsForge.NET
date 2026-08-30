@@ -45,6 +45,12 @@ internal static class NdsImageBuildVerifier
             throw new InvalidDataException("Generated Download Play signature trailer did not preserve its stored bytes.");
         }
 
+        if (!builder.TwlReservedData.IsEmpty && (image.CarrierLayout is not NdsCartridgeLayout cartridge ||
+            !cartridge.TwlReservedData.Span.SequenceEqual(builder.TwlReservedData.Span)))
+        {
+            throw new InvalidDataException("Generated cartridge TWL reservation did not preserve the recipe bytes.");
+        }
+
         foreach (NdsBuildFile expectedFile in fileSystem.FilesInIdOrder)
         {
             NdsFile actualFile = image.FileSystem.GetFile(expectedFile.Path);

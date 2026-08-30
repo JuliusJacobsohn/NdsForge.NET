@@ -59,6 +59,12 @@ internal static class NdsImageHeaderWriter
         NdsBinary.WriteUInt32(header, 0x7C, (uint)(builder.SecureDisable >> 32));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)layout.UsedSize));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x84), checked((uint)options.HeaderSize));
+        if (layout.TwlReserved is { } reservation)
+        {
+            ushort boundary = checked((ushort)(reservation.Offset / 0x80000));
+            NdsBinary.WriteUInt16(header, 0x90, boundary);
+            NdsBinary.WriteUInt16(header, 0x92, boundary);
+        }
         if (!builder.NintendoLogo.IsEmpty)
         {
             builder.NintendoLogo.Span.CopyTo(header.AsSpan(0xC0, 156));

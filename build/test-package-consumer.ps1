@@ -131,6 +131,21 @@ if (digitalImage.CarrierLayout is not NdsDigitalSrlLayout ||
     !digitalImage.CarrierLayout.PostHeaderData.Span.SequenceEqual(carrierBytes) ||
     NdsSecureArea.Inspect(digitalImage).State != NdsSecureAreaState.Absent)
     throw new InvalidOperationException("Digital carrier package consumer failed.");
+var cartridgeBuilder = new NdsImageBuilder
+{
+    Kind = NdsImageKind.NintendoDsiEnhanced,
+    Arm9 = new(NdsProcessor.Arm9, [1], 0x02000000, 0x02000000),
+    Arm7 = new(NdsProcessor.Arm7, [2], 0x02380000, 0x02380000),
+    Arm9i = new(NdsProcessor.Arm9i, [3], 0x02400000, 0x02400000),
+    Arm7i = new(NdsProcessor.Arm7i, [4], 0x02E80000, 0x02E80000),
+    DsiMetadata = new(),
+};
+cartridgeBuilder.SetTwlReservedData(carrierBytes);
+using NdsImage cartridgeImage = NdsImage.Load(await cartridgeBuilder.BuildAsync());
+if (cartridgeImage.CarrierLayout is not NdsCartridgeLayout cartridgeLayout ||
+    cartridgeLayout.TwlRegionStart != 0x80000 || cartridgeLayout.TwlReservedRegion?.Length != 0x3000 ||
+    !cartridgeLayout.TwlReservedData.Span.SequenceEqual(carrierBytes) || cartridgeImage.Header.Arm7i!.Data.Offset < 0x87000)
+    throw new InvalidOperationException("Cartridge reservation package consumer failed.");
 byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
 if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
     throw new InvalidOperationException("Nitro package consumer round trip failed.");

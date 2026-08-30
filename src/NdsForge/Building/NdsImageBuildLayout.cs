@@ -13,6 +13,7 @@ namespace NdsForge;
 /// <param name="DebugProgram">Optional debug executable placed after common file payloads.</param>
 /// <param name="Arm9i">Optional DSi-mode ARM9 Region placed after common DS content.</param>
 /// <param name="Arm7i">Optional DSi-mode ARM7 Region placed after ARM9i.</param>
+/// <param name="TwlReserved">Optional cartridge-only reservation immediately before ARM9i.</param>
 /// <param name="NtrDigest">Common-mode content interval covered by sector hashes.</param>
 /// <param name="TwlDigest">DSi-mode content interval covered after the NTR sectors.</param>
 /// <param name="SectorHashTable">First-level HMAC-SHA1 entries, or an empty region when digests are disabled.</param>
@@ -32,6 +33,7 @@ internal sealed record NdsImageBuildLayout(
     NdsRegion? DebugProgram,
     NdsRegion? Arm9i,
     NdsRegion? Arm7i,
+    NdsRegion? TwlReserved,
     NdsRegion NtrDigest,
     NdsRegion TwlDigest,
     NdsRegion SectorHashTable,

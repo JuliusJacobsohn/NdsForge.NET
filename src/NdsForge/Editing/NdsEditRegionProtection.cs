@@ -53,6 +53,7 @@ internal static class NdsEditRegionProtection
     {
         yield return new(0, image.Header.RawData.Length);
         yield return image.CarrierLayout.PostHeaderRegion ?? default;
+        if (image.CarrierLayout is NdsCartridgeLayout cartridge) { yield return cartridge.TwlReservedRegion ?? default; }
         yield return image.Header.Arm9.CompleteData;
         yield return image.Header.Arm7.CompleteData;
         yield return image.Header.FileNameTable;

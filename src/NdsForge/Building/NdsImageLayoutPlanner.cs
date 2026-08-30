@@ -120,6 +120,7 @@ internal static class NdsImageLayoutPlanner
         long cursor = commonContentEnd;
         NdsRegion? arm9i = null;
         NdsRegion? arm7i = null;
+        NdsRegion? twlReserved = null;
         NdsRegion ntrDigest = default;
         NdsRegion twlDigest = default;
         NdsRegion sectorHashTable = default;
@@ -132,6 +133,19 @@ internal static class NdsImageLayoutPlanner
             physicalSize = Align(commonContentEnd, options.FileAlignment);
             usedSize = ndstoolProfile ? physicalSize : commonContentEnd;
             physicalSize = Align(checked(usedSize + signatureLength), options.FileAlignment);
+        }
+        else if (builder.Carrier == NdsImageCarrier.Cartridge)
+        {
+            NdsDsiCartridgeTail tail = NdsDsiCartridgePlanner.Plan(builder, content, options, arm9.Offset, commonContentEnd);
+            arm9i = tail.Arm9i;
+            arm7i = tail.Arm7i;
+            twlReserved = tail.Reservation;
+            ntrDigest = tail.NtrDigest;
+            twlDigest = tail.TwlDigest;
+            sectorHashTable = tail.SectorTable;
+            blockHashTable = tail.BlockTable;
+            usedSize = tail.UsedSize;
+            physicalSize = tail.PhysicalSize;
         }
         else
         {
@@ -173,6 +187,7 @@ internal static class NdsImageLayoutPlanner
             debugProgram,
             arm9i,
             arm7i,
+            twlReserved,
             ntrDigest,
             twlDigest,
             sectorHashTable,

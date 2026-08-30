@@ -27,10 +27,11 @@ public abstract class NdsCarrierLayout
 public sealed class NdsCartridgeLayout : NdsCarrierLayout
 {
     /// <summary>Decodes cartridge protocol boundaries independently of meaningful and physical image sizes.</summary>
-    internal NdsCartridgeLayout(NdsHeader header, byte[] data, IReadOnlyList<NdsDiagnostic> diagnostics) : base(data, diagnostics)
+    internal NdsCartridgeLayout(NdsHeader header, byte[] data, byte[] twlData, IReadOnlyList<NdsDiagnostic> diagnostics) : base(data, diagnostics)
     {
         NtrRegionEnd = NdsBinary.ReadUInt16(header.RawData.Span, 0x90) * 0x80000L;
         TwlRegionStart = NdsBinary.ReadUInt16(header.RawData.Span, 0x92) * 0x80000L;
+        TwlReservedData = twlData;
     }
 
     /// <inheritdoc />
@@ -41,6 +42,12 @@ public sealed class NdsCartridgeLayout : NdsCarrierLayout
 
     /// <summary>Gets the decoded TWL protocol boundary; zero means no boundary is declared.</summary>
     public long TwlRegionStart { get; }
+
+    /// <summary>Preserves bounded opaque dump bytes in the 12 KiB reservation preceding the DSi secure window.</summary>
+    public ReadOnlyMemory<byte> TwlReservedData { get; }
+
+    /// <summary>Locates retained TWL reservation bytes, or returns null when no distinct reservation was readable.</summary>
+    public NdsRegion? TwlReservedRegion => TwlReservedData.IsEmpty ? null : new(TwlRegionStart, TwlReservedData.Length);
 }
 
 /// <summary>Describes a digital executable SRL, including title identity and opaque carrier material.</summary>

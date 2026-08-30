@@ -61,6 +61,10 @@ public sealed class PrivateCorpusTransformTests
             AssertIntroducesNoValidationErrors(sourceValidation, rebuilt.Validate());
             Assert.Equal(image.CarrierLayout.Kind, rebuilt.CarrierLayout.Kind);
             Assert.Equal(image.CarrierLayout.PostHeaderData.ToArray(), rebuilt.CarrierLayout.PostHeaderData.ToArray());
+            if (image.CarrierLayout is NdsCartridgeLayout cartridge && rebuilt.CarrierLayout is NdsCartridgeLayout rebuiltCartridge)
+            {
+                Assert.Equal(cartridge.TwlReservedData.ToArray(), rebuiltCartridge.TwlReservedData.ToArray());
+            }
             NdsImageManifest rebuiltManifest = await rebuilt.CreateManifestAsync(cancellationToken).ConfigureAwait(true);
             AssertSemanticManifestEquality(sourceManifest, rebuiltManifest, profile);
         }

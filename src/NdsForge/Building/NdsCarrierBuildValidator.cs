@@ -8,6 +8,10 @@ internal static class NdsCarrierBuildValidator
     {
         uint category = (uint)((builder.DsiMetadata?.TitleId ?? 0) >> 32);
         bool digitalCategory = NdsCarrierLayoutParser.IsDigitalCategory(category);
+        if (!builder.TwlReservedData.IsEmpty && (builder.Carrier != NdsImageCarrier.Cartridge || builder.Kind == NdsImageKind.NintendoDs))
+        {
+            throw new InvalidDataException("A TWL reservation requires a DSi cartridge recipe.");
+        }
         if (builder.Carrier is not (NdsImageCarrier.Cartridge or NdsImageCarrier.DigitalSrl))
         {
             throw new InvalidDataException("A build requires an explicit cartridge or digital-SRL carrier.");

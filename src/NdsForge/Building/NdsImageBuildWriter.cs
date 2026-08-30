@@ -113,6 +113,7 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
+        await FillToAsync(destination, layout.PhysicalSize, paddingByte, cancellationToken).ConfigureAwait(false);
         NdsDsiDigestBuildResult? digestResult = null;
         if (builder.DsiMetadata?.Digests is not null)
         {
@@ -146,6 +147,7 @@ internal static class NdsImageBuildWriter
         byte[] header = NdsImageHeaderWriter.Write(builder, layout, content, options, digestResult);
         destination.Position = 0;
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
+        await NdsTwlReservationWriter.WriteAsync(destination, builder, layout.TwlReserved, cancellationToken).ConfigureAwait(false);
         IReadOnlyList<NdsDiagnostic> diagnostics = builder.DsMetadata is null
             ? Array.Empty<NdsDiagnostic>()
             : await NdsDsHeaderWriter.FinalizeAsync(destination, header, builder.DsMetadata.Integrity, cancellationToken).ConfigureAwait(false);

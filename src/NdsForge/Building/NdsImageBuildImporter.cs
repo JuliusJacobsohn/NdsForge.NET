@@ -91,6 +91,7 @@ internal static class NdsImageBuildImporter
         };
         builder.SetNintendoLogo(image.Header.RawData.Span.Slice(0xC0, 156));
         builder.SetPostHeaderData(image.CarrierLayout.PostHeaderData.Span);
+        if (image.CarrierLayout is NdsCartridgeLayout cartridge) { builder.SetTwlReservedData(cartridge.TwlReservedData.Span); }
 
         foreach (NdsDirectory directory in image.FileSystem.Directories)
         {
