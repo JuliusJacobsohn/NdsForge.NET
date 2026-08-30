@@ -80,7 +80,9 @@ public sealed class NdsHeader
     public byte DeviceCapacityExponent { get; }
 
     /// <summary>Computes the nominal power-of-two cartridge capacity independently from physical or used image length.</summary>
-    public long DeviceCapacityBytes => 128L * 1024L << DeviceCapacityExponent;
+    /// <exception cref="InvalidOperationException">The raw exponent cannot be represented as a positive 64-bit length.</exception>
+    public long DeviceCapacityBytes => NdsImageSizeInfo.DecodeDeviceCapacity(DeviceCapacityExponent)
+        ?? throw new InvalidOperationException("The device-capacity exponent exceeds the positive 64-bit byte-length range.");
 
     /// <summary>Preserves the DSi flags at offset <c>0x1C</c>; DS-only software normally leaves them zero.</summary>
     public byte DsiFlags { get; }

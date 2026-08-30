@@ -41,6 +41,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         DownloadPlaySignature = downloadPlaySignature;
         HasTruncatedDownloadPlaySignature = truncatedDownloadPlaySignature;
         CarrierLayout = carrierLayout;
+        SizeInfo = new(this);
     }
 
     /// <summary>Preserves both typed DS/DSi fields and the raw bytes required for checksums and lossless edits.</summary>
@@ -75,6 +76,9 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
 
     /// <summary>Reports physical source bytes, which may exceed the header's used-ROM size because cartridges are capacity padded.</summary>
     public long Length => _source.Length;
+
+    /// <summary>Reports independent size declarations and unclassified trailing ranges without scanning or discarding data.</summary>
+    public NdsImageSizeInfo SizeInfo { get; }
 
     /// <summary>Opens an image from a filesystem path without loading the entire file into memory.</summary>
     /// <param name="path">The image path.</param>

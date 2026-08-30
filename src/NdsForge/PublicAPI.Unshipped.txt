@@ -1,4 +1,17 @@
 #nullable enable
+NdsForge.NdsManifestHeader.DeviceCapacityExponent.get -> byte
+NdsForge.NdsManifestHeader.DeviceCapacityExponent.init -> void
+NdsForge.NdsImage.SizeInfo.get -> NdsForge.NdsImageSizeInfo!
+NdsForge.NdsImageSizeInfo
+NdsForge.NdsImageSizeInfo.PhysicalSize.get -> long
+NdsForge.NdsImageSizeInfo.CommonUsedSize.get -> uint
+NdsForge.NdsImageSizeInfo.DsiUsedSize.get -> uint?
+NdsForge.NdsImageSizeInfo.DeviceCapacityExponent.get -> byte
+NdsForge.NdsImageSizeInfo.DeviceCapacityBytes.get -> long?
+NdsForge.NdsImageSizeInfo.DeclaredContentEnd.get -> long
+NdsForge.NdsImageSizeInfo.PostUsedData.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageSizeInfo.TrailingData.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageSizeInfo.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
 NdsForge.NdsCartridgeLayout.TwlReservedData.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsCartridgeLayout.TwlReservedRegion.get -> NdsForge.NdsRegion?
 NdsForge.NdsImageBuilder.TwlReservedData.get -> System.ReadOnlyMemory<byte>

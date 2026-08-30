@@ -79,6 +79,8 @@ public sealed class PrivateDigitalCarrierTests
         Assert.Equal(image.Header.Dsi!.TitleId, output.Header.Dsi!.TitleId);
         Assert.Equal(image.Header.DeviceCapacityExponent, output.Header.DeviceCapacityExponent);
         Assert.Equal(result.PhysicalSize, output.Header.Dsi.TotalImageSize);
+        Assert.Equal(output.Length, output.SizeInfo.DeclaredContentEnd);
+        Assert.Null(output.SizeInfo.TrailingData);
         Assert.Equal(0, output.Length % 512);
         Assert.Equal(0, output.Header.Arm9i!.Data.Offset % 1024);
         Assert.Equal(0u, BinaryPrimitives.ReadUInt32LittleEndian(bytes.AsSpan(0x90)));

@@ -7,6 +7,10 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Expose physical size, common and DSi used-size declarations, checked device
+  capacity, declared content extent, and unclassified trailing ranges separately.
+  Include trailers and authentication coverage, and diagnose missing content or
+  unrepresentable capacity exponents instead of wrapping shifts.
 - Apply DSi cartridge access boundaries separately from digital-SRL packing; retain
   opaque TWL reservation bytes, reserve the ARM9i secure window, and place optional
   digest tables inside common content. Diagnose malformed reservations and protect

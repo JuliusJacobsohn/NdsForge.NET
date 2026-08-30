@@ -53,6 +53,18 @@ _Avoid_: Icon file
 The physical placement, alignment, padding, and capacity of all Regions in an Image.
 _Avoid_: Offsets, packing
 
+**Physical Size**:
+The number of bytes actually present in an Image's storage, including any padding or trailing material.
+_Avoid_: Used size, device capacity
+
+**Device Capacity**:
+The nominal cartridge storage size declared by an Image's header, independently of its physical length. For a Digital SRL, this declaration is informational rather than a physical cartridge limit.
+_Avoid_: File size, meaningful extent
+
+**Declared Content Extent**:
+The exclusive end needed to retain an Image's declared components, used-size declarations, and recognized post-used structures. Material beyond this extent is not automatically known to be disposable padding.
+_Avoid_: Last nonzero byte, last non-FF byte
+
 **Build Recipe**:
 A complete declarative description from which an Image can be assembled deterministically.
 _Avoid_: Project, command options

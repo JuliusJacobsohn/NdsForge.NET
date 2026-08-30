@@ -69,6 +69,9 @@ byte[] bytes = await builder.BuildAsync();
 using NdsImage image = NdsImage.Load(bytes);
 if (image.Header.GameCode != "CS01" || image.FileSystem.GetFile("/hello.txt").Data.Length != 5)
     throw new InvalidOperationException("Package consumer round trip failed.");
+if (image.SizeInfo.PhysicalSize != bytes.Length || image.SizeInfo.DeviceCapacityBytes != 131072 ||
+    image.SizeInfo.DeclaredContentEnd > bytes.Length || image.SizeInfo.Diagnostics.Count != 0)
+    throw new InvalidOperationException("Size inspection package consumer failed.");
 byte[] authenticationKey = Enumerable.Range(0, 64).Select(value => (byte)value).ToArray();
 if (NdsDsAuthentication.GetOverlayHashRegions(image).Count != 0 ||
     Convert.ToHexString(NdsDsAuthentication.ComputeOverlayHmac(image, authenticationKey)) != "60BF8C95C85CFA61279A2B9B079AA19D7FA5F31A")

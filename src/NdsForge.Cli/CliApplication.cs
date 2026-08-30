@@ -67,6 +67,11 @@ internal static class CliApplication
         Console.WriteLine($"Version:          {header.Version}");
         Console.WriteLine($"Physical size:    {FormatSize(image.Length)}");
         Console.WriteLine($"Declared used:    {FormatSize(header.UsedImageSize)}");
+        NdsImageSizeInfo sizes = image.SizeInfo;
+        Console.WriteLine($"Declared extent:  {FormatSize(sizes.DeclaredContentEnd)}");
+        Console.WriteLine($"Device capacity:  {(sizes.DeviceCapacityBytes is long capacity ? FormatSize(capacity) : "unrepresentable")}, exponent {sizes.DeviceCapacityExponent}");
+        if (sizes.DsiUsedSize is uint dsiSize) { Console.WriteLine($"DSi total used:   {FormatSize(dsiSize)}"); }
+        Console.WriteLine($"Trailing bytes:   {FormatSize(sizes.TrailingData?.Length ?? 0)} (not assumed padding)");
         PrintProgram(header.Arm9);
         PrintProgram(header.Arm7);
         if (header.Arm9i is not null)

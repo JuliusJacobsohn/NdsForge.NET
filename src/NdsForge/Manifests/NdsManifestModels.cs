@@ -21,7 +21,9 @@ public sealed class NdsManifestHeader
     public byte AutoStart { get; init; }
     /// <summary>Separates the meaningful image extent claimed by the header from physical padding.</summary>
     public uint UsedImageSize { get; init; }
-    /// <summary>Records the power-of-two capacity represented by the device-capacity exponent.</summary>
+    /// <summary>Records the raw capacity byte without losing unrepresentable declarations.</summary>
+    public byte DeviceCapacityExponent { get; init; }
+    /// <summary>Records the represented power-of-two capacity, or zero when it is not a positive 64-bit byte length.</summary>
     public long DeviceCapacityBytes { get; init; }
     /// <summary>Records ordinary cartridge bus timing and control bits as an uninterpreted hardware word.</summary>
     public uint NormalCardControl { get; init; }

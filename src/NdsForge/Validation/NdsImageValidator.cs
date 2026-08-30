@@ -13,6 +13,7 @@ internal static class NdsImageValidator
     {
         var diagnostics = new List<NdsDiagnostic>();
         diagnostics.AddRange(image.CarrierLayout.Diagnostics);
+        diagnostics.AddRange(image.SizeInfo.Diagnostics);
         ValidateChecksum(
             diagnostics, "NDS1001", "header", image.Header.HeaderCrc,
             image.Header.RawData.Span[..0x15E], new(0, 0x160));

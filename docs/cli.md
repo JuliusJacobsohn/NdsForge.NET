@@ -22,6 +22,11 @@ ndsforge diff <left.nds> <right.nds>
 
 `inspect` prints high-level identity and layout information. `validate` emits structured findings in a human-readable form. `list` enumerates NitroFS content, with allocation details in long mode. `extract` applies the same safe host-path rules as the library. `replace` performs a preservation-oriented file edit. `manifest` writes stable JSON, and `diff` reports semantic and physical differences.
 
+Size inspection distinguishes physical length, common used size, optional DSi
+total used size, nominal device capacity, and the declared content extent.
+Reported trailing bytes are not automatically padding: unknown data must not be
+discarded merely because it follows a header's used-size field.
+
 ## Exit codes
 
 | Code | Meaning |

@@ -40,6 +40,24 @@ Semantic builds and edits that retain a trailer return `NDS1550`: the bytes were
 
 ## Cartridge and digital-SRL carriers
 
+`NdsImage.SizeInfo` distinguishes physical input length, common NTR used size,
+optional DSi total used size, and nominal device capacity. `DeclaredContentEnd`
+includes declared programs, tables, allocations, protocol windows, authentication
+coverage, used-size declarations, and recognized Download Play trailers. It is not
+found by scanning for the last nonzero or non-FF byte. `PostUsedData` can contain
+DSi programs and trailers; `TrailingData` names the range beyond declared content
+without asserting that those bytes are padding or disposable. When late-DS
+authentication coverage cannot be established, the extent conservatively retains
+the complete input and reports a warning. Missing declared content is an error.
+
+The size snapshot retains the raw device-capacity exponent and exposes a nullable
+64-bit byte count. Exponents above 45 are unrepresentable and explicitly diagnosed;
+the older non-nullable `Header.DeviceCapacityBytes` property throws
+`InvalidOperationException` for those values instead of overflowing or wrapping.
+Inventory manifests retain the raw exponent and use zero for an unrepresentable
+non-nullable capacity byte count; inspection diagnostics explain the invalid value.
+This inspection API does not itself resize or discard any bytes.
+
 `NdsImage.CarrierLayout` distinguishes `NdsCartridgeLayout`, `NdsDigitalSrlLayout`, and `NdsUnknownCarrierLayout`. Storage carrier and `Header.Kind` are separate: the latter describes execution mode. Detection uses executable title categories and declared layout, never the filename extension. An absent title category retains ordinary cartridge/homebrew conventions. Unsupported categories and digital titles with nonzero cartridge access boundaries produce explicit errors rather than an inferred digital layout.
 
 `PostHeaderData` retains independently reserved bytes at 0x1000–0x3FFF for either carrier. It is never read beyond physical EOF, nor treated as opaque reservation when it overlaps a declared program, table, banner, or allocation. Digital titles require the complete reservation; truncation, absence, and overlap produce `NDS1561`. Contradictory access boundaries produce `NDS1560`; unsupported or non-executable title categories produce `NDS1562`. Semantic writes reject malformed/unresolved carrier layouts before destination mutation. An explicitly unverified no-op preservation save can still copy the original bytes exactly, retaining existing validation findings.
