@@ -75,6 +75,11 @@ internal static class CliApplication
         Console.WriteLine($"Device capacity:  {(sizes.DeviceCapacityBytes is long capacity ? FormatSize(capacity) : "unrepresentable")}, exponent {sizes.DeviceCapacityExponent}");
         if (sizes.DsiUsedSize is uint dsiSize) { Console.WriteLine($"DSi total used:   {FormatSize(dsiSize)}"); }
         Console.WriteLine($"Trailing bytes:   {FormatSize(sizes.TrailingData?.Length ?? 0)} (not assumed padding)");
+        if (header.NandRomEndUnits != 0 || header.NandWritableStartUnits != 0)
+        {
+            Console.WriteLine($"NAND ROM end:     {FormatSize(header.NandRomEndOffset)}, raw units {header.NandRomEndUnits}");
+            Console.WriteLine($"NAND write start: {FormatSize(header.NandWritableStartOffset)}, raw units {header.NandWritableStartUnits} (zero means unspecified)");
+        }
         PrintProgram(header.Arm9);
         PrintProgram(header.Arm7);
         if (header.Arm9i is not null)

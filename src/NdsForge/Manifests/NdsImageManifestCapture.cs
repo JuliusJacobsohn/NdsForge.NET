@@ -8,10 +8,12 @@ internal static class NdsImageManifestCapture
     /// <summary>Captures all manifest sections in deterministic order while honoring cancellation between components.</summary>
     /// <param name="image">Live parsed source.</param>
     /// <param name="cancellationToken">Cancels hashing and enumeration.</param>
+    /// <param name="includeNandBoundaries">Includes additive NAND projections, or omits both when verifying an older workspace inventory.</param>
     /// <returns>A complete validated manifest.</returns>
     public static async ValueTask<NdsImageManifest> CaptureAsync(
         NdsImage image,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        bool includeNandBoundaries = true)
     {
         ArgumentNullException.ThrowIfNull(image);
         NdsManifestProgram[] programs = await CaptureProgramsAsync(image, cancellationToken).ConfigureAwait(false);
@@ -91,6 +93,8 @@ internal static class NdsImageManifestCapture
                 UsedImageSize = header.UsedImageSize,
                 DeviceCapacityExponent = header.DeviceCapacityExponent,
                 DeviceCapacityBytes = image.SizeInfo.DeviceCapacityBytes ?? 0,
+                NandRomEndUnits = includeNandBoundaries ? header.NandRomEndUnits : null,
+                NandWritableStartUnits = includeNandBoundaries ? header.NandWritableStartUnits : null,
                 NormalCardControl = header.NormalCardControl,
                 SecureCardControl = header.SecureCardControl,
                 DebugRomOffset = header.DebugRomOffset,

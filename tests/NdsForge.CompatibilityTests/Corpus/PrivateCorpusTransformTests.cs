@@ -30,6 +30,8 @@ public sealed class PrivateCorpusTransformTests
             if (builder.DsMetadata is not null) { builder.DsMetadata.Integrity = NdsDsIntegrityOptions.PreserveStored; }
             Assert.Equal(image.Header.NormalCardControl, builder.NormalCardControl);
             Assert.Equal(image.Header.SecureCardControl, builder.SecureCardControl);
+            Assert.Equal(image.Header.NandRomEndUnits, builder.NandRomEndUnits);
+            Assert.Equal(image.Header.NandWritableStartUnits, builder.NandWritableStartUnits);
             NdsImageBuildProfile profile = expectation.Rom.Kind == NdsImageKind.NintendoDs
                 ? NdsImageBuildProfile.Ndstool1503
                 : NdsImageBuildProfile.Deterministic;
@@ -60,6 +62,8 @@ public sealed class PrivateCorpusTransformTests
             }
             AssertIntroducesNoValidationErrors(sourceValidation, rebuilt.Validate());
             Assert.Equal(image.CarrierLayout.Kind, rebuilt.CarrierLayout.Kind);
+            Assert.Equal(image.Header.NandRomEndUnits, rebuilt.Header.NandRomEndUnits);
+            Assert.Equal(image.Header.NandWritableStartUnits, rebuilt.Header.NandWritableStartUnits);
             Assert.Equal(image.CarrierLayout.PostHeaderData.ToArray(), rebuilt.CarrierLayout.PostHeaderData.ToArray());
             if (image.CarrierLayout is NdsCartridgeLayout cartridge && rebuilt.CarrierLayout is NdsCartridgeLayout rebuiltCartridge)
             {

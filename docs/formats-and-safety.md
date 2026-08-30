@@ -194,6 +194,40 @@ DSi cartridge builds place optional digest tables after their covered NTR conten
 
 `NdsCartridgeLayout.TwlReservedData` and `TwlReservedRegion` expose the bounded 12 KiB reservation preceding ARM9i. Imports preserve it exactly even when structural rebuilding relocates the boundary. `NdsImageBuilder.SetTwlReservedData` accepts exactly 12 KiB of explicit opaque bytes; an empty value selects deterministic generation from three copies of final image bytes `[0x8000,0x9000)`. This generation is the default for new recipes, not for imported reservations. Preservation saves reject payload writes that would overwrite the reservation. Contradictory boundaries, overlapping/truncated reservations, and programs inside protocol-only intervals produce errors; absent boundary declarations in older DSi homebrew produce an explicit warning without guessing their hardware layout.
 
+## NAND cartridge partition boundaries
+
+`NdsHeader.NandRomEndUnits` and `NandWritableStartUnits` retain the independent
+16-bit fields at 0x94 and 0x96. Their `NandRomEndOffset` and
+`NandWritableStartOffset` projections use 128 KiB units for DS and 512 KiB for DSi,
+with 64-bit arithmetic even for declarations larger than supported output sizes.
+Zero means unspecified, not proof that a cartridge lacks NAND. These addresses
+do not describe the writable partition's length, a captured save, the file's used
+size, or its required physical length.
+
+Structural imports preserve both raw values. The builder exposes the same raw
+properties for explicit metadata changes; it does not relocate save partitions.
+The smallest automatic device capacity must contain both nonzero boundaries as
+well as all planned content. Compact output remains compact; physical expansion
+still requires `PadToDeviceCapacity`. A requested capacity below either boundary,
+content crossing either known boundary, overlapping ROM/writable declarations,
+non-cartridge declarations, or boundaries beyond the 4 GiB output limit fail
+before stream mutation, including when verification is disabled. Different
+non-overlapping boundaries and a single unspecified boundary remain representable.
+These are conservative structural-write constraints, not hardware boot guarantees.
+Preservation edits also reject file, banner, or retained-trailer writes beyond a
+known boundary before destination mutation, even with verification disabled;
+ending exactly at a boundary is valid. Unchanged whole-image copies remain lossless.
+
+Inspection warns about capacity conflicts (`NDS1590`), content crossing a boundary
+(`NDS1591`), overlapping declarations (`NDS1592`), a single unspecified boundary
+(`NDS1593`), or a non-cartridge declaration (`NDS1594`). Raw values remain readable.
+Neither `SizeInfo.DeclaredContentEnd` nor source-preserving trim infers file data
+from partition addresses; removed bytes still require the chosen trailing-data
+policy. Manifests and workspace inventories include both nullable raw projections.
+Older inventories with both projections absent remain valid: exact packing still
+checks their complete image and raw-header hashes. A partially absent pair or a
+present but incorrect value is rejected.
+
 ## Reading untrusted images
 
 Treat image offsets, lengths, counts, names, and tables as attacker-controlled. Parsing uses checked arithmetic and `NdsReadOptions` limits before allocating table- or hierarchy-sized collections. Applications accepting uploads should select limits appropriate to their service rather than relying only on generous library defaults.

@@ -35,6 +35,8 @@ public sealed class NdsHeader
         SecureDisable = ((ulong)NdsBinary.ReadUInt32(data, 0x7C) << 32) | NdsBinary.ReadUInt32(data, 0x78);
         UsedImageSize = NdsBinary.ReadUInt32(data, 0x80);
         HeaderSize = NdsBinary.ReadUInt32(data, 0x84);
+        NandRomEndUnits = NdsBinary.ReadUInt16(data, 0x94);
+        NandWritableStartUnits = NdsBinary.ReadUInt16(data, 0x96);
         NintendoLogoCrc = NdsBinary.ReadUInt16(data, 0x15C);
         HeaderCrc = NdsBinary.ReadUInt16(data, 0x15E);
         DebugRomOffset = NdsBinary.ReadUInt32(data, 0x160);
@@ -173,6 +175,18 @@ public sealed class NdsHeader
 
     /// <summary>Reports the header byte count claimed on cartridge, commonly <c>0x4000</c> despite a smaller parsed prefix.</summary>
     public uint HeaderSize { get; }
+
+    /// <summary>Preserves the NAND ROM partition's exclusive end at 0x94, in 128 KiB DS or 512 KiB DSi units; zero is unspecified.</summary>
+    public ushort NandRomEndUnits { get; }
+
+    /// <summary>Preserves the NAND writable partition's start at 0x96, independently from its unknown length; zero is unspecified.</summary>
+    public ushort NandWritableStartUnits { get; }
+
+    /// <summary>Projects the NAND ROM boundary into a 64-bit cartridge address; this is not the required physical file length.</summary>
+    public long NandRomEndOffset => NdsNandHeader.Decode(NandRomEndUnits, Kind);
+
+    /// <summary>Projects the NAND writable boundary into a 64-bit cartridge address; zero does not establish absence of NAND hardware.</summary>
+    public long NandWritableStartOffset => NdsNandHeader.Decode(NandWritableStartUnits, Kind);
 
     /// <summary>Contains the CRC16 protecting the 156-byte Nintendo logo at header offset <c>0xC0</c>.</summary>
     public ushort NintendoLogoCrc { get; }

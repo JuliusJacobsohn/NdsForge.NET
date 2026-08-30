@@ -2,6 +2,14 @@
 const NdsForge.NdsWorkspaceRecipe.CurrentSchemaVersion = 1 -> int
 const NdsForge.NdsWorkspaceRecipe.FileName = "ndsforge-workspace.json" -> string!
 const NdsForge.NdsWorkspaceRecipe.MaximumJsonBytes = 33554432 -> int
+NdsForge.NdsHeader.NandRomEndOffset.get -> long
+NdsForge.NdsHeader.NandRomEndUnits.get -> ushort
+NdsForge.NdsHeader.NandWritableStartOffset.get -> long
+NdsForge.NdsHeader.NandWritableStartUnits.get -> ushort
+NdsForge.NdsImageBuilder.NandRomEndUnits.get -> ushort
+NdsForge.NdsImageBuilder.NandRomEndUnits.set -> void
+NdsForge.NdsImageBuilder.NandWritableStartUnits.get -> ushort
+NdsForge.NdsImageBuilder.NandWritableStartUnits.set -> void
 NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.get -> long?
 NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.init -> void
 NdsForge.NdsImageBuildOptions.PadToDeviceCapacity.get -> bool
@@ -62,6 +70,10 @@ NdsForge.NdsCarrierLayout.PostHeaderData.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsCarrierLayout.PostHeaderRegion.get -> NdsForge.NdsRegion?
 NdsForge.NdsCarrierLayout.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
 NdsForge.NdsCartridgeLayout
+NdsForge.NdsManifestHeader.NandRomEndUnits.get -> ushort?
+NdsForge.NdsManifestHeader.NandRomEndUnits.init -> void
+NdsForge.NdsManifestHeader.NandWritableStartUnits.get -> ushort?
+NdsForge.NdsManifestHeader.NandWritableStartUnits.init -> void
 NdsForge.NdsTrailingDataPolicy
 NdsForge.NdsTrailingDataPolicy.Discard = 1 -> NdsForge.NdsTrailingDataPolicy
 NdsForge.NdsTrailingDataPolicy.RequirePadding = 0 -> NdsForge.NdsTrailingDataPolicy

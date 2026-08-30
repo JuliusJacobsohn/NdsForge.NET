@@ -36,7 +36,7 @@ internal static class NdsImageHeaderWriter
         header[0x12] = (byte)builder.Kind;
         header[0x13] = builder.EncryptionSeedSelect;
         header[0x14] = builder.Carrier == NdsImageCarrier.DigitalSrl && builder.ImportedDigitalCapacity is byte capacity
-            ? capacity : CalculateDeviceCapacity(options.RequestedDeviceCapacityBytes ?? layout.PhysicalSize);
+            ? capacity : CalculateDeviceCapacity(layout.DeviceCapacityBytes);
         header[0x1D] = builder.RegionCode;
         header[0x1C] = builder.DsiMetadata?.DsiFlags ?? builder.DsMetadata?.DsiFlags ?? 0;
         header[0x1E] = builder.Version;
@@ -59,6 +59,8 @@ internal static class NdsImageHeaderWriter
         NdsBinary.WriteUInt32(header, 0x7C, (uint)(builder.SecureDisable >> 32));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x80), checked((uint)layout.UsedSize));
         BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(0x84), checked((uint)options.HeaderSize));
+        NdsBinary.WriteUInt16(header, 0x94, builder.NandRomEndUnits);
+        NdsBinary.WriteUInt16(header, 0x96, builder.NandWritableStartUnits);
         if (layout.TwlReserved is { } reservation)
         {
             ushort boundary = checked((ushort)(reservation.Offset / 0x80000));

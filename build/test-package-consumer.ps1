@@ -93,6 +93,17 @@ using (NdsImage capacityImage = NdsImage.Load(capacityBytes))
         throw new InvalidOperationException("Capacity policy package consumer failed.");
 }
 byte[] authenticationKey = Enumerable.Range(0, 64).Select(value => (byte)value).ToArray();
+builder.NandRomEndUnits = 2;
+builder.NandWritableStartUnits = 3;
+using (NdsImage nandImage = NdsImage.Load(await builder.BuildAsync()))
+{
+    NdsImageManifest nandManifest = await nandImage.CreateManifestAsync();
+    if (nandImage.Header.NandRomEndOffset != 262144 || nandImage.Header.NandWritableStartOffset != 393216 ||
+        nandImage.Header.DeviceCapacityBytes != 524288 || nandImage.Length != bytes.Length ||
+        nandManifest.Header.NandRomEndUnits != 2 || nandManifest.Header.NandWritableStartUnits != 3)
+        throw new InvalidOperationException("NAND boundary package consumer failed.");
+}
+builder.NandRomEndUnits = builder.NandWritableStartUnits = 0;
 if (NdsDsAuthentication.GetOverlayHashRegions(image).Count != 0 ||
     Convert.ToHexString(NdsDsAuthentication.ComputeOverlayHmac(image, authenticationKey)) != "60BF8C95C85CFA61279A2B9B079AA19D7FA5F31A")
     throw new InvalidOperationException("Late-DS aggregate package consumer failed.");

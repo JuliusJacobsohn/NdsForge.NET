@@ -19,6 +19,7 @@ internal static class NdsEditRegionProtection
         {
             long offset = change.RequiresRelocation ? Align(used, alignment) : allocations[change.FileId].Offset;
             var target = new NdsRegion(offset, change.ReplacementLength);
+            NdsNandHeader.ValidateWrite(image, target);
             Check(target, components);
             Check(target, bannerRegion);
             for (int index = 0; index < allocations.Length; index++)
@@ -34,6 +35,7 @@ internal static class NdsEditRegionProtection
             long offset = bannerRegion.IsEmpty || banner.RawData.Length > bannerRegion.Length
                 ? Align(used, alignment) : bannerRegion.Offset;
             bannerRegion = new(offset, banner.RawData.Length);
+            NdsNandHeader.ValidateWrite(image, bannerRegion);
             Check(bannerRegion, components);
             Check(bannerRegion, allocations);
             used = Math.Max(used, bannerRegion.End);
@@ -42,6 +44,7 @@ internal static class NdsEditRegionProtection
         if (image.DownloadPlaySignature is not null)
         {
             var trailer = new NdsRegion(used, NdsDownloadPlaySignature.ByteLength);
+            NdsNandHeader.ValidateWrite(image, trailer);
             Check(trailer, components);
             Check(trailer, allocations);
             Check(trailer, bannerRegion);

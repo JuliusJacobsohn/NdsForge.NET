@@ -33,7 +33,8 @@ internal static class NdsWorkspaceInput
         string root, NdsWorkspaceRecipe recipe, NdsImage image, CancellationToken cancellationToken)
     {
         if (image.Length != recipe.SourceInventory.PhysicalLength) { throw new InvalidDataException("Workspace preservation snapshot length has changed."); }
-        NdsImageManifest actual = await image.CreateManifestAsync(cancellationToken).ConfigureAwait(false);
+        NdsImageManifest actual = await NdsImageManifestCapture.CaptureAsync(image, cancellationToken,
+            includeNandBoundaries: recipe.SourceInventory.Header.NandRomEndUnits is not null).ConfigureAwait(false);
         using JsonDocument expectedJson = JsonDocument.Parse(recipe.SourceInventory.ToJson(indented: false));
         using JsonDocument actualJson = JsonDocument.Parse(actual.ToJson(indented: false));
         if (!JsonElement.DeepEquals(expectedJson.RootElement, actualJson.RootElement))

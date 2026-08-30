@@ -43,4 +43,7 @@ internal sealed record NdsImageBuildLayout(
 {
     /// <summary>Retains the complete aligned layout before optional device-capacity padding is added.</summary>
     public long ContentSize { get; init; } = PhysicalSize;
+
+    /// <summary>Records capacity after layout and NAND partition constraints, without requiring physical padding.</summary>
+    public long DeviceCapacityBytes { get; init; }
 }

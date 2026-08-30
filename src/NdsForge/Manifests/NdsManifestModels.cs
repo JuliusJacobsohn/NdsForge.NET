@@ -25,6 +25,10 @@ public sealed class NdsManifestHeader
     public byte DeviceCapacityExponent { get; init; }
     /// <summary>Records the represented power-of-two capacity, or zero when it is not a positive 64-bit byte length.</summary>
     public long DeviceCapacityBytes { get; init; }
+    /// <summary>Records raw NAND ROM-end units, or null for older manifests that did not project NAND fields.</summary>
+    public ushort? NandRomEndUnits { get; init; }
+    /// <summary>Records raw NAND writable-start units, or null together with the ROM-end projection in older manifests.</summary>
+    public ushort? NandWritableStartUnits { get; init; }
     /// <summary>Records ordinary cartridge bus timing and control bits as an uninterpreted hardware word.</summary>
     public uint NormalCardControl { get; init; }
     /// <summary>Records secure-transfer cartridge bus timing and control bits as an uninterpreted hardware word.</summary>

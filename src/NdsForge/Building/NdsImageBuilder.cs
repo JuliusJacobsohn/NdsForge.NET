@@ -124,6 +124,12 @@ public sealed class NdsImageBuilder
     /// <summary>Preserves the raw 64-bit secure-area disable token across structural rebuilds.</summary>
     public ulong SecureDisable { get; set; }
 
+    /// <summary>Preserves or explicitly sets the NAND ROM end in 128 KiB DS or 512 KiB DSi units; zero leaves the boundary unspecified.</summary>
+    public ushort NandRomEndUnits { get; set; }
+
+    /// <summary>Preserves or explicitly sets the NAND writable start in mode-dependent units without relocating any saved data.</summary>
+    public ushort NandWritableStartUnits { get; set; }
+
     /// <summary>Supplies an optional debug executable whose physical offset is assigned by the final layout.</summary>
     public NdsDebugProgramDefinition? DebugProgram { get; set; }
 

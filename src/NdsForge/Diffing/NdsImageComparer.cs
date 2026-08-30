@@ -73,6 +73,8 @@ public static class NdsImageComparer
         AddValue(output, "Header.AutoStart", left.AutoStart, right.AutoStart);
         AddValue(output, "Header.UsedImageSize", left.UsedImageSize, right.UsedImageSize, NdsDifferenceKind.Relocated);
         AddValue(output, "Header.DeviceCapacityBytes", left.DeviceCapacityBytes, right.DeviceCapacityBytes, NdsDifferenceKind.Relocated);
+        AddValue(output, "Header.NandRomEndUnits", left.NandRomEndUnits, right.NandRomEndUnits);
+        AddValue(output, "Header.NandWritableStartUnits", left.NandWritableStartUnits, right.NandWritableStartUnits);
         AddValue(output, "Header.NormalCardControl", left.NormalCardControl, right.NormalCardControl);
         AddValue(output, "Header.SecureCardControl", left.SecureCardControl, right.SecureCardControl);
         AddValue(output, "Header.DebugRomOffset", left.DebugRomOffset, right.DebugRomOffset, NdsDifferenceKind.Relocated);

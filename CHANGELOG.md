@@ -7,6 +7,12 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Preserve and expose NAND partition boundaries in headers, builders, manifests,
+  workspace inventories, semantic differences, and CLI inspection. Keep nominal
+  capacity large enough for declared partitions without forcing file expansion;
+  reject conflicting structural layouts and partition-crossing preservation writes,
+  and diagnose ambiguous
+  declarations without treating partition addresses as missing file data.
 - Export self-contained versioned image workspaces and verify byte-exact packing
   through the API and `unpack`/`pack` commands. Retain all FAT allocations, raw
   ordering tables, carrier bytes, and a full preservation snapshot. Reject edited

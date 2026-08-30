@@ -74,6 +74,8 @@ internal static class NdsImageBuildImporter
             Arm9AutoLoad = image.Header.Arm9AutoLoad,
             Arm7AutoLoad = image.Header.Arm7AutoLoad,
             SecureDisable = image.Header.SecureDisable,
+            NandRomEndUnits = image.Header.NandRomEndUnits,
+            NandWritableStartUnits = image.Header.NandWritableStartUnits,
             DebugProgram = debugProgram,
             Arm9 = arm9Definition,
             Arm7 = new(

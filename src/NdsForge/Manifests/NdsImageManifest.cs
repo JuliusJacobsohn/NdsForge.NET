@@ -125,6 +125,10 @@ public sealed class NdsImageManifest
 
         ValidateHash(ImageSha256, nameof(ImageSha256));
         ValidateHash(Header.Sha256, "Header.Sha256");
+        if ((Header.NandRomEndUnits is null) != (Header.NandWritableStartUnits is null))
+        {
+            throw new InvalidDataException("NAND boundary projections must both be present or both be absent in an older manifest.");
+        }
         if ((Header.DebugRomOffset == 0) != (Header.DebugRomSize == 0) ||
             (Header.DebugRomSize == 0) != (Header.DebugRomSha256 is null))
         {

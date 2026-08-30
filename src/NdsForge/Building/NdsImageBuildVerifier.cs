@@ -39,6 +39,12 @@ internal static class NdsImageBuildVerifier
             throw new InvalidDataException("Generated image carrier or opaque post-header material did not match the recipe.");
         }
 
+        if (image.Header.NandRomEndUnits != builder.NandRomEndUnits ||
+            image.Header.NandWritableStartUnits != builder.NandWritableStartUnits)
+        {
+            throw new InvalidDataException("Generated NAND partition boundaries did not preserve the recipe values.");
+        }
+
         if (builder.DownloadPlaySignature is not null && (image.DownloadPlaySignature is null ||
             !image.DownloadPlaySignature.RawData.Span.SequenceEqual(builder.DownloadPlaySignature.RawData.Span)))
         {

@@ -18,10 +18,11 @@ internal static class NdsImageCapacityPlanner
             throw new ArgumentException("Digital SRL output has no cartridge-capacity padding policy; retain compact output and its informational capacity byte.");
         }
 
-        long capacity = options.RequestedDeviceCapacityBytes ?? MinimumCapacity(layout.PhysicalSize);
-        if (capacity < layout.PhysicalSize)
+        long minimum = NdsNandHeader.RequiredCapacity(builder, layout.PhysicalSize);
+        long capacity = options.RequestedDeviceCapacityBytes ?? MinimumCapacity(minimum);
+        if (capacity < minimum)
         {
-            throw new ArgumentException("Requested device capacity cannot contain all planned content, authentication coverage, and carrier reservations.");
+            throw new ArgumentException("Requested device capacity cannot contain all planned content, authentication coverage, carrier reservations, and NAND partition boundaries.");
         }
 
         long physicalSize = options.PadToDeviceCapacity ? capacity : layout.PhysicalSize;
@@ -30,7 +31,7 @@ internal static class NdsImageCapacityPlanner
             throw new ArgumentException("The requested output exceeds contiguous-array limits; use a file or another seekable stream.");
         }
 
-        return layout with { ContentSize = layout.PhysicalSize, PhysicalSize = physicalSize };
+        return layout with { ContentSize = layout.PhysicalSize, PhysicalSize = physicalSize, DeviceCapacityBytes = capacity };
     }
 
     /// <summary>Finds the smallest power-of-two cartridge capacity containing an already bounded layout.</summary>

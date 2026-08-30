@@ -29,6 +29,9 @@ Size inspection distinguishes physical length, common used size, optional DSi
 total used size, nominal device capacity, and the declared content extent.
 Reported trailing bytes are not automatically padding: unknown data must not be
 discarded merely because it follows a header's used-size field.
+Nonzero NAND partition fields are shown separately with raw units and decoded
+addresses. Zero means unspecified; the writable-start address does not report
+save-data size or require the input file to extend to that address.
 
 ## Portable workspaces and exact packing
 
