@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Nine Hours, Nine Persons, - Nine Doors - Aksys Games [BSKE] [USA - English].nds",
+    "length": 134217728,
+    "sha256": "05843a3ee682bc388299ce35b9347d9d1bdda4d3890fcffbde6de785a5de5e15",
+    "headerTitle": "999HRPERDOOR",
+    "gameCode": "BSKE",
+    "makerCode": "XS",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Nine Hours, Nine Persons, - Nine Doors - Aksys Games",
+    "bannerTitles": {
+      "Japanese": "Nine Hours, Nine Persons,\nNine Doors\nAksys Games",
+      "English": "Nine Hours, Nine Persons,\nNine Doors\nAksys Games",
+      "French": "Nine Hours, Nine Persons,\nNine Doors\nAksys Games",
+      "German": "Nine Hours, Nine Persons,\nNine Doors\nAksys Games",
+      "Italian": "Nine Hours, Nine Persons,\nNine Doors\nAksys Games",
+      "Spanish": "Nine Hours, Nine Persons,\nNine Doors\nAksys Games"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 1,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "CF3BEA46D421741141B95D3F437E2C858982E61070358EEC2EA2561243201039",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 160048,
+          "sha256": "9F40087972CCB8B89D4CC4BAF8288123E26A479BB43FA68B18A30A59650633A1"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 32,
+          "sha256": "F7274E2FA6226F3432C6B21C77324B2E2F02D0816645694C79D370F0ED3DD557"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 432460,
+          "sha256": "C8BDC702E8B85E22FCE2003F8224C19BD37E49C50DAB3CB528FE43C371F91D04"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "01F84BD7324177CB672B8980A5C9A1660C73D715C82A90879563EB4A0B0372D3"
+        },
+        {
+          "path": "data/bg/a01/home_01-home_02#1.dat",
+          "length": 23217,
+          "sha256": "9610B2B9B9E405CA014B802D1746FFECA5F29D3893ED1790A44166D80CD36E74"
+        },
+        {
+          "path": "data/bg/a01/home_01-home_02#2.dat",
+          "length": 22769,
+          "sha256": "4BE0A83A2C6C44BDD8411B9B919EC8A32D87D43E180FB8FB14A5AF23CE6079E1"
+        },
+        {
+          "path": "data/bg/a01/home_01-home_02#3.dat",
+          "length": 23535,
+          "sha256": "5456848127D94A327DF9D9063CFFF571810C472C3A89BF7C521C154E336748EB"
+        },
+        {
+          "path": "data/bg/a01/home_01.dat",
+          "length": 30014,
+          "sha256": "B82E6044EB4B618C053F10B4AAEF12FADFA1193649DBB7A28D0569B3DBBFAFF5"
+        },
+        {
+          "path": "data/bg/a01/home_01@\u0090\u00D4\u2022\u00B6\u017D\u0161\u201A\u00CC\u0192\u0081\u0192\u201A\u2014p\u017D\u2020.dat",
+          "length": 884,
+          "sha256": "DABDF5F2CFA6B8513486BC21D69A0A4179B658FB650E78F2658D6BE62A5FFA0B"
+        },
+        {
+          "path": "data/bg/a01/home_01@\u0192t\u0192H\u0192g\u0192t\u0192\u0152\u0081[\u0192\u20AC.dat",
+          "length": 1123,
+          "sha256": "1ECA06ACD15A14AFED3FC02C1DD0AC9772EF65ABC3EA9BE839B2E1B5075F6B3D"
+        },
+        {
+          "path": "data/bg/a01/home_02-home_03#1.dat",
+          "length": 23206,
+          "sha256": "9688B6B59673E558A0E8352AAFE2F8B67F10CA8849A559EE5B5663579B00442E"
+        },
+        {
+          "path": "data/bg/a01/home_02-home_03#2.dat",
+          "length": 21583,
+          "sha256": "1397D39A8CC45B96DBF771D2A3B3293E80E1663B99A342839C5144012430A695"
+        },
+        {
+          "path": "data/bg/a01/home_02-home_03#3.dat",
+          "length": 20845,
+          "sha256": "C4ABFD46B63FA0CF0E93EC5B22AB4465C836ED14AC074418BCC20DAFF2AD14AD"
+        },
+        {
+          "path": "data/bg/a01/home_02.dat",
+          "length": 32530,
+          "sha256": "2E9A788A067BD2ACCF749329242E1A97475397EDFFDE7C90B336E44C86236FF2"
+        },
+        {
+          "path": "data/bg/a01/home_02@\u008Fo\u0152\u00FB\u201D\u00E0\u0160J\u201A\u00A2\u201A\u00BD.dat",
+          "length": 6829,
+          "sha256": "343F219FB568894D306298B0C84F0BB9800BCD45667573E827ABA0402573CC80"
+        },
+        {
+          "path": "data/bg/a01/home_02@\u0152\u00AE.dat",
+          "length": 1084,
+          "sha256": "0A2C72CA703F5665F45BBA08E28103BF33FAA70747C4B5D83381C0759D9BCAB9"
+        },
+        {
+          "path": "data/bg/a01/home_02@\u0192\u008D\u0192b\u0192N\u2030\u00F0\u008F\u0153.dat",
+          "length": 1601,
+          "sha256": "FCAFCC3B76A60B30A4DA476C22E60A539BB4E76C20D043BC9C26DCCABF500F1A"
+        },
+        {
+          "path": "data/bg/a01/home_02@\u0192\u008D\u0192b\u0192N\u2030\u00F0\u008F\u0153\u017D\u00B8\u201Ds.dat",
+          "length": 1076,
+          "sha256": "4360DF3F40907529B8294563CD1975BAAC9BB950BBC291AB20BD6E6BDF47197E"
+        },
+        {
+          "path": "data/bg/a01/home_02@\u2013\u008D\u02C6\u00DA\u201C\u00AE.dat",
+          "length": 1897,
+          "sha256": "1A06131C7BBF6E4420904A70A7768859F77FA45FDA72EE39106BE84FE9DD1A43"
+        },
+        {
+          "path": "data/bg/a01/home_02@\u2039\u00BE\u0160J\u201A\u00A2\u201A\u00BD.dat",
+          "length": 4137,
+          "sha256": "8EE360CE236FF91C6BD3B44212DFC219D924F685165F793EF3F3F1D2A1F19502"
+        },
+        {
+          "path": "data/bg/a01/home_02\u0081\u00A1eve01.dat",
+          "length": 13083,
+          "sha256": "34BD0899BB6FE2E0EC05EF8C5396192DE4CF8ED8A5020EA72118950C94D3B8C5"
+        },
+        {
+          "path": "data/bg/a01/home_03-home_01#1.dat",
+          "length": 28938,
+          "sha256": "AE82873AB836530146F343EFB7B7BE95C8B11A458EAD4AEFD59C7910CD40B151"
+        },
+        {
+          "path": "data/bg/a01/home_03-home_01#2.dat",
+          "length": 28307,
+          "sha256": "07780B8A2A1C16BC0914DAD2F5A12FD05AF79483201442297F636612AB18409E"
+        },
+        {
+          "path": "data/bg/a01/home_03-home_01#3.dat",
+          "length": 26299,
+          "sha256": "8B98C86A00AFDCC640F4E74506588ABD5DECED51BE0461DFE8404D9EA8D28EBA"
+        },
+        {
+          "path": "data/bg/a01/home_03.dat",
+          "length": 30665,
+          "sha256": "96F6ABF6BF18942CA682406AEC74AF112A6A4AA6CA1DC936DE8A53390265E1DD"
+        },
+        {
+          "path": "data/bg/a01/home_03@\u0192N\u0192\u008D\u0081[\u0192[\u0192b\u0192g\u0160J\u201A\u00A2\u201A\u00BD.dat",
+          "length": 4849,
+          "sha256": "556CC102B024374EEB284D6831D93A806C4B7A3F7DEDE3C33264047D453BB5F9"
+        },
+        {
+          "path": "data/fs_begin",
+          "length": 10,
+          "sha256": "F54572DC76894B8401CA3944BB5A8F8CE3BF978975AE043CBA153581C204AE43"
+        },
+        {
+          "path": "data/fs_end",
+          "length": 8,
+          "sha256": "3D7945156F5FDA3CCF1AEB23D4F87C125BF401E651C709FD0DBE5AF7600D5CD8"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "E792900FBBED1C457E9445792C3349B478E3B7324232585AD38DFA4C88263C97"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 4612,
+          "sha256": "EE96387C13B63A1ECF7F0BB19EC24CF1D195359B68D6374F6DBB4A8E406695EE"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": -1,
+      "standardOutputSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "standardErrorSha256": "73C701F94F838C683C29692521E3E2799640A1DD8A1F628BE039448BA1147890",
+      "artifacts": []
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 134217728,
+          "sha256": "130C206013D8A74D508374F835209E9A5A694DFF71F18E182935C78A07F603BF"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 134217728,
+          "sha256": "D34A0BE0E040E4F84F082745121643C5C7F28F56A07EFA135D5F58C40821AC2F"
+        }
+      ]
+    }
+  ]
+}

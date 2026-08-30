@@ -52,20 +52,25 @@ public sealed class PrivateCorpusNftrTests
             }
         }
 
-        Assert.Equal(10, fontCount);
-        Assert.Equal(7296, glyphCount);
-        Assert.Equal(7999, mappingSlotCount);
-        Assert.Equal(7296, mappedCharacterCount);
-        Assert.Equal(1, depthCounts[1]);
-        Assert.Equal(4, depthCounts[2]);
-        Assert.Equal(5, depthCounts[3]);
-        Assert.Equal(1, encodingCounts[NftrTextEncoding.Utf8]);
-        Assert.Equal(6, encodingCounts[NftrTextEncoding.Utf16]);
-        Assert.Equal(3, encodingCounts[NftrTextEncoding.ShiftJis]);
-        Assert.Equal(34, methodCounts[NftrCharacterMapMethod.Direct]);
-        Assert.Equal(31, methodCounts[NftrCharacterMapMethod.Table]);
-        Assert.Equal(9, methodCounts[NftrCharacterMapMethod.Scan]);
-        Assert.Equal("E39CA4C0173B79AC842E019DD5F6A74E42843489F37959B83C5E6C2B71232676", Aggregate(digests));
+        Assert.Multiple(
+            () => Assert.Equal(105, fontCount),
+            () => Assert.Equal(63351, glyphCount),
+            () => Assert.Equal(69348, mappingSlotCount),
+            () => Assert.Equal(63351, mappedCharacterCount),
+            () => Assert.Equal(62, depthCounts[1]),
+            () => Assert.Equal(23, depthCounts[2]),
+            () => Assert.Equal(12, depthCounts[3]),
+            () => Assert.Equal(8, depthCounts[4]),
+            () => Assert.Equal(4, depthCounts.Count),
+            () => Assert.Equal(48, encodingCounts[NftrTextEncoding.Utf8]),
+            () => Assert.Equal(36, encodingCounts[NftrTextEncoding.Utf16]),
+            () => Assert.Equal(16, encodingCounts[NftrTextEncoding.ShiftJis]),
+            () => Assert.Equal(5, encodingCounts[NftrTextEncoding.Windows1252]),
+            () => Assert.Equal(4, encodingCounts.Count),
+            () => Assert.Equal(210, methodCounts[NftrCharacterMapMethod.Direct]),
+            () => Assert.Equal(220, methodCounts[NftrCharacterMapMethod.Table]),
+            () => Assert.Equal(92, methodCounts[NftrCharacterMapMethod.Scan]),
+            () => CorpusExpectations.AssertDigest("4E8B9C9FA22513A043BCAEDA619B01DDA81A9627868A32383AADC8B2D3F6C1D7", Aggregate(digests)));
     }
 
     private static byte[] Hash(NftrFont value)

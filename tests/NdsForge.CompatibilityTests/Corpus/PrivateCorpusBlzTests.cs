@@ -46,11 +46,12 @@ public sealed class PrivateCorpusBlzTests
             }
         }
 
-        Assert.Equal(28, programs);
-        Assert.Equal(3642, overlays);
-        Assert.Equal(
-            "EDBE16499DB86EB9453634A97840638DE453E0949061E8B435779DC611506FFB",
-            Convert.ToHexString(decodedOracle.GetHashAndReset()));
+        Assert.Multiple(
+            () => Assert.Equal(58, programs),
+            () => Assert.Equal(4945, overlays),
+            () => CorpusExpectations.AssertDigest(
+                "46E8F5E39AB57B790028E32EECC42377E47F8510A5FDC10B8D82312825513EE9",
+                Convert.ToHexString(decodedOracle.GetHashAndReset())));
     }
 
     /// <summary>Materializes one already bounded region so the codec receives the exact declared allocation.</summary>

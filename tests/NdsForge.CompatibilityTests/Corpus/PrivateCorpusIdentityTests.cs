@@ -59,7 +59,21 @@ public sealed class PrivateCorpusIdentityTests
                 "extract-all", "create-binary", "repair-header-crc", "hook-arm7",
             ],
             operationNames);
-        Assert.All(expected.Operations, static operation => Assert.Equal(0, operation.ExitCode));
+        ExpectedOperation extraction = expected.Operations.Single(static operation => operation.Name == "extract-all");
+        ExpectedOperation creation = expected.Operations.Single(static operation => operation.Name == "create-binary");
+        if (extraction.ExitCode == 0)
+        {
+            Assert.Equal(0, creation.ExitCode);
+        }
+        else
+        {
+            Assert.True(extraction.ExitCode > 0, "A failed reference extraction must retain its real positive process exit code.");
+            Assert.Equal(-1, creation.ExitCode);
+            Assert.Empty(creation.Artifacts);
+        }
+
+        Assert.Equal(0, expected.Operations.Single(static operation => operation.Name == "repair-header-crc").ExitCode);
+        Assert.Equal(0, expected.Operations.Single(static operation => operation.Name == "hook-arm7").ExitCode);
         Assert.All(expected.Operations, static operation =>
         {
             Assert.Equal(64, operation.StandardOutputSha256.Length);

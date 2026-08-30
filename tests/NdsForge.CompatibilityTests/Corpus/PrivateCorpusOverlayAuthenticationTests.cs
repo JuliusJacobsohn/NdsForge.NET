@@ -10,7 +10,10 @@ public sealed class PrivateCorpusOverlayAuthenticationTests
     [Trait("CorpusTier", "Full")]
     public async Task EveryDownloadPlayRecordMatchesDecodedProgramMetadataAndStoredPayloads()
     {
-        int imageCount = 0;
+        int declaredImageCount = 0;
+        int completeImageCount = 0;
+        int missingTablePointerCount = 0;
+        int missingTableOverlayCount = 0;
         int recordCount = 0;
         int compressedProgramCount = 0;
         using IncrementalHash canonical = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
@@ -26,7 +29,18 @@ public sealed class PrivateCorpusOverlayAuthenticationTests
                 continue;
             }
 
-            imageCount++;
+            declaredImageCount++;
+            if (table.State == NdsOverlayAuthenticationTableState.MissingTablePointer)
+            {
+                missingTablePointerCount++;
+                missingTableOverlayCount += image.Arm9Overlays.Count;
+                Assert.Empty(table.Records);
+                Assert.All(image.Arm9Overlays, static overlay => Assert.Null(overlay.AuthenticationRecord));
+                Assert.Contains(image.Validate().Diagnostics, static diagnostic => diagnostic.Code == "NDS1211");
+                continue;
+            }
+
+            completeImageCount++;
             Assert.Equal(NdsOverlayAuthenticationTableState.Complete, table.State);
             Assert.Equal(image.Arm9Overlays.Count, table.Records.Count);
             Assert.All(image.Arm9Overlays, static overlay => Assert.NotNull(overlay.AuthenticationRecord));
@@ -54,11 +68,14 @@ public sealed class PrivateCorpusOverlayAuthenticationTests
             canonical.AppendData(data.GetBuffer().AsSpan(0, checked((int)data.Length)));
         }
 
-        Assert.Equal(11, imageCount);
-        Assert.Equal(1075, recordCount);
-        Assert.Equal(9, compressedProgramCount);
+        Assert.Equal(16, declaredImageCount);
+        Assert.Equal(15, completeImageCount);
+        Assert.Equal(1, missingTablePointerCount);
+        Assert.Equal(44, missingTableOverlayCount);
+        Assert.Equal(1399, recordCount);
+        Assert.Equal(13, compressedProgramCount);
         Assert.Equal(
-            "6E27868A85C1EBFC793107EA58F6767342AB13344B06BCD0FCE1AC535CEA955B",
+            "5EFB9C1A7B4326A4D0B3B29B6D16E9F0293B4A3488062E63F0E51E19DBB755B0",
             Convert.ToHexString(canonical.GetHashAndReset()));
     }
 }

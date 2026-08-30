@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Tony Hawk\u0027s - American SK8Land - Activision [AH9E] [USA - English].nds",
+    "length": 67108864,
+    "sha256": "0256a27d15fe08c2b5910da7264c06f192426cbb208bc86c7de63630c7db0b1f",
+    "headerTitle": "TH SK8LAND",
+    "gameCode": "AH9E",
+    "makerCode": "52",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Tony Hawk\u0027s - American SK8Land - Activision",
+    "bannerTitles": {
+      "Japanese": "Tony Hawk\u0027s\nAmerican SK8Land\nActivision",
+      "English": "Tony Hawk\u0027s\nAmerican SK8Land\nActivision",
+      "French": "Tony Hawk\u0027s\nAmerican SK8Land\nActivision",
+      "German": "Tony Hawk\u0027s\nAmerican SK8Land\nActivision",
+      "Italian": "Tony Hawk\u0027s\nAmerican SK8Land\nActivision",
+      "Spanish": "Tony Hawk\u0027s\nAmerican SK8Land\nActivision"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 172352,
+          "sha256": "0525BDBBD22D9B5BF9243E5D2CA160A56065FBC6C4A46967243E3B100BCD88D3"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 384,
+          "sha256": "400F8EDB50CA5B3D22C944952B95FA7057C340B1E5F6F814663F29676A4338EB"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1204068,
+          "sha256": "D6026CF769A706E658A2186A03F4439C036570AE892618CBD5FC83DA948217A6"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "5F123553E908DEBF18FFA24ECE9C07F79930D74AE92D448CB96DD22364B94246"
+        },
+        {
+          "path": "data/dwc/utility.bin",
+          "length": 1069000,
+          "sha256": "3566C133F22189086235B940A9F482D963A9B892D6AA91331737294A611EE668"
+        },
+        {
+          "path": "data/vvobj/generated/gob/main.gfc",
+          "length": 546088,
+          "sha256": "0CE488576B568F935C5E60F12DFCF7269327A5B2593F6CEC2CFDAB1C296EADAF"
+        },
+        {
+          "path": "data/vvobj/generated/gob/main.gob",
+          "length": 21411156,
+          "sha256": "C29A5EDC472A0843209F2A9FC6EC4FF82BCD37108B1C78EDA90C8250DE542BFC"
+        },
+        {
+          "path": "data/vvobj/generated/sound/sound_stream.sdat",
+          "length": 39991936,
+          "sha256": "E81C8AB7B412A3C27256996F336CE4A5B3DA7524EFF8B24C17B9BFA2C65CE2A2"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "211DB7BE6608626F1DF9D33DAB9DE8AAD0BCF7AB1F57E46ED886EDEA38C89A5A"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 8320,
+          "sha256": "1FC44C7EDC2FEEA47A33838EFCB19EE0577422655DA187313A712DDA3D9AEC96"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 5312,
+          "sha256": "BCEC82DDBB6226D56ECC877F6A4801A42969E7FF8F45DF7B07B31CE2A0B9DEEC"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 5184,
+          "sha256": "8393F6A863148FA194403827C62FCCE1D1B24CFB18159A85D84C4F220FAF24A1"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 4992,
+          "sha256": "C8DA5DCFDA6198FE93F59CF01A57C9BA22897F22735EBF5FF2B6F5C3EF02FB4E"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 6336,
+          "sha256": "38FADBB19DFCC49238531A0E926650BE7D78326FACFA966BED995829B70338F6"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 7968,
+          "sha256": "069B3B14424FEC660A89EFBE0ED9A0D226F68EA8177979047C0D6FB3F8EBC232"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 7136,
+          "sha256": "8953105012493CA5276F87DFD5F9052EBB1C7EE7503E4A96A19D341539BA2D73"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 2592,
+          "sha256": "1E3DCF6D9CF1164A845F02F5FD9B4FD2D4502214D980577680FBC9D87877B8CD"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 200864,
+          "sha256": "F58D26BFCEFBDEB18DEE8ACB773DC932A9761116032D7813B4EC16A12364973A"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 169024,
+          "sha256": "5CFEB7634403A79BD2A6E2B379514EB0A88B1CFF9D23C4C8DD52CBE118886E50"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 46528,
+          "sha256": "31B66061E7E747B255A1014DDAB4EC8A2FB45A89F3FF96577D80F79AC4F73AAE"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 79392,
+          "sha256": "A261AF7D51DDAEC8A62F08C7491937D4781FBB3C48FDE4995DA8336490153C16"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 64963200,
+          "sha256": "3F104FCAE094C3063400F020571F1880AAA910057282B7E26458E14F6FF32EA0"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 67108864,
+          "sha256": "B147E2F5DF263D65E192B7F38759822E12BBE78FD3B1BD0EF9BFE0F25C8996DA"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 67108864,
+          "sha256": "E9F0F15F775856BF12DDBEBA692779DEAD04992434721B86CD8B2CE4A877DA10"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Shin Megami Tensei - Devil Survivor - Atlus U.S.A., Inc. [CVIE] [USA - English].nds",
+    "length": 67108864,
+    "sha256": "df72364a1d6aa034c227b3b7a73e4e5c1107f3437d9d1833e72db99c31266c4a",
+    "headerTitle": "D_SURVIVOR",
+    "gameCode": "CVIE",
+    "makerCode": "EB",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Shin Megami Tensei - Devil Survivor - Atlus U.S.A., Inc.",
+    "bannerTitles": {
+      "Japanese": "Shin Megami Tensei:\nDevil Survivor\nAtlus U.S.A., Inc.",
+      "English": "Shin Megami Tensei:\nDevil Survivor\nAtlus U.S.A., Inc.",
+      "French": "Shin Megami Tensei:\nDevil Survivor\nAtlus U.S.A., Inc.",
+      "German": "Shin Megami Tensei:\nDevil Survivor\nAtlus U.S.A., Inc.",
+      "Italian": "Shin Megami Tensei:\nDevil Survivor\nAtlus U.S.A., Inc.",
+      "Spanish": "Shin Megami Tensei:\nDevil Survivor\nAtlus U.S.A., Inc."
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 159528,
+          "sha256": "7079F4F319E402982280740B6A3005827B066F9DE6D289D4380C4A343607FAED"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 704,
+          "sha256": "30FDAEA5D4192EBE80EF3C8E47116E1F37B13918D7B8B8D66355CFD62A617EBA"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1529508,
+          "sha256": "E348934DD89D4D5137BA4D47842CD0C17D581578104F28C555A08BA4B36260B3"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "007349D93EA1EB4C074B75CCAC61FF0AA13CA5CB97AD02A7F0BE115827ED23B6"
+        },
+        {
+          "path": "data/Data/Target.bin",
+          "length": 35697372,
+          "sha256": "607F63D9FE318FF54F6010DC57D2EE3E7C433B7BE961244876C1F013F9BEFC06"
+        },
+        {
+          "path": "data/Data/Target.idx",
+          "length": 127540,
+          "sha256": "3C5BE762B7A9B9B9161237F1A95C630C56D404AA5ED67DEA8CCDB49D96B653B8"
+        },
+        {
+          "path": "data/Data/Target.ndx",
+          "length": 255965,
+          "sha256": "934FEACF46E97226DA578DCD01FBAC894D84DAF29D56938D466BB9E42DAFCADB"
+        },
+        {
+          "path": "data/Snd/bgm/B01_NormalSLG.adx",
+          "length": 1593344,
+          "sha256": "3A512D99CB7134EDE20CC8992D475BAB379CC510C8706DC859D2EE30E818D93D"
+        },
+        {
+          "path": "data/Snd/bgm/B02_PinchSLG.adx",
+          "length": 1095680,
+          "sha256": "B79C590CA2792E69485891E33FB3A1501AB92793C21DBC0583C362A75A7F49BE"
+        },
+        {
+          "path": "data/Snd/bgm/B03_AngelForceSLG.adx",
+          "length": 1181696,
+          "sha256": "20BB7328ADD72B68D0CEBF96D641980F032BD2A656F50B23DEEFDE301591A943"
+        },
+        {
+          "path": "data/Snd/bgm/B04_NormalBossSLG.adx",
+          "length": 1062912,
+          "sha256": "24808D15285B475455E311226337A88ED6F75A1F0BF0A449BAFA1D1E14479647"
+        },
+        {
+          "path": "data/Snd/bgm/B05_LastBossSLG.adx",
+          "length": 1087488,
+          "sha256": "6E3370224B13BF48D5FC5449C7873B67C955A6F36BFCB1D4208198E1253EB529"
+        },
+        {
+          "path": "data/Snd/bgm/B06_NormalBattle.adx",
+          "length": 847872,
+          "sha256": "6CBDFD4C149ECFD2DC0E2F60FE86B453C09FB297ED068876640C1C0C0D24B713"
+        },
+        {
+          "path": "data/Snd/bgm/B07_NormalBossBattle.adx",
+          "length": 532480,
+          "sha256": "6084C19CE131FB270618BEFA75FC9CCB185F855950C86E76865433C777A1B0C0"
+        },
+        {
+          "path": "data/Snd/bgm/B08_LastBossBattle.adx",
+          "length": 591872,
+          "sha256": "57F7F0C87E7829A43A5601DD15E60AEF0EE0A236BDEF7E5AA01FCD7C0C70033E"
+        },
+        {
+          "path": "data/Snd/bgm/B09_DevilReturn.adx",
+          "length": 1062912,
+          "sha256": "7A43677408C3A33DAF54D126D157F0EC0BABC99EB84448A3DF402C1EDB14700B"
+        },
+        {
+          "path": "data/Snd/bgm/I01_Fusion.adx",
+          "length": 864256,
+          "sha256": "DEFD1B483765AFA7E6FC089967A612819213919D1BA7C39AEF298A547C0AF004"
+        },
+        {
+          "path": "data/Snd/bgm/I02_Auction.adx",
+          "length": 583680,
+          "sha256": "02F5EE6076EFA74B05FA6D02B6A7CB923198D2CF40B435A7D4F5B5CE7888A1B7"
+        },
+        {
+          "path": "data/Snd/bgm/J01_Normal.adx",
+          "length": 350208,
+          "sha256": "C697E3C2E61424E544DFF1DFE092120DE54C65BD3B2B575909180C65A9ECB789"
+        },
+        {
+          "path": "data/Snd/bgm/J02_Bravely.adx",
+          "length": 264192,
+          "sha256": "DCA9C9FD69D45662E4A37C0C527E67EFE82140953C0EB3BDF011EF02FA7B79C6"
+        },
+        {
+          "path": "data/Snd/bgm/J03_Mystery3.adx",
+          "length": 507904,
+          "sha256": "530654CB2B1A7078F641E763C388C8EF2F754AB51FAA2D23CB469DD965802790"
+        },
+        {
+          "path": "data/Snd/bgm/J04_Happy_16k.adx",
+          "length": 350208,
+          "sha256": "D261718B87DFDDA106F277553A46B0505635EF3FF8CF3ECCEF01C1805EB41296"
+        },
+        {
+          "path": "data/Snd/bgm/J05_Uneasy_16k.adx",
+          "length": 235520,
+          "sha256": "8344992629F17F3BDA79D83B2BA0040A6050589A3E0EFD4B5FB9C57BC4371BE6"
+        },
+        {
+          "path": "data/Snd/bgm/N01_bDefault.adx",
+          "length": 1669120,
+          "sha256": "3792D762233943B4C60414B5D62A25B4C8F5272A472659E2CB28C573217198CF"
+        },
+        {
+          "path": "data/Snd/bgm/N02_Silence.adx",
+          "length": 886784,
+          "sha256": "CECB89B910F25D892269EB7C9A65AA3746904A820D6ECE64665EDDCC36194023"
+        },
+        {
+          "path": "data/Snd/bgm/N03_Disquiet.adx",
+          "length": 489472,
+          "sha256": "6628FF5825F69CABA90C747554B64F87ECDDCF8736ED4306609905935A42BB78"
+        },
+        {
+          "path": "data/Snd/bgm/N04_OutBreak_cut_16k.adx",
+          "length": 645120,
+          "sha256": "F2B634909424B0960CB852E70A94C04F9C9D2A3236AAF3BA0E6C4D451CB0D681"
+        },
+        {
+          "path": "data/Snd/bgm/N05_Sad.adx",
+          "length": 1181696,
+          "sha256": "AD1E151B75B9B46462A8E678076C9E76CAEA66011E52720C52E8EABD4B0770F3"
+        },
+        {
+          "path": "data/Snd/bgm/N06_Pinch.adx",
+          "length": 835584,
+          "sha256": "EDED138200A23E13C2451964B527F50DBEF578C429462EDD50D74488FAE4A23B"
+        },
+        {
+          "path": "data/Snd/bgm/S01_StaffRoll.adx",
+          "length": 1093632,
+          "sha256": "DDEF2B3638B6BC06BA0688EF7927A952858C599AF0B988681DFB0553B0158842"
+        },
+        {
+          "path": "data/Snd/bgm/S02_Ending.adx",
+          "length": 1658880,
+          "sha256": "F4C1C414C52764F6B0C6B1198AF759E2FB4B565323BD5AE74A94D656B1AD8A32"
+        },
+        {
+          "path": "data/Snd/bgm/SE01_FUSION_22k.adx",
+          "length": 96322,
+          "sha256": "199A7FAD8933C4F51A5F9926A7687D95102E5A415365EE01CCA2A68C5F6ED2A7"
+        },
+        {
+          "path": "data/Snd/bgm/SE02_SUBTITLE0_22k.adx",
+          "length": 167936,
+          "sha256": "430B7B500A7D181C031A38B2781A7D1FB489095D57944197F7F00769680D4BD4"
+        },
+        {
+          "path": "data/Snd/bgm/SE03_SUBTITLE5_22k.adx",
+          "length": 176128,
+          "sha256": "BC88BB83DF521E2BA53E1F46386F35E05A9CB51E9FB0E220EE111F5CF121DB03"
+        },
+        {
+          "path": "data/Snd/bgm/SE04_0_COMP_START_22k.adx",
+          "length": 163462,
+          "sha256": "C9A28E0DA5FED3561DCB233B64467F17BB521CB9CF11C1A9357CB6CE2C51C8E3"
+        },
+        {
+          "path": "data/Snd/bgm/SE04_1_COMP_SCROLL_22k.adx",
+          "length": 34816,
+          "sha256": "980D76C91B0DC62F524E1F337DD7EC74EB6834962B252AD3F946508E94275B7B"
+        },
+        {
+          "path": "data/Snd/bgm/SE04_2_COMP_LETSSURVIVE_22k.adx",
+          "length": 180224,
+          "sha256": "427F5DDDAF296F3F782098664C69B433A99591BD0F08A72FEABBA985A01C66A5"
+        },
+        {
+          "path": "data/Snd/bgm/SE05_BABEL_CTRL_22k.adx",
+          "length": 207166,
+          "sha256": "F52AF8E31C95D9918ADC1FB9F6DBCD467413DEE42F5BE747C83977FF3B794DFC"
+        },
+        {
+          "path": "data/Snd/bgm/SE06_BABEL_SUMMON_22k.adx",
+          "length": 108238,
+          "sha256": "4DFEC01F973A5CCCDFFBB1B8AF939FAEB3CB92566AC7F09E6E9301D09BB2D0C1"
+        },
+        {
+          "path": "data/Snd/bgm/SE_07_BABEL_TRANS.adx",
+          "length": 234814,
+          "sha256": "684280B0548941779AD6FF44BCE238417B0D095D8411A7EF5050683DF5D6E7D8"
+        },
+        {
+          "path": "data/Snd/bgm/SE_08_FIN_FLASH_22k.adx",
+          "length": 77566,
+          "sha256": "C9AF91D6F8542899D3D9731312DE71C45410C938F4A993B4ACBA357381FB8574"
+        },
+        {
+          "path": "data/Snd/bgm/T01_OpeningInst_f.adx",
+          "length": 1062912,
+          "sha256": "242D8F995574CAF208562B635CDBE03B77AFA527E25D8567D8808BC8C47F4DB1"
+        },
+        {
+          "path": "data/Snd/bgm/T02_Reset_Master.adx",
+          "length": 1185430,
+          "sha256": "7DA901CA084330706967B6F48F515C62B2DFEF20671D01421A73F7617BE71C5A"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "1BB756DC95AE4DCEBD9082A96C6B04C7AE48CE1EAD1CEAD4A88302BF4EC4217B"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 17408,
+          "sha256": "AFA2A3D5F902DCE9E6A79EE0DC39F1A40AEBF60C275A6815C6C50CEBE924E5F1"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 86848,
+          "sha256": "D66036A1ECC20AC57D08727258B46A09D37BFC3A3C7DF80A0B63F2E4F92ED315"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 83680,
+          "sha256": "8612254DA82046E5B5B665244755F87858D30DD6AF33D99873D65530B9F624B5"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 13504,
+          "sha256": "09A3DE3466B3B0DC9BA20AE41564212149AFF4B9C228A81246B972B60C888436"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 94560,
+          "sha256": "D49BB9AFD41B62B66AD8FB4367B3EC401AC65B21F816C9698E9E63F304C1BA2B"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 9696,
+          "sha256": "A5B0306C95BDA47FD7A775ADBBDE8ED8339251AB39C443605651C3012E145DC7"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 6624,
+          "sha256": "C6E829E5340CBE6C00CB54818E99C2651A80861BCA0328DF47F994B1677C481B"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 2848,
+          "sha256": "E51522913413C3937F8AF65727A7B963A2CEBA2496B3E2BCA1C2A8DEB68E2A43"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 10048,
+          "sha256": "F018258CF7517D6FEFA1EA47D31A6D6FA65B73A01B0EA6371680448FB3016AB2"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 9376,
+          "sha256": "4111A8A1653E5D40848D1CE8097DF74D1AD78F6B81F66DF09FB15E0635443FBE"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 3712,
+          "sha256": "0F25CD43630E0C2DFC7DAE087077ACAE0A7D353754434F8ED22846DDF5073F0F"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 25248,
+          "sha256": "5AF2B76A0FF38A9C6236E441F4F296601AC2695F6C443C1669901858FEFE4554"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 6720,
+          "sha256": "AF30B6764943A4B20AB0128F76BB5D757EBD1C04D1AFD41313D7AA84E9457C53"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 5216,
+          "sha256": "114235CA1420522C30D55146F70184D5369FDE12EFE359B28B059AD65AC88BD8"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 3264,
+          "sha256": "0A554BF519BA3836D022924940B7F2A126B2FF94A53E503429E5CD1BBF32F007"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 61184,
+          "sha256": "2A4FB35D320F032FAD0A68E6AC25259A0837EAE0B836DCD8BCD5102908FB59E9"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 5984,
+          "sha256": "8A6318C5DD13CE704FB62ABC2B348C85BC14A24E9FD6C06699A1D7D1566C46BD"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 49664,
+          "sha256": "793EE9A817B48F69D73197B297761959E541590D0A6C3B0B850BBAC1DD75EA93"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 2752,
+          "sha256": "25F73B460BAED51C451B2E7A82BA8E816A3BA972866EA24F4E173235D6A37D6C"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 2208,
+          "sha256": "8A80DD40C63A9ABE4225C246B8A7B64FB39902CE54FF95D3AD1DD6015EE0E4CB"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 29408,
+          "sha256": "C19857E2EB8970B9C1DACE66250D403E474AEB9AC15FCEE3A8EBFBA0331B354B"
+        },
+        {
+          "path": "overlays/overlay_0021.bin",
+          "length": 2528,
+          "sha256": "5C6B4FAEB1FB45DDFEE886FF6379500FA34E85300DFA87F119C63BFF447C7705"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 62699160,
+          "sha256": "D80FC567C1715F0F5A3F99908934FD4A51009C46B8FA168BB37673152160F2BE"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 67108864,
+          "sha256": "B7FFA6FC49A617CCD9DBE0C58EFCFAC90B209CDC01AC604C8EC0985951A3F746"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 67108864,
+          "sha256": "3F2138A85A71FCDCFD881B354FF0F25D82E15D9418AACF2D89C39A09813C7541"
+        }
+      ]
+    }
+  ]
+}

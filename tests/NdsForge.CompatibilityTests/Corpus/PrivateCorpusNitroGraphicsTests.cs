@@ -16,6 +16,8 @@ public sealed class PrivateCorpusNitroGraphicsTests
         int ncgrCount = 0;
         long pixelCount = 0;
         int rejectedNcgrMagic = 0;
+        var unsupportedNcgrFormatCounts = new Dictionary<uint, int>();
+        var unsupportedNcgrDigests = new List<byte[]>();
         int nscrCount = 0;
         long entryCount = 0;
         var ncgrDigests = new List<byte[]>();
@@ -44,6 +46,17 @@ public sealed class PrivateCorpusNitroGraphicsTests
                     {
                         Assert.Throws<InvalidDataException>(() => NcgrCharacterGraphics.Parse(encoded));
                         rejectedNcgrMagic++;
+                        continue;
+                    }
+
+                    uint rawFormat = ReadRawFormat(encoded);
+                    if (rawFormat is not (3 or 4))
+                    {
+                        InvalidDataException error = Assert.Throws<InvalidDataException>(
+                            () => NcgrCharacterGraphics.Parse(encoded));
+                        Assert.Contains("depth", error.Message, StringComparison.Ordinal);
+                        unsupportedNcgrFormatCounts[rawFormat] = unsupportedNcgrFormatCounts.GetValueOrDefault(rawFormat) + 1;
+                        unsupportedNcgrDigests.Add(SHA256.HashData(encoded));
                         continue;
                     }
 
@@ -80,13 +93,18 @@ public sealed class PrivateCorpusNitroGraphicsTests
             }
         }
 
-        Assert.Equal(5035, ncgrCount);
-        Assert.Equal(126167104, pixelCount);
+        Assert.Equal(10797, ncgrCount);
+        Assert.Equal(215348672, pixelCount);
         Assert.Equal(13, rejectedNcgrMagic);
-        Assert.Equal(1231, nscrCount);
-        Assert.Equal(1274624, entryCount);
-        Assert.Equal("CE1D1001D20C5A52F3DCD5F2B59E479304379203B564E32509732ED54D0649B9", Aggregate(ncgrDigests));
-        Assert.Equal("87A85766F5BC042C448D4D41587EABC90C7C24C973835492064D3EA8A7AF6B1B", Aggregate(nscrDigests));
+        Assert.Equal(4526, nscrCount);
+        Assert.Equal(5368694, entryCount);
+        Assert.Equal("1F508B45E4CD120EDBA8D4A01DF795B25C6A0382F35DE872245F800DCBEA8BC1", Aggregate(ncgrDigests));
+        Assert.Equal("F9234C67D4A2BAC80FCC2CDD2499B382B575D2602D3FEA94B2F7C198BAE81AA8", Aggregate(nscrDigests));
+        Assert.Equal(23, unsupportedNcgrFormatCounts[1]);
+        Assert.Equal(1, unsupportedNcgrFormatCounts[6]);
+        Assert.Equal(2, unsupportedNcgrFormatCounts[7]);
+        Assert.Equal(3, unsupportedNcgrFormatCounts.Count);
+        Assert.Equal("231B0C53F3820D74B904D2C7779559B845A2BB41A6D797A75189E6362E87037D", Aggregate(unsupportedNcgrDigests));
     }
 
     private static byte[] HashNcgr(NcgrCharacterGraphics value)
@@ -146,5 +164,23 @@ public sealed class PrivateCorpusNitroGraphicsTests
         Span<byte> bytes = stackalloc byte[sizeof(ushort)];
         BinaryPrimitives.WriteUInt16LittleEndian(bytes, value);
         hash.AppendData(bytes);
+    }
+
+    private static uint ReadRawFormat(ReadOnlySpan<byte> data)
+    {
+        int cursor = BinaryPrimitives.ReadUInt16LittleEndian(data[12..]);
+        int blockCount = BinaryPrimitives.ReadUInt16LittleEndian(data[14..]);
+        for (int index = 0; index < blockCount; index++)
+        {
+            int length = checked((int)BinaryPrimitives.ReadUInt32LittleEndian(data[(cursor + 4)..]));
+            if (data.Slice(cursor, 4).SequenceEqual("RAHC"u8))
+            {
+                return BinaryPrimitives.ReadUInt32LittleEndian(data[(cursor + 12)..]);
+            }
+
+            cursor += length;
+        }
+
+        throw new InvalidDataException("The graphics resource has no CHAR block.");
     }
 }

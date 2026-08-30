@@ -88,9 +88,10 @@ public sealed class PrivateCorpusHeaderSemanticTests
 
         string nativeHash = Convert.ToHexString(nativeDigest.GetHashAndReset());
         Assert.Equal(nativeHash, Convert.ToHexString(modelDigest.GetHashAndReset()));
-        Assert.Equal(6, dsiImages);
-        Assert.Equal(0, debugPrograms);
-        Assert.Equal("1E2A0D8158B0BB4EE54B7E14474F3AB6650732AA455BEAF44E08F74F7BE2B613", nativeHash);
+        Assert.Multiple(
+            () => Assert.Equal(9, dsiImages),
+            () => Assert.Equal(0, debugPrograms),
+            () => CorpusExpectations.AssertDigest("D63387B5F1421FB61CEE2D19F0DFD755810149B672ADD049CD9369879F85E12D", nativeHash));
     }
 
     private static void Append(IncrementalHash hash, ReadOnlySpan<byte> data) => hash.AppendData(data);

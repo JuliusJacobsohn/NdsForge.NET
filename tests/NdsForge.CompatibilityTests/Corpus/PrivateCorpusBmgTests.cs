@@ -49,15 +49,18 @@ public sealed class PrivateCorpusBmgTests
             }
         }
 
-        Assert.Equal(563, bundleCount);
-        Assert.Equal(69943, messageCount);
-        Assert.Equal(141795, controlCount);
-        Assert.Equal(231, missingTrailingCount);
-        Assert.Equal(76, encodingCounts[BmgEncoding.Windows1252]);
-        Assert.Equal(446, encodingCounts[BmgEncoding.Utf16]);
-        Assert.Equal(41, encodingCounts[BmgEncoding.ShiftJis]);
-        Assert.Equal(114, missingPaddingCount);
-        Assert.Equal("4A8F51A30181671E83EBBC247D0098856B7A72A8AD2D90BB4CEC91CB709C78DD", Aggregate(digests));
+        Assert.Multiple(
+            () => Assert.Equal(657, bundleCount),
+            () => Assert.Equal(77683, messageCount),
+            () => Assert.Equal(156175, controlCount),
+            () => Assert.Equal(231, missingTrailingCount),
+            () => Assert.Equal(76, encodingCounts[BmgEncoding.Windows1252]),
+            () => Assert.Equal(446, encodingCounts[BmgEncoding.Utf16]),
+            () => Assert.Equal(41, encodingCounts[BmgEncoding.ShiftJis]),
+            () => Assert.Equal(94, encodingCounts[BmgEncoding.Utf8]),
+            () => Assert.Equal(4, encodingCounts.Count),
+            () => Assert.Equal(114, missingPaddingCount),
+            () => CorpusExpectations.AssertDigest("77A59731A6EE6D12B0BAA32CC81809621E3ED88B4FA765FD5F2A95DE715E8E3C", Aggregate(digests)));
     }
 
     private static byte[] Hash(BmgMessageBundle value)

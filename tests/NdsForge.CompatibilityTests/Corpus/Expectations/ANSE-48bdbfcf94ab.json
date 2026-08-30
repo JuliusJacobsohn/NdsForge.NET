@@ -1,0 +1,4550 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Nanostray - Majesco Entertainment [ANSE] [USA - English].nds",
+    "length": 16777216,
+    "sha256": "48bdbfcf94ab76d9e020acf7418370907b94ab5a83d889cd0591dfb7b7415c41",
+    "headerTitle": "NANOSTRAY",
+    "gameCode": "ANSE",
+    "makerCode": "5G",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Nanostray - Majesco Entertainment",
+    "bannerTitles": {
+      "Japanese": "Nanostray\nMajesco Entertainment",
+      "English": "Nanostray\nMajesco Entertainment",
+      "French": "Nanostray\nMajesco Entertainment",
+      "German": "Nanostray\nMajesco Entertainment",
+      "Italian": "Nanostray\nMajesco Entertainment",
+      "Spanish": "Nanostray\nMajesco Entertainment"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 157268,
+          "sha256": "AB0EFE1F2A29FD34C4D93F5CD3164DFE56DF31C425915A29667F1CBE53AEA741"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 292952,
+          "sha256": "13C44103483F3ECA2E281605FDD1A4E6FDC1216625B4E2BB3C988FF00845E11E"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "8E1E872A342416E0F3806637D04D66789687A4457A4543F62F6562144D1D2D32"
+        },
+        {
+          "path": "data/audio/music.dsxe",
+          "length": 2382532,
+          "sha256": "1299C592EC85B1280F6DFAE33469CB568272834F86E95E25CF9C3D3C5F7F5115"
+        },
+        {
+          "path": "data/audio/music.dsxe.h",
+          "length": 311,
+          "sha256": "A62092B0680DC0395EE553A5042DDDBC340CBCB411B2126E0ABA658D3B09C135"
+        },
+        {
+          "path": "data/audio/nanostrayFX.dsxe",
+          "length": 2722628,
+          "sha256": "369D412D28B8D142A2226FB5A9662BADE10DA7FCF933EC44B5AC8D29AA68570B"
+        },
+        {
+          "path": "data/audio/nanostrayFX.dsxe.h",
+          "length": 1983,
+          "sha256": "63A0AA163D39A2D44CE2501ECE4CAC8EF5C637E932619968C11B7032468BE09E"
+        },
+        {
+          "path": "data/debug/font8x8.bin",
+          "length": 3072,
+          "sha256": "71C15F9FA7297A332FBBE33DB737FA20D3A094A2AF286EAAFC72064808A4A48D"
+        },
+        {
+          "path": "data/debug/font8x8.pal",
+          "length": 32,
+          "sha256": "E39709DCF18F1C696BE58A0790E27AC72034FD7CF59620D137ACEBE13A312601"
+        },
+        {
+          "path": "data/gyosho/asteroids_1.bin",
+          "length": 2048,
+          "sha256": "C8D46E4904C69E74EDB7CDF319E7F5596ED77D4EDB9C26374B92F1146B7604E8"
+        },
+        {
+          "path": "data/gyosho/asteroids_1.pal",
+          "length": 32,
+          "sha256": "2B181BCE32B36BFC92C016477795707634A6EF0DC3C962472E6B805805E82C9F"
+        },
+        {
+          "path": "data/gyosho/asteroids_2.bin",
+          "length": 2048,
+          "sha256": "5FB11CDF258657CC9C86249972B730047B40DC8F01BCC94FF0A4B747C852B3D4"
+        },
+        {
+          "path": "data/gyosho/asteroids_2.pal",
+          "length": 32,
+          "sha256": "2B181BCE32B36BFC92C016477795707634A6EF0DC3C962472E6B805805E82C9F"
+        },
+        {
+          "path": "data/gyosho/boss0.bin",
+          "length": 2048,
+          "sha256": "3E836B0405B72AD55075F59791459B684420DB3D601834939B2C9B97EEA879C8"
+        },
+        {
+          "path": "data/gyosho/boss0.pal",
+          "length": 32,
+          "sha256": "7BA32396ABBFFBBE30A963C64FAD765739DAD22DAC2B56C55515645B5FA0D173"
+        },
+        {
+          "path": "data/gyosho/boss1.bin",
+          "length": 2048,
+          "sha256": "662145BEA6CECB0D40EB49679342E8EB9728AA76FE6688975A69D7ED161B9AE2"
+        },
+        {
+          "path": "data/gyosho/boss1.pal",
+          "length": 32,
+          "sha256": "763A378A83C1D49EABC874994E3F912DFF794C02565E24B4CEFCABD8BD607AF0"
+        },
+        {
+          "path": "data/gyosho/boss2.bin",
+          "length": 2048,
+          "sha256": "70FC7EFE805C8EF74A731430F510F365EEA9EFD2F07D822E1800D3FCF503E258"
+        },
+        {
+          "path": "data/gyosho/boss2.pal",
+          "length": 32,
+          "sha256": "2C19E918A682D6AAD0176385B5D5AA7F25B7AEFDCA62604AF77C34A837C08BCD"
+        },
+        {
+          "path": "data/gyosho/boss3.bin",
+          "length": 2048,
+          "sha256": "0674736F4C9539D19F4275A5A0C522DE4CBBF0E4541AE0AB3BB7B6904BA27E97"
+        },
+        {
+          "path": "data/gyosho/boss3.pal",
+          "length": 32,
+          "sha256": "6E7BA77A0F2C8CBF6EF11B480AC5B97FD98922A5097524895FEA04396F24CCE9"
+        },
+        {
+          "path": "data/gyosho/boss4.bin",
+          "length": 2048,
+          "sha256": "3F33D53D81642160746C918AA97F07EB595CDA0E316991C7A061BF360830420D"
+        },
+        {
+          "path": "data/gyosho/boss4.pal",
+          "length": 32,
+          "sha256": "B5A339CCE36E145667AA53572B895186A1A575590CA7EF489BA24C19D290D7B6"
+        },
+        {
+          "path": "data/gyosho/boss5.bin",
+          "length": 2048,
+          "sha256": "3239044D222EAEA52AE5D172AC9F90074769B99BB3F69FE919F61E80C924406D"
+        },
+        {
+          "path": "data/gyosho/boss5.pal",
+          "length": 32,
+          "sha256": "7C3F336E2995247D4C9190DB52FF9049474C3AEA64EF9890B190430EDCB9FD28"
+        },
+        {
+          "path": "data/gyosho/boss7.bin",
+          "length": 2048,
+          "sha256": "7A0DF9F525138B87E5E5F2345FDCC80FFBD709075762EDE992E68DCD3E88915E"
+        },
+        {
+          "path": "data/gyosho/boss7.pal",
+          "length": 32,
+          "sha256": "16DFDF8E81870FAFCC047B22480A57755592859FF90D12E9892D2D77E5D44101"
+        },
+        {
+          "path": "data/gyosho/boss8.bin",
+          "length": 2048,
+          "sha256": "8BC7599D16131B9EBF225CE0A495670A913CA67A6FA8B96F595633FA055948F5"
+        },
+        {
+          "path": "data/gyosho/boss8.pal",
+          "length": 32,
+          "sha256": "70542923344840144650053EC97DEB5553FD8BE4C9569C29A7BBA9341316A565"
+        },
+        {
+          "path": "data/gyosho/jungle_1.bin",
+          "length": 2048,
+          "sha256": "4F064936C958ECE66BF3AEBC8031BD51FEF0D9489235E1B26D556CD31CFFFE72"
+        },
+        {
+          "path": "data/gyosho/jungle_1.pal",
+          "length": 32,
+          "sha256": "8DFA0B2686C0D6626DB1673BEEF9D39BFE37A5FEB50014C9E816B0163E536F15"
+        },
+        {
+          "path": "data/gyosho/jungle_2.bin",
+          "length": 2048,
+          "sha256": "AF4A2E9BB73BE451650035AC7AB6412A17F8F35E9B1287EBC6099FF0A3C19B1A"
+        },
+        {
+          "path": "data/gyosho/jungle_2.pal",
+          "length": 32,
+          "sha256": "8DFA0B2686C0D6626DB1673BEEF9D39BFE37A5FEB50014C9E816B0163E536F15"
+        },
+        {
+          "path": "data/gyosho/lava_1.bin",
+          "length": 2048,
+          "sha256": "0B7327A571D764BF3F8882A8BB33FC36886C4520DA711E179F312612D03A0E26"
+        },
+        {
+          "path": "data/gyosho/lava_1.pal",
+          "length": 32,
+          "sha256": "2151EFA803F7D3C5A7952A196009DB9B2A77DBCE6F74D5EAB6CCE2C3579C9878"
+        },
+        {
+          "path": "data/gyosho/lava_2.bin",
+          "length": 2048,
+          "sha256": "789BB920F0F07E072E9A1DA14401C75DA5FD957A874E2407EF62625924054A6C"
+        },
+        {
+          "path": "data/gyosho/lava_2.pal",
+          "length": 32,
+          "sha256": "2151EFA803F7D3C5A7952A196009DB9B2A77DBCE6F74D5EAB6CCE2C3579C9878"
+        },
+        {
+          "path": "data/gyosho/moon_1.bin",
+          "length": 2048,
+          "sha256": "DA944F62FE724C4AED0CE70CF48D02B57B7B1FFAF87ABF8D7487D954333D5D06"
+        },
+        {
+          "path": "data/gyosho/moon_1.pal",
+          "length": 32,
+          "sha256": "4F33401862267D465C0228A999EDCBCFA39A2E5BB9071C17E1FB214B846BAB20"
+        },
+        {
+          "path": "data/gyosho/moon_2.bin",
+          "length": 2048,
+          "sha256": "B0C1780D1E3A6FAADF88E5CB4BC6CBE31306FF973AF64583F99C90A65DE7515F"
+        },
+        {
+          "path": "data/gyosho/moon_2.pal",
+          "length": 32,
+          "sha256": "4F33401862267D465C0228A999EDCBCFA39A2E5BB9071C17E1FB214B846BAB20"
+        },
+        {
+          "path": "data/gyosho/ocean_1.bin",
+          "length": 2048,
+          "sha256": "05990529C302CE61D21DE2A2BC6D15E2B9A52EE8303A3297868773A979C28C84"
+        },
+        {
+          "path": "data/gyosho/ocean_1.pal",
+          "length": 32,
+          "sha256": "8A344D2376CA7ABF9326A8FF9ACF73D944849B96F851144F2C77E09AA0BE7968"
+        },
+        {
+          "path": "data/gyosho/ocean_2.bin",
+          "length": 2048,
+          "sha256": "F15A24C326D1CDF868E2D5B95EF19B618B4E6664E342E657ADB4F7EFC39035E8"
+        },
+        {
+          "path": "data/gyosho/ocean_2.pal",
+          "length": 32,
+          "sha256": "8A344D2376CA7ABF9326A8FF9ACF73D944849B96F851144F2C77E09AA0BE7968"
+        },
+        {
+          "path": "data/gyosho/space_1.bin",
+          "length": 2048,
+          "sha256": "AA11CBB295B6A16F7C17752F5332D0279FCFAB9F7218BFBC3EA47BAB69DEF334"
+        },
+        {
+          "path": "data/gyosho/space_1.pal",
+          "length": 32,
+          "sha256": "02D6B47736FAB5DAE116919A7A5BDA53A2198C175871B787C44DEE4DB542D9C6"
+        },
+        {
+          "path": "data/gyosho/space_2.bin",
+          "length": 2048,
+          "sha256": "0E6ABEF9635E2428C3EC69AE1061336E1ED467383621E7736D46503C723FF4FF"
+        },
+        {
+          "path": "data/gyosho/space_2.pal",
+          "length": 32,
+          "sha256": "02D6B47736FAB5DAE116919A7A5BDA53A2198C175871B787C44DEE4DB542D9C6"
+        },
+        {
+          "path": "data/gyosho/station_1.bin",
+          "length": 2048,
+          "sha256": "0E50844DA39EDBB5963DE3512BD059C4856FE981EA6C74CE230477290FD612B8"
+        },
+        {
+          "path": "data/gyosho/station_1.pal",
+          "length": 32,
+          "sha256": "D8F6A37975BC140C9B110FF20467FA404AC6C8A84D636C7D1B09868ADD6B9DFD"
+        },
+        {
+          "path": "data/gyosho/station_2.bin",
+          "length": 2048,
+          "sha256": "F6255A772EFF274AD65515C72E80C0D78E7675276D7A5C47A5473A527990ECB2"
+        },
+        {
+          "path": "data/gyosho/station_2.pal",
+          "length": 32,
+          "sha256": "D8F6A37975BC140C9B110FF20467FA404AC6C8A84D636C7D1B09868ADD6B9DFD"
+        },
+        {
+          "path": "data/gyosho/sunken_1.bin",
+          "length": 2048,
+          "sha256": "84DA4C6CA8228A40076004002F9F1789DF87F256DF01B6395E8854360F8A8388"
+        },
+        {
+          "path": "data/gyosho/sunken_1.pal",
+          "length": 32,
+          "sha256": "9657D42935C2A3B436E1F2DD69C0705CB9B9E44D0D4F3C0199B825F6294AF6FC"
+        },
+        {
+          "path": "data/gyosho/sunken_2.bin",
+          "length": 2048,
+          "sha256": "D0C69F6239710E95D829A70BCB035AD30A7454BB0915BBB3F84E29225AAE0095"
+        },
+        {
+          "path": "data/gyosho/sunken_2.pal",
+          "length": 32,
+          "sha256": "9657D42935C2A3B436E1F2DD69C0705CB9B9E44D0D4F3C0199B825F6294AF6FC"
+        },
+        {
+          "path": "data/gyosho/tubecity_1.bin",
+          "length": 2048,
+          "sha256": "FDB190188AA52A061C75EE25D8A15135C06B4A237729CAFBA59AD4034AF61587"
+        },
+        {
+          "path": "data/gyosho/tubecity_1.pal",
+          "length": 32,
+          "sha256": "3C183C783BECB8FC01A248BCF223A75D447CD5FDB452D88F9D74D3C4C12D305B"
+        },
+        {
+          "path": "data/gyosho/tubecity_2.bin",
+          "length": 2048,
+          "sha256": "ADCACD4FCD08BD7C6A890264F3143682B56D556523F59D32A7E56D379CA8FB17"
+        },
+        {
+          "path": "data/gyosho/tubecity_2.pal",
+          "length": 32,
+          "sha256": "3C183C783BECB8FC01A248BCF223A75D447CD5FDB452D88F9D74D3C4C12D305B"
+        },
+        {
+          "path": "data/gyosho/wipe.bin",
+          "length": 8704,
+          "sha256": "0D0803E4C34749404AC94B979BD848DC930229C37D7AC5BA0C56403FAEBA6F2F"
+        },
+        {
+          "path": "data/gyosho/wipe2.bin",
+          "length": 8704,
+          "sha256": "3AD710B2B1AEFEDEBA049BBDBBBC39C8E68A134CF16806B18E7C3AF33169FA29"
+        },
+        {
+          "path": "data/gyosho/wipe3.bin",
+          "length": 8704,
+          "sha256": "CB53B39CA3118A8C02BC66E953385D262D8AEA8E8E63A582E8F95EFC5C623B86"
+        },
+        {
+          "path": "data/gyosho/wipe4.bin",
+          "length": 8704,
+          "sha256": "F06A1522976D46B0CBEB6DE73EAF84FFAFF39E5DCEF384F943926BCD505EE18F"
+        },
+        {
+          "path": "data/gyosho/wipe5.bin",
+          "length": 8704,
+          "sha256": "E7612CC6A5148E169B20177333E0FBC41E5CC1F2398DED83D693E77426CAC530"
+        },
+        {
+          "path": "data/ingame/demoPlay/demoplay1.bin",
+          "length": 3600,
+          "sha256": "7A89DB665082DEFE059DF42C99D6B3AA796DB769E4D2EEB91DCE638586909FE7"
+        },
+        {
+          "path": "data/ingame/enemyData/2_wing.n3d",
+          "length": 8518,
+          "sha256": "3B05550D15D925F3D4DB2EAE04AEFEC7F6B37DFDD952A1DAAD2317D850EB4A81"
+        },
+        {
+          "path": "data/ingame/enemyData/2_wing/2winga _texture_256.tex",
+          "length": 6908,
+          "sha256": "1A1384688B8EB5F536A150C9EC28F4334133B0225CE0B8CD40E2F5A6B249A60E"
+        },
+        {
+          "path": "data/ingame/enemyData/3zack.n3d",
+          "length": 6700,
+          "sha256": "43D20C9A0977E9CB72A1B379ED801BB8FAA99B5C7F785333E315A9D7F37C3BE6"
+        },
+        {
+          "path": "data/ingame/enemyData/3zack2.n3d",
+          "length": 5464,
+          "sha256": "DCCE57D98C072ED911DBF6A5FC9CFFE74DD2F43938BD45F36E64798238AD9652"
+        },
+        {
+          "path": "data/ingame/enemyData/3zack_big.n3d",
+          "length": 8583,
+          "sha256": "FBAF734D33A17ADB0AF27E98A85850767BA4F6B49AB48EE94CCD36644B93F6B9"
+        },
+        {
+          "path": "data/ingame/enemyData/asdroid.n3d",
+          "length": 3089,
+          "sha256": "2914A4D1BAFFB3EC7FF77E31960C804BE765BBE40EF1BB499CDC88372C53F892"
+        },
+        {
+          "path": "data/ingame/enemyData/asteroid/textures/asteroid_object_16.tex",
+          "length": 4188,
+          "sha256": "146D3A67CE54160421DC224F4AF94E4C1AF061F98773DD042F9EDA429950EA58"
+        },
+        {
+          "path": "data/ingame/enemyData/asteroid/textures/asteroid_object_256.tex",
+          "length": 8732,
+          "sha256": "402009305A2E00EC12BB6350BF38F29492DAF893AA4A0C5AA78ED33C5142041A"
+        },
+        {
+          "path": "data/ingame/enemyData/asteroid_A.n3d",
+          "length": 1477,
+          "sha256": "FB2BFF7A4E77266F66C89FBEE23308C77BE35E49A47F6694F7604808C4DF3F7A"
+        },
+        {
+          "path": "data/ingame/enemyData/asteroid_AA.n3d",
+          "length": 1491,
+          "sha256": "47040853FB7E52819C873341904A4E41093B30123C6EF21893EC1531463D5FE6"
+        },
+        {
+          "path": "data/ingame/enemyData/asteroid_B.n3d",
+          "length": 1482,
+          "sha256": "A745377B694E6520A6210E6C3D1825A97039A11F0F3DF665F2CBFC8347F470B5"
+        },
+        {
+          "path": "data/ingame/enemyData/astrotest.n3d",
+          "length": 204,
+          "sha256": "B7900478FF560D6450D7E65FCD89FB7F6D66DC5C2A62AAC1D65920C627A5DCD1"
+        },
+        {
+          "path": "data/ingame/enemyData/attacker.n3d",
+          "length": 5292,
+          "sha256": "C6626C8A8832A1252DB6257FC9208519B6BAAF8173A9ABADD725A21E17159DB1"
+        },
+        {
+          "path": "data/ingame/enemyData/attacker/attacker_color_256.tex",
+          "length": 6352,
+          "sha256": "08790E2E619E994FB2D94CF31CEB7056D4515E5A344D5E290DA7CE05DF0A6E06"
+        },
+        {
+          "path": "data/ingame/enemyData/auge.n3d",
+          "length": 5153,
+          "sha256": "D8137BEFD99EC36FA26F0462D333C0476BFCB2A7C4EB8CD7C7DE25BEB6538802"
+        },
+        {
+          "path": "data/ingame/enemyData/auge2.n3d",
+          "length": 3942,
+          "sha256": "7592487003F02A26CA373FD34F119C590E5A1AE27E99379FBAFB85F9DB59DEBB"
+        },
+        {
+          "path": "data/ingame/enemyData/auge_launcher.n3d",
+          "length": 4258,
+          "sha256": "23B23348B555A6432D2632187B625C6D80768EB8C82A1F925D6D3BE8B0FCE77F"
+        },
+        {
+          "path": "data/ingame/enemyData/backfire/backfire_enmey_blue_a8.tex",
+          "length": 376,
+          "sha256": "E8B5F03E65826F32F3B375D89CA301AA8CE2D425A5CD6E0BE50F24615583CBFB"
+        },
+        {
+          "path": "data/ingame/enemyData/backfire/backfire_enmey_red_a8.tex",
+          "length": 436,
+          "sha256": "B11158754F4C163C6576565757A939F82EF8A823E11845A034A9F0905D96E242"
+        },
+        {
+          "path": "data/ingame/enemyData/battery.n3d",
+          "length": 7612,
+          "sha256": "1664CC9AF66C77D928B18DC0EC0E5FC564321EF3FF7B34C1A66588B40CB4C318"
+        },
+        {
+          "path": "data/ingame/enemyData/beetle.n3d",
+          "length": 8596,
+          "sha256": "7BC8B6F49649C9492800FE7FAAB7C7BE4C944A16D458884ED68CF1CDE28AF51B"
+        },
+        {
+          "path": "data/ingame/enemyData/bettle/bettle_tex_256.tex",
+          "length": 4668,
+          "sha256": "98E10CD70C1BE8DB4AEC4B39920A7FEEEA0D203E2AA0CF42F472D9C2F173ECDD"
+        },
+        {
+          "path": "data/ingame/enemyData/bigmama.n3d",
+          "length": 8446,
+          "sha256": "E778C015486C5BCB08EE9A6EB6AC919DB534CC6B805C927E16DA53207F2CCA2F"
+        },
+        {
+          "path": "data/ingame/enemyData/bigmama/textures/big_mamacopy_256.tex",
+          "length": 6348,
+          "sha256": "7AC446117CCBA9BFDA276B288AE3304DACA5E9935B0A58A25D1A27697B0993B8"
+        },
+        {
+          "path": "data/ingame/enemyData/billboardTest.n3d",
+          "length": 450,
+          "sha256": "2C773754185C91F1DF3E2AFEB49C6584E6F2AE555FCDE495CA229DD0AA9833D1"
+        },
+        {
+          "path": "data/ingame/enemyData/blacksmoke.n3d",
+          "length": 362,
+          "sha256": "C3B1E139E15723AAC18A5307209170B95B885C83BF29D11CAE4BE954E34262D8"
+        },
+        {
+          "path": "data/ingame/enemyData/blacksmoke2.n3d",
+          "length": 380,
+          "sha256": "DFAEF6A09737265DDA340664B3DD2109414D091C98D00F2D78E5D569497D2ED9"
+        },
+        {
+          "path": "data/ingame/enemyData/boss.n3d",
+          "length": 52981,
+          "sha256": "93EF16CC093EBADE2FB59F750404E5990B0903CFD5ED550824F7D4A6310B369D"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_astroboy.n3d",
+          "length": 84285,
+          "sha256": "E61DEC5F8D39D140322487CA0C64FBDF1F84CF822FD9E8CA33FAD17634D34CFB"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_astroboy/astroboy_tex_256.tex",
+          "length": 46400,
+          "sha256": "01E1FC9AE78FC36E4240E2CC36F4E0728C88C8C042BC74A2C9B2CDD064E5AB26"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_end/augenlichtend_256.tex",
+          "length": 452,
+          "sha256": "EE38CC4FAF337D668FC7C1B53B0C13C73EEC671296CFA367F496F0ACF862FCD7"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_end/head_16.tex",
+          "length": 2532,
+          "sha256": "00D95EA6D9118F5FF0E6C05F6F6CBA67525A07B20E7C3DBB40AC5E464C0ECC17"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_end/kabel_16.tex",
+          "length": 336,
+          "sha256": "B9B2CFB2A69AF3514C39DE3E85F15B9D2F76A5663D1E6C6ADABA988B1C9105A0"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_end/klammern_a8.tex",
+          "length": 632,
+          "sha256": "8F59CC43B8B125BEE95DA4D2B33B377CF448927AD05663E2279E2E2774C753FB"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_end/metalkrake_256.tex",
+          "length": 53952,
+          "sha256": "957318EB6A92F90A4CC504F03D1F375C5DD7B5B6844B7E88F4CDB41B6EB0475B"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_end/schatten_a32.tex",
+          "length": 192,
+          "sha256": "FD035DBB27506C8BD4A193D81F2460C59D2031293D7B4AC639C85460233676E9"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_end_metallkrake.n3d",
+          "length": 66670,
+          "sha256": "1C73B02671AA14C2D56E97790AFF4E267E3CD6B4E5E9BA3FC19C051F2DFEAF16"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_explosion.n3d",
+          "length": 3623,
+          "sha256": "18A285214EFBAC993BF4E5A906FD981A23210C4199290C1A912ED04716AF7485"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_lava.n3d",
+          "length": 60245,
+          "sha256": "D0731E0C828E1D92C5B3A4FE9503C201BC2E65BD141EC8C83C8861FEE7227231"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_lava/boss_lavass_a8.tex",
+          "length": 1064,
+          "sha256": "843138D359AEDE187355B555C2296BE3A8662A1548274C253E6E6C3A1440FACE"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_lava/motha_256.tex",
+          "length": 54940,
+          "sha256": "C558C22D4BB41A495DDA0305AB417AC52FCF8B01535F410065D31E4C550896C0"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_lava/powertubes_256.tex",
+          "length": 1808,
+          "sha256": "EE7EA8686A2C96DC2180DF3A82440FFA83B470EFC455BF72D4AF0A7E43C443D4"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_scorpio.n3d",
+          "length": 50229,
+          "sha256": "DF3D435DFFA8F6469B5F8741626099D37828970DDB9F0F3A7E0DAB9E97C5D805"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_scorpio/scorpio_map_256.tex",
+          "length": 40412,
+          "sha256": "569657CA4B543F991730BF1A54962CD24EEB4B00EAFD25389D9BFB1EEED7B0E8"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_scorpio/skorpio_gitter_16t.tex",
+          "length": 224,
+          "sha256": "3CA2D62DE1306494BCD533A3C117274570C7BD48E453CAC6A051DFA606782F95"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_station.n3d",
+          "length": 85242,
+          "sha256": "21A1EB7B5D6F5C6BE8051483CAB03D1EC8C7BDE44CD4BECCDD50D5A8525BC931"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_tube/arm_16.tex",
+          "length": 1480,
+          "sha256": "862FC0CB4F32C8C4F78248F2D031A5475E55657EE0718ACCD67EE3DF1C9603EE"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_tube/body_256.tex",
+          "length": 47288,
+          "sha256": "085B6394F17A3D46D0B78259E9EDE721FD8F8482BA159B7499A81D0ACE1DAE8A"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_tube/maul_256.tex",
+          "length": 13848,
+          "sha256": "4578F50D0F20809F5C036B4EA907209E46EDA0E236D6292950A1707625810CC8"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_tube/ring_256.tex",
+          "length": 3080,
+          "sha256": "7BC24B22A38A8B5508D53C370FD900922F802756607970A04E2515BEBFCD8D69"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_tube_rotation.n3d",
+          "length": 51870,
+          "sha256": "CF5FE5EF4568A101A41599D19B75E12B2843317F1CA665E1623DEF80DC2F3BD5"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_water_mine.n3d",
+          "length": 3298,
+          "sha256": "6A14856FA4FEBEB57BBFDA7208AE8FFD652751D0CED9868E77145C215E009D9B"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_water_sub.n3d",
+          "length": 39347,
+          "sha256": "EDF022E79F5013F438EDD4FE1B2467FAB73AFC0F1A87074C11A9E22833E70549"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_water_subzero/subzero_256.tex",
+          "length": 35380,
+          "sha256": "BA1125D01F9264FF663E58D8A5F387133FFEA3876606ABB202D7703A43C3750B"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_water_subzero/textures/sub_waterhimmel_256.tex",
+          "length": 16772,
+          "sha256": "048AE9EFE7D99549BFBE388FB20B074BFBC708DADE078A2D1F07E0FF267650BB"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_water_subzero/textures/wasser_seebod_a32.tex",
+          "length": 12176,
+          "sha256": "F144BBAD2066E7D0AF964241DAD7177532673F18CC194C545D4903BE56B40491"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_water_subzero/textures/watergsicht_a32.tex",
+          "length": 2080,
+          "sha256": "8817B152BC565949A3CA0D97A608F076843706A4EFFD06578A412BE6F75A47CB"
+        },
+        {
+          "path": "data/ingame/enemyData/boss_water_subzero/textures/wellen_a32.tex",
+          "length": 2084,
+          "sha256": "FF87BC106546548A4A86D40BDC5B4B3D531FD3163F35339F300B1D3133119E9E"
+        },
+        {
+          "path": "data/ingame/enemyData/bsdroid.n3d",
+          "length": 3065,
+          "sha256": "9B352629B7A892629899092FC26472CC81A06D753FF75F88BB896F601109FBB7"
+        },
+        {
+          "path": "data/ingame/enemyData/coltest.n3d",
+          "length": 1028,
+          "sha256": "F6F01BEC154AF3380403AF9A73094C642251670FA6A4E67169C9B2F1D7F5E2FE"
+        },
+        {
+          "path": "data/ingame/enemyData/coltest2.n3d",
+          "length": 782,
+          "sha256": "9410D09AA0A708DEE0FC892A64E7328BC03701DCF185A1F1FA399F77E563B919"
+        },
+        {
+          "path": "data/ingame/enemyData/cship.n3d",
+          "length": 8043,
+          "sha256": "5A279B68502C926DEE81207DABEF265657B3C125721866467ECBC1A5D3166BC1"
+        },
+        {
+          "path": "data/ingame/enemyData/cship/cship_tex.tex",
+          "length": 16164,
+          "sha256": "F963CF0AD2A05CE15B79DC936377F1C781F27F70B762C90B21890106BA02286A"
+        },
+        {
+          "path": "data/ingame/enemyData/dark_bomb.n3d",
+          "length": 1087,
+          "sha256": "D06A4FDC29544C1C92E27940EAF64BE48FECF3A986B30FFE4CF5E8CBDBCEF114"
+        },
+        {
+          "path": "data/ingame/enemyData/dark_bomb/lightstrikes_a32.tex",
+          "length": 328,
+          "sha256": "47FB44EFAC9FC389DAD6E3B97F6D1CE68054CE85BF8E5C42FF28ABE81F6FE4D9"
+        },
+        {
+          "path": "data/ingame/enemyData/dark_bomb/lightstrikes_blue_a32.tex",
+          "length": 328,
+          "sha256": "AAD88B845CCEBCC09F261B7EDDEBF1BA310C0F6B6B32754A5B9820BFEC187CAD"
+        },
+        {
+          "path": "data/ingame/enemyData/dark_bomb_blue.n3d",
+          "length": 1087,
+          "sha256": "F4CFF4E3D88A63BEB71D31281D0FC6DC845B08521AB64EDD801384D8AC5A2F56"
+        },
+        {
+          "path": "data/ingame/enemyData/drehschwert.n3d",
+          "length": 6828,
+          "sha256": "D5ADBE389866268DEE2029950318AEC2B49CE4DF393A66890238AAF39E3D8049"
+        },
+        {
+          "path": "data/ingame/enemyData/drehschwert/schwert_glow_a8.tex",
+          "length": 552,
+          "sha256": "BD25BC988D9159B25B6DC88898549011D7794688E0CE1167031D5425461EE0D7"
+        },
+        {
+          "path": "data/ingame/enemyData/drehwumme.n3d",
+          "length": 7411,
+          "sha256": "F36C792BE0AA81EC7C4FE05EC87499341829EFDFD0530131218E17885FE970C6"
+        },
+        {
+          "path": "data/ingame/enemyData/einfachrumpf.n3d",
+          "length": 3209,
+          "sha256": "8CB2F06B9FA2ABFFA4BF0C8FA64DE77A6F6144F7DA5290686EC5FE5B697AD2BF"
+        },
+        {
+          "path": "data/ingame/enemyData/einspritzturm.n3d",
+          "length": 4763,
+          "sha256": "0A1F64BA3EDD40E204AA823E0429EF998C5DC1222034C88F40DEDF6E54CFD6E1"
+        },
+        {
+          "path": "data/ingame/enemyData/einspritzturm/injektion_256.tex",
+          "length": 4584,
+          "sha256": "0556796FD38DCE5EBC6573167E257D9785FEDA87115BED2DBB72D321110F7301"
+        },
+        {
+          "path": "data/ingame/enemyData/einspritzturm/lightning_a32.tex",
+          "length": 1552,
+          "sha256": "4B76CE2740D0F9435CE1F86A473CDC40C9D28E36E63C764621245C6935277913"
+        },
+        {
+          "path": "data/ingame/enemyData/fluegler.n3d",
+          "length": 7137,
+          "sha256": "A4C951F08D0EA511503E649A1C33213A3E61620B3CFAF019480075C0E41B0D3A"
+        },
+        {
+          "path": "data/ingame/enemyData/fregatte/frigatte_256.tex",
+          "length": 52888,
+          "sha256": "A85BD5D9EDAD11CA78B9F026051D50D0F87D46298EF566BABFFB1F2784B96AAF"
+        },
+        {
+          "path": "data/ingame/enemyData/fregatte/light_a32.tex",
+          "length": 208,
+          "sha256": "E2927A79FF6CA1A8215D0E44E9CF84E897A8890C2767A3BE6691FEEA27CF0501"
+        },
+        {
+          "path": "data/ingame/enemyData/frigatte.n3d",
+          "length": 20933,
+          "sha256": "8B95A13D14F22A547D9C92ACBF1C14F1E44DF87917C01E9130FB7C881151A5BB"
+        },
+        {
+          "path": "data/ingame/enemyData/frigatte2.n3d",
+          "length": 14059,
+          "sha256": "4F950881BE4DF934F6BD1D34FA559CB4213E75B09CBEBD7B65BC97C1817CDC93"
+        },
+        {
+          "path": "data/ingame/enemyData/frosch.n3d",
+          "length": 10973,
+          "sha256": "12E5C2B26401D99C469ABC50897549C68217F885C84B20E92A9A2F076D7455AA"
+        },
+        {
+          "path": "data/ingame/enemyData/generalEmit.n3d",
+          "length": 436,
+          "sha256": "59E4B4204A81AE1CC875B7D835B6A8F3E9B71F353742C1C2E9A782AD12F3E30F"
+        },
+        {
+          "path": "data/ingame/enemyData/generalEmit_z.n3d",
+          "length": 339,
+          "sha256": "0191FCA0BC6C0A24F1B65D4FB158E3A40A05E8DA69955021B077D1ABD1941F6C"
+        },
+        {
+          "path": "data/ingame/enemyData/habicht.n3d",
+          "length": 5429,
+          "sha256": "8083238F3B962A4555BFB4A13A1B2BBBDDF1AEB1B3594FC9C84B43EA4E7457A2"
+        },
+        {
+          "path": "data/ingame/enemyData/habicht/habicht_auge.tex",
+          "length": 232,
+          "sha256": "CF80BE5D4B4C409E51F74668C9FB0FA4D6D639E8D75F9606804A4E00FADD8238"
+        },
+        {
+          "path": "data/ingame/enemyData/habicht/habicht_gun.tex",
+          "length": 176,
+          "sha256": "D9E5664CC8F13CCDFE77862425BB36757973C845963DBF341FA444BDE1524E6E"
+        },
+        {
+          "path": "data/ingame/enemyData/heuschrecke.n3d",
+          "length": 8430,
+          "sha256": "CF5DAA0EA5E06961DEAB7501E5C6439A41B2023F16E3A94DDC4D9BBD4D06B1E5"
+        },
+        {
+          "path": "data/ingame/enemyData/heuschrecke/heuschrecke_256.tex",
+          "length": 4328,
+          "sha256": "7E42DDA7BBD34B902216FC3E59FA7ED820655EB1C5A354A22F78F14BFBAE6783"
+        },
+        {
+          "path": "data/ingame/enemyData/hover.n3d",
+          "length": 8272,
+          "sha256": "06D1658581730770703C292D80388A4A294DB9EB6CAFE41C5D47078D4222A209"
+        },
+        {
+          "path": "data/ingame/enemyData/hover/hoverrotor_256.tex",
+          "length": 13916,
+          "sha256": "A7FB2C74F691EFF790F7FFC1A13DACAF7FBE3394A7CB6AD0C2C6E54C28980897"
+        },
+        {
+          "path": "data/ingame/enemyData/kakerlake.n3d",
+          "length": 8185,
+          "sha256": "773005744EB2B9AAC7C0450A1F1C23A1F91C61B42DAC77ACE0CD5852F0E537CF"
+        },
+        {
+          "path": "data/ingame/enemyData/kakerlake/textures/fuehler_16.tex",
+          "length": 476,
+          "sha256": "F5B5C7057A883EF0E7A8BA6AE755424934BB98387C37B86731D13EEE332B1551"
+        },
+        {
+          "path": "data/ingame/enemyData/kakerlake/textures/kakerlake_256.tex",
+          "length": 8736,
+          "sha256": "0A4B9253655DEB210DA4E4D3147F9B7D14D702A02855701A548211458AB26A8E"
+        },
+        {
+          "path": "data/ingame/enemyData/kakerlake/textures/kakerlake_extensions_a8.tex",
+          "length": 784,
+          "sha256": "BA5DFC3D4D07A9D76B9562D770C6148C1797A6AD4173809A54A592B722F1F1E1"
+        },
+        {
+          "path": "data/ingame/enemyData/kalamare.n3d",
+          "length": 3990,
+          "sha256": "6D137655B3D0FC29011FAE340F71B8B23533CD70F0981BBCD6D7DAB2E3D31091"
+        },
+        {
+          "path": "data/ingame/enemyData/kalamare/kalamare_256.tex",
+          "length": 10444,
+          "sha256": "2C97CBFB4C33828A29F1EAD30C598B2A77235EAC28B54DAC7571EE9A11EACFAD"
+        },
+        {
+          "path": "data/ingame/enemyData/krabbe.n3d",
+          "length": 9711,
+          "sha256": "B8E0562F57C74B317809C0B12A77DBA172493513567B5A19FBACDA5A71E6F14F"
+        },
+        {
+          "path": "data/ingame/enemyData/krabbe/textures/krabbe_256.tex",
+          "length": 4120,
+          "sha256": "2357A6993FA9739062FBD7F4EB1D6B55BB08FD0C7C80A4A7B025A6FFC63CFACE"
+        },
+        {
+          "path": "data/ingame/enemyData/kralle.n3d",
+          "length": 4671,
+          "sha256": "8D43A1E591973B4217A38A081735AA132C6C8D8F8CCC7FB30F52D580EF4FB800"
+        },
+        {
+          "path": "data/ingame/enemyData/kralle2.n3d",
+          "length": 4672,
+          "sha256": "3111FD765EBBF5245EFEE53D1084C0D88E144CEA4E04D97D859B4D3164677365"
+        },
+        {
+          "path": "data/ingame/enemyData/lada.n3d",
+          "length": 7054,
+          "sha256": "4B483F7E8CE6A00E747E9087A5FF35156086E6AD75550077410A5726551A82AA"
+        },
+        {
+          "path": "data/ingame/enemyData/lada/lada.tex",
+          "length": 14960,
+          "sha256": "9298AC9BB34E8BFD42019B69D2D1AFA5F4B7838E7B91ADD8119F723A6FE65A66"
+        },
+        {
+          "path": "data/ingame/enemyData/laser.n3d",
+          "length": 3594,
+          "sha256": "0114BF1C278973B2796A15473FBB6B6BD49179F7F86B9DD372279355C83B460C"
+        },
+        {
+          "path": "data/ingame/enemyData/laser/laser-blue_a8.tex",
+          "length": 1804,
+          "sha256": "17EC090CAA266B678B2E96B7B7D228FF183849E2AF2C2F4C2AC2C8EF799F46C8"
+        },
+        {
+          "path": "data/ingame/enemyData/laser/particel_a8.tex",
+          "length": 300,
+          "sha256": "414CC6461455F8E195A915FF37EC251C2B04BA7F546816BD42481994D64EA31E"
+        },
+        {
+          "path": "data/ingame/enemyData/laser/particlefield_a8.tex",
+          "length": 2632,
+          "sha256": "1FAEA397C47DC0C2C4FF720DCE503C8D1E0634D2C0581891BAB7B367354B52AC"
+        },
+        {
+          "path": "data/ingame/enemyData/laser/particlefield_weniger_a8.tex",
+          "length": 2604,
+          "sha256": "C9E10E6E90063592A8833D5D7C6252C6A1C84CE736EC01925F0A994BC7A02610"
+        },
+        {
+          "path": "data/ingame/enemyData/laser/star-blue_a8.tex",
+          "length": 1552,
+          "sha256": "2D295C575BC59BBA53AA698DC3A5792DA69A82C9829344CDAEEA7480490EE124"
+        },
+        {
+          "path": "data/ingame/enemyData/laser/star-blue_quarter_a8.tex",
+          "length": 1324,
+          "sha256": "851699A82E95CBDCAC6D3E267BDC9D6A3C29132DD8F5994DAC15D417A73E175A"
+        },
+        {
+          "path": "data/ingame/enemyData/lava_gysier.n3d",
+          "length": 4116,
+          "sha256": "0A1E829F13854F666960C7E1E4F29F2013ABCE1088D69D216B0177BE527FF492"
+        },
+        {
+          "path": "data/ingame/enemyData/lava_gysier/lava-blue_a8.tex",
+          "length": 1764,
+          "sha256": "07714D0C8FDF69F4233E30FC8C37490A45D92B29096BC006001DA74936663592"
+        },
+        {
+          "path": "data/ingame/enemyData/lava_gysier/lava_particlefield_a8.tex",
+          "length": 2440,
+          "sha256": "9E2C8DA2E486D0EDE3E010C034F327B7DAAE2EF34CFC233668190532EC5C253D"
+        },
+        {
+          "path": "data/ingame/enemyData/lava_gysier/lava_star-blue_quarter_a8.tex",
+          "length": 1160,
+          "sha256": "93A0B0BC11AE5404AFF99A637A9FDF424A46BE2ADC72FC89B1F81D99FDD24E05"
+        },
+        {
+          "path": "data/ingame/enemyData/lavamare.n3d",
+          "length": 3550,
+          "sha256": "0F0D819F689125C50EBCDFA6AFA785C46825746EAE6D7B08004D63E276472DFA"
+        },
+        {
+          "path": "data/ingame/enemyData/lavamare/lavamare_256.tex",
+          "length": 4108,
+          "sha256": "AC9D6862B8E9A13CEB8B2F6BDCA2FD4CD67F682329D62BB766E3CF60B0C8CC12"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/3dot_neg shoot_a8.tex",
+          "length": 884,
+          "sha256": "B456F591B992DAEF71A105F2944977DF8E1E7DEE7BA92C82917E2D73E055399F"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/abgasstrahl_red_a8.tex",
+          "length": 572,
+          "sha256": "74B4B3D5670F33CA66E7E23F523B31DD3B9549582E06E9D73E67994E60E32468"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/generalemit_a32.tex",
+          "length": 524,
+          "sha256": "C56808610B5E4114555421101A9DDA9DE138E60675ECD720C6AD3F4B71DBE542"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/gold_verlauf_a32.tex",
+          "length": 268,
+          "sha256": "BD0501C64AC58986C56EDFD00605C5D15D6AC2207170D21F4E05C77CC3EF058D"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/gradient_a32.tex",
+          "length": 244,
+          "sha256": "927F90E1CAC951964BBAFEAD4A98E15E9354241BE4178C98E44E2EC30D5179B8"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/laser_thine_green_a32.tex",
+          "length": 128,
+          "sha256": "9C77F8019717ED22CC94385E0FC546FB4C8D61CA8D2B11C85D5A8B14CD578A27"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/light_halo_a8.tex",
+          "length": 240,
+          "sha256": "792C5E4CFF285814995375C23E079478EB1FF166E087CD5D4A7F7F6BFE29F54C"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/nightrider_16.tex",
+          "length": 216,
+          "sha256": "A61462B3C10A78665E79BFAF1C26B4150D875A22A597E119387DBCB2E18DADDD"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/shockwave_blue_a32.tex",
+          "length": 252,
+          "sha256": "4B2D8786DE3AD3EEDD6524960014C0F2C90C93ED23C43A4EF78F1CE5C62E073F"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/shockwave_green_a32.tex",
+          "length": 352,
+          "sha256": "09FD02383AE7AAE77DBB7D27F214C6FC40F9E40CA68B7A43673E948CD903364E"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/shockwave_red_strikes_a8.tex",
+          "length": 1048,
+          "sha256": "DCE6C98401617F87E655E0EBBBA6C2E3E3B0F1D3460A15DD8D52078162AD927B"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/spot_a32.tex",
+          "length": 1352,
+          "sha256": "2DB85697428D8FC3D56F1CC641305DC1DE3E1042364B498B9130EA5C399FF3A1"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/star_4srike_a8.tex",
+          "length": 400,
+          "sha256": "30BD276D554508C90F00F2569BB77C773A464A0DF23F843F1041C82B716E5DC4"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/star_orange_a32.tex",
+          "length": 2028,
+          "sha256": "7C91055695DEBCA0920FB1670B39D1F4962537715DDE76FF9BD90561A1E65978"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/star_red2_a8.tex",
+          "length": 860,
+          "sha256": "5C8C332D4F6EAF12381D32CCB78F3533AA584B0E930CE1453779D790BC9C2D08"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/starfield_shitge_a32.tex",
+          "length": 476,
+          "sha256": "5041F10E4F4FFE15C536ED24B47F53D39008BF15E896E9A32B5A4F66948B8C4B"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/stargmagenta_a8.tex",
+          "length": 800,
+          "sha256": "16AD11993BD9FDC2E7E5DBB6901D66DD11A10DB6560CDB5AE09E94BC236F5CB2"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/strahlenring_bunt_warm4_a8.tex",
+          "length": 1508,
+          "sha256": "193B43FA29950EE289820CC0803AC49359BCEDA112EC63FB5C7ACB92270B2A6A"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/strikes_a32.tex",
+          "length": 2548,
+          "sha256": "DC2D1ACEEE5B18204CFF144E75B8D3459E6DC1054602C0621C0A0D5FB50CF2A6"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/tube_box_light_16.tex",
+          "length": 172,
+          "sha256": "EB16E09A718F9D7215E636BCDAD68BF3703C77514B8EAC1C450C0980A00EE1FE"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/white_star_a32.tex",
+          "length": 456,
+          "sha256": "FCD254A10DB1731538119135D5641C3438EFDBE600B85F10109583D7AAF983F6"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/white_star_hires_a32.tex",
+          "length": 1188,
+          "sha256": "9D283F2B6ED070837850D230AB07127FDCC445AC407368772A6023EDB8D66152"
+        },
+        {
+          "path": "data/ingame/enemyData/licht_effekte/whitesmoke_a32.tex",
+          "length": 852,
+          "sha256": "781EB37652048D223CCA32BE140B594FFE84E2C44C160AFBE96572CC39B53C84"
+        },
+        {
+          "path": "data/ingame/enemyData/manta.n3d",
+          "length": 3205,
+          "sha256": "F59F0B17AA66ED5EE3ED2FD3EFED358D50AEEFFADB4EF9611F7B87A6D242AE24"
+        },
+        {
+          "path": "data/ingame/enemyData/maskenmann.n3d",
+          "length": 22262,
+          "sha256": "2826215EA1AE8AC2183F3E9019E65B41460AD6878CAE5E9F98BE851A7BAE2A70"
+        },
+        {
+          "path": "data/ingame/enemyData/maskenmann/textures/maskenmann_arms_256.tex",
+          "length": 1084,
+          "sha256": "7CAC6BFF37D8C341E829B782883922A81A8B6C5748A90223B0E5F54A4E5EBB0D"
+        },
+        {
+          "path": "data/ingame/enemyData/maskenmann/textures/maskenmann_elektrik_256.tex",
+          "length": 784,
+          "sha256": "17AA330D565385EC2D618B67E1E3758ACB535CF79F12C9ADAC38AADBF0A3C432"
+        },
+        {
+          "path": "data/ingame/enemyData/maskenmann/textures/maskenmann_gitter_a32.tex",
+          "length": 224,
+          "sha256": "7BB8D72D743FC067425DB0A6FD1DBAB3D50EC970B4E10B484B6D51AD421E4074"
+        },
+        {
+          "path": "data/ingame/enemyData/maskenmann/textures/maskenmann_metall_256.tex",
+          "length": 8188,
+          "sha256": "269382EB0175BF74DBF0009A8D222340043A6FA4274218954F2D58E0CA2FFA89"
+        },
+        {
+          "path": "data/ingame/enemyData/maskenmann/textures/maskenmann_zaehne_a32.tex",
+          "length": 88,
+          "sha256": "283E473240831720ACE381EED8901B3FCBEA7E517793F8325F310A79E4E9694D"
+        },
+        {
+          "path": "data/ingame/enemyData/mine_boje.n3d",
+          "length": 3488,
+          "sha256": "21BD6426177B5CDDA6806271D44EDFAF6C6A994B39037A23157460BF946BFF96"
+        },
+        {
+          "path": "data/ingame/enemyData/mine_standstill.n3d",
+          "length": 2641,
+          "sha256": "062632447C39FB5C94E105B30349021517B098F5620CC94888EAEBCEC79101A7"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat.n3d",
+          "length": 18067,
+          "sha256": "26F3E7AC922AE50FE6E926C7612B03BF521E512D8095585D396F9BD6B557EF9B"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/backdetail.tex",
+          "length": 368,
+          "sha256": "C0DE6F8CD2E20C0B379D322C21AACAEEC22EEA3342586124D83E12ADB2B2656D"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/backeng.tex",
+          "length": 14644,
+          "sha256": "4BC4338A0096CD4E510E04D214D0637A3D1B25487074B49B87200F0E1CCCA913"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/canon.tex",
+          "length": 912,
+          "sha256": "03F721DFBC1747C41D5E54C0679FA830D5639BAF5F6680B1F51978DC3B7CD993"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/coque.tex",
+          "length": 3328,
+          "sha256": "814913BD502C8D5B5CF2CA3B1B278033E710907F1FA6562E4BD49A9B41C5EDD4"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/deckwall.tex",
+          "length": 3448,
+          "sha256": "C25EAA0D9DC649C377692F3E63F2B21B66D1058C4A53FC9F29E94B2AF553665A"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/deckwall2.tex",
+          "length": 5952,
+          "sha256": "9D7B929B9FE51CC4AA7C0B342FB72D4C270E161BFD114BF5DE8E2D29CC9BB3B4"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/detail3.tex",
+          "length": 640,
+          "sha256": "62A8D5E7AA84C0938C5107CF51289EAF62F5E2AF3665A3ED63C24AB1FE089CE6"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/dirtywhite.tex",
+          "length": 72,
+          "sha256": "3529DE8C7342CF44FA757E06172450331F20929236F247E5ADB28D7DD5954C08"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/floor.tex",
+          "length": 1896,
+          "sha256": "12F223C783774371BCFDB5BC3C80B9F2A63AD503A77EFDF82C9EB2F32185AFCB"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/roof.tex",
+          "length": 1756,
+          "sha256": "6A8FC5DEF5F7C1BDE1638F68F79BC2226ED0C69746E6BD4F3E61373C96A6AB44"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/sidedetail.tex",
+          "length": 1016,
+          "sha256": "86E7D117575ABF80AFBC67776EFB9DCFFADA14E8A5F6151D231C1E2A38F33184"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/sidedetail2.tex",
+          "length": 2076,
+          "sha256": "1A8E910E51B2CB687CEE1202AF3729B490CB965AD6FB6FF94739503670D07C48"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/step.tex",
+          "length": 660,
+          "sha256": "EE7E12CDFEEB9CD463F458506EECB881406CAECDC926276D3844320A4C3A51DF"
+        },
+        {
+          "path": "data/ingame/enemyData/oceanboat/wing.tex",
+          "length": 1456,
+          "sha256": "B22669AA0D5C9386818EE35F3DE3159ABDF06B246D9F8AF6D7F4BDB834FF6FAB"
+        },
+        {
+          "path": "data/ingame/enemyData/pulswurm/pulswurm.tex",
+          "length": 9560,
+          "sha256": "27655550EED0BA9C5C116FAD8A6BD73A604D7CFA93EC102EAEB72B98920A4FB6"
+        },
+        {
+          "path": "data/ingame/enemyData/pulswurm_ende.n3d",
+          "length": 3298,
+          "sha256": "57CCF41B69518F3D8894ADE45E0E070503866BD9AACAE73D385A897CD8F54FC9"
+        },
+        {
+          "path": "data/ingame/enemyData/pulswurm_head.n3d",
+          "length": 3402,
+          "sha256": "11A3DA17AB20D519BA12126F4CA4D43793A392812C647BAB22DF55552025CC9E"
+        },
+        {
+          "path": "data/ingame/enemyData/pulswurm_segment.n3d",
+          "length": 3310,
+          "sha256": "4B19A12485CFEB45F04628B7BD704A912ED30127A96B2D07B98A63C39E00FCF9"
+        },
+        {
+          "path": "data/ingame/enemyData/pummel.n3d",
+          "length": 3397,
+          "sha256": "0E417FB53F7C91A0F1D53CF6A22C9F95F9EFE3D3E21D3F2BDBEE3FF0014C623F"
+        },
+        {
+          "path": "data/ingame/enemyData/pummel2.n3d",
+          "length": 3628,
+          "sha256": "5FDA3773671BB402809B75E6DC10E615913C6BBFBC58FDF1AB8295C55BA7E1C4"
+        },
+        {
+          "path": "data/ingame/enemyData/rakete.n3d",
+          "length": 1405,
+          "sha256": "ABEF27FAE8C9133BB67B7DDAF0F8B38A48E9B3296024AB8F7E64677F0519754B"
+        },
+        {
+          "path": "data/ingame/enemyData/ringer.n3d",
+          "length": 4909,
+          "sha256": "A2C47E04C6E2F9906AF828359208D885B8BD9759160760913B29733B285B643B"
+        },
+        {
+          "path": "data/ingame/enemyData/ringer/textures/gun_front_256.tex",
+          "length": 1808,
+          "sha256": "F7672F574283927780B2EC2C3C5B093CD7C72CAFC44F2FF9017A3A6437A48AFC"
+        },
+        {
+          "path": "data/ingame/enemyData/ringer/textures/gun_inside_256.tex",
+          "length": 1048,
+          "sha256": "A72EFF87A22D53F7C53F6F2B1B0844FB09BBAB3A80E07277D4DFFA34BEAFE376"
+        },
+        {
+          "path": "data/ingame/enemyData/satellite.n3d",
+          "length": 12803,
+          "sha256": "C7AFA25D154B51B16A421BD06339A8F8511A883C26D70E1302DCA1800CCBCE1A"
+        },
+        {
+          "path": "data/ingame/enemyData/satellite/satellite_256.tex",
+          "length": 16700,
+          "sha256": "713655A895FD9E27638FCE3347E19E1B9A42E747D1D5D1950BC66B586F66748F"
+        },
+        {
+          "path": "data/ingame/enemyData/satellite/satellite_holder_256.tex",
+          "length": 1528,
+          "sha256": "96114D2FE3D2467C54A240588D086B816FBF65150CB00CE5DA72290BCB457F16"
+        },
+        {
+          "path": "data/ingame/enemyData/satellite/satellite_panels_256.tex",
+          "length": 3204,
+          "sha256": "669DA7A58A0363A6A1B68A770AB481B3261B686A5A6EA6C3BD50BCDFDD4B1467"
+        },
+        {
+          "path": "data/ingame/enemyData/schwanzler/schwanzler.tex",
+          "length": 5572,
+          "sha256": "21B4000987EFF0608DC6108690731C5A2B400B7CB8733FB8D5AF85A12B06257E"
+        },
+        {
+          "path": "data/ingame/enemyData/schwanzler/schwanzler_perle.tex",
+          "length": 832,
+          "sha256": "8103F3F1351EE17E224D4D73723773B47A6E34FC21D1501709E7833E910C1E2F"
+        },
+        {
+          "path": "data/ingame/enemyData/schwimmer.n3d",
+          "length": 7019,
+          "sha256": "B2981F0EE68DF61287AF41301023EE3F7D97744E4EAD1F1086505B5207F7AF2B"
+        },
+        {
+          "path": "data/ingame/enemyData/schwirrer.n3d",
+          "length": 6973,
+          "sha256": "E0E5224D7A12551C7A5A935F8502FDCC83067A55D9096F26CE0B7EBD2C5BABB4"
+        },
+        {
+          "path": "data/ingame/enemyData/schwirrer2.n3d",
+          "length": 6943,
+          "sha256": "F82117DE36C98E4950E2815B8E60FCEA66E7304ED5D96EC6A98B0BD7A420C701"
+        },
+        {
+          "path": "data/ingame/enemyData/shadow.n3d",
+          "length": 466,
+          "sha256": "CDF42A0417FDC9FDC1CA90E223DC289832AD10CA3FDF5126F48A3A5F1D01B141"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_3dot_neg.n3d",
+          "length": 397,
+          "sha256": "BDDC1B4570F614CF4CC6BEA2ADB9461207FEEDDC17EBE01038BF6B768C4E6BB0"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_3dot_neg_flash.n3d",
+          "length": 370,
+          "sha256": "33A92CF619EC1514C9D0AB4F79A2F7FDA0781B1789AC7BE935927FD7DB4282CF"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_blue_s_3.n3d",
+          "length": 335,
+          "sha256": "859133C2EC7D38C3E661F28E4F1EFB88DF94F0D4DD1D1FFF03884828600FA2D4"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_emit_blue.n3d",
+          "length": 380,
+          "sha256": "A39903212E309BD69266A0A85A5AF1470431E019306CAD7552B886649BAE8270"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_emit_blue_ball.n3d",
+          "length": 483,
+          "sha256": "37CB870E31822330DBEDFB53AA3FD30A7C5B103988171A1A2BAD6C83AC89B5C0"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_emit_green.n3d",
+          "length": 385,
+          "sha256": "CDAC25A94F7547444548A3FD59BD56DB13323B023127B550CC4BE3C7F1A11D78"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_emit_green_ball.n3d",
+          "length": 484,
+          "sha256": "2EE8C98814A7CD9842FF010E2BE36047055222BAF691082A393D388D85CCDFDE"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_emit_mag.n3d",
+          "length": 379,
+          "sha256": "0F48E6B4731554471C0EAA9AA0AD6C5933132E55F81AA53D3245191F9087216D"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_emit_mag_ball.n3d",
+          "length": 482,
+          "sha256": "A4669C59BB98FC2AC621B11BDAE5DB526A714273FA9EE7973A2968C4DFFE9946"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_banane.n3d",
+          "length": 381,
+          "sha256": "D8B04A8ECCF0E33CF8D14C711FA9C25DE5AFF7AE206942067799BA7AC4CA7713"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_double.n3d",
+          "length": 423,
+          "sha256": "4E581FDD20B134EEA3A51D86FCB02EBC1C3A7A0DA0544DAEA036091C625ABA5F"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_laserzack.n3d",
+          "length": 753,
+          "sha256": "D2436EBE0C301AB7702BB6ECD05D6B571F143220EE80B27C874B32E068FD7087"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_long.n3d",
+          "length": 496,
+          "sha256": "A4BD41AEC209AB0EFB906B55DFEA0938DFA083613373E4B65DD8B85E7233BF70"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_long_green.n3d",
+          "length": 356,
+          "sha256": "450B62D29BF51BC70487E988410A75FB33203AA464D2DC81D456603299C9C741"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal.n3d",
+          "length": 289,
+          "sha256": "5949307D9550EC07D65D9C079D28AA7943BD08FFB75C23E56FBCBCED6CD824D8"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_long_a8.tex",
+          "length": 776,
+          "sha256": "F39788595B31DF05423769712576F47DED0659962B0E038B23C3DB8E28B069B7"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_long_green_a8.tex",
+          "length": 284,
+          "sha256": "38C6C15F17088EE7AF8A9D694AFCA4EEEE1625D5B97B7A03140F6834A6E4F1E1"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_normal_a8.tex",
+          "length": 192,
+          "sha256": "A14D064D17D4EE955D74207673F292068BEDAB22D0853D9091EBBCC3AF8AC70C"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_normal_blue_a8.tex",
+          "length": 200,
+          "sha256": "D1717209E9C66123D3081D423CF9B29DE0D5F8EA2F50C3985CD441865B133AF9"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_normal_green_a8.tex",
+          "length": 196,
+          "sha256": "B89D727E7011557FC49122886435EBE63AAB09EA3B34D5E17761AD524669AFC2"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_normal_mag_a8.tex",
+          "length": 200,
+          "sha256": "571CB7BB13FD49691531CF378393A0BAA377394199923533A8866F868416261E"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_slasergreen_a32.tex",
+          "length": 168,
+          "sha256": "5D15A1A2A1265D3B52CD92EDC7D0014213FA03D854F8E31F38E1F8F34D0CDCC5"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_triangle_a8.tex",
+          "length": 232,
+          "sha256": "B3D1B6E0088227CD6CD5E7F0338580605E488AC0D3788E51478964DF08AFE477"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/enemyshoot_twirl_a8.tex",
+          "length": 376,
+          "sha256": "2F32F3D16AC3FAAA8A5ECECEE116345FE1640AA0EF25542C295AA5F0BAC9C8C9"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/laser_blue_thin_a32.tex",
+          "length": 168,
+          "sha256": "960EABB6D22F3A2795DF1D01FEA3A02AF7676A1022F8BD5D55C2F3FE3BDF28FF"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/laser_red_thin_d_a32.tex",
+          "length": 172,
+          "sha256": "3D1C20B5D128AF6AB89C0AB33BB03EE10504429B6F24FDC51299773AEA013631"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_emit_ball_blue_a8.tex",
+          "length": 216,
+          "sha256": "D31FDCCC2FCD2DFDFD42E4A704E99727D4FC37493EA3FAC2C27001D8916D6CEC"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_emit_ball_green_a8.tex",
+          "length": 220,
+          "sha256": "D7E20AB6D0DAEE0276517AAFFD6FD491594A92D7F3A5D0FD5B670C12857D3456"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_emit_ball_mag_a8.tex",
+          "length": 212,
+          "sha256": "35D0A6F85D687667C928F4424A18FAD1C50B6A48AC1BB1526EB6909AF0B189B3"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_emit_ring_blue_a8.tex",
+          "length": 260,
+          "sha256": "5D47D41441D55A8164C6B4BF650081FB358E1F5AE385A19C02A2BE7190E57493"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_emit_ring_green_a8.tex",
+          "length": 252,
+          "sha256": "5DE02EE3DAE14971C14F5F3BAA3AC84E244BB4B2FF9CDC0B45893920352E8C1A"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_emit_ring_mag_a8.tex",
+          "length": 236,
+          "sha256": "6B2E9EFD9B7F6B2F545061E1392F06E99373A44A0FA77CF36B0E4295FF0AA468"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_laserstop_blue_a8.tex",
+          "length": 168,
+          "sha256": "5CAAD5E75509FDFD6E88DB52BCEB799571442330FC422749A3F5A21FDFF996E5"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_laserstop_green_a8.tex",
+          "length": 172,
+          "sha256": "0D57F95DD5F215F475AD4691FFB8685CF20EAE49083725FCABAF3A9BCA3104EA"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_laserstop_magenta_a8.tex",
+          "length": 180,
+          "sha256": "89C3D480607F0CBF91CFFD14CC04165194D69A9F428D560BE35C9F5C017C76CE"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_laserstop_red_a8.tex",
+          "length": 176,
+          "sha256": "F2C54E9FB489F96CE008181ADC2C1267A0C3D2EE6C4CF3540B55A53100C6BB66"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal/shoot_slaser_magenta_a32.tex",
+          "length": 168,
+          "sha256": "88A4DE014BC2709469A659F7B0E6C0292293842982DE01E1FA0011099873DD46"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal_blue.n3d",
+          "length": 297,
+          "sha256": "B65018059C33B175E4BDC8539BA89F6EEF6633618252086A127562B25CBB0E04"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_normal_green.n3d",
+          "length": 296,
+          "sha256": "C8F0A486345E40F432A53E157663C36D469DD00906B47CAE2EDF4789C50ED3FF"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_star.n3d",
+          "length": 620,
+          "sha256": "E2CE603E97B28ADB27BD47DED45903097F429B14AAB9B3F3578C1998A5371F76"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_star_red.n3d",
+          "length": 625,
+          "sha256": "682D2BDEE420A24784E318E1091BD0A720F301ED6951946BCFF4BDC83986AD50"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_triangle.n3d",
+          "length": 396,
+          "sha256": "6FD5A55679BA71625E747C82B8BB39FBBA6D3A471E8E7036EC45C78176EF166E"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_triple.n3d",
+          "length": 504,
+          "sha256": "51D2AAA3DAE97F55D44E1F18A761B9322F8FA2429D8C17F760A36BBD264A4D9D"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_triple2.n3d",
+          "length": 509,
+          "sha256": "BC0EA44EA11A84ADFB47E0ED2550CBA633CCD7E3BED21DD0ACB9D22184AC7A01"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_enemy_triple3.n3d",
+          "length": 509,
+          "sha256": "79106BA1AB5B1A185F6079776C3EFE3E64D8A14EABD3731AFFFC92068090B9A6"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_laser_blue_long.n3d",
+          "length": 381,
+          "sha256": "09C1A06A7FF4AC2D5C9B4966ED3AD86709954F0DC8CD82F667E87403C17A528A"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_laser_blue_thin.n3d",
+          "length": 759,
+          "sha256": "3E356FE707BF2CDBAD894BB5B99014EFC534E0AE1F59067B3B85EE7A44B9181E"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_laser_green.n3d",
+          "length": 756,
+          "sha256": "5D2FEC6BBCB5E30BBD93781A76E2584CE669CFD1E316DE02E114E7A4AF852567"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_laser_red_thin.n3d",
+          "length": 773,
+          "sha256": "47F8D0EE107B5DB67F40F3FB176919A72F48DD134F6A040C12BDBEEECBA29BCA"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_laser_spread.n3d",
+          "length": 1737,
+          "sha256": "5604F77CCE6DF9D606F47DF1BE58E7ECA1F940BAF884482DAE1D3E55DB40DF8A"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_lava.n3d",
+          "length": 384,
+          "sha256": "20D93CEEDF29F5EB407FA9E547CB21597157444BB210A3D97736908AE03C4BB2"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_ring_squid.n3d",
+          "length": 499,
+          "sha256": "500125B5F9A9B13C83BC9016D43798C4E93C0521184871433D642842002EED33"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_ring_squid/shoo_ring_squid_a8.tex",
+          "length": 556,
+          "sha256": "04F0E067B25E6C54BEA20D7D4417B4E2CB9C8A5FD9905BC108B243264EE16CFA"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_small_green_star.n3d",
+          "length": 417,
+          "sha256": "B03FC51C6DAFF5AC5DF55A90531E1E8E799DB82CFDF9DD0E260618DD679B5CEA"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_small_laser.n3d",
+          "length": 291,
+          "sha256": "9ABC9481680DACC3626C49203BECE034CC6F4AB8507971833C5A26AFBE523152"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_small_laser/enemyshoot_small_laser_a32.tex",
+          "length": 180,
+          "sha256": "74AB7885F4CE3572BCE5DC672A02DD423601FA924900989814C5D8F10E1F0754"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_small_laser/small_laser_blue_a32.tex",
+          "length": 180,
+          "sha256": "EADBAF9FE6203484DA556E2E108322CC7D1D66FCB1A32B2FD6555B03E7942F83"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_small_laser/small_laser_green_a32.tex",
+          "length": 180,
+          "sha256": "7ACAFA2465D32FB33E9AC48798E10AB2AB76E2571CF03BFF0199F10660728CCD"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_small_laser_blue.n3d",
+          "length": 296,
+          "sha256": "250587232FA5C86BBF6AF2FF7D8B6D5C9F25F34C4739E26733BB5D87FE0722A0"
+        },
+        {
+          "path": "data/ingame/enemyData/shoot_small_laser_green.n3d",
+          "length": 297,
+          "sha256": "76401DDAB288DFED46CD288951F1BC3BDCC79D76F37838A6EBFE9E1C03EB0FFE"
+        },
+        {
+          "path": "data/ingame/enemyData/spange_circle.n3d",
+          "length": 3055,
+          "sha256": "4F447D05A340712E73AFFED8BC55F69ECF8AD62B57342D4EA894F7155BAC58C2"
+        },
+        {
+          "path": "data/ingame/enemyData/spange_normal.n3d",
+          "length": 4116,
+          "sha256": "5DB3EFE0BC40C16BE6E31D591E28F3AF3841D63A471810909A669A9D7CF71A5C"
+        },
+        {
+          "path": "data/ingame/enemyData/spange_torpedo.n3d",
+          "length": 3425,
+          "sha256": "B5CD6CD72590B85BE24CDFDC296D021B086D1910CF37BFA8525A5CF188314E4F"
+        },
+        {
+          "path": "data/ingame/enemyData/spin.n3d",
+          "length": 8012,
+          "sha256": "375A67921C2952286086D30C4EC1C0EFF812B2E048FC967ED0576590CD770A76"
+        },
+        {
+          "path": "data/ingame/enemyData/squid.n3d",
+          "length": 6419,
+          "sha256": "7C31F779B84A6AD9CCAE2EA909AC672BC42F39F6F1BD0F746CA54AA611C17B57"
+        },
+        {
+          "path": "data/ingame/enemyData/streuer.n3d",
+          "length": 4953,
+          "sha256": "139B293F65A927596A213035F9014C7A1BE568AF5565103D03CB6C53F5140094"
+        },
+        {
+          "path": "data/ingame/enemyData/streuer/streuer_256.tex",
+          "length": 8400,
+          "sha256": "EA5C9A716120E7E7C91123FDA50027E22663AF5271B9E16907243D69F5EDECE7"
+        },
+        {
+          "path": "data/ingame/enemyData/testosteron.n3d",
+          "length": 1747,
+          "sha256": "07E409194F18482D6C4640106137C61EABC9E3234FF854DCB97C270A20213300"
+        },
+        {
+          "path": "data/ingame/enemyData/transporto.n3d",
+          "length": 9435,
+          "sha256": "6353B4F0C8D485D85E2E14043C2B96350693785DBCEA16DA34AE0D4F237706A0"
+        },
+        {
+          "path": "data/ingame/enemyData/transporto/transporto_256.tex",
+          "length": 28872,
+          "sha256": "26F2FB375A868CD51F6C659B5078D918743156B57CF7FC2FB13D2995B8707CEE"
+        },
+        {
+          "path": "data/ingame/enemyData/transporto/transporto_frontgun_256.tex",
+          "length": 1008,
+          "sha256": "29517E4F60A4F50E685EA2CF5E51930855A0FBF4960D58ACCF434BEE2032476C"
+        },
+        {
+          "path": "data/ingame/enemyData/transporto/transporto_sidegun_256.tex",
+          "length": 580,
+          "sha256": "9B3F1BFE8D15B682D0E8AA10CB5A6C801BF8BB5E9ED5ACD0C8AD218459EEBD6F"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_box.n3d",
+          "length": 13322,
+          "sha256": "6F4B01646DA70AACA0596AD268016FCD636AF198C048472E4D6A20EBAC218889"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_box/tube_box_256.tex",
+          "length": 9856,
+          "sha256": "A4B3C3A389B89D95A8FF3F6BC85E2B01908205A9C8C9763D7767B5AE6D414B72"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_box/tube_box_gitter_virtel_a8.tex",
+          "length": 2476,
+          "sha256": "B532B6A9DA21F1E648D14D448FB150FBCAB6816555D0770593C2812E75E2E7E9"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_box_noshoot.n3d",
+          "length": 8233,
+          "sha256": "00BEA95257E08E0B6EC97D4FA271DE1F229DBF7FC7B5E5641CE17726E0FB3218"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_drehkiste.n3d",
+          "length": 419,
+          "sha256": "3EC615F3070C6F92A21DD54133CAD26752874099C70501F40E2408C0EF8822EE"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_extras/kabel.tex",
+          "length": 1992,
+          "sha256": "1F5B7C25E1B54B8779E3E88F096BF36A53292EEEC087907A6DEA39FA58915E2D"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_extras/kabelbox_256.tex",
+          "length": 13332,
+          "sha256": "D3BFF8286296668E66E5126856E2417A8B13B53C3839338239724B1B990E6E87"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_extras/kabelrohr_256.tex",
+          "length": 1976,
+          "sha256": "5D0562BFBC974893B0D54CF2DE6A80AC7600F90D9ECF1675EFB6EBF7DF337F70"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_extras/kabelwuerfel_256.tex",
+          "length": 3792,
+          "sha256": "9C32DE0000164231B8CD3E98B4B4DAE62E3867C301981A07C2A9513AC3E29D96"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_rohr.n3d",
+          "length": 639,
+          "sha256": "38DB468E3A65520F5734A55F15BF0141B9C4B8956F010C6A2B21633E723E7F98"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_side.n3d",
+          "length": 626,
+          "sha256": "E20F4844D87C8436639BF4F613D673E15E31818D5AFFAA39E80D40DA5DCE57B8"
+        },
+        {
+          "path": "data/ingame/enemyData/tube_side_right.n3d",
+          "length": 674,
+          "sha256": "CF0E8AE30166ABFE69A1341AE8D6542FF40080F17787E8114BEA6801577183A9"
+        },
+        {
+          "path": "data/ingame/enemyData/virus.n3d",
+          "length": 326,
+          "sha256": "7DB63434A280F118F2BA8A1AF88EC4F898E10B144AEB4BD1F08687A062AFFFAE"
+        },
+        {
+          "path": "data/ingame/enemyData/virus/viruskreps_a_a8.tex",
+          "length": 808,
+          "sha256": "115EF9671F56277C65C082463BE2410735E6811C8E735A439A55F5A8EFE401AF"
+        },
+        {
+          "path": "data/ingame/enemyData/walfisch/walfisch.tex",
+          "length": 3548,
+          "sha256": "014543AB51E138A01572FE25833CC18600520FDCC4F5B754B80D5575216F048E"
+        },
+        {
+          "path": "data/ingame/enemyData/walfisch_von_unten.n3d",
+          "length": 8711,
+          "sha256": "224372E8D6CC1E2FA68EED5A7A72651C8045EB9F1412B9FA1E657632BC679035"
+        },
+        {
+          "path": "data/ingame/enemyData/warning.n3d",
+          "length": 15711,
+          "sha256": "DBCA3619AB235E340D70F53F6B07EABF12778F666EC0885FEDDA7D9BB99465A8"
+        },
+        {
+          "path": "data/ingame/enemyData/warning/pandarole_a32.tex",
+          "length": 920,
+          "sha256": "AA39FA83306D7B20941D7AC3BBA6D42C5EDB8758525F86A39DA1697B4BDC6D90"
+        },
+        {
+          "path": "data/ingame/enemyData/wasserplatscher.n3d",
+          "length": 1175,
+          "sha256": "1A58D9EE30FCED4F6DA5FDED2265B8FFB0F2CAF83C2D4CDB0A260EE25D7C5298"
+        },
+        {
+          "path": "data/ingame/enemyData/wasserspritzer.n3d",
+          "length": 371,
+          "sha256": "89811D62214A75E0F090C56E5C03D8AE56B9C75D52757D5218174A4851CF0C8B"
+        },
+        {
+          "path": "data/ingame/enemyData/wasserspritzer/wasserspritzer_a32.tex",
+          "length": 1132,
+          "sha256": "E732AEF2E17468D8F0CEAAD67DD2F01A64E84E5417177BAA7C9D83C106356770"
+        },
+        {
+          "path": "data/ingame/enemyData/wasserspritzer/wasserspritzer_wand_a32.tex",
+          "length": 2024,
+          "sha256": "629E063D49295B4C3AADDC6EE6848268E9BBC9E915B7F3FF6469D8860BF6FDDF"
+        },
+        {
+          "path": "data/ingame/enemyData/wasserspritzer_locator.n3d",
+          "length": 104,
+          "sha256": "6A0A00E6080878F04C59AFA14183C260CC48E4EA88AE04E598B9D749EB23E0F2"
+        },
+        {
+          "path": "data/ingame/enemyData/watcher.n3d",
+          "length": 2600,
+          "sha256": "D91CBA73BA869DD600BF2D9A6C27BD3253B1BCFDB852BB674AF9416E421AF282"
+        },
+        {
+          "path": "data/ingame/enemyData/whitesmoke.n3d",
+          "length": 388,
+          "sha256": "8B53BFC87F8111028329224290339BB302B1E0E5B76C42F93443EEEFEB2900F9"
+        },
+        {
+          "path": "data/ingame/enemyData/whitesmoke_small.n3d",
+          "length": 373,
+          "sha256": "EAF241CA81948A085914A8D40012FD1DFB31E430948FC75C37443E1F179AE0A2"
+        },
+        {
+          "path": "data/ingame/enemyData/wumme.n3d",
+          "length": 7922,
+          "sha256": "628D3E83633F1A77697E9750DD3009D6A7AF6DBC73EFAF7459C8AED751AD0A23"
+        },
+        {
+          "path": "data/ingame/enemyData/wumme_von_unten.n3d",
+          "length": 5909,
+          "sha256": "174ED8CB9E1DDE2EFBFD94B42A28F9B03D501A531F0C36C3E676AE8E865DD88D"
+        },
+        {
+          "path": "data/ingame/enemyData/zeppelin.n3d",
+          "length": 9409,
+          "sha256": "A04BDA6A602D9A3ECE6D11119924430F6F31DE3377223EF6F7CBF7B4289CB48E"
+        },
+        {
+          "path": "data/ingame/enemyData/zeppelin/zeppelin_256.tex",
+          "length": 13556,
+          "sha256": "EE344D6A65F2062F9314734739F592541B47F439771B3EA54420137BC1F93165"
+        },
+        {
+          "path": "data/ingame/enemyData/zeppelin_von_unten.n3d",
+          "length": 9500,
+          "sha256": "6505F67F4D520021D7B64820E612915EE0C4CC099CA53D03EA3A9807A5296626"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/asteroids.n3d",
+          "length": 174705,
+          "sha256": "7F13FBDECAFC41201D938A8C6227C543C674D8A105408B14743817E1ADAA1576"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/asteroidsTunnelA.n3d",
+          "length": 2122,
+          "sha256": "6AC73EFBE1E1AE08A3452F3EB5BD95C962DC5268AA188CC46C488AC8A6D7C775"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/asteroidsTunnelB.n3d",
+          "length": 1881,
+          "sha256": "322AB69FA61AF288D5454E2B42E2FCFBBE7F3FBDEB8213F93A94D5EF40E84500"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/asteroidsTunnelC.n3d",
+          "length": 8339,
+          "sha256": "28B20519035A25E5717D1D76DAA53C76394364E656EE21317AC8358082262465"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/asteroidsTunnelCright.n3d",
+          "length": 8283,
+          "sha256": "65E6A4CE8C812830C1DC9EDF373443A45C9F5FA9DEB98458F823E55FCD998AAF"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/nanoEdData/asteroids.bin",
+          "length": 44292,
+          "sha256": "5AE65AD12B9DEFDF6F11088002E7B8C19EC10BB38756250616F84A6EBBA66B64"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/textures/asteroid_big_16.tex",
+          "length": 32860,
+          "sha256": "22F1899474E9E775BC3477532AF5ECA437A635EB982AA78794EFDE5E5F1AA383"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/textures/asteroid_inside_256.tex",
+          "length": 46836,
+          "sha256": "D732D0ACCC9DDB69E3626D6A6A320360CDD6518FCFBAA675AA32265A5A2C4B24"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/textures/asteroid_klein_16.tex",
+          "length": 4188,
+          "sha256": "B8366B83122CA96E98C29B786AE8B3F0598D0E7B578A6CC631E9E1C2A91914C7"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/textures/belt_a8.tex",
+          "length": 3448,
+          "sha256": "49B39CEF3633EC72A0B0831BB26E16A7635DD72D133836A658E85F95EFBE2503"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/textures/rohr_256.tex",
+          "length": 3544,
+          "sha256": "5D1BEC69F14158E9D2BCB939B721122A50DF0B0C6D03148878264B88DE469389"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/textures/stars_256.tex",
+          "length": 26012,
+          "sha256": "4A8AA64E0F36CF0D48693138EA2476D2340F6C5B58279F2C6DF2B95F7BC5EB4E"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/textures/wall_256.tex",
+          "length": 43164,
+          "sha256": "B814D3244E98F5C8AF0FA7D968415A19C92CBFC6F50DA860C8D030EDC1406BCB"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/tunnel/addons.tex",
+          "length": 21780,
+          "sha256": "EDA144514292A02A81A186A2E3DC3A84F4C707735BE1B1284AFDE7A1EB06F072"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/tunnel/gun.tex",
+          "length": 1236,
+          "sha256": "510355EC1E675FC1A6990C9A9876F7CA0F6AC20DC6A52261E4681305A90D6379"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/tunnel/gun_front.tex",
+          "length": 1136,
+          "sha256": "53DEA80C9D51422D1D214CDEE64F685E0585C1AE3C27882E3839DF057ECD6C1F"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/tunnel/gun_inside.tex",
+          "length": 844,
+          "sha256": "C9D8CE8170B648717BE14DB4802ABD232F25EAAF5C312D2C318DB57C28359AF5"
+        },
+        {
+          "path": "data/ingame/leveldata/asteroids/tunnel/lighttubes.tex",
+          "length": 492,
+          "sha256": "77DDE1277C8FFB092B26868325C856294E9E3258FFE7C1782564D71A90F2563C"
+        },
+        {
+          "path": "data/ingame/leveldata/emptyLevel.bin",
+          "length": 4,
+          "sha256": "AD95131BC0B799C0B1AF477FB14FCF26A6A9F76079E48BF090ACB7E8367BFD0E"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/jungle.n3d",
+          "length": 239746,
+          "sha256": "3B16EB1521EF8357DCC1B279A36D2737C7914169DD6B2C976AF413B106264B4E"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/jungleTubeCol.n3d",
+          "length": 126,
+          "sha256": "365F59991F7A63D29A6274E99A380DB91DB0A8F6CB9285F600DB1D5CA10DD27A"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/nanoEdData/jungle.bin",
+          "length": 33780,
+          "sha256": "7047B6941DAEDB9F809D48632574584A353DFB6AF8476D74C686F27A5B0698EB"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/clouds_a32.tex",
+          "length": 4996,
+          "sha256": "939CD4BEC2AD5629D666892210C9CE8182E9D15C552DE84CA49E0C9E23B84DB9"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/coast_256.tex",
+          "length": 32848,
+          "sha256": "A7EF427397D65D07075AB8BD2836FF566E2B695D3004BD0D5CCCA22E54532FBD"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/coast_wood_256.tex",
+          "length": 29048,
+          "sha256": "05A50EEB86A1C044E0F96D8F241A4CE167B69174A12A62D7B293A4BFD1F792F4"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/forest_16.tex",
+          "length": 8284,
+          "sha256": "EA959205CB0E100FDFB042E09AFC1A7BF3428AF01F991C317F4AA96ADE34D468"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/horizont_a32.tex",
+          "length": 188,
+          "sha256": "DA0C2CEBD275DE2A4F34C70BD38ADE3F56C4BB888675869B009C8DC3D1534E90"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/ripples_a32.tex",
+          "length": 728,
+          "sha256": "2843C01B70E3239292831746CE380D19F80E3F47CE62F5171A2A1C7F9C75E1DF"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/rock_256.tex",
+          "length": 66108,
+          "sha256": "BD259C6BBCAAD7151B77872D659A62A2FBBC44958C2E694F4C97FA66EBAB499D"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/tech_256.tex",
+          "length": 44748,
+          "sha256": "2FE37C331C01AB156B6F5D180A8F4C021F3581DA1427758D5E455292B9F281AD"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/water_a32.tex",
+          "length": 5264,
+          "sha256": "F0931DB2C18FB8732F4EED8FD6A8DF4D4F481E50239721DB26EA9868BFC6F365"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/waterfall_a8.tex",
+          "length": 748,
+          "sha256": "2F54852C3409C26BD0704FB5340076F33AE0F771D37385E1FDFE4EA5132C6F1B"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/waterfall_center_a32.tex",
+          "length": 312,
+          "sha256": "399C7C5FBE5F77E157E97AF65125666FB4219C54289A86AF2220179291045F79"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/waterfall_sprincles_a8.tex",
+          "length": 492,
+          "sha256": "41C5061BD9A840A6E12587DA7CE1B393A1DFE54BE8D6CFFE12F39D06E40995DB"
+        },
+        {
+          "path": "data/ingame/leveldata/jungle/textures/wood_river_256.tex",
+          "length": 16956,
+          "sha256": "47B687DBBF80D446C48A368B445A1E013182F1AA0A4DD42B3DBFC8631964FA5B"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/lava.n3d",
+          "length": 296156,
+          "sha256": "B61627E06ACE1003C59AF841F167A7BA21198B48593E9D1EA213E625ED558163"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/nanoEdData/lava.bin",
+          "length": 52024,
+          "sha256": "346426341C743150531697793C3E8D788E8A8B721B31AFBCD680E1FFCC51176B"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/nanoEdData/moon.bin",
+          "length": 41884,
+          "sha256": "5EEA308F8399E4212584BFBE1CA824F48C061627592E7296EA27CDF8224744F3"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/fog_a32.tex",
+          "length": 6760,
+          "sha256": "E28F5F5DA9684C649E315C1530E27468BF1222BA16C1E14E91D65F25323949BE"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/magma_16.tex",
+          "length": 16136,
+          "sha256": "1C0825247CA99C8E8EBE7D1AB59E49C69AAF0282EFE9EA486E432CAC3E6ACE72"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/magma_border_a32.tex",
+          "length": 1836,
+          "sha256": "B54D898C5F161FAD9FBA8F41803C0F65CEC000213120FF3637678248898AAB04"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/pike_border_a32.tex",
+          "length": 2140,
+          "sha256": "190790A2CDFD1E1699E2DF91F42B101D3311A4AA721EFD8B7CC8C16F6185DEEB"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/rocks_16.tex",
+          "length": 20740,
+          "sha256": "857D65EA26EDB277CEC2789F96B30D8BB08D80D86EF5A5EB8DE45047EB98EF76"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/rockwall_16.tex",
+          "length": 15464,
+          "sha256": "479DDDBAB8A099509D53EE44F138FE2DD75004DF87FF8DF137CE9DDDFDA1882E"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/skyclouds_16.tex",
+          "length": 5348,
+          "sha256": "1D0AB96C1AB1328D5DCC87A754B23F070609E1086F30C1EE9F81B7968368512B"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/skyclouds_a8.tex",
+          "length": 10504,
+          "sha256": "508B86F97CE8EDC9AE1B99F7FA237415B643AC94AFA92B06FA8ADF083EB39B61"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/skyclouds_left_a8.tex",
+          "length": 8440,
+          "sha256": "B546C3D043D3CF13E3A3429B023EB33DDEF2A51587135B6FAE05265705F2D840"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/skyclouds_right_a8.tex",
+          "length": 8228,
+          "sha256": "0FE41E337025B621820265DB096F5B5326D5C64420EC5F29A9270738E7509D54"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/skyclouds_top_a8.tex",
+          "length": 8816,
+          "sha256": "70C5694D1D229D65D61408CE3B906010331F9ECA2C953E9BCA7975B8422976A0"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/skyclouds_topleft_a8.tex",
+          "length": 2168,
+          "sha256": "92E3B2EAB39B251890FE61A8B2FAD33204DEADEC7B0BABA6389F17F886814523"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/skyclouds_topright_a8.tex",
+          "length": 2956,
+          "sha256": "1AA2280FFC84BEA8E84CEC880461B763BCA8CEA6544E90E8301A2FE2E101B531"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/smoke_a32.tex",
+          "length": 3396,
+          "sha256": "8A1F27DB5708C6719A291098AA6E7EE117C53A1E1CDE58F7C95019291EF7CFAC"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/vulcano_small_256.tex",
+          "length": 16956,
+          "sha256": "FC6809DF0C627F831CF7AA0A976265F64005D2DC7F6EE4C75F73B042F22E5B6E"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/vulcanoground_256.tex",
+          "length": 66104,
+          "sha256": "EA404045560FB5E052FC77587DBC60649617864ABDEAA6A3DF279CE2BDCDADAD"
+        },
+        {
+          "path": "data/ingame/leveldata/lava/textures/vulcanoground_coast_256.tex",
+          "length": 16872,
+          "sha256": "387C55F47BE686B184F5AB901F495F3060F62CD7F8D9F7E30916CFEC919E1CE4"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/moon.n3d",
+          "length": 384152,
+          "sha256": "F1E72162B75E8A47AD320E017A338043330D5BA13B6216D69EBC509E2FBC7FBD"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/nanoEdData/moon.bin",
+          "length": 42524,
+          "sha256": "F19E2A02170833E40AF0405FFFDE1F01A7B30631E4C53023427E9C731C20019E"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/arm-copler_16.tex",
+          "length": 216,
+          "sha256": "FE96DD7331934D8B51D45F2473EF13D9E478EFE01A4287E3C2848C8E8382FCDD"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/arm-cover_16.tex",
+          "length": 784,
+          "sha256": "CE8198F83E474B3DD1DB7534D07D57ACF5E4EFE16472BB9908127D16E588EEB7"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/arm-schulter_16.tex",
+          "length": 928,
+          "sha256": "CB7C71800A037BF6262A3F344FA7A7383B94AE39591148F23743AA5BB45B40F3"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/arm-schulter_kappe_16.tex",
+          "length": 488,
+          "sha256": "832A4D92EE7C9DD98175D24237F842258A5EDF91F6C8246EF514275E740181F0"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/arm-underpart_16.tex",
+          "length": 996,
+          "sha256": "58E8B12460795375F3EDAEE4650A708841EC95A7114CD03CE257EF0400FEC21B"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/arm-verbindung_16.tex",
+          "length": 368,
+          "sha256": "0C69ECDA53C6A880D6BBE36640AD5C79DA49DB28FFB6984BC82D9E80B2A6FB1F"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/augenlied_16.tex",
+          "length": 916,
+          "sha256": "71820CD59B5226F089E4F17B4056D13FB58D0EC7148DF021F86B940448FC55DF"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/blackcover_16.tex",
+          "length": 184,
+          "sha256": "6C9809815B8858766787F9617A739818CA8FAD50CD81E9A96EF2F05B8D9D8116"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/cover-halterung_16.tex",
+          "length": 1328,
+          "sha256": "B8B3BE963FD04FB80C5B5FDA26A0A501A836D154AF5EA9FF25E75147F714726E"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/coversegment_16.tex",
+          "length": 4672,
+          "sha256": "61F7050BA51F3D41DDE85521DA85BCE6DDE4C2B5816770DF92D02E1D012B0F83"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/eye_16.tex",
+          "length": 212,
+          "sha256": "ACDD029B2508139A5CB03CD1D2619AEF0994BB505391FA67CC79EF6ACEE44B19"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/hirn_16.tex",
+          "length": 6840,
+          "sha256": "3DF7F74591D61E2FDA09AEA7DBC6A62A6710A4DB668A3616A95F6C3FADAFAB49"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/laser-ring-dekel_16.tex",
+          "length": 512,
+          "sha256": "FFFA7A92912736D722B18812CA03024876A2486C8E06FA8FA80FFB1D28E7D4BD"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/laser-ring-side_16.tex",
+          "length": 128,
+          "sha256": "2692E66B20DCBAAC980D5BB0212F6202AD14693338B3653E1C486F3D06D497A0"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/laser-ring-spikes_16.tex",
+          "length": 392,
+          "sha256": "A2E3C87959580240F16CA40A20B5D94FE988ECEEE5EE6162A95A1101F95C8E9F"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/laser_base_16.tex",
+          "length": 3532,
+          "sha256": "039CACC5136EA9248B291354302448A7BF5BC4DE7AEC56C43A8EDA1AE059A616"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/laser_stange_16.tex",
+          "length": 496,
+          "sha256": "7BCC06E976BDB95F34E6703730393FC158D3751202DDCF0B27DECDB3D23EC3DD"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/mitte-deckel_16.tex",
+          "length": 504,
+          "sha256": "D3967BA326F80E9E9C4B0E0061C78BEAEA2973316DE8BD23A6F943489741414B"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/mittte-side_16.tex",
+          "length": 364,
+          "sha256": "238D635F359EF0A180E3304CB2105936F08DE36D9E48BBEECD3BAECADE595966"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/pipeline-end_16.tex",
+          "length": 600,
+          "sha256": "3034B82F27F733CF649785155B07A2514B37E97BF546C3BD4DC93CFFF732B666"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/pipeline-schlauch_16.tex",
+          "length": 1076,
+          "sha256": "74470D2193D6C6A61ED7C2FD08BEB628F08D6B27A4907139703D590D3E476CD3"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/boss/unterboden_16.tex",
+          "length": 816,
+          "sha256": "6881FA8D6E92AED8D5E8E310847A35F5EF13A81A4D2E5159275807F824068B95"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/canyon_256.tex",
+          "length": 66108,
+          "sha256": "C4DE923EE690EFE0CC992ADBA70FFF39DDEF61A52AF22AC72FE71F09A4D42FBE"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/clouds_dark_a8.tex",
+          "length": 9072,
+          "sha256": "C4F7165E4E82FD693703156395953B9CAAD72009164F719E9F8D6A643725EAAD"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/clouds_more_detail_a8.tex",
+          "length": 8544,
+          "sha256": "2DA925D27C5A091665C60AED0BA8BC437723E147C731CF67E024D187F4E3A842"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/crater01_256.tex",
+          "length": 16956,
+          "sha256": "D6140A0C6477FE47917EBEFE85F05E9C96FF09C2B6E64AED02D8B49C52AA3D9F"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/moon_16.tex",
+          "length": 38316,
+          "sha256": "D2E368825EBA43777A7D54A2B1F2DAA7DF43F3656F5DFBBD3A5668E8EA372B30"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/platform_256.tex",
+          "length": 12944,
+          "sha256": "ADEF1A1CE24260323E034B9247D72FDA8040FE2554AEDAF5989E8ACE9A8D1ED0"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/rockwall_256.tex",
+          "length": 22920,
+          "sha256": "6DE731E06316D54E90C8BBDDDBCA94D4451B02E1DAA2E4F52731635A4787ACE5"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/roof_256.tex",
+          "length": 4292,
+          "sha256": "C957C1109569A25230B75CA9F332B86BC467CB7FA0CA35893CC5B9995BE31A72"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/schatten_a32.tex",
+          "length": 184,
+          "sha256": "665D171BB9EC0AADAF8B7F0540072F58C3A9C3EC4F18C9CB9AD1DC702BDEEDBC"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/tower2_256.tex",
+          "length": 8648,
+          "sha256": "F06F5A2B0F3847F9E4B1293C28C089F3556405CB57F3E88F33635D6D536ACEBF"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/tower_256.tex",
+          "length": 7744,
+          "sha256": "98E04E41FE987E61525D719A7B42E616F4C2BB41A6DA971CEA82468E770DF2BB"
+        },
+        {
+          "path": "data/ingame/leveldata/moon/textures/walkway_256.tex",
+          "length": 4256,
+          "sha256": "69AEF9D7131EF26D31A905C8597EE7B785E343D17721C156877F67AB72A8F453"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_1/multi_1.n3d",
+          "length": 69582,
+          "sha256": "6351FE3E42F58EB5F47AB0487C6E2315E8C7D16FA111DB2074E3F77E2586295B"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_1/nanoEdData/multi_1.bin",
+          "length": 34264,
+          "sha256": "F111CB1AA2E946D5CE52226239E7F16253C2A94EC366CFEDB3A7DD07C282CC81"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_1/textures/asteroid_klein_256.tex",
+          "length": 8688,
+          "sha256": "62136CE21764ECB873B459F46E9655914F90FABEDC13264AF7BACC6C5DCD61A4"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_1/textures/belt_a8.tex",
+          "length": 3448,
+          "sha256": "49B39CEF3633EC72A0B0831BB26E16A7635DD72D133836A658E85F95EFBE2503"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_1/textures/stars_256.tex",
+          "length": 21256,
+          "sha256": "564F42EAB3BC1BA5D9773447EA823408400D7C2569F8D36693E3C8C4358ACB08"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/multi_2.n3d",
+          "length": 220407,
+          "sha256": "726EC04D0ECB853F4EB88575DC73FD4B1A019E283EFBB25A2F297C27E538739B"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/nanoEdData/multi_2.bin",
+          "length": 32060,
+          "sha256": "3CEBF079434D9A6D35EB42B6835309049DDBE973D6707D71978E14D96E2B6063"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/textures/magma_16.tex",
+          "length": 16136,
+          "sha256": "4A3AB3CE4DC75DED887DA5B2E1791D30DB95157B49EAD289B11C14E48AACC721"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/textures/rockwall_16.tex",
+          "length": 15504,
+          "sha256": "03972A52257EE10BCCCF541DFAD1329E8D3C8530DE0BE97682651DD6DB47FA72"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/textures/skyclouds_16.tex",
+          "length": 5424,
+          "sha256": "8CA7592D1FA7F3DA41FC9876DDC6BEA67A965348AE06B25A9A7C0A11D8D18429"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/textures/skyclouds_a8.tex",
+          "length": 9656,
+          "sha256": "1C529F6D52E397734A8280BDC96BAEDCCCFE4999454F2B042F93234B48B2FFEA"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/textures/skyclouds_top_a8.tex",
+          "length": 8024,
+          "sha256": "A8B086A78370BDB636DE250A61299B476579E0CAD456BEFFF1C36AC3767162F2"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_2/textures/vulcanoground_coast_256.tex",
+          "length": 16872,
+          "sha256": "027E5787F49545E574FCCA1A9B1E9B14B42CBCC0A897911D32D99C38244A75A3"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/multi_3.n3d",
+          "length": 341317,
+          "sha256": "20E798D6C48557142183B4AF2CC49E646B11512A00B636CAE5BA47B1576409B4"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/nanoEdData/multi_3.bin",
+          "length": 31592,
+          "sha256": "FA4CF77179F5A8452E367D9A3DE3E608AC88358FF978D3ACB708F2174A8499FD"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/canyon_256.tex",
+          "length": 66108,
+          "sha256": "2863A678FF7A0370636326DF2F2259D25AF8E4948790E5C956C7E0458E7AA2E0"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/crater01_256.tex",
+          "length": 16956,
+          "sha256": "1FDBD6D0B77556A5C5F8421236B409EBB75DCBC76D841CD930F99CD9B538AF19"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/moon_16.tex",
+          "length": 43124,
+          "sha256": "07B352ED335DA1BA4A6DD9A0B523BB20E23DEF95B9D070C1D79132DB70FD7DA3"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/platform_256.tex",
+          "length": 12944,
+          "sha256": "3175727E27DAA0A66B86D6EC5C5ABE92ADF0F7E4730BB3563C95AF3483100AFE"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/rockwall_256.tex",
+          "length": 22920,
+          "sha256": "EB265A6676ACA49E2471A3D6B7C63024D12EA6FFC96F72249CA14533E54D10F0"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/roof_256.tex",
+          "length": 4292,
+          "sha256": "CBD31F238AED6E3AFE01D0A1E7BA7F7449198E4AE99126362A80DC059A0FFC19"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/tower2_256.tex",
+          "length": 8648,
+          "sha256": "7794B017C234C071A322A79CAE81F5F26F2B1759A74D8697BE709FC7DB0E0954"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/tower_256.tex",
+          "length": 7744,
+          "sha256": "1939C696A09C734A1445B8644E852DC56AD11B4608205E42B439F1B88D57E4E7"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_3/textures/walkway_256.tex",
+          "length": 4256,
+          "sha256": "DFFE40A12A7E82DBD70794B455662F2A92501E8015BD7AE885F136F4006CCCDF"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_4/multi_4.n3d",
+          "length": 71269,
+          "sha256": "24A641536E7339C297317AFBDC3A87EEF65480854663ABCCB9AB6F975E2E2EE8"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_4/nanoEdData/multi_4.bin",
+          "length": 33560,
+          "sha256": "CC29B1D4828293FDC67C4527E284E7973BACD114F428009A26C4E7136AEFB835"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_4/textures/clouds_a32.tex",
+          "length": 7516,
+          "sha256": "9C88304E35EB996F0E96BAD3464240DE8C172647D264496FDD947B8D1139633D"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_4/textures/forest_16.tex",
+          "length": 8284,
+          "sha256": "F63C42AF531825AA15BA9A4B274822D971E47B94C1A0320DA0CCA00DF2549DB3"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_4/textures/rock_256.tex",
+          "length": 66108,
+          "sha256": "19E856D6FCDA8DA0CEB9EA869F2C6D32E0B37B67FC33BF2AEAADC562EAE7BB34"
+        },
+        {
+          "path": "data/ingame/leveldata/multi_4/textures/wood_river_256.tex",
+          "length": 16956,
+          "sha256": "6DF115E9EC833ECC1DE2D332BC0CA523144E31C83EC927EEFC6E9B67526A148F"
+        },
+        {
+          "path": "data/ingame/leveldata/nanoEdObjects.bin",
+          "length": 94960,
+          "sha256": "A3209A355B8B686384BB2A83783DAC6196EB00E7EA094DA5E4263BB115A050F0"
+        },
+        {
+          "path": "data/ingame/leveldata/space/nanoEdData/space.bin",
+          "length": 25904,
+          "sha256": "6377221A79F26131FB2AE473D7C9D52002DFE05E3C58172B8EF64D158ADB06CB"
+        },
+        {
+          "path": "data/ingame/leveldata/space/spaceport.n3d",
+          "length": 319154,
+          "sha256": "8D94921683D70C2B11CF96FD5CC9BAD99A43FD62FCCB69847A7F929A6293742C"
+        },
+        {
+          "path": "data/ingame/leveldata/space/textures/halo_a32.tex",
+          "length": 268,
+          "sha256": "1C0E38F994EAF66F13FB363349C7954C8871293AE2B12C19FCF79E9E16A15D4C"
+        },
+        {
+          "path": "data/ingame/leveldata/space/textures/konstrukt_256.tex",
+          "length": 58704,
+          "sha256": "C9FD42EA9E27B1BDB6CE0169849444939D1879C15B841E2939D2D226A9BE5543"
+        },
+        {
+          "path": "data/ingame/leveldata/space/textures/spacetexture_256.tex",
+          "length": 100504,
+          "sha256": "44BB457DB2D33E7A729860FC732F8506C9E309698C34A999FB5DBBCAFBC3009F"
+        },
+        {
+          "path": "data/ingame/leveldata/space/textures/tunnel_256.tex",
+          "length": 33196,
+          "sha256": "D5BFE42A437DFB202E6C3BE2DFC6E03F3D6DAEE125C2F25D70763C16CB40AEFA"
+        },
+        {
+          "path": "data/ingame/leveldata/station/nanoEdData/station.bin",
+          "length": 31452,
+          "sha256": "3F32218299F58F5F69BB44A87996510B62F65A6717A36B6F6C0F1CF4EEA4B27E"
+        },
+        {
+          "path": "data/ingame/leveldata/station/station.n3d",
+          "length": 353476,
+          "sha256": "9D729CCE871410EA3BD0745BE4E6D396E38D35964F40870C9147DC9821566D10"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/cable_256.tex",
+          "length": 3080,
+          "sha256": "2D1EA7A14B7A17A48D84D5BEB2431AFE068F474B7A4E38A46EA13656C10597BB"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/cloudlayer_a32.tex",
+          "length": 640,
+          "sha256": "C07E51C6A9CBD6FF089619CA38CDD53BF0B437FB3DA9A7CA842262DB3A1FB045"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/clouds_sheep_shadows_a32.tex",
+          "length": 3628,
+          "sha256": "6A2AF2944427CF9AB780EB3A967BD0188109D292A3680319AE7D886C8AB0E681"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/clouds_sheepstyle_a32.tex",
+          "length": 6828,
+          "sha256": "82A2383185E7B42D04D5B4AACA66AF49E9CA01ADDACB456ED8D94A221D518614"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/konstrukta_256.tex",
+          "length": 61164,
+          "sha256": "F0312BE1D502EF91CBF2F22C2DF503E4527F1D9E4B2C9C07DFAEE21B9EB9994F"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/konstrukta_cables_a8.tex",
+          "length": 2580,
+          "sha256": "2664B5C35C6E68F5AF920F6EA41585F84DDC78CC917463F675F533A0AA7A2A34"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/konstrukta_pipe_256.tex",
+          "length": 8500,
+          "sha256": "99D23DC2D2F878F048D059546094DC7B4819C4F3CC0112E8C8E8E43D0272B476"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/konstruktb_256.tex",
+          "length": 60124,
+          "sha256": "F1FDA040F947617A3EBB953AAA672E5D802D8A7ED3EE7F37A1D65D285DA6E8BA"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/konstruktb_pipe_256.tex",
+          "length": 15916,
+          "sha256": "DADA33C21C254EAA26964E0E841620703F2636D83FB587AB8247C6FA2CAB047F"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/planet_256.tex",
+          "length": 51420,
+          "sha256": "07FEA2BD3027BCC73E2AA3DA0743A6E9D11AD8CB26BCEBCE65B3EAE478FFB647"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/skydome_256.tex",
+          "length": 13048,
+          "sha256": "EA30CDCBF368C4B9739C1D64D797ED0A1283059E0B20340960408F1022A94ACB"
+        },
+        {
+          "path": "data/ingame/leveldata/station/textures/space_station_gi2_a32.tex",
+          "length": 272,
+          "sha256": "D6B502456239AB600F251F2E6CA45CD8E301483D577514F6C245E60ADFE0A02B"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/nanoEdData/sunken.bin",
+          "length": 35604,
+          "sha256": "0BAE90AA2062836806D2F10C67C7BC47E85CD93283D3C98031EF0DD1866C3872"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/sunkencity.n3d",
+          "length": 417040,
+          "sha256": "5EC76864963C1CCA9014C376F5A490E233D4CEA706FB5D2CBA8C427C50FCA4B3"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/bridge_base_16.tex",
+          "length": 1116,
+          "sha256": "6BE4EFB766E1488D13C4A219B6C98B31BBFE642540B6749014B0DD7E9E45A2C7"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/bridgeroad_16.tex",
+          "length": 1112,
+          "sha256": "8E800F69094443389DA5F096969D6DA26DA3552627B6F50CCABB0A5E3411E689"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/bridgeside2_16.tex",
+          "length": 220,
+          "sha256": "A191F7B032493FD03036624ECEBECD3ABE56485CFA295890D91AF68494219148"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/bridgeside_16.tex",
+          "length": 1072,
+          "sha256": "FC09D736B10EE2737BF2696D72EF8E100DE3CCE28C9DC5CBC5E506451F2908F8"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/bridgesidedamaged_16.tex",
+          "length": 344,
+          "sha256": "21EFF720462025B4E7FC2B7ADBDAB3BE4F40DC60980895009A74BB19ECF5245B"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/bridgetopstruct_16.tex",
+          "length": 1040,
+          "sha256": "C90FFAD8584AAFE3B99B8BC84EDBD2649DD9F740DB3AEBAEE23F0CBC5FFA4354"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/building03_256.tex",
+          "length": 3504,
+          "sha256": "80078E69BD4C6FEE60C993B1143EE2FEF884B6F41D7F54202C9D45EEC8A00EE8"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/building03_detail1_16.tex",
+          "length": 220,
+          "sha256": "DBD96E2C1B5BC107EE3BD8303A770AB521688AD8119D88EE827A1FF5D3358891"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/building03_rooftop_16.tex",
+          "length": 2136,
+          "sha256": "1038E4C09ED19B8ACAC98783CC27ADD83D5032B089F588217BAF20635B335739"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/glut_a32.tex",
+          "length": 912,
+          "sha256": "13170804CA7C9486D1665828CA11F0AB8D2836A51AB19B1D43D7837B9B9DC76A"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/kaput_a32.tex",
+          "length": 2468,
+          "sha256": "A31117025C28A5F669291F3E6D66053F7A6E5CAD01CB30164C479AEB44DEBF75"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/rauchspuren_a32.tex",
+          "length": 1104,
+          "sha256": "C77F5B7F271847747068AB437A021C17577BD916FBEBAA81FAA8C14CB26FE174"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/skydome_afternoon_256.tex",
+          "length": 76132,
+          "sha256": "05ADB74190B6A60FA0ABC8A24CE032487395CDB2136F61FF661AAE2C7F926A95"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/skyfader00_256.tex",
+          "length": 15020,
+          "sha256": "CC32DDEEE89F19946DFB83DDD291C79B84971EA5A53901D01634E2E8D6777875"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/skyfader00_frame_a8.tex",
+          "length": 196,
+          "sha256": "7AFE5A74901C47C05AAA052EBCE92D797268A28A36C395F4E033A2536903C676"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/skyfader01_256.tex",
+          "length": 15856,
+          "sha256": "E82B06BFA95EE2581DE63355030D4434446B21F93CDDEE65A3CBCFF5D4F16BE2"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/skyfader01_antennas_a8.tex",
+          "length": 104,
+          "sha256": "E50CB38DBFC55877E0A89E5C9A293933010D1C2F54B449C976CE76915DAC0371"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/skyfader02_16.tex",
+          "length": 5912,
+          "sha256": "0CF1E5E231FEC03D4C0B4951F58732379C74EA0380DDA6DDBF88D856D1999A2E"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/sunk_glizi1_a32.tex",
+          "length": 124,
+          "sha256": "F50860A75AA6A69790015F70FFDC2D53E44A5FAF7875E66F09ACB5AD10581D8D"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/sunk_glizi2_a32.tex",
+          "length": 196,
+          "sha256": "6BD0F3EA225A1EA30A0D2D96ED47979343AA3DFE56D8132F63B366B946877D51"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/sunk_glizi3_a32.tex",
+          "length": 264,
+          "sha256": "11DE0849CC1D14F0B02B23EA5D6D0B9D985292EB87D8066AF2C8B2C21CA413B6"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/sunken_water4_a32.tex",
+          "length": 9048,
+          "sha256": "508CC2ABB0D19997F5DDDD5DC781FE62F9C74F9A7781C680ABBC81F10FBA1E00"
+        },
+        {
+          "path": "data/ingame/leveldata/sunken/work/textures/waterline_a32.tex",
+          "length": 368,
+          "sha256": "581C3E4145512E0D32B31636F23559E393EBC354FF76A60743746A40D73E58CC"
+        },
+        {
+          "path": "data/ingame/leveldata/tubecity/nanoEdData/tubecity.bin",
+          "length": 31644,
+          "sha256": "ECA1D61824B138BA5AF20B5F84BF0B20AABDBD08D89BA35E9DCBE7E45FF1C8BD"
+        },
+        {
+          "path": "data/ingame/leveldata/tubecity/textures/tube00_256.tex",
+          "length": 55164,
+          "sha256": "5A6D9E0924687928FE1F2292F7D0F0F11B9413302BEA13386C4AA72D8C71CA30"
+        },
+        {
+          "path": "data/ingame/leveldata/tubecity/textures/tube_environment_256.tex",
+          "length": 90584,
+          "sha256": "61935291FC50A26CE4E843DF165BF9ED7965C44E6D3EF5B5D14032C1857F3B6F"
+        },
+        {
+          "path": "data/ingame/leveldata/tubecity/textures/tube_small_256.tex",
+          "length": 13372,
+          "sha256": "E789C1668D05D4A1A9E428EFAFC73FACDCBF8BC9A7BA263C3186801E75EFF4FA"
+        },
+        {
+          "path": "data/ingame/leveldata/tubecity/tubecity.n3d",
+          "length": 361169,
+          "sha256": "5C0FE5AC024BEFC5D7E5248CDFABF83265A203183D234675A4A6CC80F8C8D183"
+        },
+        {
+          "path": "data/ingame/leveldata/tubecity/tubecity_door.n3d",
+          "length": 1907,
+          "sha256": "CEE76A8B6E1D98E7428DB2746498E48277DE072B1848EE1549D5097A87ED892F"
+        },
+        {
+          "path": "data/ingame/playerdata/Explosion_flash.n3d",
+          "length": 1230,
+          "sha256": "56D984C4B343F48C30B935C518CFBED867C8A8DE6654CD096E4EA3B0967194A2"
+        },
+        {
+          "path": "data/ingame/playerdata/abbau_FX.n3d",
+          "length": 7617,
+          "sha256": "228A3394367EAFE721070D86253169721CFB096375782F24D9DD1DFEFC480717"
+        },
+        {
+          "path": "data/ingame/playerdata/abbau_fx/texturen/wabe_16.tex",
+          "length": 228,
+          "sha256": "B720CB95A45E99E9BABA5D4DA104D35D002F40C5647D7CF7E708E9B27572B097"
+        },
+        {
+          "path": "data/ingame/playerdata/abbau_fx/texturen/wabengitter_a32.tex",
+          "length": 292,
+          "sha256": "71D3290C5389CD848B5A4B694D99131027EB27405C8C2F4D74C734EB6DE62990"
+        },
+        {
+          "path": "data/ingame/playerdata/blauerring.n3d",
+          "length": 469,
+          "sha256": "61F1CEAAAD54731D083D4C24997EF34C5ED7A31F02C2EE79050623B34B53E526"
+        },
+        {
+          "path": "data/ingame/playerdata/bonus.n3d",
+          "length": 702,
+          "sha256": "5A3A7FD93CCB4BD5FBEF40A5629764931E4CC748C96C40040686EFF95047663E"
+        },
+        {
+          "path": "data/ingame/playerdata/cylinderInsert.n3d",
+          "length": 442,
+          "sha256": "58420CB44662A2E7A3657BC056EA172A9BEFA2942BD36A16694F1E3165979228"
+        },
+        {
+          "path": "data/ingame/playerdata/dummy.n3d",
+          "length": 274,
+          "sha256": "A3F30070E4D53B5906A2C4EA4034F49688050DA41340AA1866B6C00F2250E283"
+        },
+        {
+          "path": "data/ingame/playerdata/enemyshoot00_a8.tex",
+          "length": 836,
+          "sha256": "929333CCB178610ED74D14B750244C3497B235FFF05481E8F4B4BAA32331EC79"
+        },
+        {
+          "path": "data/ingame/playerdata/enemyshoot00_emit_a32.tex",
+          "length": 216,
+          "sha256": "49485723251B61F90996DAC3B2BBECC984590DB0BB39E567ECAA109D171823E6"
+        },
+        {
+          "path": "data/ingame/playerdata/explosion00_a8.tex",
+          "length": 15724,
+          "sha256": "86957DB2467960B9E84007DF28954F104470EC4B65DDAB8CE298B85476A984B0"
+        },
+        {
+          "path": "data/ingame/playerdata/explosion01_a32.tex",
+          "length": 2452,
+          "sha256": "2B4CD5F9781BF147F5C3BD736E984C929CE3F11BE36259E3C2C2CA045991251E"
+        },
+        {
+          "path": "data/ingame/playerdata/explosion02_a8.tex",
+          "length": 1176,
+          "sha256": "C1888D3F3DCD96C3D9A8B72F338AC7EF69B63BEE146ECEC4F6BDE8C6FD05194E"
+        },
+        {
+          "path": "data/ingame/playerdata/explosion03_a32.tex",
+          "length": 1860,
+          "sha256": "51BD67CFE0533D59F94AF3184822E71ABEA6BD5410ED816A36E052470346AE32"
+        },
+        {
+          "path": "data/ingame/playerdata/mp_randomItem.n3d",
+          "length": 426,
+          "sha256": "48721B62CC360FDD23A1DD9B0C184502225724E9855BCC0018EE6B9168E10118"
+        },
+        {
+          "path": "data/ingame/playerdata/mp_slowDown.n3d",
+          "length": 477,
+          "sha256": "C717E39BEE9912025EE73FBEC8CED9495328A0D8373E3CC8122C385B1C4DE172"
+        },
+        {
+          "path": "data/ingame/playerdata/mp_speedup.n3d",
+          "length": 481,
+          "sha256": "367AD95865F073B9EB40734C6B7420F4984E7B9EC9007622C5416103EC4AD64D"
+        },
+        {
+          "path": "data/ingame/playerdata/player_shoot_0_a.n3d",
+          "length": 310,
+          "sha256": "504FD4E50C29EEDB762ED7CFB44382BD36679B21BAE3BA7F1478993BF01EF694"
+        },
+        {
+          "path": "data/ingame/playerdata/player_shoot_0_b_a8.tex",
+          "length": 868,
+          "sha256": "CE537389C70EFBCE9277A2D0FCAC9870A09D61EB16192DB17BB9D67AA4087E58"
+        },
+        {
+          "path": "data/ingame/playerdata/player_shoot_0_b_bommel_a8.tex",
+          "length": 720,
+          "sha256": "06894580D3EE96EBCD22E23CB8A2784FBBD007D1503FDD903197FFFABADE1094"
+        },
+        {
+          "path": "data/ingame/playerdata/player_shoot_0_b_ring_a8.tex",
+          "length": 608,
+          "sha256": "6ECF4B382D43C08C8E6B094571B2C32997B00314546D9A0A2B0479264FD15DE6"
+        },
+        {
+          "path": "data/ingame/playerdata/seeker00_a32.tex",
+          "length": 1384,
+          "sha256": "6D597F21132A4719C02649D8A5E19C549494AF7B0824913A7C728174EB5B65C1"
+        },
+        {
+          "path": "data/ingame/playerdata/seeker00_origin_a32.tex",
+          "length": 196,
+          "sha256": "8DBE88C9A8939775FA84F18299A0D7FCE23ABC51BE91F3AA5FC48D20D09627D1"
+        },
+        {
+          "path": "data/ingame/playerdata/seeker00_star_a8.tex",
+          "length": 2040,
+          "sha256": "2C3A9F828BA35A39654964C445C91A7A8A7E5C478C34F6B326A0BC82FFE2DD93"
+        },
+        {
+          "path": "data/ingame/playerdata/seeker00_tail_a32.tex",
+          "length": 432,
+          "sha256": "2B98474CFB098477A9142DE0094028DBD5725807CE9602BE27AB220E1EFF346A"
+        },
+        {
+          "path": "data/ingame/playerdata/seeker00_tail_a8.tex",
+          "length": 472,
+          "sha256": "FA3258757F227950C2948E89E3E2AA068D15F6F35F88A4683AD057D41B1BF838"
+        },
+        {
+          "path": "data/ingame/playerdata/seeker01_a32.tex",
+          "length": 836,
+          "sha256": "A27A396DE281DD87BBDAFB8D6172A9F9104AFB90CBF40D9635148204098EB33D"
+        },
+        {
+          "path": "data/ingame/playerdata/ship.n3d",
+          "length": 11430,
+          "sha256": "D6BD12DCF9EEEAB4A38CCCAC314240FBEBE0612AF0CCE208988ED833DB3C23E2"
+        },
+        {
+          "path": "data/ingame/playerdata/ship2.n3d",
+          "length": 11434,
+          "sha256": "22DF81EEE798BD6905F2CCC553DDEA86904C33D2873664718BD58295C978DBCD"
+        },
+        {
+          "path": "data/ingame/playerdata/shoot01_a8.tex",
+          "length": 1112,
+          "sha256": "81AF209811F5E0597990BE9C15AA6EFBAB77DD026A48BE9F6241E18AA2C6E67D"
+        },
+        {
+          "path": "data/ingame/playerdata/shoot02_a8.tex",
+          "length": 800,
+          "sha256": "C8AB78D989619F1259CE03A80EDA08127E9F38EA55C1DFE2105DADE58DF56311"
+        },
+        {
+          "path": "data/ingame/playerdata/shoot03_a8.tex",
+          "length": 1692,
+          "sha256": "0A9BD93CD91E469670AB0D3015DA505EDA67713069A9B6238FD2353439FDF464"
+        },
+        {
+          "path": "data/ingame/playerdata/shoot03b_a8.tex",
+          "length": 4744,
+          "sha256": "0B95CF42169B0DC3CB109330E175FCF4A16D1D95018FE670B1C000D6500BE423"
+        },
+        {
+          "path": "data/ingame/playerdata/smartbomb.n3d",
+          "length": 3339,
+          "sha256": "6488DCBFCEF2ACE1E60E3DF087DDF46B4F3042CB1BA3A9A32E0108394B9F471A"
+        },
+        {
+          "path": "data/ingame/playerdata/sphereInsert.n3d",
+          "length": 606,
+          "sha256": "E184B12C7FB4092841E21ECCA00CC769E3FB8C2DCC725591044449AA67216542"
+        },
+        {
+          "path": "data/ingame/playerdata/sphereInsertandUpdate.n3d",
+          "length": 606,
+          "sha256": "47ABFD306BCEE45FFA6824145906328254F5F5643ECA779C700E6150ED6F5BF7"
+        },
+        {
+          "path": "data/ingame/playerdata/splitter.n3d",
+          "length": 2162,
+          "sha256": "3C4F6BF93F28B8334D3A70E90AD2BA0B27EAECDB1EE37DD85AD1640EFA2F25CC"
+        },
+        {
+          "path": "data/ingame/playerdata/splitter2.n3d",
+          "length": 2594,
+          "sha256": "618AB52A0B8BE6F38ADDA1EC44B56D15503E27D8DC16BA7E8E2AF144D2594540"
+        },
+        {
+          "path": "data/ingame/playerdata/splitter_short.n3d",
+          "length": 1258,
+          "sha256": "1D824E8FE085B0078D2ED47B7F57DF3AE73A12D412236B0D0F780535DF403FBC"
+        },
+        {
+          "path": "data/ingame/playerdata/sprotzel.n3d",
+          "length": 1535,
+          "sha256": "CC6FA6BEDC92B1A5282210034130DE461AFC1C05C4FF0B1010C82D65BB65BD3A"
+        },
+        {
+          "path": "data/ingame/playerdata/sprotzel00_a8.tex",
+          "length": 184,
+          "sha256": "476B070EF13CB75356D8868072313C7D731DDDF1AC84CD136317C03F78534BB3"
+        },
+        {
+          "path": "data/ingame/playerdata/sprotzel/texturen/sprotzel_3point_a32.tex",
+          "length": 244,
+          "sha256": "8838A5A77F2EA635A6D776333F5D28A3E97A8B37FFAFBB8589562209789AC09A"
+        },
+        {
+          "path": "data/ingame/playerdata/sprotzel_big.n3d",
+          "length": 1540,
+          "sha256": "43F21975CE890BD22307301D89C39D4D512F2C78D8BDD3E8E750819351D65802"
+        },
+        {
+          "path": "data/ingame/playerdata/sprotzel_short.n3d",
+          "length": 1278,
+          "sha256": "399C510DAF7D3E0C0A7F23BB37BA41017E96045980A4EC51CD10425FA947C236"
+        },
+        {
+          "path": "data/ingame/playerdata/textures/backfire00_a8.tex",
+          "length": 400,
+          "sha256": "5331DE5840733D80CC478E5425ECCA8B3AB8FA4A79B6F9F9094751806C5DCEF4"
+        },
+        {
+          "path": "data/ingame/playerdata/textures/backfire00_red_a8.tex",
+          "length": 416,
+          "sha256": "03543421A3CB9631BABD423CA31AEAFF4B3E500BE32CD208ED92D2F7751B0B88"
+        },
+        {
+          "path": "data/ingame/playerdata/textures/player_shoot_0_a8.tex",
+          "length": 344,
+          "sha256": "16AC05AF299794371F86E33A01157C5F4121A538EF0C691A40E2BB6B46326C62"
+        },
+        {
+          "path": "data/ingame/playerdata/upgrade.n3d",
+          "length": 660,
+          "sha256": "17C55E97E08EB787087AF3ABCE6DA9C9072386FC22CC3608DC115AAFA0D3013E"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_energy_gauge.bin",
+          "length": 128,
+          "sha256": "6A6651CBCC4C35F9CA80A909298A7DD8845D7249D98E14C7477589FC0E293030"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_energy_gauge.pal",
+          "length": 32,
+          "sha256": "816188F9E2CEDE9C8CFFECFAB7D92D893DA5110C4A288BAABE4F24831C74EBF9"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_astroboy.bin",
+          "length": 8192,
+          "sha256": "FC01CC720E07BCD476FAF4826C5753219FCD0A3A491C38E20A899055D64DB305"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_astroboy.pal",
+          "length": 32,
+          "sha256": "EE1B018B6ADD86B0E71026C7C207DDAA1A2718425FB23C5D026AA2374B4316A5"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_end.bin",
+          "length": 8192,
+          "sha256": "808E57E568E052690EA2D0AE607D4687F3C8BBB63EF5CC965C2FFD595F5A6A7D"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_end.pal",
+          "length": 32,
+          "sha256": "3A37271D0B0021A1F09D210E6F68F0DA3BE69C4FA6C38B541E5C275A7D034A45"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_lava.bin",
+          "length": 8192,
+          "sha256": "B34E1CC2115DE378E975A3495476856D2AF64ABCC098B59422F1D64DD54A9694"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_lava.pal",
+          "length": 32,
+          "sha256": "3A37271D0B0021A1F09D210E6F68F0DA3BE69C4FA6C38B541E5C275A7D034A45"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_moon.bin",
+          "length": 8192,
+          "sha256": "4F97CD671C85D9817069622F141411AC8CB4A328116ECDF071CE922F64442E9B"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_moon.pal",
+          "length": 32,
+          "sha256": "3A37271D0B0021A1F09D210E6F68F0DA3BE69C4FA6C38B541E5C275A7D034A45"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_scorpio.bin",
+          "length": 8192,
+          "sha256": "77B72BD9A6B3D61F7172B290B15CC071DB42BDAF6C26EBEFDF43C5638D2500E8"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_scorpio.pal",
+          "length": 32,
+          "sha256": "3A37271D0B0021A1F09D210E6F68F0DA3BE69C4FA6C38B541E5C275A7D034A45"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_station.bin",
+          "length": 8192,
+          "sha256": "5606BC8132B8E141A1E481CB262564833499B62707119705D4AE0650D3D95767"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_station.pal",
+          "length": 32,
+          "sha256": "3A37271D0B0021A1F09D210E6F68F0DA3BE69C4FA6C38B541E5C275A7D034A45"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_sunken.bin",
+          "length": 8192,
+          "sha256": "779544ED69B1ED3098D4E48E7B88393D0D0AD36625B3871E72E54BF9E4A7916C"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_sunken.pal",
+          "length": 32,
+          "sha256": "3A37271D0B0021A1F09D210E6F68F0DA3BE69C4FA6C38B541E5C275A7D034A45"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_tubecity.bin",
+          "length": 8192,
+          "sha256": "C8BBDE214737E57B9F264358DA4AD1A22DE142EAFA8C5D05B3C105627F7F6759"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/boss_overlay_tubecity.pal",
+          "length": 32,
+          "sha256": "3A37271D0B0021A1F09D210E6F68F0DA3BE69C4FA6C38B541E5C275A7D034A45"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/digits.bin",
+          "length": 1280,
+          "sha256": "B772BC9E797925C778369651C747B776F38ED1426D1551564394C6F4040C6BC8"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/digits.pal",
+          "length": 32,
+          "sha256": "C58BA93F3067B356C40046FA1C876A00B1611BA1C40CE732046B30BA98B616BF"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/digitssmall.bin",
+          "length": 320,
+          "sha256": "7BE81AB765109BBF0D9E25CF7F9DFC131AF035330F97838A6E43ABB3E8661309"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/digitssmall.pal",
+          "length": 32,
+          "sha256": "663A178FB92FBF22E79F90D686262D72F36B8E2518796343F8A638F7B6CA9A13"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/energyColors.inf",
+          "length": 8,
+          "sha256": "F601716A433A3E5F7DEC7EB8F801241A3E171985FA7E43AAF224F836BBC8BC78"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/energyColors.map",
+          "length": 84,
+          "sha256": "2FC91A8D94C3C603EA25A86E2EDCA2C5C2EA9DB1FFA91DB7A9B92048191703EA"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/energyColors.pal",
+          "length": 512,
+          "sha256": "E473A32009D2F65BB1938F2368960BC8DF1DEE12F6893F7F205677DA090FDCDA"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/energyColors.til",
+          "length": 1344,
+          "sha256": "10E5F096EEC71D8E2CE989FE50E6D24C97DBD2C5D9996274D22DA96FF2A99805"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/fontpal_standings.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/fontpal_standings.pal",
+          "length": 32,
+          "sha256": "0191B279E8335872BCBE73F5CB955435E4BFB68BC0C9C811C45FF0D05842EEE1"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/gaugeColors.inf",
+          "length": 8,
+          "sha256": "F601716A433A3E5F7DEC7EB8F801241A3E171985FA7E43AAF224F836BBC8BC78"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/gaugeColors.map",
+          "length": 84,
+          "sha256": "2FC91A8D94C3C603EA25A86E2EDCA2C5C2EA9DB1FFA91DB7A9B92048191703EA"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/gaugeColors.pal",
+          "length": 512,
+          "sha256": "3AAF01F3551CD46AFA736D6F67072950EB10D96B47524A4618E90EE9536E3B2E"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/gaugeColors.til",
+          "length": 1344,
+          "sha256": "10E5F096EEC71D8E2CE989FE50E6D24C97DBD2C5D9996274D22DA96FF2A99805"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/grid.inf",
+          "length": 8,
+          "sha256": "1909B15C34DF7CA0F8ED0F85D7F8D5A273A94BC667C8992C836E41074375A950"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/grid.map",
+          "length": 2048,
+          "sha256": "19BA17BA1B489472892247669453AD8AD89F607F54200234D164EADB3524B022"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/grid.pal",
+          "length": 32,
+          "sha256": "20FE42EE5ECB733A94BE35A06C817E081C2F079060D687E5DF15E22426F69B25"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/grid.til",
+          "length": 512,
+          "sha256": "814E1DA7F16FB3AF327CF35DF7A88AB3555B83E761CA5E6546A5D3450E565FB5"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/mp_items.bin",
+          "length": 6144,
+          "sha256": "BEC28929D6D47397B3D2B21D8987A9D5EC4116895ECAE5FA67CD4DBA31596D65"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/mp_items.pal",
+          "length": 32,
+          "sha256": "7E772D2095B3F64420BC6EA362EDCDFA312E08C54C0B0AD38DEEC85E8EAA49FF"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/mp_items_mini.bin",
+          "length": 1536,
+          "sha256": "64F6E5B3B8644B5E569AE949704AEB9F0C689403DBF85B4285FD7880B3F30266"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/mp_items_mini.pal",
+          "length": 32,
+          "sha256": "29388AE9D2666FB2E0E863ED6E7F3103B0481E3D57565C2A7AAAD14DCF983764"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/noise.inf",
+          "length": 8,
+          "sha256": "1909B15C34DF7CA0F8ED0F85D7F8D5A273A94BC667C8992C836E41074375A950"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/noise.map",
+          "length": 2048,
+          "sha256": "C1D5ABAD68EB1936766253C92752F37EA103BC58D4347B5CF2037932FBECD1B9"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/noise.pal",
+          "length": 32,
+          "sha256": "91BB6F67D6121F12324279D29CEC7E2D53CB613D4D90C6C6DBFDA93DF86986E2"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/noise.til",
+          "length": 224,
+          "sha256": "9C90CF8C37E82BF7C04A35220DBC80A5292AE1D36BDF3C06E2DFA9AF7B344DC5"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid.inf",
+          "length": 8,
+          "sha256": "1909B15C34DF7CA0F8ED0F85D7F8D5A273A94BC667C8992C836E41074375A950"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid.map",
+          "length": 2048,
+          "sha256": "07888DF675D0CF0EC2EB8CE6CEE114FD384A7807E5642E26647C8964BE76976E"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid.pal",
+          "length": 32,
+          "sha256": "C35038BD80570F362CD2C9A3E163E8E8B2F1C3ED4D6D4F9AF088E0B9F1DC695B"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid.til",
+          "length": 11072,
+          "sha256": "EF68AB289ED359646D3719824078FC1149C33C38C1F0FA62C5C3B54F101C36B4"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid_multiplayer.inf",
+          "length": 8,
+          "sha256": "788B5E5088F6013B2BAC1B73B5EBAB1CB6967EE3748F0B61B6DE2AE69218AC7F"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid_multiplayer.map",
+          "length": 4096,
+          "sha256": "8486B2A466C17EE5C9B80E209FBB9EEFDA6C69B8922193D2C41029CDAAE8ABD3"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid_multiplayer.pal",
+          "length": 32,
+          "sha256": "C35038BD80570F362CD2C9A3E163E8E8B2F1C3ED4D6D4F9AF088E0B9F1DC695B"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/overgrid_multiplayer.til",
+          "length": 9696,
+          "sha256": "4C82D9F36492AD2A9E9BAD0CED5A9D7A47715E16E7BB4427A9CA14DD23A58FFB"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/pokal.bin",
+          "length": 2048,
+          "sha256": "2EA8530522B264BFAFFCD987822A058FF5FCD1E537D21A0712F1FAED894F6492"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/pokal.pal",
+          "length": 32,
+          "sha256": "C10EC70473A5424367CCC4E448DBA034D10061A6714D94A3854080409A18804A"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/radarobjects.bin",
+          "length": 448,
+          "sha256": "1E8EDFE15017835FFE0122CE9DD82EF02E10C287DFF6E57EDFE5DCDAA78BB571"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/radarobjects.pal",
+          "length": 32,
+          "sha256": "85EA95336F08EB3269B65DD788D5EA7265C00491D495CD0B60E6203FA4C814CD"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/scanBoss.bin",
+          "length": 1024,
+          "sha256": "5057169D4BAC5D92612CCE0808D9A8A5F8BF71958DDBA51424A985A7CD571589"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/scanBoss.pal",
+          "length": 32,
+          "sha256": "8D71E4C1B2E2C4762DE12928486D88F36323AC7E321C85B565429F4D3393715E"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon1.bin",
+          "length": 512,
+          "sha256": "655CE1B88BA64FCC3C237D67292C4BEFF9C9920E3D9534C1F4870A3A24C5FE62"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon1.pal",
+          "length": 32,
+          "sha256": "54BC0AE5FC3E8BB990A14B464CF6671E24C10D995402F007D2CCFF82BCEB08BC"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon2.bin",
+          "length": 512,
+          "sha256": "76C0545D17E709CDFC0B4394F27901BD1257F5857B1AEC3D5DDA70837E947277"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon2.pal",
+          "length": 32,
+          "sha256": "323E1C8F1EE981AA780D80643008A184EA915348135360249EC2592428DBAB58"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon3.bin",
+          "length": 512,
+          "sha256": "ACE188606DFB16ED069652D9B1A9EFEB44D9D247D6A21E8B48DB655D97CA39BC"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon3.pal",
+          "length": 32,
+          "sha256": "3DE80DAE9F8847B2626B7A7F2DFB31A0793E6F1FEF754FA76D6E551A5FA419CB"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon4.bin",
+          "length": 512,
+          "sha256": "EC596DFD7FF1EBD14C0611CC87AF79AAAB2BA639C1CC47F493E1876C8A5E608A"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weapon4.pal",
+          "length": 32,
+          "sha256": "DA0F5A82CFAA7D97D999A9EE052C291FCDC273AF06A6F0EE515938D6744CD65D"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weaponselection.inf",
+          "length": 8,
+          "sha256": "1909B15C34DF7CA0F8ED0F85D7F8D5A273A94BC667C8992C836E41074375A950"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weaponselection.map",
+          "length": 2048,
+          "sha256": "FA2CCCA496730E75B3374D6DEE8F1007EE79A2552DBCD23D0A09184FA11D7A9E"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weaponselection.pal",
+          "length": 512,
+          "sha256": "952384D221E083D6412CAB699714302C88F7C1A40E998FCBF95016A97730B08B"
+        },
+        {
+          "path": "data/ingame/subscreen/radar_weaponselection/weaponselection.til",
+          "length": 12352,
+          "sha256": "597B8D34F3843A1019A322C3D2928545BBF549F496D573C7EE6E566DB634B495"
+        },
+        {
+          "path": "data/ingame/topscreen/bootscreen_star.bin",
+          "length": 352,
+          "sha256": "4BD1D23C1D53E44A06915CFF5BE6ACAE7F6D06C688013D60E653C6FE93525582"
+        },
+        {
+          "path": "data/ingame/topscreen/bootscreen_star.pal",
+          "length": 32,
+          "sha256": "CEEC1F23761EBFD82DF28AE1AFC0D110D132E80D4BEBB904171D26693ADA897F"
+        },
+        {
+          "path": "data/ingame/topscreen/error_child_en.bin",
+          "length": 4096,
+          "sha256": "824CE4CD5DB6C84BF4AFFB8009F0DAF8EDF88C3A71C62BB7E094EECD84D0CC0C"
+        },
+        {
+          "path": "data/ingame/topscreen/error_child_en.pal",
+          "length": 32,
+          "sha256": "F985247E2D6AC9EFBCA31AB8B8B68B62A0BA939AD3C0779878D0F6B32FEDD256"
+        },
+        {
+          "path": "data/ingame/topscreen/error_parent_en.bin",
+          "length": 4096,
+          "sha256": "FDDDF44933A951A0D42011DF80B0EBFF2114CE21996ABDA4F78BDFED1DFE2579"
+        },
+        {
+          "path": "data/ingame/topscreen/error_parent_en.pal",
+          "length": 32,
+          "sha256": "4D46F1CDE0A882C6B5A1FF6669B70A99D0646589D295AEDEF16EFB813CB055C4"
+        },
+        {
+          "path": "data/ingame/topscreen/font_ingame_small.bin",
+          "length": 1920,
+          "sha256": "F6D317B89D1E1F3037745237684CC1BD3C4ACC3BDB43BCCFB6BE93907043EB30"
+        },
+        {
+          "path": "data/ingame/topscreen/font_ingame_small.pal",
+          "length": 32,
+          "sha256": "D2BF3D218AD5C1248A979F5DF75B1E3DE5C8C880282A0E2AB7F3E004DF963426"
+        },
+        {
+          "path": "data/ingame/topscreen/pausecursor.bin",
+          "length": 128,
+          "sha256": "645C72BCFB0DE101384F81D69CDADEE9B37AF8C287421EA423C876518F0AFCC8"
+        },
+        {
+          "path": "data/ingame/topscreen/pausecursor.pal",
+          "length": 32,
+          "sha256": "0DBC9D0C03CA2E128819F9A3735665D1C26059A4FB89790BCF7B2A0961ABF886"
+        },
+        {
+          "path": "data/ingame/topscreen/pausescreen.bin",
+          "length": 4096,
+          "sha256": "631275EEE4065E22A14DB002DACE98368B72900B15C80E5C48385547E5B29B7A"
+        },
+        {
+          "path": "data/ingame/topscreen/pausescreen.pal",
+          "length": 32,
+          "sha256": "B40727149B0DBF9375FFE2B108D8BBDD16A85E5E844224FC4A5C45D93DD11385"
+        },
+        {
+          "path": "data/legals/sub1.bin",
+          "length": 49152,
+          "sha256": "B87CBE180F21D5DB8284766B5F9AFB4568E69FA4D6D883C21762919FD4F6E044"
+        },
+        {
+          "path": "data/legals/sub1.pal",
+          "length": 512,
+          "sha256": "D52207C817DD226B0B94DE4105B88DDAA83F3482848E13BC1CA62FBEA91888DA"
+        },
+        {
+          "path": "data/legals/sub2.bin",
+          "length": 49152,
+          "sha256": "8E8E7348D3C2F560EFE672AA3F407E6CD63401B8C4DD2010359E5DBE6FAE0EA5"
+        },
+        {
+          "path": "data/legals/sub2.pal",
+          "length": 512,
+          "sha256": "074CFDDFE13CCFB8BCBBA33A57712E4974C63E79BA3582D24613D76ECAFDB85D"
+        },
+        {
+          "path": "data/legals/top.bin",
+          "length": 49152,
+          "sha256": "447B82A1CC2988D905AA33EE34ADBC5582B345CFDBDF2AEA95F3B92795F1C6BA"
+        },
+        {
+          "path": "data/legals/top.pal",
+          "length": 512,
+          "sha256": "2217EFE84AF399F576F892EE59557052789BFA95363B75642DFC7A6854BE31CF"
+        },
+        {
+          "path": "data/menu/adv_planet_00_grid.n3d",
+          "length": 9578,
+          "sha256": "5AD23565BC4540078BECAAB12564712D801E77F518E96E6A51AE91EDCEE66278"
+        },
+        {
+          "path": "data/menu/adv_planet_01_moon.n3d",
+          "length": 17742,
+          "sha256": "276B37621B7AF1DB669AEA6F625EB2CC540D8C0062CE23F21E649AD14952812A"
+        },
+        {
+          "path": "data/menu/adv_planet_02_jungle.n3d",
+          "length": 17932,
+          "sha256": "CB4CD0AEC599D49AB944655F7FB2D3F1326D848616B2CE83EFFF967E5A2D3638"
+        },
+        {
+          "path": "data/menu/adv_planet_03_tubecity.n3d",
+          "length": 17779,
+          "sha256": "D60FA0A7C913FD442C3D13392F7C9EF6DA5CF0B1F55751315581FDB1A82260DC"
+        },
+        {
+          "path": "data/menu/adv_planet_04_asteroid.n3d",
+          "length": 10746,
+          "sha256": "D69F901EAD0567AD954B55D22D3F9FD0E6224EBFF8F1E9D728653E6B0EC792BC"
+        },
+        {
+          "path": "data/menu/adv_planet_05_lava.n3d",
+          "length": 18385,
+          "sha256": "2A2BB8D132177C7C2E390F97A9E186F0D31E648EE1E772DD181385C9F0758BE2"
+        },
+        {
+          "path": "data/menu/adv_planet_06_station.n3d",
+          "length": 15834,
+          "sha256": "98BCE16447629CB5326938462CEE2DDE4B37D8AA69E1EDF3F85EFD973465264C"
+        },
+        {
+          "path": "data/menu/adv_planet_07_ocean.n3d",
+          "length": 17768,
+          "sha256": "03183817942DAD812B3C9D8BB7BEE9500949494B37FF93BA57D5F10F32E97256"
+        },
+        {
+          "path": "data/menu/adv_planet_08_sunken.n3d",
+          "length": 17806,
+          "sha256": "221260B264FFD0D8E9B085CFADB120A9A081C224F7E29EAC01BE76E12DED6678"
+        },
+        {
+          "path": "data/menu/adv_planet_09_spacestation.n3d",
+          "length": 20507,
+          "sha256": "3183368D56395C545269D2C5F3B4438E0BAB36E34C153A3E99F533BA542BADA9"
+        },
+        {
+          "path": "data/menu/adv_spiral.n3d",
+          "length": 2910,
+          "sha256": "77C4D0E24EA3A371E365AF7A424459DF456DB21309D535E7AD04E0664279B01A"
+        },
+        {
+          "path": "data/menu/adv_spiral2.n3d",
+          "length": 2923,
+          "sha256": "508424136BB903796FEEAC97DA51C3EE3804955CF8C4E3A970F784968F544124"
+        },
+        {
+          "path": "data/menu/adv_spiral3.n3d",
+          "length": 2925,
+          "sha256": "8EACF564983D2856D973749A34A6D3A3514D1D479640E2B4D90B853C3F401B83"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/atmosphere_a32.tex",
+          "length": 720,
+          "sha256": "710FBE3F82DE3003DFABE030686BC085BB17DCDD88B18644EA44D9296CEBB268"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/city_256.tex",
+          "length": 11232,
+          "sha256": "02DB73E513A1A0E7F6FF3EEB8C3CF96B3743A05E91147FF288B038536B889A6E"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/clouds_a32.tex",
+          "length": 15372,
+          "sha256": "FC36D2AFB18790ADA0A883B6B3B9D35CBE7A97811BA4B267CF3AB4BB79C74745"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/clouds_long_a32.tex",
+          "length": 4388,
+          "sha256": "58EB14A22E4E50BCB6A87D3A6A2BEB017E687967C22D80102BB96B17DA691ED7"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/earth_256.tex",
+          "length": 25612,
+          "sha256": "1781434631230EE4A894492D2AD4B38F3EEED473677C29C77F4083628325CFB2"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/glow_a8.tex",
+          "length": 756,
+          "sha256": "23C1E647A98408C0E2FF9B134A1AE832732B5183BEFF4E8F10D28ECCEC4FA410"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/grid_planet_a32.tex",
+          "length": 164,
+          "sha256": "D97469CF13D1E69461C9F55767FA46EE8442CFE8D9D0A1E3C080014771F6D67E"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/jungle_256.tex",
+          "length": 16956,
+          "sha256": "2F9F805BCCFCDE7B31550B125499DC8D38DF6A22207EFAB7F99FE3AFF0A5F60E"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/lava_planet_256.tex",
+          "length": 16956,
+          "sha256": "9D6E8F01AF4D4608C2A90928EE7FCF274A8CA4E0E675F5D6A7FF4226B692C08B"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/moon_desert_16.tex",
+          "length": 8268,
+          "sha256": "68F0F85134C2BC38BA0D51555EB7DB10995C1263FD23190E3AD65D30B72446B9"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/stationrender_a8.tex",
+          "length": 868,
+          "sha256": "6E549BBE81EF4D41F83140743652EA768CC1464192299DA98993BA0F11D8401C"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/sunken_planet_16.tex",
+          "length": 10644,
+          "sha256": "0DB2C73ECDCF5168C80A8B5F705A5A83EB0DB89DB16D42B0CC6A32BE8E693343"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/waterplanet.tex",
+          "length": 2952,
+          "sha256": "59BC5FE17A5D7657443BA4F8E11446B5C8F98961CA83AC24CC372D95163C33E4"
+        },
+        {
+          "path": "data/menu/adventure/planet_a/white_atmosphere_a32.tex",
+          "length": 244,
+          "sha256": "DB04DD38AA064507411C06B784D5C8D7693A705A767166A60D951B7C097D7451"
+        },
+        {
+          "path": "data/menu/adventure/spiralnebel/spiral_a8.tex",
+          "length": 26832,
+          "sha256": "4EF8058204DCE212D184E4296551BFC1EBE6799E59C203EA591C84F7FBE1EA57"
+        },
+        {
+          "path": "data/menu/adventure/spiralnebel/spirale_green_a8.tex",
+          "length": 23300,
+          "sha256": "D1D18A7A9AA52E8AC7FC610045D85543CB7DDCB59848E2A30A6ED46021D9CBA1"
+        },
+        {
+          "path": "data/menu/adventure/spiralnebel/spirale_red_a8.tex",
+          "length": 20016,
+          "sha256": "599382A9503AAD0CB5124BD6BA01DB57AB7D50933850AB7F4146D6E36EBF56CC"
+        },
+        {
+          "path": "data/menu/adventure/spiralnebel/stars_a32.tex",
+          "length": 1356,
+          "sha256": "1169BD7F358B369EB3099E87351F1C38DA1599CC125352B71C78CF83C0E157C7"
+        },
+        {
+          "path": "data/menu/arrow.n3d",
+          "length": 464,
+          "sha256": "228A82F31E1B8F4EF5C669A9E1985266FA040D0D254377AA533D50A1A862537D"
+        },
+        {
+          "path": "data/menu/backbutton.n3d",
+          "length": 487,
+          "sha256": "EDF216F92430D11E512C7A6CC63D72A588B4CB4D890E199E6525FA9F9D5AAB7A"
+        },
+        {
+          "path": "data/menu/backbuttong.bin",
+          "length": 768,
+          "sha256": "914E4AF2E93CA115D9F46E304519F445B945B25387A8CA28C17BB0D096E374FF"
+        },
+        {
+          "path": "data/menu/backbuttong.pal",
+          "length": 32,
+          "sha256": "0EB44C7CA910C34F8B02C22DC1DE819A85836C7ECD26CFDF9F37442E107B7A5B"
+        },
+        {
+          "path": "data/menu/background.n3d",
+          "length": 45566,
+          "sha256": "F2B0915E1B818F8C4B15026034B3EF9B4184203A00F1BEE73FCBECC2D194EE07"
+        },
+        {
+          "path": "data/menu/button.bin",
+          "length": 2048,
+          "sha256": "8AC607310AF83F1C33E635920EA796852CA8C29DC9EF6222453549EFD9A1C229"
+        },
+        {
+          "path": "data/menu/button.pal",
+          "length": 32,
+          "sha256": "1454C9A7DA93D0D61E622B00CC977BE708A821CF990C0A34A51C4B35F6E5B648"
+        },
+        {
+          "path": "data/menu/button1.n3d",
+          "length": 288,
+          "sha256": "3480F8C73199E1D2BC85C746D0FF8852F9C52826069EA76FA812DAC3E8EDADFF"
+        },
+        {
+          "path": "data/menu/button1_a8.tex",
+          "length": 836,
+          "sha256": "1997F3B5E71C2F5647F8C916951A270C786CF3DCCA63767EAA796A43C7F47B9B"
+        },
+        {
+          "path": "data/menu/button1_hl.n3d",
+          "length": 292,
+          "sha256": "D3C69B6567BEC31A57ECCCBBBF582E697C0CB22CB1F9E3653AA764559FC908FC"
+        },
+        {
+          "path": "data/menu/button1_hl_a8.tex",
+          "length": 752,
+          "sha256": "5E35257FC13904021BB2C99527E121D2B65B3402E5C2C4EB729438A23280B1F1"
+        },
+        {
+          "path": "data/menu/button2.n3d",
+          "length": 248,
+          "sha256": "135D25485A28F95B350252303CE5B5CDD593B1ED7F9DF60349BC348135777B65"
+        },
+        {
+          "path": "data/menu/button2_a8.tex",
+          "length": 504,
+          "sha256": "BC62050C273526704341E7F54AE4B6F1AB8542AA05B7817AF2DDE902676622F7"
+        },
+        {
+          "path": "data/menu/button2_hl.n3d",
+          "length": 251,
+          "sha256": "49222BFA7D906DDB8B8D23A7799337B34C71EFE9B9880D981E2CB5DD39F532FD"
+        },
+        {
+          "path": "data/menu/button2_hl_a8.tex",
+          "length": 484,
+          "sha256": "661990C74F83AE1A5E0585A019A6143D2FA45E66D9E3A5A2461F14080CAF468B"
+        },
+        {
+          "path": "data/menu/button3.n3d",
+          "length": 405,
+          "sha256": "97D83D973A904A7E39135673A9BE0B586029E4D2C28EB3798F7EA79E124DABAD"
+        },
+        {
+          "path": "data/menu/button3_a8.tex",
+          "length": 496,
+          "sha256": "4189952AC9FA8F5572FF94BCA3E9A44DBDDF9B37F6C37F7EF8DD098269E16C9D"
+        },
+        {
+          "path": "data/menu/button3_gray.n3d",
+          "length": 411,
+          "sha256": "DFDE6A827E664A6C93F0639AD2947793091B1D73DF096342F7DEFF84AAB3BE28"
+        },
+        {
+          "path": "data/menu/button3_gray_a8.tex",
+          "length": 464,
+          "sha256": "061798EBD168FD833D66FD690C8EFCA9378D222E6507BAD5DCE86E4FD268277B"
+        },
+        {
+          "path": "data/menu/button3_gray_sel.n3d",
+          "length": 415,
+          "sha256": "E604ED4B79FBBE005FCF958683133766F050F4655863B1D3C53ABD12D285E156"
+        },
+        {
+          "path": "data/menu/button3_gray_sel_a8.tex",
+          "length": 464,
+          "sha256": "D69E3021A47F3B1E57BD6C795E87FF3CB8D7B4FED7DD181E94CC471D7E428D78"
+        },
+        {
+          "path": "data/menu/button3_gray_unsel.n3d",
+          "length": 418,
+          "sha256": "7E862D0FA9E9BD64CCD711B6DD5E807BD57DEE377B3DA36DD332001634446B58"
+        },
+        {
+          "path": "data/menu/button3_gray_unsel_a8.tex",
+          "length": 480,
+          "sha256": "53EBF714913943EA1062EB2F31159C7010CB33FAA58BC3D0EDCCD429FA27B87D"
+        },
+        {
+          "path": "data/menu/button3_hl.n3d",
+          "length": 409,
+          "sha256": "0E729C552C21AD0EED43D027E2C930C10DB65F239B2CE5965E821E833BEF4E6B"
+        },
+        {
+          "path": "data/menu/button3_hl_a8.tex",
+          "length": 416,
+          "sha256": "9164FD3F7A294AE12791642486E62A6029B568B3279B779A7A30EB7461873462"
+        },
+        {
+          "path": "data/menu/button3_sel.n3d",
+          "length": 410,
+          "sha256": "9007349BD168465B216B9B244CFAA7D941FF280BE50144E03F0FD0216910B4D7"
+        },
+        {
+          "path": "data/menu/button3_sel_a8.tex",
+          "length": 476,
+          "sha256": "784DBE4F9B60F314E2BA7DEF116640372A7BE91D37B410449F87929EC5270E2B"
+        },
+        {
+          "path": "data/menu/button3_unsel.n3d",
+          "length": 412,
+          "sha256": "925075F5C12160759A9AC092018C545D04938E5860F66BD9164A8BBE1ACFD583"
+        },
+        {
+          "path": "data/menu/button3_unsel_a8.tex",
+          "length": 472,
+          "sha256": "DC1E589D453848695F4083C15A962C977DCD54F9056A534A4CEBF9F2C33D1CEA"
+        },
+        {
+          "path": "data/menu/button4.n3d",
+          "length": 246,
+          "sha256": "670A7CBDD65C981CAD933F5DB466A4C798C8381F93C06EA18A789F2D721398FC"
+        },
+        {
+          "path": "data/menu/button4_a8.tex",
+          "length": 336,
+          "sha256": "F3A676123049324D712DBD0A8A8DCB3521EE6666A50AFD8DB9B9C75237979B53"
+        },
+        {
+          "path": "data/menu/button4_hl.n3d",
+          "length": 249,
+          "sha256": "E48BC4B9BC11DF85CB5A43B4EC5A43CC6552FCE8881B0413CEA0EF1AC13668A9"
+        },
+        {
+          "path": "data/menu/button4_hl_a8.tex",
+          "length": 260,
+          "sha256": "554912EE21991A4E716742C67B423755B1CA168AFF4A014C7B266FA279DCE4F9"
+        },
+        {
+          "path": "data/menu/button_large.n3d",
+          "length": 298,
+          "sha256": "CB7D8339E8B76E7B62D583A026DB0E9556B67AF405F9E5371C471D8A3D3B3123"
+        },
+        {
+          "path": "data/menu/challbutton1.n3d",
+          "length": 254,
+          "sha256": "88F5DBDD2B1FC34158877CFC38EDB993C523505DA43549EC1002D212C0FD7DCC"
+        },
+        {
+          "path": "data/menu/challbutton1_a8.tex",
+          "length": 712,
+          "sha256": "D82F88D95E43E6667D094F888F8A137050D82D2B9465167A98585815807E099F"
+        },
+        {
+          "path": "data/menu/challbutton2.n3d",
+          "length": 254,
+          "sha256": "1F8A008E2E6B1AF4CB6DEEE1CDB2CC0D45576105A15018D369EB4FAD0517CBC3"
+        },
+        {
+          "path": "data/menu/challbutton2_a8.tex",
+          "length": 940,
+          "sha256": "21107A17E9A66B6B0F36AC4DB64DAC5AACACC3A56C6F9345C33F5A4FC53F4518"
+        },
+        {
+          "path": "data/menu/challbutton3.n3d",
+          "length": 254,
+          "sha256": "55BAC279503DBFE91BC78B38F69F1753B066648F0DB69827B6CC8DFED5BA6769"
+        },
+        {
+          "path": "data/menu/challbutton3_a8.tex",
+          "length": 580,
+          "sha256": "4345C37A9C9D6598512259114177499B8FC7230730C8C437ABCB6FE1387BE664"
+        },
+        {
+          "path": "data/menu/challbutton4.n3d",
+          "length": 254,
+          "sha256": "D18CA452990D9475045617C831BF374E834629147F7CA00C4B5441218FBD444C"
+        },
+        {
+          "path": "data/menu/challbutton4_a8.tex",
+          "length": 336,
+          "sha256": "9680AC4AC44AC5D9E8ECA7C67F46693B42B4846E4118C7BAA010678EB13BAAA7"
+        },
+        {
+          "path": "data/menu/challbutton5.n3d",
+          "length": 394,
+          "sha256": "B56E870662F3E2993BA0B4455F9C613B67639E3738651B6FD65375911EEDC293"
+        },
+        {
+          "path": "data/menu/challbutton5_a8.tex",
+          "length": 380,
+          "sha256": "2FCA5B49BBD27EFA06BFD2250B5DD233782F046E586BDC68CD13AF21328C40CE"
+        },
+        {
+          "path": "data/menu/challbutton6.n3d",
+          "length": 402,
+          "sha256": "73D6555A8445DD9C86A49B69DD02E582A6BE9DCA72C9663F861BE02D839DB7DC"
+        },
+        {
+          "path": "data/menu/challenge/chall_clear_a8.tex",
+          "length": 5160,
+          "sha256": "6B91E51C7C91747D5ECF69B010354FB2023EC928BCD48C2E84C7D4AA5DF536B2"
+        },
+        {
+          "path": "data/menu/challenge/chall_failed_a8.tex",
+          "length": 3704,
+          "sha256": "699DABC881D77D60764AAF433CE8359DCDD0E78086D3D9D96799609B6126988F"
+        },
+        {
+          "path": "data/menu/challenge/pokal_a8.tex",
+          "length": 2156,
+          "sha256": "C5051C0ED32DF908BC4FFD8E176E858CA863073B0EBBA7FDCC7B757AA150A894"
+        },
+        {
+          "path": "data/menu/challenge_clear_logo.n3d",
+          "length": 388,
+          "sha256": "78D1A85DF1D053AD4C862716FCE5B5EE0C4B807DB74E8FEE2CBCC53D2854FDC6"
+        },
+        {
+          "path": "data/menu/challenge_failed_logo.n3d",
+          "length": 258,
+          "sha256": "1B081353333DBFC69FDB60E763C3A61566A0C445E9A2A821F8BAD6C607E8F750"
+        },
+        {
+          "path": "data/menu/cross.bin",
+          "length": 6144,
+          "sha256": "3FE8B51AC00EB7E7709C599010E0B4AAE763801473397F9940CDC66E1873BDAE"
+        },
+        {
+          "path": "data/menu/cross.pal",
+          "length": 32,
+          "sha256": "CD89799027E540449F0B77E4E53B1A52B8C7658BEDA3878BE34B5BA725EF9D4E"
+        },
+        {
+          "path": "data/menu/end.n3d",
+          "length": 28262,
+          "sha256": "ADBF095F9F308DA4D518B0FB96A90F0939FA231C95B2C48ED210966262D1CB54"
+        },
+        {
+          "path": "data/menu/end_anflug.n3d",
+          "length": 18477,
+          "sha256": "558D77B358B4C0F28321D7431AE8D235D88A55660270DC4590C86172A7EF45D2"
+        },
+        {
+          "path": "data/menu/enemy1.bin",
+          "length": 768,
+          "sha256": "F7EE4028225212464E797AE965AF5566E395CAB1B62CA1F3898CAB065416CF6E"
+        },
+        {
+          "path": "data/menu/enemy1.pal",
+          "length": 32,
+          "sha256": "E0AFAA1663DE1E0F928E2E39F324E66AD89C0A6F631CF647ED3F1ABDA426D705"
+        },
+        {
+          "path": "data/menu/enemy2.bin",
+          "length": 768,
+          "sha256": "BD1F7A8FCC099DA5884EBE2688B8ACC2DBA25ACD45E0A66B3CD815A6CCE11690"
+        },
+        {
+          "path": "data/menu/enemy2.pal",
+          "length": 32,
+          "sha256": "A9AF0FBB344CA3837A9A24825F37CDABFD83F15AB895DFEB824C5A18630231E3"
+        },
+        {
+          "path": "data/menu/enemy3.bin",
+          "length": 768,
+          "sha256": "D3BFAFAA9D17C5BBAA54898C514F580470264FA28846B8074A0C7490A05B0D2B"
+        },
+        {
+          "path": "data/menu/enemy3.pal",
+          "length": 32,
+          "sha256": "E0AFAA1663DE1E0F928E2E39F324E66AD89C0A6F631CF647ED3F1ABDA426D705"
+        },
+        {
+          "path": "data/menu/enemy4.bin",
+          "length": 768,
+          "sha256": "CC47DE2227224112F78B597EF2E402CF3E811CD8181534E6288CBE082E181657"
+        },
+        {
+          "path": "data/menu/enemy4.pal",
+          "length": 32,
+          "sha256": "D4353617FDCA74A4A722688503CBFBB2F7BE2ADC8626EFF81D732D9809B5630C"
+        },
+        {
+          "path": "data/menu/extro/homesysteme_16.tex",
+          "length": 12712,
+          "sha256": "03BA157DF08C9A34F9066A8C2299E033296FDC27418FCF097CE1716CA8CAB40C"
+        },
+        {
+          "path": "data/menu/extro/nanoend_back_256.tex",
+          "length": 37188,
+          "sha256": "13C3A5028DD4D2791D644E9DB238E350F1DCC457ECCBA3AF92C37BAC8F5BA886"
+        },
+        {
+          "path": "data/menu/extro/nanoend_down_16.tex",
+          "length": 12432,
+          "sha256": "BD634A60D4F79E86E2B61B53FA76DC1DE7E6179284B9A0A3127E070ACFD17606"
+        },
+        {
+          "path": "data/menu/extro/nanoend_front_256.tex",
+          "length": 19716,
+          "sha256": "29BDCAD1F9A034AD4521669C6660B819F614530CB1A86729CEA93A46EFFD82F5"
+        },
+        {
+          "path": "data/menu/extro/nanoend_left_256.tex",
+          "length": 28912,
+          "sha256": "6EC18940CF1A512184E2F3310316699D2B303B71A2927D8EAB967E38499FDE28"
+        },
+        {
+          "path": "data/menu/extro/nanoend_right_256.tex",
+          "length": 22180,
+          "sha256": "9594EFBF7BCE51E16BD7BBEFE37F53DC5BC800E20839AA91C8B4FD02A36456FB"
+        },
+        {
+          "path": "data/menu/extro/nanoend_up_16.tex",
+          "length": 10108,
+          "sha256": "00BA55095A88779C034B37810DD13D3F1FCCAC746B1245B8CE374F1D766563E7"
+        },
+        {
+          "path": "data/menu/extro/stars_256.tex",
+          "length": 15212,
+          "sha256": "D9C81B4F93E3E2CEC3B34B69F5AE95A716A0FDB0DA0FDF2A82E8D81E2DF891AA"
+        },
+        {
+          "path": "data/menu/font.bin",
+          "length": 4820,
+          "sha256": "F57244FEBE33709127BE1106A16F9A5C71817DA4CA5DD1D55E6CF4D83F877500"
+        },
+        {
+          "path": "data/menu/font.fnt",
+          "length": 1106,
+          "sha256": "2D330C5417EDB2A32D145E37DD224568D0CEC071FE2F86F5E210C9B06BA0B06B"
+        },
+        {
+          "path": "data/menu/font.pal",
+          "length": 32,
+          "sha256": "3144482AC654CEB1D48E3E019CF691E8EC5AA1D6CB0344AA8AC5153904A12B35"
+        },
+        {
+          "path": "data/menu/fontSmall.bin",
+          "length": 2067,
+          "sha256": "49F7B38BA0293A72D9077ADA7B84F726865C0AAB1FB0E0B600CD161FC52A5EF3"
+        },
+        {
+          "path": "data/menu/fontSmall.fnt",
+          "length": 1106,
+          "sha256": "B4F049AE53CF8B0E57CCCA4A058A28BFEC6CFB95AB1CDB04BE789B1CD9C537D7"
+        },
+        {
+          "path": "data/menu/fontSmall.pal",
+          "length": 32,
+          "sha256": "3144482AC654CEB1D48E3E019CF691E8EC5AA1D6CB0344AA8AC5153904A12B35"
+        },
+        {
+          "path": "data/menu/fontpal_gradient.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "data/menu/fontpal_gradient.pal",
+          "length": 32,
+          "sha256": "1A838E9264A62E89E280DC96CD65AE1810783D7B212BFDA736D58FB3ED26BA2A"
+        },
+        {
+          "path": "data/menu/fontpal_grid.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "data/menu/fontpal_grid.pal",
+          "length": 32,
+          "sha256": "F947D077903C918EBBB29CF69F35CF52A344E62B2BAE77DAE055D8B04D47B71A"
+        },
+        {
+          "path": "data/menu/fontsmall_a32.tex",
+          "length": 2836,
+          "sha256": "1C9529727DB634E0FF23784FF650EEE4695FF5E8E7328DC82065CC4E8316076B"
+        },
+        {
+          "path": "data/menu/fontsmallpal_gradient.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "data/menu/fontsmallpal_gradient.pal",
+          "length": 32,
+          "sha256": "CDDF4C836A02D9B7099F7585AE58A46B839502A518A4C73DC2632EDCC9EA86E5"
+        },
+        {
+          "path": "data/menu/gallery/picture01.tex",
+          "length": 133400,
+          "sha256": "6332C662F1837EFC7B36F147A4D4A7579D16C398112F38691A53A19FBD5DCA46"
+        },
+        {
+          "path": "data/menu/gallery/picture02_astro.tex",
+          "length": 123672,
+          "sha256": "D3314CAEB52C271C40B3314AEEB6D1B9C501B692524E170E4C914277D1F111B2"
+        },
+        {
+          "path": "data/menu/gallery/picture04_lava.tex",
+          "length": 162228,
+          "sha256": "A5D732867670D73B92BC436A075E8570DDD900691789EC5B94285BF8D4F7D461"
+        },
+        {
+          "path": "data/menu/gallery/picture06_moon.tex",
+          "length": 112648,
+          "sha256": "629C0FE2FE2B227A1CD84F0D6C1FBFF5D96F1C7F23808DE8A4BAAD6A6D420C15"
+        },
+        {
+          "path": "data/menu/gallery/picture07_space.tex",
+          "length": 120844,
+          "sha256": "B16BCB3A20E788F8BE69EE3DA1DB6C5DE21A9F12A28E7887725755E11CDF0424"
+        },
+        {
+          "path": "data/menu/gallery/picture08_station.tex",
+          "length": 155352,
+          "sha256": "EA74B49B75169AD8968CA4FC2998D5206688B36B4D8AE03967F2514F80079773"
+        },
+        {
+          "path": "data/menu/gallery/picture09_sunken.tex",
+          "length": 102796,
+          "sha256": "B6E8C3E3499FC7C0432A46EF1A967D4B5B3C441D38234F331A42C714BFC3EF51"
+        },
+        {
+          "path": "data/menu/gallery/picture10_tube.tex",
+          "length": 151288,
+          "sha256": "6C02DF202730F66E445DB39C8B49222D78ABE94E40DCBBA97DB512CB20321DEB"
+        },
+        {
+          "path": "data/menu/gallery_enemy_01.n3d",
+          "length": 8748,
+          "sha256": "55414CA077CD8912F4E782FC5EBE39978FD41E6A11771CC4BFEEE3EB5B960011"
+        },
+        {
+          "path": "data/menu/gallery_enemy_02.n3d",
+          "length": 8303,
+          "sha256": "05CDFA6BC692B045F3529BBFB7F50F214C7496E3425A891D7E3704C80A8F1EE4"
+        },
+        {
+          "path": "data/menu/gallery_enemy_03.n3d",
+          "length": 4104,
+          "sha256": "72C7B14D3375AC1581E5C5D0A26B1859CE65CC92AED666B097F69BD0FC9E347F"
+        },
+        {
+          "path": "data/menu/gallery_enemy_04.n3d",
+          "length": 8711,
+          "sha256": "224372E8D6CC1E2FA68EED5A7A72651C8045EB9F1412B9FA1E657632BC679035"
+        },
+        {
+          "path": "data/menu/gallery_enemy_05.n3d",
+          "length": 17517,
+          "sha256": "067AED6B4272FA8AC9EAEC83CEFDD6FA0AF7CBC44E3021E86F589BEF96C59EBA"
+        },
+        {
+          "path": "data/menu/gallery_enemy_06.n3d",
+          "length": 9549,
+          "sha256": "1FA7E37C50E6DA68A3669D945B4FBB86202194664FFFD530F324EFB7160C3985"
+        },
+        {
+          "path": "data/menu/gallery_picture_00.n3d",
+          "length": 363,
+          "sha256": "E5F704527DC4CF8011C131DF0B067DE9B5C92070DA5E0D769C913EAC9FFB646C"
+        },
+        {
+          "path": "data/menu/gallery_picture_01.n3d",
+          "length": 357,
+          "sha256": "709F2830EC9671BD583BE812A7EEA2BA06E023388A9B9C677AE3A41FE1118985"
+        },
+        {
+          "path": "data/menu/gallery_picture_02.n3d",
+          "length": 363,
+          "sha256": "56128349CFB5DA381FE6C0FD87D0AF2B8BBB4E9E989C93E89596CF6088B1764F"
+        },
+        {
+          "path": "data/menu/gallery_picture_03.n3d",
+          "length": 363,
+          "sha256": "F9AA928648478039D9EC7526305535541BDB8D990615FE4825B837EDCC6351A3"
+        },
+        {
+          "path": "data/menu/gallery_picture_04.n3d",
+          "length": 363,
+          "sha256": "34B4B8C4711E46FB3F938C18940BF830975DD8E1D86222E730F6C832CFE15D78"
+        },
+        {
+          "path": "data/menu/gallery_picture_05.n3d",
+          "length": 366,
+          "sha256": "A302E7A051B15CF5B0F260D98ED6A25A83EBAE15E80FB989B5F7D6989D5CAEF4"
+        },
+        {
+          "path": "data/menu/gallery_picture_07.n3d",
+          "length": 365,
+          "sha256": "BEDE40661F8F67AD44821ED35A491D01165F23C0691EE8B37BD4DDD35C616840"
+        },
+        {
+          "path": "data/menu/gallery_picture_08.n3d",
+          "length": 364,
+          "sha256": "C8A05F8AA42DA1488CBE00E34F8A38BDCBD42419E95B43C4EEA9B399BD8DEB41"
+        },
+        {
+          "path": "data/menu/gallerybutton1.bin",
+          "length": 768,
+          "sha256": "16A78618BDF654F487D499BDDB64ABF3801338F2D7C9E219DAD914E8D8C2F2B7"
+        },
+        {
+          "path": "data/menu/gallerybutton1.pal",
+          "length": 32,
+          "sha256": "1454C9A7DA93D0D61E622B00CC977BE708A821CF990C0A34A51C4B35F6E5B648"
+        },
+        {
+          "path": "data/menu/gallerybutton_back.bin",
+          "length": 768,
+          "sha256": "DF97F3D58B1D237C597A358569F20197493F87176161E42D1268BD924CF2926C"
+        },
+        {
+          "path": "data/menu/gallerybutton_back.pal",
+          "length": 32,
+          "sha256": "94B82E3D156FB3371D6B0C04DC467D983E3E32EE087BBA231FC1C7BC87F7C9BD"
+        },
+        {
+          "path": "data/menu/gallerybutton_enemy.bin",
+          "length": 768,
+          "sha256": "783139DC0A2FF133E88FF66874D008D2918ECA8AAF0BE86823EDA87FC1AC692A"
+        },
+        {
+          "path": "data/menu/gallerybutton_enemy.pal",
+          "length": 32,
+          "sha256": "139F0E9CA0285028AC84368C81FDAC1670FEBD1DE7800979F6E1475381E667CD"
+        },
+        {
+          "path": "data/menu/gallerybutton_fwd.bin",
+          "length": 768,
+          "sha256": "655EBEFFE235833CF686FE6BBEB5869332D1FEDB84B795C6FEB99ECFE2C71515"
+        },
+        {
+          "path": "data/menu/gallerybutton_fwd.pal",
+          "length": 32,
+          "sha256": "94B82E3D156FB3371D6B0C04DC467D983E3E32EE087BBA231FC1C7BC87F7C9BD"
+        },
+        {
+          "path": "data/menu/gallerybutton_locked.bin",
+          "length": 768,
+          "sha256": "16A78618BDF654F487D499BDDB64ABF3801338F2D7C9E219DAD914E8D8C2F2B7"
+        },
+        {
+          "path": "data/menu/gallerybutton_locked.pal",
+          "length": 32,
+          "sha256": "A2EB660BDD5075A5981A53729B8CBC1E47D3FF2E54C0A64AC0D0D4D7B55E45FA"
+        },
+        {
+          "path": "data/menu/gallerybutton_music.bin",
+          "length": 768,
+          "sha256": "A6FAD214BD2825489325C88A3BB144EE2E19AA540D83BCB4E0697FB31A535988"
+        },
+        {
+          "path": "data/menu/gallerybutton_music.pal",
+          "length": 32,
+          "sha256": "2A6266C0F0E8046140BC05FF04DE8BF9E64A74E373FD39277031C63CEFC4FCD9"
+        },
+        {
+          "path": "data/menu/gallerybutton_picture.bin",
+          "length": 768,
+          "sha256": "E1474B15945DFF4A7BE55E20996DB4E8008AFA29C16ABE71AECDF1CD92F689FE"
+        },
+        {
+          "path": "data/menu/gallerybutton_picture.pal",
+          "length": 32,
+          "sha256": "B083E29339BF51625532ABC36D40F32C418492AF6289FCCD73BBFDBF4F94454D"
+        },
+        {
+          "path": "data/menu/gameover.n3d",
+          "length": 582,
+          "sha256": "CB753E93EADEB7B461B6F187487407C089B7D3AFD013C687073AED4379759458"
+        },
+        {
+          "path": "data/menu/gameover/0001.tex",
+          "length": 30832,
+          "sha256": "7CA65D244285027904094258CF9C6BA465FCAAC1CD3370DA496C5FABD8444E36"
+        },
+        {
+          "path": "data/menu/gameover/0002.tex",
+          "length": 37692,
+          "sha256": "E564AE0F445B801CE0DE7D219F920864ACC485DE1ADB6A37EE52AD465083EB8F"
+        },
+        {
+          "path": "data/menu/gameover/0003.tex",
+          "length": 33948,
+          "sha256": "AB193A29A88DA5055194AFE18F5E63BD1270026E8F1C2346F63B04801380E100"
+        },
+        {
+          "path": "data/menu/gameover/0004.tex",
+          "length": 28092,
+          "sha256": "B6B0434AF6F45536309C7D7BC9C264C0A488C356DE6002B587B701F5B00EE60E"
+        },
+        {
+          "path": "data/menu/gameover/0005.tex",
+          "length": 21412,
+          "sha256": "5446B4E854D2BDB898576D74395CE255A1F293480765D18539F81729AD5B9DC9"
+        },
+        {
+          "path": "data/menu/gameover/0006.tex",
+          "length": 41092,
+          "sha256": "A3DE959FF559675B0139A6595E0DAAFD1DF3BC8E2128522454AB6FE70295526E"
+        },
+        {
+          "path": "data/menu/gameover/gameover_a32.tex",
+          "length": 3508,
+          "sha256": "849C132B96A485511A892CAFE9446BCE793B2E619F5F9BA697DADC6B477590F1"
+        },
+        {
+          "path": "data/menu/gameover_logo.n3d",
+          "length": 253,
+          "sha256": "8D6503A5A2AB1314D6FB04E2C255D08DF388537B3338849BD2B51E3B26CD1A40"
+        },
+        {
+          "path": "data/menu/gradient.inf",
+          "length": 8,
+          "sha256": "EE048C2DBD32B0D0F2AFF83BFE37D73AD114641460A37C8B4B73808FD6BC1382"
+        },
+        {
+          "path": "data/menu/gradient.map",
+          "length": 1536,
+          "sha256": "513319ED5AD22C23A1C35A250477F2D0051814211CA971689FCA55985306F1E0"
+        },
+        {
+          "path": "data/menu/gradient.pal",
+          "length": 512,
+          "sha256": "84CF2408C764460DD6BEFA3915714919232E5C8668AF12E4B53EA7657FF8520A"
+        },
+        {
+          "path": "data/menu/gradient.til",
+          "length": 1408,
+          "sha256": "050ADE0AE7514ADA8ABD75BB67997535239ED91894077C5A25A5F967EEB44071"
+        },
+        {
+          "path": "data/menu/gradient_stats.inf",
+          "length": 8,
+          "sha256": "EE048C2DBD32B0D0F2AFF83BFE37D73AD114641460A37C8B4B73808FD6BC1382"
+        },
+        {
+          "path": "data/menu/gradient_stats.map",
+          "length": 1536,
+          "sha256": "94FD0B7CB1D1F23597825301958496E6B4614821F704D0F57F334865148A4C0B"
+        },
+        {
+          "path": "data/menu/gradient_stats.pal",
+          "length": 512,
+          "sha256": "A5853E3C6D6DB8342059CB7D766DEE08956D3649499C546944899954756BE4B4"
+        },
+        {
+          "path": "data/menu/gradient_stats.til",
+          "length": 1536,
+          "sha256": "36302272E0F9ABAF74B2DE97464FEB9023236629A60CD7030338D0A6A9692765"
+        },
+        {
+          "path": "data/menu/grid_16.tex",
+          "length": 256,
+          "sha256": "DB65F0AE14908F0C8A857B4A33D8C007B5D9F850929455E38761E627D34E261F"
+        },
+        {
+          "path": "data/menu/headline_pfeile_LR.n3d",
+          "length": 1047,
+          "sha256": "C8BC4E836DD94C797994567200AC8D8BF12A46848667D7FEBF2C52F98EB6B949"
+        },
+        {
+          "path": "data/menu/headline_pfeile_LR_noback.n3d",
+          "length": 944,
+          "sha256": "4FC0FA8D4626FC8567D8550C67119CE4057704970E9D04E3642850FC3AB14979"
+        },
+        {
+          "path": "data/menu/mb_back.n3d",
+          "length": 589,
+          "sha256": "E45B7AAC793B9ABC6FACFDFE1071EFA66F686F27B31491BF1E3AF2778526BF15"
+        },
+        {
+          "path": "data/menu/menuetext_a32.tex",
+          "length": 5424,
+          "sha256": "6AF01718E4F2602AB9DF177FBC7B535E8DE691C16EF85D55D0A84B5BA241D3BC"
+        },
+        {
+          "path": "data/menu/menupfeil_a32.tex",
+          "length": 168,
+          "sha256": "9E306693023A0D77D01823362AB55252DC034E9F5AFB3468FB9CAC235D4F6B76"
+        },
+        {
+          "path": "data/menu/music1.bin",
+          "length": 768,
+          "sha256": "C4B65052402709E7C3D8E7FEE287E4FDE2750B21FC4DA60C35B88B30921598FE"
+        },
+        {
+          "path": "data/menu/music1.pal",
+          "length": 32,
+          "sha256": "F5A388B8F0582FF6BCBBC7721697F4E299F073078DAF927978EB63AA1133DBCD"
+        },
+        {
+          "path": "data/menu/music2.bin",
+          "length": 768,
+          "sha256": "7E3F17EF8EBC10503335BADADA483C9C9754AFF49BF220CF5F680F964712AE6A"
+        },
+        {
+          "path": "data/menu/music2.pal",
+          "length": 32,
+          "sha256": "4EDCDF8B174C957806999DA492221CC27DDB3C3AD7BF45FB65D5EFD1DF8A1AB8"
+        },
+        {
+          "path": "data/menu/music3.bin",
+          "length": 768,
+          "sha256": "61695E2AC06A7D239E95B53E3DDC8320C84B06FFF1C9984C870B8444550657B0"
+        },
+        {
+          "path": "data/menu/music3.pal",
+          "length": 32,
+          "sha256": "4E4D10798C3A51A223D6979A0BEF58B9DF17CE7FC02D8C5E54CDB4F80F27870C"
+        },
+        {
+          "path": "data/menu/music4.bin",
+          "length": 768,
+          "sha256": "E3438DF7AF2A68A97BA6D0917A969764D4D7104961C60EBFC0439010F820020F"
+        },
+        {
+          "path": "data/menu/music4.pal",
+          "length": 32,
+          "sha256": "78E5B8CD584CDF281A95E400B62FBF2554AB4A7DDECA8ABE5650F4E057186249"
+        },
+        {
+          "path": "data/menu/nanostray_a8.tex",
+          "length": 7184,
+          "sha256": "60BD9A5A82BF805249C7FE343DA3ED782302198BADB5B48DD1594BD41F6E0D98"
+        },
+        {
+          "path": "data/menu/noise_16t.tex",
+          "length": 240,
+          "sha256": "2A0BEF71D77361F91E555485898155578BF9AC11733F2EF2CBDD9AC7EA9381A3"
+        },
+        {
+          "path": "data/menu/picture_down.bin",
+          "length": 768,
+          "sha256": "4E1AAA9B28631EBAC84F587EA16B820CB9DBB24A46E9EAC46D3698B8EA075CD9"
+        },
+        {
+          "path": "data/menu/picture_down.pal",
+          "length": 32,
+          "sha256": "BE605D292456DA07A6A3F4533576D81C53213628CE8E37EF94B57D16E0BDF68B"
+        },
+        {
+          "path": "data/menu/picture_left.bin",
+          "length": 768,
+          "sha256": "CC56CD7954CFB8565E3B54C63677885DE10124457D5DD1B19B25147530815D0D"
+        },
+        {
+          "path": "data/menu/picture_left.pal",
+          "length": 32,
+          "sha256": "344A687F6AC5D3BAFBD304D74AEE0D683B88C507D01DAE82C0F67EA2CEAD934E"
+        },
+        {
+          "path": "data/menu/picture_right.bin",
+          "length": 768,
+          "sha256": "F0CE641B65690B79875D17999DEDB2ADA8E9676BB7A8CD0256DA7DC13C393509"
+        },
+        {
+          "path": "data/menu/picture_right.pal",
+          "length": 32,
+          "sha256": "344A687F6AC5D3BAFBD304D74AEE0D683B88C507D01DAE82C0F67EA2CEAD934E"
+        },
+        {
+          "path": "data/menu/picture_up.bin",
+          "length": 768,
+          "sha256": "A6277DE98A7D5F843AAF414BB363B7E411932CAC21B824ADD0F0E902E6B495F0"
+        },
+        {
+          "path": "data/menu/picture_up.pal",
+          "length": 32,
+          "sha256": "F709FA3F0CD70DD1C29D5483B915E1D3080505D6EB3AB1124BC39627E00F9D85"
+        },
+        {
+          "path": "data/menu/planet.n3d",
+          "length": 10126,
+          "sha256": "4DCF7EF94227B1A4B15495903906ACC61960475AFACAD43D0611669D77226DAA"
+        },
+        {
+          "path": "data/menu/pokal.bin",
+          "length": 2048,
+          "sha256": "2EA8530522B264BFAFFCD987822A058FF5FCD1E537D21A0712F1FAED894F6492"
+        },
+        {
+          "path": "data/menu/pokal.pal",
+          "length": 32,
+          "sha256": "C10EC70473A5424367CCC4E448DBA034D10061A6714D94A3854080409A18804A"
+        },
+        {
+          "path": "data/menu/rahmen.n3d",
+          "length": 940,
+          "sha256": "9BF5EE1674B1A8CAB337A5C7997C068DC4F42E44DE475A380F4DD717A34489D1"
+        },
+        {
+          "path": "data/menu/spiralback.bin",
+          "length": 49152,
+          "sha256": "4F4C7376F140374E102A8824B6168FF8485F2E5298839A3896DB55D5CA770BFC"
+        },
+        {
+          "path": "data/menu/spiralback.pal",
+          "length": 512,
+          "sha256": "EA50519AC7CB8627CA7AA27692B6F07623B1A03C51EDCDEC01748BE3F85B3070"
+        },
+        {
+          "path": "data/menu/stats.n3d",
+          "length": 568,
+          "sha256": "80E0AEE5C7D8BC5681A8D180C736D9C973610CD51DC2BFD83C43BD616C11D4F5"
+        },
+        {
+          "path": "data/menu/stats/0001.tex",
+          "length": 31052,
+          "sha256": "14683FFF3E8FB997F5F81E5BF3F3F5C8D13DD2CFB8DEEAE4ABBA8C7FBB9E800C"
+        },
+        {
+          "path": "data/menu/stats/0002.tex",
+          "length": 31664,
+          "sha256": "BFFD36CA1168FD9A6E34993878B0B5B976E2EED8084094EBAA93DD9A34936E15"
+        },
+        {
+          "path": "data/menu/stats/0003.tex",
+          "length": 33040,
+          "sha256": "E558209DA6EF499124A820DC2B63E5DBAE132780D77B43B340D1877A6CFF40B0"
+        },
+        {
+          "path": "data/menu/stats/0004.tex",
+          "length": 34376,
+          "sha256": "E571AEF8D2A5A2B0A709FD95B1ECD0D671F71A31E76E91F89BD1C133D5FE4328"
+        },
+        {
+          "path": "data/menu/stats/0005.tex",
+          "length": 17672,
+          "sha256": "97B8187C20C7A4449D34BC97BACD26DC1276B7BDDB425F63B055C5B9628DD544"
+        },
+        {
+          "path": "data/menu/stats/0006.tex",
+          "length": 49932,
+          "sha256": "2FBE8D206D075D65DF623815C9381AEFB0E7691510E0D9255F3D247876F8D88C"
+        },
+        {
+          "path": "data/menu/stats/stageclear_a8.tex",
+          "length": 3172,
+          "sha256": "F74164A96A3754E3223EBCFDD51D7F21B03E6ABC37A586906A918E26EAC39014"
+        },
+        {
+          "path": "data/menu/stats_logo.n3d",
+          "length": 254,
+          "sha256": "086C9A539CBD43C010A79BCB89F4247560C7119B51B6A511585BACB1865E4F96"
+        },
+        {
+          "path": "data/menu/textures/konstrukta_256.tex",
+          "length": 61164,
+          "sha256": "F0312BE1D502EF91CBF2F22C2DF503E4527F1D9E4B2C9C07DFAEE21B9EB9994F"
+        },
+        {
+          "path": "data/menu/textures/konstrukta_pipe_256.tex",
+          "length": 2620,
+          "sha256": "7A5CC3ADC06738FE5C466E3D27F4EE78A64B56E10F469F5DE48AE35E297F246A"
+        },
+        {
+          "path": "data/menu/textures/konstruktb_256.tex",
+          "length": 31524,
+          "sha256": "9CC72F83AD7A0F0C925D0BF8B3B24B156FAAFE48E7BB02513ADD7E119FDCBA51"
+        },
+        {
+          "path": "data/menu/textures/konstruktb_pipe_256.tex",
+          "length": 4668,
+          "sha256": "1934C55FFBE234099B1556E1917CD4ED33AA76E5C87CFD1201CE53363EE29714"
+        },
+        {
+          "path": "data/menu/textures/pfeil_l_32x46_a8.tex",
+          "length": 500,
+          "sha256": "54E7F41AA9C0629E5A7461E6C6C1D18E2BBB3BD4EBB26487CE91C1FE9189A3FA"
+        },
+        {
+          "path": "data/menu/textures/pfeil_l_32x46_blue_a8.tex",
+          "length": 488,
+          "sha256": "600C1149B8CFDE99D9051465AD99926FA58EB3BA55EAE5B3078ACF6F4FC93F13"
+        },
+        {
+          "path": "data/menu/textures/rahmen_down_256x10_a8.tex",
+          "length": 540,
+          "sha256": "358903ECEE9C6C92F23CEDFBEBD31E95398466F6D75B35ECE607B66620B3FD48"
+        },
+        {
+          "path": "data/menu/textures/rahmen_headline_256x21_a8.tex",
+          "length": 1200,
+          "sha256": "C4EBBEECA65A4D5A724DC020B48CFF05E30D5EBBB3C3BB0D52E8F2D88112C4E2"
+        },
+        {
+          "path": "data/menu/textures/rahmen_l1_32x46_a8.tex",
+          "length": 392,
+          "sha256": "810098F5D5943BC6712B8753268D6B5226660EF5B57A9E00AC8136E03212391A"
+        },
+        {
+          "path": "data/menu/textures/rahmen_l1b_32x46_a8.tex",
+          "length": 336,
+          "sha256": "FFAAD4BD0D11C7944E1B62C3A55866D9D85A2AFED029021BEC4FB76D6CFB0AA9"
+        },
+        {
+          "path": "data/menu/textures/rahmen_l2_32x58_a8.tex",
+          "length": 456,
+          "sha256": "FEBD0DB09EDB127AA68DCC0987C7B3786DBFF344133E9131EE4D742695254641"
+        },
+        {
+          "path": "data/menu/textures/rahmen_l2b_32x58_a8.tex",
+          "length": 436,
+          "sha256": "01148D8F4C8B1C12A3EA365B605DFF66C3912A992DD487DEE6B6CAABDF7A5024"
+        },
+        {
+          "path": "data/menu/textures/rahmen_lpfeil__32x46_a8.tex",
+          "length": 292,
+          "sha256": "97FD700DF2A2965B016ECDE2B63448126A200E99B1DDDC5BF8E3E1BCAF4616A2"
+        },
+        {
+          "path": "data/menu/textures/rahmen_pfeil_r_32x150_a8.tex",
+          "length": 968,
+          "sha256": "20110265358F99A52823AFA5328272037899716E5A6A4A94244F1FE16F8DDF09"
+        },
+        {
+          "path": "data/menu/textures/rahmen_r_32x150_a8.tex",
+          "length": 784,
+          "sha256": "4DBA22286338C87E30367294897BF8C1FED7F6BB44DDECE7957BC27C2CDB9AD0"
+        },
+        {
+          "path": "data/menu/textures/rahmen_top_256x21_a8.tex",
+          "length": 1008,
+          "sha256": "B972E795929B21737223D668FFDD8042C567543F95A30A4563D787341B18EEED"
+        },
+        {
+          "path": "data/menu/thumbgray.bin",
+          "length": 64,
+          "sha256": "A825910DA48778E2550A36EE90FDF25338C139F425539302938632E20E275A70"
+        },
+        {
+          "path": "data/menu/thumbgray.pal",
+          "length": 512,
+          "sha256": "60E90273F1FC0842325017A966F9C807C51348E0133D9ECF4A30795A00CA5808"
+        },
+        {
+          "path": "data/menu/thumbnails_256.tex",
+          "length": 18576,
+          "sha256": "CDA39FB86B3DB4824D4CD4313BC20741F5A530A25AE965F1B011A16B2E429E15"
+        },
+        {
+          "path": "data/menu/thumbshadow_a32.tex",
+          "length": 428,
+          "sha256": "6C7890870FD2E2FB76ABCC0D568D161A5EEBAD5507EBA5E95F45A7279E7A1A97"
+        },
+        {
+          "path": "data/wl_icons/icon.bin",
+          "length": 512,
+          "sha256": "B16468F16000596AAB4898EAE32E6BD029A8922135A0635DFEE2A7F050299CE6"
+        },
+        {
+          "path": "data/wl_icons/icon.pal",
+          "length": 32,
+          "sha256": "3D3D77D31D5FB0E2634C2AA9C7DFCB27B794828607866D4128D07EDC8929BEFB"
+        },
+        {
+          "path": "data/wl_icons/wireless_strength.bin",
+          "length": 640,
+          "sha256": "C277E52F3A6D0FC38D3258FDFB38AD376A984F078F3C58A9321224902EFD5F06"
+        },
+        {
+          "path": "data/wl_icons/wireless_strength.pal",
+          "length": 32,
+          "sha256": "25C0B81384999144B213136E1850EEA5DB7563FE1BB8DE3EECA7D5F3CF77BB9F"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "9E05072F8C67753D30854D6AD51B0D8875C0453C00B8DE30F433E293FB9A932A"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 16240672,
+          "sha256": "284B73AC0767FAF3EBCADFFF2B389B9FA20D053D20EE8EBD282E006C30BD1895"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 16777216,
+          "sha256": "FB0028950E2062B59C10CEA7892C1AFBE79096B8DD95F0EBDE6B557A1DE34E2D"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 16777216,
+          "sha256": "43E524EC371320EC2C1F27F336CC64AF3819350FCFDA13F2DBE57708BD6B814F"
+        }
+      ]
+    }
+  ]
+}

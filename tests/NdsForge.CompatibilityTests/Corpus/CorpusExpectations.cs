@@ -7,6 +7,10 @@ namespace NdsForge.CompatibilityTests.Corpus;
 /// <summary>Loads committed expectations and resolves private fixtures by content, making local filenames irrelevant.</summary>
 internal static class CorpusExpectations
 {
+    /// <summary>Reports the full digest when a corpus aggregate changes, without truncating the comparison.</summary>
+    public static void AssertDigest(string expected, string actual) =>
+        Assert.True(string.Equals(expected, actual, StringComparison.Ordinal), $"Expected digest: {expected}; actual digest: {actual}");
+
     /// <summary>Defines the environment switch that makes an absent or partial legal-dump corpus a test failure instead of a skip.</summary>
     private const string RequireVariable = "NDSFORGE_REQUIRE_CORPUS";
     /// <summary>Defines the user-supplied root searched recursively for candidate Nintendo DS images.</summary>
@@ -74,7 +78,7 @@ internal static class CorpusExpectations
     {
         CorpusExpectationIndex index = Deserialize<CorpusExpectationIndex>(Path.Combine(GetExpectationRoot(), "index.json"));
         Assert.Equal(1, index.SchemaVersion);
-        Assert.Equal(57, index.Cases.Count);
+        Assert.Equal(142, index.Cases.Count);
         Assert.True(IsSha256(index.NdstoolSha256), "Corpus index does not identify its exact ndstool executable.");
         Assert.Equal(index.Cases.Count, index.Cases.Select(static item => item.RomSha256).Distinct(StringComparer.OrdinalIgnoreCase).Count());
         return index;

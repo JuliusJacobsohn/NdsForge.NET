@@ -15,8 +15,10 @@ public sealed class PrivateCorpusTransformTests
         ArgumentNullException.ThrowIfNull(entry);
         CorpusExpectation expectation = CorpusExpectations.Read(entry);
         string path = CorpusExpectations.Resolve(entry);
-        ExpectedArtifact oracle = expectation.Operations.Single(static item => item.Name == "create-binary")
-            .Artifacts.Single(static item => item.Path == "rebuilt-binary.nds");
+        ExpectedOperation creation = expectation.Operations.Single(static item => item.Name == "create-binary");
+        ExpectedArtifact? oracle = creation.ExitCode == 0
+            ? creation.Artifacts.Single(static item => item.Path == "rebuilt-binary.nds")
+            : null;
         string output = Path.Combine(Path.GetTempPath(), $"ndsforge-corpus-build-{Guid.NewGuid():N}.nds");
         try
         {
@@ -30,16 +32,31 @@ public sealed class PrivateCorpusTransformTests
             NdsImageBuildProfile profile = expectation.Rom.Kind == NdsImageKind.NintendoDs
                 ? NdsImageBuildProfile.Ndstool1503
                 : NdsImageBuildProfile.Deterministic;
+            if (image.Arm9OverlayAuthentication is { State: NdsOverlayAuthenticationTableState.MissingTablePointer })
+            {
+                Assert.Contains(sourceValidation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1211");
+                Assert.False(builder.Arm9OverlayAuthentication!.CanRegenerate);
+                foreach (NdsImageBuildProfile rejectedProfile in new[] { profile, NdsImageBuildProfile.Deterministic })
+                {
+                    InvalidDataException error = await Assert.ThrowsAsync<InvalidDataException>(async () =>
+                        await builder.WriteAsync(output, new NdsImageBuildOptions { Profile = rejectedProfile }, cancellationToken)
+                            .ConfigureAwait(true)).ConfigureAwait(true);
+                    Assert.Contains("authentication", error.Message, StringComparison.OrdinalIgnoreCase);
+                    Assert.False(File.Exists(output));
+                }
+                return;
+            }
+
             await builder.WriteAsync(
                 output,
                 new NdsImageBuildOptions { Profile = profile, VerifyOutput = sourceValidation.IsValid },
                 cancellationToken).ConfigureAwait(true);
             await using FileStream stream = File.OpenRead(output);
-            if (profile == NdsImageBuildProfile.Ndstool1503)
-            {
-                Assert.Equal(oracle.Length, stream.Length);
-            }
             using NdsImage rebuilt = await NdsImage.OpenAsync(stream, leaveOpen: true, cancellationToken: cancellationToken).ConfigureAwait(true);
+            if (profile == NdsImageBuildProfile.Ndstool1503 && oracle is not null)
+            {
+                AssertCompatiblePhysicalExtent(oracle.Length, rebuilt);
+            }
             AssertIntroducesNoValidationErrors(sourceValidation, rebuilt.Validate());
             NdsImageManifest rebuiltManifest = await rebuilt.CreateManifestAsync(cancellationToken).ConfigureAwait(true);
             AssertSemanticManifestEquality(sourceManifest, rebuiltManifest, profile);
@@ -48,6 +65,24 @@ public sealed class PrivateCorpusTransformTests
         {
             File.Delete(output);
         }
+    }
+
+    /// <summary>Allows only the exact padding needed to keep a final empty FAT entry inside the output image.</summary>
+    private static void AssertCompatiblePhysicalExtent(long expectedLength, NdsImage rebuilt)
+    {
+        if (expectedLength == rebuilt.Length)
+        {
+            return;
+        }
+
+        long lastPayloadEnd = rebuilt.FileSystem.Allocations.Where(static item => item.Data.Length != 0)
+            .Max(static item => item.Data.End);
+        long lastEmptyOffset = rebuilt.FileSystem.Allocations.Where(static item => item.Data.Length == 0)
+            .Max(static item => item.Data.Offset);
+        Assert.Equal(expectedLength, lastPayloadEnd);
+        Assert.Equal((expectedLength + 0x1FF) & ~0x1FFL, lastEmptyOffset);
+        Assert.Equal(lastEmptyOffset, rebuilt.Length);
+        Assert.Equal(rebuilt.Length, rebuilt.Header.UsedImageSize);
     }
 
     /// <summary>Verifies the legacy ARM7 trainer insertion against ndstool for every exact input image.</summary>

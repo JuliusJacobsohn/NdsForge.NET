@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Super Scribblenauts - WB Games Inc. [BH2E] [USA - English].nds",
+    "length": 33554432,
+    "sha256": "682f4256778ece460355d19b9efbfb3f830566021b24f878d5b37d19a2e741b9",
+    "headerTitle": "SCRIBLENAUT2",
+    "gameCode": "BH2E",
+    "makerCode": "WR",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Super Scribblenauts - WB Games Inc.",
+    "bannerTitles": {
+      "Japanese": "Super Scribblenauts\nWB Games Inc.",
+      "English": "Super Scribblenauts\nWB Games Inc.",
+      "French": "Super Scribblenauts\nWB Games Inc.",
+      "German": "Super Scribblenauts\nWB Games Inc.",
+      "Italian": "Super Scribblenauts\nWB Games Inc.",
+      "Spanish": "Super Scribblenauts\nWB Games Inc."
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 156716,
+          "sha256": "67CB7DBC851451ACF2533D52826EECA44C49213A11A3AC9300B576A5485F90F5"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 672,
+          "sha256": "4D9238EAA6FAF2EE8775D7B65D757DDD5E3BE27B90081FF8145E25A0A7162AF0"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1745860,
+          "sha256": "9821816C692A0F850ACEC4D5D0917BA1CB123327E0A0A71D1E97872A0A44511D"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "0F3DE3AA82AC3687A50893C5AF2E3CD85D1BCAE2A35B6DC6318A1F7567EBCB7D"
+        },
+        {
+          "path": "data/1i",
+          "length": 133540,
+          "sha256": "BF29933A86BCC220CE0414B0210A56919776373B3AC82543F5AAA168F25A6533"
+        },
+        {
+          "path": "data/1p",
+          "length": 19909995,
+          "sha256": "71E37562EDB6DFC310EF8230830922A405D484047B132089483F521C5D86F87E"
+        },
+        {
+          "path": "data/audio.sadl",
+          "length": 38078,
+          "sha256": "91403CEB6844ED0F793BBD28E14C156EFC63EE109DE9E1B88D676D753068756B"
+        },
+        {
+          "path": "data/audio.sdat",
+          "length": 8532864,
+          "sha256": "CC85719FF8189A0E3425E66A8F4792B45B15FEEB2A22789A64B65B1FD954F678"
+        },
+        {
+          "path": "data/dwc/utility.bin",
+          "length": 929852,
+          "sha256": "DB8EE36170897F60791F713B7669C50A125E62C6AD775FDA98466C85FE48E81E"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "BFCA2F17BE6F9ADB55C4CA2001739CEADEDF10713881B8B6A603F183AAD489C4"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 153888,
+          "sha256": "23BEA96B27253A29C6EEC72DA16FF6BC7749042A13E8820F19F6AE63046E1B46"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 124992,
+          "sha256": "F5A67C6486FAD094A2D16AF50CF7F54144282E4450773C78485FA036DC92BBC8"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 54688,
+          "sha256": "04A312B576AA8E2E5B9F86C2337DE6F44B196DFF78F44D62AFBC14F2EBA1253E"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 25344,
+          "sha256": "48B7648FA336554F33184AA170F26D799492802B7300DC7F1D2447B6900789E6"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 22592,
+          "sha256": "2A83405A4AA3890396447CA0FFE5941531E5F294D4E30236015E534BAE0C165B"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 10048,
+          "sha256": "6EE0151BC751D293DAB65E402CE4B4B6296555FA45A019D4F18D688BE5F5A3CA"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 14432,
+          "sha256": "834783399CA70F4A765401557A86F4F5004957957B3C04B78D9671FB6C148B21"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 23712,
+          "sha256": "C47E00D96E1BEFA2855C8E296D7C6F85D44F613660CD37C595E20AA16A3E6DD2"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 58912,
+          "sha256": "42A4EFF8DDCB7459A69ED8996793D2B0148838B0843EB64D27B84C3C50F14590"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 4000,
+          "sha256": "6F533B7D194157E0B1E0B1D727471F4C1B42956BAEC309ED5C2AE837B860AF68"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 8608,
+          "sha256": "EFF251F0C0781C4F179CD572D59B4C3D395CBBA1FF8ACB3FB01E897D555734E1"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 4960,
+          "sha256": "AD29A2BC564659FE753C73B685FE44C0812ED0E6E09C8FE2E9700317424B63E5"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 3168,
+          "sha256": "9B144A258A044B80BAF4BD632A2DC19D8A8940B66503598A4A0E6BAAD6AF1140"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 17760,
+          "sha256": "729634BF57E8306DEB789272BEE536D647C045E55BB0FAAEC04E2D6F7EB9E4C8"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 6656,
+          "sha256": "200AE4E82A915CF541E44EDFB58B1DAC1FC14BC557D437AFC6831F13E37A8726"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 22912,
+          "sha256": "A8748B385C52068CC4DB89D26496EB8F780B4601EFA4079A291C9D5F4B97EEFD"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 5792,
+          "sha256": "6C563658320BBD89ECE69E31965FC6ECDB14F086F8D1EB6339FAD68C88F1DF90"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 2976,
+          "sha256": "CF21B2C775BE2A3F8D1121B101A74F863350D957FF46434B9547A462C245D68B"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 7840,
+          "sha256": "5186FF04643F44AFAE79915ABA4B3565EC14231C6DF179334333D4D51ACC61ED"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 32048188,
+          "sha256": "16B9F7BA588BCCD8C4AF7C5B9329C79E13BF79709D8D9FC532F000AB87D9245B"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 33554432,
+          "sha256": "70C1808141B94E7D9E7E467C9ABA82808AAFBCDEC86CB509616D25D38D8DD936"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 33554432,
+          "sha256": "F82003B28CECA10289DC6A9E4D30B632FDEF5701B98BC6BCE0E37594F7E5AEDF"
+        }
+      ]
+    }
+  ]
+}

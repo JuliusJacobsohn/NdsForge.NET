@@ -62,11 +62,12 @@ public sealed class PrivateCorpusHuffmanTests
 
         Assert.True(huffman4Magic >= huffman4Decoded);
         Assert.True(huffman8Magic >= huffman8Decoded);
-        Assert.Equal(0, huffman4Decoded); // Known corpus gap: no 4-bit stream survives strict tree and leaf validation.
-        Assert.Equal(65, huffman8Decoded);
-        Assert.Equal(
-            "DF346F895583C8FC7953D932020F0C7ACD9809A16F96983C1657404B3883569F",
-            Convert.ToHexString(decodedOracle.GetHashAndReset()));
+        Assert.Multiple(
+            () => Assert.Equal(11, huffman4Decoded),
+            () => Assert.Equal(191, huffman8Decoded),
+            () => CorpusExpectations.AssertDigest(
+                "B5AAD7C2E25DEF5E69B9F8A53E0F4144AB687F71EB02FDC0C965A6B80B1FD873",
+                Convert.ToHexString(decodedOracle.GetHashAndReset())));
     }
 
     /// <summary>Prevents aggregate-hash ambiguity between differently partitioned decoded files.</summary>

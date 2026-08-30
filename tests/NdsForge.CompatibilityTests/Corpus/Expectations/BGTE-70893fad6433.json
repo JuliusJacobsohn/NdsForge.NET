@@ -1,0 +1,5045 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "GHOST TRICK - Phantom Detective - CAPCOM [BGTE] [USA - English].nds",
+    "length": 134217728,
+    "sha256": "70893fad64333cf2ca12a9c332d5e2d3e83bcae4aac31d7eb635ac320f240685",
+    "headerTitle": "GHOSTTRICK-E",
+    "gameCode": "BGTE",
+    "makerCode": "08",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "GHOST TRICK - Phantom Detective - CAPCOM",
+    "bannerTitles": {
+      "Japanese": "GHOST TRICK\nPhantom Detective\nCAPCOM",
+      "English": "GHOST TRICK\nPhantom Detective\nCAPCOM",
+      "French": "GHOST TRICK\nD\u00E9tective fant\u00F4me\nCAPCOM",
+      "German": "GHOST TRICK\nPhantom-Detektiv\nCAPCOM",
+      "Italian": "GHOST TRICK\nDetective fantasma\nCAPCOM",
+      "Spanish": "GHOST TRICK\nDetective fantasma\nCAPCOM"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 156716,
+          "sha256": "67CB7DBC851451ACF2533D52826EECA44C49213A11A3AC9300B576A5485F90F5"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 224,
+          "sha256": "8DAD8FE3E0048CD12BE8EE5D6512E64AD423B571A16B3484F2CC27C84F49F139"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 507424,
+          "sha256": "BE92405BF3987135535A80C01AC025E2022EB56C23256A2E2A5AD0F3AE1D67E9"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "00AE4CAF86F83FF3D7CEDB91F20C3836E0EB64C12ED95953160F2CFA10F91F19"
+        },
+        {
+          "path": "data/CharWidth.bin",
+          "length": 580,
+          "sha256": "77FD6F1626025725FDDCE6E5488DE41EC693BA6E1EF87C149F8BB7E9F7B71AE8"
+        },
+        {
+          "path": "data/CharWidthBln.bin",
+          "length": 512,
+          "sha256": "27500E43ED52DAB5D4D255B0EC413BDADE7B3D930E7D415BAEC97E80CF4AABA3"
+        },
+        {
+          "path": "data/CharWidthDB.bin",
+          "length": 512,
+          "sha256": "CC28C2E6F53D3B839417E0E2CF87F7D12368E22FFA1C8501AE9CD1668F765371"
+        },
+        {
+          "path": "data/PixLine.bin",
+          "length": 1824,
+          "sha256": "1DCA81404BE8D56E858097D2422EE7F87ED316066566E8D410DC5A7DDB3359E9"
+        },
+        {
+          "path": "data/PixLineBln.bin",
+          "length": 1824,
+          "sha256": "9D86E5C04ABEF16ED8B72CD6FC0E7FB3BBB4C249B33760A58FA491AA5C06135B"
+        },
+        {
+          "path": "data/PixLineDB.bin",
+          "length": 3648,
+          "sha256": "665F83870C4DB47199B610143309CFF670DEFBFCB9CCD16851475C412748DF58"
+        },
+        {
+          "path": "data/balloon_font_en.imb",
+          "length": 32768,
+          "sha256": "419D48044BAE1B7907A62ECCAE534788D707C533532D4343D8259AA231728634"
+        },
+        {
+          "path": "data/chapter.xml.lz",
+          "length": 612,
+          "sha256": "1DDE965D2F57CC5C105874005FC1535B6E0A7D59D5236C756926F2A4C6903FFA"
+        },
+        {
+          "path": "data/cpac_2d.bin",
+          "length": 81826816,
+          "sha256": "18DD16D609E9E3BA65A575F5EDE0265D5F0F61FC2192ED03AF81E64865870E4F"
+        },
+        {
+          "path": "data/cpac_3d.bin",
+          "length": 6449700,
+          "sha256": "BBF03D011CACFBF369D47CDDD8FBBD034FA69DA4D029AA1C6453BC016FC187E2"
+        },
+        {
+          "path": "data/cs.bin",
+          "length": 32,
+          "sha256": "2E7799691167681FD6E4EECA696CB3DEE47CD8C9BE670500167B8F0597E8BB16"
+        },
+        {
+          "path": "data/flags.xml.lz",
+          "length": 60,
+          "sha256": "3D2DAF8225E8C15A718D5F6D091E3311B9AD140843683CDBEAC37F211506A611"
+        },
+        {
+          "path": "data/font8x8.bin",
+          "length": 2048,
+          "sha256": "992902947E469AB1A4BC10F71F36EE3BFA2489F9A45C5DCD0ADFEEF94823502F"
+        },
+        {
+          "path": "data/font_db.imb",
+          "length": 32768,
+          "sha256": "62E553A85D4D619D629610DCC75DA582E7D5E6FE3477ECC6B76DC20DFFDFF95B"
+        },
+        {
+          "path": "data/font_info.imb",
+          "length": 32768,
+          "sha256": "A589F99BFBF6B623FB298E80FC7E4033AB20D852F68ECD0810012FDE9DAC5CDB"
+        },
+        {
+          "path": "data/fonts2bpp_en.imb",
+          "length": 27840,
+          "sha256": "B25B1E237977D72F0B037D3F18B1CE830BCB9242F9B727CBFA2176CF6A82D728"
+        },
+        {
+          "path": "data/longjump.mods",
+          "length": 1038332,
+          "sha256": "47B1D8832D6D9178473A688AE8144A1D1AB6A9E61920B16EE83C3D5A99A54AE5"
+        },
+        {
+          "path": "data/phone.xml.lz",
+          "length": 516,
+          "sha256": "4387B8F694BD98F960B06BB24A187A8E68DDDF5C4C23C817468E19262E0590D9"
+        },
+        {
+          "path": "data/route.xml.lz",
+          "length": 196,
+          "sha256": "497DD757389702E1FA027CF717332FA4C29B984EDD169E29A2E1DA7963B3A680"
+        },
+        {
+          "path": "data/shortjump.mods",
+          "length": 340788,
+          "sha256": "40D8ED4FA46897D90CA11FB2D82106B2798737CA51EA4DB1BA4FE1C21A140B68"
+        },
+        {
+          "path": "data/sjumpmis.mods",
+          "length": 331532,
+          "sha256": "8F456565E60A4704C54D4ADD33C97421D6DAE49F89B0EC36404793F5468EC946"
+        },
+        {
+          "path": "data/sound_data.sdat",
+          "length": 15257056,
+          "sha256": "8AC6F338D260CA8883014E07A263939BAEE9B5D971FEF0460066A5F4CAB28DF1"
+        },
+        {
+          "path": "data/st01/st01_demo100_Expand.xml.lz",
+          "length": 2008,
+          "sha256": "6A0FE94EADD35B6D2F9ED61B9C7685A27F711E174F826624EA7C158BC2950BED"
+        },
+        {
+          "path": "data/st01/st01_demo101_Expand.xml.lz",
+          "length": 928,
+          "sha256": "C313AFC8294C8625651311E7151C03FC6AEBD8607651AC55F32D50482ED767B6"
+        },
+        {
+          "path": "data/st01/st01_demo102_Expand.xml.lz",
+          "length": 1656,
+          "sha256": "E22C08EE34EDA82BD5F13C6E0E9D2CBFA13193F8F6ED483338D9352019D3BA53"
+        },
+        {
+          "path": "data/st01/st01_demo103_Expand.xml.lz",
+          "length": 1640,
+          "sha256": "B318B25EF4AF33444C78B5A7851F5EE68D2AD5F9F95C1C4516AEDC3A4A31C525"
+        },
+        {
+          "path": "data/st01/st01_demo110_Expand.xml.lz",
+          "length": 5476,
+          "sha256": "AF38987560C27980F72D2BCAA76D1A397CDAD3AB8F8CC03C25D3A962C197529D"
+        },
+        {
+          "path": "data/st01/st01_demo111_Expand.xml.lz",
+          "length": 1760,
+          "sha256": "9E79AB2E980D1319B6B72D2CE32860E77E82794ED4CBF7B5B5499DAD84D0B01B"
+        },
+        {
+          "path": "data/st01/st01_demo112_Expand.xml.lz",
+          "length": 1896,
+          "sha256": "A50B85AC8248009B290D76121A4AF824CA05D9DF2E45ADD98D95BD8B9DB6E920"
+        },
+        {
+          "path": "data/st01/st01_demo113_Expand.xml.lz",
+          "length": 1340,
+          "sha256": "45A69C7ED2D97EE5DC0274A1BF8B5CD1B4A66174895977F030CED8C1DE5D7585"
+        },
+        {
+          "path": "data/st01/st01_demo120_Expand.xml.lz",
+          "length": 11216,
+          "sha256": "CC62D998F001CD1777EE51E9956A3BA6B95D06385B51CEE4B66AC179711D6EBC"
+        },
+        {
+          "path": "data/st01/st01_game000_Expand.en.xml.lz",
+          "length": 4040,
+          "sha256": "690E4CC0A5E6B2F8B7043BD502109FD106F08D86094758A106E8D7894C762D38"
+        },
+        {
+          "path": "data/st01/st01_game000_Expand.fr.xml.lz",
+          "length": 4004,
+          "sha256": "7AD4588A307D1636A75665AF3432A81758ED6A0F5E1FEC39CEC41B699029DCCF"
+        },
+        {
+          "path": "data/st01/st01_game000_Expand.gr.xml.lz",
+          "length": 4072,
+          "sha256": "1D47A56912ABDC1CF095BEAD4341D9EDB822061C726DB6C91601E2B45D124553"
+        },
+        {
+          "path": "data/st01/st01_game000_Expand.it.xml.lz",
+          "length": 3944,
+          "sha256": "0F397A14BB290D63AADC1DEC7A753ED6AB25813E5E6540005945ED191226F0CC"
+        },
+        {
+          "path": "data/st01/st01_game000_Expand.sp.xml.lz",
+          "length": 4088,
+          "sha256": "CA46559CAC5CA8436343DDB3AAE19C7060A75019CE47FF0E4923310C3BBD1327"
+        },
+        {
+          "path": "data/st01/st01_game000_Expand.xml.lz",
+          "length": 21012,
+          "sha256": "A0BECAF4189547D34E3D08CF8193D498EA037E99301C352F20A678A0F273FF24"
+        },
+        {
+          "path": "data/st01/st01_game001_Expand.en.xml.lz",
+          "length": 3952,
+          "sha256": "61FC35F40E1B4A8CABB1AF0F7F793E64964902643F2D8D72558EE62DF51C9A0C"
+        },
+        {
+          "path": "data/st01/st01_game001_Expand.fr.xml.lz",
+          "length": 4016,
+          "sha256": "EC60F81E958C36FA8932253F4E68E225E842F8B42B9B6DFBBA8C19E901DC7821"
+        },
+        {
+          "path": "data/st01/st01_game001_Expand.gr.xml.lz",
+          "length": 4196,
+          "sha256": "6930932254E7B983B613FD90F47666063B96EE7469D74C9D7EDA2E7B4AC36CA3"
+        },
+        {
+          "path": "data/st01/st01_game001_Expand.it.xml.lz",
+          "length": 4028,
+          "sha256": "5DB66EBCEC5F0E78A4AAFB53C930E6AAA69F094E7C5E7B658BC8C89A3C5BA2A2"
+        },
+        {
+          "path": "data/st01/st01_game001_Expand.sp.xml.lz",
+          "length": 4028,
+          "sha256": "07A9E81616262E55D21416A1A6D5E59205EA4907342505FED3028A6355C4A20E"
+        },
+        {
+          "path": "data/st01/st01_game001_Expand.xml.lz",
+          "length": 15832,
+          "sha256": "9A75D59B81DA34A17EC1CAED21E52B2893DDD05F0DD06FF05BF642AB60F3F890"
+        },
+        {
+          "path": "data/st01/st01_game010_Expand.en.xml.lz",
+          "length": 1772,
+          "sha256": "EDEC117F3741119B0A8169A5CD24EB915F26522AFA7CA7260708843B26B168BE"
+        },
+        {
+          "path": "data/st01/st01_game010_Expand.fr.xml.lz",
+          "length": 1812,
+          "sha256": "6F36EB9C1B17DB398AA330244702ACCE218418B37D72CFEDD25E3CD247382D53"
+        },
+        {
+          "path": "data/st01/st01_game010_Expand.gr.xml.lz",
+          "length": 1912,
+          "sha256": "B165C6147C38787430F7AC28CB0FF969BC7F21FC810E34591D7B955D99871232"
+        },
+        {
+          "path": "data/st01/st01_game010_Expand.it.xml.lz",
+          "length": 1888,
+          "sha256": "67FD1E795CAFB08DCAD15550563B585EF092E47C9FF993BCADF6FFF21E772EE6"
+        },
+        {
+          "path": "data/st01/st01_game010_Expand.sp.xml.lz",
+          "length": 1832,
+          "sha256": "6C82C578A7565E741792AA4B158DA216D5A53722750C9C5EBA02C12758745436"
+        },
+        {
+          "path": "data/st01/st01_game010_Expand.xml.lz",
+          "length": 16592,
+          "sha256": "289D0B47C44F57DEF3895093AC31E71DFAFB2B41339D61EAB0319A05B287B85B"
+        },
+        {
+          "path": "data/st01/st01_game011_Expand.en.xml.lz",
+          "length": 1560,
+          "sha256": "80B66A9267035856B5D87A15E17A543D9FFE7DFFD228491E5DEAF169CE142455"
+        },
+        {
+          "path": "data/st01/st01_game011_Expand.fr.xml.lz",
+          "length": 1632,
+          "sha256": "8F1FD119CD256F25538C2A9296C5A3B40EA50690F553E5AC64A848D1AD42BCE5"
+        },
+        {
+          "path": "data/st01/st01_game011_Expand.gr.xml.lz",
+          "length": 1664,
+          "sha256": "BE7ACD6FF41C6F71BA0F6257927ABD41320DDC0B4C7546BFB8842DBA5FF2A3EA"
+        },
+        {
+          "path": "data/st01/st01_game011_Expand.it.xml.lz",
+          "length": 1700,
+          "sha256": "B3E7A2371D3796AA5441D15FFA60C9AE9FFBEC2896BA8CC98D07A4D89FF65017"
+        },
+        {
+          "path": "data/st01/st01_game011_Expand.sp.xml.lz",
+          "length": 1648,
+          "sha256": "C68BDDF2D76B86AA58BE9C670EA015E4E9624750BEF81E4754CB9755FD229CAE"
+        },
+        {
+          "path": "data/st01/st01_game011_Expand.xml.lz",
+          "length": 14208,
+          "sha256": "E961B0956BA940C2D9254D38E86F5676CF256BC26960F7CF651354652CD7E65A"
+        },
+        {
+          "path": "data/st01/st01_game012_Expand.en.xml.lz",
+          "length": 2728,
+          "sha256": "EE6DF88E0CEDF6E90611ECF6BF54EEC241DD882A74A17A940F9C4BC3615611AD"
+        },
+        {
+          "path": "data/st01/st01_game012_Expand.fr.xml.lz",
+          "length": 2776,
+          "sha256": "734A91DBB0DD02E790D239BBC800BD2945A2BED8D9EBB4886AAC7A0F1F313531"
+        },
+        {
+          "path": "data/st01/st01_game012_Expand.gr.xml.lz",
+          "length": 2924,
+          "sha256": "E21568921862C5C4F87F8034D44612A6445E2D5A3FCA5D73ABE44DE66ABB69DF"
+        },
+        {
+          "path": "data/st01/st01_game012_Expand.it.xml.lz",
+          "length": 2800,
+          "sha256": "9A7E83EE0E631B283AEBAB3E2AA39E0066FB50E51E92FF7EFA48948F84168414"
+        },
+        {
+          "path": "data/st01/st01_game012_Expand.sp.xml.lz",
+          "length": 2792,
+          "sha256": "7FC9F276C5B5DF1FC14EA762CE4187E7F15EF2C2EE8A23F967C3180168824C39"
+        },
+        {
+          "path": "data/st01/st01_game012_Expand.xml.lz",
+          "length": 20448,
+          "sha256": "4FDF2855D8DE2E890B30254E9440E493939130A7D4CEF7DFFB5D907D531263EA"
+        },
+        {
+          "path": "data/st01/st01_game013_Expand.en.xml.lz",
+          "length": 3396,
+          "sha256": "467BB147C7E8256E78F773035DC20EF13FC104212829CEFEEFADEC8E73804EB8"
+        },
+        {
+          "path": "data/st01/st01_game013_Expand.fr.xml.lz",
+          "length": 3356,
+          "sha256": "759E57DB66D00B93DED217001918E7360D7C64BE3E6C0F3ED42516B6D8BE0605"
+        },
+        {
+          "path": "data/st01/st01_game013_Expand.gr.xml.lz",
+          "length": 3512,
+          "sha256": "B348AC8AEF965F9BD4034905BEFC88AE9E8E663CD1DE505590050A8524A24949"
+        },
+        {
+          "path": "data/st01/st01_game013_Expand.it.xml.lz",
+          "length": 3396,
+          "sha256": "6B78762432D85A7470949D515FA7D612CC781F406E2CA06728E89212188D8572"
+        },
+        {
+          "path": "data/st01/st01_game013_Expand.sp.xml.lz",
+          "length": 3472,
+          "sha256": "DE53442B24A65C43BB1D6F2BB63C55838692E5F637A525470EAE2454B8AF6CD7"
+        },
+        {
+          "path": "data/st01/st01_game013_Expand.xml.lz",
+          "length": 15648,
+          "sha256": "B23C41BA15472D8986A9A9BE7CC1774362B8CBE0A51DBB5862E5EE7DFDD67BD3"
+        },
+        {
+          "path": "data/st01/st01_game014_Expand.en.xml.lz",
+          "length": 2992,
+          "sha256": "5EB57F078E04423BBD3D81E4B0EF063A3FADCB59C340A0EA8DAEADB2416A4F6D"
+        },
+        {
+          "path": "data/st01/st01_game014_Expand.fr.xml.lz",
+          "length": 3096,
+          "sha256": "3756DB395878929A303F6D0454A10DAFCE53C889FA81B685752858679D7983BA"
+        },
+        {
+          "path": "data/st01/st01_game014_Expand.gr.xml.lz",
+          "length": 3168,
+          "sha256": "9B0A11E749C9CC54D558CAEAFFA69E3F866AD425C11FB899EB69D22ECD4BA645"
+        },
+        {
+          "path": "data/st01/st01_game014_Expand.it.xml.lz",
+          "length": 3068,
+          "sha256": "0C284CC57644C36992530C6B4DC9B708C98126F3A15263AC720DDD81D8D84CC5"
+        },
+        {
+          "path": "data/st01/st01_game014_Expand.sp.xml.lz",
+          "length": 3080,
+          "sha256": "7EAF6A12854EAF54961D7FB39EA2CF736922D2A848BBB8C1E000D06F3094A305"
+        },
+        {
+          "path": "data/st01/st01_game014_Expand.xml.lz",
+          "length": 19408,
+          "sha256": "BDD477E12A654678DEA77C17285E4B93EBFE45986232FB251E9FAB17F265AF25"
+        },
+        {
+          "path": "data/st01/st01_game015_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st01/st01_game015_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st01/st01_game015_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st01/st01_game015_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st01/st01_game015_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st01/st01_game015_Expand.xml.lz",
+          "length": 288,
+          "sha256": "08B9639BEBE86E2BCF1C27D572AAE426FA65F4F0BC2938A94A7E8868B18C3B16"
+        },
+        {
+          "path": "data/st01/st01_game016_Expand.en.xml.lz",
+          "length": 4128,
+          "sha256": "C0DFF66B4AD5A0E2F1420B1E46528EC8B6B34A694D4AF5E8136155612555C877"
+        },
+        {
+          "path": "data/st01/st01_game016_Expand.fr.xml.lz",
+          "length": 4024,
+          "sha256": "C8171D66071497916288A398CA41A9959AE743E69B2CFDE7D4962D698E7C7012"
+        },
+        {
+          "path": "data/st01/st01_game016_Expand.gr.xml.lz",
+          "length": 4060,
+          "sha256": "97CFE5DE947B2BD5B9C5D15441996E44E9A0D06734A2AFAD0F3B32225C64728F"
+        },
+        {
+          "path": "data/st01/st01_game016_Expand.it.xml.lz",
+          "length": 4184,
+          "sha256": "D932EFF4913A2AE02A2176B0A6C9ED0BC220E562371B31AE1685D36199416148"
+        },
+        {
+          "path": "data/st01/st01_game016_Expand.sp.xml.lz",
+          "length": 4204,
+          "sha256": "DB5F70F43454AA26CBFAF5E00E4B8AD3AED70F4B7FE41056CDD9F5602422027C"
+        },
+        {
+          "path": "data/st01/st01_game016_Expand.xml.lz",
+          "length": 23588,
+          "sha256": "BF2BAF57C0ACE0B7D2AB323E06371C27CB29B3C8116E013D43828F2C3033FA4B"
+        },
+        {
+          "path": "data/st01/st01_game020_Expand.en.xml.lz",
+          "length": 5740,
+          "sha256": "B3BD6E8C1D7D06A8D2316A25B826940D9A4D4BB99CF4C0388912CAC4E17AF51B"
+        },
+        {
+          "path": "data/st01/st01_game020_Expand.fr.xml.lz",
+          "length": 5644,
+          "sha256": "B52A009FEFF8BA89108320E45477A9D450C0768E82FAD1323ABBC340ADCC9837"
+        },
+        {
+          "path": "data/st01/st01_game020_Expand.gr.xml.lz",
+          "length": 6120,
+          "sha256": "9D72A59DA90A25E74EBA63BF7A57DFC78326E50B3EFE6F01D1852D2D3CF54433"
+        },
+        {
+          "path": "data/st01/st01_game020_Expand.it.xml.lz",
+          "length": 5960,
+          "sha256": "6DA274D09C4D1B4F2131FE92DC414BB587224055F99EB53B2D8ECA007486A69A"
+        },
+        {
+          "path": "data/st01/st01_game020_Expand.sp.xml.lz",
+          "length": 6048,
+          "sha256": "59015A917A7D07B934B184AE66B27526379E67AEA950D7C2F483890E4FEC3D09"
+        },
+        {
+          "path": "data/st01/st01_game020_Expand.xml.lz",
+          "length": 40668,
+          "sha256": "E7EF916FE86DCFC23DF34A9B83F65BBA489826826081ED6A165C7579DBBC2F33"
+        },
+        {
+          "path": "data/st01/st01_game021_Expand.en.xml.lz",
+          "length": 7520,
+          "sha256": "F2FC5B9FCBD1E80D4A233F4AC0351CF42D9F7F2505DECED311F8B2508E17E8C8"
+        },
+        {
+          "path": "data/st01/st01_game021_Expand.fr.xml.lz",
+          "length": 7712,
+          "sha256": "F4097CFF69C7AD30CE24BB2D060102390DC5AF14DA4799FA8E167CEEC0F6D470"
+        },
+        {
+          "path": "data/st01/st01_game021_Expand.gr.xml.lz",
+          "length": 7840,
+          "sha256": "7FC2CC0C0D06066978DF889DA5693E86B65E0AF7A6392F6CD37EA95DADBE75A9"
+        },
+        {
+          "path": "data/st01/st01_game021_Expand.it.xml.lz",
+          "length": 7816,
+          "sha256": "D3DA179889DFE2E0E56E428D08B9F4AFEF0FDECCFF50CD309C3571CCBF025C6C"
+        },
+        {
+          "path": "data/st01/st01_game021_Expand.sp.xml.lz",
+          "length": 7844,
+          "sha256": "D86941E5109BE72194D16D87621516696C507C65FFDCF73AF8CF4FF53A9C207B"
+        },
+        {
+          "path": "data/st01/st01_game021_Expand.xml.lz",
+          "length": 43672,
+          "sha256": "2C0AB5C10A04627996B9FABF2312A6D3867640A55D678CE9A6A5682CB0925E7A"
+        },
+        {
+          "path": "data/st01/st01_game022_Expand.en.xml.lz",
+          "length": 1344,
+          "sha256": "401F9A7B53747FBFF8B058FE0FC1E9BA531A9A3A773C2E58BDC9BF8C5EFD83E5"
+        },
+        {
+          "path": "data/st01/st01_game022_Expand.fr.xml.lz",
+          "length": 1296,
+          "sha256": "652F3150AE59E1E1ADF1B58F9D235887D2016C6B99C58C6F19FB57391A5226D2"
+        },
+        {
+          "path": "data/st01/st01_game022_Expand.gr.xml.lz",
+          "length": 1300,
+          "sha256": "4904914CECAE1E6B7C5A500ECD82A6A90456D3BE0FAE6FB5E6A02B564072FFED"
+        },
+        {
+          "path": "data/st01/st01_game022_Expand.it.xml.lz",
+          "length": 1368,
+          "sha256": "534008FF5FD60647845D4DB35105BBB415555370D112BA2468D7F49807E12193"
+        },
+        {
+          "path": "data/st01/st01_game022_Expand.sp.xml.lz",
+          "length": 1348,
+          "sha256": "1032BECF87CC95967B99AAD298F8135F33EC09409A3112AC54941206D5A71850"
+        },
+        {
+          "path": "data/st01/st01_game022_Expand.xml.lz",
+          "length": 23528,
+          "sha256": "047B05ED4FA826B8B78B69A93C2B79DB648C29DADFA9B8A8C8D213CDD28C2869"
+        },
+        {
+          "path": "data/st01/st01_root.xml.lz",
+          "length": 544,
+          "sha256": "FB4CF58B7BC6823B4C340F6913A611C1959D58A645052C4C8659CA7EAAF44799"
+        },
+        {
+          "path": "data/st02/st02_chapter000_Expand.en.xml.lz",
+          "length": 424,
+          "sha256": "A7CCE9D51E9B4B67F06D80DC1B06E6141CB349CD49A605C8FFBC5EF7A4792752"
+        },
+        {
+          "path": "data/st02/st02_chapter000_Expand.fr.xml.lz",
+          "length": 392,
+          "sha256": "CF24C8AF584298FA662BA3CCA27A3E4E821647B857DC24BAB65E306FF9F3A106"
+        },
+        {
+          "path": "data/st02/st02_chapter000_Expand.gr.xml.lz",
+          "length": 376,
+          "sha256": "D70EAD9279D8C50BE6031E9BE8717D147EB6037E613955DD24B9D2CE1F2C39B7"
+        },
+        {
+          "path": "data/st02/st02_chapter000_Expand.it.xml.lz",
+          "length": 420,
+          "sha256": "FCA98065D9D842E21A5A02AD4EC5FECCD90A293E0FCBC7901B394AB4D0147A11"
+        },
+        {
+          "path": "data/st02/st02_chapter000_Expand.sp.xml.lz",
+          "length": 400,
+          "sha256": "12921CEAD8F902B5D9644B04B5A038FD67CDA54B61D618D87DB2EA295BEB74E8"
+        },
+        {
+          "path": "data/st02/st02_chapter000_Expand.xml.lz",
+          "length": 260,
+          "sha256": "33E60D1163631055BCCB2A29C052B4EE1BEE2D46EF6E7258613D3E1A8AE78EAF"
+        },
+        {
+          "path": "data/st02/st02_chapter001_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter001_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter001_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter001_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter001_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter001_Expand.xml.lz",
+          "length": 288,
+          "sha256": "83AF9E59CB899EF2BE04C416B8046DD788714B8B7CACD89CA93E6CDD594345AD"
+        },
+        {
+          "path": "data/st02/st02_chapter002_Expand.en.xml.lz",
+          "length": 448,
+          "sha256": "3D52A5EF5552B14CB28CD26435FD857829A374472970152AE7A246A936BDC961"
+        },
+        {
+          "path": "data/st02/st02_chapter002_Expand.fr.xml.lz",
+          "length": 460,
+          "sha256": "161DA59BE6EEEEFF4447CBCE4EA904405BF0297C5B14C8DED1672E5E1449AC23"
+        },
+        {
+          "path": "data/st02/st02_chapter002_Expand.gr.xml.lz",
+          "length": 472,
+          "sha256": "95F618FE2CC392E2164C4034A13984CD94BB5030E5C04F65B6BDF81AC43465DF"
+        },
+        {
+          "path": "data/st02/st02_chapter002_Expand.it.xml.lz",
+          "length": 452,
+          "sha256": "206FAD713BBEA524CABABDA35EFC69BEFED005BBD142C05E9536ACC02C3432DF"
+        },
+        {
+          "path": "data/st02/st02_chapter002_Expand.sp.xml.lz",
+          "length": 480,
+          "sha256": "BA396D1BE60D4ACEB5A5258C922802E43356D080BC7CA4820D0497367D060611"
+        },
+        {
+          "path": "data/st02/st02_chapter002_Expand.xml.lz",
+          "length": 264,
+          "sha256": "92C697AFEC73D6F14BC3226158E90132A2F1F7130768779D8553516C92B13A5F"
+        },
+        {
+          "path": "data/st02/st02_chapter003_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter003_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter003_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter003_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter003_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter003_Expand.xml.lz",
+          "length": 284,
+          "sha256": "B6CF194B954C8763837183F008BEF8D132DA9F549D2639C7E14FC375C5620FEE"
+        },
+        {
+          "path": "data/st02/st02_chapter004_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter004_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter004_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter004_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter004_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter004_Expand.xml.lz",
+          "length": 224,
+          "sha256": "31D808FCA8E38E6690BADD42FFFE49AB8AB7FEE7CF7ED2599BF0AD037985491A"
+        },
+        {
+          "path": "data/st02/st02_chapter005_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter005_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter005_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter005_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter005_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st02/st02_chapter005_Expand.xml.lz",
+          "length": 288,
+          "sha256": "BFA750A2D7F22BBB29FCD27782F7474864C6024BEA0CE186027447E2903CDE90"
+        },
+        {
+          "path": "data/st02/st02_demo003_Expand.en.xml.lz",
+          "length": 3760,
+          "sha256": "F1DF9138BE625AB766D47F136C07ECA693C9DA10088FD64D1D0F18C80EF43A7D"
+        },
+        {
+          "path": "data/st02/st02_demo003_Expand.fr.xml.lz",
+          "length": 3928,
+          "sha256": "5599A6EB8F07764DC2B3E12894CB4993A9044FA817179B8F5205DAF36600D65D"
+        },
+        {
+          "path": "data/st02/st02_demo003_Expand.gr.xml.lz",
+          "length": 4004,
+          "sha256": "0ED8F552F2E93FC65F9962820F5DFE4AA753F60038307A8C88E461C9A1ED90EC"
+        },
+        {
+          "path": "data/st02/st02_demo003_Expand.it.xml.lz",
+          "length": 3764,
+          "sha256": "A7CA2378D9240A7BCBFBD6B606BD843C21B0430C93D31BEFF5C8C02B425EB04C"
+        },
+        {
+          "path": "data/st02/st02_demo003_Expand.sp.xml.lz",
+          "length": 3916,
+          "sha256": "F7E7D6C501A2AED56B9FD7A5A7F45E927515377467F5249453727708FAF2406A"
+        },
+        {
+          "path": "data/st02/st02_demo003_Expand.xml.lz",
+          "length": 20356,
+          "sha256": "35204240953FA9B888529EF173A5C39A43CFABFBB6D5E1F2D50A2E48393C29DF"
+        },
+        {
+          "path": "data/st02/st02_demo021_Expand.en.xml.lz",
+          "length": 2148,
+          "sha256": "3D2787430D5B1D8D3F2BA3D902DEF0B7415D012B0DAEFE36FA389C63E9419643"
+        },
+        {
+          "path": "data/st02/st02_demo021_Expand.fr.xml.lz",
+          "length": 2296,
+          "sha256": "1BB745A67EAADA40FE81E1AA025CB6A1AC533031DCC9527F99D504D42ACA1F48"
+        },
+        {
+          "path": "data/st02/st02_demo021_Expand.gr.xml.lz",
+          "length": 2316,
+          "sha256": "6B67940671B98F8C4CFA63DB8F52DF648A77D1CDA8754E29434B9099B24D4601"
+        },
+        {
+          "path": "data/st02/st02_demo021_Expand.it.xml.lz",
+          "length": 2188,
+          "sha256": "45D78FF4B2C621472DEB722230A683A7B20C5DC643190175040D7318061BE018"
+        },
+        {
+          "path": "data/st02/st02_demo021_Expand.sp.xml.lz",
+          "length": 2224,
+          "sha256": "78D593A541E8A9157C6A9FAFD348FF139142E3739372B0B687B7451CCE1443B8"
+        },
+        {
+          "path": "data/st02/st02_demo021_Expand.xml.lz",
+          "length": 26524,
+          "sha256": "FE279B097F0412B49D304CC9CA7E53830847CACC74AC8337B2F03B0C6FF0ED70"
+        },
+        {
+          "path": "data/st02/st02_demo031_Expand.en.xml.lz",
+          "length": 4236,
+          "sha256": "3A2A4A5E0047A4DD2ABBA899F655367A499EC9DB009B18D3B814AAAB594CD8DD"
+        },
+        {
+          "path": "data/st02/st02_demo031_Expand.fr.xml.lz",
+          "length": 4412,
+          "sha256": "9A70A4ACF385460AA9EAE67C7820468CBA1DEF895AD5F392750EFEFB5755E21B"
+        },
+        {
+          "path": "data/st02/st02_demo031_Expand.gr.xml.lz",
+          "length": 4576,
+          "sha256": "E01568E7FA916BC0CC3E7B3EC2732D89E5CAE77F2ACB8E2A9D206D0210CB6552"
+        },
+        {
+          "path": "data/st02/st02_demo031_Expand.it.xml.lz",
+          "length": 4416,
+          "sha256": "6D96F27765EF2DBBB2E096138E2E4909809317FA31BAD705B93AF4681974D3AA"
+        },
+        {
+          "path": "data/st02/st02_demo031_Expand.sp.xml.lz",
+          "length": 4416,
+          "sha256": "6AFADFE9C5DC8FAE236D1E707EF0910625B3E207C149654454008999501C95FE"
+        },
+        {
+          "path": "data/st02/st02_demo031_Expand.xml.lz",
+          "length": 28088,
+          "sha256": "7AA3801C31A1D354DC5DD1D0987BD721087A1A25E0C9F41C8CB48D9DDE2E582C"
+        },
+        {
+          "path": "data/st02/st02_demo033_Expand.en.xml.lz",
+          "length": 2824,
+          "sha256": "6545AB878D5BAD71710AB76E6E24399486ABCDD695A4968C6AF45FF26FE14765"
+        },
+        {
+          "path": "data/st02/st02_demo033_Expand.fr.xml.lz",
+          "length": 2904,
+          "sha256": "CA246ED29E3122C79DEF66A1D529052DA29E07F3D7E378719E78DA12B9A494CF"
+        },
+        {
+          "path": "data/st02/st02_demo033_Expand.gr.xml.lz",
+          "length": 2904,
+          "sha256": "D510851C8070667DB1C9769B4761E6FEC4AE1726A0965A6F182B355D270EF9F7"
+        },
+        {
+          "path": "data/st02/st02_demo033_Expand.it.xml.lz",
+          "length": 2904,
+          "sha256": "BA0E23682718B4AFB42DF90E513288DA64C44B3C667FA1F8D5CA1F53822377F0"
+        },
+        {
+          "path": "data/st02/st02_demo033_Expand.sp.xml.lz",
+          "length": 2916,
+          "sha256": "1EDF2BE477DB6517E3C1D27CFC3BA457E15D21E26EE16D238F9DD353D33D4B64"
+        },
+        {
+          "path": "data/st02/st02_demo033_Expand.xml.lz",
+          "length": 11536,
+          "sha256": "267D0DAEDC0999975661C7BFC2C9539C433C9317F7310967933401186233982F"
+        },
+        {
+          "path": "data/st02/st02_game.fnc_Expand.xml.lz",
+          "length": 104,
+          "sha256": "FC6915872E49D92D83ACBB8F86F4279F161299B1935D79822F2B765979714B31"
+        },
+        {
+          "path": "data/st02/st02_game000_Expand.en.xml.lz",
+          "length": 6964,
+          "sha256": "4ACF6FB4BF33B0FBB7E11F105F009B0C4FCEE4CCBF84CFEB662C5CA7F7C53581"
+        },
+        {
+          "path": "data/st02/st02_game000_Expand.fr.xml.lz",
+          "length": 7232,
+          "sha256": "721755A502212F60D04CC521C13E96124FE137EE8CF559F59DFDF0361D2A4475"
+        },
+        {
+          "path": "data/st02/st02_game000_Expand.gr.xml.lz",
+          "length": 7240,
+          "sha256": "4C3831E9834C306FE876FD72A7B7DD1D59767E073F31066A8886179D518F0790"
+        },
+        {
+          "path": "data/st02/st02_game000_Expand.it.xml.lz",
+          "length": 7056,
+          "sha256": "44B94D5C627226305212F8978272DA180EFB4920818BDBDF5E4F3FB958F6069A"
+        },
+        {
+          "path": "data/st02/st02_game000_Expand.sp.xml.lz",
+          "length": 7356,
+          "sha256": "1741DAB63746AA9454BECF38577F13012E83A28A17AAC1CACF1D9B49048DF2A3"
+        },
+        {
+          "path": "data/st02/st02_game000_Expand.xml.lz",
+          "length": 22356,
+          "sha256": "97FACC0FDA785FA17DC7145BEDE07D1063BFD036EC96A39E805F6D241A3377FC"
+        },
+        {
+          "path": "data/st02/st02_game004_Expand.en.xml.lz",
+          "length": 6152,
+          "sha256": "D64945D134966C9D17B29AD8673858F5136AD5E26ED2B08AEA0184ECE8B47E30"
+        },
+        {
+          "path": "data/st02/st02_game004_Expand.fr.xml.lz",
+          "length": 6632,
+          "sha256": "B6C780A56CB4EA7F5611A1888F67509ED9824F59DEEE830F9D040A40BAC0693B"
+        },
+        {
+          "path": "data/st02/st02_game004_Expand.gr.xml.lz",
+          "length": 6532,
+          "sha256": "B85BE0EBECD2E978C68E763DB0E121DD3DA1D826AEC19A30118AABECF1C7AB83"
+        },
+        {
+          "path": "data/st02/st02_game004_Expand.it.xml.lz",
+          "length": 6304,
+          "sha256": "C83D869FBCB2AA89EDF7C24F99CD2CF84387556A60D2EF015A6B0ABDAB44460C"
+        },
+        {
+          "path": "data/st02/st02_game004_Expand.sp.xml.lz",
+          "length": 6620,
+          "sha256": "930551D64538BE1E6D6B946DD6149DE193893DD36EAABBDE04F24170B945668E"
+        },
+        {
+          "path": "data/st02/st02_game004_Expand.xml.lz",
+          "length": 34296,
+          "sha256": "53A75CD9B442B03F2D2E8B1F68B545A23B230B3F9CB56AFD24FD53F7E9965598"
+        },
+        {
+          "path": "data/st02/st02_game010_Expand.en.xml.lz",
+          "length": 5320,
+          "sha256": "976FBE8021A52388FB9A541314B7B7F3AE0913459560AC79D62B7EC84E4A92AF"
+        },
+        {
+          "path": "data/st02/st02_game010_Expand.fr.xml.lz",
+          "length": 5556,
+          "sha256": "53831148F1C5D95F7E54E2F8A376F18C5BD4754DC859B2B160B90F194EF9AA84"
+        },
+        {
+          "path": "data/st02/st02_game010_Expand.gr.xml.lz",
+          "length": 5392,
+          "sha256": "8360B196E1AF6B09CB30427D4392929FCF4B7F108ECD33372713423798F1823B"
+        },
+        {
+          "path": "data/st02/st02_game010_Expand.it.xml.lz",
+          "length": 5456,
+          "sha256": "3E3292C6CDC558B20A60FCD9C49D412431262D8B0207ECEBB154D8C9A748A94D"
+        },
+        {
+          "path": "data/st02/st02_game010_Expand.sp.xml.lz",
+          "length": 5592,
+          "sha256": "15FF2619CEBA03081BAAEF9EA89003FA408D61C4769BAD4877125C6B1F1459DF"
+        },
+        {
+          "path": "data/st02/st02_game010_Expand.xml.lz",
+          "length": 28472,
+          "sha256": "B2918AB42C11E458C4B80AF239E5089282C52ABE9C2791A38F707968D9568604"
+        },
+        {
+          "path": "data/st02/st02_game020.fnc_Expand.xml.lz",
+          "length": 60,
+          "sha256": "BC4A6F7FBAD80D034FB1862A4ACAD1213723066F2F1750A019366DC6F3A90805"
+        },
+        {
+          "path": "data/st02/st02_game020_Expand.en.xml.lz",
+          "length": 3080,
+          "sha256": "84981735DF8AA641136715AC68AD7E147FD531C9715ED634105A1068EDD7CB53"
+        },
+        {
+          "path": "data/st02/st02_game020_Expand.fr.xml.lz",
+          "length": 3236,
+          "sha256": "7E930BD725D373B6407BE3476C597EEB1944590F0866084FFBF74562E134921C"
+        },
+        {
+          "path": "data/st02/st02_game020_Expand.gr.xml.lz",
+          "length": 3360,
+          "sha256": "76CB43032FF1439F47DB5188BBC6EAE8BDC23FADF73DCDAEB04F34E63899333C"
+        },
+        {
+          "path": "data/st02/st02_game020_Expand.it.xml.lz",
+          "length": 3164,
+          "sha256": "27EE15F0C0EA3D731AEF367FA501A7F78E0C79AB1C4AD41C2A180946C96E4310"
+        },
+        {
+          "path": "data/st02/st02_game020_Expand.sp.xml.lz",
+          "length": 3308,
+          "sha256": "0D3F8790F8EC58A2E0F744983DB0D8CF9506472A8DF769254EC2867908F1C84E"
+        },
+        {
+          "path": "data/st02/st02_game020_Expand.xml.lz",
+          "length": 18216,
+          "sha256": "F8F53E01FF120BAFE03FC544C89C57D03341050C06089BCE147176DC6EEA1C0C"
+        },
+        {
+          "path": "data/st02/st02_game022_Expand.en.xml.lz",
+          "length": 6848,
+          "sha256": "2432C3897B0FEADB839A7B4F74C5218DD06D5472E2A0897E793348B5C3B5D5BD"
+        },
+        {
+          "path": "data/st02/st02_game022_Expand.fr.xml.lz",
+          "length": 7196,
+          "sha256": "CC9B74C36C35082B80EAA296921125131CED34D58C00B27EEA385A9CEE938425"
+        },
+        {
+          "path": "data/st02/st02_game022_Expand.gr.xml.lz",
+          "length": 7660,
+          "sha256": "A04C96E2F24DE7C9C9F7E5CC6D9C4B1B177AFB606B984427B610F85FA77A77B8"
+        },
+        {
+          "path": "data/st02/st02_game022_Expand.it.xml.lz",
+          "length": 6908,
+          "sha256": "A207AE2305F19562187DFC46A8D667DD20F04185F72168A9984E1A14CF634030"
+        },
+        {
+          "path": "data/st02/st02_game022_Expand.sp.xml.lz",
+          "length": 7152,
+          "sha256": "F883D30CCCC960A9681AEED94013A42D6736D434483770E8BFC19D76BDE4F8EB"
+        },
+        {
+          "path": "data/st02/st02_game022_Expand.xml.lz",
+          "length": 41104,
+          "sha256": "5BA4D96096C0F6CA12031119910A627EED060285AB6B54FAD671E358852957E6"
+        },
+        {
+          "path": "data/st02/st02_game023_Expand.en.xml.lz",
+          "length": 6204,
+          "sha256": "9C9FB47F5F20D7798E73E1D96371089DE90081FB7A67F01CC4212B0946DFE2C6"
+        },
+        {
+          "path": "data/st02/st02_game023_Expand.fr.xml.lz",
+          "length": 6716,
+          "sha256": "6A1C3817A5009D424CF8034AA7B3B8D4BCB8465EA7EA38797B8B75E15502452B"
+        },
+        {
+          "path": "data/st02/st02_game023_Expand.gr.xml.lz",
+          "length": 6964,
+          "sha256": "F37B16DCAA413E4AFAF144452723FAFF52C6FB07F7DC5F97474B1E0BF3C474BD"
+        },
+        {
+          "path": "data/st02/st02_game023_Expand.it.xml.lz",
+          "length": 6152,
+          "sha256": "137D89BEC2AFB68F5A11074B1C192CC2DECA09DCBF72406A396121CF88455A42"
+        },
+        {
+          "path": "data/st02/st02_game023_Expand.sp.xml.lz",
+          "length": 6572,
+          "sha256": "A2E42FFF255BD31A4483CCA2728D7647F8A4D1230F00290BE159970E125F8ECC"
+        },
+        {
+          "path": "data/st02/st02_game023_Expand.xml.lz",
+          "length": 21308,
+          "sha256": "4D0334D64E14D226A893526B13757A08690055497B64B922AB6736327F6EEA68"
+        },
+        {
+          "path": "data/st02/st02_game024_Expand.en.xml.lz",
+          "length": 2548,
+          "sha256": "D5BC1B4208BB16F7746F506004908A11C7C8D7117F7ED29848F537B3390981F8"
+        },
+        {
+          "path": "data/st02/st02_game024_Expand.fr.xml.lz",
+          "length": 2624,
+          "sha256": "0BC65BC517C341105342933F58C44E3F9F45AF9919D92979E1679118E1DFA2F1"
+        },
+        {
+          "path": "data/st02/st02_game024_Expand.gr.xml.lz",
+          "length": 2724,
+          "sha256": "78FF0C235B4EC116615D5F114AA2A2C337F164664E87CEB817AFD8AA07FB153E"
+        },
+        {
+          "path": "data/st02/st02_game024_Expand.it.xml.lz",
+          "length": 2588,
+          "sha256": "E9CDE259D0E652554918873A37ABCD4D27612D7E794D52C355837D3121927B70"
+        },
+        {
+          "path": "data/st02/st02_game024_Expand.sp.xml.lz",
+          "length": 2568,
+          "sha256": "D25B167E561A276C5FC8055B3A03903F9467576BA185BF91519ECEB92F335ECA"
+        },
+        {
+          "path": "data/st02/st02_game024_Expand.xml.lz",
+          "length": 15064,
+          "sha256": "891BC31EB6755AF889E546200A3B411F0492F8568F1DEB6BD45A7B6AEB1AF014"
+        },
+        {
+          "path": "data/st02/st02_game030_Expand.en.xml.lz",
+          "length": 4004,
+          "sha256": "9978D626DFA8040CBA4E5F126568EA75706804F9455842CAA2C968152D577F1D"
+        },
+        {
+          "path": "data/st02/st02_game030_Expand.fr.xml.lz",
+          "length": 4164,
+          "sha256": "FC88B1E34F0482D5CC4A4FA96D2F5924F469604A24DACD0F166512CCC5156E08"
+        },
+        {
+          "path": "data/st02/st02_game030_Expand.gr.xml.lz",
+          "length": 4268,
+          "sha256": "89A6011BEF165173BD79FBE00DF9F42847C43947111DC2EFB12B4767E4B8F303"
+        },
+        {
+          "path": "data/st02/st02_game030_Expand.it.xml.lz",
+          "length": 4212,
+          "sha256": "8FCC57F7AF6C4D4CED540D68799AAA2B2A66D6E3A2BC41A8CE649149D3373728"
+        },
+        {
+          "path": "data/st02/st02_game030_Expand.sp.xml.lz",
+          "length": 4144,
+          "sha256": "58FB5F50BE098C218113DD94CD9505AC87A4F1DA371B0E8EB18D6B77CF3B0C8E"
+        },
+        {
+          "path": "data/st02/st02_game030_Expand.xml.lz",
+          "length": 30184,
+          "sha256": "8B581A6B667C0F3329C052C164360CD85DB587DE8F559AA2DACA98F8710B4913"
+        },
+        {
+          "path": "data/st02/st02_game032_Expand.en.xml.lz",
+          "length": 6448,
+          "sha256": "6A31F5D3734C2E02F350E5F3E5642278DB31E543F05066EC270DFB762FACFC05"
+        },
+        {
+          "path": "data/st02/st02_game032_Expand.fr.xml.lz",
+          "length": 6860,
+          "sha256": "BA5DD2646D8FBD58FA6D7DB8F6D953602C11670114B1397D755DCCD01BE6EBE1"
+        },
+        {
+          "path": "data/st02/st02_game032_Expand.gr.xml.lz",
+          "length": 6924,
+          "sha256": "0416C6D2E6FE3A57CD6248BC98C66C476F870EB145F74D6DB8971005BA5A527F"
+        },
+        {
+          "path": "data/st02/st02_game032_Expand.it.xml.lz",
+          "length": 6828,
+          "sha256": "ACB0D2D4F2500E3AD79E19B1B3ABC15432040233F0709CBC3C48AE1C02DC7F24"
+        },
+        {
+          "path": "data/st02/st02_game032_Expand.sp.xml.lz",
+          "length": 6648,
+          "sha256": "6E5A1BA422702D654B3127F11BF41FF24E676004756037032C68FF0E0BB089F0"
+        },
+        {
+          "path": "data/st02/st02_game032_Expand.xml.lz",
+          "length": 35008,
+          "sha256": "5410A4941825CF64C092CD97F9BD8C17C06257A906C889F18D0F13C05FA4455E"
+        },
+        {
+          "path": "data/st02/st02_game034_Expand.en.xml.lz",
+          "length": 8300,
+          "sha256": "B96DB4F87DF69158F4F0362BE65C2B964E50FEACDD5FE09C749485A8B018D75D"
+        },
+        {
+          "path": "data/st02/st02_game034_Expand.fr.xml.lz",
+          "length": 8596,
+          "sha256": "F965D452C8453367820281C5570D10A9DFB13DC5809C3EBEC9AEB9A116460735"
+        },
+        {
+          "path": "data/st02/st02_game034_Expand.gr.xml.lz",
+          "length": 8592,
+          "sha256": "86F03132058D7245A9E30A5B1641FE7E5070597BDF8A647E1EF57975C815CB87"
+        },
+        {
+          "path": "data/st02/st02_game034_Expand.it.xml.lz",
+          "length": 8656,
+          "sha256": "0C6A44A678BC96474A2AC46841B6824EA4A925084DFE26A7EBF70CF37F93FA97"
+        },
+        {
+          "path": "data/st02/st02_game034_Expand.sp.xml.lz",
+          "length": 8600,
+          "sha256": "9171042DECA6F974D9BFB8E77FE4D69AC2C49DC6B784B0C8AAE6051459BDFA03"
+        },
+        {
+          "path": "data/st02/st02_game034_Expand.xml.lz",
+          "length": 48848,
+          "sha256": "ADE0CF8D3845EE8C78EE6E340B7EF10825AA289E837EE78C4572F3642B6B2069"
+        },
+        {
+          "path": "data/st02/st02_game035_Expand.en.xml.lz",
+          "length": 9740,
+          "sha256": "9ED772D48193E211D5B874EEAA3524261B68199CA2784B7F75FE0D9B5DFF5B92"
+        },
+        {
+          "path": "data/st02/st02_game035_Expand.fr.xml.lz",
+          "length": 10396,
+          "sha256": "E0DFCFBCCE8D2DE611BCC03D9D0A3ABC11889120E60ADD3CDC92A0FF8C90D975"
+        },
+        {
+          "path": "data/st02/st02_game035_Expand.gr.xml.lz",
+          "length": 10300,
+          "sha256": "D67DEFD4FBB3763865F44027A31BE104A644D993CBA235FA7C3D833D9ABF01D3"
+        },
+        {
+          "path": "data/st02/st02_game035_Expand.it.xml.lz",
+          "length": 10380,
+          "sha256": "DD0F108784EAC3BC76463274EC93230F1D0A4EF70CDD51CE76BBF9229373AAFF"
+        },
+        {
+          "path": "data/st02/st02_game035_Expand.sp.xml.lz",
+          "length": 10188,
+          "sha256": "32D24A2C0C7A85BB1DE90D513DB20914946782133DB42B038FC8EBCC035D568B"
+        },
+        {
+          "path": "data/st02/st02_game035_Expand.xml.lz",
+          "length": 44604,
+          "sha256": "7552C5391C89750E0BE0B4E42EC874F2D6540322F52E6E4E06EE5D09C1D5FFA1"
+        },
+        {
+          "path": "data/st02/st02_game036_Expand.en.xml.lz",
+          "length": 13152,
+          "sha256": "D8DC5D05E049D8408F80F82CF021CA8B460FBDCCC6F2B97936050F99B81B21E5"
+        },
+        {
+          "path": "data/st02/st02_game036_Expand.fr.xml.lz",
+          "length": 13656,
+          "sha256": "34ABB9BB709C572099909B6CCFB1C68C47A4E32B2373C92C7C8727EB061B9619"
+        },
+        {
+          "path": "data/st02/st02_game036_Expand.gr.xml.lz",
+          "length": 13500,
+          "sha256": "0A2E2B8291ECF48DFB36F429E36266976820C44BC8EB60A9D7F2BDEE956FF220"
+        },
+        {
+          "path": "data/st02/st02_game036_Expand.it.xml.lz",
+          "length": 13644,
+          "sha256": "CF84799C8CEB57D1CEEFE198EB6422EAA458C3DABD66C328AC1F4E188844DEBC"
+        },
+        {
+          "path": "data/st02/st02_game036_Expand.sp.xml.lz",
+          "length": 13712,
+          "sha256": "E3462E12920EF1F5D3929B3AD464E24384C79F647794E18371E030C89F3D72E1"
+        },
+        {
+          "path": "data/st02/st02_game036_Expand.xml.lz",
+          "length": 49200,
+          "sha256": "F2FA9AFAF2794A66D295BCD14FC11EFA32640D06EBAAE8055E24C4095402BE10"
+        },
+        {
+          "path": "data/st02/st02_game037_Expand.en.xml.lz",
+          "length": 2000,
+          "sha256": "42E7BECADB38808CBFD46CE2C755E457C5750F69A4757DE34DB00018A354C32F"
+        },
+        {
+          "path": "data/st02/st02_game037_Expand.fr.xml.lz",
+          "length": 2148,
+          "sha256": "21DEF650C1DCB1BDA52294BCE4FC72FF6F411F07347551A5C419FC5D17B02BF9"
+        },
+        {
+          "path": "data/st02/st02_game037_Expand.gr.xml.lz",
+          "length": 2108,
+          "sha256": "8C57DD2DFB1605050693706432FF44BC0F9AC30662AE1C58449C2F739269F6C7"
+        },
+        {
+          "path": "data/st02/st02_game037_Expand.it.xml.lz",
+          "length": 2092,
+          "sha256": "4FDAB67EA7A7C7C352594901BC5C1B2FAEA9452FA811888C095F19087AAE37E6"
+        },
+        {
+          "path": "data/st02/st02_game037_Expand.sp.xml.lz",
+          "length": 2040,
+          "sha256": "9F36CA2DAC5AD17C1EB189D92DEFB3EAB43F387699A81BC6F108524E8A51FEAC"
+        },
+        {
+          "path": "data/st02/st02_game037_Expand.xml.lz",
+          "length": 14572,
+          "sha256": "61E07590246896AF3C7F566892F602D770E9D01E6267769D6DE06FAAA80C7FCD"
+        },
+        {
+          "path": "data/st02/st02_game100_Expand.en.xml.lz",
+          "length": 3716,
+          "sha256": "137FB2C18163A915FE27179E8D2B590B90C14EBEF194ECFE1295A9E02454F002"
+        },
+        {
+          "path": "data/st02/st02_game100_Expand.fr.xml.lz",
+          "length": 3940,
+          "sha256": "2E0C8C44E30D984D7D7E3A5B3BE56C9742364E1495D145C5C03C7DA8C43A76A4"
+        },
+        {
+          "path": "data/st02/st02_game100_Expand.gr.xml.lz",
+          "length": 4028,
+          "sha256": "4C8DFE42FB70584BEBFBB573B776B12E00CC6E4491CDF544F486A65B0B4BC4BA"
+        },
+        {
+          "path": "data/st02/st02_game100_Expand.it.xml.lz",
+          "length": 3856,
+          "sha256": "E10FABC944C464027D7575C2F752F9D05DFAC7B6C0A298C411BA995BFA5253CC"
+        },
+        {
+          "path": "data/st02/st02_game100_Expand.sp.xml.lz",
+          "length": 3812,
+          "sha256": "EF5CF2C191D50DD3B97DFC8F3545B393CFC5CAA2F2BE3EB5E57822D994A59BB3"
+        },
+        {
+          "path": "data/st02/st02_game100_Expand.xml.lz",
+          "length": 17700,
+          "sha256": "9AE36DCE90F87F843F05F17A033834C381ADDABC7FCB40874DB9F839E9CD4628"
+        },
+        {
+          "path": "data/st02/st02_root.xml.lz",
+          "length": 828,
+          "sha256": "0B82F7DF01F117D9A61B65FF97FD122818DC697CE37976CF0F8BFF3FB8837CB1"
+        },
+        {
+          "path": "data/st03/st03_demo001_Expand.en.xml.lz",
+          "length": 288,
+          "sha256": "382AB9755C842E770413FF081D6D434B1D6B47B04E6F859FBA0F2167AFAD8933"
+        },
+        {
+          "path": "data/st03/st03_demo001_Expand.fr.xml.lz",
+          "length": 336,
+          "sha256": "45E9E9EBF49B6A9203ACFF8E2D2C74F34729EF1A3998799033A3D6DEA6CF49E5"
+        },
+        {
+          "path": "data/st03/st03_demo001_Expand.gr.xml.lz",
+          "length": 304,
+          "sha256": "16CD9E82FDB4CF360A39E8E32292C0C6C100D649BD8A9826C533DD1B1FF64F2C"
+        },
+        {
+          "path": "data/st03/st03_demo001_Expand.it.xml.lz",
+          "length": 292,
+          "sha256": "79A2A502EBE41B1CABA5E94EEE99A171D5D9A5931A54EFA80A6EFA2E9C6A21AE"
+        },
+        {
+          "path": "data/st03/st03_demo001_Expand.sp.xml.lz",
+          "length": 304,
+          "sha256": "869A9972FEACA5EF67145221E4EE77B8D1EF093D9F94DE8B6920E066D7818289"
+        },
+        {
+          "path": "data/st03/st03_demo001_Expand.xml.lz",
+          "length": 4380,
+          "sha256": "BFED452AA1649BA59348A299039477A3BA858255B2606EBC172B443C4F0F140B"
+        },
+        {
+          "path": "data/st03/st03_demo010_Expand.en.xml.lz",
+          "length": 4156,
+          "sha256": "15F247AE19F646A52BF75384CCFCA1FF862E8DAAACBD3C98234CB448900AD7B3"
+        },
+        {
+          "path": "data/st03/st03_demo010_Expand.fr.xml.lz",
+          "length": 4472,
+          "sha256": "A7B7254C2DBA77E42C88D2360E9E62A98EDDA49F55980A3CF7CF01E45B09D81C"
+        },
+        {
+          "path": "data/st03/st03_demo010_Expand.gr.xml.lz",
+          "length": 4456,
+          "sha256": "A2569702598F2D0B8071BCE77972F6F813B8C9C4BE5606CF2A30E04E0783F301"
+        },
+        {
+          "path": "data/st03/st03_demo010_Expand.it.xml.lz",
+          "length": 4328,
+          "sha256": "701AD7B708488B878A44EFBE0F0A3E7AAF0A3AE836F313F3F2846C25A7897D1C"
+        },
+        {
+          "path": "data/st03/st03_demo010_Expand.sp.xml.lz",
+          "length": 4444,
+          "sha256": "D3B09DEBF14B6EB5A3689341CA48CD8D9425923055A378076C8A22DFDFC721CB"
+        },
+        {
+          "path": "data/st03/st03_demo010_Expand.xml.lz",
+          "length": 39072,
+          "sha256": "1F15A63CDAD1E26BB8D334C40545DBD4CE6978B118C1FE59A8E8DCC235ED4F23"
+        },
+        {
+          "path": "data/st03/st03_demo011_Expand.en.xml.lz",
+          "length": 2660,
+          "sha256": "1D8A5C65BCF101A8DA411E478009BD6E4F02BC0033DAE6A3955FF643A34944E4"
+        },
+        {
+          "path": "data/st03/st03_demo011_Expand.fr.xml.lz",
+          "length": 2888,
+          "sha256": "33466C4B7C14B632DC6CFF3AEEFB17B3397A497DDB9E7655DDE6E86094D55078"
+        },
+        {
+          "path": "data/st03/st03_demo011_Expand.gr.xml.lz",
+          "length": 2856,
+          "sha256": "F7D9BFA25B3E460B528268798A9EC2DA59748658408E6AC76B9623A678646739"
+        },
+        {
+          "path": "data/st03/st03_demo011_Expand.it.xml.lz",
+          "length": 2756,
+          "sha256": "25E08DF7C865633920B7F5FA289990D485B4AC574C61838AF00F09B1B4BCDD34"
+        },
+        {
+          "path": "data/st03/st03_demo011_Expand.sp.xml.lz",
+          "length": 2852,
+          "sha256": "6A0648B06CE97BD52DF00654DDA08392B15E95AFFDA5D52116630FCFE2342E5B"
+        },
+        {
+          "path": "data/st03/st03_demo011_Expand.xml.lz",
+          "length": 23444,
+          "sha256": "1DA9B7FB9E851E81D91596886F344BAAA88DB183C35D84B87D3136D5855EA2F0"
+        },
+        {
+          "path": "data/st03/st03_demo030_Expand.xml.lz",
+          "length": 3268,
+          "sha256": "4081D5BB71E244A1D80328612CF6A3AA5D830CC7A88572995D3FB22EAC39B253"
+        },
+        {
+          "path": "data/st03/st03_game000_Expand.en.xml.lz",
+          "length": 3988,
+          "sha256": "027F8E01AC312087BBEAA65E176FC30BCBAE2036C762C51DBB65650AEE38BFC6"
+        },
+        {
+          "path": "data/st03/st03_game000_Expand.fr.xml.lz",
+          "length": 4280,
+          "sha256": "61BCA66D6C158566243CBB8CC2DD8817971880BE6E7191F82C634F627829995A"
+        },
+        {
+          "path": "data/st03/st03_game000_Expand.gr.xml.lz",
+          "length": 4368,
+          "sha256": "97945FE267C31373A3470978B2529DE083B3FA3D2B485DCE75FE215A1CEF7705"
+        },
+        {
+          "path": "data/st03/st03_game000_Expand.it.xml.lz",
+          "length": 4120,
+          "sha256": "AF865AFDB6EBA250E6FB101BE61DCA5EA4B8B6838191363F0EA475214E4FF525"
+        },
+        {
+          "path": "data/st03/st03_game000_Expand.sp.xml.lz",
+          "length": 4308,
+          "sha256": "91B4A3D0FCD36DDEFA2F1FE626B1F104834944247B59EABDCE92941E81B39DE6"
+        },
+        {
+          "path": "data/st03/st03_game000_Expand.xml.lz",
+          "length": 20460,
+          "sha256": "674903EFF3AF4E3EDA48AA82B4A5B0544D668A1811ED5F3D072CC9B6BF93BF40"
+        },
+        {
+          "path": "data/st03/st03_game001_Expand.en.xml.lz",
+          "length": 5788,
+          "sha256": "FA821DD657D5D64044BAFC1072FDFD86FCDFDC3F9D2E0E06AB60C920EE6C606E"
+        },
+        {
+          "path": "data/st03/st03_game001_Expand.fr.xml.lz",
+          "length": 6252,
+          "sha256": "89AD1F0899E84E294FCC460B270EDA1BB8F2CA5D8F8E7A44BB36E63D71727602"
+        },
+        {
+          "path": "data/st03/st03_game001_Expand.gr.xml.lz",
+          "length": 6456,
+          "sha256": "1AA5C6220FF022D39208E48178E91106D767B4EF3175915BC21ADEB0142CB05F"
+        },
+        {
+          "path": "data/st03/st03_game001_Expand.it.xml.lz",
+          "length": 5948,
+          "sha256": "DCCC98A691FCBC3764C396E4A4256B24A6F8FF8AF92D9C58805506FE29D95453"
+        },
+        {
+          "path": "data/st03/st03_game001_Expand.sp.xml.lz",
+          "length": 6152,
+          "sha256": "D449334EE1044BDE578311541C3C89C354FD7C45F40773126E643605A2327757"
+        },
+        {
+          "path": "data/st03/st03_game001_Expand.xml.lz",
+          "length": 25816,
+          "sha256": "CDF122A78DF3C67FEFE6931F4D6A18B7816417C62C633FE988B6B539B6AF3C39"
+        },
+        {
+          "path": "data/st03/st03_game002_Expand.en.xml.lz",
+          "length": 2868,
+          "sha256": "5A01D6826CE4539199398AE091CCD005B678BE45209C3194FAD7F1117A34EA4B"
+        },
+        {
+          "path": "data/st03/st03_game002_Expand.fr.xml.lz",
+          "length": 3060,
+          "sha256": "7235D95A5A421C4C95035C131E61EF41F39B8E86E43C574B3F267B3869830C22"
+        },
+        {
+          "path": "data/st03/st03_game002_Expand.gr.xml.lz",
+          "length": 3128,
+          "sha256": "CAF14F098F08960CDDF90A3BFDDB8BA01030FA5BD7470CC3B6DBFE48D0E0DE56"
+        },
+        {
+          "path": "data/st03/st03_game002_Expand.it.xml.lz",
+          "length": 3020,
+          "sha256": "B12A23D9E180F8C588184D77D7C396D15B41D3E8E07B0FDBE0C741EB1BBE276B"
+        },
+        {
+          "path": "data/st03/st03_game002_Expand.sp.xml.lz",
+          "length": 3040,
+          "sha256": "FC91F489D8D4F277800B0D2DA364D9ABAB1CF4C700CE6E609A0087997897C0B5"
+        },
+        {
+          "path": "data/st03/st03_game002_Expand.xml.lz",
+          "length": 18268,
+          "sha256": "252E8410EA6A84BEE21BA0F858FD68CE560BB24F488E50EFF3FC7A197DCDE0D0"
+        },
+        {
+          "path": "data/st03/st03_game003_Expand.en.xml.lz",
+          "length": 3268,
+          "sha256": "3DF028CD4045B86D039EC312A90A1DFABC8E9573FC37BAFDFF86B19542A9A87F"
+        },
+        {
+          "path": "data/st03/st03_game003_Expand.fr.xml.lz",
+          "length": 3172,
+          "sha256": "8201E909B3462FB1492D1F6FEC5DFE7AA778C059FC15FEB36BF085E82F71F836"
+        },
+        {
+          "path": "data/st03/st03_game003_Expand.gr.xml.lz",
+          "length": 3180,
+          "sha256": "7106007C9D2D32BDDFA2D782D7558AA6057B88B4F5DA4874D4B3E8C1BFD83FD5"
+        },
+        {
+          "path": "data/st03/st03_game003_Expand.it.xml.lz",
+          "length": 3476,
+          "sha256": "B011CFF243280200105ABEDB7FDDF0BE037E59AA867DD3D1068E6A9B1941D831"
+        },
+        {
+          "path": "data/st03/st03_game003_Expand.sp.xml.lz",
+          "length": 3272,
+          "sha256": "DB4D606A94F055E033DA8D282DA83AF98FFD93B4E1E31340E78D6CC793AB99E2"
+        },
+        {
+          "path": "data/st03/st03_game003_Expand.xml.lz",
+          "length": 17100,
+          "sha256": "08343C9D165E911E97209DECAE5E82B0B952496A364FB2A7401682D65C35A8D4"
+        },
+        {
+          "path": "data/st03/st03_game004_Expand.en.xml.lz",
+          "length": 1628,
+          "sha256": "71FC24F397E0EA734B1D183273FB512F4DBB6CFE4782314B803A08CDC816BFA6"
+        },
+        {
+          "path": "data/st03/st03_game004_Expand.fr.xml.lz",
+          "length": 1696,
+          "sha256": "61668CF4964ACE8EEC7CE2A04AEE075820C5EA33CF07C5B9A44F826AE71974A8"
+        },
+        {
+          "path": "data/st03/st03_game004_Expand.gr.xml.lz",
+          "length": 1652,
+          "sha256": "9CD2F731AD7B5892E70FC7B948ED29DBA219CC6895DB721BE2EB2EF4291F1C87"
+        },
+        {
+          "path": "data/st03/st03_game004_Expand.it.xml.lz",
+          "length": 1752,
+          "sha256": "4F7F45D865B3B5AB8F719DD33BA11D04633D44D72EF3EEA4A74EE476045BD33C"
+        },
+        {
+          "path": "data/st03/st03_game004_Expand.sp.xml.lz",
+          "length": 1668,
+          "sha256": "FF96422E1B3164CC6C36B3D410C7CA28C7E06C5CF92559C725860B42C5FA65C9"
+        },
+        {
+          "path": "data/st03/st03_game004_Expand.xml.lz",
+          "length": 16372,
+          "sha256": "28792CA96E254340451F51D54B4128582D38C5B90DED56BDA335197379C6E6C6"
+        },
+        {
+          "path": "data/st03/st03_game005_Expand.en.xml.lz",
+          "length": 2360,
+          "sha256": "C55625493E301F1B6D277BAD7E0F63AFC358A5F7B65C78A3A190868C5848D2BD"
+        },
+        {
+          "path": "data/st03/st03_game005_Expand.fr.xml.lz",
+          "length": 2488,
+          "sha256": "F1C66B0CA4D85227E2E0BDF92618B80F3AE535AA23ED41472E377E2F8DD82333"
+        },
+        {
+          "path": "data/st03/st03_game005_Expand.gr.xml.lz",
+          "length": 2328,
+          "sha256": "CB85EF1428E83EC6FBEF56B8AFA48E007E534F642463E43C62F153B28AB3D8A8"
+        },
+        {
+          "path": "data/st03/st03_game005_Expand.it.xml.lz",
+          "length": 2464,
+          "sha256": "5293952D60F588A1D63C2716A030A72BA6B69EE3A3086C0B5DFCEC6EA91B6B4E"
+        },
+        {
+          "path": "data/st03/st03_game005_Expand.sp.xml.lz",
+          "length": 2432,
+          "sha256": "4B9C353CBD0901255F818037B6EE6B15C761E788B5F4F93BFF2C24D595107069"
+        },
+        {
+          "path": "data/st03/st03_game005_Expand.xml.lz",
+          "length": 14416,
+          "sha256": "50AFC11EA2D68393665BC99C8A2FDB41435EF39719A15C55C11DC0724525918D"
+        },
+        {
+          "path": "data/st03/st03_game006_Expand.en.xml.lz",
+          "length": 2036,
+          "sha256": "DF25C63C6816630ADEB767E8AAD6E9F53ED2BA0B9140E57C8FB560E4A884EA74"
+        },
+        {
+          "path": "data/st03/st03_game006_Expand.fr.xml.lz",
+          "length": 2116,
+          "sha256": "F087B7EE4C1290844775D7AC6B686AFDCDB3FF62FAE41270475314736655E60F"
+        },
+        {
+          "path": "data/st03/st03_game006_Expand.gr.xml.lz",
+          "length": 2112,
+          "sha256": "34EC43D686B20CBCD2EA24A2305B3835628BC2316DDD7FAD67F00548F2375EDB"
+        },
+        {
+          "path": "data/st03/st03_game006_Expand.it.xml.lz",
+          "length": 2060,
+          "sha256": "EF5CA80266E2D1A6F93B4C512B6F950AF0B463EFCBF99C4A6547D70194BCD2F5"
+        },
+        {
+          "path": "data/st03/st03_game006_Expand.sp.xml.lz",
+          "length": 2120,
+          "sha256": "735F1EDAD264532D940E3725EECAE6125176272E4B12CC5E2FBAD1897AB75CD7"
+        },
+        {
+          "path": "data/st03/st03_game006_Expand.xml.lz",
+          "length": 17288,
+          "sha256": "61B80498338077AB15889F88354991EB7B17AC07DE3620224E57D11D2608D679"
+        },
+        {
+          "path": "data/st03/st03_game010_Expand.en.xml.lz",
+          "length": 7484,
+          "sha256": "5DD1B42BE121684055E396D350B3D033065E1109334F1DC3619246E0B4281700"
+        },
+        {
+          "path": "data/st03/st03_game010_Expand.fr.xml.lz",
+          "length": 8052,
+          "sha256": "5C05535B531D17C6A88D69817D8704DDB5D63E5ABA862E253804E08A05470C76"
+        },
+        {
+          "path": "data/st03/st03_game010_Expand.gr.xml.lz",
+          "length": 8308,
+          "sha256": "9ECE8202D5D19B0482E40527D4036F209695B1FACBA51696B76EADC491A56CC4"
+        },
+        {
+          "path": "data/st03/st03_game010_Expand.it.xml.lz",
+          "length": 7784,
+          "sha256": "053CD467B8B7AF3FBD4218CE2341B0CB1B19A703045F2814E30EBC295B3022F8"
+        },
+        {
+          "path": "data/st03/st03_game010_Expand.sp.xml.lz",
+          "length": 8020,
+          "sha256": "9C15A3A2FFA742FE8DF365257D37BDA9D7367E60E2A4B9002561A48FA39C7BD4"
+        },
+        {
+          "path": "data/st03/st03_game010_Expand.xml.lz",
+          "length": 61276,
+          "sha256": "8BA83D28ADF4989E71A254AC5AD75D3EC177BB0B14F30307D575A902734AFC2C"
+        },
+        {
+          "path": "data/st03/st03_game011_Expand.en.xml.lz",
+          "length": 8324,
+          "sha256": "8B0D3B23838073A728F5B22B71B64FD63D5D98F19D46DFD2626E1616134225AA"
+        },
+        {
+          "path": "data/st03/st03_game011_Expand.fr.xml.lz",
+          "length": 8940,
+          "sha256": "EC43659A91EF8C92E061AA5F494E719663961E6119430B6ED2E891EC1BA12AAE"
+        },
+        {
+          "path": "data/st03/st03_game011_Expand.gr.xml.lz",
+          "length": 8820,
+          "sha256": "5A85CB4063948C712F0248C730D532FDF01713F6F99867078715A6CE570A424D"
+        },
+        {
+          "path": "data/st03/st03_game011_Expand.it.xml.lz",
+          "length": 8868,
+          "sha256": "3ACE99D3F89C3A3205FBF07EF50BFFDA7D1189D65EBC8C29115F9997879FC6FF"
+        },
+        {
+          "path": "data/st03/st03_game011_Expand.sp.xml.lz",
+          "length": 8884,
+          "sha256": "51B0454AAE4F8F26C2AF9208D48B45A7DF62A85CA0EBFBB51E88F32B543E23F8"
+        },
+        {
+          "path": "data/st03/st03_game011_Expand.xml.lz",
+          "length": 64204,
+          "sha256": "F01F39DD4D3A1D5574133C4C98222092017CD047D4410BB1FA24B5AF7E4C8AAA"
+        },
+        {
+          "path": "data/st03/st03_game012_Expand.en.xml.lz",
+          "length": 8272,
+          "sha256": "3B3757D696028203892B95CFACE264F3F10A2631E14FB7FE682650CAD8815503"
+        },
+        {
+          "path": "data/st03/st03_game012_Expand.fr.xml.lz",
+          "length": 8804,
+          "sha256": "A770F14BF38124C3EC34CCE373BACB620C729AFCD223B996C3141431CA47EE8F"
+        },
+        {
+          "path": "data/st03/st03_game012_Expand.gr.xml.lz",
+          "length": 8276,
+          "sha256": "E1F47D2C25EFE4F181652F9DB8B20EB4C11F952994123C37CD2363B1884DB3E1"
+        },
+        {
+          "path": "data/st03/st03_game012_Expand.it.xml.lz",
+          "length": 9044,
+          "sha256": "B2103B1EC75553F5E8B9DC4B96F3E81B3AF1197C74B79A2928E95FA6D6FF0D73"
+        },
+        {
+          "path": "data/st03/st03_game012_Expand.sp.xml.lz",
+          "length": 8796,
+          "sha256": "6B8312ED1D3212106D1BB0278DADF9D0AC45B0227BAC8233D35EBA5F394D43D5"
+        },
+        {
+          "path": "data/st03/st03_game012_Expand.xml.lz",
+          "length": 47676,
+          "sha256": "8109D4F9C4311DC895258FD46C7EB5F0324BDE8962A9629711DC41D2EC8BB5ED"
+        },
+        {
+          "path": "data/st03/st03_game013_Expand.en.xml.lz",
+          "length": 3256,
+          "sha256": "17F3DED3F8D7170647E139EDA1BA92C86DA738D8933D084248EA0660817BAB2C"
+        },
+        {
+          "path": "data/st03/st03_game013_Expand.fr.xml.lz",
+          "length": 3504,
+          "sha256": "CB939E0585113E8A23D222881B30D45D2A43443D64E16EC452CF4D037B4F2426"
+        },
+        {
+          "path": "data/st03/st03_game013_Expand.gr.xml.lz",
+          "length": 3428,
+          "sha256": "1272791C487AC97C8BD50AFF89483791CF3512DE9B60F33DD3333A92AF18EFB6"
+        },
+        {
+          "path": "data/st03/st03_game013_Expand.it.xml.lz",
+          "length": 3376,
+          "sha256": "BBE60D5B0A7D2B7DCDFDA4DF06FCB2F19CD1E42CB180A756AACB67BC7464446F"
+        },
+        {
+          "path": "data/st03/st03_game013_Expand.sp.xml.lz",
+          "length": 3496,
+          "sha256": "039A3FAA94AF77241F30C32F4401AD2EF2BD893121BF756D1A79FA95A913804F"
+        },
+        {
+          "path": "data/st03/st03_game013_Expand.xml.lz",
+          "length": 26300,
+          "sha256": "8C2C01F69AD87FB09D2F13C1739AC61A410380407676FB4359E9E1F08370490F"
+        },
+        {
+          "path": "data/st03/st03_game014_Expand.en.xml.lz",
+          "length": 3080,
+          "sha256": "B121C17B204F8209BA446788ED27E1B44C566A635DF72E880F44237BEF5870D5"
+        },
+        {
+          "path": "data/st03/st03_game014_Expand.fr.xml.lz",
+          "length": 3280,
+          "sha256": "7988F4020CE1C63C19F77D718710BB41DB52F35BDDB459BB12F99C75AA8B36BB"
+        },
+        {
+          "path": "data/st03/st03_game014_Expand.gr.xml.lz",
+          "length": 3272,
+          "sha256": "8FAAC295C92C52CEBEFED04AEB887FFED833F663E38D9A7D40CE660272DBF0B4"
+        },
+        {
+          "path": "data/st03/st03_game014_Expand.it.xml.lz",
+          "length": 3168,
+          "sha256": "1C012A94B8E3A3040254339D56CEF1163CFDFAA6923D321A5F50EE24D6CF523C"
+        },
+        {
+          "path": "data/st03/st03_game014_Expand.sp.xml.lz",
+          "length": 3300,
+          "sha256": "0039917467051E122200E17F83464D23E39F35479B15337AB330F01EE9A80228"
+        },
+        {
+          "path": "data/st03/st03_game014_Expand.xml.lz",
+          "length": 25252,
+          "sha256": "E67D78C03B1F9B0E55F02220226A63E351B79374D23BCE02E3FB87A78425D05C"
+        },
+        {
+          "path": "data/st03/st03_game015_Expand.en.xml.lz",
+          "length": 3836,
+          "sha256": "DE1F4D5971AAE3624398566405096095A6680329953794B51619EE60A3689B16"
+        },
+        {
+          "path": "data/st03/st03_game015_Expand.fr.xml.lz",
+          "length": 4068,
+          "sha256": "B1C5DE922E1974EE7BAE49D7B0229064D44964971ABE4A273D531441D1704846"
+        },
+        {
+          "path": "data/st03/st03_game015_Expand.gr.xml.lz",
+          "length": 4160,
+          "sha256": "08A24882A33A598D87DE8934BBC92B5FF86FB04413ECD1C2A82B357F337633BB"
+        },
+        {
+          "path": "data/st03/st03_game015_Expand.it.xml.lz",
+          "length": 3940,
+          "sha256": "4C0B62B0D1CCBBDB94989079E442663B4C804151F233D95AA74283A28565C2D8"
+        },
+        {
+          "path": "data/st03/st03_game015_Expand.sp.xml.lz",
+          "length": 4052,
+          "sha256": "7832069F50C13AD6E8EE8387F0953374E195B900F54F94FC3719F9A40B3D457A"
+        },
+        {
+          "path": "data/st03/st03_game015_Expand.xml.lz",
+          "length": 50496,
+          "sha256": "E78649EACF6F3F40BB77A2050A6BB0A185C7EA237770FDEDF06D45A76119625B"
+        },
+        {
+          "path": "data/st03/st03_game016_Expand.en.xml.lz",
+          "length": 3576,
+          "sha256": "8ED1A5578DA09DCDE5C9799AD982AFA6689A15891F5993EF85DB71A09D4FDA98"
+        },
+        {
+          "path": "data/st03/st03_game016_Expand.fr.xml.lz",
+          "length": 3772,
+          "sha256": "F18F493C9F828B69B9216F77349548077039A65E6E2969D5E9A7606EE320F7AE"
+        },
+        {
+          "path": "data/st03/st03_game016_Expand.gr.xml.lz",
+          "length": 3780,
+          "sha256": "169CE382009115970AE545B9EF178992BF1C8FFAFB40A07D46125A56DDDE2CC5"
+        },
+        {
+          "path": "data/st03/st03_game016_Expand.it.xml.lz",
+          "length": 3664,
+          "sha256": "2F880735F09765D4350EA69D4797CC1BB6F91DBE398D013A345A4BAEC648888C"
+        },
+        {
+          "path": "data/st03/st03_game016_Expand.sp.xml.lz",
+          "length": 3780,
+          "sha256": "6D8446F587C41726D3E54F5F79725CA5A6A5FB5A5244803F742C4E973551D3A8"
+        },
+        {
+          "path": "data/st03/st03_game016_Expand.xml.lz",
+          "length": 47892,
+          "sha256": "8DC08FB0E69CB231610F633A0DB72E2B5C1F6EA8B36CF99493F926842BA74A03"
+        },
+        {
+          "path": "data/st03/st03_game020_Expand.en.xml.lz",
+          "length": 5904,
+          "sha256": "B9D15A4759FC63021D0FED4B14B59542C7C769C508436544863B34855EB4AA64"
+        },
+        {
+          "path": "data/st03/st03_game020_Expand.fr.xml.lz",
+          "length": 6128,
+          "sha256": "9909CFEC9DE1FFB8419C6A0A344163B6D25BCC1236B3269B80B901A67981BF3F"
+        },
+        {
+          "path": "data/st03/st03_game020_Expand.gr.xml.lz",
+          "length": 6116,
+          "sha256": "5B27B5CC18C44A51EA5A5355DF2B815FD5E208D4989DBED5F0DACD173B3FF84A"
+        },
+        {
+          "path": "data/st03/st03_game020_Expand.it.xml.lz",
+          "length": 6208,
+          "sha256": "672936060B0C34FFB524D59286DA4233ADDD29F81F43DF9986F1E3503202BF45"
+        },
+        {
+          "path": "data/st03/st03_game020_Expand.sp.xml.lz",
+          "length": 5984,
+          "sha256": "4DD268E1AB8AAB75AC841CA27FFA7400C88ABDB1B2D3B3AF1016CFE7B354B39B"
+        },
+        {
+          "path": "data/st03/st03_game020_Expand.xml.lz",
+          "length": 8392,
+          "sha256": "8EC38CCA6ED0C370DF0E9F8668964827884E9C108B2AF8777BE49530E1ACE46D"
+        },
+        {
+          "path": "data/st03/st03_game021_Expand.xml.lz",
+          "length": 224,
+          "sha256": "42D6FBF2C50A2E4276493ACF67EDE2A529D7C9E74596AF689C1336653AA32426"
+        },
+        {
+          "path": "data/st03/st03_game030_Expand.en.xml.lz",
+          "length": 1064,
+          "sha256": "5BB08610394DB73E91A1E9270B059F1D8EE2AB2830AD5BB075473421427B6C25"
+        },
+        {
+          "path": "data/st03/st03_game030_Expand.fr.xml.lz",
+          "length": 1172,
+          "sha256": "7A4B72D67F1A4640235C467E33B8039BCD5C369A12330539C2F67DF51B7F3E96"
+        },
+        {
+          "path": "data/st03/st03_game030_Expand.gr.xml.lz",
+          "length": 1188,
+          "sha256": "3BCBA30DBBEECDB827061E429013F24232E7C968C0A265FC8E960536F066990F"
+        },
+        {
+          "path": "data/st03/st03_game030_Expand.it.xml.lz",
+          "length": 1092,
+          "sha256": "434E3FB64DB1914E935E1A06531C031A8797DE8CD87B4BE12B4BAA7A64A77D19"
+        },
+        {
+          "path": "data/st03/st03_game030_Expand.sp.xml.lz",
+          "length": 1068,
+          "sha256": "B21671094B6313971A48D532AEA7AA28C32A2FD83583448FA0E98DB3F910285C"
+        },
+        {
+          "path": "data/st03/st03_game030_Expand.xml.lz",
+          "length": 8492,
+          "sha256": "848D6AB6D35AA6AFCDEDD492D0F065986A3F557DB916734CB6D61CCD535C8BEB"
+        },
+        {
+          "path": "data/st03/st03_game031_Expand.en.xml.lz",
+          "length": 6912,
+          "sha256": "D46B05049BE694EA0F7DE227523D529CF55C5E302FD50645EF19634E5CE0DC68"
+        },
+        {
+          "path": "data/st03/st03_game031_Expand.fr.xml.lz",
+          "length": 7396,
+          "sha256": "6254643EB931FE4E6055F83F815167A13416E687B5D9E39815E4DA74ED338D8A"
+        },
+        {
+          "path": "data/st03/st03_game031_Expand.gr.xml.lz",
+          "length": 7216,
+          "sha256": "44ADE0483159FF8D3CFA59D3BAF7713887B5AD32AD441EC063B21EB47D1A1750"
+        },
+        {
+          "path": "data/st03/st03_game031_Expand.it.xml.lz",
+          "length": 7292,
+          "sha256": "336C888F984D890EF3904C01D8C774D31A01E4F7FDA8E85C4AB77CFFF50385CE"
+        },
+        {
+          "path": "data/st03/st03_game031_Expand.sp.xml.lz",
+          "length": 7180,
+          "sha256": "5455B25D710B041D69B8C8E07466B62EDAD31894C2EAC5BD7AB107872A5FF13F"
+        },
+        {
+          "path": "data/st03/st03_game031_Expand.xml.lz",
+          "length": 47936,
+          "sha256": "8408814BEDDA9E024BF9D8A7D1C03A3EC1F47BC03A8F9A6AEDA3EEBCADAC6959"
+        },
+        {
+          "path": "data/st03/st03_game032_Expand.en.xml.lz",
+          "length": 2732,
+          "sha256": "24C28AD186A3761743395A5593643B18CA80F896F1C265C0A75CF001D022DC83"
+        },
+        {
+          "path": "data/st03/st03_game032_Expand.fr.xml.lz",
+          "length": 2976,
+          "sha256": "905DC32771C2FA1AC387A21C9373047A5108B95B4018D3211E2CB1286DCE8573"
+        },
+        {
+          "path": "data/st03/st03_game032_Expand.gr.xml.lz",
+          "length": 2768,
+          "sha256": "2890934BDFE06E4174C9B5A20F03726E192A89EEBFF2B823773C5F1E9428444B"
+        },
+        {
+          "path": "data/st03/st03_game032_Expand.it.xml.lz",
+          "length": 2888,
+          "sha256": "1EF1A687E2219B3E6BE78F4D92ACE3ED850FE84F7A054B77076581C96994BB76"
+        },
+        {
+          "path": "data/st03/st03_game032_Expand.sp.xml.lz",
+          "length": 2928,
+          "sha256": "3E2AC24FA267E73633DE5B5C9634EABF66F1348E49057CCF3AE79E9BE0E34B2C"
+        },
+        {
+          "path": "data/st03/st03_game032_Expand.xml.lz",
+          "length": 13192,
+          "sha256": "28A996E83BBD494B06FE64CBB6F5CF423D8E23BC57DBB79D0FA7EF547FB991A9"
+        },
+        {
+          "path": "data/st03/st03_game033_Expand.en.xml.lz",
+          "length": 2740,
+          "sha256": "C7F53B655225C0A66C5B0EC8D0167E03121BF6BF8D10A8C0B144F11988157230"
+        },
+        {
+          "path": "data/st03/st03_game033_Expand.fr.xml.lz",
+          "length": 2972,
+          "sha256": "C53086CF04C7DD6B084BE42E8B05FA5D1FE51D8E28C29C2EE46C53B74A59D9E3"
+        },
+        {
+          "path": "data/st03/st03_game033_Expand.gr.xml.lz",
+          "length": 2828,
+          "sha256": "673BABE108E983D53E2E75071133D53BEFEF7019783A7A9E7162862C15A26787"
+        },
+        {
+          "path": "data/st03/st03_game033_Expand.it.xml.lz",
+          "length": 2888,
+          "sha256": "66423074E9ECA0B3F807963B21F1418A080FE5A8B81F1587CB639ACC8AE0A52D"
+        },
+        {
+          "path": "data/st03/st03_game033_Expand.sp.xml.lz",
+          "length": 3004,
+          "sha256": "56BD5F44EFC3A6EB9F443438FB2FEDD75C83C6C5BDD12C2F293A811B760AC33E"
+        },
+        {
+          "path": "data/st03/st03_game033_Expand.xml.lz",
+          "length": 12012,
+          "sha256": "846CC019FCF8732DF98F509D3C7742DCDDFA02103762F15B26C694A2C91405E6"
+        },
+        {
+          "path": "data/st03/st03_game034_Expand.en.xml.lz",
+          "length": 1344,
+          "sha256": "466B70B0AE67948E706C0DF4C9A36E5B74054C0C42057E0F7AFD3563C0276D82"
+        },
+        {
+          "path": "data/st03/st03_game034_Expand.fr.xml.lz",
+          "length": 1452,
+          "sha256": "14366BE344B6B1D88F78E458B5788E3CBDAA7E5C07B61C21D4A1B6DE2181D117"
+        },
+        {
+          "path": "data/st03/st03_game034_Expand.gr.xml.lz",
+          "length": 1420,
+          "sha256": "B9AF92FE7870E1769BE09B75A1BC99ABEB68279E71CF62D283CD37448B96E481"
+        },
+        {
+          "path": "data/st03/st03_game034_Expand.it.xml.lz",
+          "length": 1408,
+          "sha256": "8A3F2176152FC69729C067A77512FC9B3E1309B23809DCA5827D1B8EB50D9F7C"
+        },
+        {
+          "path": "data/st03/st03_game034_Expand.sp.xml.lz",
+          "length": 1412,
+          "sha256": "05F57314C1212392071AE75BE272029E98DE8DC48EC3D513CD9CDA289F3F9EE7"
+        },
+        {
+          "path": "data/st03/st03_game034_Expand.xml.lz",
+          "length": 15180,
+          "sha256": "3CE165A348075F7E749A7ED5E59DDBBA0871D43B1AC2AC797C1F08B1E52EC2D7"
+        },
+        {
+          "path": "data/st03/st03_game035_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st03/st03_game035_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st03/st03_game035_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st03/st03_game035_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st03/st03_game035_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st03/st03_game035_Expand.xml.lz",
+          "length": 224,
+          "sha256": "D892746107344B602AF77BE237B45FB9FC20DA340CD2EFEF40CD3C56AF36DC93"
+        },
+        {
+          "path": "data/st03/st03_game036_Expand.en.xml.lz",
+          "length": 1552,
+          "sha256": "1ADD372753FD95311FF9BA4B024B7CACA214A4B5856476DE179203C87D393B31"
+        },
+        {
+          "path": "data/st03/st03_game036_Expand.fr.xml.lz",
+          "length": 1692,
+          "sha256": "8270C77F079C26B8CB91DB48324D0CBC9543070CA7837E4019DCA0874A0BE870"
+        },
+        {
+          "path": "data/st03/st03_game036_Expand.gr.xml.lz",
+          "length": 1688,
+          "sha256": "3C81433418234511F1DF6A49D8CD7BACEA99AE0F8001CE2550164B7147CBF84D"
+        },
+        {
+          "path": "data/st03/st03_game036_Expand.it.xml.lz",
+          "length": 1648,
+          "sha256": "854A30206CCADC4FA0FBEAE3153DF5C231471EA547A0F0475D7E03FF62830A56"
+        },
+        {
+          "path": "data/st03/st03_game036_Expand.sp.xml.lz",
+          "length": 1620,
+          "sha256": "DA085EA00C65084E2B0517BF223220C1CA78F89BB7D767DED7EF3D719101B621"
+        },
+        {
+          "path": "data/st03/st03_game036_Expand.xml.lz",
+          "length": 15024,
+          "sha256": "89AC4ED1928A8CFB42BDC5F674131EF30E900A3B3EC2865FFC9CE5611765F1ED"
+        },
+        {
+          "path": "data/st03/st03_root.xml.lz",
+          "length": 1384,
+          "sha256": "ED4B976360572B4608E2DB3B75F7AB6DC0C1F9DCBDC0F87ADDF71D3986FDBCD3"
+        },
+        {
+          "path": "data/st04/_st04_game001_Expand.xml.lz",
+          "length": 34532,
+          "sha256": "FCB853A25DB74BFCB861D5B1B2D2CA4DDCF51A4C96DFBE882006376BCBDD9EC4"
+        },
+        {
+          "path": "data/st04/st04_01_root.xml.lz",
+          "length": 204,
+          "sha256": "CF1FC7FF10D4CEADD6C61BB2BE1470BCB60C4D4D1ACE0E03E8F6BD91758C2EED"
+        },
+        {
+          "path": "data/st04/st04_chapter000_Expand.xml.lz",
+          "length": 312,
+          "sha256": "F5B896C0505B4F69D4101AAABDABC9F3623745F6B498301F7E811254568400C5"
+        },
+        {
+          "path": "data/st04/st04_demo000_Expand.en.xml.lz",
+          "length": 1184,
+          "sha256": "4572A47B91B48B1988B7BF064453A900F5A08C3358789519C4D8A4E05980B5DF"
+        },
+        {
+          "path": "data/st04/st04_demo000_Expand.fr.xml.lz",
+          "length": 1288,
+          "sha256": "07B97F274EFC815BA7932A633D398E50EFAFC65A114DF5A5DF4AE7596E009732"
+        },
+        {
+          "path": "data/st04/st04_demo000_Expand.gr.xml.lz",
+          "length": 1180,
+          "sha256": "DDA6A15E7611F20A0895A6A009694DB23B28B3EC84765C7835927B71D46DF3C4"
+        },
+        {
+          "path": "data/st04/st04_demo000_Expand.it.xml.lz",
+          "length": 1164,
+          "sha256": "5FFDD79E9FF4737B581BDFAA01F29049CD9CECDDCEBC062167804F906B44818C"
+        },
+        {
+          "path": "data/st04/st04_demo000_Expand.sp.xml.lz",
+          "length": 1224,
+          "sha256": "7E2253B2626E629AECE55CC2BDF31710BE1A143F7D56DB31651CC7F25A9CEE04"
+        },
+        {
+          "path": "data/st04/st04_demo000_Expand.xml.lz",
+          "length": 9388,
+          "sha256": "CB72BC6E4307AD0B58669B071D36EDE1DE7582A6BF014421109863DDACCF394B"
+        },
+        {
+          "path": "data/st04/st04_game000_Expand.en.xml.lz",
+          "length": 5428,
+          "sha256": "BD6B2BEF4970BFB08A031067C41FE3C2284AC5DC60C019AF6D9512DA70A72A75"
+        },
+        {
+          "path": "data/st04/st04_game000_Expand.fr.xml.lz",
+          "length": 5764,
+          "sha256": "AB032666084D550B9FB5B7F774B1CCAD12215F74034E550BBD06AD8ED2C4AC41"
+        },
+        {
+          "path": "data/st04/st04_game000_Expand.gr.xml.lz",
+          "length": 5572,
+          "sha256": "AFCB5CE0A5EFE056337FB21BB91F8879134350F1E194C5FD668A2A415FBE6130"
+        },
+        {
+          "path": "data/st04/st04_game000_Expand.it.xml.lz",
+          "length": 5452,
+          "sha256": "A1F06CBC64A431A17FAE930D4B246A95566148AA3D03B6BC20E73F777A7BBEB7"
+        },
+        {
+          "path": "data/st04/st04_game000_Expand.sp.xml.lz",
+          "length": 5568,
+          "sha256": "A007AEEEB87008E0DFDCB05ABFC32D1F24294C247903EE39219A087604187E6E"
+        },
+        {
+          "path": "data/st04/st04_game000_Expand.xml.lz",
+          "length": 12716,
+          "sha256": "A6F999C22BF5F679E12A6DC920C3900395BA0F47EA75856695CE45A81C1C12F9"
+        },
+        {
+          "path": "data/st04/st04_game001_Expand.en.xml.lz",
+          "length": 9776,
+          "sha256": "2920EA0C9732E785DA3BC835BBEA58AB5FA67AE1736B42C9BD008BE022011AFB"
+        },
+        {
+          "path": "data/st04/st04_game001_Expand.fr.xml.lz",
+          "length": 10184,
+          "sha256": "EB99193CFD9871E8A53343B787E1A2BC002D12BBCD78E512352076CFD226A678"
+        },
+        {
+          "path": "data/st04/st04_game001_Expand.gr.xml.lz",
+          "length": 9788,
+          "sha256": "E3CB1D07A1C13603A97E0DA335B2DF30AE690C3E1523D763EC4C29159C91ECA2"
+        },
+        {
+          "path": "data/st04/st04_game001_Expand.it.xml.lz",
+          "length": 9600,
+          "sha256": "B3D10C3BB6A6E1AD16F064995C68D28D72B8EBE34CAF32F64D31A23C243802C4"
+        },
+        {
+          "path": "data/st04/st04_game001_Expand.sp.xml.lz",
+          "length": 9968,
+          "sha256": "2A4F1BA805E6ACA8B178C9EB97788AE3D5246D2EA84C58D0B3EC34D3C40B14BD"
+        },
+        {
+          "path": "data/st04/st04_game001_Expand.xml.lz",
+          "length": 32168,
+          "sha256": "E71EDD7CF91F43F1227CA20772DA87C5F21E9F878CCE9BD74470DE643FDCC546"
+        },
+        {
+          "path": "data/st04/st04_game003_Expand.en.xml.lz",
+          "length": 2992,
+          "sha256": "51E76AB1D247D18A4BC313D9D5723BDDEE6484C3419390B5953E87AC3A6F1148"
+        },
+        {
+          "path": "data/st04/st04_game003_Expand.fr.xml.lz",
+          "length": 3080,
+          "sha256": "1A56414E97DA6FBD83EDF39A4D44373A5D7F6CD6B058551B3A21AB32353E1CEB"
+        },
+        {
+          "path": "data/st04/st04_game003_Expand.gr.xml.lz",
+          "length": 2996,
+          "sha256": "A92ED1CC024F6F3F102FE74E93CCA7FDB92365B4A2E5F3E650D2C98B7F8AE6E8"
+        },
+        {
+          "path": "data/st04/st04_game003_Expand.it.xml.lz",
+          "length": 2988,
+          "sha256": "FA714A97C04DB0C854CA85CC4456A66DFDCA66EE8987D0E07EB9229630869BAE"
+        },
+        {
+          "path": "data/st04/st04_game003_Expand.sp.xml.lz",
+          "length": 3096,
+          "sha256": "0A64395E1809119937C49C6DC967DC6A579EE49D346E34C3AC9AB726CD0A61D7"
+        },
+        {
+          "path": "data/st04/st04_game003_Expand.xml.lz",
+          "length": 24200,
+          "sha256": "903E5F52526FDAFDB1C4F9F52DF7EBEF1ABF4BD5AF90E0FC3D4CFE0CCA4ADFBD"
+        },
+        {
+          "path": "data/st04/st04_game004_Expand.en.xml.lz",
+          "length": 940,
+          "sha256": "4AE5773B047E6D2EE706FA4734AEA615AED00176DF1AB1A51D2F4B2DF492258C"
+        },
+        {
+          "path": "data/st04/st04_game004_Expand.fr.xml.lz",
+          "length": 976,
+          "sha256": "325F271F90BE4C84BEDABCDA55CCEB46873C9BC78567501A7150B985F912C355"
+        },
+        {
+          "path": "data/st04/st04_game004_Expand.gr.xml.lz",
+          "length": 908,
+          "sha256": "5C4B0A3FA72470B013F5C3CD67823C8F5EB42CD3952DDCB2A726F2B035973633"
+        },
+        {
+          "path": "data/st04/st04_game004_Expand.it.xml.lz",
+          "length": 940,
+          "sha256": "85C5976E3A8A6C00158C09381470C8DED2A6BF3D25766C60224B23FFE75141B1"
+        },
+        {
+          "path": "data/st04/st04_game004_Expand.sp.xml.lz",
+          "length": 944,
+          "sha256": "3107AF8F79F267A7E9A96C7950CC9D8E8A22D05D74F4310F2063A1EC9E3ED201"
+        },
+        {
+          "path": "data/st04/st04_game004_Expand.xml.lz",
+          "length": 10708,
+          "sha256": "17630583F241A868E6AE8A493F4381DDD83FC06DA90F1EFA39E695F5EBFE8201"
+        },
+        {
+          "path": "data/st04/st04_game005_Expand.en.xml.lz",
+          "length": 1408,
+          "sha256": "4D2800C04705B83791073016ADF753837F2C04A408098A4102B752636D3E1049"
+        },
+        {
+          "path": "data/st04/st04_game005_Expand.fr.xml.lz",
+          "length": 1456,
+          "sha256": "22E00A2E601703118ADFC5C6B6FFE2B8B9AE0FB99147D91E73E7CC109FEF878F"
+        },
+        {
+          "path": "data/st04/st04_game005_Expand.gr.xml.lz",
+          "length": 1420,
+          "sha256": "D899DAF1D3D217B87BC3DD659707E073CEFC3239ADFEDB6CEE3374268D4BC8E5"
+        },
+        {
+          "path": "data/st04/st04_game005_Expand.it.xml.lz",
+          "length": 1432,
+          "sha256": "79644EFDC7F15EF60D90C5A10D9B37DA9E0F7FF9C653B61A553E63D225F79C19"
+        },
+        {
+          "path": "data/st04/st04_game005_Expand.sp.xml.lz",
+          "length": 1432,
+          "sha256": "89845BE0E7334BE6918AF1577CBB4E7A16DB998AAE4E9C5FA69A821DA1CCBEAE"
+        },
+        {
+          "path": "data/st04/st04_game005_Expand.xml.lz",
+          "length": 11708,
+          "sha256": "121C79ED029DE15879D43C76B4F90C0A41A26AC298D4BCC02236590C01BFC3A1"
+        },
+        {
+          "path": "data/st04/st04_game010_Expand.en.xml.lz",
+          "length": 9016,
+          "sha256": "1DA46E3B3163C47F5C2D315B32F717759279913AFCCDFE1D779E9BDCF2A07658"
+        },
+        {
+          "path": "data/st04/st04_game010_Expand.fr.xml.lz",
+          "length": 9316,
+          "sha256": "E4066068524D0BE8F11EEB56EB5897F4AD41B78A72C0CBA330EA36176BE46FBF"
+        },
+        {
+          "path": "data/st04/st04_game010_Expand.gr.xml.lz",
+          "length": 9328,
+          "sha256": "4CDE71757638487A1E96B5711AF705C029C1C2AC08DF42D7C862AB826F80D815"
+        },
+        {
+          "path": "data/st04/st04_game010_Expand.it.xml.lz",
+          "length": 8996,
+          "sha256": "218701EDAE4306ED4E99A0D34218686A1EE7C2ABA4F9FE4F3B7295CEFC7BCAC3"
+        },
+        {
+          "path": "data/st04/st04_game010_Expand.sp.xml.lz",
+          "length": 9460,
+          "sha256": "59BD2C7B4BFF448206FF7295A6A2C7120F03FB9B7C82A4E354A7EE97CA93D916"
+        },
+        {
+          "path": "data/st04/st04_game010_Expand.xml.lz",
+          "length": 16612,
+          "sha256": "8E2C3C41BC2F75BCFAC6077D636E47D922E59A0F0C80656587D4E9193694152A"
+        },
+        {
+          "path": "data/st04/st04_game100_Expand.en.xml.lz",
+          "length": 1620,
+          "sha256": "365E8E38DF142BEC54CE6010491C8F935F7F85511DEC1E482B022E58D6BFA9EC"
+        },
+        {
+          "path": "data/st04/st04_game100_Expand.fr.xml.lz",
+          "length": 1832,
+          "sha256": "493738CF2C77CB55882B28E8F838F444579A5C78FEA26B8E73B811673F9011D7"
+        },
+        {
+          "path": "data/st04/st04_game100_Expand.gr.xml.lz",
+          "length": 1636,
+          "sha256": "E67D591C17114DE7D7E7A2046FEABFBE71DEE055FF769352CE8DEDECA95E5EEA"
+        },
+        {
+          "path": "data/st04/st04_game100_Expand.it.xml.lz",
+          "length": 1652,
+          "sha256": "28C81EE4502F06107A113E80FB779D69AA4BE97FD5CFBF4770560E09C090CA58"
+        },
+        {
+          "path": "data/st04/st04_game100_Expand.sp.xml.lz",
+          "length": 1696,
+          "sha256": "A32AD3ABC67D296540D3340775F27F6E010DF3CD9DC723D6E2BEFEA019125038"
+        },
+        {
+          "path": "data/st04/st04_game100_Expand.xml.lz",
+          "length": 5748,
+          "sha256": "18D81B51547447271C0F9D62279BB39B0BBADA995BC968107AF54F03BE49FC3E"
+        },
+        {
+          "path": "data/st04/st04_game101_Expand.en.xml.lz",
+          "length": 1184,
+          "sha256": "D7BD14277FBBABA77BF7AEC9709C06E3CC79C7FC2C2C85AF8AC3B9A366A9A26C"
+        },
+        {
+          "path": "data/st04/st04_game101_Expand.fr.xml.lz",
+          "length": 1288,
+          "sha256": "D02C18CBA81EE5435D854FC74ABCB52F4C8C80332DF1A5232223917A840F89E1"
+        },
+        {
+          "path": "data/st04/st04_game101_Expand.gr.xml.lz",
+          "length": 1232,
+          "sha256": "7DB2BF90A1B5BD475643A71CFA94CF0BC1424DDC9CA8AB6970DE06A82000E6F2"
+        },
+        {
+          "path": "data/st04/st04_game101_Expand.it.xml.lz",
+          "length": 1220,
+          "sha256": "89CAF8341EBAA86347074E509426B736901A9218867336C74175D69141F109FA"
+        },
+        {
+          "path": "data/st04/st04_game101_Expand.sp.xml.lz",
+          "length": 1296,
+          "sha256": "E7118D921C6D16E082F77956C7695144D746919A9E05E6177C61AD1ADB8288EC"
+        },
+        {
+          "path": "data/st04/st04_game101_Expand.xml.lz",
+          "length": 6520,
+          "sha256": "BE2E3B5D5D4F07D90DE47886A8BB4A4F81C19F147FB0ED184AF15B98AAE7AC58"
+        },
+        {
+          "path": "data/st04/st04_root.xml.lz",
+          "length": 312,
+          "sha256": "285D21198017917D60D912D83B9D5014FFC9A78493D69E340B57661B6434EEFE"
+        },
+        {
+          "path": "data/st04demo01.mods",
+          "length": 772600,
+          "sha256": "B9F055E7D82E951D946377A927EC2E7C17FD248F2813047E574E7FE35D60F8EF"
+        },
+        {
+          "path": "data/st05/st05_game000_Expand.en.xml.lz",
+          "length": 5092,
+          "sha256": "3A1AFCC13087DA996BD829EC53BC9DE77243C065B89D6A86BAED02CBAF1BD54A"
+        },
+        {
+          "path": "data/st05/st05_game000_Expand.fr.xml.lz",
+          "length": 5344,
+          "sha256": "3A7C5B916D052AF665D4A72B0F398BA70D1BFCFA046948BDD99AC57908AA94B8"
+        },
+        {
+          "path": "data/st05/st05_game000_Expand.gr.xml.lz",
+          "length": 5312,
+          "sha256": "662062288B1EFDE568B7F65A67390FAA0CB3CB7413D74DBB32F5B2A61ECE41BE"
+        },
+        {
+          "path": "data/st05/st05_game000_Expand.it.xml.lz",
+          "length": 5104,
+          "sha256": "0837C4F2ADBD3E11BCB7078E41894A6E89FFBFE1845227C6803365C87786A26B"
+        },
+        {
+          "path": "data/st05/st05_game000_Expand.sp.xml.lz",
+          "length": 5340,
+          "sha256": "718E9A0CBFDAB817E0EF93499C81A503FEE5442A69427F6A413B43A31DE65E0B"
+        },
+        {
+          "path": "data/st05/st05_game000_Expand.xml.lz",
+          "length": 30216,
+          "sha256": "699C83E7CEF6D0CEC11C5C8EEA46F1A5C2C009FE2E0F15610EF9320474718864"
+        },
+        {
+          "path": "data/st05/st05_game001_Expand.en.xml.lz",
+          "length": 7928,
+          "sha256": "D27E1F0EEC6232608EB6A0FA4798DBFF35AEC7FD94C8B4F892DF0BBC5CDD3C54"
+        },
+        {
+          "path": "data/st05/st05_game001_Expand.fr.xml.lz",
+          "length": 8316,
+          "sha256": "5EFD78EE6FD2DF1AAD6EBBAF41C95F26840AEF4E1AAAC83C042BEB14E0E010C4"
+        },
+        {
+          "path": "data/st05/st05_game001_Expand.gr.xml.lz",
+          "length": 8420,
+          "sha256": "915CCD7337DAB535A32792EF946A04B9B3CE5315CFDAA2FFC3F15BB95E78C735"
+        },
+        {
+          "path": "data/st05/st05_game001_Expand.it.xml.lz",
+          "length": 8068,
+          "sha256": "6F32CAF43DCD64FBDF3E4D939717139ABC123FF7645048B8B0BE28A817659E23"
+        },
+        {
+          "path": "data/st05/st05_game001_Expand.sp.xml.lz",
+          "length": 8400,
+          "sha256": "22B87227F4D668367DADB86E7EA70131824FC7775831D6B90DC94A16D1B3AA74"
+        },
+        {
+          "path": "data/st05/st05_game001_Expand.xml.lz",
+          "length": 42020,
+          "sha256": "1A20CAB2C6C0B23FD478596FE4421B40A6F48CC2A98C50CF5877336A18503A3F"
+        },
+        {
+          "path": "data/st05/st05_game002_Expand.en.xml.lz",
+          "length": 3416,
+          "sha256": "E8E845721746660EF51FB7A82E11E7EDFA1772EFF008B0BF5C53582C1E47DBBB"
+        },
+        {
+          "path": "data/st05/st05_game002_Expand.fr.xml.lz",
+          "length": 3424,
+          "sha256": "750A10B3E6DCC8D25131BC125C6175CEFCF82ADB74D65FF31042BCE4268A4303"
+        },
+        {
+          "path": "data/st05/st05_game002_Expand.gr.xml.lz",
+          "length": 3500,
+          "sha256": "853E288ABD2BF8B44257A7E1980D577810C3B6BB167DC948D8BE9CB7D873497B"
+        },
+        {
+          "path": "data/st05/st05_game002_Expand.it.xml.lz",
+          "length": 3336,
+          "sha256": "4FFBAC19049B2C20E64A774B4A9CD7149C49189D534C6DA3FAE609DDBDF0C24B"
+        },
+        {
+          "path": "data/st05/st05_game002_Expand.sp.xml.lz",
+          "length": 3440,
+          "sha256": "F7BEE0E1D63A39876E2505ACCF571CD01AA7264E313D542FAC44040091A008FE"
+        },
+        {
+          "path": "data/st05/st05_game002_Expand.xml.lz",
+          "length": 17488,
+          "sha256": "8D72E0C1E902013D6CB2AA42ABD78EDC2303DD73858BF6D5B249D962CC23F337"
+        },
+        {
+          "path": "data/st05/st05_game003_Expand.en.xml.lz",
+          "length": 1236,
+          "sha256": "A88FAA89A8035CE6380B296699559C3012C3F8DD44F2C312EC0DE91D86EE43C3"
+        },
+        {
+          "path": "data/st05/st05_game003_Expand.fr.xml.lz",
+          "length": 1320,
+          "sha256": "15B312689F8840C74D81B5817C8CE4182BEF3C62EA1A8B2769EC3F810539833B"
+        },
+        {
+          "path": "data/st05/st05_game003_Expand.gr.xml.lz",
+          "length": 1320,
+          "sha256": "B9C513AAAF82602531B74172F48BDD90C7477DC50E8C7E4CC39533D409898D0A"
+        },
+        {
+          "path": "data/st05/st05_game003_Expand.it.xml.lz",
+          "length": 1252,
+          "sha256": "92E2D94A994483EE7980BCC2AAEB93D67EC19E04EEFFE8AF0876238449D48C7A"
+        },
+        {
+          "path": "data/st05/st05_game003_Expand.sp.xml.lz",
+          "length": 1304,
+          "sha256": "E3D67BB06A1C1AB219E3620A6A4D9D24C67A59F05C1208931E317B107126B218"
+        },
+        {
+          "path": "data/st05/st05_game003_Expand.xml.lz",
+          "length": 15312,
+          "sha256": "BF6C0B8111C5367DEF7BB7DAFC0D3B795FBB3634A099E84927122CD2A4BB02B9"
+        },
+        {
+          "path": "data/st05/st05_game999_Expand.xml.lz",
+          "length": 288,
+          "sha256": "58CDB0FC92ACC1B2ACAE75E8C593BD842A35AC77BAE36772A79B786E4B73A79C"
+        },
+        {
+          "path": "data/st05/st05_root.xml.lz",
+          "length": 268,
+          "sha256": "804C44A66CE32A4DD85DC174BDD0AF3C33A5F6C770C0A766EC25612E431F8220"
+        },
+        {
+          "path": "data/st06/st06_demo000_Expand.en.xml.lz",
+          "length": 2536,
+          "sha256": "99C34B22840380ADC6E1CBA616A3433B31F6B65BC34F4BF5F31A443AC558DE84"
+        },
+        {
+          "path": "data/st06/st06_demo000_Expand.fr.xml.lz",
+          "length": 2620,
+          "sha256": "7B07E5452C794020D938D2AEB0F04A98D7F098D69DD6DD8828CC4373EC6CBDAF"
+        },
+        {
+          "path": "data/st06/st06_demo000_Expand.gr.xml.lz",
+          "length": 2580,
+          "sha256": "1E942D0D54257A1F29D2F8F49583DCCEDE8F98106E3B9DD84FF76C0F065D3461"
+        },
+        {
+          "path": "data/st06/st06_demo000_Expand.it.xml.lz",
+          "length": 2604,
+          "sha256": "F26B929A0F498394F9E858B35B37993062C91D2C7184A5F07432E7AA6EA3EAAF"
+        },
+        {
+          "path": "data/st06/st06_demo000_Expand.sp.xml.lz",
+          "length": 2608,
+          "sha256": "FA6E82559B79A8401ACDE4A2FF293B102A9CB3FDD9C0094FEEE2E672B76E86BA"
+        },
+        {
+          "path": "data/st06/st06_demo000_Expand.xml.lz",
+          "length": 12536,
+          "sha256": "371605A7845234F7BD68D5220B2486221DB524AB9AC2F9564FBCB3E91BA39EC1"
+        },
+        {
+          "path": "data/st06/st06_demo001_Expand.xml.lz",
+          "length": 3908,
+          "sha256": "463C7461C2517C9D4F94D2AA6BE9F330D13554464F33B73F97D11323AB16D852"
+        },
+        {
+          "path": "data/st06/st06_demo100_Expand.xml.lz",
+          "length": 2728,
+          "sha256": "64E73BCF3D61B3D376AAF5B3AFD81E47BF4C80CE3696CB0C2F5A267D58680989"
+        },
+        {
+          "path": "data/st06/st06_game000_Expand.en.xml.lz",
+          "length": 2084,
+          "sha256": "F035B22CE5CD3175F581EC5119514DB9427E8232B573D38BA2889BED50009E7B"
+        },
+        {
+          "path": "data/st06/st06_game000_Expand.fr.xml.lz",
+          "length": 2204,
+          "sha256": "331BB5B5F4DE47619456D6B1E520C43E868C65EA7E1AC5EBB7A24CF4D7EB23FD"
+        },
+        {
+          "path": "data/st06/st06_game000_Expand.gr.xml.lz",
+          "length": 2168,
+          "sha256": "4CE8A6E4E49492AA6F99509D2446472F3B888B0455228627C6F9542C70C3F136"
+        },
+        {
+          "path": "data/st06/st06_game000_Expand.it.xml.lz",
+          "length": 2132,
+          "sha256": "BFF4F1EE966CDDE5CC2B3334639C5E3748BE78F4A6E128F2CD5453910245806F"
+        },
+        {
+          "path": "data/st06/st06_game000_Expand.sp.xml.lz",
+          "length": 2160,
+          "sha256": "2D192EC14277B4A0D9FB5FF4EFAB79545EF9F4AD084AB58B4B3080BABDA03163"
+        },
+        {
+          "path": "data/st06/st06_game000_Expand.xml.lz",
+          "length": 7536,
+          "sha256": "05D4896EB5B2B68EB4B152527F31766BED6D106D67755FDCA4EB5BFD80BB0614"
+        },
+        {
+          "path": "data/st06/st06_game001_Expand.en.xml.lz",
+          "length": 9108,
+          "sha256": "AEF09966679599C5D77363B66D42F2808E598DCF304E90A420ED76D3D6DD9D7D"
+        },
+        {
+          "path": "data/st06/st06_game001_Expand.fr.xml.lz",
+          "length": 9536,
+          "sha256": "FB221DB1059BE0D4B6EBABBD83514681BD3715CBAAE49193FEB2BF0DF29091FC"
+        },
+        {
+          "path": "data/st06/st06_game001_Expand.gr.xml.lz",
+          "length": 8916,
+          "sha256": "0EF2F133809C0E30855F6046BC81A77AFE0859DD190E8BED184F965195040B4C"
+        },
+        {
+          "path": "data/st06/st06_game001_Expand.it.xml.lz",
+          "length": 9416,
+          "sha256": "ECD5D02E29714B605F184C2C745F718B147FE322E9CDD6AC4A6812C37398F07D"
+        },
+        {
+          "path": "data/st06/st06_game001_Expand.sp.xml.lz",
+          "length": 9460,
+          "sha256": "8EA1825F7035E28202536304D2CD0B9E0D2A4561DF39FFF301EBCBE80612DF74"
+        },
+        {
+          "path": "data/st06/st06_game001_Expand.xml.lz",
+          "length": 44444,
+          "sha256": "7848F4711B2787A3A55A6227725738D0672E827E752F15B858CD2A44BDA9AB6E"
+        },
+        {
+          "path": "data/st06/st06_game002_Expand.en.xml.lz",
+          "length": 3152,
+          "sha256": "38AD73C7A25A9C5602D78A9796BDB40A8CD2855F71B1BB3777604E1ECDFF6CC2"
+        },
+        {
+          "path": "data/st06/st06_game002_Expand.fr.xml.lz",
+          "length": 3428,
+          "sha256": "12FF202855F533F0E5A9A406C36D3A37DA94A3B75D76F3296BEAD131863457D0"
+        },
+        {
+          "path": "data/st06/st06_game002_Expand.gr.xml.lz",
+          "length": 3360,
+          "sha256": "34894AEB5686C0C71796ADE687E8628256991EC9ECF97749F9657AFBE301EDA8"
+        },
+        {
+          "path": "data/st06/st06_game002_Expand.it.xml.lz",
+          "length": 3172,
+          "sha256": "670D9082F514F388AAC2DACA850B4C15A255C7D9864860CF6D11D12FFBBA2F06"
+        },
+        {
+          "path": "data/st06/st06_game002_Expand.sp.xml.lz",
+          "length": 3240,
+          "sha256": "EC34CB547BE4CA933E3FE6803F9277B87649524E8E1597431B443FEE19A9CAE4"
+        },
+        {
+          "path": "data/st06/st06_game002_Expand.xml.lz",
+          "length": 18344,
+          "sha256": "D7BDF8B1D4C5B3554E6CCBAEAA135C298C4C6F530C945F550AC4DADFB999E5A1"
+        },
+        {
+          "path": "data/st06/st06_game003_Expand.en.xml.lz",
+          "length": 2808,
+          "sha256": "45F42F31BCB05E4EE06A4EF2FB7A4454D8895BC92ED3C1D33E3ACCE3D585F96D"
+        },
+        {
+          "path": "data/st06/st06_game003_Expand.fr.xml.lz",
+          "length": 3024,
+          "sha256": "B45EEE6538A8BB457A0878A6159633B03923A94EF9CBA948135B7B91DBE46167"
+        },
+        {
+          "path": "data/st06/st06_game003_Expand.gr.xml.lz",
+          "length": 2796,
+          "sha256": "D23C83CCB2128F6DFDD4BFDF439C485ADE57F42942486438989D5B945EB5907B"
+        },
+        {
+          "path": "data/st06/st06_game003_Expand.it.xml.lz",
+          "length": 2832,
+          "sha256": "4D4B3B6D09C549A8459A9523D8200512AA25514CDDC561548E9880ABD4BD2332"
+        },
+        {
+          "path": "data/st06/st06_game003_Expand.sp.xml.lz",
+          "length": 2876,
+          "sha256": "980EDA13A4D64E3B0A085930B0AE52DA72E593D0BBFA717CF9F233E402AAF0E0"
+        },
+        {
+          "path": "data/st06/st06_game003_Expand.xml.lz",
+          "length": 18092,
+          "sha256": "0ED5E52453C7AAFEE1F94E7D5C374DA9368384347C8B719809B8FA93F9279BE8"
+        },
+        {
+          "path": "data/st06/st06_game004_Expand.en.xml.lz",
+          "length": 4720,
+          "sha256": "8411210833F239422A7A4B1D889487B7A8F8222438B5459F01835BB20C8F8DF2"
+        },
+        {
+          "path": "data/st06/st06_game004_Expand.fr.xml.lz",
+          "length": 4732,
+          "sha256": "317E5DB5D06517D9BF5CE6D319392E804A116A5AD275EFE89E70D1574E3BDDAC"
+        },
+        {
+          "path": "data/st06/st06_game004_Expand.gr.xml.lz",
+          "length": 4668,
+          "sha256": "4EC85F4263F4E6635C54170811D81235A7665CE1D9BF310F2F3E6C435AE617FA"
+        },
+        {
+          "path": "data/st06/st06_game004_Expand.it.xml.lz",
+          "length": 4772,
+          "sha256": "4A125C7FD1B244719C72E7BEE050F98B8747754E307EF48C53A27BF663802BAE"
+        },
+        {
+          "path": "data/st06/st06_game004_Expand.sp.xml.lz",
+          "length": 4788,
+          "sha256": "BCCC598BD47B06688CDF633009A54D859E31C65DBA1BED0959BE98F5264739DC"
+        },
+        {
+          "path": "data/st06/st06_game004_Expand.xml.lz",
+          "length": 17484,
+          "sha256": "21D90DAE1F25A94704B4CE66ED9F6C595BA508904FAB2D6FCD52B76EEE550B19"
+        },
+        {
+          "path": "data/st06/st06_game006_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st06/st06_game006_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st06/st06_game006_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st06/st06_game006_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st06/st06_game006_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st06/st06_game006_Expand.xml.lz",
+          "length": 224,
+          "sha256": "3C962AA74040D8538D3D9441616032F68DBD8E18D524EF2DA06D7B06A1090775"
+        },
+        {
+          "path": "data/st06/st06_root.xml.lz",
+          "length": 388,
+          "sha256": "0F59804EA9B725D898A7D7AEDD801A07577D890D9654C3F283B1C0004BCD1322"
+        },
+        {
+          "path": "data/st07/st07_demo101_Expand.xml.lz",
+          "length": 3652,
+          "sha256": "81C304E8B32AE55FFDF7A3AFECB56068A790BDB5BAEB117B1FE790EC215E3BDB"
+        },
+        {
+          "path": "data/st07/st07_demo102_Expand.xml.lz",
+          "length": 2232,
+          "sha256": "AAAD05C82E93D0C87107D0371FC1AD314AC58078A06D93FB45EAE827A32C76EE"
+        },
+        {
+          "path": "data/st07/st07_demo103_Expand.xml.lz",
+          "length": 1768,
+          "sha256": "AEF94EC66C4693D5E98D05CBF8F9C6869407CB814115B247064F537DC00D883A"
+        },
+        {
+          "path": "data/st07/st07_demo120_Expand.xml.lz",
+          "length": 2000,
+          "sha256": "8BC3E1493D3009F31B1B44E62E2CC9D3762FE0C2EF720E654878D97D5F4EDEF5"
+        },
+        {
+          "path": "data/st07/st07_game000_Expand.en.xml.lz",
+          "length": 8832,
+          "sha256": "BCBED6ADCEDBE3DC3EB0CD235748F3AC39C12BC35E05042A6C641EE3C514AC0E"
+        },
+        {
+          "path": "data/st07/st07_game000_Expand.fr.xml.lz",
+          "length": 9100,
+          "sha256": "D6087825CB7ECB3078CA97F6DAFBD2A8B75884455FF4F396E05B45259EA88D8C"
+        },
+        {
+          "path": "data/st07/st07_game000_Expand.gr.xml.lz",
+          "length": 9220,
+          "sha256": "3AD6E0BF9BF75A462B4550F8EFAECCA01364E0C5D05C593B18DF4EE415030B1D"
+        },
+        {
+          "path": "data/st07/st07_game000_Expand.it.xml.lz",
+          "length": 8784,
+          "sha256": "EBDCF2C6CF7D8C4326A0A7089E89CCA60FB8AACCB4DA4400C958C8C13D5D8999"
+        },
+        {
+          "path": "data/st07/st07_game000_Expand.sp.xml.lz",
+          "length": 9120,
+          "sha256": "D9E9A298B3D430627A219549A0B0ADD949E5CDFBA196C96E1DD8FC1527D3F7F7"
+        },
+        {
+          "path": "data/st07/st07_game000_Expand.xml.lz",
+          "length": 39076,
+          "sha256": "A5463FA8612683D3836D2E90328B5E8ED8750354EF406C7E3F53ED7A82715591"
+        },
+        {
+          "path": "data/st07/st07_game001_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st07/st07_game001_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st07/st07_game001_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st07/st07_game001_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st07/st07_game001_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st07/st07_game001_Expand.xml.lz",
+          "length": 288,
+          "sha256": "F5712676B8B4326699963851A2C24ADE016A239613F1A2C7A484F62E260EF7B9"
+        },
+        {
+          "path": "data/st07/st07_game002_Expand.en.xml.lz",
+          "length": 416,
+          "sha256": "21C9F4458C9BDBEF3D4ADE4088F551A00E9EB095F44A1D3A0A53950A6AC88280"
+        },
+        {
+          "path": "data/st07/st07_game002_Expand.fr.xml.lz",
+          "length": 468,
+          "sha256": "433C692C9AE7E42506E558E6983B45826F77BA26569A6F454B8F114088A3B2ED"
+        },
+        {
+          "path": "data/st07/st07_game002_Expand.gr.xml.lz",
+          "length": 476,
+          "sha256": "6651C561E23839E3D97257AC4BD00A2048FAD4385819466325C6DDDD530380A2"
+        },
+        {
+          "path": "data/st07/st07_game002_Expand.it.xml.lz",
+          "length": 420,
+          "sha256": "E98AB995992FFC5F43C279876DF2B0B06923C8E97169E8B4D72E56D71EF77F80"
+        },
+        {
+          "path": "data/st07/st07_game002_Expand.sp.xml.lz",
+          "length": 420,
+          "sha256": "F760D6ADC668BF7043C4687ADF03C52124C4C9CA78AD8EC24905A7E866A87C6E"
+        },
+        {
+          "path": "data/st07/st07_game002_Expand.xml.lz",
+          "length": 18192,
+          "sha256": "B8F4AE51FB752ACB0C669273CE34CB3A3B77A922B67665C5756A66F953463CD8"
+        },
+        {
+          "path": "data/st07/st07_game003_Expand.en.xml.lz",
+          "length": 1268,
+          "sha256": "237193004D9C0DE4A76E4B285CCEE728AE9D596FD08A67993AA590F9DEEB0EA7"
+        },
+        {
+          "path": "data/st07/st07_game003_Expand.fr.xml.lz",
+          "length": 1280,
+          "sha256": "846E8DC8F3785A8D4470E67823681523FA1657011C8570F2BCBBC4009BCC8D5C"
+        },
+        {
+          "path": "data/st07/st07_game003_Expand.gr.xml.lz",
+          "length": 1300,
+          "sha256": "0B0EC18D69D83A778312339EA4A4601F5DD835924BABCFEA4048463BDCA8F601"
+        },
+        {
+          "path": "data/st07/st07_game003_Expand.it.xml.lz",
+          "length": 1228,
+          "sha256": "8FF7F3243C469C5EE3591731F433A96C58662D7895043B414A7EB3A196B0BA1A"
+        },
+        {
+          "path": "data/st07/st07_game003_Expand.sp.xml.lz",
+          "length": 1336,
+          "sha256": "EC9F5173AF661DB9AE1962972B7295721F3F72B11DA598CB79FC979C118042C8"
+        },
+        {
+          "path": "data/st07/st07_game003_Expand.xml.lz",
+          "length": 20288,
+          "sha256": "4C122E17391702017376317202E4C42618A9247BB3A865C3EAA01B602EF38E77"
+        },
+        {
+          "path": "data/st07/st07_game004_Expand.en.xml.lz",
+          "length": 464,
+          "sha256": "E8A02689FD5339EDAE0344189E2DD3AB5EC625919D5526C1913168D22E704553"
+        },
+        {
+          "path": "data/st07/st07_game004_Expand.fr.xml.lz",
+          "length": 480,
+          "sha256": "BF9FE23B6A422770723CB210C6C3B37CE27DDE7F49ABCBAEB3ED7530F03D1074"
+        },
+        {
+          "path": "data/st07/st07_game004_Expand.gr.xml.lz",
+          "length": 496,
+          "sha256": "ABC2BBE095CB9FB6FE2E6099EEE7736474DB8F6E2C8FC55FA7A81C38FFCADC32"
+        },
+        {
+          "path": "data/st07/st07_game004_Expand.it.xml.lz",
+          "length": 444,
+          "sha256": "1283505B1A854B586A15DEB56997360C56CE5D14174062B2EAB06A7556E45A80"
+        },
+        {
+          "path": "data/st07/st07_game004_Expand.sp.xml.lz",
+          "length": 452,
+          "sha256": "256E0D3558BEE1EE885953AE6643E7AED2241540B34CB2047BF8EDC75246944A"
+        },
+        {
+          "path": "data/st07/st07_game004_Expand.xml.lz",
+          "length": 268,
+          "sha256": "8D0135AD570C461E247986556C9E973A815C896D70643AEEA7A1306B0F27E286"
+        },
+        {
+          "path": "data/st07/st07_root.xml.lz",
+          "length": 276,
+          "sha256": "9E5A9FDE77067F0933982D8C5D10635534DEB0276D6496E8CE46D8171B8E4F0D"
+        },
+        {
+          "path": "data/st09/st09_demo002_Expand.en.xml.lz",
+          "length": 1324,
+          "sha256": "22279C984522EA8D292CD2C4154BEC738F09AB988E4595CA5CC3B91A1FD0C24B"
+        },
+        {
+          "path": "data/st09/st09_demo002_Expand.fr.xml.lz",
+          "length": 1432,
+          "sha256": "E5DCD5E68D8856F2790F3008652C7C4FFE5F4AC1BF7689C5749F51B296DBD7B1"
+        },
+        {
+          "path": "data/st09/st09_demo002_Expand.gr.xml.lz",
+          "length": 1368,
+          "sha256": "AE78BBF157690D44C413298683E0F874AF92C56674A2610468C9095717DA1BCF"
+        },
+        {
+          "path": "data/st09/st09_demo002_Expand.it.xml.lz",
+          "length": 1312,
+          "sha256": "5A4B1EEC13B3AEAEB180C473827FA9B8877A74FA278A816F386788C126741865"
+        },
+        {
+          "path": "data/st09/st09_demo002_Expand.sp.xml.lz",
+          "length": 1368,
+          "sha256": "37321B1A6FC6ABF5C5E9DF27C9FECBB767CD378076C7BC2065B953B70DEA3572"
+        },
+        {
+          "path": "data/st09/st09_demo002_Expand.xml.lz",
+          "length": 22812,
+          "sha256": "1F8CFD625035B087F9EA88A67FD4DD762A09F028E1056D750A087FB1EFC1AA70"
+        },
+        {
+          "path": "data/st09/st09_game000_Expand.en.xml.lz",
+          "length": 3900,
+          "sha256": "B5261F8098E41E07CB819622D870C05755F9F0A3743790BDC2392DACC87F37A5"
+        },
+        {
+          "path": "data/st09/st09_game000_Expand.fr.xml.lz",
+          "length": 4264,
+          "sha256": "28D25289F7B1FD2C0946029FD4BE9B2EA84EF8D082AB49FD773B652762E0ABE2"
+        },
+        {
+          "path": "data/st09/st09_game000_Expand.gr.xml.lz",
+          "length": 4140,
+          "sha256": "A1E512CDD674DAB7B92C2BBCC8D261235BD099AB232FEEF2D9EE0ADA2CC320A5"
+        },
+        {
+          "path": "data/st09/st09_game000_Expand.it.xml.lz",
+          "length": 4056,
+          "sha256": "F3D62C38BCE3ACDCA59B4E8039BF8407920AE9AA15FEDFEF20395DDBC99DADCA"
+        },
+        {
+          "path": "data/st09/st09_game000_Expand.sp.xml.lz",
+          "length": 4184,
+          "sha256": "AB46B847C803048709577EDDF3FE97BC0BC7415509DA9873FBAF563D93B62CFD"
+        },
+        {
+          "path": "data/st09/st09_game000_Expand.xml.lz",
+          "length": 21184,
+          "sha256": "8FE6649196BA3F90F30572EEBA52C1F1B5AB7AF8A5FE78C51D05A66CDA7B14A5"
+        },
+        {
+          "path": "data/st09/st09_game001_Expand.en.xml.lz",
+          "length": 2688,
+          "sha256": "348ABA32DFA9729063F875B35F575E8C708BE42973A0CB80DBF3991840346CFF"
+        },
+        {
+          "path": "data/st09/st09_game001_Expand.fr.xml.lz",
+          "length": 2864,
+          "sha256": "34ACB6E7EB75206042413839A8830FFA264F58AD6B327DE050740F14CA605015"
+        },
+        {
+          "path": "data/st09/st09_game001_Expand.gr.xml.lz",
+          "length": 3076,
+          "sha256": "8661DA9B1290827163BD76344398292EFCAFA77B8A96DFBB49EF0D0A73039240"
+        },
+        {
+          "path": "data/st09/st09_game001_Expand.it.xml.lz",
+          "length": 2724,
+          "sha256": "EA7BA574BE0044F64F187FA3E8B15E6C272F599CCB4795190983BEC911455E53"
+        },
+        {
+          "path": "data/st09/st09_game001_Expand.sp.xml.lz",
+          "length": 3008,
+          "sha256": "4837E9026D6196306A742A6203F806268D8AD4F0B1149E65BAC0C778CF273159"
+        },
+        {
+          "path": "data/st09/st09_game001_Expand.xml.lz",
+          "length": 16784,
+          "sha256": "171FF39BC5C44832D55D76BE8C59B337D8771B6DB09DEBC3A56090C4813BA12B"
+        },
+        {
+          "path": "data/st09/st09_game003_Expand.en.xml.lz",
+          "length": 7660,
+          "sha256": "DA2D61809D14AB379039873B935F71B8D6E7EE54E5671FEAD76BB3E70A6C7C98"
+        },
+        {
+          "path": "data/st09/st09_game003_Expand.fr.xml.lz",
+          "length": 8176,
+          "sha256": "7978E68631CF9C2659B99940D72C91CB41874D5DAAE1D8D246681B0903D09B41"
+        },
+        {
+          "path": "data/st09/st09_game003_Expand.gr.xml.lz",
+          "length": 8108,
+          "sha256": "E71A848CA0344891D62F44F679DC216EEC12909AA51A43B069010701FD41310D"
+        },
+        {
+          "path": "data/st09/st09_game003_Expand.it.xml.lz",
+          "length": 7852,
+          "sha256": "E853252A47F22360569281EA4EA3A307C808744C124D8B65C2321222B3740E0E"
+        },
+        {
+          "path": "data/st09/st09_game003_Expand.sp.xml.lz",
+          "length": 8108,
+          "sha256": "E5E4F16999D5B27E590B413CE7F9C82C37C4C8009F101F1E6E918CD73B3C59FA"
+        },
+        {
+          "path": "data/st09/st09_game003_Expand.xml.lz",
+          "length": 38132,
+          "sha256": "8DC0F737D5E13CD54256B062058B97CF6025FC8F837E7524E705193809337FEB"
+        },
+        {
+          "path": "data/st09/st09_game004_Expand.en.xml.lz",
+          "length": 4392,
+          "sha256": "D3A9DE92883BC8E5C1CCB401C9E8C2F727B68E5F6573E54137CDAFA927761769"
+        },
+        {
+          "path": "data/st09/st09_game004_Expand.fr.xml.lz",
+          "length": 4572,
+          "sha256": "288D6E1EA36F345CF714898D5E7E896C0475DE748E40D28C96ADD66ACDFCB4B8"
+        },
+        {
+          "path": "data/st09/st09_game004_Expand.gr.xml.lz",
+          "length": 4464,
+          "sha256": "ADC2F014D105467C6EC84024A3AFD661C80E41EDF9D191B94C7D0ADF85A076D1"
+        },
+        {
+          "path": "data/st09/st09_game004_Expand.it.xml.lz",
+          "length": 4520,
+          "sha256": "40F0CEE47875290DFA5CCB39C5A70AAE8EBA82FDE0CACAC31DAB2B9232F6733D"
+        },
+        {
+          "path": "data/st09/st09_game004_Expand.sp.xml.lz",
+          "length": 4596,
+          "sha256": "2C9CB11A7726AE56E35500925B8C2191A5CA030426B50A70E9993C1EFD2D58B7"
+        },
+        {
+          "path": "data/st09/st09_game004_Expand.xml.lz",
+          "length": 25736,
+          "sha256": "1B1069DDBEB98156F3D5BAF858463312F999BEA9472C7E71C114405A10026A78"
+        },
+        {
+          "path": "data/st09/st09_game010_Expand.en.xml.lz",
+          "length": 11460,
+          "sha256": "52A814FFF7A07E63357F6DB59F39507910642A6F36A3875A4DE687617DAC45AA"
+        },
+        {
+          "path": "data/st09/st09_game010_Expand.fr.xml.lz",
+          "length": 11844,
+          "sha256": "597F4A92EC71ABCAB3244EB86F50B645E8AEDCC0D431C17FFFECF5ABE3ABFE13"
+        },
+        {
+          "path": "data/st09/st09_game010_Expand.gr.xml.lz",
+          "length": 11804,
+          "sha256": "D2F73845E1068890C0C31FE5019B07090B42331A467962845DD45D209ED9D7D5"
+        },
+        {
+          "path": "data/st09/st09_game010_Expand.it.xml.lz",
+          "length": 11668,
+          "sha256": "F7C96905CBC330E2ACED83A3E943AA15322A2F82B005DD2AE9844B6ECFA19400"
+        },
+        {
+          "path": "data/st09/st09_game010_Expand.sp.xml.lz",
+          "length": 11588,
+          "sha256": "E15041F26209F57163CC9C294CB7C80A22709BC30E5954B1C41080F183C5F68B"
+        },
+        {
+          "path": "data/st09/st09_game010_Expand.xml.lz",
+          "length": 35236,
+          "sha256": "7F5FE99B145B7B3DCCB49CE0832BF6BF5A16886033F36A07A4487D3D60C99806"
+        },
+        {
+          "path": "data/st09/st09_game020_Expand.en.xml.lz",
+          "length": 7832,
+          "sha256": "1ABAC0B3E775BCC01C40B66B2B61995E794BE9DAD5CF1BA8661FF955F0F197F1"
+        },
+        {
+          "path": "data/st09/st09_game020_Expand.fr.xml.lz",
+          "length": 8076,
+          "sha256": "99232E1FD1A72839E97EACB7DD2B16A698BFB9435129582672D34FCD0F3EA4AF"
+        },
+        {
+          "path": "data/st09/st09_game020_Expand.gr.xml.lz",
+          "length": 8032,
+          "sha256": "4693629A5BA4E2894205C560CC2ABD3A98A23C3454A63FAA220E9FE4C5F9641E"
+        },
+        {
+          "path": "data/st09/st09_game020_Expand.it.xml.lz",
+          "length": 7972,
+          "sha256": "102A675102197CAA8BDC80D2AFB84F049C21CEB0B67E93D409E7A71A90E8E0DB"
+        },
+        {
+          "path": "data/st09/st09_game020_Expand.sp.xml.lz",
+          "length": 8004,
+          "sha256": "B1ED65C82AF8A15B3D33790AB58D7956F1EE4299268FEF541D4C75AB74846754"
+        },
+        {
+          "path": "data/st09/st09_game020_Expand.xml.lz",
+          "length": 31552,
+          "sha256": "4957F90339287FBDE5F2275285F95DFC663B37983DFC58183C98825D371A3A62"
+        },
+        {
+          "path": "data/st09/st09_game021_Expand.en.xml.lz",
+          "length": 7348,
+          "sha256": "CEEC37EEB4C3CE7A47772776B0190C4A98422CE8D8D9CB334C6475E34B7D8570"
+        },
+        {
+          "path": "data/st09/st09_game021_Expand.fr.xml.lz",
+          "length": 7684,
+          "sha256": "7173631754C1B097BEF7110B62516AB221A48964231F389AC01FF331C46B90DC"
+        },
+        {
+          "path": "data/st09/st09_game021_Expand.gr.xml.lz",
+          "length": 7548,
+          "sha256": "1C9E8E20153320EEB889A8F6097109D7A637C9ADA1F7A5D9CA97666AC45324C6"
+        },
+        {
+          "path": "data/st09/st09_game021_Expand.it.xml.lz",
+          "length": 7476,
+          "sha256": "9D6C8B4978591053FF99F0E4ADC78ED720B23E7DA217DCA248E9E8C62A76E12D"
+        },
+        {
+          "path": "data/st09/st09_game021_Expand.sp.xml.lz",
+          "length": 7576,
+          "sha256": "8224926685C078013F21876EBEAE1DA274C1D4913E4577CA7C5AA6D891E7B665"
+        },
+        {
+          "path": "data/st09/st09_game021_Expand.xml.lz",
+          "length": 26788,
+          "sha256": "F09EE753A892F9D809B78D8B1BB5BE240036EA0CAE06BD5A954C329808B8D80D"
+        },
+        {
+          "path": "data/st09/st09_game022_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st09/st09_game022_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st09/st09_game022_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st09/st09_game022_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st09/st09_game022_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st09/st09_game022_Expand.xml.lz",
+          "length": 292,
+          "sha256": "CC6F6334816C444A42D1CCA3B0998583D42786E84F00D07AD9EE9CC29C60F082"
+        },
+        {
+          "path": "data/st09/st09_root.xml.lz",
+          "length": 420,
+          "sha256": "470376F5E1BECB9584BBAD172351E502AA567504A01E376770DDEFC961275555"
+        },
+        {
+          "path": "data/st11/st11_game000_Expand.en.xml.lz",
+          "length": 4684,
+          "sha256": "AB93638FCF4AEAC36912D2203A457F3B98F01EF0A7CECCE8DAF8BAF2A55DD376"
+        },
+        {
+          "path": "data/st11/st11_game000_Expand.fr.xml.lz",
+          "length": 4864,
+          "sha256": "8985E80EC18D398D17B63CBCFCD8C2C37BF445E421D2AAB587E552A9AD6A723C"
+        },
+        {
+          "path": "data/st11/st11_game000_Expand.gr.xml.lz",
+          "length": 5280,
+          "sha256": "1CD10FC1584B966BB74390B61AE7BD7C06325E3C91B996E81D46617091337764"
+        },
+        {
+          "path": "data/st11/st11_game000_Expand.it.xml.lz",
+          "length": 4728,
+          "sha256": "65CBD9939027EC01B9AF3BFF2065AE6C7A90068116BB08AF5ECCD07FDE3C419D"
+        },
+        {
+          "path": "data/st11/st11_game000_Expand.sp.xml.lz",
+          "length": 4704,
+          "sha256": "2AEABAEDBA5B0D46688467C5FFF6B30CE0C0E976413F7CC6EB9157DA0F9FD367"
+        },
+        {
+          "path": "data/st11/st11_game000_Expand.xml.lz",
+          "length": 21744,
+          "sha256": "0A405122BB0B872616AF244B62CCBDA8CD7CA56C5629ED0BBCCC10C55F8B74D6"
+        },
+        {
+          "path": "data/st11/st11_game001_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st11/st11_game001_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st11/st11_game001_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st11/st11_game001_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st11/st11_game001_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st11/st11_game001_Expand.xml.lz",
+          "length": 224,
+          "sha256": "8061B3335478E922CF665EB487523DF898A8AE259180AD5D47C3CEEBC11A9AC6"
+        },
+        {
+          "path": "data/st11/st11_game002_Expand.en.xml.lz",
+          "length": 1360,
+          "sha256": "E4FA3C79139C13D9F68F27BE521E24FF3482F481038B811FD5AE56429CAB0E69"
+        },
+        {
+          "path": "data/st11/st11_game002_Expand.fr.xml.lz",
+          "length": 1328,
+          "sha256": "AD4FA56976DB771694FA1102F7F7543B2217840A5AF27712A4386466C9BB4552"
+        },
+        {
+          "path": "data/st11/st11_game002_Expand.gr.xml.lz",
+          "length": 1416,
+          "sha256": "F48E33F44B809E2B125CB5FFC2CC413A9D722BB77B8092032E0554F63644A318"
+        },
+        {
+          "path": "data/st11/st11_game002_Expand.it.xml.lz",
+          "length": 1348,
+          "sha256": "B95FEA836C970F13E9DAAD1C67DCFCECE1C28766B7C4E60F6B9868D480310AFC"
+        },
+        {
+          "path": "data/st11/st11_game002_Expand.sp.xml.lz",
+          "length": 1500,
+          "sha256": "633521F78133B3D36D04FC6789439AF8BBEE10E8273F7FAC7F7B8C37049EB66F"
+        },
+        {
+          "path": "data/st11/st11_game002_Expand.xml.lz",
+          "length": 12620,
+          "sha256": "D26A0CDE58E63289306FA7E38777E5B07A6D4281E4D740E326635A48180DD4BD"
+        },
+        {
+          "path": "data/st11/st11_root.xml.lz",
+          "length": 224,
+          "sha256": "812737656ABC083084690599E9A0DE04359599B58E742AE6AA55D1DA24F2A1E8"
+        },
+        {
+          "path": "data/st13/st13_demo000_Expand.en.xml.lz",
+          "length": 3000,
+          "sha256": "CABC1280FB003833D3B7A515654AEF4A173B8AA1F1B7B187C03C3D0B294F12DA"
+        },
+        {
+          "path": "data/st13/st13_demo000_Expand.fr.xml.lz",
+          "length": 3072,
+          "sha256": "6B6EFA6C1AB10D668C97301BE39160D8177EEB78E4AF51583DA3D6533E8EF6E5"
+        },
+        {
+          "path": "data/st13/st13_demo000_Expand.gr.xml.lz",
+          "length": 2988,
+          "sha256": "25006428BC945BDBBF028432F91E95081A37C0034684C7060D24444B7F9D31AC"
+        },
+        {
+          "path": "data/st13/st13_demo000_Expand.it.xml.lz",
+          "length": 3008,
+          "sha256": "CD5EA5EF4C3457DAF9248B67BC8CB1760E675D242F2E8AC10E83805C6CA5843C"
+        },
+        {
+          "path": "data/st13/st13_demo000_Expand.sp.xml.lz",
+          "length": 3132,
+          "sha256": "C729A3EC6BB8072BEA0C1E0DDA9C155A8FD5E47BDA9A65022FD2321F5FD1CB1E"
+        },
+        {
+          "path": "data/st13/st13_demo000_Expand.xml.lz",
+          "length": 13368,
+          "sha256": "E709826664C663FBD457AE1DBC6A0A2A155C8B4896BE6CA24DF16E191520C490"
+        },
+        {
+          "path": "data/st13/st13_demo001_Expand.en.xml.lz",
+          "length": 956,
+          "sha256": "6A7BD785FE8728B05D78A11B2AD6022152BD51861BB2DAC7E58BBF81DD8A84C0"
+        },
+        {
+          "path": "data/st13/st13_demo001_Expand.fr.xml.lz",
+          "length": 912,
+          "sha256": "7CC46B671D3DAF8707466172AFB7C7ED9EB9959970F483BC3EF93CDFB08ABC0B"
+        },
+        {
+          "path": "data/st13/st13_demo001_Expand.gr.xml.lz",
+          "length": 936,
+          "sha256": "797FE3B22F2AC78B8B9EFB8EBF6E595565576A29EDDB2D9A75EFBE7B8E0328AE"
+        },
+        {
+          "path": "data/st13/st13_demo001_Expand.it.xml.lz",
+          "length": 960,
+          "sha256": "B7283C2802BA1591613DF598346A7C1D9FA512464E48FC06A2BFD04A456A5F34"
+        },
+        {
+          "path": "data/st13/st13_demo001_Expand.sp.xml.lz",
+          "length": 948,
+          "sha256": "5662BB6C078AF922358C01AFF2A78F2A4A10BB12A74827499BAD81C83E6078E5"
+        },
+        {
+          "path": "data/st13/st13_demo001_Expand.xml.lz",
+          "length": 4640,
+          "sha256": "292AE279D78B47CA2A7666AC08769436D166725B329B7D1156212BEF9FF718B6"
+        },
+        {
+          "path": "data/st13/st13_demo100_Expand.xml.lz",
+          "length": 1676,
+          "sha256": "D8E1297D2414645915F4F047BED81821CD86E88F690CBEB5178B61361E8AACAF"
+        },
+        {
+          "path": "data/st13/st13_demo103_Expand.xml.lz",
+          "length": 1276,
+          "sha256": "F4C1E34CC92B28909CA203D6E3CB52C035860A7659B4436C3F41538CFD22845B"
+        },
+        {
+          "path": "data/st13/st13_demo110_Expand.xml.lz",
+          "length": 3792,
+          "sha256": "F1A8E3352A6185FA3FFD18A8A42E582F2C1CC884E0E86500ADB35CD329B48766"
+        },
+        {
+          "path": "data/st13/st13_demo120_Expand.xml.lz",
+          "length": 3468,
+          "sha256": "A5087D2F05295272DAC10EE0E38F8A9B5427BC65A9C60CBEB09138E5A0900D16"
+        },
+        {
+          "path": "data/st13/st13_demo121_Expand.xml.lz",
+          "length": 2188,
+          "sha256": "75F1235139421C5FD3B34827BB423788013B3FB78BFAFC721524D4AD9A7EC019"
+        },
+        {
+          "path": "data/st13/st13_game000_Expand.en.xml.lz",
+          "length": 3940,
+          "sha256": "6309FF102447FCFE3F00E6FA1DFBB167B913769A391CCBE17DE37B96752B0FB0"
+        },
+        {
+          "path": "data/st13/st13_game000_Expand.fr.xml.lz",
+          "length": 4104,
+          "sha256": "2CD90708A86B667F4965DE8702047BF4B0EDE3ABFEB650858541FF74113405BC"
+        },
+        {
+          "path": "data/st13/st13_game000_Expand.gr.xml.lz",
+          "length": 4076,
+          "sha256": "DDA71114520B4AD4558D782D9B0DA721A7A3EE676E88D99E7D8C7A0F47557586"
+        },
+        {
+          "path": "data/st13/st13_game000_Expand.it.xml.lz",
+          "length": 3940,
+          "sha256": "F612EE82D1ED30F682E58F78BCBA5B76E472A0E1FE6F2A8FD643E3C831045A05"
+        },
+        {
+          "path": "data/st13/st13_game000_Expand.sp.xml.lz",
+          "length": 4152,
+          "sha256": "A9245D89DD00BE8C3DA297F37CC62276ACC164ABC09C8DE8F2A89A1913C85B97"
+        },
+        {
+          "path": "data/st13/st13_game000_Expand.xml.lz",
+          "length": 16076,
+          "sha256": "A4CFE1CE158350ECDF120B3059811FF30398E3AC28A6E7DED38AA09F10BB845F"
+        },
+        {
+          "path": "data/st13/st13_game001_Expand.en.xml.lz",
+          "length": 2104,
+          "sha256": "8E97754A4C0F3713407E8818B1080E7C75C752217E9D5A03FA12556BF8600B17"
+        },
+        {
+          "path": "data/st13/st13_game001_Expand.fr.xml.lz",
+          "length": 2228,
+          "sha256": "661D69F8747421010A73A741EF34A452183DD7470F33EA8E20D25A01B658865B"
+        },
+        {
+          "path": "data/st13/st13_game001_Expand.gr.xml.lz",
+          "length": 2108,
+          "sha256": "06FD0FCE509C8F76DD6823968D7EFEE8EAD6815643B233E9B9553457CF250E0D"
+        },
+        {
+          "path": "data/st13/st13_game001_Expand.it.xml.lz",
+          "length": 2076,
+          "sha256": "5E278D32C6A151C1305BAF42B3FB3EC76CF9180BBF2744A90C6607C71D82F68E"
+        },
+        {
+          "path": "data/st13/st13_game001_Expand.sp.xml.lz",
+          "length": 2224,
+          "sha256": "FB4F3EC5D420E4983621F4F31ED77148AA3E4C7800F8FDD27D79DF9B4039EE6D"
+        },
+        {
+          "path": "data/st13/st13_game001_Expand.xml.lz",
+          "length": 9380,
+          "sha256": "4492339F838009919F12EBC7184E4F4CE60C9B9BE65800233CB7A3F426837607"
+        },
+        {
+          "path": "data/st13/st13_game002_Expand.en.xml.lz",
+          "length": 1944,
+          "sha256": "2DAD71EBC25221D909A3F551D302A6F937B69DCAB015806FDC4D6233253C6370"
+        },
+        {
+          "path": "data/st13/st13_game002_Expand.fr.xml.lz",
+          "length": 1956,
+          "sha256": "2F87DFF516E743DC4F88CC4E0544F0E4E878B76959E48DCE12598E07EF898FC0"
+        },
+        {
+          "path": "data/st13/st13_game002_Expand.gr.xml.lz",
+          "length": 1904,
+          "sha256": "EE1C3232CFA1B14F00DCC61BF0A51C1121D918EEBC3199A04710AC2FD621B711"
+        },
+        {
+          "path": "data/st13/st13_game002_Expand.it.xml.lz",
+          "length": 1960,
+          "sha256": "D72FFF76B8B17210C32771FA95D9F97575727F727B5104F103C47949C73BF495"
+        },
+        {
+          "path": "data/st13/st13_game002_Expand.sp.xml.lz",
+          "length": 2044,
+          "sha256": "47A1C0FE257A400DF6C4BD3EA1C09D0FFA384B7ED9578599A47E85012BC26338"
+        },
+        {
+          "path": "data/st13/st13_game002_Expand.xml.lz",
+          "length": 4524,
+          "sha256": "AFEE995031EAEB0FB29F5EBFBD95B3B1EE43B1FFBBE2C336E35ED95561C16EA3"
+        },
+        {
+          "path": "data/st13/st13_game003_Expand.en.xml.lz",
+          "length": 5248,
+          "sha256": "7CE97F6D4892CCBB39CE1A6183698292AE42D9A6347C1CA3653F2D62219D632A"
+        },
+        {
+          "path": "data/st13/st13_game003_Expand.fr.xml.lz",
+          "length": 5456,
+          "sha256": "1B73E7D6EACD6EFD56E6F5DFA575517F819B77614EB8B824AC5A1718FE9E4B0D"
+        },
+        {
+          "path": "data/st13/st13_game003_Expand.gr.xml.lz",
+          "length": 5348,
+          "sha256": "61FCBD0BC6D7F80C423F4EDAE17C01FD4C1A576513E2C9F11ECB58650A6B39B0"
+        },
+        {
+          "path": "data/st13/st13_game003_Expand.it.xml.lz",
+          "length": 5244,
+          "sha256": "8926CCD6D69644706FD31B5ACDA4D578CE9EA7EFFD4C31BE39E5273A256B4FBE"
+        },
+        {
+          "path": "data/st13/st13_game003_Expand.sp.xml.lz",
+          "length": 5500,
+          "sha256": "3BBCA931A0D482C1E5AE83714896B998C39849FA3BA254709E0EBAF11C379AE8"
+        },
+        {
+          "path": "data/st13/st13_game003_Expand.xml.lz",
+          "length": 9816,
+          "sha256": "12549A624A9F79370D7A605DF3642EDF2CF1969794ACBFBCF125D4010279473F"
+        },
+        {
+          "path": "data/st13/st13_game010_Expand.en.xml.lz",
+          "length": 2532,
+          "sha256": "DFD7EBF6ECB87D12AF2E3E22753E5D5B599E1FB8A021DD7F2A79D534910B839E"
+        },
+        {
+          "path": "data/st13/st13_game010_Expand.fr.xml.lz",
+          "length": 2592,
+          "sha256": "061D3811C0318606912EB3AF29B439953D9D8ED65AC03102EB8BE361BF7F07FB"
+        },
+        {
+          "path": "data/st13/st13_game010_Expand.gr.xml.lz",
+          "length": 2600,
+          "sha256": "C7451CD799071BD66A4AB507C3799AE3167CCAE2D256264FA5AFE5EBAF022C7B"
+        },
+        {
+          "path": "data/st13/st13_game010_Expand.it.xml.lz",
+          "length": 2580,
+          "sha256": "F3D0C30A8FA6D2CCE9A438C2B0E91ED770A922CBC99739B29B787E528BA303EC"
+        },
+        {
+          "path": "data/st13/st13_game010_Expand.sp.xml.lz",
+          "length": 2544,
+          "sha256": "B6D075554A9EF1CB9375562482F80DC1EE97B4A81F4A47789B20D49A371094E4"
+        },
+        {
+          "path": "data/st13/st13_game010_Expand.xml.lz",
+          "length": 30284,
+          "sha256": "DBC83501FADAE379C95EB56E96A30A3136A58852678A6DEB770FC719AC06E25A"
+        },
+        {
+          "path": "data/st13/st13_game011_Expand.en.xml.lz",
+          "length": 1616,
+          "sha256": "8C7CCFBBBC286BC999241DEBC8F2DAE18F53BEAA0FC094259CA133EAEA724CCF"
+        },
+        {
+          "path": "data/st13/st13_game011_Expand.fr.xml.lz",
+          "length": 1656,
+          "sha256": "B07B1FC8023CFCFE991651A86B3B8CC1C8EA93ADB5AF335E831C8E58A4A635EA"
+        },
+        {
+          "path": "data/st13/st13_game011_Expand.gr.xml.lz",
+          "length": 1640,
+          "sha256": "EA5B48D21741428F205F07D65B70240B1EC27FA8CDC0D3D6CF219321E3268C18"
+        },
+        {
+          "path": "data/st13/st13_game011_Expand.it.xml.lz",
+          "length": 1628,
+          "sha256": "042FF59E75672A78810750BA763664032C1D67CF51C76D1B17CEE5568B2590F2"
+        },
+        {
+          "path": "data/st13/st13_game011_Expand.sp.xml.lz",
+          "length": 1680,
+          "sha256": "F344C8D4951EF4798CC7AF17FF21B5BCD26EF64AA8A4250233846FD896C6F7F8"
+        },
+        {
+          "path": "data/st13/st13_game011_Expand.xml.lz",
+          "length": 33388,
+          "sha256": "2CA62C5E2FF965A864081FCC6B8A00556437304E0848688C98971886EA846F28"
+        },
+        {
+          "path": "data/st13/st13_game012_Expand.en.xml.lz",
+          "length": 4352,
+          "sha256": "EEF24BEE887726B0F061290279FD4EA3263ABB9FADEB90C79869FB43C30B7CEA"
+        },
+        {
+          "path": "data/st13/st13_game012_Expand.fr.xml.lz",
+          "length": 4528,
+          "sha256": "CD3BCB7DE9C3C033F5A9EA3BC3557966F7747033765D75544BEABC4CF27583F8"
+        },
+        {
+          "path": "data/st13/st13_game012_Expand.gr.xml.lz",
+          "length": 4484,
+          "sha256": "31EA5246ACAB9B6F16AA10E1A3F98C0463813B1931DA214CDBA3C3CB106E9520"
+        },
+        {
+          "path": "data/st13/st13_game012_Expand.it.xml.lz",
+          "length": 4532,
+          "sha256": "C2E979274CC0F1150C9034D0CE7E8DAA16AFA985E69550CB9D366B8E82CEC0DA"
+        },
+        {
+          "path": "data/st13/st13_game012_Expand.sp.xml.lz",
+          "length": 4500,
+          "sha256": "C08ADEAF94CDF17085FBFC6E3BC259FD26AA58B8CEA9BB2D3ED7393587FA4CD1"
+        },
+        {
+          "path": "data/st13/st13_game012_Expand.xml.lz",
+          "length": 39352,
+          "sha256": "8DF89B394AA72FA9BFA18DFC192655EB2A6ED5142A2FA44DEDA7B75AD4800798"
+        },
+        {
+          "path": "data/st13/st13_game013_Expand.en.xml.lz",
+          "length": 8172,
+          "sha256": "4F15EE770ADE7B43405E79FCD6E74C067C67B43EFAFA639DB9C03DD19BD85B72"
+        },
+        {
+          "path": "data/st13/st13_game013_Expand.fr.xml.lz",
+          "length": 8644,
+          "sha256": "4D1463ACFBC5C0D77DBC63FA02A7D12887DD08EA93537D02AA94C6099BFD4BAB"
+        },
+        {
+          "path": "data/st13/st13_game013_Expand.gr.xml.lz",
+          "length": 8180,
+          "sha256": "B6DF8FF5CACFE7DCD4DE72E67980ECCC60CB216421ACEB95911A0BFA577F253D"
+        },
+        {
+          "path": "data/st13/st13_game013_Expand.it.xml.lz",
+          "length": 8624,
+          "sha256": "9AA2AA50C86F5E1E3F660EB8BD2A34EFF5DB20D2E0DC73CAD784DE808A86BC1B"
+        },
+        {
+          "path": "data/st13/st13_game013_Expand.sp.xml.lz",
+          "length": 8532,
+          "sha256": "6BC81E54417687B39E96C32C06D34DD77A3F39E435FC7A3440F19DE5872C1C12"
+        },
+        {
+          "path": "data/st13/st13_game013_Expand.xml.lz",
+          "length": 37696,
+          "sha256": "354975E05C9A09FA5227D4B7D79492AD2A71A28D6052EA11EAEEA67AD9615707"
+        },
+        {
+          "path": "data/st13/st13_game014_Expand.en.xml.lz",
+          "length": 4968,
+          "sha256": "D7D2128B59D42FECFE9A107DD7F964EFB5A47619156019AA04B6D6C6C4DFC185"
+        },
+        {
+          "path": "data/st13/st13_game014_Expand.fr.xml.lz",
+          "length": 5076,
+          "sha256": "FBE35B7B6A5CB6C4BD814CA1B96400D7EB2E32194D9D83BD13EB09D2A95ECC45"
+        },
+        {
+          "path": "data/st13/st13_game014_Expand.gr.xml.lz",
+          "length": 4968,
+          "sha256": "2EE60DFE3B0D18C135E99528091C3A9792712E020C4BE905F89F128E329587F6"
+        },
+        {
+          "path": "data/st13/st13_game014_Expand.it.xml.lz",
+          "length": 5092,
+          "sha256": "A7115649FD8523ED0DAE73D5EC8BC883D2C659A129E995000C27F3831BE4413D"
+        },
+        {
+          "path": "data/st13/st13_game014_Expand.sp.xml.lz",
+          "length": 4992,
+          "sha256": "BF52F3332383D4E5D51EAC74E6092299DD861CB2F9776D2E1FB70A16EB76134B"
+        },
+        {
+          "path": "data/st13/st13_game014_Expand.xml.lz",
+          "length": 32724,
+          "sha256": "35951AF63D7392772C66B1046C98223E8084C62321B520CB387DCA1791E5B1C5"
+        },
+        {
+          "path": "data/st13/st13_game015_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st13/st13_game015_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st13/st13_game015_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st13/st13_game015_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st13/st13_game015_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st13/st13_game015_Expand.xml.lz",
+          "length": 288,
+          "sha256": "6300577C487E0D384E63D3DA9F793E529DC03E87D6428BA0EA7DD2B9A9B729A1"
+        },
+        {
+          "path": "data/st13/st13_game016_Expand.en.xml.lz",
+          "length": 456,
+          "sha256": "C05270567AFAFCB03BED26260090395D94F2DE1C22573D76554F3B944CEF057B"
+        },
+        {
+          "path": "data/st13/st13_game016_Expand.fr.xml.lz",
+          "length": 480,
+          "sha256": "0FAEDA0FABFDF8877F9595707C9B87ACBB9E1134B1C31CC07358D37AA87FF13C"
+        },
+        {
+          "path": "data/st13/st13_game016_Expand.gr.xml.lz",
+          "length": 500,
+          "sha256": "723DA55B88A7F5C31D76D61ED899890798C94373D6240ADACE31EDE466EC29BD"
+        },
+        {
+          "path": "data/st13/st13_game016_Expand.it.xml.lz",
+          "length": 492,
+          "sha256": "6FFC146417E51F405BDA85EBD4883057B3D9AD2DD1A2379C78F19DA87A6589D3"
+        },
+        {
+          "path": "data/st13/st13_game016_Expand.sp.xml.lz",
+          "length": 488,
+          "sha256": "091B434197B745E25D182625921349A3B781D2DAA9E76F9D073F097C2D86B7CB"
+        },
+        {
+          "path": "data/st13/st13_game016_Expand.xml.lz",
+          "length": 264,
+          "sha256": "88C9A845446B375FA7FAD4A97976D4EBD62EFAD690E9940E4D1E610E9FA35BC9"
+        },
+        {
+          "path": "data/st13/st13_game020_Expand.en.xml.lz",
+          "length": 1548,
+          "sha256": "23C9EAEFD3D7097647F076760C36C4EC9FD768F3C7EEC55278866E509E69E040"
+        },
+        {
+          "path": "data/st13/st13_game020_Expand.fr.xml.lz",
+          "length": 1540,
+          "sha256": "E00BA4C17F38D77B167E81648D6C45EC618D68CF4A267B612B934655C0A0A071"
+        },
+        {
+          "path": "data/st13/st13_game020_Expand.gr.xml.lz",
+          "length": 1608,
+          "sha256": "605938D123A704CAD9D4639728FA384BE2A47DE77412BEA7151360227F6AAB47"
+        },
+        {
+          "path": "data/st13/st13_game020_Expand.it.xml.lz",
+          "length": 1608,
+          "sha256": "1AA688B98938D6B756307D6D1A881FCE6A579C8FAD35F42E7A50A8A3C6A26AEE"
+        },
+        {
+          "path": "data/st13/st13_game020_Expand.sp.xml.lz",
+          "length": 1644,
+          "sha256": "EF9E31FCB07A15CE43342F79B49754F120AFF99B2D66C9C38F3E4EAAF145B840"
+        },
+        {
+          "path": "data/st13/st13_game020_Expand.xml.lz",
+          "length": 11788,
+          "sha256": "C597FC0488F5706D9767FCDCD8AF8034CB37F46BA4929635E6A9DF87C7AE40D4"
+        },
+        {
+          "path": "data/st13/st13_game021_Expand.en.xml.lz",
+          "length": 12608,
+          "sha256": "3B0BA3289C34E6E255FED09AA8EBC2114F418717352ABEFC8D6E179D5E1683D6"
+        },
+        {
+          "path": "data/st13/st13_game021_Expand.fr.xml.lz",
+          "length": 13148,
+          "sha256": "E4347DB3F3AD6F600262182D41D69EAEC3130BECA4E55460E009D66384A6316E"
+        },
+        {
+          "path": "data/st13/st13_game021_Expand.gr.xml.lz",
+          "length": 13056,
+          "sha256": "3CD7C6CE13A41DC0F135C7931470D81E688D5E1A1E701554777DB5D0BA87A5C3"
+        },
+        {
+          "path": "data/st13/st13_game021_Expand.it.xml.lz",
+          "length": 13336,
+          "sha256": "228D3BA4CCBF9945B7846A0A8490E6A4D11ECE1DCD496D967204B4239F82545C"
+        },
+        {
+          "path": "data/st13/st13_game021_Expand.sp.xml.lz",
+          "length": 13220,
+          "sha256": "D5A0D355C3CDE3A2A46AE95F9BF608993E80636E21F5CA074C124ED6A981B645"
+        },
+        {
+          "path": "data/st13/st13_game021_Expand.xml.lz",
+          "length": 52864,
+          "sha256": "C816E1A316B98FF1F81A4D53B86B41A619CBF297F09CF05AA8577799DC94377D"
+        },
+        {
+          "path": "data/st13/st13_game022_Expand.en.xml.lz",
+          "length": 6688,
+          "sha256": "EDABE02519DFC3B9642D4588D293D8A0446AB5D08FF26E09F88C7FC752E68B4B"
+        },
+        {
+          "path": "data/st13/st13_game022_Expand.fr.xml.lz",
+          "length": 6976,
+          "sha256": "38D512973B13438F77DA34156612AC1711536D69F187535840EDF8FF7F88166B"
+        },
+        {
+          "path": "data/st13/st13_game022_Expand.gr.xml.lz",
+          "length": 7252,
+          "sha256": "E8A566962DCC27D3B99BA134DCFD0DE485973C37311217585A348E3EBB2ECD4B"
+        },
+        {
+          "path": "data/st13/st13_game022_Expand.it.xml.lz",
+          "length": 6880,
+          "sha256": "B56BD4EF1887AB560238EECD6FB48CFFE2480808D41C4828B7E623A4D909DB42"
+        },
+        {
+          "path": "data/st13/st13_game022_Expand.sp.xml.lz",
+          "length": 6648,
+          "sha256": "76E35B489A9DF26544C3B8A87B952F233096546BA9C9035DD8406CC7767BB2B3"
+        },
+        {
+          "path": "data/st13/st13_game022_Expand.xml.lz",
+          "length": 13068,
+          "sha256": "792AD03A7619801D8E73E11D07556D3FDAC8354A0B0494DB78AC91C86666DFE7"
+        },
+        {
+          "path": "data/st13/st13_root.xml.lz",
+          "length": 624,
+          "sha256": "967145059F1EC8F6D9C8848B89BFA9C38463FE021905B9DD8540A17105F98F3E"
+        },
+        {
+          "path": "data/st13demo01.mods",
+          "length": 3172776,
+          "sha256": "E9D17D92BE3032869B5956EAB7ADE29ED2B84DB1E6B85D8F4EF39E4C1BE66C32"
+        },
+        {
+          "path": "data/st13demo03.mods",
+          "length": 469492,
+          "sha256": "54004A0FE6F9DC49C4764AA31A48FA1017C8C0B4E5B7463DD2F25739E706DB66"
+        },
+        {
+          "path": "data/st13demo04.mods",
+          "length": 850404,
+          "sha256": "499EFD2E1FC6988DEAB782A7B3BECFD5DDB246B25129D2CDA3552C96DEE2D38F"
+        },
+        {
+          "path": "data/st14/st14_demo000_Expand.xml.lz",
+          "length": 916,
+          "sha256": "F52451C6A23F2E428EFE63526BF2EEBA9CDABAFE8B131C47F90F91CBF051FBDB"
+        },
+        {
+          "path": "data/st14/st14_demo030.fnc_Expand.xml.lz",
+          "length": 716,
+          "sha256": "17539DECDFD7224D590D1701359D2949AE849C78869CC597CE3D44780C0C44E8"
+        },
+        {
+          "path": "data/st14/st14_demo030_Expand.en.xml.lz",
+          "length": 2572,
+          "sha256": "85FAD1BA1726EFC7BB7D26032A181215E328738DE394283185445D571D87C6E7"
+        },
+        {
+          "path": "data/st14/st14_demo030_Expand.fr.xml.lz",
+          "length": 2660,
+          "sha256": "8651DEA7E8F0BBABFFB1BCAEFCB0EAE628736EBC6F2248E14FEB37AF48A60546"
+        },
+        {
+          "path": "data/st14/st14_demo030_Expand.gr.xml.lz",
+          "length": 2668,
+          "sha256": "D884D8BC85C99210591D16AA3525A9F4D23A9311D33A369F797D061DD7B38454"
+        },
+        {
+          "path": "data/st14/st14_demo030_Expand.it.xml.lz",
+          "length": 2648,
+          "sha256": "EC500CDA47848F4386B98297E1827BCDD1942FC8A7A2BC20BC5B6D5916E14EEF"
+        },
+        {
+          "path": "data/st14/st14_demo030_Expand.sp.xml.lz",
+          "length": 2720,
+          "sha256": "73180AE1B3D47286F3D60387BB3EA6D5BB92DCD248498C5C4DA36865F182283C"
+        },
+        {
+          "path": "data/st14/st14_demo030_Expand.xml.lz",
+          "length": 19592,
+          "sha256": "94CB291A00F1BA1875371C76C3FB54310184B66448A4B395A115E4F4D5A2B0CA"
+        },
+        {
+          "path": "data/st14/st14_demo031_Expand.en.xml.lz",
+          "length": 1180,
+          "sha256": "D5672466ED9B65F3ED56859B9D84F554EDDCF464402A9D1302E09AA6FBE73303"
+        },
+        {
+          "path": "data/st14/st14_demo031_Expand.fr.xml.lz",
+          "length": 1260,
+          "sha256": "6779A4797066CF61F0446838C5967B6881F4B23F865837F8A018809387A7F399"
+        },
+        {
+          "path": "data/st14/st14_demo031_Expand.gr.xml.lz",
+          "length": 1256,
+          "sha256": "85739DC4F20DEC499AB0920907FF98273776B24E83629254004FEDBCF1B2C443"
+        },
+        {
+          "path": "data/st14/st14_demo031_Expand.it.xml.lz",
+          "length": 1236,
+          "sha256": "ED93D6A635B47A861F2B9987C3A642C20464AA467758FBE5BC07024BBD8DA25B"
+        },
+        {
+          "path": "data/st14/st14_demo031_Expand.sp.xml.lz",
+          "length": 1224,
+          "sha256": "DE3FAD2394F6C05950F6ADDEB6BE9F84FFAD5245BFF0C592758C8DD548B47629"
+        },
+        {
+          "path": "data/st14/st14_demo031_Expand.xml.lz",
+          "length": 14768,
+          "sha256": "D9F71C6784C11F2FDB4298EB4B24642B743C88C15932C36F7DE9F36B4D131A2C"
+        },
+        {
+          "path": "data/st14/st14_demo060_Expand.en.xml.lz",
+          "length": 1248,
+          "sha256": "6972B6379AF447E65BEB889BC1853FD995823008AD60C3EDCC6996EB683F96C6"
+        },
+        {
+          "path": "data/st14/st14_demo060_Expand.fr.xml.lz",
+          "length": 1312,
+          "sha256": "53DCB5B3D79558221C04F2716785AB7F6BB50728703D3D6645D562F3061ED7D4"
+        },
+        {
+          "path": "data/st14/st14_demo060_Expand.gr.xml.lz",
+          "length": 1272,
+          "sha256": "E18B91A4373252E4776A4E69A462AF0B290AEDE93A7BD0FE614C18A57EC671F6"
+        },
+        {
+          "path": "data/st14/st14_demo060_Expand.it.xml.lz",
+          "length": 1288,
+          "sha256": "4720EFB95A8C28E77736B42EDBD9BC7EE7A8AA713FD858F6E4801530015326B2"
+        },
+        {
+          "path": "data/st14/st14_demo060_Expand.sp.xml.lz",
+          "length": 1268,
+          "sha256": "7DFCD3AD556BD2CCA74E6ED8F2133528DA35BFB85810CBF8477D9EE73C60161D"
+        },
+        {
+          "path": "data/st14/st14_demo060_Expand.xml.lz",
+          "length": 3920,
+          "sha256": "8807B8BF13E6E0ED7BDDE74515C0799165E77AB2BC87E2D5D535EB7A5CB06116"
+        },
+        {
+          "path": "data/st14/st14_game000_Expand.en.xml.lz",
+          "length": 5048,
+          "sha256": "79A40A0DC6C3A628588D6FDC5A121AA19F993FED938FBD7A04DD72CD2F685D34"
+        },
+        {
+          "path": "data/st14/st14_game000_Expand.fr.xml.lz",
+          "length": 5468,
+          "sha256": "011B735F1CD10CB415D76734C74645E514103D175978C679F55388299CF43928"
+        },
+        {
+          "path": "data/st14/st14_game000_Expand.gr.xml.lz",
+          "length": 5324,
+          "sha256": "C9C7DF841A8EF53CE788082FBC2ED5023C3E353B8E581DD380EEFEB3D64538BD"
+        },
+        {
+          "path": "data/st14/st14_game000_Expand.it.xml.lz",
+          "length": 5180,
+          "sha256": "496808203EBB9B3AD064536014695BC687D4B31A64538685DB5DB12541676DAF"
+        },
+        {
+          "path": "data/st14/st14_game000_Expand.sp.xml.lz",
+          "length": 5200,
+          "sha256": "5FA179A23D4B1CA6F78877287205D9FC5BA44BA874743BC772FC2E7D09D2A298"
+        },
+        {
+          "path": "data/st14/st14_game000_Expand.xml.lz",
+          "length": 13348,
+          "sha256": "EEB03A5CFA8B27CAF57BE5BA9810106DB3A06AB3544571D19D4CDBC0D97F188D"
+        },
+        {
+          "path": "data/st14/st14_game010_Expand.en.xml.lz",
+          "length": 996,
+          "sha256": "01015EC76DC6172E42B6F268222C0C88DAED8D27AC5AAB91449C9CE3C149E3CD"
+        },
+        {
+          "path": "data/st14/st14_game010_Expand.fr.xml.lz",
+          "length": 1036,
+          "sha256": "300E711F086AF60667078477E3EDC4ABBE3C30B69A77CE90721F2476F3A304CA"
+        },
+        {
+          "path": "data/st14/st14_game010_Expand.gr.xml.lz",
+          "length": 940,
+          "sha256": "B57BD599418E33340A63E7ACF92E271AD736ACB889149926C351E97D3B40A6D7"
+        },
+        {
+          "path": "data/st14/st14_game010_Expand.it.xml.lz",
+          "length": 1000,
+          "sha256": "06C0B89119DA4BB5A714838E258B8A9866AE12946133C58D4D362AA7526A030E"
+        },
+        {
+          "path": "data/st14/st14_game010_Expand.sp.xml.lz",
+          "length": 992,
+          "sha256": "30371DE26136E25E4A3C20A71457D797FC16FC1675A471EA4556936DFE3FE5BF"
+        },
+        {
+          "path": "data/st14/st14_game010_Expand.xml.lz",
+          "length": 3996,
+          "sha256": "BD11DD29345738A3020D3348C9613ADBBE84DB486E3268D30A4B2E0C1B3A4D8C"
+        },
+        {
+          "path": "data/st14/st14_game020_Expand.en.xml.lz",
+          "length": 5116,
+          "sha256": "A415DF44E1925DD608E5689F3AF9B3791CAB12F305D37491E91F13FAB7E7E596"
+        },
+        {
+          "path": "data/st14/st14_game020_Expand.fr.xml.lz",
+          "length": 5488,
+          "sha256": "B8F68D9750CF25C215AAAEB246E6275099EFC3782A6F3B4E9ECBA81A1FEABC34"
+        },
+        {
+          "path": "data/st14/st14_game020_Expand.gr.xml.lz",
+          "length": 5416,
+          "sha256": "717931A4847FBB0304A7941871582770020B350BB44E78E69BB7C50C0E5B12CD"
+        },
+        {
+          "path": "data/st14/st14_game020_Expand.it.xml.lz",
+          "length": 5476,
+          "sha256": "A723FF2D5C4E4F62DB198A25BCD1180FA445CC78260FCA4F4D7F26571E7258B6"
+        },
+        {
+          "path": "data/st14/st14_game020_Expand.sp.xml.lz",
+          "length": 5288,
+          "sha256": "5392395999B2DC30A4B7B1C1F21FBDFC804FCDCDCBF2B0ED730387C65A118C52"
+        },
+        {
+          "path": "data/st14/st14_game020_Expand.xml.lz",
+          "length": 24276,
+          "sha256": "921F42FE8085D4A3E5ADAAB4F5E70D614682EF6F71B43B106043C8DBCFB8F136"
+        },
+        {
+          "path": "data/st14/st14_game021_Expand.en.xml.lz",
+          "length": 4088,
+          "sha256": "90D3CDA8C2D1AA4E0C2317DFC1BEC41C562A22CA89661CA678F4E086A0782AE9"
+        },
+        {
+          "path": "data/st14/st14_game021_Expand.fr.xml.lz",
+          "length": 4372,
+          "sha256": "FAFBDE847F1E38CC23083D04EA99EB71234C46B142B98E5DEF103EBD4BEC2476"
+        },
+        {
+          "path": "data/st14/st14_game021_Expand.gr.xml.lz",
+          "length": 4284,
+          "sha256": "9FB3CFDBAB20660E8443DF4C5A504ADCA0F855C2656CA2C75282A14FC2AEE144"
+        },
+        {
+          "path": "data/st14/st14_game021_Expand.it.xml.lz",
+          "length": 4316,
+          "sha256": "47BE56247C8198C0DF20FAD0CD32A0AA930DEEB6891AC7B71E84032ED78694E4"
+        },
+        {
+          "path": "data/st14/st14_game021_Expand.sp.xml.lz",
+          "length": 4296,
+          "sha256": "AD77D3955263E42B84605C83A13B6B6A64ABBCF1102322B38FFFC331CC767270"
+        },
+        {
+          "path": "data/st14/st14_game021_Expand.xml.lz",
+          "length": 25336,
+          "sha256": "2DD63497225EF405123B10F533586FABD07A685C1D30F002B6F0F47ACAF6CCB9"
+        },
+        {
+          "path": "data/st14/st14_game022_Expand.en.xml.lz",
+          "length": 3596,
+          "sha256": "735955EBF879B886817B759BA001BE8143964754AF3C9C9FE272A92D6412C8AC"
+        },
+        {
+          "path": "data/st14/st14_game022_Expand.fr.xml.lz",
+          "length": 3916,
+          "sha256": "21459012B731EFDD7AD32842ADB35318FAA91C1DFE84531B56D9D7F187AA181A"
+        },
+        {
+          "path": "data/st14/st14_game022_Expand.gr.xml.lz",
+          "length": 3772,
+          "sha256": "8BCBE796844DA94B9D0C400DF538CED1050E0C1385A210F539E408791D63DDDB"
+        },
+        {
+          "path": "data/st14/st14_game022_Expand.it.xml.lz",
+          "length": 3716,
+          "sha256": "69D19765D52CA5FF25FCB900434AFFDAF0EA22EC8BC8457F238D35206D77DAF9"
+        },
+        {
+          "path": "data/st14/st14_game022_Expand.sp.xml.lz",
+          "length": 3676,
+          "sha256": "471CA84190B98CCA6BA5C04EAB9E66A83C45659AE13A85E23C80D4A6FCE300A6"
+        },
+        {
+          "path": "data/st14/st14_game022_Expand.xml.lz",
+          "length": 11236,
+          "sha256": "E1D602514598ED679027191A633D5206162CA4128A85EBAD1F0B28B6983A9506"
+        },
+        {
+          "path": "data/st14/st14_game030_Expand.en.xml.lz",
+          "length": 4244,
+          "sha256": "4BE40EA4E3D8AEA0A5A5FBF31AF0E355E76294D1F27515FF18C88B69A11627FA"
+        },
+        {
+          "path": "data/st14/st14_game030_Expand.fr.xml.lz",
+          "length": 4484,
+          "sha256": "015353F953A1E7F68913396060FBEBF2AB644E81F05A26F65A57D9B8AF99A269"
+        },
+        {
+          "path": "data/st14/st14_game030_Expand.gr.xml.lz",
+          "length": 4400,
+          "sha256": "E37AD2E0C629BA49122A72EEFDBBBC2ECA26D303099A6500AA19839FEE1632B2"
+        },
+        {
+          "path": "data/st14/st14_game030_Expand.it.xml.lz",
+          "length": 4532,
+          "sha256": "EDA6D487D5FCA321C7B402E17FA94A7620C54FCF6B9328FC951B0AB3C3F651A0"
+        },
+        {
+          "path": "data/st14/st14_game030_Expand.sp.xml.lz",
+          "length": 4500,
+          "sha256": "1F2C19D7BA7A39333A428E02739DF190639CFB89204E3458F8192C0B3822B22E"
+        },
+        {
+          "path": "data/st14/st14_game030_Expand.xml.lz",
+          "length": 19476,
+          "sha256": "0004D957841A68A22F21541BB4940AF56EFFB6684D48F8B67C6A53A8EC983536"
+        },
+        {
+          "path": "data/st14/st14_game031_Expand.en.xml.lz",
+          "length": 3476,
+          "sha256": "2FD6B1EDB2E283D1539CAD2C52119DAAC5FDFF5208D8813B2A2F6FB06E902049"
+        },
+        {
+          "path": "data/st14/st14_game031_Expand.fr.xml.lz",
+          "length": 3636,
+          "sha256": "16BF80DC5D5FC736F45A0DB4A5A49D6214FFDD1A3B275252ADA33D6EA872CE23"
+        },
+        {
+          "path": "data/st14/st14_game031_Expand.gr.xml.lz",
+          "length": 3600,
+          "sha256": "B715D224A164CEF451F65B9746EA070FB7FEBCCB131F3493F8D491BC7FCA5073"
+        },
+        {
+          "path": "data/st14/st14_game031_Expand.it.xml.lz",
+          "length": 3600,
+          "sha256": "0EAC119C36E6FEE52B3D1466DC1A0B0DF4DEEB0465E40052E395AD1BB0428A42"
+        },
+        {
+          "path": "data/st14/st14_game031_Expand.sp.xml.lz",
+          "length": 3636,
+          "sha256": "0909920681C2082C0336B1DEB5E8156B6611B5803489FE669B2EFF85862C7073"
+        },
+        {
+          "path": "data/st14/st14_game031_Expand.xml.lz",
+          "length": 23660,
+          "sha256": "253B4B3487F61293EACE97A10B2CABB075728C5377BF7235E8AA302E40D4A9F1"
+        },
+        {
+          "path": "data/st14/st14_game032_Expand.en.xml.lz",
+          "length": 4600,
+          "sha256": "E48568AD4026A7DB4016BB0657605850F06FD6CAC914228A73B382D9FB11CA32"
+        },
+        {
+          "path": "data/st14/st14_game032_Expand.fr.xml.lz",
+          "length": 4872,
+          "sha256": "A89C5E4B4443B711391283AFB0A7BC241B226BB7A51E1DB044BB7CE5D49FA874"
+        },
+        {
+          "path": "data/st14/st14_game032_Expand.gr.xml.lz",
+          "length": 4724,
+          "sha256": "950D62B6BF706B559D47A64B33386F1A557671061DF45D29E229FB2AD5326A96"
+        },
+        {
+          "path": "data/st14/st14_game032_Expand.it.xml.lz",
+          "length": 4828,
+          "sha256": "85DD169F0D2A4AEF8571727D0939890D9CE038437A514F8EDEB58B7B76E4CEB3"
+        },
+        {
+          "path": "data/st14/st14_game032_Expand.sp.xml.lz",
+          "length": 4992,
+          "sha256": "BBF43C71BE96BBE583989EF921FA0289B6D8809981C40C9959244114354B4317"
+        },
+        {
+          "path": "data/st14/st14_game032_Expand.xml.lz",
+          "length": 31904,
+          "sha256": "3E0807401B6B92BA42DAD886D7980F5ACFEBF9D2C59598DCA642DE977FA8765F"
+        },
+        {
+          "path": "data/st14/st14_game033_Expand.en.xml.lz",
+          "length": 7152,
+          "sha256": "8F21B8A9C04099817195F98A560C069516FD88279F80C386A13C510ED92A26CB"
+        },
+        {
+          "path": "data/st14/st14_game033_Expand.fr.xml.lz",
+          "length": 7344,
+          "sha256": "80F447609A339F833A4D6969F48C8D031EB6662B5E2720B15E24A1DF747F086E"
+        },
+        {
+          "path": "data/st14/st14_game033_Expand.gr.xml.lz",
+          "length": 7352,
+          "sha256": "0B6CC5D3C66638F34BDF50409550AD626C3B1E64570313AA03DFBEF0A8CADB62"
+        },
+        {
+          "path": "data/st14/st14_game033_Expand.it.xml.lz",
+          "length": 7596,
+          "sha256": "1536CCB3BAC3755590305866452AFE9B0461B9B77D713CE00B9939E81ABA271D"
+        },
+        {
+          "path": "data/st14/st14_game033_Expand.sp.xml.lz",
+          "length": 7776,
+          "sha256": "E2E9774733EE65E9A05A84F5BC08827EA9EF5DD8A4E03BCEF590E01A17CF1173"
+        },
+        {
+          "path": "data/st14/st14_game033_Expand.xml.lz",
+          "length": 39888,
+          "sha256": "7BEEA00F00405593CDA351BB089CDAB1C34EEDE33F9FDC380FB8BD6DFF546DA5"
+        },
+        {
+          "path": "data/st14/st14_game034_Expand.xml.lz",
+          "length": 288,
+          "sha256": "88FA0681C60BF8A27C433F402795CB463E7D58CFB757D33509C69AE899E86AA5"
+        },
+        {
+          "path": "data/st14/st14_game040_Expand.en.xml.lz",
+          "length": 2964,
+          "sha256": "4813012BC5FD6D620BD2D90C18B4BB5FECCD30564BD247902D7AF12AADE6DFAE"
+        },
+        {
+          "path": "data/st14/st14_game040_Expand.fr.xml.lz",
+          "length": 3036,
+          "sha256": "BFB79135CBF2FD4AF2F92A0786D646524EBF43AAFEAE773F97022A3BC5F8494C"
+        },
+        {
+          "path": "data/st14/st14_game040_Expand.gr.xml.lz",
+          "length": 3048,
+          "sha256": "213A448351B88630B67571F9246B150DED57C3B4410BCD74BF60A30646D21D8E"
+        },
+        {
+          "path": "data/st14/st14_game040_Expand.it.xml.lz",
+          "length": 3072,
+          "sha256": "A775B86729685959340B3AF1585E3D29D4366F4434EC26D4CEF003FB18A9DEEC"
+        },
+        {
+          "path": "data/st14/st14_game040_Expand.sp.xml.lz",
+          "length": 3152,
+          "sha256": "93801072F1BC768EEA8DDFAAC3D3C47A02F087BA96FA5EA6D905D197E6DBC23D"
+        },
+        {
+          "path": "data/st14/st14_game040_Expand.xml.lz",
+          "length": 11564,
+          "sha256": "102D7CE7990B24F4BD7D6FAF787A78BBF027E26740FFEE72BD4654912E257217"
+        },
+        {
+          "path": "data/st14/st14_game050_Expand.en.xml.lz",
+          "length": 10268,
+          "sha256": "CEED2B6F6E224E0E9D55DD0BA8F799D66C875F4BB949EFD6187A28D33820AC98"
+        },
+        {
+          "path": "data/st14/st14_game050_Expand.fr.xml.lz",
+          "length": 10892,
+          "sha256": "9872C4F13A98BC8C4FE230E43E179775D8C27CF06430B6D91CD8C95EE796E8D9"
+        },
+        {
+          "path": "data/st14/st14_game050_Expand.gr.xml.lz",
+          "length": 10672,
+          "sha256": "0039CCBC623844D0956786DBD10EAF5CF646C311B8AA8668E8BE28D7189B3D1B"
+        },
+        {
+          "path": "data/st14/st14_game050_Expand.it.xml.lz",
+          "length": 10736,
+          "sha256": "CC7370D5A18BEDD4ED9EE1FB5877A2807A4966F008547BD97CF6033A020249DF"
+        },
+        {
+          "path": "data/st14/st14_game050_Expand.sp.xml.lz",
+          "length": 10728,
+          "sha256": "931411CA6C17348E0CADCB3483A7C2E15339D2C65198E0B3372C2B20472B3441"
+        },
+        {
+          "path": "data/st14/st14_game050_Expand.xml.lz",
+          "length": 34044,
+          "sha256": "16EA51228B5FA6A3394EDB0CC7974132DF7D7D4E9B5C6AC915F0E2A7EB4E68E3"
+        },
+        {
+          "path": "data/st14/st14_game060_Expand.en.xml.lz",
+          "length": 5900,
+          "sha256": "4554B3BFB479E40BCACE8565D312BE7587E13DBF705773C5C5531CC493591736"
+        },
+        {
+          "path": "data/st14/st14_game060_Expand.fr.xml.lz",
+          "length": 6336,
+          "sha256": "6F5D9755378FC112923C5771DCD3F06E29E848A8BF3DC9A290619EDD84F265B7"
+        },
+        {
+          "path": "data/st14/st14_game060_Expand.gr.xml.lz",
+          "length": 6064,
+          "sha256": "A70E7D192271AE9DC9FDA3E8BC0E0A49B742BB1875C7F06FBE7068EA9A2F06CC"
+        },
+        {
+          "path": "data/st14/st14_game060_Expand.it.xml.lz",
+          "length": 6048,
+          "sha256": "919A33FAC48AD461450A3BED36A244A11F51BB2777F2A6226245954466CFB46F"
+        },
+        {
+          "path": "data/st14/st14_game060_Expand.sp.xml.lz",
+          "length": 6004,
+          "sha256": "E1D0B76FD72F15CED1360F6B8EFC1A9EDAA69EB3DBEFE8A5E17FA16DBE90DB49"
+        },
+        {
+          "path": "data/st14/st14_game060_Expand.xml.lz",
+          "length": 9832,
+          "sha256": "21A7D56ECBA52297415E31AFB72EF4FE33890DE05251346114B4C70450B88251"
+        },
+        {
+          "path": "data/st14/st14_game061_Expand.en.xml.lz",
+          "length": 2040,
+          "sha256": "A91F21091DCA8756853AE68824963D7D766A33911F2ECC2BE903F29674E4A219"
+        },
+        {
+          "path": "data/st14/st14_game061_Expand.fr.xml.lz",
+          "length": 2172,
+          "sha256": "8072DC03A679068A4088D5EB6F0AEB896570C0545C7694C542710E5B514A4FAB"
+        },
+        {
+          "path": "data/st14/st14_game061_Expand.gr.xml.lz",
+          "length": 2072,
+          "sha256": "1D9D83AEBDC77F65AA319ABEE51EF5FB9C4FF05FC6610C86515A260BB808946C"
+        },
+        {
+          "path": "data/st14/st14_game061_Expand.it.xml.lz",
+          "length": 2084,
+          "sha256": "529C52CA92FDB3D5BD275E6461F9DB80455E2F721B3CD0C147532662B6691D61"
+        },
+        {
+          "path": "data/st14/st14_game061_Expand.sp.xml.lz",
+          "length": 2084,
+          "sha256": "BA27B98685E11EE9DF84B2228E32F34178C06D681E11B6B5EB7B35D980C54D46"
+        },
+        {
+          "path": "data/st14/st14_game061_Expand.xml.lz",
+          "length": 5040,
+          "sha256": "AF7B9710F97E9DC5215EC0B7E4E5D1BAE3308286846B980338D03AD90E6139FA"
+        },
+        {
+          "path": "data/st14/st14_game062_Expand.xml.lz",
+          "length": 288,
+          "sha256": "E01E5B6FFE22D21C74BF17864C38786923DD4E0EEBFF661212DA8EBDAAC2BA91"
+        },
+        {
+          "path": "data/st14/st14_game090_Expand.xml.lz",
+          "length": 6108,
+          "sha256": "ADF34A24008711177CD6084502AC052468115A4000F5EE382E6B7E2B8501FE9E"
+        },
+        {
+          "path": "data/st14/st14_root.xml.lz",
+          "length": 744,
+          "sha256": "59C302DF184A3489E8123EFBFAF595C743589D5454483E8C4E92F9F7A3693F71"
+        },
+        {
+          "path": "data/st14demo01.mods",
+          "length": 1977488,
+          "sha256": "265FC5E45C6FEFF4FB742EB855C980962A3695EA51B5BCBF1213A8EE5005EF98"
+        },
+        {
+          "path": "data/st14demo02.mods",
+          "length": 820664,
+          "sha256": "3D8AEDB1B8B364C7DE34CDC7D00C8AF5C97E02DF45E5C50745CA1001D57C8852"
+        },
+        {
+          "path": "data/st14demo03.mods",
+          "length": 633072,
+          "sha256": "A8F31F5FDC09F9714A2BCDF1242FCEF1F94437F3BD9A7B4920B5FDA148DFDE49"
+        },
+        {
+          "path": "data/st14demo04.mods",
+          "length": 680612,
+          "sha256": "D97E65102A000640607EAD79EA6E7BBD7F19572904B17F7C221E7F73FBECC945"
+        },
+        {
+          "path": "data/st14demo05.mods",
+          "length": 2146956,
+          "sha256": "27C75D153D150A85A11A3BDA83DBCA8B655EDD5E0F744918EEEA4037E5A24556"
+        },
+        {
+          "path": "data/st14demo05b.mods",
+          "length": 627428,
+          "sha256": "4E91995F5AA057CC7D7E8EA91C9A97E9483FA87E5882AEC0435D8315553E3602"
+        },
+        {
+          "path": "data/st14demo06.mods",
+          "length": 849652,
+          "sha256": "FD9C2BCBFBA1BC13B6C2653B7926FF807A8DF153186D67C29EB4458774C60C34"
+        },
+        {
+          "path": "data/st15/st15_demo000_Expand.en.xml.lz",
+          "length": 2452,
+          "sha256": "BB3F6573E2E163D721D5405A73D3CD60FEEC43CE02916E0FC2DE31600C0C199B"
+        },
+        {
+          "path": "data/st15/st15_demo000_Expand.fr.xml.lz",
+          "length": 2412,
+          "sha256": "EA395131F1E050EDDC367C9B44AE6A6B8921B40DEAED0A2089758F32D1D39828"
+        },
+        {
+          "path": "data/st15/st15_demo000_Expand.gr.xml.lz",
+          "length": 2500,
+          "sha256": "4924B38303DA454AC1936A0488A8D4D5A214A716652597F847771977451A60DC"
+        },
+        {
+          "path": "data/st15/st15_demo000_Expand.it.xml.lz",
+          "length": 2384,
+          "sha256": "C6C307E423CD0DFA7D146BA882421BBBF35B94356D2AE26CDE9A07BBF8D98D75"
+        },
+        {
+          "path": "data/st15/st15_demo000_Expand.sp.xml.lz",
+          "length": 2404,
+          "sha256": "457EADFF49E27CA7FBD915FA46B6BB201676D79122F83BC8AD4D832A89C7C9BC"
+        },
+        {
+          "path": "data/st15/st15_demo000_Expand.xml.lz",
+          "length": 13288,
+          "sha256": "96E3B8149458650E86820CD6CABB7A874ACF677670E7210EED4D225B67CBB675"
+        },
+        {
+          "path": "data/st15/st15_demo001_Expand.en.xml.lz",
+          "length": 424,
+          "sha256": "E656CDA888E18862AE3C651F1D38A305EF3FF0AA31BCAC0E688708B61A20876A"
+        },
+        {
+          "path": "data/st15/st15_demo001_Expand.fr.xml.lz",
+          "length": 440,
+          "sha256": "0E86FFE0F0A579C90BC61B79659758DBA1B90EB3B5E2D3E99BA487EF912FE3E8"
+        },
+        {
+          "path": "data/st15/st15_demo001_Expand.gr.xml.lz",
+          "length": 420,
+          "sha256": "38386EFF9A2CFC3CB12E9133EBB1B7D7917AA7701A64F1E9903256D82B868C61"
+        },
+        {
+          "path": "data/st15/st15_demo001_Expand.it.xml.lz",
+          "length": 432,
+          "sha256": "9E61FECD3A4420B1E0BE59AE1B8114D7611A1151A722710CBEA4B4A5DDE621C0"
+        },
+        {
+          "path": "data/st15/st15_demo001_Expand.sp.xml.lz",
+          "length": 432,
+          "sha256": "20BFE125DFA908D2001C6DD38820FE3D2E5EB946356F08D418382B1BB67009C1"
+        },
+        {
+          "path": "data/st15/st15_demo001_Expand.xml.lz",
+          "length": 6364,
+          "sha256": "42614EE64246B3DEF3D1426C49AE63167CB5051673E7A1C639FB7355DD4B2813"
+        },
+        {
+          "path": "data/st15/st15_demo010_Expand.en.xml.lz",
+          "length": 580,
+          "sha256": "84851F2BCBAAEF713240DE6BCD4333D91F78A05DF56F3FCED2986F0C9DF6B4C6"
+        },
+        {
+          "path": "data/st15/st15_demo010_Expand.fr.xml.lz",
+          "length": 560,
+          "sha256": "7B0C66D61AC1D53F77BA809FD41529CA508562D8DC148890DFF5F3950F3A63C0"
+        },
+        {
+          "path": "data/st15/st15_demo010_Expand.gr.xml.lz",
+          "length": 576,
+          "sha256": "A9526766E77D90EF322DC2EA558ED481A157BEFC9FB12A18A709E33D405A0ECA"
+        },
+        {
+          "path": "data/st15/st15_demo010_Expand.it.xml.lz",
+          "length": 632,
+          "sha256": "4CCE15F266FC980F1039EF797A81AA85A9251EC4D2C59A68CAAADC4819B4B52E"
+        },
+        {
+          "path": "data/st15/st15_demo010_Expand.sp.xml.lz",
+          "length": 564,
+          "sha256": "5A3F2ABD72879C0E31F11FD3DD747ED3EF30BA66D87D4E5370AE2D99F5494167"
+        },
+        {
+          "path": "data/st15/st15_demo010_Expand.xml.lz",
+          "length": 7776,
+          "sha256": "FA8F5F9B6D2E046DE23D1AD69D8C09B918A4317947A783B7603421263A03D42C"
+        },
+        {
+          "path": "data/st15/st15_demo030_Expand.en.xml.lz",
+          "length": 488,
+          "sha256": "56ABD0F6714A20692AD7443FC29F26F8DAD1C0CC1C469A747F555375992C79CB"
+        },
+        {
+          "path": "data/st15/st15_demo030_Expand.fr.xml.lz",
+          "length": 516,
+          "sha256": "A8B8BE31AE407916F7E2B6D07877C0EA8F7905274A36F63A4356627E27728681"
+        },
+        {
+          "path": "data/st15/st15_demo030_Expand.gr.xml.lz",
+          "length": 452,
+          "sha256": "1BC4A3F19F0388217F4684A0CCCE8FDBA035E453845FF7DF3955CB5479D0CBD1"
+        },
+        {
+          "path": "data/st15/st15_demo030_Expand.it.xml.lz",
+          "length": 508,
+          "sha256": "07F60A14F82BE8CDC2262873E6AC2CB6450179A8EB31721F3D47946E5F201181"
+        },
+        {
+          "path": "data/st15/st15_demo030_Expand.sp.xml.lz",
+          "length": 480,
+          "sha256": "54A756EB474413BE6E2E9A3EA819C9475EAF755DA2ADC5A65293CF3E8AF6FA98"
+        },
+        {
+          "path": "data/st15/st15_demo030_Expand.xml.lz",
+          "length": 2684,
+          "sha256": "7A877D04551BAC4988F5A5710EA9322B814A6DF39AF1B436D026B7ECE94C10D0"
+        },
+        {
+          "path": "data/st15/st15_demo040_Expand.en.xml.lz",
+          "length": 428,
+          "sha256": "1AE135D7FDE97F1A2BA360C8E8965872C15FED54585334D7F9F98C161CC5CB02"
+        },
+        {
+          "path": "data/st15/st15_demo040_Expand.fr.xml.lz",
+          "length": 424,
+          "sha256": "E3BE2B38EBBE417B7CD66E96AF3CE6625609662780502B34FF3E62990CD4412B"
+        },
+        {
+          "path": "data/st15/st15_demo040_Expand.gr.xml.lz",
+          "length": 396,
+          "sha256": "E37F1921F42E62DB468A2EC3F04C8B0133C16979D6207D2B884BF06EFB0A2B13"
+        },
+        {
+          "path": "data/st15/st15_demo040_Expand.it.xml.lz",
+          "length": 428,
+          "sha256": "DAE724B41F0CF43692A258126BF1EC787156D33EB19C0045AABC57A741C444C7"
+        },
+        {
+          "path": "data/st15/st15_demo040_Expand.sp.xml.lz",
+          "length": 408,
+          "sha256": "63912C835DB9B46EB5972F4637DE177FFD33C90FA05B7E8918A9E3C1D8C5A3B3"
+        },
+        {
+          "path": "data/st15/st15_demo040_Expand.xml.lz",
+          "length": 4624,
+          "sha256": "65B929B2D847C4EC619428F8BCCE7BC3764C80D3155AD49958CE4137A184BAC8"
+        },
+        {
+          "path": "data/st15/st15_demo050_Expand.en.xml.lz",
+          "length": 516,
+          "sha256": "46FC26C683ED60959F860F51527DB8CC9B05F1F5C8FB576A55B18C106E6C4297"
+        },
+        {
+          "path": "data/st15/st15_demo050_Expand.fr.xml.lz",
+          "length": 520,
+          "sha256": "8B2F7A4C76FCD4155D60062CF661FB978F0DA7DD78B162C27679FF20DC34D7C9"
+        },
+        {
+          "path": "data/st15/st15_demo050_Expand.gr.xml.lz",
+          "length": 480,
+          "sha256": "2F9141777772A51FA2F7BE391F01048B8B318E317681FCB3451752547D12D9C3"
+        },
+        {
+          "path": "data/st15/st15_demo050_Expand.it.xml.lz",
+          "length": 488,
+          "sha256": "223292553E2B3D473179B82505831A74C2A710CAF8B644C26D3489D5A79C2920"
+        },
+        {
+          "path": "data/st15/st15_demo050_Expand.sp.xml.lz",
+          "length": 488,
+          "sha256": "5D0B5D417EACD243F63C89403C1CE4CA4014160A7E063B2C1AAF10D4752C5519"
+        },
+        {
+          "path": "data/st15/st15_demo050_Expand.xml.lz",
+          "length": 1424,
+          "sha256": "55EF6A80B633C819D4934337F06AAE484A40A2B70DCFB75ACA4B91558E9BC947"
+        },
+        {
+          "path": "data/st15/st15_demo060_Expand.en.xml.lz",
+          "length": 300,
+          "sha256": "60EF024A2E8400E3B34C332805240811BB409AFF7E0D33900E5D57D3FDA62E81"
+        },
+        {
+          "path": "data/st15/st15_demo060_Expand.fr.xml.lz",
+          "length": 304,
+          "sha256": "F240A368304EC74A6DF3AB3EA413D8939155FC8CB3F6F1973B90087798D8DAF9"
+        },
+        {
+          "path": "data/st15/st15_demo060_Expand.gr.xml.lz",
+          "length": 296,
+          "sha256": "304A8298E2E727446ED66A72E384BA6AD9DF05008CAE2C169EC8690ABF77E6CB"
+        },
+        {
+          "path": "data/st15/st15_demo060_Expand.it.xml.lz",
+          "length": 312,
+          "sha256": "B94BBE83EFEA6F86723660736C83E530E814859D2FBB560A766F05CECDABF6A0"
+        },
+        {
+          "path": "data/st15/st15_demo060_Expand.sp.xml.lz",
+          "length": 288,
+          "sha256": "F8475821881C3A71B8008E656A2C77DA06154522DF48FAEC762C68D1368806F0"
+        },
+        {
+          "path": "data/st15/st15_demo060_Expand.xml.lz",
+          "length": 4508,
+          "sha256": "5C5B69EEE0FB1A4456A7B42583BBA99913EC0C6A1CBA01D8D85A34B038366FDA"
+        },
+        {
+          "path": "data/st15/st15_demo070_Expand.en.xml.lz",
+          "length": 492,
+          "sha256": "B5AE8A1B86C01436DB50404CC1B8FBDF33615C77F701E984B6A6D20D4E92120D"
+        },
+        {
+          "path": "data/st15/st15_demo070_Expand.fr.xml.lz",
+          "length": 484,
+          "sha256": "3FB3E7DC0B641ED49B1BD67FBD310ADE66094E572030045A9CE9BBDBD731E260"
+        },
+        {
+          "path": "data/st15/st15_demo070_Expand.gr.xml.lz",
+          "length": 496,
+          "sha256": "D3035D12DA3C12D518EC896BCF60973DAD91354B483FB15370B2E90BF4F8D266"
+        },
+        {
+          "path": "data/st15/st15_demo070_Expand.it.xml.lz",
+          "length": 476,
+          "sha256": "79FE2E615183A1B77F1EA7F219DF4C60D8D3C44864ED7B12BDEF31C708A780CE"
+        },
+        {
+          "path": "data/st15/st15_demo070_Expand.sp.xml.lz",
+          "length": 432,
+          "sha256": "DF26AEEFA46CAB58E61B18B531D0C4E3D450FEB674769557DDFA4962E0D7D96D"
+        },
+        {
+          "path": "data/st15/st15_demo070_Expand.xml.lz",
+          "length": 1784,
+          "sha256": "7FA977982CA2FBF1AA78D57C91A2D458F8E146A5639063530F082689BA46A990"
+        },
+        {
+          "path": "data/st15/st15_demo080_Expand.en.xml.lz",
+          "length": 576,
+          "sha256": "43078E7D527A990BCAD8CD26EA80028E6876D1637303F6151AF9072FD4681965"
+        },
+        {
+          "path": "data/st15/st15_demo080_Expand.fr.xml.lz",
+          "length": 576,
+          "sha256": "F1E61E72D8AE8903E39F63FC17DCD0AA7C454AB440237D8B573A6AE2F37D8A94"
+        },
+        {
+          "path": "data/st15/st15_demo080_Expand.gr.xml.lz",
+          "length": 564,
+          "sha256": "26F8E4C98F047B12933E821F2B69F07EDE67FC7874D9664664AEB93253EE1CF1"
+        },
+        {
+          "path": "data/st15/st15_demo080_Expand.it.xml.lz",
+          "length": 580,
+          "sha256": "265D8D630662385101F5F0606DE89A9A941DCE8BA78261D31E0A14E52900DC41"
+        },
+        {
+          "path": "data/st15/st15_demo080_Expand.sp.xml.lz",
+          "length": 568,
+          "sha256": "0400F92060FAB065FDB15D6712B9AF9FCF2FA9BEB31D03DBA7057BEFDCBFC385"
+        },
+        {
+          "path": "data/st15/st15_demo080_Expand.xml.lz",
+          "length": 3748,
+          "sha256": "A824A228437A3EE901B018EA0E5E0360D0D0DC87136DDB0FFC4D0900FAC471B8"
+        },
+        {
+          "path": "data/st15/st15_demo090_Expand.en.xml.lz",
+          "length": 376,
+          "sha256": "5B677E013EE9BEDA2DBDD79755039D0C462C33169A3B32A141E7FBE30E8EC8B4"
+        },
+        {
+          "path": "data/st15/st15_demo090_Expand.fr.xml.lz",
+          "length": 380,
+          "sha256": "72F8D38DFC47759394EF065168A58AD9DA1F0BBEA65A1714B2A8A8B2EB77EAF9"
+        },
+        {
+          "path": "data/st15/st15_demo090_Expand.gr.xml.lz",
+          "length": 380,
+          "sha256": "84DB7A2CCD9B4D8FA40EDAA3356D370B82CD819EF41D9FDD766C08AF6A86FBED"
+        },
+        {
+          "path": "data/st15/st15_demo090_Expand.it.xml.lz",
+          "length": 352,
+          "sha256": "89ED2A17751A6909C5A39CA959177F67D40635479C826C4A2397396DADFE6491"
+        },
+        {
+          "path": "data/st15/st15_demo090_Expand.sp.xml.lz",
+          "length": 352,
+          "sha256": "BA0A224BC4974A7CDAA360BB94AA8ED8D52DE627AC5C81B2172BD579B5572AFD"
+        },
+        {
+          "path": "data/st15/st15_demo090_Expand.xml.lz",
+          "length": 1084,
+          "sha256": "97366795188A81AE7E8459BD9646CD8FBC9DC4FED529F20B60213C8AB1F1D731"
+        },
+        {
+          "path": "data/st15/st15_demo100_Expand.en.xml.lz",
+          "length": 284,
+          "sha256": "61EA3123D9CA7B4D078604EE8C8F1AD5D837EE622A4A85891AFA387E648C69E8"
+        },
+        {
+          "path": "data/st15/st15_demo100_Expand.fr.xml.lz",
+          "length": 292,
+          "sha256": "AF035A12134D4B0F300886D0446EB06FE53DCC562B4434032FBEACFB259EE62A"
+        },
+        {
+          "path": "data/st15/st15_demo100_Expand.gr.xml.lz",
+          "length": 284,
+          "sha256": "01079523A556593398EA53B27782A94213F732EBF35FFDE4F34B610F91B657DE"
+        },
+        {
+          "path": "data/st15/st15_demo100_Expand.it.xml.lz",
+          "length": 300,
+          "sha256": "C9136E9D470DA2A6C309D3961225F94E82DA90A675642AA5664D558E9B7F2190"
+        },
+        {
+          "path": "data/st15/st15_demo100_Expand.sp.xml.lz",
+          "length": 276,
+          "sha256": "AB247FEDF98C59F1F21512795BA3CC503A6301FDE4CE9341841EA43EE0B509DD"
+        },
+        {
+          "path": "data/st15/st15_demo100_Expand.xml.lz",
+          "length": 3344,
+          "sha256": "DC2CA840D3A577B488BD229E506E289354D86FDAE0F5856E96F43DF80F3DAC70"
+        },
+        {
+          "path": "data/st15/st15_demo110_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo110_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo110_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo110_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo110_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo110_Expand.xml.lz",
+          "length": 1260,
+          "sha256": "C7D522DB19EB6D277516A9159D174D1A9ECDD3D3D30860CB220DC5584B187DEB"
+        },
+        {
+          "path": "data/st15/st15_demo120_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo120_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo120_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo120_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo120_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo120_Expand.xml.lz",
+          "length": 248,
+          "sha256": "683F225D840A395215C2317CD496A4307141A224A2007B3967A70E6217A4640B"
+        },
+        {
+          "path": "data/st15/st15_demo900_Expand.en.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo900_Expand.fr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo900_Expand.gr.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo900_Expand.it.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo900_Expand.sp.xml.lz",
+          "length": 28,
+          "sha256": "E6C855AA538A2849303456D5A5C1EC6253BF3FA978E44904461AE5F4630729BA"
+        },
+        {
+          "path": "data/st15/st15_demo900_Expand.xml.lz",
+          "length": 224,
+          "sha256": "987E8EC15E13866AE0B3C2EF1B9F6609155B0AA38F426E3ADE4C18D4B8ED2D3C"
+        },
+        {
+          "path": "data/st15/st15_root.xml.lz",
+          "length": 520,
+          "sha256": "776055972C5F770B7367FAC877BA80DEBC2C99BEBFAC37555E5E5EEFCC8615E5"
+        },
+        {
+          "path": "data/system/database_0000_Expand.en.xml.bin",
+          "length": 131820,
+          "sha256": "1EBD101342EB5FCE9134ED051DB245B5576C83262250E18C1141BA1C197945EB"
+        },
+        {
+          "path": "data/system/database_0000_Expand.en.xml.lz",
+          "length": 35092,
+          "sha256": "E2E17072C25380FE16715459D1FC1F9DD0E357549A69A02C996F95049DBD6D04"
+        },
+        {
+          "path": "data/system/database_0000_Expand.fr.xml.bin",
+          "length": 137752,
+          "sha256": "841A0EC576AF152C0A114A95047A4F0DC45BE52238D0BDECA4DC10389574C5A6"
+        },
+        {
+          "path": "data/system/database_0000_Expand.fr.xml.lz",
+          "length": 36124,
+          "sha256": "B987930A275A7D96D24492B5F357CD40F0AE27BCACCEB2FBE707F8E6ED5FDBAB"
+        },
+        {
+          "path": "data/system/database_0000_Expand.gr.xml.bin",
+          "length": 139536,
+          "sha256": "A9884ECCFB1863ACF5CC01386B0AFA50AB0FB956EB791549B80AABD6FD29E2CF"
+        },
+        {
+          "path": "data/system/database_0000_Expand.gr.xml.lz",
+          "length": 36792,
+          "sha256": "8D78FFAF51890552E0B69CE887006E02666B1780E79DC6BF0875EAF0D577825A"
+        },
+        {
+          "path": "data/system/database_0000_Expand.it.xml.bin",
+          "length": 137884,
+          "sha256": "8DEC67FB8F5914F06AA70D808637106C2EFAA42D0551F79009BED2B8871C8712"
+        },
+        {
+          "path": "data/system/database_0000_Expand.it.xml.lz",
+          "length": 36288,
+          "sha256": "FA6E3F78D3FDB5A65A8C3BC39273686CBBF6887AC90A3708F971A0C171F2ECAA"
+        },
+        {
+          "path": "data/system/database_0000_Expand.sp.xml.bin",
+          "length": 133372,
+          "sha256": "56A6DA8274D8F0A5BD5646B32E9396BCE0BABC8FD84ED756033694F501A2F0EC"
+        },
+        {
+          "path": "data/system/database_0000_Expand.sp.xml.lz",
+          "length": 35276,
+          "sha256": "6CDCFBDF2B618294B0DD61055FE53B2AC532DB5B295E7982DDF1535C8F67A656"
+        },
+        {
+          "path": "data/system/database_0000_Expand.xml.bin",
+          "length": 133372,
+          "sha256": "56A6DA8274D8F0A5BD5646B32E9396BCE0BABC8FD84ED756033694F501A2F0EC"
+        },
+        {
+          "path": "data/system/language_select.en.xml.bin",
+          "length": 304,
+          "sha256": "2683DCE710F7423526C05EB6C384CF178CEE0779FFBDE9F4D2466C0D382FA58A"
+        },
+        {
+          "path": "data/system/language_select.en.xml.lz",
+          "length": 204,
+          "sha256": "A2919F1E8F13E85B265F0A2B071EFFC64BE6511BF09DAF9A857CCD8088B285F7"
+        },
+        {
+          "path": "data/system/language_select.fr.xml.bin",
+          "length": 304,
+          "sha256": "2683DCE710F7423526C05EB6C384CF178CEE0779FFBDE9F4D2466C0D382FA58A"
+        },
+        {
+          "path": "data/system/language_select.fr.xml.lz",
+          "length": 204,
+          "sha256": "A2919F1E8F13E85B265F0A2B071EFFC64BE6511BF09DAF9A857CCD8088B285F7"
+        },
+        {
+          "path": "data/system/language_select.gr.xml.bin",
+          "length": 304,
+          "sha256": "2683DCE710F7423526C05EB6C384CF178CEE0779FFBDE9F4D2466C0D382FA58A"
+        },
+        {
+          "path": "data/system/language_select.gr.xml.lz",
+          "length": 204,
+          "sha256": "A2919F1E8F13E85B265F0A2B071EFFC64BE6511BF09DAF9A857CCD8088B285F7"
+        },
+        {
+          "path": "data/system/language_select.it.xml.bin",
+          "length": 304,
+          "sha256": "2683DCE710F7423526C05EB6C384CF178CEE0779FFBDE9F4D2466C0D382FA58A"
+        },
+        {
+          "path": "data/system/language_select.it.xml.lz",
+          "length": 204,
+          "sha256": "A2919F1E8F13E85B265F0A2B071EFFC64BE6511BF09DAF9A857CCD8088B285F7"
+        },
+        {
+          "path": "data/system/language_select.sp.xml.bin",
+          "length": 304,
+          "sha256": "2683DCE710F7423526C05EB6C384CF178CEE0779FFBDE9F4D2466C0D382FA58A"
+        },
+        {
+          "path": "data/system/language_select.sp.xml.lz",
+          "length": 204,
+          "sha256": "A2919F1E8F13E85B265F0A2B071EFFC64BE6511BF09DAF9A857CCD8088B285F7"
+        },
+        {
+          "path": "data/system/language_select.xml.bin",
+          "length": 1360,
+          "sha256": "FF43E664C38DECA73299C5B59BC13FB1CFCAAE0399473AC14D3E6345F4960789"
+        },
+        {
+          "path": "data/system/language_select.xml.lz",
+          "length": 716,
+          "sha256": "5C4013F6D1AD8AB635280C47BF1044E8AE21C784531D4E49CFDDFF78E0EC268C"
+        },
+        {
+          "path": "data/system/system_0000.en.msg.xml.bin",
+          "length": 3012,
+          "sha256": "1137C359E92DB348CFB227925E81490CEDF3F7BF0EAE6C632CBFD3C03D7BD1CF"
+        },
+        {
+          "path": "data/system/system_0000.en.msg.xml.lz",
+          "length": 1340,
+          "sha256": "C84B51E606895348E983B812927D23AF49E5F8AF1E59E067E77156A6EBE0EC92"
+        },
+        {
+          "path": "data/system/system_0000.fr.msg.xml.bin",
+          "length": 3164,
+          "sha256": "DD2327F036686292AAFD01DC080328F3B705EBB5D01A2BDE1A074842B2E603F7"
+        },
+        {
+          "path": "data/system/system_0000.fr.msg.xml.lz",
+          "length": 1288,
+          "sha256": "1463E004734C6EE69A1A1BDECFBCEC7A69CEDC4B2E5F8CA82D20F4A7B37CBC7D"
+        },
+        {
+          "path": "data/system/system_0000.gr.msg.xml.bin",
+          "length": 3144,
+          "sha256": "F4C85ADC6D45F251E099C52E460A1561ADC36BE00014FBB5CD34433A3894A436"
+        },
+        {
+          "path": "data/system/system_0000.gr.msg.xml.lz",
+          "length": 1260,
+          "sha256": "7F3B2511BFA907C4317EBDAE8B73EA38453DE8C7A975CB368BD4B22AADB55851"
+        },
+        {
+          "path": "data/system/system_0000.it.msg.xml.bin",
+          "length": 2840,
+          "sha256": "E5142C1F27730ABD5837E09AFE05859A93FE4F431978BF581EA1B76DE2C9ADD4"
+        },
+        {
+          "path": "data/system/system_0000.it.msg.xml.lz",
+          "length": 1224,
+          "sha256": "39A73EEC8755001CB35213029EBB364C69F08FB93D55FC8237DA0C508CBFA504"
+        },
+        {
+          "path": "data/system/system_0000.msg.xml.bin",
+          "length": 3248,
+          "sha256": "E8DAF6F69E22507BF4F056A0D33200A89F13CF14D4DD07731CCD597100284967"
+        },
+        {
+          "path": "data/system/system_0000.sp.msg.xml.bin",
+          "length": 3248,
+          "sha256": "E8DAF6F69E22507BF4F056A0D33200A89F13CF14D4DD07731CCD597100284967"
+        },
+        {
+          "path": "data/system/system_0000.sp.msg.xml.lz",
+          "length": 1392,
+          "sha256": "120BC07EB46227247B73080D424A5A0BAD1F5F4ACFE70EFC195A8BEEAD745434"
+        },
+        {
+          "path": "data/telmove.mods",
+          "length": 418228,
+          "sha256": "16999CA448B76957DCD853221F9C0D292E5D8C16C6FE1209F36B801A509D2F18"
+        },
+        {
+          "path": "data/timejump.mods",
+          "length": 358260,
+          "sha256": "6F0FAAD6E6D3EBDC611AE9B5DA2EA62710BD2386CB34D561CCEACDD0768DB8A9"
+        },
+        {
+          "path": "data/timejump_b.mods",
+          "length": 358260,
+          "sha256": "03B856C16E01429C95D8768D9F6497C3BB6CA2DEBB8CB88081A613B56F60A14F"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "7B19C421DDF4B6E9ADEFE57E4063D161EB1A1183D9DC1CAA511F90BE7FC0EFB5"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 7348,
+          "sha256": "00CE5F840882C8FD613AE328FB109E8DEA02A5D78B57FA4026172FB0647597E5"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 900,
+          "sha256": "A8E2B73C8A86B485E73DA572441ACCD8EA4A1A38FBE9ACA75ACB16B8AE93A9BF"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 7056,
+          "sha256": "C679B9AA7533F217140965307918B639A79E47E4DA03178D4302284829D9E64A"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 31872,
+          "sha256": "C242EF29ACBBB078FF4CBC0FFFFF3BA28B21D1D256D597B06EDE6A5F0C5A7247"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 3120,
+          "sha256": "8913BEFBD7C625D6D2137546F749FD7C568808C02C78C71BB5F82B97F6517E85"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 20580,
+          "sha256": "DCEFA693AC4C1F35CE6650609239B631EC5529A84D26137E2F9F5FDC393A6660"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 127011184,
+          "sha256": "22CCAC48E2494309CED64A6FF19C50BADB7B61535130561F060438437039DD02"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 134217728,
+          "sha256": "803A2414AC8543DDF24C6CB42BE37F954ED04528044079E6575E5C63D9A2FE92"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 134217728,
+          "sha256": "3D5985BB96677F98C6123EAC0320E8FC7D8F6180B9166BA17185A770F498AC9F"
+        }
+      ]
+    }
+  ]
+}

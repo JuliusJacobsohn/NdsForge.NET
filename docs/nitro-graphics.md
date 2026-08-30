@@ -26,7 +26,7 @@ these bytes align the declared file length to four bytes. Nonzero or excessive
 declared padding is rejected; allocation bytes beyond the declared length
 remain preserved separately.
 
-The private compatibility suite covers all 4,006 direct NCLR files and 1,042,096 colors in the ROM corpus. Every file must preserve exactly and canonically rebuild/reparse. Color expansion, depth, extended-palette state, target mapping, palette partitioning, and every interpreted color are locked to a reviewed compatibility baseline.
+The private compatibility suite covers 9,119 supported direct NCLR files and 3,391,003 colors in the ROM corpus. Every supported file must preserve exactly and canonically rebuild/reparse. Color expansion, depth, extended-palette state, target mapping, palette partitioning, and every interpreted color are locked to a reviewed compatibility baseline. An additional 26 files declare non-indexed format values outside this palette API; their exact allocation hashes and explicit rejection are tracked separately.
 
 ## NCGR tiles and NSCR maps
 
@@ -48,7 +48,7 @@ byte[] editedMap = map.CreateBuilder()
     .Build();
 ```
 
-Differential verification covers 5,035 valid NCGR files containing 126,167,104 indexed pixels and 1,231 NSCR files containing 1,274,624 map entries. Every interpreted pixel, dimension, depth, storage order, mapping boundary, background mode, palette mode, tile number, flip, and palette selector is locked to a reviewed compatibility baseline. Thirteen unrelated allocations beginning with the bytes `RGCN` are intentionally rejected because they do not contain a valid standard-file byte-order marker.
+The private suite covers 10,797 supported NCGR files containing 215,348,672 indexed pixels and 4,526 NSCR files containing 5,368,694 map entries. Every interpreted pixel, dimension, depth, storage order, mapping boundary, background mode, palette mode, tile number, flip, and palette selector is locked to a reviewed compatibility baseline. Thirteen unrelated allocations beginning with the bytes `RGCN` are intentionally rejected because they do not contain a valid standard-file byte-order marker. Another 26 graphics allocations declare formats outside the 4/8-bit indexed API; their hashes and explicit rejection are tracked without claiming pixel conversion support.
 
 ## NCER sprite cells and OAM
 
@@ -58,7 +58,7 @@ Unknown object-character mapping values remain available through the enum's
 raw integer value and survive both preserved and canonical builds. Preserving
 an unknown value does not imply that a renderer can interpret that mapping.
 
-The corpus test covers 3,126 NCER files, 50,509 cells, and 178,097 objects. All typed OAM fields are locked to a reviewed compatibility baseline, while exact raw-word digests, no-op preservation, opaque auxiliary blocks, cell bounds, and canonical reparse are independently locked by the NdsForge suite.
+The corpus test covers 6,484 NCER files, 98,486 cells, and 591,129 objects. All typed OAM fields are locked to a reviewed compatibility baseline, while exact raw-word digests, no-op preservation, opaque auxiliary blocks, cell bounds, and canonical reparse are independently locked by the NdsForge suite.
 
 ## NANR cell animations
 
@@ -75,7 +75,7 @@ foreach (NanrSequence sequence in animation.Sequences)
 }
 ```
 
-The private compatibility suite covers all 2,454 direct NANR files, 17,370 sequences, and 88,311 frame references in the ROM corpus. It locks all three observed payload variants, every exposed sequence and descriptor word, every cell reference, opaque auxiliary sections, and byte-exact preservation to a reviewed semantic digest.
+The private compatibility suite covers all 5,719 direct NANR files, 37,364 sequences, and 161,873 frame references in the ROM corpus. It locks all three observed payload variants, every exposed sequence and descriptor word, every cell reference, opaque auxiliary sections, and byte-exact preservation to a reviewed semantic digest.
 
 ## NFTR bitmap fonts
 
@@ -106,9 +106,9 @@ Preservation builds patch only explicitly changed glyph bytes and metric
 records, retaining linked-block layout, unknown bytes, padding, and trailing
 allocation data. Canonical builds deterministically reconstruct FINF, CGLP,
 CWDH, and CMAP blocks and are intended for normalized output. The compatibility
-suite covers all 10 direct NFTR files in the private corpus: 7,296 glyphs,
-7,999 character-map slots (7,296 mapped characters), every observed text
-encoding, all three CMAP methods, and one-, two-, and three-bit indexed cells.
+suite covers all 105 direct NFTR files in the private corpus: 63,351 glyphs,
+69,348 character-map slots (63,351 mapped characters), all four observed text
+encodings, all three CMAP methods, and one-, two-, three-, and four-bit indexed cells.
 The semantic baseline includes every exposed metadata field, glyph metric,
 pixel index, and resolved mapping, and canonical outputs must reparse to the
 same model.

@@ -22,8 +22,11 @@ public sealed class PrivateCorpusCoverageTests
         int compressedPrograms = 0;
         int compressedOverlays = 0;
         int authenticatedOverlays = 0;
+        int unavailableReferenceExtractions = 0;
         foreach (CorpusExpectationIndexEntry entry in CorpusExpectations.Entries)
         {
+            unavailableReferenceExtractions += CorpusExpectations.Read(entry).Operations.Single(
+                static operation => operation.Name == "extract-all").ExitCode == 0 ? 0 : 1;
             using NdsImage image = await NdsImage.OpenAsync(
                 CorpusExpectations.Resolve(entry),
                 cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true);
@@ -45,19 +48,20 @@ public sealed class PrivateCorpusCoverageTests
             authenticatedOverlays += image.Arm9Overlays.Concat(image.Arm7Overlays).Count(static overlay => overlay.IsAuthenticated);
         }
 
-        Assert.Equal(51, dsImages);
-        Assert.Equal(6, dsiImages);
-        Assert.Equal(6, animatedBanners);
-        Assert.Equal(51, arm9OverlayImages);
+        Assert.Equal(133, dsImages);
+        Assert.Equal(9, dsiImages);
+        Assert.Equal(9, animatedBanners);
+        Assert.Equal(120, arm9OverlayImages);
         Assert.Equal(0, arm7OverlayImages); // Known gap: add an exact legal fixture before claiming real-image ARM7 coverage.
-        Assert.Equal(855, mismatchedOverlayIds);
-        Assert.Equal(1, highByteNames);
-        Assert.Equal(5209, unnamedAllocations);
-        Assert.Equal(51, sdkFooters);
-        Assert.Equal(28, lateDsExtensions);
-        Assert.Equal(56, programParameterTables);
-        Assert.Equal(28, compressedPrograms);
-        Assert.Equal(3642, compressedOverlays);
-        Assert.Equal(2240, authenticatedOverlays);
+        Assert.Equal(1716, mismatchedOverlayIds);
+        Assert.Equal(3208, highByteNames);
+        Assert.Equal(9074, unnamedAllocations);
+        Assert.Equal(133, sdkFooters);
+        Assert.Equal(67, lateDsExtensions);
+        Assert.Equal(141, programParameterTables);
+        Assert.Equal(58, compressedPrograms);
+        Assert.Equal(4945, compressedOverlays);
+        Assert.Equal(2985, authenticatedOverlays);
+        Assert.Equal(1, unavailableReferenceExtractions);
     }
 }

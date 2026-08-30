@@ -70,15 +70,16 @@ public sealed class PrivateCorpusNarcTests
             aggregate.AppendData(digest);
         }
 
-        Assert.Equal(6769, magicCount);
-        Assert.Equal(6762, archiveCount);
-        Assert.Equal(0, littleEndianCount);
-        Assert.Equal(6762, bigEndianCount);
-        Assert.Equal(826541, fileCount);
-        Assert.Equal(16452, namedFileCount);
-        Assert.Equal(
-            "2F07A6FECB2BF30C835371D7E636C617CC4E144C7108269F48833151EA3F0F70",
-            Convert.ToHexString(aggregate.GetHashAndReset()));
+        Assert.Multiple(
+            () => Assert.Equal(13637, magicCount),
+            () => Assert.Equal(13630, archiveCount),
+            () => Assert.Equal(0, littleEndianCount),
+            () => Assert.Equal(13630, bigEndianCount),
+            () => Assert.Equal(940219, fileCount),
+            () => Assert.Equal(58031, namedFileCount),
+            () => CorpusExpectations.AssertDigest(
+                "4A99CD11E1DEE7385E96C676FE0AEF4F97F94F1815E4635E277F7A3EBC3EF8DF",
+                Convert.ToHexString(aggregate.GetHashAndReset())));
     }
 
     /// <summary>Frames IDs, optional byte-preserving paths, and exact payloads into one per-archive digest.</summary>

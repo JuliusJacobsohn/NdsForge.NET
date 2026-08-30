@@ -6,18 +6,18 @@ any filename or subdirectory beneath `NDSFORGE_CORPUS`; the harness recursively
 indexes candidates and activates only exact matches. This makes the public test
 contract reproducible without distributing ROMs or trusting descriptive names.
 
-The current corpus contains 57 distinct images after deduplicating 60 inputs from
-two private source trees. Three inputs were byte-identical duplicates. It includes
+The current corpus contains 142 distinct images after deduplicating 160 inputs from
+three private source trees. Eighteen inputs were byte-identical duplicates. It includes
 original DS and DSi-enhanced retail layouts, localized releases, modified builds,
 large NitroFS trees, ARM9 overlays, SDK footers, and unusual eight-bit filenames.
-Six cases are DSi-enhanced.
+Nine cases are DSi-enhanced.
 
 ## Recorded operation matrix
 
-The private generator runs only these ndstool 1.50.3 operations for every image:
+The private generator records these ndstool 1.50.3 operations for every image:
 
 1. complete program, table, banner, header, logo, Overlay, and NitroFS extraction;
-2. binary-input image creation from the extracted components;
+2. binary-input image creation from the extracted components when extraction succeeds;
 3. header-CRC repair after deliberate corruption;
 4. an aligned ARM7 trainer hook.
 
@@ -25,18 +25,22 @@ Every recorded operation is consumed by a NdsForge byte-equality or semantic
 differential assertion. Commands that merely run ndstool without testing NdsForge
 are deliberately excluded from both the generator and compatibility totals.
 
-The committed expectations contain 139,289 extraction artifacts. Each artifact
+The committed expectations contain 393,581 extraction artifacts. Each artifact
 stores only a normalized relative path, byte length, and SHA-256. Operation records
 retain exit status and hashes of normalized output streams, not command lines or
 raw text. Private full logs and generated outputs stay under the ignored
 `fixtures/private` tree.
 
-An enforced feature inventory currently records 51 DS images, six DSi-enhanced
-images, six animated banners, 51 images with ARM9 Overlays, 855 Overlay-ID/File-ID
-mismatches, 5,209 unnamed FAT allocations, 51 ARM9 SDK footers, and one high-byte
-FNT name. It also deliberately records zero real ARM7 Overlay tables. That last
-value is a known fixture gap, not claimed coverage; an exact legal fixture should
-be added when available.
+An enforced feature inventory currently records 133 DS images, nine DSi-enhanced
+images, nine animated banners, 120 images with ARM9 Overlays, 1,716 Overlay-ID/File-ID
+mismatches, 9,074 unnamed FAT allocations, 133 ARM9 SDK footers, and 3,208 high-byte
+FNT names. One image has a valid raw filename namespace that the pinned Windows
+reference executable cannot materialize through its host code page; it remains
+active for semantic rebuild testing and comparison of the extraction artifacts
+that were produced. Only complete extraction-set equality and reference rebuild
+size are unavailable for this image. The inventory also deliberately
+records zero real ARM7 Overlay tables. That last value is a known fixture gap, not
+claimed coverage; an exact legal fixture should be added when available.
 
 Normal test runs skip cases whose hash is unavailable. Maintainer and private CI
 should set both variables:
@@ -50,11 +54,14 @@ dotnet test NdsForge.slnx --configuration Release
 ## Compatibility interpretation
 
 Byte equality is required when both tools define the same deterministic output.
-All 57 ARM7-hook images are byte-equal. All 139,289 common extraction artifacts
-match after modeling historical host-filename conversion. NdsForge structural
+All 142 ARM7-hook images are byte-equal. The 393,549 artifacts from 141 complete
+reference extractions and the 32 artifacts from one partial extraction are
+compared after modeling historical host-filename conversion. NdsForge structural
 rebuild tests additionally compare every program, named file, unnamed allocation,
 Overlay payload and metadata, directory, banner, common identity, and DSi policy
-field by semantic identity and hash. Rebuilt validation may retain a known source
+field by semantic identity and hash for 141 rebuildable images. One additional
+image declares authenticated overlays without a table pointer; its test requires
+an explicit failure before an output image is published. Rebuilt validation may retain a known source
 error but may not introduce a new error category. Imported modcrypt intervals
 anchored to a relocated Program are remapped to that Program's final offset.
 
@@ -75,6 +82,11 @@ Some ndstool behavior must not become NdsForge's default:
   payload/overlay preservation rather than treating host-dependent file IDs as an
   oracle. Used-image length is compared for original DS images; the 1.50.3 profile
   deliberately rejects DSi creation because that historical tool predates it.
+- When the final file is empty, ndstool can write its aligned FAT offset beyond
+  physical EOF while declaring a larger used-image size. NdsForge includes the
+  exact missing padding instead, keeping every FAT entry within the output.
+  This corpus contains one such case; the test checks the last nonempty payload
+  end, final empty-file offset, physical length, and used-size relationship.
 
 These conclusions are cross-checked against devkitPro's upstream tracker. The
 [overlay misnumbering report](https://github.com/devkitPro/ndstool/issues/16)

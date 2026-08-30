@@ -30,6 +30,12 @@ digests and supplements corpus coverage with hand-authored grammar vectors and
 cross-decoding of deterministic encoder output. A matching first byte alone
 does not establish that an allocation is a compression stream.
 
+The expanded corpus contains 81,430 accepted LZ10, 11,538 LZ11, 4,158 run-length,
+11 four-bit Huffman, and 191 eight-bit Huffman candidates. The independently
+checked output matches the declared-length bytes in every case, including one
+LZ10 and one LZ11 input whose final back-reference is clipped. BLZ checks cover
+58 compressed programs and 4,945 compressed overlays.
+
 ## NARC archives
 
 `NarcArchive` reconciles the BTAF allocation array, optional BTNF filename hierarchy, and GMIF payload block. File IDs remain stable even when the filename table is absent or names cover only part of the allocation array. Names use a byte-preserving Latin-1 projection and exact, case-sensitive slash paths.
@@ -49,7 +55,7 @@ File.WriteAllBytes("resources-edited.narc", rebuilt);
 
 A no-op build is byte-identical, including allocation padding and bytes after the header-declared archive. Same-size replacements patch the preserved layout. Size-changing replacements deterministically rebuild the payload with caller-selected alignment and padding while retaining file IDs and the original filename table. Both standard header-marker representations are supported; block integers remain little-endian as required by the container.
 
-The private compatibility suite covers 6,762 valid NARC allocations and all 826,541 contained files. It verifies exact preservation, canonical rebuild/reparse semantics, and a payload-and-path aggregate digest locked to a reviewed compatibility baseline.
+The private compatibility suite covers 13,630 valid NARC allocations and all 940,219 contained files. It verifies exact preservation, canonical rebuild/reparse semantics, and a payload-and-path aggregate digest locked to a reviewed compatibility baseline.
 
 ## BMG messages
 
@@ -65,7 +71,7 @@ foreach (BmgMessage message in messages.Messages)
 
 UTF-16, UTF-8, and Windows-1252 decoding have no external dependencies. Shift JIS bundles retain the same lossless raw parts but require the caller to pass an explicit `Encoding` to `GetText`; this keeps legacy code-page policy out of the dependency-free package. `WritePreserved` returns the complete original allocation, including padding. Two observed producer quirks are explicit rather than silently repaired: some bundles overstate the section count after reaching their declared file end, and some final FLI1 sections claim up to 31 bytes of absent alignment padding.
 
-The private compatibility suite covers 563 direct bundles, 69,943 messages, and 141,795 control sequences across both byte orders, three observed encodings, INF1 record sizes from 4 through 12 bytes, and INF1/DAT1/MID1/FLW1/FLI1 layouts. All exposed offsets, metadata, text spans, controls, auxiliary bytes, and preservation output are locked to a reviewed semantic digest.
+The private compatibility suite covers 657 direct bundles, 77,683 messages, and 156,175 control sequences across both byte orders, all four standard encodings, INF1 record sizes from 4 through 12 bytes, and INF1/DAT1/MID1/FLW1/FLI1 layouts. All exposed offsets, metadata, text spans, controls, auxiliary bytes, and preservation output are locked to a reviewed semantic digest.
 
 ## Bottom-up LZ
 

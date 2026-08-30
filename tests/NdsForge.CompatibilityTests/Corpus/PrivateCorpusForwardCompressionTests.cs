@@ -64,12 +64,13 @@ public sealed class PrivateCorpusForwardCompressionTests
         Assert.True(lz10Magic >= lz10Decoded);
         Assert.True(lz11Magic >= lz11Decoded);
         Assert.True(rleMagic >= rleDecoded);
-        Assert.Equal(11660, lz10Decoded);
-        Assert.Equal(6, lz11Decoded);
-        Assert.Equal(0, rleDecoded); // Known corpus gap: every 0x30 occurrence is unrelated data, so RLE uses synthetic/reference vectors.
-        Assert.Equal(
-            "394EB1FD47346B3E742F3E0AAFBA4B3C2936FAC91BCF456061802AAD753238D8",
-            Convert.ToHexString(decodedOracle.GetHashAndReset()));
+        Assert.Multiple(
+            () => Assert.Equal(81430, lz10Decoded),
+            () => Assert.Equal(11538, lz11Decoded),
+            () => Assert.Equal(4158, rleDecoded),
+            () => CorpusExpectations.AssertDigest(
+                "25AE97C2B428C40A7A1853183CC8724011727ACD3A22ECF9A6DFACB43A0861D7",
+                Convert.ToHexString(decodedOracle.GetHashAndReset())));
     }
 
     /// <summary>Reads only the discriminator when an allocation is not a candidate stream.</summary>

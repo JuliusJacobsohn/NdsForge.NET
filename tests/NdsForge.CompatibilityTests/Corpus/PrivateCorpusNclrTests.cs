@@ -20,6 +20,8 @@ public sealed class PrivateCorpusNclrTests
         int extendedCount = 0;
         int mappedCount = 0;
         var archiveDigests = new List<byte[]>();
+        var unsupportedFormatCounts = new Dictionary<uint, int>();
+        var unsupportedDigests = new List<byte[]>();
         foreach (CorpusExpectationIndexEntry entry in CorpusExpectations.Entries)
         {
             using NdsImage image = await NdsImage.OpenAsync(
@@ -37,6 +39,16 @@ public sealed class PrivateCorpusNclrTests
                 stream.Position = 0;
                 byte[] encoded = new byte[allocation.Data.Length];
                 stream.ReadExactly(encoded);
+                uint rawFormat = ReadRawFormat(encoded, "TTLP"u8, 8);
+                if (rawFormat is not (3 or 4))
+                {
+                    InvalidDataException error = Assert.Throws<InvalidDataException>(() => NclrPalette.Parse(encoded));
+                    Assert.Contains("depth", error.Message, StringComparison.Ordinal);
+                    unsupportedFormatCounts[rawFormat] = unsupportedFormatCounts.GetValueOrDefault(rawFormat) + 1;
+                    unsupportedDigests.Add(SHA256.HashData(encoded));
+                    continue;
+                }
+
                 NclrPalette palette = NclrPalette.Parse(encoded);
                 Assert.Equal(encoded, palette.CreateBuilder().Build());
                 NclrPalette canonical = NclrPalette.Parse(palette.CreateBuilder().Build(preserveSourceLayout: false));
@@ -59,15 +71,20 @@ public sealed class PrivateCorpusNclrTests
             aggregate.AppendData(digest);
         }
 
-        Assert.Equal(4006, archiveCount);
-        Assert.Equal(1042096, colorCount);
-        Assert.Equal(3352, fourBitCount);
-        Assert.Equal(654, eightBitCount);
-        Assert.Equal(37, extendedCount);
-        Assert.Equal(291, mappedCount);
+        Assert.Equal(9119, archiveCount);
+        Assert.Equal(3391003, colorCount);
+        Assert.Equal(6783, fourBitCount);
+        Assert.Equal(2336, eightBitCount);
+        Assert.Equal(447, extendedCount);
+        Assert.Equal(2775, mappedCount);
         Assert.Equal(
-            "4ACFB97CE5B077C710F704D9D40F0C43F132C48F1605B71129E4184527A0B1A8",
+            "EB434255BB8082DB0C23774F2A1C37936D40D05F265A95A664FB467458246134",
             Convert.ToHexString(aggregate.GetHashAndReset()));
+        Assert.Equal(23, unsupportedFormatCounts[1]);
+        Assert.Equal(1, unsupportedFormatCounts[6]);
+        Assert.Equal(2, unsupportedFormatCounts[7]);
+        Assert.Equal(3, unsupportedFormatCounts.Count);
+        Assert.Equal("CD8D346B1EC259ADC7858F43A4ECEBC1E8467DD118D814ECE198EF8F9D1BEAB9", Aggregate(unsupportedDigests));
     }
 
     /// <summary>Frames format metadata, stored words, and optional mapping into a per-file digest.</summary>
@@ -104,5 +121,34 @@ public sealed class PrivateCorpusNclrTests
         Span<byte> bytes = stackalloc byte[sizeof(ushort)];
         BinaryPrimitives.WriteUInt16LittleEndian(bytes, value);
         hash.AppendData(bytes);
+    }
+
+    private static uint ReadRawFormat(ReadOnlySpan<byte> data, ReadOnlySpan<byte> blockMagic, int fieldOffset)
+    {
+        int cursor = BinaryPrimitives.ReadUInt16LittleEndian(data[12..]);
+        int blockCount = BinaryPrimitives.ReadUInt16LittleEndian(data[14..]);
+        for (int index = 0; index < blockCount; index++)
+        {
+            int length = checked((int)BinaryPrimitives.ReadUInt32LittleEndian(data[(cursor + 4)..]));
+            if (data.Slice(cursor, 4).SequenceEqual(blockMagic))
+            {
+                return BinaryPrimitives.ReadUInt32LittleEndian(data[(cursor + fieldOffset)..]);
+            }
+
+            cursor += length;
+        }
+
+        throw new InvalidDataException("The palette has no PLTT block.");
+    }
+
+    private static string Aggregate(IEnumerable<byte[]> digests)
+    {
+        using IncrementalHash hash = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
+        foreach (byte[] digest in digests.OrderBy(static value => Convert.ToHexString(value), StringComparer.Ordinal))
+        {
+            hash.AppendData(digest);
+        }
+
+        return Convert.ToHexString(hash.GetHashAndReset());
     }
 }

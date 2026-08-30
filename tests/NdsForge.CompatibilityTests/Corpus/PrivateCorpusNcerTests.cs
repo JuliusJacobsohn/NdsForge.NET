@@ -48,10 +48,10 @@ public sealed class PrivateCorpusNcerTests
                 digests.Add(Hash(bank));
             }
         }
-        Assert.Equal(3126, archiveCount);
-        Assert.Equal(50509, cellCount);
-        Assert.Equal(178097, objectCount);
-        Assert.Equal("D65287A5A9EF76DAAEEC97E52A4F5EC090BD00858DC443F8B3CDF1A699FA18AF", Aggregate(digests));
+        Assert.Equal(6484, archiveCount);
+        Assert.Equal(98486, cellCount);
+        Assert.Equal(591129, objectCount);
+        Assert.Equal("EF3907579F2745579AEB7CF48E293923873942B9B8C36EDC023BE8CDCCB8836D", Aggregate(digests));
     }
 
     private static byte[] Hash(NcerCellBank value)

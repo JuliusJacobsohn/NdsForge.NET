@@ -41,13 +41,13 @@ public sealed class PrivateCorpusNanrTests
             }
         }
 
-        Assert.Equal(2454, bankCount);
-        Assert.Equal(17370, sequenceCount);
-        Assert.Equal(88311, frameCount);
-        Assert.Equal(14398, typeCounts[0]);
-        Assert.Equal(851, typeCounts[1]);
-        Assert.Equal(2121, typeCounts[2]);
-        Assert.Equal("1E05A66AB0A8C34CAACFECF3142593C4BD884AF0ABF63F05C3434438EFDF0004", Aggregate(digests));
+        Assert.Equal(5719, bankCount);
+        Assert.Equal(37364, sequenceCount);
+        Assert.Equal(161873, frameCount);
+        Assert.Equal(31717, typeCounts[0]);
+        Assert.Equal(1605, typeCounts[1]);
+        Assert.Equal(4042, typeCounts[2]);
+        Assert.Equal("1C100DBBB2400A03E5523A5027EECC36C0D031771FAE0102582913EB3E89B2D0", Aggregate(digests));
     }
 
     private static byte[] Hash(NanrAnimationBank value)
