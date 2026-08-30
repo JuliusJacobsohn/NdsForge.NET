@@ -182,6 +182,7 @@ internal static class NdsImageBuildWriter
     /// <param name="builder">Recipe checked before any destination bytes are changed.</param>
     private static void ValidateRecipe(NdsImageBuilder builder)
     {
+        NdsCarrierBuildValidator.Validate(builder);
         if (builder.Arm9 is null || builder.Arm9.Processor != NdsProcessor.Arm9 || builder.Arm9.Contents.IsEmpty)
         {
             throw new InvalidDataException("A non-empty ARM9 definition with the ARM9 processor identity is required.");
@@ -219,16 +220,18 @@ internal static class NdsImageBuildWriter
             throw new InvalidDataException("A DSi recipe requires explicit extended metadata and integrity policy.");
         }
 
-        if (builder.Arm9i is null || builder.Arm9i.Processor != NdsProcessor.Arm9i || builder.Arm9i.Contents.IsEmpty ||
+        if (builder.Arm9i is null || builder.Arm9i.Processor != NdsProcessor.Arm9i ||
+            (builder.Arm9i.Contents.IsEmpty && (builder.Carrier != NdsImageCarrier.DigitalSrl || builder.Arm9i.LoadAddress == 0)) ||
             builder.Arm9i.EntryAddress != builder.Arm9i.LoadAddress)
         {
-            throw new InvalidDataException("A DSi recipe requires non-empty ARM9i data whose entry and load addresses match.");
+            throw new InvalidDataException("A DSi recipe requires matching ARM9i entry/load addresses and non-empty data, or an explicit empty digital tuple with a nonzero load address.");
         }
 
-        if (builder.Arm7i is null || builder.Arm7i.Processor != NdsProcessor.Arm7i || builder.Arm7i.Contents.IsEmpty ||
+        if (builder.Arm7i is null || builder.Arm7i.Processor != NdsProcessor.Arm7i ||
+            (builder.Arm7i.Contents.IsEmpty && (builder.Carrier != NdsImageCarrier.DigitalSrl || builder.Arm7i.LoadAddress == 0)) ||
             builder.Arm7i.EntryAddress != builder.Arm7i.LoadAddress)
         {
-            throw new InvalidDataException("A DSi recipe requires non-empty ARM7i data whose entry and load addresses match.");
+            throw new InvalidDataException("A DSi recipe requires matching ARM7i entry/load addresses and non-empty data, or an explicit empty digital tuple with a nonzero load address.");
         }
 
         if (builder.DsiMetadata.Integrity is null)

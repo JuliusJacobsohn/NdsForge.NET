@@ -1,4 +1,27 @@
 #nullable enable
+NdsForge.NdsImageCarrier
+NdsForge.NdsImageCarrier.Unknown = 0 -> NdsForge.NdsImageCarrier
+NdsForge.NdsImageCarrier.Cartridge = 1 -> NdsForge.NdsImageCarrier
+NdsForge.NdsImageCarrier.DigitalSrl = 2 -> NdsForge.NdsImageCarrier
+NdsForge.NdsCarrierLayout
+abstract NdsForge.NdsCarrierLayout.Kind.get -> NdsForge.NdsImageCarrier
+NdsForge.NdsCarrierLayout.PostHeaderData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsCarrierLayout.PostHeaderRegion.get -> NdsForge.NdsRegion?
+NdsForge.NdsCarrierLayout.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
+NdsForge.NdsCartridgeLayout
+override NdsForge.NdsCartridgeLayout.Kind.get -> NdsForge.NdsImageCarrier
+NdsForge.NdsCartridgeLayout.NtrRegionEnd.get -> long
+NdsForge.NdsCartridgeLayout.TwlRegionStart.get -> long
+NdsForge.NdsDigitalSrlLayout
+override NdsForge.NdsDigitalSrlLayout.Kind.get -> NdsForge.NdsImageCarrier
+NdsForge.NdsDigitalSrlLayout.TitleId.get -> ulong
+NdsForge.NdsUnknownCarrierLayout
+override NdsForge.NdsUnknownCarrierLayout.Kind.get -> NdsForge.NdsImageCarrier
+NdsForge.NdsImage.CarrierLayout.get -> NdsForge.NdsCarrierLayout!
+NdsForge.NdsImageBuilder.Carrier.get -> NdsForge.NdsImageCarrier
+NdsForge.NdsImageBuilder.Carrier.set -> void
+NdsForge.NdsImageBuilder.PostHeaderData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsImageBuilder.SetPostHeaderData(System.ReadOnlySpan<byte> data) -> NdsForge.NdsImageBuilder!
 NdsForge.NdsImageBuilder.DownloadPlaySignature.get -> NdsForge.NdsDownloadPlaySignature?
 NdsForge.NdsImageBuilder.DownloadPlaySignature.set -> void
 NdsForge.NdsDownloadPlaySignature

@@ -361,7 +361,8 @@ public sealed class NdsImageEditor
                 NdsChecksums.ComputeCrc16(header.AsSpan(0xC0, 156)));
         }
 
-        byte capacity = CalculateDeviceCapacity(usedSize, _image.Header.DeviceCapacityExponent);
+        byte capacity = _image.CarrierLayout.Kind == NdsImageCarrier.DigitalSrl
+            ? _image.Header.DeviceCapacityExponent : CalculateDeviceCapacity(usedSize, _image.Header.DeviceCapacityExponent);
         header[0x14] = capacity;
         bool commonHeaderChanged = Header.HasChanges ||
             bannerOffset != _image.Header.BannerOffset ||

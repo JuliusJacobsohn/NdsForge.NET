@@ -88,6 +88,7 @@ public sealed class NdsImageBuilderTests
         metadata.SetAgeRatings(Enumerable.Repeat((byte)0x80, 16).ToArray());
         metadata.SetAgeRating(new(NdsDsiAgeRatingAuthority.Esrb, 0xEA));
         builder.DsiMetadata = metadata;
+        builder.Carrier = NdsImageCarrier.DigitalSrl;
 
         byte[] data = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
         using NdsImage image = NdsImage.Load(data);

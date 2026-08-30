@@ -7,6 +7,14 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Distinguish cartridge, digital-SRL, and unresolved carriers independently of
+  execution mode; retain opaque post-header material and reject contradictory or
+  malformed carrier declarations with explicit diagnostics.
+- Preserve digital capacity metadata and opaque carrier bytes during structural
+  builds, support explicit empty DSi-mode program tuples, and avoid treating
+  digital program data as a cartridge KEY1 secure area. Add five private digital
+  fixture identities with neutral metadata and program-payload expectations.
+
 - Preflight preservation payload, banner, and trailer writes against other stored
   components, rejecting overlapping appends or aliased allocations before the
   destination is changed, including DSi programs beyond the common used boundary.

@@ -9,6 +9,14 @@ DS-family software images without tying the model to one command-line tool.
 A complete Nintendo DS or DSi software image, including its header, executable regions, metadata, and optional NitroFS content.
 _Avoid_: ROM file, cartridge dump
 
+**Carrier**:
+The storage form of an Image: cartridge or digital SRL. Carrier is distinct from whether a Program executes in DS mode, DSi mode, or both.
+_Avoid_: Unit code, file extension, console generation
+
+**Digital SRL**:
+An executable Image distributed as title content for DSi internal storage or an SD card, including DSiWare and system applications.
+_Avoid_: DSi-exclusive cartridge, NAND dump
+
 **Region**:
 A bounded byte range in an Image with a defined role, such as an executable, table, banner, or filesystem payload.
 _Avoid_: Blob, chunk

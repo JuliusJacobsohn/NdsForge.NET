@@ -42,14 +42,15 @@ public sealed class NdsHeader
         DebugLoadAddress = NdsBinary.ReadUInt32(data, 0x168);
 
         ProgramFeatures = (NdsProgramFeatures)data[0x1BF];
+        bool digitalTitle = data.Length >= 0x238 && NdsCarrierLayoutParser.IsDigitalCategory(NdsBinary.ReadUInt32(data, 0x234));
 
-        if (data.Length >= 0x1000 && Kind == NdsImageKind.NintendoDs &&
+        if (data.Length >= 0x1000 && Kind == NdsImageKind.NintendoDs && !digitalTitle &&
             (ProgramFeatures & (NdsProgramFeatures.AuthenticatesBanner | NdsProgramFeatures.AuthenticatesPrograms)) != 0)
         {
             DsExtended = new(rawData);
         }
 
-        if (data.Length >= 0x1E0 && Kind != NdsImageKind.NintendoDs)
+        if (data.Length >= 0x1000 && (Kind != NdsImageKind.NintendoDs || digitalTitle))
         {
             Arm9i = ReadDsiProgram(data, NdsProcessor.Arm9i, 0x1C0);
             Arm7i = ReadDsiProgram(data, NdsProcessor.Arm7i, 0x1D0);
@@ -114,13 +115,13 @@ public sealed class NdsHeader
     /// <summary>Locates the secondary processor payload and its entry/load addresses from header offsets <c>0x30</c>-<c>0x3F</c>.</summary>
     public NdsProgram Arm7 { get; }
 
-    /// <summary>Locates the DSi-mode ARM9i payload when the unit code selects an extended header.</summary>
+    /// <summary>Locates the ARM9i payload in an extended DSi or digital-system header, including explicit empty tuples.</summary>
     public NdsProgram? Arm9i { get; }
 
-    /// <summary>Locates the DSi-mode ARM7i payload when the unit code selects an extended header.</summary>
+    /// <summary>Locates the ARM7i payload in an extended DSi or digital-system header, including explicit empty tuples.</summary>
     public NdsProgram? Arm7i { get; }
 
-    /// <summary>Gets the extended DSi header, or <see langword="null"/> for DS-only images.</summary>
+    /// <summary>Gets DSi metadata, including declared DS-mode digital system titles; ordinary DS cartridges return null.</summary>
     public NdsDsiHeader? Dsi { get; }
 
     /// <summary>Gets the DSi-era authentication extension used by late DS software, or <see langword="null"/> when absent.</summary>

@@ -103,6 +103,12 @@ functionality NdsForge already exposes, while the historical
 [ELF alignment report](https://github.com/devkitPro/ndstool/issues/12) inform the
 corresponding compatibility tests without defining modern default behavior.
 
+## Digital-SRL fixtures
+
+The separate private digital-SRL matrix contains five exact content identities and twenty program payloads. Set `NDSFORGE_DIGITAL_CORPUS` to a directory containing them, or place them in ignored `fixtures/private/digital-srl`. The test accepts `.nds`, `.dsi`, `.srl`, and `.app` names and verifies complete SHA-256 identities; filenames carry no format meaning. `NDSFORGE_REQUIRE_CORPUS=1` makes an incomplete digital matrix fail rather than skip. Tests lock metadata and payload digests, byte-exact no-op copies, patterned post-header preservation, retained capacity bytes 0 and 10, and semantic rebuild behavior. Pre-existing authenticity errors are retained and require explicit verification opt-out for a raw no-op copy.
+
+The 142-game cartridge matrix separately checks all reserved post-header regions, including the two nonzero regions, and verifies their preservation during structural transformations. Neither digital binaries nor cartridge payloads are committed.
+
 ## Maintainer refresh
 
 The ignored private library and oracle are managed by `tools/NdsForge.Corpus`:

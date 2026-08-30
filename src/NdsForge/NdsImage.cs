@@ -18,6 +18,7 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <param name="banner">Optional versioned menu metadata and icon.</param>
     /// <param name="downloadPlaySignature">Optional complete signature trailer at the declared used-image boundary.</param>
     /// <param name="truncatedDownloadPlaySignature">Records an exact identifier whose fixed payload extends past physical EOF.</param>
+    /// <param name="carrierLayout">Detected storage semantics and independently reserved opaque bytes.</param>
     internal NdsImage(
         IImageDataSource source,
         NdsHeader header,
@@ -27,7 +28,8 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         NdsOverlayAuthenticationTable? arm9OverlayAuthentication,
         NdsBanner? banner,
         NdsDownloadPlaySignature? downloadPlaySignature,
-        bool truncatedDownloadPlaySignature)
+        bool truncatedDownloadPlaySignature,
+        NdsCarrierLayout carrierLayout)
     {
         _source = source;
         Header = header;
@@ -38,10 +40,14 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         Banner = banner;
         DownloadPlaySignature = downloadPlaySignature;
         HasTruncatedDownloadPlaySignature = truncatedDownloadPlaySignature;
+        CarrierLayout = carrierLayout;
     }
 
     /// <summary>Preserves both typed DS/DSi fields and the raw bytes required for checksums and lossless edits.</summary>
     public NdsHeader Header { get; }
+
+    /// <summary>Gets storage-carrier semantics independently of the header's processor execution mode.</summary>
+    public NdsCarrierLayout CarrierLayout { get; }
 
     /// <summary>Connects navigable FNT paths with every FAT allocation, including unnamed overlay payloads.</summary>
     public NdsFileSystem FileSystem { get; }

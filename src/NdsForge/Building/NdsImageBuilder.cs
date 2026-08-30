@@ -6,14 +6,23 @@ namespace NdsForge;
 /// <remarks>
 /// This builder describes a new image rather than editing an existing one. Every byte-bearing setter copies
 /// caller data, and repeated writes from unchanged state use identical ordering, offsets, padding, and checksums.
-/// DSi recipes require both DSi-mode Programs and explicit extended metadata so a unit-code change can never
+/// DSi recipes require both DSi-mode tuples and explicit extended metadata so a unit-code change can never
 /// silently emit a partially configured image. Their integrity policy distinguishes homebrew compatibility
-/// hashes from absent retail authentication.
+/// hashes from absent retail authentication. Digital tuples may explicitly contain no executable bytes when
+/// their matching load and entry addresses are nonzero.
 /// </remarks>
 public sealed class NdsImageBuilder
 {
     /// <summary>Stores a validated caller-supplied logo copy; an absent logo remains zeroed for synthetic images.</summary>
     private byte[]? _nintendoLogo;
+    /// <summary>Retains a detached copy of carrier-only bytes between the extended header and program storage.</summary>
+    private byte[] _postHeaderData = [];
+
+    /// <summary>Retains an imported digital title's informational capacity byte independently of output file length.</summary>
+    internal byte? ImportedDigitalCapacity { get; set; }
+
+    /// <summary>Retains an imported digital title's unused cartridge checksum when no full checksum interval exists.</summary>
+    internal ushort ImportedDigitalSecureCrc { get; set; }
 
     /// <summary>Retains ARM9 definitions in caller insertion order, which becomes deterministic table order.</summary>
     private readonly List<NdsOverlayDefinition> _arm9Overlays = [];
@@ -29,6 +38,22 @@ public sealed class NdsImageBuilder
 
     /// <summary>Selects DS, DSi-enhanced, or DSi-exclusive header and execution semantics for the complete recipe.</summary>
     public NdsImageKind Kind { get; set; } = NdsImageKind.NintendoDs;
+
+    /// <summary>Selects cartridge or digital-SRL storage independently from processor execution mode.</summary>
+    public NdsImageCarrier Carrier { get; set; } = NdsImageCarrier.Cartridge;
+
+    /// <summary>Retains opaque carrier material beginning at 0x1000 without interpreting it as program bytes.</summary>
+    public ReadOnlyMemory<byte> PostHeaderData => _postHeaderData;
+
+    /// <summary>Copies at most 0x3000 opaque bytes into the independently reserved post-header region.</summary>
+    /// <param name="data">Carrier material; an empty span requests a zero-filled reservation.</param>
+    /// <returns>This recipe with independently owned carrier bytes.</returns>
+    public NdsImageBuilder SetPostHeaderData(ReadOnlySpan<byte> data)
+    {
+        if (data.Length > 0x3000) { throw new ArgumentException("The post-header reservation is at most 0x3000 bytes.", nameof(data)); }
+        _postHeaderData = data.ToArray();
+        return this;
+    }
 
     /// <summary>Controls the padded 12-byte printable-ASCII label written at the beginning of the header.</summary>
     public string Title { get; set; } = string.Empty;

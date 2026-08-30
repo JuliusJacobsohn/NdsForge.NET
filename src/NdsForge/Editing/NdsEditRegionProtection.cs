@@ -7,6 +7,10 @@ internal static class NdsEditRegionProtection
     internal static void Validate(NdsImage image, IReadOnlyList<NdsFileChange> changes,
         NdsBanner? banner, NdsHeaderEdit header, int alignment)
     {
+        if (image.CarrierLayout.Kind == NdsImageCarrier.Unknown || image.CarrierLayout.Diagnostics.Any(static item => item.Severity == NdsDiagnosticSeverity.Error))
+        {
+            throw new InvalidDataException("Semantic preservation writes require a resolved, well-formed carrier layout.");
+        }
         NdsRegion[] allocations = image.FileSystem.Allocations.Select(static item => item.Data).ToArray();
         NdsRegion[] components = GetComponents(image, header).Where(static region => !region.IsEmpty).ToArray();
         NdsRegion bannerRegion = image.Banner is null ? default : new(image.Header.BannerOffset, image.Banner.RawData.Length);
@@ -48,6 +52,7 @@ internal static class NdsEditRegionProtection
     private static IEnumerable<NdsRegion> GetComponents(NdsImage image, NdsHeaderEdit header)
     {
         yield return new(0, image.Header.RawData.Length);
+        yield return image.CarrierLayout.PostHeaderRegion ?? default;
         yield return image.Header.Arm9.CompleteData;
         yield return image.Header.Arm7.CompleteData;
         yield return image.Header.FileNameTable;

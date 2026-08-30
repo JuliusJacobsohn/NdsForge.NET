@@ -63,6 +63,7 @@ internal static class CliApplication
         Console.WriteLine($"Game code:        {header.GameCode}");
         Console.WriteLine($"Maker code:       {header.MakerCode}");
         Console.WriteLine($"Image kind:       {header.Kind}");
+        Console.WriteLine($"Storage carrier:  {image.CarrierLayout.Kind}");
         Console.WriteLine($"Version:          {header.Version}");
         Console.WriteLine($"Physical size:    {FormatSize(image.Length)}");
         Console.WriteLine($"Declared used:    {FormatSize(header.UsedImageSize)}");

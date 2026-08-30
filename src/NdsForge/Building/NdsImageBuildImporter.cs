@@ -13,6 +13,10 @@ internal static class NdsImageBuildImporter
     {
         ArgumentNullException.ThrowIfNull(image);
         NdsDownloadPlaySignatureWriter.ValidateSource(image);
+        if (image.CarrierLayout.Kind == NdsImageCarrier.Unknown || image.CarrierLayout.Diagnostics.Any(static item => item.Severity == NdsDiagnosticSeverity.Error))
+        {
+            throw new InvalidDataException("A malformed or unresolved carrier layout cannot be structurally imported.");
+        }
         byte[] arm9 = await ReadRegionAsync(image, image.Header.Arm9.Data, cancellationToken).ConfigureAwait(false);
         byte[] arm7 = await ReadRegionAsync(image, image.Header.Arm7.Data, cancellationToken).ConfigureAwait(false);
         var arm9Definition = new NdsProgramDefinition(
@@ -54,6 +58,9 @@ internal static class NdsImageBuildImporter
         var builder = new NdsImageBuilder
         {
             Kind = image.Header.Kind,
+            Carrier = image.CarrierLayout.Kind,
+            ImportedDigitalCapacity = image.CarrierLayout.Kind == NdsImageCarrier.DigitalSrl ? image.Header.DeviceCapacityExponent : null,
+            ImportedDigitalSecureCrc = image.Header.SecureAreaCrc,
             Title = image.Header.Title,
             GameCode = image.Header.GameCode,
             MakerCode = image.Header.MakerCode,
@@ -83,6 +90,7 @@ internal static class NdsImageBuildImporter
             Banner = image.Banner,
         };
         builder.SetNintendoLogo(image.Header.RawData.Span.Slice(0xC0, 156));
+        builder.SetPostHeaderData(image.CarrierLayout.PostHeaderData.Span);
 
         foreach (NdsDirectory directory in image.FileSystem.Directories)
         {

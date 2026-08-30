@@ -33,6 +33,12 @@ internal static class NdsImageBuildVerifier
                 $"Generated image verification failed: {string.Join("; ", validation.Diagnostics.Select(static item => item.Message))}");
         }
 
+        if (image.CarrierLayout.Kind != builder.Carrier ||
+            !image.CarrierLayout.PostHeaderData.Span.StartsWith(builder.PostHeaderData.Span))
+        {
+            throw new InvalidDataException("Generated image carrier or opaque post-header material did not match the recipe.");
+        }
+
         if (builder.DownloadPlaySignature is not null && (image.DownloadPlaySignature is null ||
             !image.DownloadPlaySignature.RawData.Span.SequenceEqual(builder.DownloadPlaySignature.RawData.Span)))
         {

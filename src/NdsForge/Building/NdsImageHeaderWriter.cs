@@ -29,12 +29,14 @@ internal static class NdsImageHeaderWriter
         NdsDsiDigestBuildResult? digestResult)
     {
         byte[] header = new byte[options.HeaderSize];
+        builder.PostHeaderData.Span.CopyTo(header.AsSpan(0x1000));
         WriteAscii(header.AsSpan(0x00, 12), builder.Title);
         WriteAscii(header.AsSpan(0x0C, 4), builder.GameCode);
         WriteAscii(header.AsSpan(0x10, 2), builder.MakerCode);
         header[0x12] = (byte)builder.Kind;
         header[0x13] = builder.EncryptionSeedSelect;
-        header[0x14] = CalculateDeviceCapacity(layout.PhysicalSize);
+        header[0x14] = builder.Carrier == NdsImageCarrier.DigitalSrl && builder.ImportedDigitalCapacity is byte capacity
+            ? capacity : CalculateDeviceCapacity(layout.PhysicalSize);
         header[0x1D] = builder.RegionCode;
         header[0x1C] = builder.DsiMetadata?.DsiFlags ?? builder.DsMetadata?.DsiFlags ?? 0;
         header[0x1E] = builder.Version;
@@ -78,6 +80,13 @@ internal static class NdsImageHeaderWriter
         {
             NdsBinary.WriteUInt16(header, 0x6C,
                 NdsChecksums.ComputeCrc16(header.AsSpan(NdsSecureArea.Offset, NdsSecureArea.ByteLength)));
+        }
+        else if (builder.Carrier == NdsImageCarrier.DigitalSrl)
+        {
+            ushort crc = layout.Arm9.Offset == NdsSecureArea.Offset && content.Arm9Data.Length >= NdsSecureArea.ByteLength
+                ? NdsChecksums.ComputeCrc16(content.Arm9Data.Span[..NdsSecureArea.ByteLength])
+                : builder.ImportedDigitalSecureCrc;
+            NdsBinary.WriteUInt16(header, 0x6C, crc);
         }
 
         BinaryPrimitives.WriteUInt16LittleEndian(

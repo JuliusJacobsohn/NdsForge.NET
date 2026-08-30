@@ -114,6 +114,23 @@ if (!trailerImage.DownloadPlaySignature!.RawData.Span.SequenceEqual(storedTraile
     trailerImage.DownloadPlaySignatureRegion!.Value.Offset != trailerResult.UsedSize ||
     !trailerResult.Diagnostics.Any(diagnostic => diagnostic.Code == "NDS1550"))
     throw new InvalidOperationException("Download Play trailer package consumer failed.");
+var digitalBuilder = new NdsImageBuilder
+{
+    Title = "DIGITAL", GameCode = "DGTL", MakerCode = "HB",
+    Carrier = NdsImageCarrier.DigitalSrl, Kind = NdsImageKind.NintendoDsiExclusive,
+    Arm9 = new(NdsProcessor.Arm9, [1], 0x02004000, 0x02004000),
+    Arm7 = new(NdsProcessor.Arm7, [2], 0x02380000, 0x02380000),
+    Arm9i = new(NdsProcessor.Arm9i, [], 0x02400000, 0x02400000),
+    Arm7i = new(NdsProcessor.Arm7i, [], 0x02E80000, 0x02E80000),
+    DsiMetadata = new() { TitleId = 0x0003000454455354 },
+};
+byte[] carrierBytes = Enumerable.Repeat((byte)0x73, 0x3000).ToArray();
+digitalBuilder.SetPostHeaderData(carrierBytes);
+using NdsImage digitalImage = NdsImage.Load(await digitalBuilder.BuildAsync());
+if (digitalImage.CarrierLayout is not NdsDigitalSrlLayout ||
+    !digitalImage.CarrierLayout.PostHeaderData.Span.SequenceEqual(carrierBytes) ||
+    NdsSecureArea.Inspect(digitalImage).State != NdsSecureAreaState.Absent)
+    throw new InvalidOperationException("Digital carrier package consumer failed.");
 byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
 if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
     throw new InvalidOperationException("Nitro package consumer round trip failed.");

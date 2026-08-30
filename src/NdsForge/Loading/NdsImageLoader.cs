@@ -123,7 +123,8 @@ internal static class NdsImageLoader
             arm9OverlayAuthentication,
             banner,
             signature,
-            truncatedSignature);
+            truncatedSignature,
+            NdsCarrierLayoutParser.Parse(source, header, fileSystem, banner));
     }
 
     /// <summary>Runs asynchronous component parsers in dependency order against one validated source.</summary>
@@ -167,7 +168,8 @@ internal static class NdsImageLoader
             arm9OverlayAuthentication,
             banner,
             signature,
-            truncatedSignature);
+            truncatedSignature,
+            await NdsCarrierLayoutParser.ParseAsync(source, header, fileSystem, banner, cancellationToken).ConfigureAwait(false));
     }
 
     /// <summary>Reads a classic header or a declared late-DS/DSi 0x1000-byte extension.</summary>
@@ -178,6 +180,12 @@ internal static class NdsImageLoader
         byte[] baseHeader = new byte[BaseHeaderLength];
         source.ReadExactly(0, baseHeader);
         int length = GetHeaderLength(baseHeader);
+        if (length == BaseHeaderLength && CanProbeDigitalCategory(baseHeader, source.Length))
+        {
+            Span<byte> category = stackalloc byte[4];
+            source.ReadExactly(0x234, category);
+            if ((NdsBinary.ReadUInt32(category, 0) >> 16) == 3) { length = ExtendedHeaderLength; }
+        }
         if (length == BaseHeaderLength)
         {
             return new NdsHeader(baseHeader);
@@ -200,6 +208,12 @@ internal static class NdsImageLoader
         byte[] baseHeader = new byte[BaseHeaderLength];
         await source.ReadExactlyAsync(0, baseHeader, cancellationToken).ConfigureAwait(false);
         int length = GetHeaderLength(baseHeader);
+        if (length == BaseHeaderLength && CanProbeDigitalCategory(baseHeader, source.Length))
+        {
+            byte[] category = new byte[4];
+            await source.ReadExactlyAsync(0x234, category, cancellationToken).ConfigureAwait(false);
+            if ((NdsBinary.ReadUInt32(category, 0) >> 16) == 3) { length = ExtendedHeaderLength; }
+        }
         if (length == BaseHeaderLength)
         {
             return new NdsHeader(baseHeader);
@@ -223,4 +237,8 @@ internal static class NdsImageLoader
         bool isAuthenticatedLateDs = baseHeader[0x12] == 0 && (baseHeader[0x1BF] & lateDsAuthenticationMask) != 0;
         return isDsi || isAuthenticatedLateDs ? ExtendedHeaderLength : BaseHeaderLength;
     }
+
+    /// <summary>Allows bounded detection of DS-mode system SRLs only inside a declared complete header reservation.</summary>
+    private static bool CanProbeDigitalCategory(ReadOnlySpan<byte> header, long sourceLength) =>
+        header[0x12] == 0 && NdsBinary.ReadUInt32(header, 0x84) >= ExtendedHeaderLength && sourceLength >= ExtendedHeaderLength;
 }

@@ -59,6 +59,8 @@ public sealed class PrivateCorpusTransformTests
                 AssertCompatiblePhysicalExtent(oracle.Length, rebuilt);
             }
             AssertIntroducesNoValidationErrors(sourceValidation, rebuilt.Validate());
+            Assert.Equal(image.CarrierLayout.Kind, rebuilt.CarrierLayout.Kind);
+            Assert.Equal(image.CarrierLayout.PostHeaderData.ToArray(), rebuilt.CarrierLayout.PostHeaderData.ToArray());
             NdsImageManifest rebuiltManifest = await rebuilt.CreateManifestAsync(cancellationToken).ConfigureAwait(true);
             AssertSemanticManifestEquality(sourceManifest, rebuiltManifest, profile);
         }
