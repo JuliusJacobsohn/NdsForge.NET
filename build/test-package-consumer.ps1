@@ -86,6 +86,24 @@ if (!publicKey.VerifyHeader(bytes.AsSpan(0, 0xE00), signature))
     throw new InvalidOperationException("Native RSA package consumer failed.");
 _ = image.Validate(new NdsValidationOptions { ValidateDsAuthentication = true }
     .SetDsProgramHmacKey(authenticationKey).SetDsBannerHmacKey(authenticationKey).SetDsRsaPublicKey(publicKey));
+var bannerPolicy = NdsDsIntegrityOptions.CreateHmacSha1([], authenticationKey);
+builder.Banner = authenticationBanner;
+builder.DsMetadata = new NdsDsBuildMetadata
+{
+    ProgramFeatures = NdsProgramFeatures.AuthenticatesBanner,
+    Integrity = bannerPolicy,
+};
+using var authenticatedStream = new MemoryStream();
+NdsImageBuildResult authenticatedBuild = await builder.WriteAsync(authenticatedStream);
+using NdsImage authenticatedImage = NdsImage.Load(authenticatedStream.ToArray());
+if (authenticatedBuild.Diagnostics.Count != 0 || !authenticatedImage.Validate(new NdsValidationOptions().SetDsBannerHmacKey(authenticationKey)).IsValid)
+    throw new InvalidOperationException("Late-DS build package consumer failed.");
+using var editedStream = new MemoryStream();
+NdsSaveResult authenticatedEdit = await authenticatedImage.Edit().ReplaceBanner(new NdsBannerBuilder().SetTitle(NdsBannerLanguage.English, "Changed").Build())
+    .SaveAsync(editedStream, new NdsWriteOptions { DsIntegrity = bannerPolicy });
+using NdsImage editedImage = NdsImage.Load(editedStream.ToArray());
+if (authenticatedEdit.Diagnostics.Count != 0 || !editedImage.Validate(new NdsValidationOptions().SetDsBannerHmacKey(authenticationKey)).IsValid)
+    throw new InvalidOperationException("Late-DS editor package consumer failed.");
 byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
 if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
     throw new InvalidOperationException("Nitro package consumer round trip failed.");

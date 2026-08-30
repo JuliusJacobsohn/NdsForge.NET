@@ -18,6 +18,9 @@ public sealed record NdsWriteOptions
     /// <summary>Gets whether a path save may atomically replace an existing regular file.</summary>
     public bool OverwriteDestination { get; init; }
 
+    /// <summary>Explicitly preserves, clears, or regenerates late-DS authentication; required when editing declared authenticated images.</summary>
+    public NdsDsIntegrityOptions? DsIntegrity { get; init; }
+
     /// <summary>Rejects alignments incompatible with the editor's overflow-safe bitwise rounding operation.</summary>
     /// <exception cref="ArgumentOutOfRangeException">Alignment is zero or negative.</exception>
     /// <exception cref="ArgumentException">Alignment is not a power of two.</exception>

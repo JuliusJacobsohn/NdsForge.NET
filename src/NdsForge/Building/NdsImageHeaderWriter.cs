@@ -36,7 +36,7 @@ internal static class NdsImageHeaderWriter
         header[0x13] = builder.EncryptionSeedSelect;
         header[0x14] = CalculateDeviceCapacity(layout.PhysicalSize);
         header[0x1D] = builder.RegionCode;
-        header[0x1C] = builder.DsiMetadata?.DsiFlags ?? 0;
+        header[0x1C] = builder.DsiMetadata?.DsiFlags ?? builder.DsMetadata?.DsiFlags ?? 0;
         header[0x1E] = builder.Version;
         header[0x1F] = builder.AutoStart;
         WriteProgram(header, 0x20, layout.Arm9, builder.Arm9!);
@@ -68,6 +68,16 @@ internal static class NdsImageHeaderWriter
         if (builder.Kind != NdsImageKind.NintendoDs)
         {
             NdsDsiHeaderWriter.Write(header, builder, layout, content, digestResult);
+        }
+        else if (builder.DsMetadata is not null)
+        {
+            NdsDsHeaderWriter.WriteMetadata(header, builder.DsMetadata, layout, content);
+        }
+
+        if (header.Length >= NdsSecureArea.Offset + NdsSecureArea.ByteLength)
+        {
+            NdsBinary.WriteUInt16(header, 0x6C,
+                NdsChecksums.ComputeCrc16(header.AsSpan(NdsSecureArea.Offset, NdsSecureArea.ByteLength)));
         }
 
         BinaryPrimitives.WriteUInt16LittleEndian(

@@ -1,4 +1,34 @@
 #nullable enable
+NdsForge.NdsWriteOptions.DsIntegrity.get -> NdsForge.NdsDsIntegrityOptions?
+NdsForge.NdsWriteOptions.DsIntegrity.init -> void
+NdsForge.NdsSaveResult.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
+NdsForge.NdsDsAuthenticationWriteMode
+NdsForge.NdsDsAuthenticationWriteMode.PreserveStored = 0 -> NdsForge.NdsDsAuthenticationWriteMode
+NdsForge.NdsDsAuthenticationWriteMode.Clear = 1 -> NdsForge.NdsDsAuthenticationWriteMode
+NdsForge.NdsDsAuthenticationWriteMode.Regenerate = 2 -> NdsForge.NdsDsAuthenticationWriteMode
+NdsForge.NdsDsIntegrityOptions
+NdsForge.NdsDsIntegrityOptions.Mode.get -> NdsForge.NdsDsAuthenticationWriteMode
+static NdsForge.NdsDsIntegrityOptions.PreserveStored.get -> NdsForge.NdsDsIntegrityOptions!
+static NdsForge.NdsDsIntegrityOptions.Unauthenticated.get -> NdsForge.NdsDsIntegrityOptions!
+static NdsForge.NdsDsIntegrityOptions.CreateHmacSha1(System.ReadOnlySpan<byte> programKey, System.ReadOnlySpan<byte> bannerKey, NdsForge.NdsKey1KeyTable? secureAreaKeyTable = null, NdsForge.INdsDsiSignatureProvider? signatureProvider = null, NdsForge.NdsDsiRsaPublicKey? signaturePublicKey = null) -> NdsForge.NdsDsIntegrityOptions!
+NdsForge.NdsDsBuildMetadata
+NdsForge.NdsDsBuildMetadata.NdsDsBuildMetadata() -> void
+NdsForge.NdsDsBuildMetadata.DsiFlags.get -> byte
+NdsForge.NdsDsBuildMetadata.DsiFlags.set -> void
+NdsForge.NdsDsBuildMetadata.ProgramFeatures.get -> NdsForge.NdsProgramFeatures
+NdsForge.NdsDsBuildMetadata.ProgramFeatures.set -> void
+NdsForge.NdsDsBuildMetadata.Arm9ParametersRelativeOffset.get -> uint?
+NdsForge.NdsDsBuildMetadata.Arm9ParametersRelativeOffset.set -> void
+NdsForge.NdsDsBuildMetadata.Arm7ParametersRelativeOffset.get -> uint?
+NdsForge.NdsDsBuildMetadata.Arm7ParametersRelativeOffset.set -> void
+NdsForge.NdsDsBuildMetadata.Integrity.get -> NdsForge.NdsDsIntegrityOptions?
+NdsForge.NdsDsBuildMetadata.Integrity.set -> void
+NdsForge.NdsDsBuildMetadata.SetExtensionTemplate(System.ReadOnlySpan<byte> data) -> NdsForge.NdsDsBuildMetadata!
+NdsForge.NdsDsBuildMetadata.ExportExtensionTemplate() -> byte[]!
+static NdsForge.NdsDsBuildMetadata.FromImage(NdsForge.NdsImage! image) -> NdsForge.NdsDsBuildMetadata!
+NdsForge.NdsImageBuilder.DsMetadata.get -> NdsForge.NdsDsBuildMetadata?
+NdsForge.NdsImageBuilder.DsMetadata.set -> void
+NdsForge.NdsImageBuildResult.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!
 NdsForge.NdsDsAuthentication
 static NdsForge.NdsDsAuthentication.ComputeProgramsHmac(System.ReadOnlySpan<byte> headerPrefix, System.ReadOnlySpan<byte> arm9AuthenticationData, System.ReadOnlySpan<byte> arm7Data, System.ReadOnlySpan<byte> key) -> byte[]!
 static NdsForge.NdsDsAuthentication.ComputeBannerHmac(NdsForge.NdsBanner! banner, System.ReadOnlySpan<byte> key) -> byte[]!

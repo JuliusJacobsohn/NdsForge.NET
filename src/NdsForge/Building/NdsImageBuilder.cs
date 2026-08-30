@@ -104,6 +104,9 @@ public sealed class NdsImageBuilder
     /// </summary>
     public NdsDsiBuildMetadata? DsiMetadata { get; set; }
 
+    /// <summary>Preserves late-generation DS extension bytes, relative SDK pointers, and an explicit authentication write policy.</summary>
+    public NdsDsBuildMetadata? DsMetadata { get; set; }
+
     /// <summary>
     /// Supplies classic-DS Download Play table repair settings. It is required when ARM9 overlay definitions retain
     /// their authentication bit and ignored for DSi images, whose digest hierarchy has separate semantics.
@@ -122,7 +125,7 @@ public sealed class NdsImageBuilder
     /// <summary>Exposes ARM7 Overlay definitions in the exact order used by the generated table.</summary>
     public IReadOnlyList<NdsOverlayDefinition> Arm7Overlays => _arm7Overlays;
 
-    /// <summary>Adds an Overlay whose private Allocation receives a File ID after all named NitroFS files.</summary>
+    /// <summary>Adds an Overlay with a private Allocation; the selected layout and authentication policy determine its File ID.</summary>
     /// <param name="overlay">Immutable definition whose payload is already independent from caller buffers.</param>
     /// <returns>The same builder for fluent recipe construction.</returns>
     public NdsImageBuilder AddOverlay(NdsOverlayDefinition overlay)

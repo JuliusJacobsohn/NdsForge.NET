@@ -76,6 +76,7 @@ internal static class NdsImageBuildImporter
             Arm9i = arm9iDefinition,
             Arm7i = arm7iDefinition,
             DsiMetadata = dsiMetadata,
+            DsMetadata = image.Header.DsExtended is null ? null : NdsDsBuildMetadata.FromImage(image),
             Arm9OverlayAuthentication = ImportOverlayAuthentication(image),
             Banner = image.Banner,
         };

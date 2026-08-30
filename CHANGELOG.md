@@ -7,6 +7,12 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Preserve late-DS build metadata and relocate program-parameter pointers; require
+  explicit authentication preservation, removal, or keyed regeneration for
+  structural builds and preservation edits of authenticated images.
+- Coordinate classic overlay records, ARM9 recompression, final physical coverage,
+  late-DS HMACs, and optional verified header signing. Report retained unverified
+  fields and missing signing authority through build/save diagnostics.
 - Model late-generation DS authentication headers, program feature flags, stored
   HMAC/signature fields, canonical ARM9 SDK parameter tables, and typed SDK
   footers without requiring DSi unit mode.

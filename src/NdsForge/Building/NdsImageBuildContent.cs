@@ -12,6 +12,7 @@ namespace NdsForge;
 /// <param name="FileSystem">Serialized FNT plus visible files in their encoded ID order.</param>
 /// <param name="Arm9Data">Physical ARM9 bytes excluding any trailing SDK footer.</param>
 /// <param name="Arm9DeclaredLength">Length encoded in the header, which may include profile-specific rounding.</param>
+/// <param name="Arm9PrefixLength">Compatibility bytes inserted before the caller's ARM9 payload.</param>
 /// <param name="Arm9TrailingData">Explicit and/or synthesized footer bytes written immediately after physical ARM9 data.</param>
 /// <param name="Arm7Data">Physical ARM7 bytes.</param>
 /// <param name="Arm7DeclaredLength">Length encoded in the header after profile-specific rounding.</param>
@@ -24,6 +25,7 @@ internal sealed record NdsImageBuildContent(
     NdsFileSystemBuildSnapshot FileSystem,
     ReadOnlyMemory<byte> Arm9Data,
     int Arm9DeclaredLength,
+    int Arm9PrefixLength,
     ReadOnlyMemory<byte> Arm9TrailingData,
     ReadOnlyMemory<byte> Arm7Data,
     int Arm7DeclaredLength,
@@ -66,22 +68,23 @@ internal static class NdsImageBuildContentPreparer
                 "The ndstool 1.50.3 build profile supports only the 0x840-byte version-one Banner layout.");
         }
 
-        int hiddenFileCount = ndstoolProfile ? checked(arm9PrivateCount + arm7PrivateCount) : 0;
+        bool overlaysFirst = ndstoolProfile || NdsDsHeaderWriter.RequiresOverlayPrefix(builder.DsMetadata);
+        int hiddenFileCount = overlaysFirst ? checked(arm9PrivateCount + arm7PrivateCount) : 0;
         NdsFileSystemBuildSnapshot fileSystem = builder.FileSystem.BuildSnapshot(hiddenFileCount);
-        ReadOnlyMemory<byte>[] allocations = CollectAllocations(builder, fileSystem, ndstoolProfile);
-        int arm9PrivateBase = ndstoolProfile
+        ReadOnlyMemory<byte>[] allocations = CollectAllocations(builder, fileSystem, overlaysFirst);
+        int arm9PrivateBase = overlaysFirst
             ? 0
             : checked(fileSystem.FirstFileId + fileSystem.FilesInIdOrder.Count);
         int arm7PrivateBase = checked(arm9PrivateBase + arm9PrivateCount);
         byte[] arm9OverlayTable = BuildOverlayTable(builder.Arm9Overlays, fileSystem, arm9PrivateBase);
         byte[] arm7OverlayTable = BuildOverlayTable(builder.Arm7Overlays, fileSystem, arm7PrivateBase);
         ReadOnlyMemory<byte> authenticatedArm9 = PrepareAuthenticatedArm9(builder, fileSystem, ndstoolProfile);
-        (ReadOnlyMemory<byte> arm9Data, int arm9DeclaredLength) = PrepareProgram(
+        (ReadOnlyMemory<byte> arm9Data, int arm9DeclaredLength, int arm9PrefixLength) = PrepareProgram(
             builder.Arm9!,
             authenticatedArm9,
             isArm9: true,
             ndstoolProfile);
-        (ReadOnlyMemory<byte> arm7Data, int arm7DeclaredLength) = PrepareProgram(
+        (ReadOnlyMemory<byte> arm7Data, int arm7DeclaredLength, _) = PrepareProgram(
             builder.Arm7!,
             builder.Arm7!.Contents,
             isArm9: false,
@@ -95,6 +98,7 @@ internal static class NdsImageBuildContentPreparer
             fileSystem,
             arm9Data,
             arm9DeclaredLength,
+            arm9PrefixLength,
             arm9TrailingData,
             arm7Data,
             arm7DeclaredLength,
@@ -114,7 +118,7 @@ internal static class NdsImageBuildContentPreparer
     /// <param name="isArm9">Enables the ARM9-only secure-area prefix.</param>
     /// <param name="ndstoolProfile">Selects legacy prefix and four-byte declared-size rounding.</param>
     /// <returns>Physical data plus the potentially rounded length written to the header.</returns>
-    private static (ReadOnlyMemory<byte> Data, int DeclaredLength) PrepareProgram(
+    private static (ReadOnlyMemory<byte> Data, int DeclaredLength, int PrefixLength) PrepareProgram(
         NdsProgramDefinition program,
         ReadOnlyMemory<byte> contents,
         bool isArm9,
@@ -122,7 +126,7 @@ internal static class NdsImageBuildContentPreparer
     {
         if (!ndstoolProfile)
         {
-            return (contents, contents.Length);
+            return (contents, contents.Length, 0);
         }
 
         bool alreadyHasSecureStubs = isArm9 &&
@@ -143,7 +147,7 @@ internal static class NdsImageBuildContentPreparer
 
         contents.Span.CopyTo(data.AsSpan(prefixLength));
         int declaredLength = checked((data.Length + 3) & ~3);
-        return (data, declaredLength);
+        return (data, declaredLength, prefixLength);
     }
 
     /// <summary>Recomputes changed per-overlay records before layout freezes the ARM9 size and every downstream offset.</summary>
@@ -332,12 +336,12 @@ internal static class NdsImageBuildContentPreparer
     /// <summary>Orders hidden and visible allocations according to the profile's actual FAT identity convention.</summary>
     /// <param name="builder">Recipe supplying processor-separated private Overlay payloads.</param>
     /// <param name="fileSystem">Snapshot supplying visible payloads in encoded FNT order.</param>
-    /// <param name="ndstoolProfile">Places hidden Overlay allocations first when reproducing version 1.50.3.</param>
+    /// <param name="overlaysFirst">Places hidden Overlay allocations first for a compatibility profile or late-DS authentication.</param>
     /// <returns>Immutable memory views whose array positions are their final FAT IDs.</returns>
     private static ReadOnlyMemory<byte>[] CollectAllocations(
         NdsImageBuilder builder,
         NdsFileSystemBuildSnapshot fileSystem,
-        bool ndstoolProfile)
+        bool overlaysFirst)
     {
         IEnumerable<ReadOnlyMemory<byte>> arm9 = builder.Arm9Overlays
             .Where(static overlay => overlay.HasPrivateAllocation)
@@ -346,7 +350,7 @@ internal static class NdsImageBuildContentPreparer
             .Where(static overlay => overlay.HasPrivateAllocation)
             .Select(static overlay => overlay.Contents);
         IEnumerable<ReadOnlyMemory<byte>> named = fileSystem.FilesInIdOrder.Select(static file => file.Contents);
-        return (ndstoolProfile ? arm9.Concat(arm7).Concat(named) : named.Concat(arm9).Concat(arm7)).ToArray();
+        return (overlaysFirst ? arm9.Concat(arm7).Concat(named) : named.Concat(arm9).Concat(arm7)).ToArray();
     }
 
     /// <summary>Serializes fixed Overlay records and resolves both hidden and named payload File IDs.</summary>

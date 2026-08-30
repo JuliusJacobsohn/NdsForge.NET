@@ -94,6 +94,7 @@ public sealed class NdsOverlayAuthenticationTests
         }
 
         builder.ReplaceOverlay(NdsProcessor.Arm9, 7, "changed"u8, NdsOverlayCompressionMode.Uncompressed);
+        builder.DsMetadata!.Integrity = NdsDsIntegrityOptions.PreserveStored;
         byte[] rebuilt = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
         using NdsImage output = NdsImage.Load(rebuilt);
 
@@ -116,6 +117,7 @@ public sealed class NdsOverlayAuthenticationTests
         }
 
         byte[] decoded = Enumerable.Repeat((byte)0x5A, 512).ToArray();
+        builder.DsMetadata!.Integrity = NdsDsIntegrityOptions.PreserveStored;
         builder.ReplaceOverlay(NdsProcessor.Arm9, 7, decoded, NdsOverlayCompressionMode.Blz);
         byte[] rebuilt = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
         using NdsImage output = NdsImage.Load(rebuilt);
@@ -141,6 +143,7 @@ public sealed class NdsOverlayAuthenticationTests
         }
 
         builder.ReplaceOverlay(NdsProcessor.Arm9, 7, "different"u8, NdsOverlayCompressionMode.Uncompressed);
+        builder.DsMetadata!.Integrity = NdsDsIntegrityOptions.PreserveStored;
         byte[] rebuilt = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
         using NdsImage output = NdsImage.Load(rebuilt);
 
@@ -163,6 +166,7 @@ public sealed class NdsOverlayAuthenticationTests
         }
 
         missing.Arm9OverlayAuthentication = null;
+        missing.DsMetadata!.Integrity = NdsDsIntegrityOptions.PreserveStored;
         using var destination = new MemoryStream([9, 8, 7], writable: true);
         InvalidDataException absent = await Assert.ThrowsAsync<InvalidDataException>(async () =>
             await missing.WriteAsync(destination, cancellationToken: TestContext.Current.CancellationToken)
@@ -179,6 +183,7 @@ public sealed class NdsOverlayAuthenticationTests
         }
 
         Assert.False(stale.Arm9OverlayAuthentication!.CanRegenerate);
+        stale.DsMetadata!.Integrity = NdsDsIntegrityOptions.PreserveStored;
         InvalidDataException unrepairable = await Assert.ThrowsAsync<InvalidDataException>(async () =>
             await stale.BuildAsync(cancellationToken: TestContext.Current.CancellationToken).ConfigureAwait(true));
         Assert.Contains("cannot be regenerated", unrepairable.Message, StringComparison.Ordinal);

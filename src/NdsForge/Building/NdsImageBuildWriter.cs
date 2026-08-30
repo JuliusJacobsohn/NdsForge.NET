@@ -27,6 +27,7 @@ internal static class NdsImageBuildWriter
         ValidateRecipe(builder);
         NdsImageBuildContent content = NdsImageBuildContentPreparer.Prepare(builder, options);
         NdsImageBuildLayout layout = NdsImageLayoutPlanner.Plan(builder, content, options);
+        layout = NdsDsHeaderWriter.CompleteLayout(builder, content, layout, options);
         byte[] fat = BuildFat(layout.FileRegions);
 
         destination.Position = 0;
@@ -140,6 +141,9 @@ internal static class NdsImageBuildWriter
         byte[] header = NdsImageHeaderWriter.Write(builder, layout, content, options, digestResult);
         destination.Position = 0;
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
+        IReadOnlyList<NdsDiagnostic> diagnostics = builder.DsMetadata is null
+            ? Array.Empty<NdsDiagnostic>()
+            : await NdsDsHeaderWriter.FinalizeAsync(destination, header, builder.DsMetadata.Integrity, cancellationToken).ConfigureAwait(false);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
         if (options.VerifyOutput)
         {
@@ -164,7 +168,8 @@ internal static class NdsImageBuildWriter
             layout.SectorHashTable,
             layout.BlockHashTable,
             content.FileSystem.FilesInIdOrder.Count,
-            layout.FileRegions.Count);
+            layout.FileRegions.Count,
+            diagnostics);
     }
 
     /// <summary>Rejects incomplete or mismatched Program definitions and validates fixed-width ASCII identity fields.</summary>
@@ -191,6 +196,8 @@ internal static class NdsImageBuildWriter
         {
             ValidateDsiRecipe(builder);
         }
+
+        builder.DsMetadata?.Validate(builder);
 
         ValidateAscii(builder.Title, 0, 12, nameof(builder.Title));
         ValidateAscii(builder.GameCode, 4, 4, nameof(builder.GameCode));

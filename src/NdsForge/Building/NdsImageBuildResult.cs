@@ -21,6 +21,7 @@ public sealed class NdsImageBuildResult
     /// <param name="blockHashTable">Generated second-level DSi digest table, or an empty region.</param>
     /// <param name="fileCount">Number of named NitroFS payloads assigned File IDs.</param>
     /// <param name="allocationCount">Total FAT records, including unnamed Overlay payloads.</param>
+    /// <param name="diagnostics">Explicit authentication preservation or absent-signing-authority findings.</param>
     internal NdsImageBuildResult(
         long usedSize,
         long physicalSize,
@@ -38,7 +39,8 @@ public sealed class NdsImageBuildResult
         NdsRegion sectorHashTable,
         NdsRegion blockHashTable,
         int fileCount,
-        int allocationCount)
+        int allocationCount,
+        IReadOnlyList<NdsDiagnostic> diagnostics)
     {
         UsedSize = usedSize;
         PhysicalSize = physicalSize;
@@ -57,6 +59,7 @@ public sealed class NdsImageBuildResult
         BlockHashTable = blockHashTable;
         FileCount = fileCount;
         AllocationCount = allocationCount;
+        Diagnostics = Array.AsReadOnly(diagnostics.ToArray());
     }
 
     /// <summary>Identifies the meaningful content end written to header offset <c>0x80</c>.</summary>
@@ -109,4 +112,7 @@ public sealed class NdsImageBuildResult
 
     /// <summary>Counts every FAT entry, including unnamed payloads reachable only through Overlay records.</summary>
     public int AllocationCount { get; }
+
+    /// <summary>Reports explicit unverified/stale authentication preservation and cleared-signature outcomes.</summary>
+    public IReadOnlyList<NdsDiagnostic> Diagnostics { get; }
 }

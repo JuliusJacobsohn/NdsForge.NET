@@ -66,11 +66,22 @@ Use `NdsImageBuilder` for new images or structural changes such as adding and re
 
 ```csharp
 NdsImageBuilder builder = await NdsImageBuilder.FromImageAsync(image);
+if (builder.DsMetadata is not null)
+{
+    // Explicitly retain stored late-DS fields, accepting an unverified/stale warning.
+    builder.DsMetadata.Integrity = NdsDsIntegrityOptions.PreserveStored;
+}
 await builder.FileSystem.ImportDirectoryAsync("replacement-data");
 NdsImageBuildResult result = await builder.WriteAsync("rebuilt.nds");
+foreach (NdsDiagnostic diagnostic in result.Diagnostics)
+{
+    Console.WriteLine($"{diagnostic.Code}: {diagnostic.Message}");
+}
 ```
 
 The default profile uses NdsForge's deterministic layout. Select `NdsImageBuildProfile.Ndstool1503` only when compatibility with the historical tool's verified layout is an explicit requirement.
+
+For an authenticated late-DS rebuild, select `NdsDsIntegrityOptions.CreateHmacSha1` with your separate program and banner keys, KEY1 table, and optional signing provider/public-key pair. The builder coordinates classic overlay records, ARM9 recompression, late-DS digests, and the header signature. `NdsDsIntegrityOptions.Unauthenticated` explicitly removes only late-DS authentication declarations and fields. For preservation edits, pass the same policy through `new NdsWriteOptions { DsIntegrity = policy }`. Read [formats and safety](formats-and-safety.md) for required layouts, missing-key behavior, and the distinction between HMAC generation and signature trust.
 
 ## Next steps
 

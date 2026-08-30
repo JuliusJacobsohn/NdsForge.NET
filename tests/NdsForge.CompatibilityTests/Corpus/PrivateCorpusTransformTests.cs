@@ -27,6 +27,7 @@ public sealed class PrivateCorpusTransformTests
             NdsValidationResult sourceValidation = image.Validate();
             NdsImageManifest sourceManifest = await image.CreateManifestAsync(cancellationToken).ConfigureAwait(true);
             NdsImageBuilder builder = await NdsImageBuilder.FromImageAsync(image, cancellationToken).ConfigureAwait(true);
+            if (builder.DsMetadata is not null) { builder.DsMetadata.Integrity = NdsDsIntegrityOptions.PreserveStored; }
             Assert.Equal(image.Header.NormalCardControl, builder.NormalCardControl);
             Assert.Equal(image.Header.SecureCardControl, builder.SecureCardControl);
             NdsImageBuildProfile profile = expectation.Rom.Kind == NdsImageKind.NintendoDs
@@ -138,7 +139,7 @@ public sealed class PrivateCorpusTransformTests
             Assert.Contains(image.Validate().Diagnostics, static diagnostic => diagnostic.Code == "NDS1001");
             await image.Edit().RepairHeaderCrc().SaveAsync(
                 output,
-                new NdsWriteOptions { VerifyOutput = verifyOutput },
+                new NdsWriteOptions { VerifyOutput = verifyOutput, DsIntegrity = image.Header.DsExtended is null ? null : NdsDsIntegrityOptions.PreserveStored },
                 cancellationToken).ConfigureAwait(true);
             await using FileStream stream = File.OpenRead(output);
             string actual = Convert.ToHexString(await SHA256.HashDataAsync(stream, cancellationToken).ConfigureAwait(true));

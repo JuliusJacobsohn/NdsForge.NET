@@ -73,26 +73,38 @@ public static class NdsDsAuthentication
             throw new ArgumentException("DSi images use a separate authentication hierarchy.", nameof(image));
         }
 
-        int count = image.Arm9Overlays.Count;
+        return GetOverlayHashRegions(image.Length, image.Header.Arm9OverlayTable, image.Header.FileAllocationTable,
+            image.FileSystem.Allocations.Select(static item => item.Data).ToArray(),
+            image.Arm9Overlays.Select(static item => item.FileId).ToArray());
+    }
+
+    /// <summary>Shares exact input selection with the writer's preflight and physical-padding planner.</summary>
+    internal static IReadOnlyList<NdsRegion> GetOverlayHashRegions(
+        long imageLength, NdsRegion overlayTable, NdsRegion fat,
+        IReadOnlyList<NdsRegion> allocations, IReadOnlyList<uint> fileIds)
+    {
+        int count = fileIds.Count;
         if (count == 0)
         {
             return Array.Empty<NdsRegion>();
         }
 
-        ValidateAllocationPrefix(image, count);
+        ValidateAllocationPrefix(allocations.Count, fileIds);
+        RequireWithinImage(imageLength, overlayTable);
+        RequireWithinImage(imageLength, new(fat.Offset, checked(count * 8L)));
         var regions = new List<NdsRegion>(checked(count + 2))
         {
-            image.Header.Arm9OverlayTable,
-            new(image.Header.FileAllocationTable.Offset, checked(count * 8L)),
+            overlayTable,
+            new(fat.Offset, checked(count * 8L)),
         };
         int sectorsLeft = PayloadSectorBudget;
         for (int index = 0; index < count; index++)
         {
-            NdsRegion allocation = image.FileSystem.Allocations[index].Data;
+            NdsRegion allocation = allocations[index];
             long roundedSectors = checked((allocation.Length + SectorLength - 1) / SectorLength);
             int sectors = checked((int)Math.Min(roundedSectors, sectorsLeft / (count - index)));
             var covered = new NdsRegion(allocation.Offset, checked(sectors * (long)SectorLength));
-            RequireWithinImage(image, covered);
+            RequireWithinImage(imageLength, covered);
             if (!covered.IsEmpty)
             {
                 regions.Add(covered);
@@ -105,7 +117,7 @@ public static class NdsDsAuthentication
     }
 
     /// <summary>
-    /// Computes HMAC-SHA1 over the exact regions returned by <see cref="GetOverlayHashRegions"/> using a caller's
+    /// Computes HMAC-SHA1 over the exact regions returned by <see cref="GetOverlayHashRegions(NdsImage)"/> using a caller's
     /// late-DS key. This is distinct from the ARM9-embedded per-overlay key. With no overlays the raw result is
     /// HMAC of empty input; an absent on-cartridge aggregate field instead remains twenty zero bytes.
     /// </summary>
@@ -143,33 +155,31 @@ public static class NdsDsAuthentication
     }
 
     /// <summary>Rejects unsupported allocation selections instead of accidentally authenticating unrelated named files.</summary>
-    private static void ValidateAllocationPrefix(NdsImage image, int count)
+    private static void ValidateAllocationPrefix(int allocationCount, IReadOnlyList<uint> fileIds)
     {
-        if (image.FileSystem.Allocations.Count < count)
+        int count = fileIds.Count;
+        if (allocationCount < count)
         {
             throw new InvalidDataException("The ARM9 authentication allocation prefix exceeds the FAT.");
         }
 
         var seen = new bool[count];
-        foreach (NdsOverlay overlay in image.Arm9Overlays)
+        foreach (uint fileId in fileIds)
         {
-            if (overlay.FileId >= count || seen[checked((int)overlay.FileId)])
+            if (fileId >= count || seen[checked((int)fileId)])
             {
                 throw new InvalidDataException(
                     "Late-DS aggregate authentication requires ARM9 overlays to reference every leading FAT entry exactly once.");
             }
 
-            seen[checked((int)overlay.FileId)] = true;
+            seen[checked((int)fileId)] = true;
         }
-
-        RequireWithinImage(image, image.Header.Arm9OverlayTable);
-        RequireWithinImage(image, new(image.Header.FileAllocationTable.Offset, checked(count * 8L)));
     }
 
     /// <summary>Checks rounded authentication coverage against physical EOF before creating any source stream.</summary>
-    private static void RequireWithinImage(NdsImage image, NdsRegion region)
+    private static void RequireWithinImage(long imageLength, NdsRegion region)
     {
-        if (region.Offset < 0 || region.Length < 0 || region.Offset > image.Length - region.Length)
+        if (region.Offset < 0 || region.Length < 0 || region.Offset > imageLength - region.Length)
         {
             throw new InvalidDataException("Late-DS authentication coverage extends beyond the physical image.");
         }

@@ -9,5 +9,8 @@ public sealed record NdsSaveResult(
     int AppliedChanges,
     int RelocatedFiles,
     long UsedImageSize,
-    long PhysicalImageSize);
-
+    long PhysicalImageSize)
+{
+    /// <summary>Reports retained unverified authentication or unavailable signing authority without implying cryptographic trust.</summary>
+    public IReadOnlyList<NdsDiagnostic> Diagnostics { get; internal init; } = Array.Empty<NdsDiagnostic>();
+}

@@ -216,11 +216,20 @@ public sealed class NdsImageEditor
 
         options ??= NdsWriteOptions.Default;
         options.Validate();
+        NdsDsEditAuthentication.Validate(_image, options, Plan.HasChanges, Header.GameCode, _bannerReplacement is not null || _image.Banner is not null);
         destination.Position = 0;
         destination.SetLength(0);
         using (Stream source = _image.OpenRead(new(0, _image.Length)))
         {
             await source.CopyToAsync(destination, cancellationToken).ConfigureAwait(false);
+        }
+
+        if (!Plan.HasChanges && options.DsIntegrity is null)
+        {
+            await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
+            if (options.VerifyOutput) { await VerifyAsync(destination, options, cancellationToken).ConfigureAwait(false); }
+            destination.Position = _image.Length;
+            return new(0, 0, _image.Header.UsedImageSize, _image.Length);
         }
 
         var allocations = _image.FileSystem.Allocations
@@ -265,18 +274,22 @@ public sealed class NdsImageEditor
         }
 
         usedSize = Math.Max(usedSize, _image.Header.UsedImageSize);
-        long physicalSize = Math.Max(_image.Length, usedSize);
+        long physicalSize = NdsDsEditAuthentication.CompletePhysicalSize(_image, options, allocations, Math.Max(_image.Length, usedSize));
+        await FillGapAsync(destination, physicalSize, options.PaddingByte, cancellationToken).ConfigureAwait(false);
         destination.SetLength(physicalSize);
-        await WriteMetadataAsync(destination, allocations, usedSize, bannerOffset, cancellationToken).ConfigureAwait(false);
+        byte[] header = await WriteMetadataAsync(destination, allocations, usedSize, bannerOffset, cancellationToken).ConfigureAwait(false);
+        IReadOnlyList<NdsDiagnostic> diagnostics = _image.Header.DsExtended is null
+            ? Array.Empty<NdsDiagnostic>()
+            : await NdsDsHeaderWriter.FinalizeAsync(destination, header, options.DsIntegrity, cancellationToken).ConfigureAwait(false);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
 
         if (options.VerifyOutput)
         {
-            await VerifyAsync(destination, cancellationToken).ConfigureAwait(false);
+            await VerifyAsync(destination, options, cancellationToken).ConfigureAwait(false);
         }
 
         destination.Position = physicalSize;
-        return new(_replacements.Count, relocated, usedSize, physicalSize);
+        return new(_replacements.Count, relocated, usedSize, physicalSize) { Diagnostics = Array.AsReadOnly(diagnostics.ToArray()) };
     }
 
     /// <summary>Projects internal replacement bytes into public size, path, and relocation metadata without exposing mutable buffers.</summary>
@@ -301,7 +314,8 @@ public sealed class NdsImageEditor
     /// <param name="usedSize">Exclusive meaningful image end written to header offset <c>0x80</c>.</param>
     /// <param name="bannerOffset">Original or relocated banner address written to offset <c>0x68</c>.</param>
     /// <param name="cancellationToken">Cancels metadata writes before verification.</param>
-    private async ValueTask WriteMetadataAsync(
+    /// <returns>The finalized common header, ready for an explicitly selected authentication policy.</returns>
+    private async ValueTask<byte[]> WriteMetadataAsync(
         Stream destination,
         NdsRegion[] allocations,
         long usedSize,
@@ -354,19 +368,23 @@ public sealed class NdsImageEditor
         }
         destination.Position = 0;
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
+        return header;
     }
 
     /// <summary>Reopens the completed stream through production parsers, validates it, and byte-checks every requested change.</summary>
     /// <param name="destination">Readable output left open and repositioned by the verification loader.</param>
+    /// <param name="options">Supplies exactly the authentication credentials used for this save.</param>
     /// <param name="cancellationToken">Cancels reparsing or payload comparisons.</param>
-    private async ValueTask VerifyAsync(Stream destination, CancellationToken cancellationToken)
+    private async ValueTask VerifyAsync(Stream destination, NdsWriteOptions options, CancellationToken cancellationToken)
     {
         destination.Position = 0;
         using NdsImage output = await NdsImage.OpenAsync(
             destination,
             leaveOpen: true,
             cancellationToken: cancellationToken).ConfigureAwait(false);
-        NdsValidationResult validation = output.Validate();
+        var validationOptions = new NdsValidationOptions();
+        options.DsIntegrity?.ApplyValidation(validationOptions);
+        NdsValidationResult validation = output.Validate(validationOptions);
         if (!validation.IsValid)
         {
             throw new InvalidDataException(

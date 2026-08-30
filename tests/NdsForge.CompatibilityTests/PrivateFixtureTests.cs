@@ -70,6 +70,7 @@ public sealed class PrivateFixtureTests
             CancellationToken cancellationToken = TestContext.Current.CancellationToken;
             using NdsImage source = await NdsImage.OpenAsync(path, cancellationToken: cancellationToken).ConfigureAwait(true);
             NdsImageBuilder builder = await NdsImageBuilder.FromImageAsync(source, cancellationToken).ConfigureAwait(true);
+            if (builder.DsMetadata is not null) { builder.DsMetadata.Integrity = NdsDsIntegrityOptions.PreserveStored; }
 
             await builder.WriteAsync(output, cancellationToken: cancellationToken).ConfigureAwait(true);
             using NdsImage rebuilt = await NdsImage.OpenAsync(output, cancellationToken: cancellationToken).ConfigureAwait(true);
