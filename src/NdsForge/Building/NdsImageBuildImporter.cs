@@ -12,6 +12,7 @@ internal static class NdsImageBuildImporter
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(image);
+        NdsDownloadPlaySignatureWriter.ValidateSource(image);
         byte[] arm9 = await ReadRegionAsync(image, image.Header.Arm9.Data, cancellationToken).ConfigureAwait(false);
         byte[] arm7 = await ReadRegionAsync(image, image.Header.Arm7.Data, cancellationToken).ConfigureAwait(false);
         var arm9Definition = new NdsProgramDefinition(
@@ -77,6 +78,7 @@ internal static class NdsImageBuildImporter
             Arm7i = arm7iDefinition,
             DsiMetadata = dsiMetadata,
             DsMetadata = image.Header.DsExtended is null ? null : NdsDsBuildMetadata.FromImage(image),
+            DownloadPlaySignature = image.DownloadPlaySignature,
             Arm9OverlayAuthentication = ImportOverlayAuthentication(image),
             Banner = image.Banner,
         };

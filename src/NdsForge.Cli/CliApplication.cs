@@ -184,6 +184,10 @@ internal static class CliApplication
         Console.WriteLine(
             $"Replaced {change.Path} ({change.OriginalLength:N0} -> {change.ReplacementLength:N0} bytes); " +
             $"{result.RelocatedFiles:N0} relocation(s), used size {FormatSize(result.UsedImageSize)}.");
+        foreach (NdsDiagnostic diagnostic in result.Diagnostics)
+        {
+            Console.Error.WriteLine($"{diagnostic.Severity} {diagnostic.Code}: {diagnostic.Message}");
+        }
         return 0;
     }
 

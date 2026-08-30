@@ -7,6 +7,10 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Detect bounded post-used Download Play signature trailers; preserve their exact
+  bytes across no-op copies, structural rebuilds, and relocated edits, with explicit
+  truncation and potentially stale-signature diagnostics. No trailer signing or
+  cryptographic verification is implied.
 - Preserve late-DS build metadata and relocate program-parameter pointers; require
   explicit authentication preservation, removal, or keyed regeneration for
   structural builds and preservation edits of authenticated images.

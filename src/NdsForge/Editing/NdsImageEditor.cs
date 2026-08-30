@@ -217,6 +217,7 @@ public sealed class NdsImageEditor
         options ??= NdsWriteOptions.Default;
         options.Validate();
         NdsDsEditAuthentication.Validate(_image, options, Plan.HasChanges, Header.GameCode, _bannerReplacement is not null || _image.Banner is not null);
+        if (Plan.HasChanges || options.DsIntegrity is not null) { NdsDownloadPlaySignatureWriter.ValidateSource(_image); }
         destination.Position = 0;
         destination.SetLength(0);
         using (Stream source = _image.OpenRead(new(0, _image.Length)))
@@ -275,12 +276,15 @@ public sealed class NdsImageEditor
 
         usedSize = Math.Max(usedSize, _image.Header.UsedImageSize);
         long physicalSize = NdsDsEditAuthentication.CompletePhysicalSize(_image, options, allocations, Math.Max(_image.Length, usedSize));
+        physicalSize = Math.Max(physicalSize, checked(usedSize + (_image.DownloadPlaySignature?.RawData.Length ?? 0)));
         await FillGapAsync(destination, physicalSize, options.PaddingByte, cancellationToken).ConfigureAwait(false);
         destination.SetLength(physicalSize);
+        await NdsDownloadPlaySignatureWriter.WriteAsync(destination, _image.DownloadPlaySignature, usedSize, cancellationToken).ConfigureAwait(false);
         byte[] header = await WriteMetadataAsync(destination, allocations, usedSize, bannerOffset, cancellationToken).ConfigureAwait(false);
         IReadOnlyList<NdsDiagnostic> diagnostics = _image.Header.DsExtended is null
             ? Array.Empty<NdsDiagnostic>()
             : await NdsDsHeaderWriter.FinalizeAsync(destination, header, options.DsIntegrity, cancellationToken).ConfigureAwait(false);
+        diagnostics = NdsDownloadPlaySignatureWriter.AppendDiagnostic(diagnostics, _image.DownloadPlaySignature, usedSize);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
 
         if (options.VerifyOutput)

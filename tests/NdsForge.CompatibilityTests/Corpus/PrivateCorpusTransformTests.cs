@@ -71,7 +71,13 @@ public sealed class PrivateCorpusTransformTests
     /// <summary>Allows only the exact padding needed to keep a final empty FAT entry inside the output image.</summary>
     private static void AssertCompatiblePhysicalExtent(long expectedLength, NdsImage rebuilt)
     {
-        if (expectedLength == rebuilt.Length)
+        long contentExtent = rebuilt.DownloadPlaySignatureRegion?.Offset ?? rebuilt.Length;
+        if (rebuilt.DownloadPlaySignatureRegion is NdsRegion signature)
+        {
+            Assert.Equal(signature.End, rebuilt.Length);
+        }
+
+        if (expectedLength == contentExtent)
         {
             return;
         }
@@ -82,8 +88,8 @@ public sealed class PrivateCorpusTransformTests
             .Max(static item => item.Data.Offset);
         Assert.Equal(expectedLength, lastPayloadEnd);
         Assert.Equal((expectedLength + 0x1FF) & ~0x1FFL, lastEmptyOffset);
-        Assert.Equal(lastEmptyOffset, rebuilt.Length);
-        Assert.Equal(rebuilt.Length, rebuilt.Header.UsedImageSize);
+        Assert.Equal(lastEmptyOffset, contentExtent);
+        Assert.Equal(contentExtent, rebuilt.Header.UsedImageSize);
     }
 
     /// <summary>Verifies the legacy ARM7 trainer insertion against ndstool for every exact input image.</summary>

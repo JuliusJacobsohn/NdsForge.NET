@@ -30,6 +30,14 @@ To request late-DS authenticity checks through `image.Validate`, set `NdsValidat
 
 The library does not emulate software, interpret instructions, edit save files, or decode game-specific archives and compression. An image can also contain publisher-specific data that NdsForge preserves as opaque regions rather than claiming to understand it.
 
+## Post-used Download Play signatures
+
+`NdsImage.DownloadPlaySignature` exposes the distinct 0x88-byte trailer conventionally stored at `Header.UsedImageSize`: a four-byte identifier, an opaque 128-byte RSA field, and a four-byte seed. `DownloadPlaySignatureRegion` identifies its physical extent. Detection reads only that bounded location; it never scans capacity padding for a matching byte sequence. An exact identifier with an incomplete payload produces `NDS1551`, and semantic writes reject that truncated state. An explicitly unverified no-op editor copy can still retain every source byte.
+
+Structural imports retain the trailer in `NdsImageBuilder.DownloadPlaySignature`. Builds place it at the new meaningful-image boundary without counting its bytes as meaningful content; DSi components, where present, follow it without overlap. Preservation edits also relocate it when their used-image boundary grows. Setting the builder property to null explicitly omits the stored trailer. Ordinary no-op saves remain byte-exact, including the trailer and subsequent padding.
+
+Semantic builds and edits that retain a trailer return `NDS1550`: the bytes were preserved without revalidation, and changes to the signed header or programs may make them stale. The CLI prints these save diagnostics. This is separate from both the ARM9 per-overlay records and the late-DS/DSi header signature at 0xF80. NdsForge does not generate or cryptographically verify this trailer; parsing, copying, and a structurally valid output are not claims that Download Play hardware will accept its signature.
+
 ## Reading untrusted images
 
 Treat image offsets, lengths, counts, names, and tables as attacker-controlled. Parsing uses checked arithmetic and `NdsReadOptions` limits before allocating table- or hierarchy-sized collections. Applications accepting uploads should select limits appropriate to their service rather than relying only on generous library defaults.

@@ -136,6 +136,11 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
+        if (builder.DownloadPlaySignature is not null)
+        {
+            await FillToAsync(destination, layout.UsedSize, paddingByte, cancellationToken).ConfigureAwait(false);
+            await NdsDownloadPlaySignatureWriter.WriteAsync(destination, builder.DownloadPlaySignature, layout.UsedSize, cancellationToken).ConfigureAwait(false);
+        }
         await FillToAsync(destination, layout.PhysicalSize, paddingByte, cancellationToken).ConfigureAwait(false);
         destination.SetLength(layout.PhysicalSize);
         byte[] header = NdsImageHeaderWriter.Write(builder, layout, content, options, digestResult);
@@ -144,6 +149,7 @@ internal static class NdsImageBuildWriter
         IReadOnlyList<NdsDiagnostic> diagnostics = builder.DsMetadata is null
             ? Array.Empty<NdsDiagnostic>()
             : await NdsDsHeaderWriter.FinalizeAsync(destination, header, builder.DsMetadata.Integrity, cancellationToken).ConfigureAwait(false);
+        diagnostics = NdsDownloadPlaySignatureWriter.AppendDiagnostic(diagnostics, builder.DownloadPlaySignature, layout.UsedSize);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
         if (options.VerifyOutput)
         {

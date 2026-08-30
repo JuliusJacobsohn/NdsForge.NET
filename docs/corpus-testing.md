@@ -65,6 +65,12 @@ an explicit failure before an output image is published. Rebuilt validation may 
 error but may not introduce a new error category. Imported modcrypt intervals
 anchored to a relocated Program are remapped to that Program's final offset.
 
+Fourteen images also contain a fixed Download Play signature trailer at the
+declared used-image boundary. Dedicated tests freeze its bytes against each input
+identity and require exact no-op copies plus preservation through rebuilds and
+header edits. Structural output-size comparison accounts separately for these
+136 retained post-used bytes; they are not part of the meaningful used extent.
+
 Some ndstool behavior must not become NdsForge's default:
 
 - ndstool 1.50.3 exports only the 512-byte common header and 2,112-byte legacy

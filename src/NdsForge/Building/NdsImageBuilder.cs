@@ -107,6 +107,9 @@ public sealed class NdsImageBuilder
     /// <summary>Preserves late-generation DS extension bytes, relative SDK pointers, and an explicit authentication write policy.</summary>
     public NdsDsBuildMetadata? DsMetadata { get; set; }
 
+    /// <summary>Retains an opaque stored Download Play trailer at the rebuilt used-image boundary; null explicitly omits it.</summary>
+    public NdsDownloadPlaySignature? DownloadPlaySignature { get; set; }
+
     /// <summary>
     /// Supplies classic-DS Download Play table repair settings. It is required when ARM9 overlay definitions retain
     /// their authentication bit and ignored for DSi images, whose digest hierarchy has separate semantics.

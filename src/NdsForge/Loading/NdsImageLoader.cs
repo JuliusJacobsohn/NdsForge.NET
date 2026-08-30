@@ -113,6 +113,7 @@ internal static class NdsImageLoader
         NdsOverlayAuthenticationTable? arm9OverlayAuthentication = NdsOverlayAuthenticationParser.Parse(
             source, header, arm9Overlays, options);
         NdsBanner? banner = NdsBannerParser.Parse(source, header.BannerOffset, options);
+        (NdsDownloadPlaySignature? signature, bool truncatedSignature) = NdsDownloadPlaySignatureParser.Parse(source, header);
         return new NdsImage(
             source,
             header,
@@ -120,7 +121,9 @@ internal static class NdsImageLoader
             arm9Overlays,
             arm7Overlays,
             arm9OverlayAuthentication,
-            banner);
+            banner,
+            signature,
+            truncatedSignature);
     }
 
     /// <summary>Runs asynchronous component parsers in dependency order against one validated source.</summary>
@@ -153,6 +156,8 @@ internal static class NdsImageLoader
             cancellationToken).ConfigureAwait(false);
         NdsBanner? banner = await NdsBannerParser.ParseAsync(
             source, header.BannerOffset, options, cancellationToken).ConfigureAwait(false);
+        (NdsDownloadPlaySignature? signature, bool truncatedSignature) = await NdsDownloadPlaySignatureParser.ParseAsync(
+            source, header, cancellationToken).ConfigureAwait(false);
         return new NdsImage(
             source,
             header,
@@ -160,7 +165,9 @@ internal static class NdsImageLoader
             arm9Overlays,
             arm7Overlays,
             arm9OverlayAuthentication,
-            banner);
+            banner,
+            signature,
+            truncatedSignature);
     }
 
     /// <summary>Reads a classic header or a declared late-DS/DSi 0x1000-byte extension.</summary>

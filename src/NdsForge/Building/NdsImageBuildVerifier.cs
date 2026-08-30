@@ -33,6 +33,12 @@ internal static class NdsImageBuildVerifier
                 $"Generated image verification failed: {string.Join("; ", validation.Diagnostics.Select(static item => item.Message))}");
         }
 
+        if (builder.DownloadPlaySignature is not null && (image.DownloadPlaySignature is null ||
+            !image.DownloadPlaySignature.RawData.Span.SequenceEqual(builder.DownloadPlaySignature.RawData.Span)))
+        {
+            throw new InvalidDataException("Generated Download Play signature trailer did not preserve its stored bytes.");
+        }
+
         foreach (NdsBuildFile expectedFile in fileSystem.FilesInIdOrder)
         {
             NdsFile actualFile = image.FileSystem.GetFile(expectedFile.Path);

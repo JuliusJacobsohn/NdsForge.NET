@@ -48,6 +48,12 @@ internal static class NdsImageValidator
         NdsSecureAreaValidator.Validate(image, diagnostics, options.SecureAreaKeyTable);
         NdsDsiIntegrityValidator.Validate(image, diagnostics, options);
         NdsDsIntegrityValidator.Validate(image, diagnostics, options);
+        if (image.HasTruncatedDownloadPlaySignature)
+        {
+            diagnostics.Add(new("NDS1551", NdsDiagnosticSeverity.Error,
+                "A Download Play trailer identifier is present, but its complete 0x88-byte payload extends beyond the image.",
+                new(image.Header.UsedImageSize, image.Length - image.Header.UsedImageSize)));
+        }
 
         return new NdsValidationResult(diagnostics);
     }

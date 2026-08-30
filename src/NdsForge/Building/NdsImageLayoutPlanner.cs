@@ -126,15 +126,17 @@ internal static class NdsImageLayoutPlanner
         NdsRegion blockHashTable = default;
         long usedSize;
         long physicalSize;
+        int signatureLength = builder.DownloadPlaySignature?.RawData.Length ?? 0;
         if (builder.Kind == NdsImageKind.NintendoDs)
         {
             physicalSize = Align(commonContentEnd, options.FileAlignment);
             usedSize = ndstoolProfile ? physicalSize : commonContentEnd;
+            physicalSize = Align(checked(usedSize + signatureLength), options.FileAlignment);
         }
         else
         {
             usedSize = Align(commonContentEnd, options.FileAlignment);
-            cursor = usedSize;
+            cursor = checked(usedSize + signatureLength);
             arm9i = Place(ref cursor, content.Arm9iData.Length, alignment: 0x400);
             arm7i = Place(ref cursor, content.Arm7iData.Length, options.SectionAlignment);
             if (builder.DsiMetadata!.Digests is not null)

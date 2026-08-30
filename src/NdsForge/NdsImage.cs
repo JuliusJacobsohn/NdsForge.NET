@@ -16,6 +16,8 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
     /// <param name="arm7Overlays">ARM7 table entries in encoded order.</param>
     /// <param name="arm9OverlayAuthentication">Decoded classic-DS Download Play records, or no declaration.</param>
     /// <param name="banner">Optional versioned menu metadata and icon.</param>
+    /// <param name="downloadPlaySignature">Optional complete signature trailer at the declared used-image boundary.</param>
+    /// <param name="truncatedDownloadPlaySignature">Records an exact identifier whose fixed payload extends past physical EOF.</param>
     internal NdsImage(
         IImageDataSource source,
         NdsHeader header,
@@ -23,7 +25,9 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         IReadOnlyList<NdsOverlay> arm9Overlays,
         IReadOnlyList<NdsOverlay> arm7Overlays,
         NdsOverlayAuthenticationTable? arm9OverlayAuthentication,
-        NdsBanner? banner)
+        NdsBanner? banner,
+        NdsDownloadPlaySignature? downloadPlaySignature,
+        bool truncatedDownloadPlaySignature)
     {
         _source = source;
         Header = header;
@@ -32,6 +36,8 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
         Arm7Overlays = arm7Overlays;
         Arm9OverlayAuthentication = arm9OverlayAuthentication;
         Banner = banner;
+        DownloadPlaySignature = downloadPlaySignature;
+        HasTruncatedDownloadPlaySignature = truncatedDownloadPlaySignature;
     }
 
     /// <summary>Preserves both typed DS/DSi fields and the raw bytes required for checksums and lossless edits.</summary>
@@ -51,6 +57,15 @@ public sealed class NdsImage : IDisposable, IAsyncDisposable
 
     /// <summary>Gets the parsed menu banner, or <see langword="null"/> when absent.</summary>
     public NdsBanner? Banner { get; }
+
+    /// <summary>Retains a complete opaque signature trailer at <see cref="NdsHeader.UsedImageSize"/>, without claiming cryptographic trust.</summary>
+    public NdsDownloadPlaySignature? DownloadPlaySignature { get; }
+
+    /// <summary>Locates the complete post-used trailer without including following capacity padding.</summary>
+    public NdsRegion? DownloadPlaySignatureRegion => DownloadPlaySignature is null ? null : new(Header.UsedImageSize, NdsDownloadPlaySignature.ByteLength);
+
+    /// <summary>Allows validation and writers to distinguish a recognized truncated trailer from ordinary trailing bytes.</summary>
+    internal bool HasTruncatedDownloadPlaySignature { get; }
 
     /// <summary>Reports physical source bytes, which may exceed the header's used-ROM size because cartridges are capacity padded.</summary>
     public long Length => _source.Length;

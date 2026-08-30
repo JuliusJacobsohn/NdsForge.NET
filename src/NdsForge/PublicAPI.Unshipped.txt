@@ -1,4 +1,14 @@
 #nullable enable
+NdsForge.NdsImageBuilder.DownloadPlaySignature.get -> NdsForge.NdsDownloadPlaySignature?
+NdsForge.NdsImageBuilder.DownloadPlaySignature.set -> void
+NdsForge.NdsDownloadPlaySignature
+const NdsForge.NdsDownloadPlaySignature.ByteLength = 136 -> int
+NdsForge.NdsDownloadPlaySignature.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDownloadPlaySignature.Signature.get -> System.ReadOnlyMemory<byte>
+NdsForge.NdsDownloadPlaySignature.Seed.get -> uint
+static NdsForge.NdsDownloadPlaySignature.Parse(System.ReadOnlySpan<byte> bytes) -> NdsForge.NdsDownloadPlaySignature!
+NdsForge.NdsImage.DownloadPlaySignature.get -> NdsForge.NdsDownloadPlaySignature?
+NdsForge.NdsImage.DownloadPlaySignatureRegion.get -> NdsForge.NdsRegion?
 NdsForge.NdsWriteOptions.DsIntegrity.get -> NdsForge.NdsDsIntegrityOptions?
 NdsForge.NdsWriteOptions.DsIntegrity.init -> void
 NdsForge.NdsSaveResult.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsDiagnostic!>!

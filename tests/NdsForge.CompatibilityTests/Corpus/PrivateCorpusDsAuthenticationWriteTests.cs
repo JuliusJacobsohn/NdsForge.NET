@@ -53,7 +53,7 @@ public sealed class PrivateCorpusDsAuthenticationWriteTests
                     }
 
                     NdsImageBuildResult result = await builder.WriteAsync(destination, new() { OverwriteDestination = true }, token).ConfigureAwait(true);
-                    Assert.Empty(result.Diagnostics);
+                    Assert.All(result.Diagnostics, static item => Assert.Equal("NDS1550", item.Code));
                     using NdsImage output = await NdsImage.OpenAsync(destination, cancellationToken: token).ConfigureAwait(true);
                     NdsValidationResult checkedOutput = output.Validate(validation);
                     Assert.True(checkedOutput.IsValid, string.Join("; ", checkedOutput.Diagnostics.Select(static item => item.Message)));

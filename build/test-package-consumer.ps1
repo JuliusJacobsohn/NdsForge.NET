@@ -104,6 +104,16 @@ NdsSaveResult authenticatedEdit = await authenticatedImage.Edit().ReplaceBanner(
 using NdsImage editedImage = NdsImage.Load(editedStream.ToArray());
 if (authenticatedEdit.Diagnostics.Count != 0 || !editedImage.Validate(new NdsValidationOptions().SetDsBannerHmacKey(authenticationKey)).IsValid)
     throw new InvalidOperationException("Late-DS editor package consumer failed.");
+byte[] storedTrailer = new byte[NdsDownloadPlaySignature.ByteLength];
+new byte[] { 0x61, 0x63, 1, 0 }.CopyTo(storedTrailer, 0);
+builder.DownloadPlaySignature = NdsDownloadPlaySignature.Parse(storedTrailer);
+using var trailerStream = new MemoryStream();
+NdsImageBuildResult trailerResult = await builder.WriteAsync(trailerStream);
+using NdsImage trailerImage = NdsImage.Load(trailerStream.ToArray());
+if (!trailerImage.DownloadPlaySignature!.RawData.Span.SequenceEqual(storedTrailer) ||
+    trailerImage.DownloadPlaySignatureRegion!.Value.Offset != trailerResult.UsedSize ||
+    !trailerResult.Diagnostics.Any(diagnostic => diagnostic.Code == "NDS1550"))
+    throw new InvalidOperationException("Download Play trailer package consumer failed.");
 byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
 if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
     throw new InvalidOperationException("Nitro package consumer round trip failed.");

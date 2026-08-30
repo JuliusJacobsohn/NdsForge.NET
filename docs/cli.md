@@ -32,3 +32,9 @@ ndsforge diff <left.nds> <right.nds>
 | `130` | The operation was canceled. |
 
 The CLI is a thin client over NdsForge. Applications needing filtered extraction, custom validation policy, in-memory I/O, or build composition should use the library API directly.
+
+`replace` prints save warnings to standard error, including retained Download Play
+trailers whose signature may become stale after covered data changes. A successful
+structural save does not imply signature authenticity. Images declaring late-DS
+authentication require an explicit write policy through the library API; the CLI
+does not silently preserve, remove, or regenerate those authenticated fields.
