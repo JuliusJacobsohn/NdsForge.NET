@@ -1,3 +1,4 @@
+using System.Numerics;
 using System.Security.Cryptography;
 
 namespace NdsForge;
@@ -8,7 +9,7 @@ namespace NdsForge;
 /// </summary>
 public sealed class NdsDsiRsaPublicKey
 {
-    /// <summary>Retains an independent big-endian modulus copy for thread-safe per-call RSA instances.</summary>
+    /// <summary>Retains an independent big-endian modulus copy for per-call public arithmetic.</summary>
     private readonly byte[] _modulus;
     /// <summary>Retains the caller's positive big-endian public exponent without assuming 65537.</summary>
     private readonly byte[] _exponent;
@@ -18,9 +19,17 @@ public sealed class NdsDsiRsaPublicKey
     /// <param name="exponent">Non-empty positive public exponent, commonly <c>01 00 01</c>.</param>
     public NdsDsiRsaPublicKey(ReadOnlySpan<byte> modulus, ReadOnlySpan<byte> exponent)
     {
-        if (modulus.Length != 128 || exponent.IsEmpty)
+        if (modulus.Length != 128 || exponent.IsEmpty || exponent.Length > 128)
         {
             throw new ArgumentException("A DSi RSA key requires a 128-byte modulus and a non-empty exponent.");
+        }
+
+        var modulusValue = new BigInteger(modulus, isUnsigned: true, isBigEndian: true);
+        var exponentValue = new BigInteger(exponent, isUnsigned: true, isBigEndian: true);
+        if ((modulus[0] & 0x80) == 0 || modulusValue.IsEven || exponentValue.IsEven ||
+            exponentValue <= BigInteger.One || exponentValue >= modulusValue)
+        {
+            throw new ArgumentException("A cartridge RSA key requires an odd 1024-bit modulus and a valid odd public exponent.");
         }
 
         _modulus = modulus.ToArray();
@@ -48,21 +57,29 @@ public sealed class NdsDsiRsaPublicKey
     /// <summary>Exports the conventional big-endian public exponent without exposing internal mutable storage.</summary>
     public ReadOnlyMemory<byte> Exponent => _exponent.ToArray();
 
-    /// <summary>Verifies the format-mandated RSA-SHA1 PKCS#1 v1.5 signature over a finalized header prefix.</summary>
+    /// <summary>Verifies the cartridge's RSA type-one padded raw SHA-1 signature, without an ASN.1 DigestInfo wrapper.</summary>
     /// <param name="signedHeader">Exactly 0xE00 bytes from header offset zero.</param>
     /// <param name="signature">Exactly 128 on-disk signature bytes.</param>
     /// <returns><see langword="true"/> only when the signature matches this caller-trusted key.</returns>
     public bool VerifyHeader(ReadOnlySpan<byte> signedHeader, ReadOnlySpan<byte> signature)
     {
         ValidateBuffers(signedHeader, signature);
-        using RSA rsa = RSA.Create();
-        rsa.ImportParameters(new() { Modulus = _modulus, Exponent = _exponent });
-#pragma warning disable CA5350, CA5387 // DSi headers mandate RSA-SHA1 with PKCS#1 v1.5; this type is format-specific.
-        return rsa.VerifyData(signedHeader, signature, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
-#pragma warning restore CA5350, CA5387
+        var value = new BigInteger(signature, isUnsigned: true, isBigEndian: true);
+        var modulus = new BigInteger(_modulus, isUnsigned: true, isBigEndian: true);
+        if (value >= modulus)
+        {
+            return false;
+        }
+
+        var exponent = new BigInteger(_exponent, isUnsigned: true, isBigEndian: true);
+        byte[] recovered = BigInteger.ModPow(value, exponent, modulus).ToByteArray(isUnsigned: true, isBigEndian: true);
+        Span<byte> padded = stackalloc byte[128];
+        padded.Clear();
+        recovered.CopyTo(padded[(128 - recovered.Length)..]);
+        return CryptographicOperations.FixedTimeEquals(padded, NdsRsaEncodedMessage.Create(signedHeader));
     }
 
-    /// <summary>Applies exact structure sizes before invoking platform cryptography.</summary>
+    /// <summary>Applies exact structure sizes before decoding the signature.</summary>
     /// <param name="signedHeader">Candidate signed prefix.</param>
     /// <param name="signature">Candidate RSA field.</param>
     private static void ValidateBuffers(ReadOnlySpan<byte> signedHeader, ReadOnlySpan<byte> signature)

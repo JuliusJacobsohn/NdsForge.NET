@@ -6,6 +6,12 @@ namespace NdsForge;
 /// Snapshots a managed RSA-1024 private key for deterministic DSi header signing. Dispose the provider after its
 /// build recipes finish so copied private parameters are cleared; the source <see cref="RSA"/> remains caller-owned.
 /// </summary>
+/// <remarks>
+/// Uses the cartridge's raw SHA-1 encoding with randomized input/exponent blinding and a public-key result check.
+/// Managed arbitrary-precision arithmetic does not promise constant-time execution or erasure of all temporary
+/// mathematical values. For hostile shared-host or signing-service use, supply an <see cref="INdsDsiSignatureProvider"/>
+/// backed by an appropriately isolated native or hardware signer instead.
+/// </remarks>
 public sealed class NdsDsiRsaSignatureProvider : INdsDsiSignatureProvider, IDisposable
 {
     /// <summary>Contains independent private parameters until disposal clears every component array.</summary>
@@ -24,9 +30,10 @@ public sealed class NdsDsiRsaSignatureProvider : INdsDsiSignatureProvider, IDisp
         }
 
         _parameters = rsa.ExportParameters(includePrivateParameters: true);
-        if (_parameters.D is null)
+        if (_parameters.D is null || _parameters.P is null || _parameters.Q is null)
         {
-            throw new ArgumentException("The RSA object does not expose a private signing key.", nameof(rsa));
+            Dispose();
+            throw new ArgumentException("The RSA object does not expose complete private signing parameters.", nameof(rsa));
         }
     }
 
@@ -39,15 +46,7 @@ public sealed class NdsDsiRsaSignatureProvider : INdsDsiSignatureProvider, IDisp
             throw new ArgumentException("DSi signing requires a 0xE00-byte header prefix and 128-byte destination.");
         }
 
-        using RSA rsa = RSA.Create();
-        rsa.ImportParameters(_parameters);
-#pragma warning disable CA5350, CA5387 // The legacy DSi signature format fixes SHA-1 and PKCS#1 v1.5.
-        if (!rsa.TrySignData(signedHeader, destination, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1, out int written) ||
-            written != destination.Length)
-#pragma warning restore CA5350, CA5387
-        {
-            throw new CryptographicException("The RSA provider did not produce the required 128-byte DSi signature.");
-        }
+        NdsRsaPrivateOperation.Sign(NdsRsaEncodedMessage.Create(signedHeader), _parameters, destination);
     }
 
     /// <summary>Clears all copied private and public RSA components and permanently disables signing.</summary>

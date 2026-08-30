@@ -56,7 +56,7 @@ public sealed class NdsDsExtendedHeader
 
     /// <summary>Verifies the stored signature against caller-selected RSA-1024 trust material.</summary>
     /// <param name="publicKey">Caller-trusted key; NdsForge does not bundle or infer one.</param>
-    /// <returns><see langword="true"/> when the stored PKCS#1 v1.5 RSA-SHA1 value matches.</returns>
+    /// <returns><see langword="true"/> when the stored type-one padded raw-SHA1 RSA value matches.</returns>
     public bool VerifyRsaSignature(NdsDsiRsaPublicKey publicKey)
     {
         ArgumentNullException.ThrowIfNull(publicKey);

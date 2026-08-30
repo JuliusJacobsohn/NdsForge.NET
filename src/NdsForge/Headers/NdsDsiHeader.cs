@@ -207,7 +207,7 @@ public sealed class NdsDsiHeader
     /// <c>0x000</c>-<c>0xDFF</c>. A true result establishes authenticity only relative to that caller trust choice.
     /// </summary>
     /// <param name="publicKey">Caller-trusted RSA-1024 key.</param>
-    /// <returns><see langword="true"/> when the PKCS#1 v1.5 RSA-SHA1 signature matches.</returns>
+    /// <returns><see langword="true"/> when the type-one padded raw-SHA1 RSA signature matches.</returns>
     public bool VerifyRsaSignature(NdsDsiRsaPublicKey publicKey)
     {
         ArgumentNullException.ThrowIfNull(publicKey);

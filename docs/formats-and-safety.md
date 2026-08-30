@@ -26,6 +26,8 @@ Extraction applies portable host-name rules and rejects traversal, collisions, a
 
 CRCs, hashes, digest trees, HMACs, and RSA signatures answer different questions. A matching checksum establishes consistency with the stored checksum; it does not establish who produced the image. Authenticity validation requires a public key or secret material supplied by the caller where the format requires it.
 
+Cartridge header RSA signatures cover the first 0xE00 bytes and use a 1024-bit type-one padded raw SHA-1 digest, without the ASN.1 `DigestInfo` wrapper used by ordinary SHA-1 RSA signature APIs. Verification checks the complete encoded block, including its padding. `NdsDsiRsaSignatureProvider` supports that native encoding with randomized input and exponent blinding and checks each result with the public exponent before publishing it. Its managed arbitrary-precision arithmetic does not guarantee constant-time execution or erasure of every temporary mathematical value. For a signing service or hostile shared-host environment, supply an isolated native or hardware implementation of `INdsDsiSignatureProvider` instead. Signing with a caller's key does not confer trust from a console or publisher.
+
 NdsForge contains no boot ROM data, KEY1 tables, retail trust keys, private keys, certificates, or proprietary logo data. A structural import may temporarily retain key bytes already embedded in the caller's ARM9 program solely to maintain its own verified Download Play records. Key-bearing APIs copy caller input into private buffers and do not include it in manifests or diagnostic messages. Callers remain responsible for secure key storage, access control, and disposal of their own copies.
 
 ## ndstool interoperability

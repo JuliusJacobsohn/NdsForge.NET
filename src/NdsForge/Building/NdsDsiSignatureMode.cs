@@ -12,6 +12,6 @@ public enum NdsDsiSignatureMode
     /// </summary>
     NoGbaDevelopmentMarker,
 
-    /// <summary>Uses an application-supplied provider to produce a real RSA-1024 SHA-1 PKCS#1 v1.5 signature.</summary>
+    /// <summary>Uses an application-supplied provider for RSA-1024 type-one padding over raw SHA-1 without ASN.1.</summary>
     RsaSha1,
 }
