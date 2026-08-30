@@ -155,7 +155,7 @@ public sealed class NclrPalette
             cursor += blockLength;
         }
 
-        if (cursor != fileLength || colors is null || depth is null)
+        if (!NitroStandardFilePadding.IsValid(data, cursor, fileLength) || colors is null || depth is null)
         {
             throw new InvalidDataException("The NCLR blocks do not cover the declared file or no PLTT block exists.");
         }

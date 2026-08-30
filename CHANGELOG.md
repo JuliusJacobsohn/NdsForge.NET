@@ -50,6 +50,12 @@ All notable changes to NdsForge.NET are documented here. The project follows
   debug ranges, and include the expanded header semantics in JSON manifests and
   semantic image comparison.
 
+### Fixed
+
+- Accept bounded zero alignment fill at the declared end of NCLR, NCER, and
+  NANR resources while continuing to reject nonzero or excessive fill.
+- Preserve unknown NCER character-mapping values through parsing and writing.
+
 ## 1.0.1 - 2026-08-18
 
 ### Changed

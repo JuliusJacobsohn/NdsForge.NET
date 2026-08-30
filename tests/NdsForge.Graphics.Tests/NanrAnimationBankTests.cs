@@ -79,6 +79,22 @@ public sealed class NanrAnimationBankTests
         Assert.Contains("payload", error.Message, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void ParseAcceptsOnlyZeroFilledDeclaredAlignmentPadding()
+    {
+        byte[] canonical = CreateNanr();
+        int alignedLength = (canonical.Length + 3) & ~3;
+        byte[] padded = new byte[alignedLength];
+        canonical.CopyTo(padded, 0);
+        BinaryPrimitives.WriteUInt32LittleEndian(padded.AsSpan(8), (uint)padded.Length);
+
+        NanrAnimationBank bank = NanrAnimationBank.Parse(padded);
+
+        Assert.Equal(padded, bank.WritePreserved());
+        padded[^1] = 1;
+        Assert.Throws<InvalidDataException>(() => NanrAnimationBank.Parse(padded));
+    }
+
     private static void AssertFrame(NanrFrame frame, uint offset, ushort duration, ushort flags, ushort cell)
     {
         Assert.Equal(offset, frame.DataOffset);

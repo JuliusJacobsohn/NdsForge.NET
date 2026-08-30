@@ -63,7 +63,8 @@ public sealed class NcerCellBank
             blocks.Add((cursor, (int)size));
             cursor += (int)size;
         }
-        if (cursor != fileLength) throw new InvalidDataException("NCER blocks do not cover the declared file.");
+        if (!NitroStandardFilePadding.IsValid(data, cursor, fileLength))
+            throw new InvalidDataException("NCER blocks do not cover the declared file or valid alignment padding.");
 
         (int Offset, int Length) cebk = FindBlock(data, blocks, "KBEC"u8);
         if (cebk.Length < 0x20) throw new InvalidDataException("The NCER has no valid CEBK block.");
@@ -72,7 +73,6 @@ public sealed class NcerCellBank
         ushort attributes = BinaryPrimitives.ReadUInt16LittleEndian(data[(body + 2)..]);
         uint rawCellsOffset = BinaryPrimitives.ReadUInt32LittleEndian(data[(body + 4)..]);
         int rawMapping = BinaryPrimitives.ReadInt32LittleEndian(data[(body + 8)..]);
-        if (rawMapping is < 0 or > 4) throw new InvalidDataException("The NCER mapping mode is unsupported.");
         uint extendedOffset = BinaryPrimitives.ReadUInt32LittleEndian(data[(body + 20)..]);
         int recordSize = (attributes & 1) != 0 ? 0x10 : 0x08;
         if (rawCellsOffset > cebk.Length - 8 || count > (cebk.Length - 8 - rawCellsOffset) / recordSize)

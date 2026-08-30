@@ -44,6 +44,24 @@ public sealed class NclrPaletteTests
     }
 
     [Fact]
+    public void AcceptsOnlyZeroFilledDeclaredAlignmentPadding()
+    {
+        byte[] canonical = NclrPalette.Create(
+            NitroColorDepth.Indexed4Bpp,
+            [new(0)]).CreateBuilder().Build();
+        int alignedLength = (canonical.Length + 3) & ~3;
+        byte[] padded = new byte[alignedLength];
+        canonical.CopyTo(padded, 0);
+        System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(padded.AsSpan(8), (uint)padded.Length);
+
+        NclrPalette palette = NclrPalette.Parse(padded);
+
+        Assert.Equal(padded, palette.CreateBuilder().Build());
+        padded[^1] = 1;
+        Assert.Throws<InvalidDataException>(() => NclrPalette.Parse(padded));
+    }
+
+    [Fact]
     public void RejectsTruncatedBlocksUnsupportedDepthAndOutOfRangeMapping()
     {
         byte[] valid = NclrPalette.Create(

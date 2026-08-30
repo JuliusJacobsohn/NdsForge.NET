@@ -74,7 +74,8 @@ public sealed class NanrAnimationBank
             blocks.Add((cursor, (int)rawBlockLength));
             cursor += (int)rawBlockLength;
         }
-        if (cursor != fileLength) throw new InvalidDataException("NANR blocks do not cover the declared file.");
+        if (!NitroStandardFilePadding.IsValid(data, cursor, fileLength))
+            throw new InvalidDataException("NANR blocks do not cover the declared file or valid alignment padding.");
 
         (int Offset, int Length) abnk = FindBlock(data, blocks, "KNBA"u8);
         if (abnk.Length < 0x20) throw new InvalidDataException("The NANR has no valid ABNK block.");

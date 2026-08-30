@@ -21,6 +21,11 @@ File.WriteAllBytes("icon-edited.NCLR", edited);
 
 NCLR parsing validates the standard header, PLTT bounds and color depth, and optional PCMP target-palette map. The declared color byte count is exposed because some producers leave it inconsistent; the bounded PLTT section and data offset determine the actual stored words. Preservation builds retain unknown blocks, padding, and allocation trailing bytes, while canonical builds emit deterministic PLTT/PCMP structures.
 
+NCLR, NCER, and NANR accept up to three zero bytes after the final block when
+these bytes align the declared file length to four bytes. Nonzero or excessive
+declared padding is rejected; allocation bytes beyond the declared length
+remain preserved separately.
+
 The private compatibility suite covers all 4,006 direct NCLR files and 1,042,096 colors in the ROM corpus. Every file must preserve exactly and canonically rebuild/reparse. Color expansion, depth, extended-palette state, target mapping, palette partitioning, and every interpreted color are locked to a reviewed compatibility baseline.
 
 ## NCGR tiles and NSCR maps
@@ -48,6 +53,10 @@ Differential verification covers 5,035 valid NCGR files containing 126,167,104 i
 ## NCER sprite cells and OAM
 
 `NcerCellBank` reads bounded CEBK cell tables, optional boundaries and UACT values, all three exact OAM words, object-character mapping metadata, and opaque LABL/UEXT payloads. `NitroObjectEntry` projects signed coordinates, every legal hardware size/shape, depth, priority, palette, flip, affine group, mosaic, disabled/double-size state, and rendering mode without discarding reserved bits. Builders can patch one OAM object byte-exactly or emit a deterministic NCER while retaining ambiguous label data opaquely.
+
+Unknown object-character mapping values remain available through the enum's
+raw integer value and survive both preserved and canonical builds. Preserving
+an unknown value does not imply that a renderer can interpret that mapping.
 
 The corpus test covers 3,126 NCER files, 50,509 cells, and 178,097 objects. All typed OAM fields are locked to a reviewed compatibility baseline, while exact raw-word digests, no-op preservation, opaque auxiliary blocks, cell bounds, and canonical reparse are independently locked by the NdsForge suite.
 
