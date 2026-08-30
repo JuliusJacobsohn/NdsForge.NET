@@ -1,4 +1,7 @@
 #nullable enable
+NdsForge.NdsDsAuthentication
+static NdsForge.NdsDsAuthentication.ComputeOverlayHmac(NdsForge.NdsImage! image, System.ReadOnlySpan<byte> key) -> byte[]!
+static NdsForge.NdsDsAuthentication.GetOverlayHashRegions(NdsForge.NdsImage! image) -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsRegion>!
 NdsForge.NdsDebugProgramDefinition
 NdsForge.NdsDebugProgramDefinition.Contents.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsDebugProgramDefinition.LoadAddress.get -> uint

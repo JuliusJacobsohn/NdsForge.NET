@@ -15,6 +15,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Parse classic-DS Download Play HMAC tables from plain or BLZ ARM9 programs,
   validate embedded or caller-supplied keys, and atomically repair records when
   overlays are replaced or deterministically recompressed.
+- Expose late-DS aggregate overlay authentication coverage and calculate its
+  HMAC with caller-supplied credentials, including FAT order, physical sector
+  padding, and the shared payload budget. Reject unsupported sparse selections.
 - Add the dependency-free `NdsForge.Nitro` companion package and independently
   implemented BLZ inspection, bounded decompression, and deterministic
   compression APIs.
