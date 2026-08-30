@@ -7,6 +7,10 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Request an explicit cartridge capacity independently from physical output size,
+  or pad structural builds to the selected capacity without changing used-size
+  declarations. Reject undersized, nonrepresentable, digital-carrier, and
+  contiguous-memory-incompatible requests before destination mutation.
 - Expose physical size, common and DSi used-size declarations, checked device
   capacity, declared content extent, and unclassified trailing ranges separately.
   Include trailers and authentication coverage, and diagnose missing content or

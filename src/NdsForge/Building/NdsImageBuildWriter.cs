@@ -28,8 +28,10 @@ internal static class NdsImageBuildWriter
         NdsImageBuildContent content = NdsImageBuildContentPreparer.Prepare(builder, options);
         NdsImageBuildLayout layout = NdsImageLayoutPlanner.Plan(builder, content, options);
         layout = NdsDsHeaderWriter.CompleteLayout(builder, content, layout, options);
+        layout = NdsImageCapacityPlanner.Apply(builder, layout, options, destination);
         byte[] fat = BuildFat(layout.FileRegions);
 
+        cancellationToken.ThrowIfCancellationRequested();
         destination.Position = 0;
         destination.SetLength(0);
         byte paddingByte = options.Profile == NdsImageBuildProfile.Ndstool1503 ? (byte)0 : options.PaddingByte;
@@ -113,7 +115,7 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
-        await FillToAsync(destination, layout.PhysicalSize, paddingByte, cancellationToken).ConfigureAwait(false);
+        await FillToAsync(destination, layout.ContentSize, paddingByte, cancellationToken).ConfigureAwait(false);
         NdsDsiDigestBuildResult? digestResult = null;
         if (builder.DsiMetadata?.Digests is not null)
         {
@@ -142,7 +144,8 @@ internal static class NdsImageBuildWriter
             await FillToAsync(destination, layout.UsedSize, paddingByte, cancellationToken).ConfigureAwait(false);
             await NdsDownloadPlaySignatureWriter.WriteAsync(destination, builder.DownloadPlaySignature, layout.UsedSize, cancellationToken).ConfigureAwait(false);
         }
-        await FillToAsync(destination, layout.PhysicalSize, paddingByte, cancellationToken).ConfigureAwait(false);
+        await FillToAsync(destination, layout.ContentSize, paddingByte, cancellationToken).ConfigureAwait(false);
+        await FillToAsync(destination, layout.PhysicalSize, options.PaddingByte, cancellationToken).ConfigureAwait(false);
         destination.SetLength(layout.PhysicalSize);
         byte[] header = NdsImageHeaderWriter.Write(builder, layout, content, options, digestResult);
         destination.Position = 0;

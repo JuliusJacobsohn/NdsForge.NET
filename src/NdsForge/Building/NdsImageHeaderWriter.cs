@@ -36,7 +36,7 @@ internal static class NdsImageHeaderWriter
         header[0x12] = (byte)builder.Kind;
         header[0x13] = builder.EncryptionSeedSelect;
         header[0x14] = builder.Carrier == NdsImageCarrier.DigitalSrl && builder.ImportedDigitalCapacity is byte capacity
-            ? capacity : CalculateDeviceCapacity(layout.PhysicalSize);
+            ? capacity : CalculateDeviceCapacity(options.RequestedDeviceCapacityBytes ?? layout.PhysicalSize);
         header[0x1D] = builder.RegionCode;
         header[0x1C] = builder.DsiMetadata?.DsiFlags ?? builder.DsMetadata?.DsiFlags ?? 0;
         header[0x1E] = builder.Version;

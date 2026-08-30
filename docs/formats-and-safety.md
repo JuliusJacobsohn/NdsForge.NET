@@ -58,6 +58,46 @@ Inventory manifests retain the raw exponent and use zero for an unrepresentable
 non-nullable capacity byte count; inspection diagnostics explain the invalid value.
 This inspection API does not itself resize or discard any bytes.
 
+### Structural capacity and padding
+
+`NdsImageBuildOptions.RequestedDeviceCapacityBytes` selects a header capacity,
+not an output length. It accepts exact powers of two from 128 KiB through 4 GiB;
+null selects the smallest capacity containing the complete structural layout.
+Requests smaller than the layout fail before stream truncation, including when
+DSi-only regions, an opaque trailer, or authentication coverage cause the excess.
+Individual content offsets and used-size fields still have their 32-bit limits.
+
+`PadToDeviceCapacity = true` additionally extends a cartridge image to that
+capacity. The added tail uses `PaddingByte` (default `0xFF`), including when a
+compatibility profile uses another byte for interior gaps. Padding never changes
+the common used-size field, the DSi total-used field, or component positions.
+Header checksums and explicitly requested authentication are generated after the
+capacity byte is finalized. A requested larger header capacity with padding
+disabled remains a compact file. Both options default to the previous compact
+structural-build behavior.
+
+```csharp
+var options = new NdsImageBuildOptions
+{
+    RequestedDeviceCapacityBytes = 32L * 1024 * 1024,
+    PadToDeviceCapacity = true,
+    PaddingByte = 0xFF,
+};
+await builder.WriteAsync("full-capacity.nds", options);
+```
+
+Digital SRL builds reject these explicit cartridge-only requests; their imported
+capacity byte is informational and remains preserved independently from file
+length. Contiguous `MemoryStream`/`BuildAsync` outputs larger than the runtime's
+array limit are rejected before allocation; use a file/seekable stream for large
+outputs. File writes retain the atomic path-overwrite contract. Arbitrary streams
+can still fail during I/O or allocation and are not transactional.
+
+These options construct a new layout. They do not preserve an input image's
+unknown trailing bytes and are not an in-place trim operation. Use the existing
+no-op preservation save when every original byte must survive. Dedicated
+source-preserving trim/expansion and CLI build policies are separate capabilities.
+
 `NdsImage.CarrierLayout` distinguishes `NdsCartridgeLayout`, `NdsDigitalSrlLayout`, and `NdsUnknownCarrierLayout`. Storage carrier and `Header.Kind` are separate: the latter describes execution mode. Detection uses executable title categories and declared layout, never the filename extension. An absent title category retains ordinary cartridge/homebrew conventions. Unsupported categories and digital titles with nonzero cartridge access boundaries produce explicit errors rather than an inferred digital layout.
 
 `PostHeaderData` retains independently reserved bytes at 0x1000–0x3FFF for either carrier. It is never read beyond physical EOF, nor treated as opaque reservation when it overlaps a declared program, table, banner, or allocation. Digital titles require the complete reservation; truncation, absence, and overlap produce `NDS1561`. Contradictory access boundaries produce `NDS1560`; unsupported or non-executable title categories produce `NDS1562`. Semantic writes reject malformed/unresolved carrier layouts before destination mutation. An explicitly unverified no-op preservation save can still copy the original bytes exactly, retaining existing validation findings.

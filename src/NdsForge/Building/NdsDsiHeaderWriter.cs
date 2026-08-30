@@ -40,7 +40,7 @@ internal static class NdsDsiHeaderWriter
         metadata.SharedDataFileSizes.Span[..2].CopyTo(header[0x20C..0x20E]);
         header[0x20E] = metadata.EulaVersion;
         header[0x20F] = metadata.AgeRatingsUsage;
-        NdsBinary.WriteUInt32(header, 0x210, checked((uint)layout.PhysicalSize));
+        NdsBinary.WriteUInt32(header, 0x210, checked((uint)layout.ContentSize));
         metadata.SharedDataFileSizes.Span[2..].CopyTo(header[0x214..0x218]);
         WriteRegion(header, 0x220, metadata.ResolveModcryptArea(metadata.ModcryptArea1, first: true, layout));
         WriteRegion(header, 0x228, metadata.ResolveModcryptArea(metadata.ModcryptArea2, first: false, layout));

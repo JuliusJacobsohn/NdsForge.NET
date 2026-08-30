@@ -39,4 +39,8 @@ internal sealed record NdsImageBuildLayout(
     NdsRegion SectorHashTable,
     NdsRegion BlockHashTable,
     long UsedSize,
-    long PhysicalSize);
+    long PhysicalSize)
+{
+    /// <summary>Retains the complete aligned layout before optional device-capacity padding is added.</summary>
+    public long ContentSize { get; init; } = PhysicalSize;
+}

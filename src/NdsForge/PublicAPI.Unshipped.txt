@@ -1,4 +1,8 @@
 #nullable enable
+NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.get -> long?
+NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.init -> void
+NdsForge.NdsImageBuildOptions.PadToDeviceCapacity.get -> bool
+NdsForge.NdsImageBuildOptions.PadToDeviceCapacity.init -> void
 NdsForge.NdsManifestHeader.DeviceCapacityExponent.get -> byte
 NdsForge.NdsManifestHeader.DeviceCapacityExponent.init -> void
 NdsForge.NdsImage.SizeInfo.get -> NdsForge.NdsImageSizeInfo!

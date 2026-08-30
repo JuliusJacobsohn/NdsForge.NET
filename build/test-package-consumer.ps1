@@ -72,6 +72,19 @@ if (image.Header.GameCode != "CS01" || image.FileSystem.GetFile("/hello.txt").Da
 if (image.SizeInfo.PhysicalSize != bytes.Length || image.SizeInfo.DeviceCapacityBytes != 131072 ||
     image.SizeInfo.DeclaredContentEnd > bytes.Length || image.SizeInfo.Diagnostics.Count != 0)
     throw new InvalidOperationException("Size inspection package consumer failed.");
+byte[] capacityBytes = await builder.BuildAsync(new()
+{
+    RequestedDeviceCapacityBytes = 0x40000,
+    PadToDeviceCapacity = true,
+    PaddingByte = 0xA5,
+});
+using (NdsImage capacityImage = NdsImage.Load(capacityBytes))
+{
+    if (capacityBytes.Length != 0x40000 || capacityImage.Header.DeviceCapacityBytes != 0x40000 ||
+        capacityImage.Header.UsedImageSize != image.Header.UsedImageSize || capacityBytes[^1] != 0xA5 ||
+        !capacityImage.Validate().IsValid)
+        throw new InvalidOperationException("Capacity policy package consumer failed.");
+}
 byte[] authenticationKey = Enumerable.Range(0, 64).Select(value => (byte)value).ToArray();
 if (NdsDsAuthentication.GetOverlayHashRegions(image).Count != 0 ||
     Convert.ToHexString(NdsDsAuthentication.ComputeOverlayHmac(image, authenticationKey)) != "60BF8C95C85CFA61279A2B9B079AA19D7FA5F31A")
