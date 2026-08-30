@@ -17,7 +17,18 @@ if (NitroCompression.TryInspect(stored, out NitroCompressionInfo info))
 }
 ```
 
-`Lz10Codec`, `Lz11Codec`, and `RleCodec` also expose deterministic encoders. Huffman is currently decode-only. All decoders reject truncated tokens, invalid look-behinds or trees, blocks that cross the declared output, and caller-defined allocation limits. LZ10, LZ11, and eight-bit Huffman output has been compared byte-for-byte with an independently compiled implementation for every structurally valid candidate in the private ROM corpus. The corpus contains no genuine four-bit Huffman or run-length allocation, so those paths additionally use hand-authored grammar vectors and cross-decoding against the compiled reference encoder.
+`Lz10Codec`, `Lz11Codec`, and `RleCodec` also expose deterministic encoders.
+Huffman is currently decode-only. All decoders reject truncated tokens, invalid
+look-behinds or trees, and outputs above the caller-defined allocation limit.
+Huffman validates every reachable branch and leaf before decoding, including
+branches not selected by the bitstream, without recursively expanding shared
+subtrees. Run-length blocks cannot exceed the declared output; LZ10 and LZ11
+clip their final back-reference to the header-declared length.
+
+The private compatibility suite locks accepted candidates to reviewed decoded
+digests and supplements corpus coverage with hand-authored grammar vectors and
+cross-decoding of deterministic encoder output. A matching first byte alone
+does not establish that an allocation is a compression stream.
 
 ## NARC archives
 

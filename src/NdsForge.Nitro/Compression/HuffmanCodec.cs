@@ -40,6 +40,8 @@ public static class HuffmanCodec
             throw new InvalidDataException("The Huffman tree or first decision word is truncated.");
         }
 
+        ValidateTree(data, treeOffset, bitstreamOffset, info.Type == NitroCompressionType.Huffman4);
+
         byte[] output = new byte[info.DecodedLength];
         int symbolsRequired = checked(output.Length * (info.Type == NitroCompressionType.Huffman4 ? 2 : 1));
         int symbolsWritten = 0;
@@ -101,5 +103,39 @@ public static class HuffmanCodec
         }
 
         return output;
+    }
+
+    private static void ValidateTree(ReadOnlySpan<byte> data, int treeOffset, int treeEnd, bool fourBit)
+    {
+        Span<bool> decisionNodes = stackalloc bool[512];
+        decisionNodes.Clear();
+        decisionNodes[0] = true;
+        for (int cursor = treeOffset; cursor < treeEnd; cursor++)
+        {
+            if (!decisionNodes[cursor - treeOffset])
+            {
+                continue;
+            }
+
+            byte node = data[cursor];
+            int childPair = (cursor & ~1) + (((node & 0x3F) + 1) * 2);
+            if (childPair < treeOffset || childPair >= treeEnd - 1)
+            {
+                throw new InvalidDataException("The Huffman tree contains an out-of-range child offset.");
+            }
+
+            for (int branch = 0; branch < 2; branch++)
+            {
+                int child = childPair + branch;
+                if ((node & (branch == 0 ? 0x80 : 0x40)) == 0)
+                {
+                    decisionNodes[child - treeOffset] = true;
+                }
+                else if (fourBit && data[child] > 0x0F)
+                {
+                    throw new InvalidDataException("A four-bit Huffman leaf exceeds one nibble.");
+                }
+            }
+        }
     }
 }

@@ -52,6 +52,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Fixed
 
+- Validate every reachable Huffman tree branch, including unused branches and
+  four-bit leaves, before decoding; shared forward subtrees remain bounded.
 - Accept bounded zero alignment fill at the declared end of NCLR, NCER, and
   NANR resources while continuing to reject nonzero or excessive fill.
 - Preserve unknown NCER character-mapping values through parsing and writing.
