@@ -1,4 +1,7 @@
 #nullable enable
+const NdsForge.NdsWorkspaceRecipe.CurrentSchemaVersion = 1 -> int
+const NdsForge.NdsWorkspaceRecipe.FileName = "ndsforge-workspace.json" -> string!
+const NdsForge.NdsWorkspaceRecipe.MaximumJsonBytes = 33554432 -> int
 NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.get -> long?
 NdsForge.NdsImageBuildOptions.RequestedDeviceCapacityBytes.init -> void
 NdsForge.NdsImageBuildOptions.PadToDeviceCapacity.get -> bool
@@ -31,6 +34,7 @@ NdsForge.NdsImageResizeResult.Diagnostics.get -> System.Collections.Generic.IRea
 NdsForge.NdsImageResizeResult.InputLength.get -> long
 NdsForge.NdsImageResizeResult.OutputLength.get -> long
 NdsForge.NdsImageResizeResult.RemovedData.get -> NdsForge.NdsRegion?
+NdsForge.NdsImageWorkspace
 NdsForge.NdsManifestHeader.DeviceCapacityExponent.get -> byte
 NdsForge.NdsManifestHeader.DeviceCapacityExponent.init -> void
 NdsForge.NdsImage.SizeInfo.get -> NdsForge.NdsImageSizeInfo!
@@ -61,6 +65,51 @@ NdsForge.NdsCartridgeLayout
 NdsForge.NdsTrailingDataPolicy
 NdsForge.NdsTrailingDataPolicy.Discard = 1 -> NdsForge.NdsTrailingDataPolicy
 NdsForge.NdsTrailingDataPolicy.RequirePadding = 0 -> NdsForge.NdsTrailingDataPolicy
+NdsForge.NdsWorkspaceAsset
+NdsForge.NdsWorkspaceAsset.<Clone>$() -> NdsForge.NdsWorkspaceAsset!
+NdsForge.NdsWorkspaceAsset.Equals(NdsForge.NdsWorkspaceAsset? other) -> bool
+NdsForge.NdsWorkspaceAsset.FileId.get -> int?
+NdsForge.NdsWorkspaceAsset.FileId.init -> void
+NdsForge.NdsWorkspaceAsset.Kind.get -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAsset.Kind.init -> void
+NdsForge.NdsWorkspaceAsset.NdsWorkspaceAsset() -> void
+NdsForge.NdsWorkspaceAsset.OriginalLength.get -> long
+NdsForge.NdsWorkspaceAsset.OriginalLength.init -> void
+NdsForge.NdsWorkspaceAsset.OriginalOffset.get -> long
+NdsForge.NdsWorkspaceAsset.OriginalOffset.init -> void
+NdsForge.NdsWorkspaceAsset.OriginalSha256.get -> string!
+NdsForge.NdsWorkspaceAsset.OriginalSha256.init -> void
+NdsForge.NdsWorkspaceAsset.Path.get -> string!
+NdsForge.NdsWorkspaceAsset.Path.init -> void
+NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Allocation = 9 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Arm7 = 2 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Arm7i = 4 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Arm7OverlayTable = 8 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Arm9 = 1 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Arm9i = 3 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Arm9OverlayTable = 7 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Banner = 10 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.BlockHashTable = 15 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.DebugProgram = 11 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.DownloadPlaySignature = 16 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.FileAllocationTable = 6 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.FileNameTable = 5 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.Header = 0 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.PostHeader = 12 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.SectorHashTable = 14 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceAssetKind.TwlReservation = 13 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceRecipe
+NdsForge.NdsWorkspaceRecipe.Assets.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsWorkspaceAsset!>!
+NdsForge.NdsWorkspaceRecipe.Assets.init -> void
+NdsForge.NdsWorkspaceRecipe.NdsWorkspaceRecipe() -> void
+NdsForge.NdsWorkspaceRecipe.SchemaVersion.get -> int
+NdsForge.NdsWorkspaceRecipe.SchemaVersion.init -> void
+NdsForge.NdsWorkspaceRecipe.SourceImagePath.get -> string!
+NdsForge.NdsWorkspaceRecipe.SourceImagePath.init -> void
+NdsForge.NdsWorkspaceRecipe.SourceInventory.get -> NdsForge.NdsImageManifest!
+NdsForge.NdsWorkspaceRecipe.SourceInventory.init -> void
+NdsForge.NdsWorkspaceRecipe.ToJson(bool indented = true) -> string!
 override NdsForge.NdsCartridgeLayout.Kind.get -> NdsForge.NdsImageCarrier
 NdsForge.NdsCartridgeLayout.NtrRegionEnd.get -> long
 NdsForge.NdsCartridgeLayout.TwlRegionStart.get -> long
@@ -84,6 +133,9 @@ const NdsForge.NdsDownloadPlaySignature.ByteLength = 136 -> int
 NdsForge.NdsDownloadPlaySignature.RawData.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsDownloadPlaySignature.Signature.get -> System.ReadOnlyMemory<byte>
 NdsForge.NdsDownloadPlaySignature.Seed.get -> uint
+override NdsForge.NdsWorkspaceAsset.Equals(object? obj) -> bool
+override NdsForge.NdsWorkspaceAsset.GetHashCode() -> int
+override NdsForge.NdsWorkspaceAsset.ToString() -> string!
 static NdsForge.NdsDownloadPlaySignature.Parse(System.ReadOnlySpan<byte> bytes) -> NdsForge.NdsDownloadPlaySignature!
 NdsForge.NdsImage.DownloadPlaySignature.get -> NdsForge.NdsDownloadPlaySignature?
 NdsForge.NdsImage.DownloadPlaySignatureRegion.get -> NdsForge.NdsRegion?
@@ -410,6 +462,9 @@ static NdsForge.NdsImageResizeOptions.operator !=(NdsForge.NdsImageResizeOptions
 static NdsForge.NdsImageResizeOptions.operator ==(NdsForge.NdsImageResizeOptions? left, NdsForge.NdsImageResizeOptions? right) -> bool
 static NdsForge.NdsImageResizer.WriteFileAsync(NdsForge.NdsImage! image, string! path, NdsForge.NdsImageResizeOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageResizeResult!>
 static NdsForge.NdsImageResizer.WriteAsync(NdsForge.NdsImage! image, System.IO.Stream! destination, NdsForge.NdsImageResizeOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageResizeResult!>
+static NdsForge.NdsImageWorkspace.ExportAsync(NdsForge.NdsImage! image, string! directory, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsWorkspaceRecipe!>
+static NdsForge.NdsImageWorkspace.PackFileAsync(string! directory, string! destination, bool overwriteDestination = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsWorkspaceRecipe!>
+static NdsForge.NdsImageWorkspace.ReadRecipeAsync(string! directory, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsWorkspaceRecipe!>
 static NdsForge.NdsOverlayAuthenticationBuildOptions.CreateHmacSha1(uint tableRelativeOffset, System.ReadOnlySpan<byte> hmacKey, NdsForge.NdsProgramStorageEncoding programStorage = NdsForge.NdsProgramStorageEncoding.Plain, int uncompressedPrefixLength = 0) -> NdsForge.NdsOverlayAuthenticationBuildOptions!
 static NdsForge.NdsDsiAgeRating.operator ==(NdsForge.NdsDsiAgeRating left, NdsForge.NdsDsiAgeRating right) -> bool
 static NdsForge.NdsLegacyRegion.China.get -> NdsForge.NdsLegacyRegion
@@ -422,6 +477,9 @@ static NdsForge.NdsProgramFooter.operator ==(NdsForge.NdsProgramFooter? left, Nd
 static NdsForge.NdsSdkVersion.FromPacked(uint value) -> NdsForge.NdsSdkVersion
 static NdsForge.NdsSdkVersion.operator !=(NdsForge.NdsSdkVersion left, NdsForge.NdsSdkVersion right) -> bool
 static NdsForge.NdsSdkVersion.operator ==(NdsForge.NdsSdkVersion left, NdsForge.NdsSdkVersion right) -> bool
+static NdsForge.NdsWorkspaceAsset.operator !=(NdsForge.NdsWorkspaceAsset? left, NdsForge.NdsWorkspaceAsset? right) -> bool
+static NdsForge.NdsWorkspaceAsset.operator ==(NdsForge.NdsWorkspaceAsset? left, NdsForge.NdsWorkspaceAsset? right) -> bool
+static NdsForge.NdsWorkspaceRecipe.ParseJson(string! json) -> NdsForge.NdsWorkspaceRecipe!
 ~override NdsForge.NdsDsiAgeRating.Equals(object obj) -> bool
 ~override NdsForge.NdsDsiAgeRating.ToString() -> string
 ~override NdsForge.NdsLegacyRegion.Equals(object obj) -> bool

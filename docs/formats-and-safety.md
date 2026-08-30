@@ -38,6 +38,49 @@ Structural imports retain the trailer in `NdsImageBuilder.DownloadPlaySignature`
 
 Semantic builds and edits that retain a trailer return `NDS1550`: the bytes were preserved without revalidation, and changes to the signed header or programs may make them stale. The CLI prints these save diagnostics. This is separate from both the ARM9 per-overlay records and the late-DS/DSi header signature at 0xF80. NdsForge does not generate or cryptographically verify this trailer; parsing, copying, and a structurally valid output are not claims that Download Play hardware will accept its signature.
 
+## Self-contained preservation workspaces
+
+`NdsImageWorkspace.ExportAsync` writes a new workspace directory containing the
+versioned `NdsWorkspaceRecipe`, independent native assets, and a complete source
+snapshot. The snapshot retains padding, gaps, unknown data, aliased allocations,
+carrier material, and any original diagnostics. The recipe records full-image and
+component SHA-256 identities, metadata, original regions, File IDs, directory
+paths, and overlay relationships. Raw FNT/FAT/overlay tables preserve native
+ordering independently from the inventory's sorted semantic view. ARM9 assets
+include an adjacent SDK footer when detected. All FAT entries are exported,
+including unnamed and zero-length allocations. Numeric host asset names avoid
+mapping ROM filenames directly onto host filesystem restrictions.
+
+```csharp
+using NdsImage image = await NdsImage.OpenAsync("source.nds");
+NdsWorkspaceRecipe recipe = await NdsImageWorkspace.ExportAsync(image, "workspace");
+await NdsImageWorkspace.PackFileAsync("workspace", "identical.nds");
+```
+
+`ReadRecipeAsync` validates only the bounded UTF-8 JSON description. Exact packing
+also independently derives metadata and component regions from the snapshot,
+checks every input's size and SHA-256, and verifies the complete temporary output
+before atomic publication. It rejects changed inputs rather than silently using
+the snapshot in place of edits. This is distinct from the structural builder;
+workspace-driven structural edits are not yet exposed. No repair, resigning, or
+source-validity claim accompanies a byte-exact pack.
+
+Recipes require schema version 1 and reject unknown fields, duplicate JSON
+properties, numeric enums, traversal, rooted paths, ambiguous file/directory
+collisions, and nonportable filenames. Serialized recipes are limited to 32 MiB;
+supported snapshots fit the 4 GiB image address space. Paths may be renamed in the
+recipe provided that each input still matches its original identity. Inputs and
+outputs reject detected symbolic links and reparse-point ancestors. Keep the
+workspace stable during an operation: this is not a sandbox against an adversary
+concurrently replacing filesystem objects. Export requires a new directory;
+packing requires output outside the workspace and explicit overwrite authority
+from the caller, never from recipe data. Both use temporary siblings and leave
+existing destinations untouched when an operation fails before publication.
+
+Workspaces contain original payload bytes and duplicate the complete physical
+image alongside individual components; they are not payload-free inventory
+manifests and must not be committed or shared without appropriate rights.
+
 ## Cartridge and digital-SRL carriers
 
 `NdsImage.SizeInfo` distinguishes physical input length, common NTR used size,

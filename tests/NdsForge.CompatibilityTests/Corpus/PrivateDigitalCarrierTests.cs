@@ -59,6 +59,16 @@ public sealed class PrivateDigitalCarrierTests
         CorpusExpectations.AssertDigest("3C53806B79C7C8FE1015468E2F97800A6FEC8AA6DBDA34EF874AC256F6AD4D8E", Convert.ToHexString(digest.GetHashAndReset()));
     }
 
+    [Fact]
+    [Trait("CorpusTier", "Full")]
+    public async Task DigitalWorkspacesPreserveEveryInputByte()
+    {
+        foreach ((string identity, string path) in FindFixtures())
+        {
+            await PrivateCorpusWorkspaceTests.VerifyWorkspaceAsync(path, identity).ConfigureAwait(true);
+        }
+    }
+
     private static async Task VerifyWritesAsync(byte[] source)
     {
         CancellationToken token = TestContext.Current.CancellationToken;

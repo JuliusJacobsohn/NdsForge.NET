@@ -27,6 +27,8 @@ internal static class CliApplication
                 "VALIDATE" => await ValidateAsync(args, cancellation.Token).ConfigureAwait(false),
                 "LIST" or "LS" => await ListAsync(args, cancellation.Token).ConfigureAwait(false),
                 "EXTRACT" => await ExtractAsync(args, cancellation.Token).ConfigureAwait(false),
+                "UNPACK" => await CliWorkspaceCommand.UnpackAsync(args, cancellation.Token).ConfigureAwait(false),
+                "PACK" => await CliWorkspaceCommand.PackAsync(args, cancellation.Token).ConfigureAwait(false),
                 "REPLACE" => await ReplaceAsync(args, cancellation.Token).ConfigureAwait(false),
                 "RESIZE" => await CliResizeCommand.RunAsync(args, cancellation.Token).ConfigureAwait(false),
                 "MANIFEST" => await ManifestAsync(args, cancellation.Token).ConfigureAwait(false),
@@ -302,6 +304,9 @@ internal static class CliApplication
         Console.WriteLine("  manifest <image.nds> [output.json]   Emit a strict SHA-256 image manifest");
         Console.WriteLine("  resize <input.nds> <output.nds> <preserve|trim|pad|exact> [options]");
         Console.WriteLine("                                       Resize without moving content or changing headers");
+        Console.WriteLine("  unpack <image.nds> <new-directory>    Export a self-contained image workspace");
+        Console.WriteLine("  pack <workspace> <output.nds> [--overwrite]");
+        Console.WriteLine("                                       Verify unchanged inputs and pack byte-exactly");
         Console.WriteLine("  diff <left.nds> <right.nds>          Compare content, identities, and layout");
     }
 }

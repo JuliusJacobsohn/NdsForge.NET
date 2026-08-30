@@ -69,6 +69,10 @@ _Avoid_: Last nonzero byte, last non-FF byte
 A complete declarative description from which an Image can be assembled deterministically.
 _Avoid_: Project, command options
 
+**Image Workspace**:
+A self-contained Build Recipe together with every byte-bearing input and preservation material needed to assemble its Image. An inventory or extraction folder alone is not an Image Workspace.
+_Avoid_: Extraction directory, inventory manifest
+
 **Edit Session**:
 A set of proposed changes against an existing Image that does not mutate its source and can be inspected before saving.
 _Avoid_: Mutable image, patch mode

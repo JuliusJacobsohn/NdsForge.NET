@@ -7,6 +7,12 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Export self-contained versioned image workspaces and verify byte-exact packing
+  through the API and `unpack`/`pack` commands. Retain all FAT allocations, raw
+  ordering tables, carrier bytes, and a full preservation snapshot. Reject edited
+  or missing inputs, inconsistent metadata, unsafe paths, and detected links
+  before transactional output publication; structural workspace edits are not
+  included in this preservation workflow.
 - Add source-preserving resize APIs and a `resize` CLI command with explicit
   preserve, trim, capacity-pad, and exact-length modes. Verify removed padding by
   default; require explicit discard for unclassified trailing bytes. Preserve

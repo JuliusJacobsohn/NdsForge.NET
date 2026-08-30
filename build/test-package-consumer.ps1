@@ -183,6 +183,19 @@ if (NitroObjectEntry.Create(0, 0, 8, 8, 0, NitroColorDepth.Indexed4Bpp).Width !=
     throw new InvalidOperationException("Graphics OAM package consumer round trip failed.");
 if (new NftrGlyphMetrics(-1, 8, 9).AdvanceWidth != 9)
     throw new InvalidOperationException("Graphics font package consumer API failed.");
+string apiWorkspace = Path.Combine(args[0], "api-workspace");
+string apiPacked = Path.Combine(args[0], "api-packed.nds");
+using (NdsImage workspaceImage = NdsImage.Load(capacityBytes))
+{
+    NdsWorkspaceRecipe recipe = await NdsImageWorkspace.ExportAsync(workspaceImage, apiWorkspace);
+    if (recipe.SchemaVersion != 1 || recipe.Assets.Count == 0 ||
+        NdsWorkspaceRecipe.ParseJson(recipe.ToJson()).SourceInventory.ImageSha256 != recipe.SourceInventory.ImageSha256)
+        throw new InvalidOperationException("Workspace package recipe consumer failed.");
+    NdsWorkspaceRecipe packed = await NdsImageWorkspace.PackFileAsync(apiWorkspace, apiPacked);
+    if (packed.SourceInventory.ImageSha256 != recipe.SourceInventory.ImageSha256 ||
+        !(await File.ReadAllBytesAsync(apiPacked)).AsSpan().SequenceEqual(capacityBytes))
+        throw new InvalidOperationException("Workspace package exact-packing consumer failed.");
+}
 Console.WriteLine("PACKAGE_CONSUMER_OK");
 await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-source.nds"), capacityBytes);
 capacityBytes[^1] = 37;
@@ -239,6 +252,40 @@ await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-unclassified.nds"), 
         (Get-Item -LiteralPath $resizeDiscarded).Length -ne $usedLength -or
         (Get-Item -LiteralPath $resizeExact).Length -ne 0x30000) { throw 'CLI resize length mismatch.' }
     Write-Output 'CLI_RESIZE_CONSUMER_OK'
+    $imageWorkspace = Join-Path $workspace 'cli-workspace'
+    $workspacePacked = Join-Path $workspace 'workspace-packed.nds'
+    function Invoke-WorkspaceCheck([int]$expectedExit, [string[]]$arguments) {
+        & $executable @arguments
+        if ($LASTEXITCODE -ne $expectedExit) { throw "CLI workspace exit was $LASTEXITCODE, expected $expectedExit." }
+    }
+    Invoke-WorkspaceCheck 0 @('unpack', $resizeSource, $imageWorkspace)
+    Invoke-WorkspaceCheck 1 @('unpack', $resizeSource, $imageWorkspace)
+    Invoke-WorkspaceCheck 2 @('unpack', $resizeSource, $imageWorkspace, '--overwrite')
+    Invoke-WorkspaceCheck 0 @('pack', $imageWorkspace, $workspacePacked)
+    Invoke-WorkspaceCheck 1 @('pack', $imageWorkspace, $workspacePacked)
+    Invoke-WorkspaceCheck 0 @('pack', $imageWorkspace, $workspacePacked, '--overwrite')
+    Invoke-WorkspaceCheck 2 @('pack', $imageWorkspace, $workspacePacked, '--unknown')
+    Invoke-WorkspaceCheck 2 @('pack', $imageWorkspace)
+    Invoke-WorkspaceCheck 2 @('pack', $imageWorkspace, $workspacePacked, '--overwrite', '--overwrite')
+    Invoke-WorkspaceCheck 1 @('pack', $imageWorkspace, (Join-Path $imageWorkspace 'output.nds'))
+    if ((Get-FileHash -LiteralPath $workspacePacked -Algorithm SHA256).Hash -ne $sourceDigest) {
+        throw 'CLI workspace output differs from complete source identity.'
+    }
+    $workspaceRecipePath = Join-Path $imageWorkspace 'ndsforge-workspace.json'
+    $workspaceRecipe = Get-Content -LiteralPath $workspaceRecipePath -Raw | ConvertFrom-Json
+    $workspaceAsset = Join-Path $imageWorkspace $workspaceRecipe.assets[0].path
+    $workspaceSavedAsset = "$workspaceAsset.original"
+    Move-Item -LiteralPath $workspaceAsset -Destination $workspaceSavedAsset
+    Invoke-WorkspaceCheck 1 @('pack', $imageWorkspace, $workspacePacked, '--overwrite')
+    Move-Item -LiteralPath $workspaceSavedAsset -Destination $workspaceAsset
+    $workspaceSavedRecipe = [IO.File]::ReadAllText($workspaceRecipePath)
+    [IO.File]::WriteAllText($workspaceRecipePath, '{')
+    Invoke-WorkspaceCheck 1 @('pack', $imageWorkspace, $workspacePacked, '--overwrite')
+    [IO.File]::WriteAllText($workspaceRecipePath, $workspaceSavedRecipe)
+    if ((Get-FileHash -LiteralPath $workspacePacked -Algorithm SHA256).Hash -ne $sourceDigest) {
+        throw 'Failed workspace verification changed an existing CLI output.'
+    }
+    Write-Output 'CLI_WORKSPACE_CONSUMER_OK'
     Write-Output "TOOL_CONSUMER_OK"
 } finally {
     if ([System.IO.Directory]::Exists($workspace)) { [System.IO.Directory]::Delete($workspace, $true) }
