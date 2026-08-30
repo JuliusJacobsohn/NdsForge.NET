@@ -7,6 +7,10 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Preflight preservation payload, banner, and trailer writes against other stored
+  components, rejecting overlapping appends or aliased allocations before the
+  destination is changed, including DSi programs beyond the common used boundary.
+
 - Detect bounded post-used Download Play signature trailers; preserve their exact
   bytes across no-op copies, structural rebuilds, and relocated edits, with explicit
   truncation and potentially stale-signature diagnostics. No trailer signing or

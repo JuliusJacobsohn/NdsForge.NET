@@ -62,4 +62,6 @@ Compatibility expectations are tied to complete-file SHA-256 values. Contributor
 
 Path-based preservation saves and builds write a temporary sibling and only replace the requested destination after successful completion. Stream overloads cannot provide that transactional boundary and may leave partial bytes after cancellation or I/O failure. Use a path overload when an existing artifact must remain intact.
 
+Preservation edits preflight payload, banner, and retained-trailer writes against other declared components before truncating a destination stream. The common used-size boundary is not necessarily free space: DSi programs and digest tables may follow it. If an append or aliased allocation would overlap another program, table, banner, debug region, or allocation, the save fails with an explicit overlap error even when output verification is disabled. Use a structural builder to relocate such components together. This safety check does not regenerate DSi authentication after edits and does not change the byte-exact no-op copy contract.
+
 Keep backups when editing irreplaceable dumps. Validate output, inspect the returned plan or build result, and compare hashes or manifests before deleting an original image.

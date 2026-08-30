@@ -218,6 +218,10 @@ public sealed class NdsImageEditor
         options.Validate();
         NdsDsEditAuthentication.Validate(_image, options, Plan.HasChanges, Header.GameCode, _bannerReplacement is not null || _image.Banner is not null);
         if (Plan.HasChanges || options.DsIntegrity is not null) { NdsDownloadPlaySignatureWriter.ValidateSource(_image); }
+        if (Plan.HasChanges || options.DsIntegrity is not null)
+        {
+            NdsEditRegionProtection.Validate(_image, Changes, _bannerReplacement, Header, options.RelocatedFileAlignment);
+        }
         destination.Position = 0;
         destination.SetLength(0);
         using (Stream source = _image.OpenRead(new(0, _image.Length)))
