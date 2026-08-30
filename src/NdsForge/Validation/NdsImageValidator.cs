@@ -47,6 +47,7 @@ internal static class NdsImageValidator
 
         NdsSecureAreaValidator.Validate(image, diagnostics, options.SecureAreaKeyTable);
         NdsDsiIntegrityValidator.Validate(image, diagnostics, options);
+        NdsDsIntegrityValidator.Validate(image, diagnostics, options);
 
         return new NdsValidationResult(diagnostics);
     }

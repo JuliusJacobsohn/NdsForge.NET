@@ -1,5 +1,7 @@
 #nullable enable
 NdsForge.NdsDsAuthentication
+static NdsForge.NdsDsAuthentication.ComputeProgramsHmac(System.ReadOnlySpan<byte> headerPrefix, System.ReadOnlySpan<byte> arm9AuthenticationData, System.ReadOnlySpan<byte> arm7Data, System.ReadOnlySpan<byte> key) -> byte[]!
+static NdsForge.NdsDsAuthentication.ComputeBannerHmac(NdsForge.NdsBanner! banner, System.ReadOnlySpan<byte> key) -> byte[]!
 static NdsForge.NdsDsAuthentication.ComputeOverlayHmac(NdsForge.NdsImage! image, System.ReadOnlySpan<byte> key) -> byte[]!
 static NdsForge.NdsDsAuthentication.GetOverlayHashRegions(NdsForge.NdsImage! image) -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsRegion>!
 NdsForge.NdsDebugProgramDefinition
@@ -272,6 +274,11 @@ NdsForge.NdsSdkVersion.PackedValue.get -> uint
 NdsForge.NdsReadOptions.MaximumDecodedProgramBytes.get -> int
 NdsForge.NdsReadOptions.MaximumDecodedProgramBytes.init -> void
 NdsForge.NdsValidationOptions.SetArm9OverlayHmacKey(System.ReadOnlySpan<byte> key) -> NdsForge.NdsValidationOptions!
+NdsForge.NdsValidationOptions.SetDsProgramHmacKey(System.ReadOnlySpan<byte> key) -> NdsForge.NdsValidationOptions!
+NdsForge.NdsValidationOptions.SetDsBannerHmacKey(System.ReadOnlySpan<byte> key) -> NdsForge.NdsValidationOptions!
+NdsForge.NdsValidationOptions.SetDsRsaPublicKey(NdsForge.NdsDsiRsaPublicKey! publicKey) -> NdsForge.NdsValidationOptions!
+NdsForge.NdsValidationOptions.ValidateDsAuthentication.get -> bool
+NdsForge.NdsValidationOptions.ValidateDsAuthentication.init -> void
 override NdsForge.NdsDsiAgeRating.GetHashCode() -> int
 override NdsForge.NdsLegacyRegion.GetHashCode() -> int
 override NdsForge.NdsProgramFooter.Equals(object? obj) -> bool

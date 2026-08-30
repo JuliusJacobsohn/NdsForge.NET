@@ -12,6 +12,52 @@ public static class NdsDsAuthentication
     private const int SectorLength = 512;
 
     /// <summary>
+    /// Computes the late-DS program HMAC over the common header prefix, a complete caller-selected ARM9
+    /// authentication representation, and the declared ARM7 bytes, in that order.
+    /// </summary>
+    /// <param name="headerPrefix">Exactly the first 0x160 image bytes, including the finalized header CRC.</param>
+    /// <param name="arm9AuthenticationData">The complete stored ARM9 program with its secure area in the encrypted authentication representation.</param>
+    /// <param name="arm7Data">The complete ARM7 program, excluding trailing alignment padding.</param>
+    /// <param name="key">Non-empty caller-supplied late-DS program/overlay authentication key.</param>
+    /// <returns>The twenty-byte HMAC over the supplied bytes; no image is modified or authenticated implicitly.</returns>
+    /// <remarks>
+    /// This byte-level primitive neither encrypts nor decompresses programs and does not infer a secure-area key.
+    /// Supplying a decrypted dump directly produces its digest, not the encrypted-form cartridge digest.
+    /// Callers must finalize program storage and header metadata before calculation.
+    /// </remarks>
+    public static byte[] ComputeProgramsHmac(
+        ReadOnlySpan<byte> headerPrefix,
+        ReadOnlySpan<byte> arm9AuthenticationData,
+        ReadOnlySpan<byte> arm7Data,
+        ReadOnlySpan<byte> key)
+    {
+        if (headerPrefix.Length != 0x160)
+        {
+            throw new ArgumentException("Late-DS program authentication covers exactly 0x160 header bytes.", nameof(headerPrefix));
+        }
+
+        RequireKey(key);
+        using IncrementalHash hash = IncrementalHash.CreateHMAC(HashAlgorithmName.SHA1, key);
+        hash.AppendData(headerPrefix);
+        hash.AppendData(arm9AuthenticationData);
+        hash.AppendData(arm7Data);
+        return hash.GetHashAndReset();
+    }
+
+    /// <summary>Computes the late-DS banner HMAC over the complete version-defined banner, including stored CRCs.</summary>
+    /// <param name="banner">Complete immutable banner whose CRCs and contents have already been finalized.</param>
+    /// <param name="key">Non-empty caller-supplied late-DS banner key, distinct from the program/overlay key.</param>
+    /// <returns>The twenty-byte digest without changing the banner, repairing CRCs, or including external padding.</returns>
+    public static byte[] ComputeBannerHmac(NdsBanner banner, ReadOnlySpan<byte> key)
+    {
+        ArgumentNullException.ThrowIfNull(banner);
+        RequireKey(key);
+        using IncrementalHash hash = IncrementalHash.CreateHMAC(HashAlgorithmName.SHA1, key);
+        hash.AppendData(banner.RawData.Span);
+        return hash.GetHashAndReset();
+    }
+
+    /// <summary>
     /// Lists the exact ordered image intervals covered by the late-DS aggregate overlay HMAC: the ARM9 overlay
     /// table, its leading FAT records, and bounded sector-rounded payload prefixes in FAT order.
     /// </summary>
@@ -69,10 +115,7 @@ public static class NdsDsAuthentication
     public static byte[] ComputeOverlayHmac(NdsImage image, ReadOnlySpan<byte> key)
     {
         ArgumentNullException.ThrowIfNull(image);
-        if (key.IsEmpty)
-        {
-            throw new ArgumentException("A late-DS authentication key cannot be empty.", nameof(key));
-        }
+        RequireKey(key);
 
         IReadOnlyList<NdsRegion> regions = GetOverlayHashRegions(image);
         using IncrementalHash hash = IncrementalHash.CreateHMAC(HashAlgorithmName.SHA1, key);
@@ -88,6 +131,15 @@ public static class NdsDsAuthentication
         }
 
         return hash.GetHashAndReset();
+    }
+
+    /// <summary>Requires intentional caller credentials instead of silently accepting an absent key.</summary>
+    private static void RequireKey(ReadOnlySpan<byte> key)
+    {
+        if (key.IsEmpty)
+        {
+            throw new ArgumentException("A late-DS authentication key cannot be empty.", nameof(key));
+        }
     }
 
     /// <summary>Rejects unsupported allocation selections instead of accidentally authenticating unrelated named files.</summary>

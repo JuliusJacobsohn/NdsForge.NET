@@ -18,6 +18,12 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Expose late-DS aggregate overlay authentication coverage and calculate its
   HMAC with caller-supplied credentials, including FAT order, physical sector
   padding, and the shared payload budget. Reject unsupported sparse selections.
+- Calculate late-DS program HMACs from explicit header and program byte inputs,
+  and banner HMACs for all static and animated banner versions with a separately
+  supplied key; no automatic secure-area transformation or trust is implied.
+- Add opt-in late-DS HMAC and RSA validation with independent caller credentials,
+  verified encrypted/decrypted secure-area normalization, and explicit missing-key,
+  unsupported-layout, and digest/signature-mismatch diagnostics.
 - Add the dependency-free `NdsForge.Nitro` companion package and independently
   implemented BLZ inspection, bounded decompression, and deterministic
   compression APIs.

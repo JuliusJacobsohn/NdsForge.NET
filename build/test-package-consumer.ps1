@@ -54,6 +54,7 @@ using NdsForge.Graphics.Palettes;
 using NdsForge.Graphics.Tiles;
 using NdsForge.Graphics.Sprites;
 using NdsForge.Nitro.Compression;
+using System.Security.Cryptography;
 
 var builder = new NdsImageBuilder
 {
@@ -68,6 +69,23 @@ byte[] bytes = await builder.BuildAsync();
 using NdsImage image = NdsImage.Load(bytes);
 if (image.Header.GameCode != "CS01" || image.FileSystem.GetFile("/hello.txt").Data.Length != 5)
     throw new InvalidOperationException("Package consumer round trip failed.");
+byte[] authenticationKey = Enumerable.Range(0, 64).Select(value => (byte)value).ToArray();
+if (NdsDsAuthentication.GetOverlayHashRegions(image).Count != 0 ||
+    Convert.ToHexString(NdsDsAuthentication.ComputeOverlayHmac(image, authenticationKey)) != "60BF8C95C85CFA61279A2B9B079AA19D7FA5F31A")
+    throw new InvalidOperationException("Late-DS aggregate package consumer failed.");
+byte[] programDigest = NdsDsAuthentication.ComputeProgramsHmac(bytes.AsSpan(0, 0x160), [0xA9], [0xA7], authenticationKey);
+NdsBanner authenticationBanner = new NdsBannerBuilder().Build();
+if (programDigest.Length != 20 || NdsDsAuthentication.ComputeBannerHmac(authenticationBanner, authenticationKey).Length != 20)
+    throw new InvalidOperationException("Late-DS component package consumer failed.");
+using RSA rsa = RSA.Create(1024);
+using var signer = new NdsDsiRsaSignatureProvider(rsa);
+NdsDsiRsaPublicKey publicKey = NdsDsiRsaPublicKey.FromRsa(rsa);
+byte[] signature = new byte[128];
+signer.SignHeader(bytes.AsSpan(0, 0xE00), signature);
+if (!publicKey.VerifyHeader(bytes.AsSpan(0, 0xE00), signature))
+    throw new InvalidOperationException("Native RSA package consumer failed.");
+_ = image.Validate(new NdsValidationOptions { ValidateDsAuthentication = true }
+    .SetDsProgramHmacKey(authenticationKey).SetDsBannerHmacKey(authenticationKey).SetDsRsaPublicKey(publicKey));
 byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
 if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
     throw new InvalidOperationException("Nitro package consumer round trip failed.");
