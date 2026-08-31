@@ -33,6 +33,10 @@ _Avoid_: Overlay number, file index
 The hierarchical filesystem described by an Image's filename and allocation tables.
 _Avoid_: Data folder, ROM files
 
+**Wi-Fi Utility Archive**:
+A named asset container supplied with wireless-capable software, which may include graphics, messages, sound, and an embedded Image. The archive itself is not an Image or a wireless connection protocol.
+_Avoid_: Wi-Fi ROM, firmware, SDK version
+
 **Program**:
 An ARM7, ARM9, ARM7i, or ARM9i executable region together with its load and entry addresses.
 _Avoid_: Binary, code file

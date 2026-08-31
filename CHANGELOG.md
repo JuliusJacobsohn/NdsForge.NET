@@ -7,6 +7,10 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Read and rebuild Wi-Fi utility archives with bounded filename/allocation tables,
+  stable identities, exact no-op preservation, payload replacement, and file or
+  directory renaming. Preserve unnamed, empty, and shared allocations; expose
+  independent canonical table/payload alignment without inferring SDK versions.
 - Add verified CLI `build` for edited workspaces with deterministic output, explicit
   cartridge capacity/padding and DS/DSi authentication policies, and atomic output
   publication outside the workspace. Reject missing inputs, inapplicable policies,

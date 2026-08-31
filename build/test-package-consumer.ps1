@@ -54,6 +54,7 @@ using NdsForge.Graphics.Palettes;
 using NdsForge.Graphics.Tiles;
 using NdsForge.Graphics.Sprites;
 using NdsForge.Nitro.Compression;
+using NdsForge.Nitro.Archives;
 using System.Security.Cryptography;
 
 var builder = new NdsImageBuilder
@@ -183,6 +184,23 @@ if (cartridgeImage.CarrierLayout is not NdsCartridgeLayout cartridgeLayout ||
 byte[] plain = Enumerable.Repeat((byte)0x41, 512).ToArray();
 if (!BlzCodec.TryCompress(plain, out byte[] compressed) || !BlzCodec.Decompress(compressed).AsSpan().SequenceEqual(plain))
     throw new InvalidOperationException("Nitro package consumer round trip failed.");
+byte[] utilityBytes = new byte[40];
+System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(utilityBytes, 16);
+System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(utilityBytes.AsSpan(4), 11);
+System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(utilityBytes.AsSpan(8), 28);
+System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(utilityBytes.AsSpan(12), 8);
+System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(utilityBytes.AsSpan(16), 8);
+utilityBytes[22] = utilityBytes[24] = 1;
+utilityBytes[25] = (byte)'a';
+System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(utilityBytes.AsSpan(28), 36);
+System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(utilityBytes.AsSpan(32), 39);
+new byte[] { 1, 2, 3 }.CopyTo(utilityBytes, 36);
+WifiUtilityArchive utility = WifiUtilityArchive.Parse(utilityBytes, new WifiUtilityReadOptions());
+WifiUtilityArchive editedUtility = WifiUtilityArchive.Parse(utility.CreateBuilder().RenameFile(0, "long.bin")
+    .ReplaceFile(0, [5, 6, 7, 8]).Build(new WifiUtilityWriteOptions { TableAlignment = 32, FileAlignment = 32 }));
+if (!utility.WritePreserved().AsSpan().SequenceEqual(utilityBytes) || utility.Root.FileIds.Count != 1 ||
+    !editedUtility.FindFile("/long.bin")!.Data.Span.SequenceEqual(new byte[] { 5, 6, 7, 8 }))
+    throw new InvalidOperationException("Utility archive package consumer failed.");
 NclrPalette palette = NclrPalette.Create(NitroColorDepth.Indexed4Bpp, [new NitroColor555(0), new NitroColor555(0x7FFF)]);
 if (NclrPalette.Parse(palette.CreateBuilder().Build()).Colors[1].ToRgba32() != new RgbaColor32(255, 255, 255))
     throw new InvalidOperationException("Graphics package consumer round trip failed.");

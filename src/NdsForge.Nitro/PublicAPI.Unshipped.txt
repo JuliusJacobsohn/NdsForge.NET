@@ -44,6 +44,65 @@ NdsForge.Nitro.Archives.NarcWriteOptions.PaddingByte.get -> byte
 NdsForge.Nitro.Archives.NarcWriteOptions.PaddingByte.init -> void
 NdsForge.Nitro.Archives.NarcWriteOptions.PreserveSourceLayout.get -> bool
 NdsForge.Nitro.Archives.NarcWriteOptions.PreserveSourceLayout.init -> void
+NdsForge.Nitro.Archives.WifiUtilityArchive
+NdsForge.Nitro.Archives.WifiUtilityArchive.AllocationTableLength.get -> int
+NdsForge.Nitro.Archives.WifiUtilityArchive.AllocationTableOffset.get -> int
+NdsForge.Nitro.Archives.WifiUtilityArchive.CreateBuilder() -> NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder!
+NdsForge.Nitro.Archives.WifiUtilityArchive.Directories.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Archives.WifiUtilityDirectory!>!
+NdsForge.Nitro.Archives.WifiUtilityArchive.Files.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Nitro.Archives.WifiUtilityFile!>!
+NdsForge.Nitro.Archives.WifiUtilityArchive.FindFile(string! fullPath) -> NdsForge.Nitro.Archives.WifiUtilityFile?
+NdsForge.Nitro.Archives.WifiUtilityArchive.NameTableLength.get -> int
+NdsForge.Nitro.Archives.WifiUtilityArchive.NameTableOffset.get -> int
+NdsForge.Nitro.Archives.WifiUtilityArchive.Root.get -> NdsForge.Nitro.Archives.WifiUtilityDirectory!
+NdsForge.Nitro.Archives.WifiUtilityArchive.WritePreserved() -> byte[]!
+NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder
+NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder.Build(NdsForge.Nitro.Archives.WifiUtilityWriteOptions? options = null) -> byte[]!
+NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder.RenameDirectory(ushort directoryId, string! name) -> NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder!
+NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder.RenameFile(int fileId, string! name) -> NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder!
+NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder.ReplaceFile(int fileId, System.ReadOnlySpan<byte> data) -> NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder!
+NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder.ReplaceFile(string! fullPath, System.ReadOnlySpan<byte> data) -> NdsForge.Nitro.Archives.WifiUtilityArchiveBuilder!
+NdsForge.Nitro.Archives.WifiUtilityDirectory
+NdsForge.Nitro.Archives.WifiUtilityDirectory.ChildIds.get -> System.Collections.Generic.IReadOnlyList<ushort>!
+NdsForge.Nitro.Archives.WifiUtilityDirectory.FileIds.get -> System.Collections.Generic.IReadOnlyList<int>!
+NdsForge.Nitro.Archives.WifiUtilityDirectory.FirstFileId.get -> ushort
+NdsForge.Nitro.Archives.WifiUtilityDirectory.FullPath.get -> string!
+NdsForge.Nitro.Archives.WifiUtilityDirectory.Id.get -> ushort
+NdsForge.Nitro.Archives.WifiUtilityDirectory.Name.get -> string!
+NdsForge.Nitro.Archives.WifiUtilityDirectory.NameSubtableOffset.get -> int
+NdsForge.Nitro.Archives.WifiUtilityDirectory.ParentId.get -> ushort?
+NdsForge.Nitro.Archives.WifiUtilityFile
+NdsForge.Nitro.Archives.WifiUtilityFile.Data.get -> System.ReadOnlyMemory<byte>
+NdsForge.Nitro.Archives.WifiUtilityFile.FullPath.get -> string?
+NdsForge.Nitro.Archives.WifiUtilityFile.Id.get -> int
+NdsForge.Nitro.Archives.WifiUtilityFile.Name.get -> string?
+NdsForge.Nitro.Archives.WifiUtilityFile.Offset.get -> int
+NdsForge.Nitro.Archives.WifiUtilityFile.ParentId.get -> ushort?
+NdsForge.Nitro.Archives.WifiUtilityReadOptions
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.<Clone>$() -> NdsForge.Nitro.Archives.WifiUtilityReadOptions!
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.Equals(NdsForge.Nitro.Archives.WifiUtilityReadOptions? other) -> bool
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumArchiveBytes.get -> int
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumArchiveBytes.init -> void
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumDirectoryCount.get -> int
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumDirectoryCount.init -> void
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumDirectoryDepth.get -> int
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumDirectoryDepth.init -> void
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumFileCount.get -> int
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.MaximumFileCount.init -> void
+NdsForge.Nitro.Archives.WifiUtilityReadOptions.WifiUtilityReadOptions() -> void
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.<Clone>$() -> NdsForge.Nitro.Archives.WifiUtilityWriteOptions!
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.Equals(NdsForge.Nitro.Archives.WifiUtilityWriteOptions? other) -> bool
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.FileAlignment.get -> int
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.FileAlignment.init -> void
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.MaximumOutputBytes.get -> int
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.MaximumOutputBytes.init -> void
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.PaddingByte.get -> byte
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.PaddingByte.init -> void
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.PreserveSourceLayout.get -> bool
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.PreserveSourceLayout.init -> void
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.TableAlignment.get -> int
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.TableAlignment.init -> void
+NdsForge.Nitro.Archives.WifiUtilityWriteOptions.WifiUtilityWriteOptions() -> void
 NdsForge.Nitro.Compression.BlzCodec
 NdsForge.Nitro.Compression.BlzInfo
 NdsForge.Nitro.Compression.BlzInfo.AdditionalLength.get -> int
@@ -113,10 +172,21 @@ NdsForge.Nitro.Text.BmgMessagePart.SerializedLength.get -> byte
 NdsForge.Nitro.Text.BmgMessagePartKind
 NdsForge.Nitro.Text.BmgMessagePartKind.Control = 1 -> NdsForge.Nitro.Text.BmgMessagePartKind
 NdsForge.Nitro.Text.BmgMessagePartKind.Text = 0 -> NdsForge.Nitro.Text.BmgMessagePartKind
+override NdsForge.Nitro.Archives.WifiUtilityReadOptions.Equals(object? obj) -> bool
+override NdsForge.Nitro.Archives.WifiUtilityReadOptions.GetHashCode() -> int
+override NdsForge.Nitro.Archives.WifiUtilityReadOptions.ToString() -> string!
+override NdsForge.Nitro.Archives.WifiUtilityWriteOptions.Equals(object? obj) -> bool
+override NdsForge.Nitro.Archives.WifiUtilityWriteOptions.GetHashCode() -> int
+override NdsForge.Nitro.Archives.WifiUtilityWriteOptions.ToString() -> string!
 override NdsForge.Nitro.Compression.BlzInfo.GetHashCode() -> int
 override NdsForge.Nitro.Compression.NitroCompressionInfo.GetHashCode() -> int
 static NdsForge.Nitro.Archives.NarcArchive.CreateUnnamed(System.Collections.Generic.IReadOnlyList<System.ReadOnlyMemory<byte>>! files, NdsForge.Nitro.Containers.NitroByteOrder headerByteOrder = NdsForge.Nitro.Containers.NitroByteOrder.BigEndian) -> NdsForge.Nitro.Archives.NarcArchive!
 static NdsForge.Nitro.Archives.NarcArchive.Parse(System.ReadOnlySpan<byte> data, NdsForge.Nitro.Archives.NarcReadOptions? options = null) -> NdsForge.Nitro.Archives.NarcArchive!
+static NdsForge.Nitro.Archives.WifiUtilityArchive.Parse(System.ReadOnlySpan<byte> data, NdsForge.Nitro.Archives.WifiUtilityReadOptions? options = null) -> NdsForge.Nitro.Archives.WifiUtilityArchive!
+static NdsForge.Nitro.Archives.WifiUtilityReadOptions.operator !=(NdsForge.Nitro.Archives.WifiUtilityReadOptions? left, NdsForge.Nitro.Archives.WifiUtilityReadOptions? right) -> bool
+static NdsForge.Nitro.Archives.WifiUtilityReadOptions.operator ==(NdsForge.Nitro.Archives.WifiUtilityReadOptions? left, NdsForge.Nitro.Archives.WifiUtilityReadOptions? right) -> bool
+static NdsForge.Nitro.Archives.WifiUtilityWriteOptions.operator !=(NdsForge.Nitro.Archives.WifiUtilityWriteOptions? left, NdsForge.Nitro.Archives.WifiUtilityWriteOptions? right) -> bool
+static NdsForge.Nitro.Archives.WifiUtilityWriteOptions.operator ==(NdsForge.Nitro.Archives.WifiUtilityWriteOptions? left, NdsForge.Nitro.Archives.WifiUtilityWriteOptions? right) -> bool
 static NdsForge.Nitro.Compression.BlzCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
 static NdsForge.Nitro.Compression.BlzCodec.TryCompress(System.ReadOnlySpan<byte> data, out byte[]! encoded, int uncompressedPrefixLength = 0) -> bool
 static NdsForge.Nitro.Compression.BlzCodec.TryInspect(System.ReadOnlySpan<byte> data, out NdsForge.Nitro.Compression.BlzInfo info) -> bool

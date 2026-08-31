@@ -57,6 +57,68 @@ A no-op build is byte-identical, including allocation padding and bytes after th
 
 The private compatibility suite covers 13,630 valid NARC allocations and all 940,219 contained files. It verifies exact preservation, canonical rebuild/reparse semantics, and a payload-and-path aggregate digest locked to a reviewed compatibility baseline.
 
+## Wi-Fi utility archives
+
+`WifiUtilityArchive` reads the plain asset container commonly stored as
+`utility.bin`. Its sixteen-byte envelope contains filename-table and allocation-table
+offsets and lengths; it has no magic or independently established version field.
+The two observed table layouts do not imply two SDK versions. A leading `0x10`
+commonly means the filename table begins at offset sixteen, not LZ10 compression.
+Select this parser explicitly before trying generic compression on such an asset.
+
+```csharp
+using NdsForge.Nitro.Archives;
+
+WifiUtilityArchive archive = WifiUtilityArchive.Parse(File.ReadAllBytes("utility.bin"));
+foreach (WifiUtilityFile file in archive.Files)
+    Console.WriteLine($"{file.Id}: {file.FullPath ?? "<unnamed>"}, {file.Data.Length} bytes");
+
+byte[] replacementBytes = File.ReadAllBytes("replacement.bin");
+byte[] rebuilt = archive.CreateBuilder()
+    .ReplaceFile("/msg/example.bin", replacementBytes)
+    .Build(new WifiUtilityWriteOptions
+    {
+        PreserveSourceLayout = false,
+        TableAlignment = 32,
+        FileAlignment = 32,
+    });
+```
+
+All FAT identities are retained, including unnamed allocations, empty files, and
+shared source intervals. The directory graph exposes parent and child identities,
+declared first-file IDs, original subtable offsets, and byte-preserving Latin-1
+name projections. Lookup uses exact, case-sensitive slash paths, not host paths.
+Extract a file by copying its `Data` to an explicitly chosen safe destination;
+the library does not turn archive names into host filesystem writes. Embedded SRLs,
+compressed assets, and wireless protocol code remain opaque payloads.
+
+`WritePreserved` and an unchanged builder reproduce every source byte, including
+unknown gaps, table padding, and trailing material. Compatible same-sized payload
+edits patch that layout. If a shared interval would unintentionally change another
+file, the builder instead places allocations independently. Size changes and real
+name changes use canonical rebuilding while retaining IDs and opaque filename-table
+bytes, updating relative subtable offsets where necessary. Canonical builds do not retain unrelated physical gaps
+or trailing material. `RenameFile` and `RenameDirectory` change final path segments
+without moving entries or changing the hierarchy. Adding/removing entries and
+creating a new hierarchy are not exposed by this initial API.
+
+Canonical filename tables begin at sixteen. `TableAlignment` controls the FAT
+start (power of two, minimum four); `FileAlignment` independently controls every
+payload and the final output end. Both default to four, with zero padding.
+Preservation takes precedence over these placement preferences. Every completed
+builder output is reparsed before it is returned. Duplicate names, invalid IDs,
+unreachable or cyclic directories, overlapping metadata, truncated records,
+arithmetic overflow, and configured-limit violations fail explicitly.
+
+Default read limits are 64 MiB of source bytes, 61,440 allocations, 4,096
+directories, and depth 64. The default write ceiling is 64 MiB; limits describe
+input/output allocations rather than total peak process memory. The private corpus
+gate covers all 79 direct occurrences across 65 images, four distinct archives,
+1,472 file records, and exact four-/32-byte canonical layout identities. Neutral
+vectors additionally cover growth, shrinkage, renaming, empty and unnamed entries,
+shared intervals, and malformed input. No wireless emulation, SDK-version inference,
+or automatic decompression is implied.
+
 ## BMG messages
 
 `BmgMessageBundle` provides a conservative, read-only view of standard `MESGbmg1` message resources. It supports little- and big-endian bundles, Windows-1252, UTF-16, Shift JIS, and UTF-8 declarations, variable-length INF1 metadata, and arbitrary auxiliary sections. Text spans and length-prefixed controls remain separate `BmgMessagePart` values, so decoding visible text never destroys embedded control types or payloads.
