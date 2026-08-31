@@ -28,9 +28,9 @@ internal static class NdsWorkspaceInput
         }
     }
 
-    /// <summary>Proves inventory metadata, asset identities, source bounds, and unchanged component contents agree.</summary>
-    internal static async ValueTask ValidateExactAsync(
-        string root, NdsWorkspaceRecipe recipe, NdsImage image, CancellationToken cancellationToken)
+    /// <summary>Proves inventory metadata and asset identities agree with the immutable source snapshot.</summary>
+    internal static async ValueTask ValidateBaselineAsync(
+        NdsWorkspaceRecipe recipe, NdsImage image, CancellationToken cancellationToken)
     {
         if (image.Length != recipe.SourceInventory.PhysicalLength) { throw new InvalidDataException("Workspace preservation snapshot length has changed."); }
         NdsImageManifest actual = await NdsImageManifestCapture.CaptureAsync(image, cancellationToken,
@@ -53,6 +53,16 @@ internal static class NdsWorkspaceInput
             {
                 throw new InvalidDataException($"Workspace component identity does not match its original region: {asset.Path}");
             }
+        }
+    }
+
+    /// <summary>Additionally checks every asset for byte-exact packing rather than structural import.</summary>
+    internal static async ValueTask ValidateExactAsync(
+        string root, NdsWorkspaceRecipe recipe, NdsImage image, CancellationToken cancellationToken)
+    {
+        await ValidateBaselineAsync(recipe, image, cancellationToken).ConfigureAwait(false);
+        foreach (NdsWorkspaceAsset asset in recipe.Assets)
+        {
             string path = NdsWorkspacePaths.Resolve(root, asset.Path);
             using FileStream input = OpenRead(path);
             if (input.Length != asset.OriginalLength || await HashAsync(input, cancellationToken).ConfigureAwait(false) != asset.OriginalSha256)

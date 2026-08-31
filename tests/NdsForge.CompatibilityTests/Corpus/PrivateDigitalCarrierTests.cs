@@ -123,7 +123,7 @@ public sealed class PrivateDigitalCarrierTests
         digest.AppendData(bytes[..length]);
     }
 
-    private static Dictionary<string, string> FindFixtures()
+    internal static Dictionary<string, string> FindFixtures()
     {
         string? root = Environment.GetEnvironmentVariable("NDSFORGE_DIGITAL_CORPUS");
         if (string.IsNullOrWhiteSpace(root))

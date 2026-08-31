@@ -206,6 +206,14 @@ using (NdsImage workspaceImage = NdsImage.Load(capacityBytes))
     if (packed.SourceInventory.ImageSha256 != recipe.SourceInventory.ImageSha256 ||
         !(await File.ReadAllBytesAsync(apiPacked)).AsSpan().SequenceEqual(capacityBytes))
         throw new InvalidOperationException("Workspace package exact-packing consumer failed.");
+    NdsWorkspaceAsset payload = recipe.Assets.Single(asset => asset.Kind == NdsWorkspaceAssetKind.Allocation);
+    await File.WriteAllBytesAsync(Path.Combine(apiWorkspace, payload.Path), "changed workspace"u8.ToArray());
+    NdsImageBuilder imported = await NdsImageWorkspace.ImportAsync(apiWorkspace, NdsWorkspaceImportOptions.Default);
+    imported.Title = "WORKSPACE";
+    using NdsImage rebuiltWorkspace = NdsImage.Load(await imported.BuildAsync());
+    if (rebuiltWorkspace.Header.Title != "WORKSPACE" ||
+        !(await rebuiltWorkspace.FileSystem.GetFile("/hello.txt").ReadAllBytesAsync()).AsSpan().SequenceEqual("changed workspace"u8))
+        throw new InvalidOperationException("Workspace package structural-import consumer failed.");
 }
 Console.WriteLine("PACKAGE_CONSUMER_OK");
 await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-source.nds"), capacityBytes);

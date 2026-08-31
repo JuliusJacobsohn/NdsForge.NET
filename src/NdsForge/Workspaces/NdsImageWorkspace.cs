@@ -2,7 +2,7 @@ using System.Text;
 
 namespace NdsForge;
 
-/// <summary>Exports self-contained image workspaces and verifies byte-exact packing from unchanged native inputs.</summary>
+/// <summary>Exports self-contained image workspaces, verifies byte-exact packing, and imports supported structural edits.</summary>
 /// <remarks>Inputs must not change during an operation. Detected links are rejected; hostile concurrent filesystem replacement is not sandboxed.</remarks>
 public static class NdsImageWorkspace
 {
@@ -75,6 +75,17 @@ public static class NdsImageWorkspace
         cancellationToken.ThrowIfCancellationRequested();
         return NdsWorkspaceInput.ReadRecipeAsync(Path.GetFullPath(directory), cancellationToken);
     }
+
+    /// <summary>Imports supported payload edits into a detached structural builder after validating the original snapshot and inventory.</summary>
+    /// <remarks>Header and layout-table assets must remain unchanged. Use the returned builder for typed metadata and filesystem edits.
+    /// Structural output does not preserve arbitrary gaps or original File IDs. Authentication follows the builder's explicit policies.</remarks>
+    /// <param name="directory">Workspace root containing all original roles and independently editable payload files.</param>
+    /// <param name="options">Materialization limits, or conservative defaults when null.</param>
+    /// <param name="cancellationToken">Cancels validation or materialization without returning a partial builder.</param>
+    /// <returns>A builder owning its own component copies and no longer dependent on workspace files.</returns>
+    public static ValueTask<NdsImageBuilder> ImportAsync(
+        string directory, NdsWorkspaceImportOptions? options = null, CancellationToken cancellationToken = default) =>
+        NdsWorkspaceImporter.ImportAsync(directory, options ?? NdsWorkspaceImportOptions.Default, cancellationToken);
 
     /// <summary>Publishes a byte-exact image only when the snapshot, inventory, and every exported asset remain consistent and unchanged.</summary>
     /// <remarks>Edited assets are rejected, never silently ignored. Existing diagnostics and unknown bytes remain unchanged.

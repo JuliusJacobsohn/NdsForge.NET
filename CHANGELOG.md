@@ -7,6 +7,11 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Import supported workspace payload edits into detached structural builders with
+  bounded materialization, strict original-snapshot validation, and explicit
+  rejection of changed layout tables or unrepresented allocation relationships.
+  Preserve program footers and carrier reservations, and synchronize supported
+  overlay replacements. CLI structural building remains separate from exact pack.
 - Preserve and expose NAND partition boundaries in headers, builders, manifests,
   workspace inventories, semantic differences, and CLI inspection. Keep nominal
   capacity large enough for declared partitions without forcing file expansion;

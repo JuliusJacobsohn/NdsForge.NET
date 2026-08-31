@@ -55,8 +55,9 @@ unchanged on verification failure. Paths in the recipe must be portable and
 relative to the workspace; the entire folder can be moved to another machine.
 
 This command is an exact-preservation operation, not a structural build: edited
-assets are rejected rather than ignored. Use the library's structural builder for
-semantic changes. `unpack` and `pack` report existing image validation findings to
+assets are rejected rather than ignored. The library's `NdsImageWorkspace.ImportAsync`
+can import supported payload edits into a structural builder; a CLI `build`
+command is not yet exposed. `unpack` and `pack` report existing image validation findings to
 standard error without repairing them; exit code zero confirms successful
 preservation, not authenticity or hardware acceptance. The snapshot and exported
 assets contain original image bytes and require private storage. The snapshot

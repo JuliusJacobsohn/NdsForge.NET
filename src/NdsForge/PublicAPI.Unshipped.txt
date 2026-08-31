@@ -111,6 +111,14 @@ NdsForge.NdsWorkspaceAssetKind.Header = 0 -> NdsForge.NdsWorkspaceAssetKind
 NdsForge.NdsWorkspaceAssetKind.PostHeader = 12 -> NdsForge.NdsWorkspaceAssetKind
 NdsForge.NdsWorkspaceAssetKind.SectorHashTable = 14 -> NdsForge.NdsWorkspaceAssetKind
 NdsForge.NdsWorkspaceAssetKind.TwlReservation = 13 -> NdsForge.NdsWorkspaceAssetKind
+NdsForge.NdsWorkspaceImportOptions
+NdsForge.NdsWorkspaceImportOptions.<Clone>$() -> NdsForge.NdsWorkspaceImportOptions!
+NdsForge.NdsWorkspaceImportOptions.Equals(NdsForge.NdsWorkspaceImportOptions? other) -> bool
+NdsForge.NdsWorkspaceImportOptions.MaximumAssetBytes.get -> int
+NdsForge.NdsWorkspaceImportOptions.MaximumAssetBytes.init -> void
+NdsForge.NdsWorkspaceImportOptions.MaximumTotalAssetBytes.get -> long
+NdsForge.NdsWorkspaceImportOptions.MaximumTotalAssetBytes.init -> void
+NdsForge.NdsWorkspaceImportOptions.NdsWorkspaceImportOptions() -> void
 NdsForge.NdsWorkspaceRecipe
 NdsForge.NdsWorkspaceRecipe.Assets.get -> System.Collections.Generic.IReadOnlyList<NdsForge.NdsWorkspaceAsset!>!
 NdsForge.NdsWorkspaceRecipe.Assets.init -> void
@@ -148,6 +156,9 @@ NdsForge.NdsDownloadPlaySignature.Seed.get -> uint
 override NdsForge.NdsWorkspaceAsset.Equals(object? obj) -> bool
 override NdsForge.NdsWorkspaceAsset.GetHashCode() -> int
 override NdsForge.NdsWorkspaceAsset.ToString() -> string!
+override NdsForge.NdsWorkspaceImportOptions.Equals(object? obj) -> bool
+override NdsForge.NdsWorkspaceImportOptions.GetHashCode() -> int
+override NdsForge.NdsWorkspaceImportOptions.ToString() -> string!
 static NdsForge.NdsDownloadPlaySignature.Parse(System.ReadOnlySpan<byte> bytes) -> NdsForge.NdsDownloadPlaySignature!
 NdsForge.NdsImage.DownloadPlaySignature.get -> NdsForge.NdsDownloadPlaySignature?
 NdsForge.NdsImage.DownloadPlaySignatureRegion.get -> NdsForge.NdsRegion?
@@ -475,6 +486,7 @@ static NdsForge.NdsImageResizeOptions.operator ==(NdsForge.NdsImageResizeOptions
 static NdsForge.NdsImageResizer.WriteFileAsync(NdsForge.NdsImage! image, string! path, NdsForge.NdsImageResizeOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageResizeResult!>
 static NdsForge.NdsImageResizer.WriteAsync(NdsForge.NdsImage! image, System.IO.Stream! destination, NdsForge.NdsImageResizeOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageResizeResult!>
 static NdsForge.NdsImageWorkspace.ExportAsync(NdsForge.NdsImage! image, string! directory, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsWorkspaceRecipe!>
+static NdsForge.NdsImageWorkspace.ImportAsync(string! directory, NdsForge.NdsWorkspaceImportOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsImageBuilder!>
 static NdsForge.NdsImageWorkspace.PackFileAsync(string! directory, string! destination, bool overwriteDestination = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsWorkspaceRecipe!>
 static NdsForge.NdsImageWorkspace.ReadRecipeAsync(string! directory, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<NdsForge.NdsWorkspaceRecipe!>
 static NdsForge.NdsOverlayAuthenticationBuildOptions.CreateHmacSha1(uint tableRelativeOffset, System.ReadOnlySpan<byte> hmacKey, NdsForge.NdsProgramStorageEncoding programStorage = NdsForge.NdsProgramStorageEncoding.Plain, int uncompressedPrefixLength = 0) -> NdsForge.NdsOverlayAuthenticationBuildOptions!
@@ -491,6 +503,9 @@ static NdsForge.NdsSdkVersion.operator !=(NdsForge.NdsSdkVersion left, NdsForge.
 static NdsForge.NdsSdkVersion.operator ==(NdsForge.NdsSdkVersion left, NdsForge.NdsSdkVersion right) -> bool
 static NdsForge.NdsWorkspaceAsset.operator !=(NdsForge.NdsWorkspaceAsset? left, NdsForge.NdsWorkspaceAsset? right) -> bool
 static NdsForge.NdsWorkspaceAsset.operator ==(NdsForge.NdsWorkspaceAsset? left, NdsForge.NdsWorkspaceAsset? right) -> bool
+static NdsForge.NdsWorkspaceImportOptions.Default.get -> NdsForge.NdsWorkspaceImportOptions!
+static NdsForge.NdsWorkspaceImportOptions.operator !=(NdsForge.NdsWorkspaceImportOptions? left, NdsForge.NdsWorkspaceImportOptions? right) -> bool
+static NdsForge.NdsWorkspaceImportOptions.operator ==(NdsForge.NdsWorkspaceImportOptions? left, NdsForge.NdsWorkspaceImportOptions? right) -> bool
 static NdsForge.NdsWorkspaceRecipe.ParseJson(string! json) -> NdsForge.NdsWorkspaceRecipe!
 ~override NdsForge.NdsDsiAgeRating.Equals(object obj) -> bool
 ~override NdsForge.NdsDsiAgeRating.ToString() -> string

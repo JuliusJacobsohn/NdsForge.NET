@@ -61,8 +61,8 @@ await NdsImageWorkspace.PackFileAsync("workspace", "identical.nds");
 also independently derives metadata and component regions from the snapshot,
 checks every input's size and SHA-256, and verifies the complete temporary output
 before atomic publication. It rejects changed inputs rather than silently using
-the snapshot in place of edits. This is distinct from the structural builder;
-workspace-driven structural edits are not yet exposed. No repair, resigning, or
+the snapshot in place of edits. This is distinct from structural workspace import.
+No repair, resigning, or
 source-validity claim accompanies a byte-exact pack.
 
 Recipes require schema version 1 and reject unknown fields, duplicate JSON
@@ -193,6 +193,61 @@ Explicit empty ARM9i/ARM7i definitions are supported for digital builds when the
 DSi cartridge builds place optional digest tables after their covered NTR content, include those tables in the common used-size field, and place the TWL access boundary on a 512 KiB boundary after common content and any retained Download Play trailer. ARM9i starts 12 KiB after that boundary; ARM7i starts beyond both ARM9i's actual bytes and its minimum 16 KiB secure window. The total DSi size includes this cartridge-only layout. These are file-layout guarantees, not a claim of hardware bootability or repaired publisher authentication.
 
 `NdsCartridgeLayout.TwlReservedData` and `TwlReservedRegion` expose the bounded 12 KiB reservation preceding ARM9i. Imports preserve it exactly even when structural rebuilding relocates the boundary. `NdsImageBuilder.SetTwlReservedData` accepts exactly 12 KiB of explicit opaque bytes; an empty value selects deterministic generation from three copies of final image bytes `[0x8000,0x9000)`. This generation is the default for new recipes, not for imported reservations. Preservation saves reject payload writes that would overwrite the reservation. Contradictory boundaries, overlapping/truncated reservations, and programs inside protocol-only intervals produce errors; absent boundary declarations in older DSi homebrew produce an explicit warning without guessing their hardware layout.
+
+## Structural workspace import
+
+`NdsImageWorkspace.ImportAsync` validates the complete original snapshot,
+inventory, component roles, and source-region identities, then reads supported
+payload edits into a detached `NdsImageBuilder`. Every input must exist, including
+unchanged assets; safe-path and link checks apply to them all. The builder remains
+usable after the workspace is moved or removed.
+
+```csharp
+NdsImageBuilder builder = await NdsImageWorkspace.ImportAsync("workspace");
+builder.Title = "EDITED";
+builder.FileSystem.AddFile("/new.txt", "new content"u8);
+if (builder.DsMetadata is not null)
+    builder.DsMetadata.Integrity = NdsDsIntegrityOptions.PreserveStored;
+await builder.WriteAsync("rebuilt.nds", new NdsImageBuildOptions
+{
+    RequestedDeviceCapacityBytes = 128 * 1024 * 1024,
+    OverwriteDestination = false,
+});
+```
+
+Supported asset edits are stored ARM9/ARM7/ARM9i/ARM7i programs, named/private
+overlay allocations, other named file allocations, banners, debug executables,
+carrier reservations, and retained Download Play trailers. An existing ARM9
+footer must remain the valid final twelve bytes of its asset and is kept separate
+from the program's declared length. Uncompressed overlay replacement updates RAM
+size; compressed replacement must decode safely and retain the original RAM
+size. Use the returned builder's explicit recompression operation to change that
+size. Carrier reservations retain their original byte lengths; fixed-format
+banners and trailers must remain parseable.
+
+Header, FNT, FAT, overlay-table, and digest-table assets are immutable baseline
+inputs in this import profile. Editing them is an error, not an ignored change.
+Use the returned builder's typed metadata and filesystem operations instead.
+All original allocation roles must remain present; unreferenced unnamed
+allocations and multiple overlays sharing an unnamed allocation are explicitly
+rejected because the structural builder does not yet represent those relationships.
+Exact `pack` still preserves these layouts.
+
+Structural builds assign new offsets and File IDs, preserve supported semantic
+relationships, and do not promise arbitrary gaps, unmodeled physical aliases,
+capacity padding, or byte-exact output. Late-DS authentication requires a caller
+policy when declared. DSi imports use the builder's unsigned default; choose the
+desired integrity and digest-generation options explicitly before building.
+Preserving stored authentication does not make it valid after a structural edit.
+The existing missing-authentication-record protections remain in force.
+
+`NdsWorkspaceImportOptions` defaults to 256 MiB per original/edited asset and
+1 GiB for the sum of each role's larger original or edited length. Compressed
+overlay decoding is also bounded by the per-asset ceiling. These are input
+materialization limits, not peak process-memory promises; detached builders and
+edited copies can coexist. The full preservation snapshot is streamed separately.
+The CLI currently exposes exact `pack`; a CLI structural `build` command remains
+separate work.
 
 ## NAND cartridge partition boundaries
 

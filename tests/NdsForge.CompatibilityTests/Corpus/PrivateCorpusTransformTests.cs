@@ -169,7 +169,7 @@ public sealed class PrivateCorpusTransformTests
     }
 
     /// <summary>Compares every logical field while excluding only physical offsets and capacity padding chosen by the build profile.</summary>
-    private static void AssertSemanticManifestEquality(
+    internal static void AssertSemanticManifestEquality(
         NdsImageManifest source,
         NdsImageManifest rebuilt,
         NdsImageBuildProfile profile)
@@ -257,7 +257,7 @@ public sealed class PrivateCorpusTransformTests
     }
 
     /// <summary>Allows known source defects while rejecting any new error category introduced by reconstruction.</summary>
-    private static void AssertIntroducesNoValidationErrors(NdsValidationResult source, NdsValidationResult rebuilt)
+    internal static void AssertIntroducesNoValidationErrors(NdsValidationResult source, NdsValidationResult rebuilt)
     {
         string[] permitted = source.Diagnostics
             .Where(static diagnostic => diagnostic.Severity == NdsDiagnosticSeverity.Error)
