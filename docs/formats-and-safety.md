@@ -246,8 +246,9 @@ The existing missing-authentication-record protections remain in force.
 overlay decoding is also bounded by the per-asset ceiling. These are input
 materialization limits, not peak process-memory promises; detached builders and
 edited copies can coexist. The full preservation snapshot is streamed separately.
-The CLI currently exposes exact `pack`; a CLI structural `build` command remains
-separate work.
+The CLI `build` command exposes verified deterministic reconstruction with explicit
+capacity, padding, and DS/DSi integrity policies. Typed metadata and filesystem
+structure edits remain library operations. See the command-line reference.
 
 ## NAND cartridge partition boundaries
 

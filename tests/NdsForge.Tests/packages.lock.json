@@ -188,6 +188,12 @@
       },
       "ndsforge": {
         "type": "Project"
+      },
+      "ndsforge.cli": {
+        "type": "Project",
+        "dependencies": {
+          "NdsForge": "[1.0.1, )"
+        }
       }
     }
   }

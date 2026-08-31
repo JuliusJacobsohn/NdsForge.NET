@@ -29,6 +29,7 @@ internal static class CliApplication
                 "EXTRACT" => await ExtractAsync(args, cancellation.Token).ConfigureAwait(false),
                 "UNPACK" => await CliWorkspaceCommand.UnpackAsync(args, cancellation.Token).ConfigureAwait(false),
                 "PACK" => await CliWorkspaceCommand.PackAsync(args, cancellation.Token).ConfigureAwait(false),
+                "BUILD" => await CliBuildCommand.RunAsync(args, cancellation.Token).ConfigureAwait(false),
                 "REPLACE" => await ReplaceAsync(args, cancellation.Token).ConfigureAwait(false),
                 "RESIZE" => await CliResizeCommand.RunAsync(args, cancellation.Token).ConfigureAwait(false),
                 "MANIFEST" => await ManifestAsync(args, cancellation.Token).ConfigureAwait(false),
@@ -312,6 +313,8 @@ internal static class CliApplication
         Console.WriteLine("  unpack <image.nds> <new-directory>    Export a self-contained image workspace");
         Console.WriteLine("  pack <workspace> <output.nds> [--overwrite]");
         Console.WriteLine("                                       Verify unchanged inputs and pack byte-exactly");
+        Console.WriteLine("  build <workspace> <output.nds> [options]");
+        Console.WriteLine("                                       Rebuild payload edits with explicit sizing and authentication policy");
         Console.WriteLine("  diff <left.nds> <right.nds>          Compare content, identities, and layout");
     }
 }

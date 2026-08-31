@@ -7,11 +7,15 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Add verified CLI `build` for edited workspaces with deterministic output, explicit
+  cartridge capacity/padding and DS/DSi authentication policies, and atomic output
+  publication outside the workspace. Reject missing inputs, inapplicable policies,
+  detected links, and ambiguous device/alternate-stream output names.
 - Import supported workspace payload edits into detached structural builders with
   bounded materialization, strict original-snapshot validation, and explicit
   rejection of changed layout tables or unrepresented allocation relationships.
   Preserve program footers and carrier reservations, and synchronize supported
-  overlay replacements. CLI structural building remains separate from exact pack.
+  overlay replacements. Structural building remains separate from byte-exact pack.
 - Preserve and expose NAND partition boundaries in headers, builders, manifests,
   workspace inventories, semantic differences, and CLI inspection. Keep nominal
   capacity large enough for declared partitions without forcing file expansion;

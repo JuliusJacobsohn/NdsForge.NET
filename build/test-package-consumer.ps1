@@ -216,6 +216,9 @@ using (NdsImage workspaceImage = NdsImage.Load(capacityBytes))
         throw new InvalidOperationException("Workspace package structural-import consumer failed.");
 }
 Console.WriteLine("PACKAGE_CONSUMER_OK");
+await File.WriteAllBytesAsync(Path.Combine(args[0], "authenticated-source.nds"), authenticatedStream.ToArray());
+await File.WriteAllBytesAsync(Path.Combine(args[0], "dsi-source.nds"), await cartridgeBuilder.BuildAsync());
+await File.WriteAllBytesAsync(Path.Combine(args[0], "digital-source.nds"), await digitalBuilder.BuildAsync());
 await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-source.nds"), capacityBytes);
 capacityBytes[^1] = 37;
 await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-unclassified.nds"), capacityBytes);
@@ -305,6 +308,7 @@ await File.WriteAllBytesAsync(Path.Combine(args[0], "resize-unclassified.nds"), 
         throw 'Failed workspace verification changed an existing CLI output.'
     }
     Write-Output 'CLI_WORKSPACE_CONSUMER_OK'
+    & (Join-Path $PSScriptRoot 'test-cli-build.ps1') -Executable $executable -WorkspaceRoot $workspace
     Write-Output "TOOL_CONSUMER_OK"
 } finally {
     if ([System.IO.Directory]::Exists($workspace)) { [System.IO.Directory]::Delete($workspace, $true) }

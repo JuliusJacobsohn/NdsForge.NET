@@ -15,5 +15,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <ProjectReference Include="../../src/NdsForge/NdsForge.csproj" />
+    <ProjectReference Include="../../src/NdsForge.Cli/NdsForge.Cli.csproj" />
   </ItemGroup>
 </Project>

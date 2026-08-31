@@ -26,6 +26,7 @@
     <NoWarn>$(NoWarn);CA1303;CA1849</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <InternalsVisibleTo Include="NdsForge.Tests" />
     <ProjectReference Include="../NdsForge/NdsForge.csproj" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
     <None Include="../../assets/branding/ndsforge-icon.png" Pack="true" PackagePath="icon.png" />

@@ -17,6 +17,7 @@ ndsforge list <image.nds> [--long]
 ndsforge extract <image.nds> <directory> [--overwrite]
 ndsforge unpack <image.nds> <new-workspace-directory>
 ndsforge pack <workspace-directory> <output.nds> [--overwrite]
+ndsforge build <workspace-directory> <output.nds> [options]
 ndsforge replace <image.nds> <nitro-path> <file> <output.nds> [--overwrite]
 ndsforge manifest <image.nds> [output.json]
 ndsforge diff <left.nds> <right.nds>
@@ -55,13 +56,63 @@ unchanged on verification failure. Paths in the recipe must be portable and
 relative to the workspace; the entire folder can be moved to another machine.
 
 This command is an exact-preservation operation, not a structural build: edited
-assets are rejected rather than ignored. The library's `NdsImageWorkspace.ImportAsync`
-can import supported payload edits into a structural builder; a CLI `build`
-command is not yet exposed. `unpack` and `pack` report existing image validation findings to
+assets are rejected rather than ignored. Use `build` for supported payload edits,
+or the library's `NdsImageWorkspace.ImportAsync` for further typed builder edits.
+`unpack` and `pack` report existing image validation findings to
 standard error without repairing them; exit code zero confirms successful
 preservation, not authenticity or hardware acceptance. The snapshot and exported
 assets contain original image bytes and require private storage. The snapshot
 uses the full physical input size in addition to the exported component storage.
+
+## Structural workspace builds
+
+`build` imports supported edits and writes a deterministic, verified structural
+image to a separate path. It can change program, allocation, banner, debug-program,
+and retained carrier/trailer payload files. Existing ARM9 footers must remain valid;
+compressed overlays must retain their decoded RAM size. Fixed carrier reservations
+must retain their length. Header and generated table assets must stay unchanged:
+use the library's typed builder operations for metadata edits, file additions,
+renames, or changes to overlay runtime/compression policy.
+
+```shell
+ndsforge build game-workspace rebuilt.nds
+ndsforge build game-workspace padded.nds --capacity 0x8000000 --pad --padding-byte FF
+ndsforge build late-ds-workspace rebuilt-ds.nds --ds-integrity preserve
+ndsforge build dsi-workspace rebuilt-dsi.nds --dsi-integrity clear
+```
+
+`--capacity` selects nominal cartridge capacity, expressed in decimal bytes or
+`0x` hexadecimal. It must be a power of two from 128 KiB through 4 GiB and contain
+all content and declared NAND boundaries. Without it, the builder selects the
+smallest coherent capacity; it does not automatically retain the source capacity.
+`--pad` extends physical output to the selected capacity. Without that flag,
+output stays compact. `--padding-byte HH` controls layout gaps and final padding
+(two hex digits, default `FF`). Digital SRLs reject cartridge capacity and padding
+requests. Common/DSi used-size fields exclude final capacity padding.
+
+Late-DS headers declaring authentication require `--ds-integrity preserve` or
+`--ds-integrity clear`. Preserve retains stored authentication with warnings that
+it can be stale; clear deliberately removes the fields and declaration bits.
+All DSi builds require `--dsi-integrity clear` or `--dsi-integrity homebrew`.
+Clear removes component authentication and the signature; homebrew generates the
+library's public development HMAC/marker identity, not a retail signature. Both
+CLI policies omit original hierarchical digest tables. Explicit keys, hierarchical
+digest generation, real signing, and overlay-authentication repair credentials
+remain library API operations; secrets are never loaded from the workspace recipe.
+An inapplicable integrity policy is rejected, not ignored.
+
+Output must be outside the workspace and cannot traverse detected links or use
+ambiguous Windows device/alternate-stream names. Existing output requires
+`--overwrite`. Missing inputs, failed checks, and cancellation leave existing
+output untouched; a temporary sibling is published only after verification.
+Verification cannot be disabled through this command. Unsupported orphan/private
+allocation relationships are rejected instead of silently discarded.
+
+Structural equivalence does not promise original physical offsets, File IDs,
+opaque gaps, trailing data, authentication, or hardware acceptance. For complete
+source-byte preservation, use `pack`. Import defaults bound each original/edited
+asset to 256 MiB and aggregate native input to 1 GiB (not a peak-memory guarantee);
+applications needing different limits should use the library API.
 
 ## Physical resizing
 
@@ -87,8 +138,8 @@ flag. Existing output requires `--overwrite`. Duplicate/unknown flags and length
 on other modes are rejected. Preflight failures leave the destination unchanged.
 
 Exact cartridge length cannot exceed the existing header capacity. Changing that
-capacity is a structural build operation, available through
-`NdsImageBuildOptions.RequestedDeviceCapacityBytes`; this command deliberately
+capacity is a structural build operation, available through `build --capacity` or
+`NdsImageBuildOptions.RequestedDeviceCapacityBytes`; `resize` deliberately
 does not alter signed header bytes. It validates output and compares every
 retained byte and every added padding byte before publishing the result.
 
@@ -105,6 +156,6 @@ The CLI is a thin client over NdsForge. Applications needing filtered extraction
 
 `replace` prints save warnings to standard error, including retained Download Play
 trailers whose signature may become stale after covered data changes. A successful
-structural save does not imply signature authenticity. Images declaring late-DS
-authentication require an explicit write policy through the library API; the CLI
-does not silently preserve, remove, or regenerate those authenticated fields.
+structural save does not imply signature authenticity. The `replace` command does
+not choose a late-DS authentication policy. Use the library API or an explicitly
+configured workspace `build` for images requiring that decision.
