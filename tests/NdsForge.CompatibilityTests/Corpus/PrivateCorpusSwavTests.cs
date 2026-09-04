@@ -42,6 +42,7 @@ public sealed class PrivateCorpusSwavTests
                 Assert.Equal(wave.SampleCount, decoded.Length);
                 byte[] sampleBytes = new byte[decoded.Length * 2];
                 for (int i = 0; i < decoded.Length; i++) { BinaryPrimitives.WriteInt16LittleEndian(sampleBytes.AsSpan(i * 2), decoded[i]); }
+                CorpusWavChecks.Check(file, sampleBytes);
                 using var frame = new MemoryStream();
                 using var writer = new BinaryWriter(frame, Encoding.UTF8, true);
                 byte[] identity = SHA256.HashData(bytes);

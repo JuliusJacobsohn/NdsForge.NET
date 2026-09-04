@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $true)][string]$PackagePath,
-    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Nitro", "NdsForge.Graphics", "NdsForge.Cli")][string]$PackageId,
+    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Nitro", "NdsForge.Graphics", "NdsForge.Audio.Wav", "NdsForge.Cli")][string]$PackageId,
     [string]$ExpectedVersion
 )
 
@@ -64,6 +64,7 @@ try {
         "NdsForge" { @("lib/net10.0/NdsForge.dll", "lib/net10.0/NdsForge.xml") }
         "NdsForge.Nitro" { @("lib/net10.0/NdsForge.Nitro.dll", "lib/net10.0/NdsForge.Nitro.xml") }
         "NdsForge.Graphics" { @("lib/net10.0/NdsForge.Graphics.dll", "lib/net10.0/NdsForge.Graphics.xml") }
+        "NdsForge.Audio.Wav" { @("lib/net10.0/NdsForge.Audio.Wav.dll", "lib/net10.0/NdsForge.Audio.Wav.xml") }
         "NdsForge.Cli" { @(
             "tools/net10.0/any/DotnetToolSettings.xml",
             "tools/net10.0/any/NdsForge.Cli.dll",
@@ -81,6 +82,7 @@ try {
         "NdsForge" { "lib/net10.0/NdsForge.xml" }
         "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.xml" }
         "NdsForge.Graphics" { "lib/net10.0/NdsForge.Graphics.xml" }
+        "NdsForge.Audio.Wav" { "lib/net10.0/NdsForge.Audio.Wav.xml" }
         "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.xml" }
     }
     if ((Read-Text $entries[$documentationPath]) -notmatch '<members>') {
@@ -122,7 +124,7 @@ try {
     $namespaces = [System.Xml.XmlNamespaceManager]::new($nuspec.NameTable)
     $namespaces.AddNamespace("n", $nuspec.DocumentElement.NamespaceURI)
     $dependencies = @($nuspec.SelectNodes("/n:package/n:metadata/n:dependencies//n:dependency", $namespaces))
-    if ($PackageId -eq "NdsForge.Graphics") {
+    if ($PackageId -in @("NdsForge.Graphics", "NdsForge.Audio.Wav")) {
         if ($dependencies.Count -ne 1 -or $dependencies[0].GetAttribute("id") -ne "NdsForge.Nitro") {
             throw "$PackageId must expose exactly its NdsForge.Nitro package dependency."
         }
@@ -144,6 +146,7 @@ try {
         "NdsForge" { "lib/net10.0/NdsForge.pdb" }
         "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.pdb" }
         "NdsForge.Graphics" { "lib/net10.0/NdsForge.Graphics.pdb" }
+        "NdsForge.Audio.Wav" { "lib/net10.0/NdsForge.Audio.Wav.pdb" }
         "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.pdb" }
     }
     $pdb = $symbolArchive.GetEntry($pdbPath)

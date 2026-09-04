@@ -7,6 +7,11 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Add the optional `NdsForge.Audio.Wav` package for bounded mono/stereo PCM WAV
+  reading, deterministic writing, exact unknown-chunk and sampler preservation,
+  full-precision extensible PCM, and SWAV/STRM import/export. Convert PCM8
+  signedness and loop endpoints explicitly, reject unrepresentable loop or
+  channel semantics by default, and keep resampling and playback out of scope.
 - Read, create, decode, and edit mono/stereo STRM streams with bounded block
   layouts, independent ADPCM states, exact declared durations, explicit loops
   and timers, legacy length preservation, and deterministic canonical output.

@@ -34,12 +34,14 @@ WARN_AS_ERROR              = FAIL_ON_WARNINGS_PRINT
 INPUT                      = $(NDSFORGE_REPOSITORY_ROOT)/src/NdsForge \
                              $(NDSFORGE_REPOSITORY_ROOT)/src/NdsForge.Graphics \
                              $(NDSFORGE_REPOSITORY_ROOT)/src/NdsForge.Nitro \
+                             $(NDSFORGE_REPOSITORY_ROOT)/src/NdsForge.Audio.Wav \
                              $(NDSFORGE_REPOSITORY_ROOT)/README.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/docs/getting-started.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/docs/concepts.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/docs/formats-and-safety.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/docs/nitro-codecs.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/docs/nitro-graphics.md \
+                             $(NDSFORGE_REPOSITORY_ROOT)/docs/wav-audio.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/docs/cli.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/docs/corpus-testing.md \
                              $(NDSFORGE_REPOSITORY_ROOT)/CONTRIBUTING.md \

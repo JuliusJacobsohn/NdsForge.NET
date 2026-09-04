@@ -186,7 +186,9 @@ Decoding without options uses the stream's thirty-two-mebisample default. Passin
 `NitroWaveDecodeOptions` explicitly uses that object's limit, which defaults to
 sixteen mebisamples. Choose application-specific limits for untrusted uploads.
 ADPCM uses the same explicit DS versus signed-16 clipping policies as raw waves.
-WAV import/export, sound archive navigation, and playback are separate features.
+WAV import/export is provided by the optional
+[WAV adapter](wav-audio.md), not the native stream API. Sound archive navigation
+and playback remain separate features.
 
 ## Raw audio samples
 
@@ -298,8 +300,9 @@ word counts, unsupported encodings, invalid ADPCM indices, zero sample rates, an
 invalid active loops fail explicitly. The corpus gate checks all 373 standalone
 waves, 9,962,188 sample values under the explicit signed-16 clipping policy,
 metadata, exact preservation, and canonical output. DS saturation behavior has
-separate sample-vector coverage. SWAR/SDAT archive APIs, STRM block streams, WAV
-interoperability, and playback are not implied by this standalone-wave API.
+separate sample-vector coverage. STRM block streams use their own API described
+above, and WAV interoperability uses the optional [WAV adapter](wav-audio.md).
+SWAR/SDAT archive APIs and playback are not implied by this standalone-wave API.
 
 ## BMG messages
 

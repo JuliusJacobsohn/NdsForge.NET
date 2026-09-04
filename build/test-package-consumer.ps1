@@ -28,6 +28,8 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge.Nitro $Version failed." }
     dotnet add $consumer package NdsForge.Graphics --version $Version --no-restore
     if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge.Graphics $Version failed." }
+    dotnet add $consumer package NdsForge.Audio.Wav --version $Version --no-restore
+    if ($LASTEXITCODE -ne 0) { throw "Adding NdsForge.Audio.Wav $Version failed." }
 
     $escapedPackages = [System.Security.SecurityElement]::Escape($resolvedPackages)
     $config = @"
@@ -57,6 +59,7 @@ using NdsForge.Graphics.Sprites;
 using NdsForge.Nitro.Compression;
 using NdsForge.Nitro.Archives;
 using NdsForge.Nitro.Audio;
+using NdsForge.Audio.Wav;
 using System.Security.Cryptography;
 
 short[] audioSamples = [1000, 1000, 1000];
@@ -85,6 +88,23 @@ if (streamCopy.SampleCount != 3 || streamCopy.LoopStartSample != 1 || streamCopy
     !streamCopy.Decode().AsSpan().SequenceEqual(new short[] { 1000, -1000, 2000, -2000, 3000, 0 }) ||
     !streamCopy.DecodeChannel(0).AsSpan().SequenceEqual(new short[] { 1000, 2000, 3000 }))
     throw new InvalidOperationException("Native stream package consumer failed.");
+
+WavFile wav = NitroWavAdapter.FromStrm(streamCopy, new NitroWavExportOptions { UseExtensibleFormat = true });
+WavFile wavCopy = WavFile.Parse(wav.WritePreserved(), new WavReadOptions { AllowMissingFinalPadding = false });
+StrmFile wavImport = NitroWavAdapter.ToStrm(wavCopy, NitroWaveEncoding.Pcm16);
+if (!wavCopy.Decode().AsSpan().SequenceEqual(streamCopy.Decode()) || wavCopy.Sampler!.Loops[0].EndFrameExclusive != 3 ||
+    wavCopy.ChannelMask != 3 || wavImport.LoopStartSample != 1 || !wavImport.Decode().AsSpan().SequenceEqual(streamCopy.Decode()))
+    throw new InvalidOperationException("WAV stream package consumer failed.");
+WavFile monoWav = NitroWavAdapter.FromSwav(standaloneWave);
+if (!NitroWavAdapter.ToSwav(monoWav, NitroWaveEncoding.Pcm16).Wave.Decode().AsSpan().SequenceEqual(monoWav.Decode()))
+    throw new InvalidOperationException("WAV standalone package consumer failed.");
+WavFile unsignedWav = WavFile.Create([short.MinValue, -256, 0, 32512], 1, 22050,
+    new WavWriteOptions { Encoding = WavPcmEncoding.Unsigned8, Sampler = WavSampler.Create([new WavLoop(0, 0, 0, 4)], new WavSamplerMetadata()) });
+if (!NitroWavAdapter.ToWave(unsignedWav, NitroWaveEncoding.Pcm8, loopPolicy: WavLoopImportPolicy.Ignore).EncodedData.Span.SequenceEqual(new byte[] { 128, 255, 0, 127 }))
+    throw new InvalidOperationException("WAV signedness package consumer failed.");
+if (typeof(WavFile).Assembly.GetReferencedAssemblies().Any(reference =>
+    reference.Name is not ("NdsForge.Nitro" or "netstandard") && !reference.Name!.StartsWith("System.", StringComparison.Ordinal)))
+    throw new InvalidOperationException("WAV adapter contains an unexpected runtime dependency.");
 
 var builder = new NdsImageBuilder
 {

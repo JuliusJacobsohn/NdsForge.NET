@@ -58,6 +58,7 @@ public sealed class PrivateCorpusStrmTests
                 byte[] pcm = SampleBytes(file.Decode(decodeOptions));
                 Assert.Equal(pcm, SampleBytes(canonical.Decode(decodeOptions)));
                 Assert.Equal(file.SampleValueCount * 2, pcm.Length);
+                CorpusWavChecks.Check(file, pcm);
                 records.Add(identity, Frame(identity, file, SHA256.HashData(pcm)));
                 legacy += file.ExcludesAdpcmStateHeaderFromLength ? 1 : 0;
                 sampleValues += file.SampleValueCount;

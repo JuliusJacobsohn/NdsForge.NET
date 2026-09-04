@@ -80,6 +80,8 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "Nitro library build for API documentation failed." }
     dotnet build src/NdsForge.Graphics/NdsForge.Graphics.csproj --configuration Release --no-restore
     if ($LASTEXITCODE -ne 0) { throw "Graphics library build for API documentation failed." }
+    dotnet build src/NdsForge.Audio.Wav/NdsForge.Audio.Wav.csproj --configuration Release --no-restore
+    if ($LASTEXITCODE -ne 0) { throw "WAV adapter build for API documentation failed." }
 
     $versionOutput = & dotnet msbuild src/NdsForge/NdsForge.csproj -nologo -getProperty:PackageVersion
     if ($LASTEXITCODE -ne 0) { throw "Package version resolution failed." }
@@ -102,7 +104,7 @@ try {
     }
 
     $classIndex = Get-Content -Raw -LiteralPath (Join-Path $htmlRoot "annotated.html")
-    foreach ($requiredType in @("NdsImage", "NdsImageBuilder", "NdsImageEditor", "NdsHeader", "NdsFileSystem", "NdsImageManifest", "NdsReadOptions", "NdsValidationResult")) {
+    foreach ($requiredType in @("NdsImage", "NdsImageBuilder", "NdsImageEditor", "NdsHeader", "NdsFileSystem", "NdsImageManifest", "NdsReadOptions", "NdsValidationResult", "WavFile", "NitroWavAdapter")) {
         if ($classIndex -notmatch [regex]::Escape($requiredType)) {
             throw "Doxygen omitted public type '$requiredType'."
         }

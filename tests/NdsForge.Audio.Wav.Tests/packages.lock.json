@@ -2,6 +2,12 @@
   "version": 2,
   "dependencies": {
     "net10.0": {
+      "coverlet.collector": {
+        "type": "Direct",
+        "requested": "[6.0.2, )",
+        "resolved": "6.0.2",
+        "contentHash": "bJShQ6uWRTQ100ZeyiMqcFlhP7WJ+bCuabUs885dJiBEzMsJMSFr7BOyeCw4rgvQokteGi5rKQTlkhfQPUXg2A=="
+      },
       "Microsoft.NET.Test.Sdk": {
         "type": "Direct",
         "requested": "[18.8.1, )",
@@ -157,16 +163,7 @@
           "xunit.v3.runner.common": "[3.2.2]"
         }
       },
-      "ndsforge": {
-        "type": "Project"
-      },
       "ndsforge.audio.wav": {
-        "type": "Project",
-        "dependencies": {
-          "NdsForge.Nitro": "[1.0.1, )"
-        }
-      },
-      "ndsforge.graphics": {
         "type": "Project",
         "dependencies": {
           "NdsForge.Nitro": "[1.0.1, )"
