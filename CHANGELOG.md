@@ -7,6 +7,10 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Read, create, decode, and edit mono/stereo STRM streams with bounded block
+  layouts, independent ADPCM states, exact declared durations, explicit loops
+  and timers, legacy length preservation, and deterministic canonical output.
+  Keep WAV interoperability and playback outside the native stream API.
 - Read, create, decode, and replace standalone SWAV waves and shared native sample
   blocks with bounded lengths, exact preservation, explicit word padding and loop
   positions, independent timing metadata, and deterministic canonical output.

@@ -119,6 +119,75 @@ vectors additionally cover growth, shrinkage, renaming, empty and unnamed entrie
 shared intervals, and malformed input. No wireless emulation, SDK-version inference,
 or automatic decompression is implied.
 
+## Native audio streams
+
+`StrmFile` reads mono and stereo STRM containers using PCM8, PCM16, or DS
+IMA-ADPCM. It exposes the sample rate and independent timer, raw flags, active
+loop positions, block geometry, and complete per-channel encoded blocks.
+`SampleCount` is the number of frames in each channel; `SampleValueCount` is
+the interleaved output length. Loop ends are exclusive. `Decode` produces one
+pass in frame order (left, right for stereo); `DecodeChannel` selects one channel.
+Neither method repeats loops or resamples.
+
+```csharp
+using NdsForge.Nitro.Audio;
+
+short[] stereo = [1000, -1000, 2000, -2000, 3000, -3000];
+StrmFile stream = StrmFile.Create(stereo, 2, NitroWaveEncoding.ImaAdpcm, 22050,
+    new StrmCreateOptions { BlockByteLength = 512, LoopStartSample = 1 });
+byte[] stored = stream.WritePreserved();
+short[] decoded = StrmFile.Parse(stored).Decode();
+```
+
+Creation accepts complete sample frames and stores their exact duration, including
+odd ADPCM counts. Every channel block gets its own ADPCM state. Full block sizes
+include the four-byte ADPCM header and must leave room for samples; PCM16 block
+sizes must be even. Final channel blocks are adjacent without per-channel alignment.
+Only the end of the DATA block is rounded to four bytes. An unused ADPCM high
+nibble does not add a sample. Exact multiples do not create an extra empty final
+block, although existing files containing one remain readable.
+For single-block output, both block-size declarations describe that actual block
+rather than the requested maximum full-block capacity.
+
+`StrmCreateOptions.SampleEncoding` controls each block's predictor, step index,
+clipping policy, and encoded-byte limit. An unspecified predictor uses that
+channel block's first sample. The default timer is floor(16756991 / rate / 32),
+not the standalone wave timer. An explicit timer allows metadata to be retained
+independently of the rate. Empty nonlooping streams are representable; this does
+not claim that hardware or playback software accepts empty audio.
+
+An unchanged builder preserves every source byte, including header extensions,
+reserved metadata, payload gaps, encoded padding, trailing file data, and allocation
+padding. Metadata edits do not implicitly recalculate the timer. `ReplaceBlock`
+requires a complete validated replacement with the existing slot's physical byte
+length; use `Create` when changing the encoding, channels, or block geometry.
+
+```csharp
+StrmFileBuilder edit = stream.CreateBuilder();
+edit.SampleRate = 16000;
+edit.Timer = 32;
+byte[] canonical = edit.Build(new StrmWriteOptions { PreserveSourceLayout = false });
+```
+
+Canonical rebuilding uses a sixteen-byte header, an eighty-byte HEAD block,
+adjacent channel blocks, and zero final alignment. Defined metadata and the
+standard reserved HEAD area are retained; extensions and other padding are
+omitted. Legacy single-block ADPCM files can omit the state header from their
+stored byte-length declarations. `ExcludesAdpcmStateHeaderFromLength` identifies
+this case, and `GetBlock` still includes the complete header. Preservation retains
+the raw declarations; canonical output normalizes them to header-inclusive lengths.
+Canonical single-block output also normalizes the otherwise unused normal-block
+declarations to the actual final-block size and sample count.
+
+Parsing bounds input to 64 MiB, total decoded values to thirty-two mebisamples,
+and blocks to one mebiblock per channel by default. `StrmReadOptions` controls
+these limits; creation uses the same limits through `StrmCreateOptions.Limits`.
+Decoding without options uses the stream's thirty-two-mebisample default. Passing
+`NitroWaveDecodeOptions` explicitly uses that object's limit, which defaults to
+sixteen mebisamples. Choose application-specific limits for untrusted uploads.
+ADPCM uses the same explicit DS versus signed-16 clipping policies as raw waves.
+WAV import/export, sound archive navigation, and playback are separate features.
+
 ## Raw audio samples
 
 `NitroWaveCodec` converts native mono PCM8, PCM16, and DS IMA-ADPCM blocks

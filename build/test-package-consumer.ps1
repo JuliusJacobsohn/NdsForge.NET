@@ -76,6 +76,16 @@ if (waveCopy.Wave.SampleCount != 8 || waveCopy.Wave.LoopStartSample != 0 || wave
     waveCopy.Wave.Decode().Any(sample => sample != 1000) || !waveCopy.WritePreserved().AsSpan().SequenceEqual(standaloneWave.WritePreserved()))
     throw new InvalidOperationException("Standalone wave package consumer failed.");
 
+StrmFile nativeStream = StrmFile.Create([1000, -1000, 2000, -2000, 3000, -3000], 2,
+    NitroWaveEncoding.Pcm16, 22050, new StrmCreateOptions { BlockByteLength = 4, LoopStartSample = 1 });
+StrmFileBuilder streamEdit = nativeStream.CreateBuilder();
+streamEdit.ReplaceBlock(1, 1, [0, 0]);
+StrmFile streamCopy = StrmFile.Parse(streamEdit.Build(new StrmWriteOptions { PreserveSourceLayout = false }), new StrmReadOptions());
+if (streamCopy.SampleCount != 3 || streamCopy.LoopStartSample != 1 || streamCopy.Timer != 23 ||
+    !streamCopy.Decode().AsSpan().SequenceEqual(new short[] { 1000, -1000, 2000, -2000, 3000, 0 }) ||
+    !streamCopy.DecodeChannel(0).AsSpan().SequenceEqual(new short[] { 1000, 2000, 3000 }))
+    throw new InvalidOperationException("Native stream package consumer failed.");
+
 var builder = new NdsImageBuilder
 {
     Title = "CONSUMER",

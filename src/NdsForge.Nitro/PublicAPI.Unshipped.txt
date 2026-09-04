@@ -167,6 +167,91 @@ NdsForge.Nitro.Audio.NitroWaveReadOptions.MaximumInputBytes.init -> void
 NdsForge.Nitro.Audio.NitroWaveReadOptions.MaximumSamples.get -> int
 NdsForge.Nitro.Audio.NitroWaveReadOptions.MaximumSamples.init -> void
 NdsForge.Nitro.Audio.NitroWaveReadOptions.NitroWaveReadOptions() -> void
+NdsForge.Nitro.Audio.StrmBlock
+NdsForge.Nitro.Audio.StrmBlock.BlockIndex.get -> int
+NdsForge.Nitro.Audio.StrmBlock.ChannelIndex.get -> int
+NdsForge.Nitro.Audio.StrmBlock.EncodedData.get -> System.ReadOnlyMemory<byte>
+NdsForge.Nitro.Audio.StrmBlock.Equals(NdsForge.Nitro.Audio.StrmBlock other) -> bool
+NdsForge.Nitro.Audio.StrmBlock.Offset.get -> int
+NdsForge.Nitro.Audio.StrmBlock.SampleCount.get -> int
+NdsForge.Nitro.Audio.StrmBlock.StrmBlock() -> void
+NdsForge.Nitro.Audio.StrmCreateOptions
+NdsForge.Nitro.Audio.StrmCreateOptions.<Clone>$() -> NdsForge.Nitro.Audio.StrmCreateOptions!
+NdsForge.Nitro.Audio.StrmCreateOptions.BlockByteLength.get -> int
+NdsForge.Nitro.Audio.StrmCreateOptions.BlockByteLength.init -> void
+NdsForge.Nitro.Audio.StrmCreateOptions.Equals(NdsForge.Nitro.Audio.StrmCreateOptions? other) -> bool
+NdsForge.Nitro.Audio.StrmCreateOptions.Limits.get -> NdsForge.Nitro.Audio.StrmReadOptions!
+NdsForge.Nitro.Audio.StrmCreateOptions.Limits.init -> void
+NdsForge.Nitro.Audio.StrmCreateOptions.LoopStartSample.get -> int?
+NdsForge.Nitro.Audio.StrmCreateOptions.LoopStartSample.init -> void
+NdsForge.Nitro.Audio.StrmCreateOptions.SampleEncoding.get -> NdsForge.Nitro.Audio.NitroWaveEncodeOptions!
+NdsForge.Nitro.Audio.StrmCreateOptions.SampleEncoding.init -> void
+NdsForge.Nitro.Audio.StrmCreateOptions.StrmCreateOptions() -> void
+NdsForge.Nitro.Audio.StrmCreateOptions.Timer.get -> ushort?
+NdsForge.Nitro.Audio.StrmCreateOptions.Timer.init -> void
+NdsForge.Nitro.Audio.StrmFile
+NdsForge.Nitro.Audio.StrmFile.BlocksPerChannel.get -> int
+NdsForge.Nitro.Audio.StrmFile.ByteOrderMarker.get -> ushort
+NdsForge.Nitro.Audio.StrmFile.ChannelCount.get -> int
+NdsForge.Nitro.Audio.StrmFile.CreateBuilder() -> NdsForge.Nitro.Audio.StrmFileBuilder!
+NdsForge.Nitro.Audio.StrmFile.DataBlockLength.get -> int
+NdsForge.Nitro.Audio.StrmFile.DataBlockOffset.get -> int
+NdsForge.Nitro.Audio.StrmFile.DataOffset.get -> int
+NdsForge.Nitro.Audio.StrmFile.DeclaredLength.get -> int
+NdsForge.Nitro.Audio.StrmFile.Decode(NdsForge.Nitro.Audio.NitroWaveDecodeOptions? options = null) -> short[]!
+NdsForge.Nitro.Audio.StrmFile.DecodeChannel(int channelIndex, NdsForge.Nitro.Audio.NitroWaveDecodeOptions? options = null) -> short[]!
+NdsForge.Nitro.Audio.StrmFile.Encoding.get -> NdsForge.Nitro.Audio.NitroWaveEncoding
+NdsForge.Nitro.Audio.StrmFile.ExcludesAdpcmStateHeaderFromLength.get -> bool
+NdsForge.Nitro.Audio.StrmFile.FinalBlockByteLength.get -> int
+NdsForge.Nitro.Audio.StrmFile.FinalBlockSampleCount.get -> int
+NdsForge.Nitro.Audio.StrmFile.GetBlock(int blockIndex, int channelIndex) -> NdsForge.Nitro.Audio.StrmBlock
+NdsForge.Nitro.Audio.StrmFile.HeaderLength.get -> int
+NdsForge.Nitro.Audio.StrmFile.InformationBlockLength.get -> int
+NdsForge.Nitro.Audio.StrmFile.IsLooping.get -> bool
+NdsForge.Nitro.Audio.StrmFile.LoopEndSample.get -> int?
+NdsForge.Nitro.Audio.StrmFile.LoopStartSample.get -> int?
+NdsForge.Nitro.Audio.StrmFile.NormalBlockByteLength.get -> uint
+NdsForge.Nitro.Audio.StrmFile.NormalBlockSampleCount.get -> uint
+NdsForge.Nitro.Audio.StrmFile.RawFlags.get -> byte
+NdsForge.Nitro.Audio.StrmFile.RawLoopFlag.get -> byte
+NdsForge.Nitro.Audio.StrmFile.RawLoopStartSample.get -> uint
+NdsForge.Nitro.Audio.StrmFile.ReservedMetadata.get -> System.ReadOnlyMemory<byte>
+NdsForge.Nitro.Audio.StrmFile.SampleCount.get -> int
+NdsForge.Nitro.Audio.StrmFile.SampleRate.get -> ushort
+NdsForge.Nitro.Audio.StrmFile.SampleValueCount.get -> int
+NdsForge.Nitro.Audio.StrmFile.Timer.get -> ushort
+NdsForge.Nitro.Audio.StrmFile.WritePreserved() -> byte[]!
+NdsForge.Nitro.Audio.StrmFileBuilder
+NdsForge.Nitro.Audio.StrmFileBuilder.Build(NdsForge.Nitro.Audio.StrmWriteOptions? options = null) -> byte[]!
+NdsForge.Nitro.Audio.StrmFileBuilder.RawFlags.get -> byte
+NdsForge.Nitro.Audio.StrmFileBuilder.RawFlags.set -> void
+NdsForge.Nitro.Audio.StrmFileBuilder.RawLoopFlag.get -> byte
+NdsForge.Nitro.Audio.StrmFileBuilder.RawLoopFlag.set -> void
+NdsForge.Nitro.Audio.StrmFileBuilder.RawLoopStartSample.get -> uint
+NdsForge.Nitro.Audio.StrmFileBuilder.RawLoopStartSample.set -> void
+NdsForge.Nitro.Audio.StrmFileBuilder.ReplaceBlock(int blockIndex, int channelIndex, System.ReadOnlySpan<byte> encodedData) -> void
+NdsForge.Nitro.Audio.StrmFileBuilder.SampleRate.get -> ushort
+NdsForge.Nitro.Audio.StrmFileBuilder.SampleRate.set -> void
+NdsForge.Nitro.Audio.StrmFileBuilder.Timer.get -> ushort
+NdsForge.Nitro.Audio.StrmFileBuilder.Timer.set -> void
+NdsForge.Nitro.Audio.StrmReadOptions
+NdsForge.Nitro.Audio.StrmReadOptions.<Clone>$() -> NdsForge.Nitro.Audio.StrmReadOptions!
+NdsForge.Nitro.Audio.StrmReadOptions.Equals(NdsForge.Nitro.Audio.StrmReadOptions? other) -> bool
+NdsForge.Nitro.Audio.StrmReadOptions.MaximumBlocksPerChannel.get -> int
+NdsForge.Nitro.Audio.StrmReadOptions.MaximumBlocksPerChannel.init -> void
+NdsForge.Nitro.Audio.StrmReadOptions.MaximumInputBytes.get -> int
+NdsForge.Nitro.Audio.StrmReadOptions.MaximumInputBytes.init -> void
+NdsForge.Nitro.Audio.StrmReadOptions.MaximumSampleValues.get -> int
+NdsForge.Nitro.Audio.StrmReadOptions.MaximumSampleValues.init -> void
+NdsForge.Nitro.Audio.StrmReadOptions.StrmReadOptions() -> void
+NdsForge.Nitro.Audio.StrmWriteOptions
+NdsForge.Nitro.Audio.StrmWriteOptions.<Clone>$() -> NdsForge.Nitro.Audio.StrmWriteOptions!
+NdsForge.Nitro.Audio.StrmWriteOptions.Equals(NdsForge.Nitro.Audio.StrmWriteOptions? other) -> bool
+NdsForge.Nitro.Audio.StrmWriteOptions.MaximumOutputBytes.get -> int
+NdsForge.Nitro.Audio.StrmWriteOptions.MaximumOutputBytes.init -> void
+NdsForge.Nitro.Audio.StrmWriteOptions.PreserveSourceLayout.get -> bool
+NdsForge.Nitro.Audio.StrmWriteOptions.PreserveSourceLayout.init -> void
+NdsForge.Nitro.Audio.StrmWriteOptions.StrmWriteOptions() -> void
 NdsForge.Nitro.Audio.SwavFile
 NdsForge.Nitro.Audio.SwavFile.ByteOrderMarker.get -> ushort
 NdsForge.Nitro.Audio.SwavFile.CreateBuilder() -> NdsForge.Nitro.Audio.SwavFileBuilder!
@@ -273,6 +358,16 @@ override NdsForge.Nitro.Audio.NitroWaveEncodeOptions.ToString() -> string!
 override NdsForge.Nitro.Audio.NitroWaveReadOptions.Equals(object? obj) -> bool
 override NdsForge.Nitro.Audio.NitroWaveReadOptions.GetHashCode() -> int
 override NdsForge.Nitro.Audio.NitroWaveReadOptions.ToString() -> string!
+override NdsForge.Nitro.Audio.StrmBlock.GetHashCode() -> int
+override NdsForge.Nitro.Audio.StrmCreateOptions.Equals(object? obj) -> bool
+override NdsForge.Nitro.Audio.StrmCreateOptions.GetHashCode() -> int
+override NdsForge.Nitro.Audio.StrmCreateOptions.ToString() -> string!
+override NdsForge.Nitro.Audio.StrmReadOptions.Equals(object? obj) -> bool
+override NdsForge.Nitro.Audio.StrmReadOptions.GetHashCode() -> int
+override NdsForge.Nitro.Audio.StrmReadOptions.ToString() -> string!
+override NdsForge.Nitro.Audio.StrmWriteOptions.Equals(object? obj) -> bool
+override NdsForge.Nitro.Audio.StrmWriteOptions.GetHashCode() -> int
+override NdsForge.Nitro.Audio.StrmWriteOptions.ToString() -> string!
 override NdsForge.Nitro.Audio.SwavWriteOptions.Equals(object? obj) -> bool
 override NdsForge.Nitro.Audio.SwavWriteOptions.GetHashCode() -> int
 override NdsForge.Nitro.Audio.SwavWriteOptions.ToString() -> string!
@@ -298,6 +393,16 @@ static NdsForge.Nitro.Audio.NitroWaveEncodeOptions.operator !=(NdsForge.Nitro.Au
 static NdsForge.Nitro.Audio.NitroWaveEncodeOptions.operator ==(NdsForge.Nitro.Audio.NitroWaveEncodeOptions? left, NdsForge.Nitro.Audio.NitroWaveEncodeOptions? right) -> bool
 static NdsForge.Nitro.Audio.NitroWaveReadOptions.operator !=(NdsForge.Nitro.Audio.NitroWaveReadOptions? left, NdsForge.Nitro.Audio.NitroWaveReadOptions? right) -> bool
 static NdsForge.Nitro.Audio.NitroWaveReadOptions.operator ==(NdsForge.Nitro.Audio.NitroWaveReadOptions? left, NdsForge.Nitro.Audio.NitroWaveReadOptions? right) -> bool
+static NdsForge.Nitro.Audio.StrmBlock.operator !=(NdsForge.Nitro.Audio.StrmBlock left, NdsForge.Nitro.Audio.StrmBlock right) -> bool
+static NdsForge.Nitro.Audio.StrmBlock.operator ==(NdsForge.Nitro.Audio.StrmBlock left, NdsForge.Nitro.Audio.StrmBlock right) -> bool
+static NdsForge.Nitro.Audio.StrmCreateOptions.operator !=(NdsForge.Nitro.Audio.StrmCreateOptions? left, NdsForge.Nitro.Audio.StrmCreateOptions? right) -> bool
+static NdsForge.Nitro.Audio.StrmCreateOptions.operator ==(NdsForge.Nitro.Audio.StrmCreateOptions? left, NdsForge.Nitro.Audio.StrmCreateOptions? right) -> bool
+static NdsForge.Nitro.Audio.StrmFile.Create(System.ReadOnlySpan<short> samples, int channelCount, NdsForge.Nitro.Audio.NitroWaveEncoding encoding, ushort sampleRate, NdsForge.Nitro.Audio.StrmCreateOptions? options = null) -> NdsForge.Nitro.Audio.StrmFile!
+static NdsForge.Nitro.Audio.StrmFile.Parse(System.ReadOnlySpan<byte> data, NdsForge.Nitro.Audio.StrmReadOptions? options = null) -> NdsForge.Nitro.Audio.StrmFile!
+static NdsForge.Nitro.Audio.StrmReadOptions.operator !=(NdsForge.Nitro.Audio.StrmReadOptions? left, NdsForge.Nitro.Audio.StrmReadOptions? right) -> bool
+static NdsForge.Nitro.Audio.StrmReadOptions.operator ==(NdsForge.Nitro.Audio.StrmReadOptions? left, NdsForge.Nitro.Audio.StrmReadOptions? right) -> bool
+static NdsForge.Nitro.Audio.StrmWriteOptions.operator !=(NdsForge.Nitro.Audio.StrmWriteOptions? left, NdsForge.Nitro.Audio.StrmWriteOptions? right) -> bool
+static NdsForge.Nitro.Audio.StrmWriteOptions.operator ==(NdsForge.Nitro.Audio.StrmWriteOptions? left, NdsForge.Nitro.Audio.StrmWriteOptions? right) -> bool
 static NdsForge.Nitro.Audio.SwavFile.Create(NdsForge.Nitro.Audio.NitroWave! wave, NdsForge.Nitro.Audio.SwavWriteOptions? options = null) -> NdsForge.Nitro.Audio.SwavFile!
 static NdsForge.Nitro.Audio.SwavFile.Parse(System.ReadOnlySpan<byte> data, NdsForge.Nitro.Audio.NitroWaveReadOptions? options = null) -> NdsForge.Nitro.Audio.SwavFile!
 static NdsForge.Nitro.Audio.SwavWriteOptions.operator !=(NdsForge.Nitro.Audio.SwavWriteOptions? left, NdsForge.Nitro.Audio.SwavWriteOptions? right) -> bool
@@ -319,6 +424,8 @@ static NdsForge.Nitro.Compression.NitroCompressionInfo.operator ==(NdsForge.Nitr
 static NdsForge.Nitro.Compression.RleCodec.Compress(System.ReadOnlySpan<byte> data) -> byte[]!
 static NdsForge.Nitro.Compression.RleCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
 static NdsForge.Nitro.Text.BmgMessageBundle.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Nitro.Text.BmgMessageBundle!
+~override NdsForge.Nitro.Audio.StrmBlock.Equals(object obj) -> bool
+~override NdsForge.Nitro.Audio.StrmBlock.ToString() -> string
 ~override NdsForge.Nitro.Compression.BlzInfo.Equals(object obj) -> bool
 ~override NdsForge.Nitro.Compression.BlzInfo.ToString() -> string
 ~override NdsForge.Nitro.Compression.NitroCompressionInfo.Equals(object obj) -> bool
