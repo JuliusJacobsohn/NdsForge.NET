@@ -1,6 +1,93 @@
 # Nitro graphics {#nitro_graphics}
 
-`NdsForge.Graphics` is the optional, dependency-light feature package for native Nintendo DS indexed graphics. It references `NdsForge.Nitro` for shared platform types but does not bring in PNG, JPEG, GIF, or UI frameworks. A future `NdsForge.Graphics.ImageSharp` adapter can provide host-image import/export and quantization without imposing those dependencies on ROM, archive, or native-resource consumers.
+`NdsForge.Graphics` is the optional, dependency-light feature package for native Nintendo DS indexed graphics. It references `NdsForge.Nitro` for shared platform types. Native pixels, palettes, tiling, rendering, and quantization belong in this package. PNG, JPEG, GIF, and other host-image codecs belong in a separate adapter, such as a future `NdsForge.Graphics.ImageSharp` package. No host-codec adapter is currently required or shipped. Package validation and runtime-dependency tests enforce this boundary.
+
+## RGBA conversion and Banners
+
+`IndexedImage4.FromRgba32` accepts straight-alpha row-major pixels and returns
+four-bit indices plus sixteen BGR555 palette words. Index zero is reserved for
+transparency by default, including for fully opaque input. A Banner therefore
+has fifteen opaque color slots. The result feeds the core Banner builder without
+adding a dependency between the core and graphics packages:
+
+```csharp
+using NdsForge;
+using NdsForge.Graphics.Colors;
+using NdsForge.Graphics.Images;
+
+RgbaColor32[] pixels = Enumerable.Repeat(new RgbaColor32(255, 96, 32), 1024).ToArray();
+IndexedImage4 icon = IndexedImage4.FromRgba32(32, 32, pixels);
+NdsBanner banner = new NdsBannerBuilder()
+    .SetTitle(NdsBannerLanguage.English, "Example")
+    .SetIndexedIcon(icon.PaletteIndices.Span, icon.Palette.Span)
+    .Build();
+```
+
+The conversion contract is explicit:
+
+- Alpha at or below `AlphaThreshold` becomes transparent; its RGB is ignored.
+  The default threshold is zero. Higher alpha becomes opaque without blending.
+  With `ReserveTransparentIndex = false`, alpha is ignored and all sixteen entries
+  can be opaque; that setting is unsuitable for Banners.
+- `ColorReduction` defaults to `DiscardLowBits`, which removes the low three bits
+  per RGB channel. `Nearest` uses the existing `NitroColor555.FromRgba32` rounding
+  rule. Packing happens before duplicate-color detection. Partial-alpha values
+  do not create duplicate opaque palette entries.
+- Colors that fit retain first row-major occurrence order. Unused palette entries
+  are zero. `ColorCount` includes the reserved transparent slot.
+- Excess colors use frequency-weighted seed selection followed by at most eight
+  integer nearest-center refinement rounds in five-bit RGB space. Seed-score ties
+  use the smaller packed color; distance ties use the earlier palette entry. There
+  is no dithering or random state. This is a deterministic policy, not a claim of
+  globally optimal or perceptually uniform color fitting.
+- `PaletteOverflow = IndexedPaletteOverflow.Reject` requires exact packed opaque
+  colors. `WasColorReduced` reports changes to packed colors, excluding initial
+  RGB packing and alpha thresholding.
+- Dimensions must be positive and match the pixel count. `MaximumPixels` defaults
+  to 16,777,216 and is checked before output allocation. Empty images are rejected;
+  a nonempty fully transparent image is supported. This is an input-pixel bound,
+  not a process-memory budget.
+
+`MapToPalette` uses a supplied ordered palette. It preserves duplicates, unused
+entries, and high bits; bit 15 does not affect RGB distance. The reserved index
+never matches an opaque pixel. Reject mode requires an exact five-bit match.
+Equivalent palette colors choose the first eligible entry, so an RGBA round trip
+cannot recover distinct source indices that originally had identical colors.
+
+`EncodeTiles` emits complete 8-by-8 tiles, with the left pixel in the low nibble;
+both dimensions must be multiples of eight. `EncodePalette` returns 32 little-endian
+bytes. `Render` uses `NitroColor555` full-range expansion and transparent black for
+index zero. Other renderers can expand five-bit channels differently by one
+eight-bit step; comparisons therefore use packed colors and transparency.
+
+For DSi animation, convert each 32-by-32 source frame and use `SetAnimatedFrame`:
+
+```csharp
+var animated = new NdsBannerBuilder(0x0103)
+    .SetIndexedIcon(icon.PaletteIndices.Span, icon.Palette.Span);
+for (int slot = 0; slot < 8; slot++)
+{
+    RgbaColor32[] framePixels = Enumerable.Repeat(
+        new RgbaColor32((byte)(slot * 32), 96, 192), 1024).ToArray();
+    IndexedImage4 frame = IndexedImage4.FromRgba32(32, 32, framePixels);
+    animated.SetAnimatedFrame(slot, frame.PaletteIndices.Span, frame.Palette.Span);
+}
+animated.SetAnimationSequence(Enumerable.Range(0, 8)
+    .Select(slot => new NdsBannerAnimationStep(10, (byte)slot, (byte)slot)));
+NdsBanner animation = animated.Build();
+```
+
+Tile and palette selectors remain independent. The example pairs each frame with
+its own palette. For palette cycling, establish consistent index meaning across
+palettes; independently reducing each frame does not establish that relationship.
+The core builder validates frame metadata and computes Banner CRCs.
+
+Tests lock complete bytes for sixteen static-icon examples across all four Banner
+versions, plus an eight-frame animated example with a 63-step sequence. The private
+corpus check covers 142 cartridge and five Digital SRL static icons, all 640
+tile/palette combinations in ten animated Banners, and 226 sequence entries.
+Visible colors and transparency must
+survive conversion and rebuilding; source palette-index aliases need not survive.
 
 ## Colors and NCLR palettes
 

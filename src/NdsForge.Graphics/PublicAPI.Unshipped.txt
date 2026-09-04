@@ -108,6 +108,39 @@ NdsForge.Graphics.Fonts.NftrTextEncoding.ShiftJis = 2 -> NdsForge.Graphics.Fonts
 NdsForge.Graphics.Fonts.NftrTextEncoding.Utf16 = 1 -> NdsForge.Graphics.Fonts.NftrTextEncoding
 NdsForge.Graphics.Fonts.NftrTextEncoding.Utf8 = 0 -> NdsForge.Graphics.Fonts.NftrTextEncoding
 NdsForge.Graphics.Fonts.NftrTextEncoding.Windows1252 = 3 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Images.IndexedConversionOptions
+NdsForge.Graphics.Images.IndexedConversionOptions.<Clone>$() -> NdsForge.Graphics.Images.IndexedConversionOptions!
+NdsForge.Graphics.Images.IndexedConversionOptions.AlphaThreshold.get -> byte
+NdsForge.Graphics.Images.IndexedConversionOptions.AlphaThreshold.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.ColorReduction.get -> NdsForge.Graphics.Images.NitroColorReduction
+NdsForge.Graphics.Images.IndexedConversionOptions.ColorReduction.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.Equals(NdsForge.Graphics.Images.IndexedConversionOptions? other) -> bool
+NdsForge.Graphics.Images.IndexedConversionOptions.IndexedConversionOptions() -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumColors.get -> int
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumColors.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumPixels.get -> int
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumPixels.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.PaletteOverflow.get -> NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.IndexedConversionOptions.PaletteOverflow.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.ReserveTransparentIndex.get -> bool
+NdsForge.Graphics.Images.IndexedConversionOptions.ReserveTransparentIndex.init -> void
+NdsForge.Graphics.Images.IndexedImage4
+NdsForge.Graphics.Images.IndexedImage4.ColorCount.get -> int
+NdsForge.Graphics.Images.IndexedImage4.EncodePalette() -> byte[]!
+NdsForge.Graphics.Images.IndexedImage4.EncodeTiles() -> byte[]!
+NdsForge.Graphics.Images.IndexedImage4.HasTransparentIndex.get -> bool
+NdsForge.Graphics.Images.IndexedImage4.Height.get -> int
+NdsForge.Graphics.Images.IndexedImage4.Palette.get -> System.ReadOnlyMemory<ushort>
+NdsForge.Graphics.Images.IndexedImage4.PaletteIndices.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Images.IndexedImage4.Render() -> NdsForge.Graphics.Images.RgbaImage32!
+NdsForge.Graphics.Images.IndexedImage4.WasColorReduced.get -> bool
+NdsForge.Graphics.Images.IndexedImage4.Width.get -> int
+NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.IndexedPaletteOverflow.Reduce = 0 -> NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.IndexedPaletteOverflow.Reject = 1 -> NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.NitroColorReduction
+NdsForge.Graphics.Images.NitroColorReduction.DiscardLowBits = 0 -> NdsForge.Graphics.Images.NitroColorReduction
+NdsForge.Graphics.Images.NitroColorReduction.Nearest = 1 -> NdsForge.Graphics.Images.NitroColorReduction
 NdsForge.Graphics.Images.RgbaImage32
 NdsForge.Graphics.Images.RgbaImage32.GetPixel(int x, int y) -> NdsForge.Graphics.Colors.RgbaColor32
 NdsForge.Graphics.Images.RgbaImage32.Height.get -> int
@@ -262,6 +295,9 @@ override NdsForge.Graphics.Colors.RgbaColor32.GetHashCode() -> int
 override NdsForge.Graphics.Fonts.NftrCharacterMapping.GetHashCode() -> int
 override NdsForge.Graphics.Fonts.NftrExtendedMetrics.GetHashCode() -> int
 override NdsForge.Graphics.Fonts.NftrGlyphMetrics.GetHashCode() -> int
+override NdsForge.Graphics.Images.IndexedConversionOptions.Equals(object? obj) -> bool
+override NdsForge.Graphics.Images.IndexedConversionOptions.GetHashCode() -> int
+override NdsForge.Graphics.Images.IndexedConversionOptions.ToString() -> string!
 override NdsForge.Graphics.Maps.NscrMapEntry.GetHashCode() -> int
 override NdsForge.Graphics.Sprites.NcerCellBounds.GetHashCode() -> int
 override NdsForge.Graphics.Sprites.NitroObjectEntry.GetHashCode() -> int
@@ -279,6 +315,10 @@ static NdsForge.Graphics.Fonts.NftrExtendedMetrics.operator ==(NdsForge.Graphics
 static NdsForge.Graphics.Fonts.NftrFont.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Fonts.NftrFont!
 static NdsForge.Graphics.Fonts.NftrGlyphMetrics.operator !=(NdsForge.Graphics.Fonts.NftrGlyphMetrics left, NdsForge.Graphics.Fonts.NftrGlyphMetrics right) -> bool
 static NdsForge.Graphics.Fonts.NftrGlyphMetrics.operator ==(NdsForge.Graphics.Fonts.NftrGlyphMetrics left, NdsForge.Graphics.Fonts.NftrGlyphMetrics right) -> bool
+static NdsForge.Graphics.Images.IndexedConversionOptions.operator !=(NdsForge.Graphics.Images.IndexedConversionOptions? left, NdsForge.Graphics.Images.IndexedConversionOptions? right) -> bool
+static NdsForge.Graphics.Images.IndexedConversionOptions.operator ==(NdsForge.Graphics.Images.IndexedConversionOptions? left, NdsForge.Graphics.Images.IndexedConversionOptions? right) -> bool
+static NdsForge.Graphics.Images.IndexedImage4.FromRgba32(int width, int height, System.ReadOnlySpan<NdsForge.Graphics.Colors.RgbaColor32> pixels, NdsForge.Graphics.Images.IndexedConversionOptions? options = null) -> NdsForge.Graphics.Images.IndexedImage4!
+static NdsForge.Graphics.Images.IndexedImage4.MapToPalette(int width, int height, System.ReadOnlySpan<NdsForge.Graphics.Colors.RgbaColor32> pixels, System.ReadOnlySpan<ushort> palette, NdsForge.Graphics.Images.IndexedConversionOptions? options = null) -> NdsForge.Graphics.Images.IndexedImage4!
 static NdsForge.Graphics.Maps.NscrMapEntry.FromPackedValue(ushort value) -> NdsForge.Graphics.Maps.NscrMapEntry
 static NdsForge.Graphics.Maps.NscrMapEntry.operator !=(NdsForge.Graphics.Maps.NscrMapEntry left, NdsForge.Graphics.Maps.NscrMapEntry right) -> bool
 static NdsForge.Graphics.Maps.NscrMapEntry.operator ==(NdsForge.Graphics.Maps.NscrMapEntry left, NdsForge.Graphics.Maps.NscrMapEntry right) -> bool

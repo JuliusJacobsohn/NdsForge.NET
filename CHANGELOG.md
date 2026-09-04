@@ -7,6 +7,11 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Convert RGBA pixels into deterministic four-bit indexed graphics with explicit
+  transparency, RGB packing, palette limits, overflow reduction or rejection,
+  fixed-palette mapping, and native tile/palette encoding. Feed static and all
+  DSi animated Banner slots through the existing core builder. Keep native
+  quantization in the dependency-light graphics package with no host image codec.
 - Read and rebuild Wi-Fi utility archives with bounded filename/allocation tables,
   stable identities, exact no-op preservation, payload replacement, and file or
   directory renaming. Preserve unnamed, empty, and shared allocations; expose

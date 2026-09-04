@@ -163,6 +163,9 @@
           "xunit.v3.runner.common": "[3.2.2]"
         }
       },
+      "ndsforge": {
+        "type": "Project"
+      },
       "ndsforge.graphics": {
         "type": "Project",
         "dependencies": {

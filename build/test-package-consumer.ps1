@@ -49,6 +49,7 @@ try {
 using NdsForge;
 using NdsForge.Graphics.Colors;
 using NdsForge.Graphics.Fonts;
+using NdsForge.Graphics.Images;
 using NdsForge.Graphics.Maps;
 using NdsForge.Graphics.Palettes;
 using NdsForge.Graphics.Tiles;
@@ -201,6 +202,24 @@ WifiUtilityArchive editedUtility = WifiUtilityArchive.Parse(utility.CreateBuilde
 if (!utility.WritePreserved().AsSpan().SequenceEqual(utilityBytes) || utility.Root.FileIds.Count != 1 ||
     !editedUtility.FindFile("/long.bin")!.Data.Span.SequenceEqual(new byte[] { 5, 6, 7, 8 }))
     throw new InvalidOperationException("Utility archive package consumer failed.");
+IndexedImage4 convertedIcon = IndexedImage4.FromRgba32(32, 32,
+    Enumerable.Repeat(new RgbaColor32(255, 0, 0), 1024).ToArray(),
+    new IndexedConversionOptions { PaletteOverflow = IndexedPaletteOverflow.Reject });
+var convertedBannerBuilder = new NdsBannerBuilder(0x103)
+    .SetIndexedIcon(convertedIcon.PaletteIndices.Span, convertedIcon.Palette.Span);
+for (int frame = 0; frame < 8; frame++)
+    convertedBannerBuilder.SetAnimatedFrame(frame, convertedIcon.PaletteIndices.Span, convertedIcon.Palette.Span);
+NdsBanner convertedBanner = convertedBannerBuilder
+    .SetAnimationSequence(Enumerable.Range(0, 8).Select(frame => new NdsBannerAnimationStep(10, (byte)frame, (byte)frame))).Build();
+IndexedImage4 fixedIcon = IndexedImage4.MapToPalette(32, 32, convertedIcon.Render().Pixels.ToArray(), convertedIcon.Palette.Span);
+if (convertedIcon.ColorCount != 2 || convertedIcon.WasColorReduced || !convertedIcon.HasTransparentIndex ||
+    convertedIcon.EncodeTiles().Length != 512 || convertedIcon.EncodePalette().Length != 32 ||
+    convertedBanner.GetAnimationSteps().Count != 8 || convertedBanner.RenderAnimatedIconRgba32(7, 7)[0] != 255 ||
+    !fixedIcon.PaletteIndices.Span.SequenceEqual(convertedIcon.PaletteIndices.Span))
+    throw new InvalidOperationException("Indexed conversion and Banner package consumer failed.");
+if (typeof(IndexedImage4).Assembly.GetReferencedAssemblies().Any(reference =>
+    reference.Name is not ("NdsForge.Nitro" or "netstandard") && !reference.Name!.StartsWith("System.", StringComparison.Ordinal)))
+    throw new InvalidOperationException("Graphics package contains an unexpected runtime dependency.");
 NclrPalette palette = NclrPalette.Create(NitroColorDepth.Indexed4Bpp, [new NitroColor555(0), new NitroColor555(0x7FFF)]);
 if (NclrPalette.Parse(palette.CreateBuilder().Build()).Colors[1].ToRgba32() != new RgbaColor32(255, 255, 255))
     throw new InvalidOperationException("Graphics package consumer round trip failed.");
