@@ -15,9 +15,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
+      - name: Test release safety policy
+        shell: pwsh
+        run: ./build/test-release-policy.ps1
+      - name: Validate workflow definitions
+        run: go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.11
+      - name: Require a version increment for package changes
+        if: github.event_name == 'pull_request'
+        shell: pwsh
+        env:
+          BASE_COMMIT: ${{ github.event.pull_request.base.sha }}
+        run: ./build/verify-release-version.ps1 -BaseRef $env:BASE_COMMIT
+      - name: Check the main version transition
+        if: github.event_name == 'push'
+        shell: pwsh
+        run: ./build/verify-release-version.ps1 -BaseRef 'HEAD^'
       - name: Restore locked dependencies
         run: dotnet restore NdsForge.slnx --locked-mode
       - name: Resolve package version
@@ -66,6 +83,9 @@ jobs:
       - name: Test clean package consumers
         shell: pwsh
         run: ./build/test-package-consumer.ps1 artifacts/packages $env:PACKAGE_VERSION
+      - name: Build strict documentation
+        shell: pwsh
+        run: ./build/build-docs.ps1 -NoRestore
       - uses: actions/upload-artifact@v7
         if: always()
         with:
@@ -82,6 +102,9 @@ jobs:
       - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
+      - name: Test release safety policy
+        shell: pwsh
+        run: ./build/test-release-policy.ps1
       - name: Restore locked dependencies
         run: dotnet restore NdsForge.slnx --locked-mode
       - name: Build solution

@@ -1,6 +1,10 @@
 name: Release
 
 on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       release:
@@ -8,6 +12,10 @@ on:
         required: true
         default: false
         type: boolean
+      commit:
+        description: Optional exact main commit to retry (empty means current main)
+        required: false
+        type: string
 
 concurrency:
   group: release-${{ github.repository }}
@@ -15,16 +23,29 @@ concurrency:
 
 permissions:
   actions: read
-  contents: write
-  id-token: write
+  contents: read
 
 jobs:
   release:
-    name: Verify and prepare package release
+    name: Verify and publish a main release
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.head_repository.full_name == github.repository &&
+       (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch'))
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+      id-token: write
+    env:
+      RELEASE_COMMIT: ${{ github.event.workflow_run.head_sha || inputs.commit || github.sha }}
     steps:
+      # Never check out a pull request or consume artifacts from an untrusted CI run.
       - uses: actions/checkout@v7
         with:
+          ref: ${{ env.RELEASE_COMMIT }}
           fetch-depth: 0
       - uses: actions/setup-dotnet@v6
         with:
@@ -33,37 +54,34 @@ jobs:
         id: identity
         shell: pwsh
         env:
-          WORKFLOW_REF: ${{ github.ref }}
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_EVENT: ${{ github.event_name }}
+          REQUESTED_PUBLISH: ${{ inputs.release }}
+          TRIGGER_REPOSITORY: ${{ github.event.workflow_run.head_repository.full_name }}
+          TRIGGER_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          TRIGGER_EVENT: ${{ github.event.workflow_run.event }}
+          TRIGGER_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+        run: ./build/resolve-release.ps1
+      - name: Require successful cross-platform main CI for the exact commit
+        if: steps.identity.outputs.publish == 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if ($env:WORKFLOW_REF -ne 'refs/heads/main') { throw "Releases must run from main." }
-          $output = & dotnet msbuild src/NdsForge/NdsForge.csproj -nologo -getProperty:PackageVersion
-          if ($LASTEXITCODE -ne 0) { throw "Package version resolution failed." }
-          $version = ($output | Select-Object -Last 1).Trim()
-          if ($version -notmatch '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$') {
-            throw "Package version '$version' must be a stable normalized SemVer version."
-          }
-          $tag = "v$version"
-          git fetch --force --tags
-          if ($LASTEXITCODE -ne 0) { throw "Fetching tags failed." }
-          git show-ref --verify --quiet "refs/tags/$tag"
-          $lookup = $LASTEXITCODE
-          if ($lookup -ne 0 -and $lookup -ne 1) { throw "Looking up '$tag' failed." }
-          $tagExisted = $lookup -eq 0
-          $global:LASTEXITCODE = 0
-          if ($tagExisted) {
-            $commit = & git rev-parse --verify "refs/tags/$tag^{commit}"
-            if ($LASTEXITCODE -ne 0 -or $commit.Trim() -ne $env:GITHUB_SHA) {
-              throw "Existing tag '$tag' does not identify this commit."
-            }
-          }
-          "PACKAGE_VERSION=$version" >> $env:GITHUB_ENV
-          "RELEASE_TAG=$tag" >> $env:GITHUB_ENV
-          "version=$version" >> $env:GITHUB_OUTPUT
-          "tag_existed=$($tagExisted.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
+          $json = & gh run list --repo $env:GITHUB_REPOSITORY --workflow ci.yml --commit $env:RELEASE_COMMIT --limit 30 --json status,conclusion,headBranch,event,headSha
+          if ($LASTEXITCODE -ne 0) { throw "Querying CI failed." }
+          $runs = @($json | ConvertFrom-Json)
+          if (-not ($runs | Where-Object {
+              $_.status -eq 'completed' -and $_.conclusion -eq 'success' -and
+              $_.headBranch -eq 'main' -and $_.headSha -eq $env:RELEASE_COMMIT -and
+              $_.event -in @('push', 'workflow_dispatch')
+          })) { throw "Publishing requires successful main CI for this exact commit." }
       - name: Run complete release gate
+        if: steps.identity.outputs.prepare == 'true'
         shell: pwsh
         run: ./build/build.ps1
       - name: Assemble and revalidate payload
+        if: steps.identity.outputs.prepare == 'true'
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Path artifacts/release -Force | Out-Null
@@ -73,90 +91,68 @@ jobs:
             ./build/validate-package.ps1 "artifacts/release/$id.$env:PACKAGE_VERSION.nupkg" $id $env:PACKAGE_VERSION
           }
           ./build/test-package-consumer.ps1 artifacts/release $env:PACKAGE_VERSION
-      - name: Create checksums
+      - name: Create checksums and release notes
+        if: steps.identity.outputs.prepare == 'true'
         shell: pwsh
         run: |
           $lines = Get-ChildItem -LiteralPath artifacts/release -File |
             Sort-Object Name |
             ForEach-Object { "{0}  {1}" -f (Get-FileHash -Algorithm SHA256 -LiteralPath $_.FullName).Hash.ToLowerInvariant(), $_.Name }
           [System.IO.File]::WriteAllLines('artifacts/release/SHA256SUMS', $lines, [System.Text.UTF8Encoding]::new($false))
-      - name: Require successful cross-platform CI
-        if: inputs.release == true
-        shell: pwsh
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          $json = & gh run list --repo $env:GITHUB_REPOSITORY --workflow ci.yml --commit $env:GITHUB_SHA --limit 10 --json status,conclusion
-          if ($LASTEXITCODE -ne 0) { throw "Querying CI failed." }
-          $runs = @($json | ConvertFrom-Json)
-          if (-not ($runs | Where-Object { $_.status -eq 'completed' -and $_.conclusion -eq 'success' })) {
-            throw "Publishing requires a successful cross-platform CI run for this exact commit."
-          }
-      - name: Guard immutable NuGet identities
-        if: inputs.release == true
-        shell: pwsh
-        env:
-          TAG_EXISTED: ${{ steps.identity.outputs.tag_existed }}
-        run: |
-          foreach ($id in @('ndsforge', 'ndsforge.nitro', 'ndsforge.graphics', 'ndsforge.audio.wav', 'ndsforge.cli')) {
-            $published = $false
-            try {
-              $index = Invoke-RestMethod -Uri "https://api.nuget.org/v3-flatcontainer/$id/index.json"
-              $published = @($index.versions) -contains $env:PACKAGE_VERSION
-            } catch {
-              if ($null -eq $_.Exception.Response -or [int]$_.Exception.Response.StatusCode -ne 404) { throw }
-            }
-            if ($published -and $env:TAG_EXISTED -ne 'true') {
-              throw "$id $env:PACKAGE_VERSION exists on NuGet without the matching pre-existing release tag."
-            }
-          }
+          $changelog = Get-Content -Raw -LiteralPath CHANGELOG.md
+          . ./build/release-policy.ps1
+          $notes = Get-ReleaseNotes $changelog $env:PACKAGE_VERSION
+          [System.IO.File]::WriteAllText('artifacts/release-notes.md', $notes, [System.Text.UTF8Encoding]::new($false))
       - name: Bind release tag to verified commit
-        if: inputs.release == true
+        if: steps.identity.outputs.publish == 'true' && steps.identity.outputs.tag_existed == 'false'
         shell: pwsh
         run: |
-          git show-ref --verify --quiet "refs/tags/$env:RELEASE_TAG"
-          $exists = $LASTEXITCODE -eq 0
-          $global:LASTEXITCODE = 0
-          if (-not $exists) {
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git tag $env:RELEASE_TAG $env:GITHUB_SHA
-            if ($LASTEXITCODE -ne 0) { throw "Creating release tag failed." }
-            git push origin "refs/tags/$env:RELEASE_TAG"
-            if ($LASTEXITCODE -ne 0) { throw "Publishing release tag failed." }
-          }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag $env:RELEASE_TAG $env:RELEASE_COMMIT
+          if ($LASTEXITCODE -ne 0) { throw "Creating release tag failed." }
+          git push origin "refs/tags/$env:RELEASE_TAG"
+          if ($LASTEXITCODE -ne 0) { throw "Publishing release tag failed." }
       - name: Authenticate with NuGet.org
-        if: inputs.release == true
+        if: steps.identity.outputs.publish == 'true'
         id: nuget-login
         uses: NuGet/login@v1
         with:
           user: JuliusJacobsohn
-      - name: Publish NuGet packages
-        if: inputs.release == true
-        shell: bash
+      - name: Publish NuGet packages and symbols
+        if: steps.identity.outputs.publish == 'true'
+        shell: pwsh
         env:
           NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         run: |
-          dotnet nuget push "artifacts/release/NdsForge.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
-          dotnet nuget push "artifacts/release/NdsForge.Nitro.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
-          dotnet nuget push "artifacts/release/NdsForge.Graphics.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
-          dotnet nuget push "artifacts/release/NdsForge.Audio.Wav.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
-          dotnet nuget push "artifacts/release/NdsForge.Cli.${PACKAGE_VERSION}.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          foreach ($id in @('NdsForge', 'NdsForge.Nitro', 'NdsForge.Graphics', 'NdsForge.Audio.Wav', 'NdsForge.Cli')) {
+            dotnet nuget push "artifacts/release/$id.$env:PACKAGE_VERSION.nupkg" --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json --skip-duplicate
+            if ($LASTEXITCODE -ne 0) { throw "Publishing $id failed. Retry this exact release commit." }
+          }
+      - name: Verify public NuGet downloads and clean consumers
+        if: steps.identity.outputs.publish == 'true'
+        shell: pwsh
+        run: ./build/verify-published-packages.ps1 -Version $env:PACKAGE_VERSION
       - name: Create stable GitHub release
-        if: inputs.release == true
+        if: steps.identity.outputs.publish == 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
             gh release upload "$RELEASE_TAG" artifacts/release/* --clobber
+            gh release edit "$RELEASE_TAG" --draft=false --prerelease=false --title "NdsForge.NET $PACKAGE_VERSION" --notes-file artifacts/release-notes.md
           else
-            gh release create "$RELEASE_TAG" artifacts/release/* --title "NdsForge.NET $PACKAGE_VERSION" --generate-notes --verify-tag
+            gh release create "$RELEASE_TAG" artifacts/release/* --title "NdsForge.NET $PACKAGE_VERSION" --notes-file artifacts/release-notes.md --verify-tag
           fi
       - uses: actions/upload-artifact@v7
-        if: always()
+        if: always() && steps.identity.outputs.prepare == 'true'
         with:
           name: release-${{ steps.identity.outputs.version }}-${{ github.run_number }}-${{ github.run_attempt }}
-          path: artifacts/release
+          path: |
+            artifacts/release
+            artifacts/release-notes.md
+            artifacts/test-results
+            artifacts/coverage/Cobertura.xml
           if-no-files-found: warn
           retention-days: 14

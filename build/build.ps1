@@ -1,8 +1,12 @@
-param([string]$Configuration = "Release")
+param(
+    [string]$Configuration = "Release",
+    [ValidatePattern('^[a-zA-Z0-9][a-zA-Z0-9_-]*$')][string]$ArtifactSubdirectory
+)
 
 $ErrorActionPreference = "Stop"
 $repository = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
 $artifactRoot = [System.IO.Path]::GetFullPath((Join-Path $repository "artifacts"))
+if ($ArtifactSubdirectory) { $artifactRoot = Join-Path $artifactRoot $ArtifactSubdirectory }
 $testResults = Join-Path $artifactRoot "test-results"
 $coverageOutput = Join-Path $artifactRoot "coverage"
 $packageOutput = Join-Path $artifactRoot "packages"
@@ -23,6 +27,8 @@ function Reset-GeneratedDirectory([string]$path) {
 
 Push-Location $repository
 try {
+    ./build/test-release-policy.ps1
+    if (-not $?) { throw "Release policy tests failed." }
     dotnet restore NdsForge.slnx --locked-mode
     Assert-NativeSuccess "Solution restore"
     ./build/verify-dependencies.ps1
