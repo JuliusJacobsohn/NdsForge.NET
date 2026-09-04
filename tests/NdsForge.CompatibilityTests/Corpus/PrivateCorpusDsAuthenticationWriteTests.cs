@@ -59,6 +59,19 @@ public sealed class PrivateCorpusDsAuthenticationWriteTests
                     Assert.True(checkedOutput.IsValid, string.Join("; ", checkedOutput.Diagnostics.Select(static item => item.Message)));
                     Assert.DoesNotContain(checkedOutput.Diagnostics, static item => item.Code.StartsWith("NDS15", StringComparison.Ordinal));
                     NdsDsExtendedHeader extension = output.Header.DsExtended!;
+                    Assert.Equal(source.Header.NandRomEndUnits, output.Header.NandRomEndUnits);
+                    Assert.Equal(source.Header.NandWritableStartUnits, output.Header.NandWritableStartUnits);
+                    if (source.Header.NandRomEndUnits != 0)
+                    {
+                        Assert.Equal("0bb4eac0d9227db2739a4534abea71dc443f0e56e8a65ab861d2a3a9e6ee0bdc", entry.RomSha256);
+                        Assert.Equal((ushort)848, output.Header.NandRomEndUnits);
+                        Assert.Equal((ushort)848, output.Header.NandWritableStartUnits);
+                        Assert.Equal(134217728, output.Header.DeviceCapacityBytes);
+                        string expected = operation == 0
+                            ? "F013774334F6066DBD2152EF0FC89A73CCF7672F"
+                            : "3901C17E831C306B2EA5133C11C8A97A602A15C0";
+                        Assert.Equal(expected, Convert.ToHexString(extension.ProgramsHmac.Span));
+                    }
                     digest.AppendData(Convert.FromHexString(entry.RomSha256));
                     digest.AppendData(new byte[] { operation });
                     digest.AppendData(extension.ProgramsHmac.Span);
@@ -77,7 +90,7 @@ public sealed class PrivateCorpusDsAuthenticationWriteTests
         Assert.Equal(2, rejected);
         Assert.Equal(8, withoutOverlays);
         Assert.Equal(630, classicRecords);
-        CorpusExpectations.AssertDigest("82A3AA09A4081C283A4D4D03FBF6EDC9B2BE688EBE33700EC13F272423B1743E",
+        CorpusExpectations.AssertDigest("D66D887D3BF87FF9BC0DEC8B144ED85F3460DCA503802038B28293C7DB7FD0EA",
             Convert.ToHexString(digest.GetHashAndReset()));
     }
 }

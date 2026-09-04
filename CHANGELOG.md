@@ -5,7 +5,7 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ## Unreleased
 
-## 1.1.0 - 2026-09-04
+## 1.1.0 - 2026-09-05
 
 ### Added
 
@@ -152,6 +152,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
   directories, validate the reference input as a file, and reject skipped tests.
 - Clean up dangling directory symlinks portably in workspace safety tests while
   retaining all input/output link-rejection assertions on Windows and Linux.
+- Refresh authenticated-rebuild expectations after NAND boundary preservation,
+  with explicit partition/capacity checks and per-operation authentication digests.
 - Correct cartridge RSA signing and verification to use type-one padded raw
   SHA-1 instead of the incompatible ASN.1-wrapped signature encoding. Validate
   the complete padding block and blind and check private signing operations.
