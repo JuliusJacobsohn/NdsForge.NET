@@ -20,6 +20,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EnablePackageValidation>true</EnablePackageValidation>
+    <PackageValidationBaselineVersion>1.0.1</PackageValidationBaselineVersion>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
   <ItemGroup>

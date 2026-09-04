@@ -5,6 +5,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ## Unreleased
 
+## 1.1.0 - 2026-09-04
+
 ### Added
 
 - Add the optional `NdsForge.Audio.Wav` package for bounded mono/stereo PCM WAV
@@ -146,6 +148,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Fixed
 
+- Make private compatibility runs require both cartridge and digital fixture
+  directories, validate the reference input as a file, and reject skipped tests.
 - Correct cartridge RSA signing and verification to use type-one padded raw
   SHA-1 instead of the incompatible ASN.1-wrapped signature encoding. Validate
   the complete padding block and blind and check private signing operations.
@@ -154,6 +158,23 @@ All notable changes to NdsForge.NET are documented here. The project follows
 - Accept bounded zero alignment fill at the declared end of NCLR, NCER, and
   NANR resources while continuing to reject nonzero or excessive fill.
 - Preserve unknown NCER character-mapping values through parsing and writing.
+
+### Release engineering
+
+- Publish all five version-aligned packages and symbols after successful
+  cross-platform `main` CI, with exact-commit/tag checks, short-lived NuGet
+  credentials, safe same-commit retries, and verified public package consumers.
+- Require version increments for package changes, freeze the delivered public
+  APIs, and validate the core package against the published `1.0.1` API.
+- Gate strict documentation, release-policy tests, package contents, source size,
+  dependency auditing, and portable coverage before publication.
+
+### Scope
+
+- This release does not add SDAT/SWAR archive APIs, BTX0 textures, BMD0 models,
+  cartridge-logo conversion, host raster codecs, or audio playback/resampling.
+
+[Compare 1.0.1 to 1.1.0](https://github.com/JuliusJacobsohn/NdsForge.NET/compare/v1.0.1...v1.1.0)
 
 ## 1.0.1 - 2026-08-18
 
