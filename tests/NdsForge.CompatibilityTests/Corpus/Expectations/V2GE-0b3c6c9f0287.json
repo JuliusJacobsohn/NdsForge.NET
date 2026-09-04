@@ -1,0 +1,2809 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Mario vs. Donkey Kong - Mini-Land Mayhem! [V2GE] [USA - English].nds",
+    "length": 33554432,
+    "sha256": "0b3c6c9f0287880249f04b032e4da0ccde1ce9e11cdf6bcf2fe77344a585cb5b",
+    "headerTitle": "MARIO VS DK",
+    "gameCode": "V2GE",
+    "makerCode": "01",
+    "kind": "NintendoDsiEnhanced",
+    "revision": 2,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Mario vs. Donkey Kong - Mini-Land Mayhem!",
+    "bannerTitles": {
+      "Japanese": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo",
+      "English": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo",
+      "French": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo",
+      "German": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo",
+      "Italian": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo",
+      "Spanish": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo",
+      "Chinese": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo",
+      "Korean": "Mario vs. Donkey Kong\nMini-Land Mayhem!\nNintendo"
+    }
+  },
+  "validationDiagnostics": [
+    {
+      "code": "NDS1316",
+      "severity": "Error",
+      "offset": null,
+      "length": null
+    }
+  ],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "800A53F27B127128C94F8D5ADB16E9C42E89524EBA281A6E3DC64385FD745474",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 168092,
+          "sha256": "8F6FE32C5BDC128FDC6B2C32CD9B2800BFEE4CA3C7F02CBB2A7DB0818F3178D5"
+        },
+        {
+          "path": "arm7i.bin",
+          "length": 291244,
+          "sha256": "7DDD648E4C3146137087D048405B9A454EABFE7296FFEFD3C9B95976BA730046"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 544,
+          "sha256": "3BF0CD6B1C2E2FEEA5E7089B04B691CA10E74330A036ADFA3F28D8AAD6CC6471"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 543360,
+          "sha256": "32BE68D12A63820060DE5C8097879649C8687EA7BEEB33E9F9AF9BE58BDC5983"
+        },
+        {
+          "path": "arm9i.bin",
+          "length": 27764,
+          "sha256": "68AD154D6F899B121B8DB5B7BF56A9FF10C15690E9B73402DB81F25D0AD49B4F"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "E000E50E06391C05F48DE20D37EAFE4FBA52F156EA55FEB52C7860A42F001577"
+        },
+        {
+          "path": "data/actor2Ddata.bin",
+          "length": 14985072,
+          "sha256": "E6F453F9DB4769BB40A18ED7BE7E97935334A5E7FDECA998F508A55392FBF86A"
+        },
+        {
+          "path": "data/actor2d/uis_actor2d.bin",
+          "length": 487096,
+          "sha256": "DC01C3B61BE7796EC60447F5011F04BC5A1E48D2071D15FC1F3B0508C2C81C7A"
+        },
+        {
+          "path": "data/actor3Ddata.bin",
+          "length": 53808,
+          "sha256": "00F4EDA0B166E5A474D7C8308DC627A7AA04BF84091F79276F546D45FB3F2E3A"
+        },
+        {
+          "path": "data/actor3d/uis_actor3d.bin",
+          "length": 59568,
+          "sha256": "77103E98F69303FBED5995228EA4FEB92A70331D6641E42EB3E887864B17941A"
+        },
+        {
+          "path": "data/background/BG_blackness_01.mbb",
+          "length": 76,
+          "sha256": "8D975B3AA194380781B4CF3AFEFDE2953E6706783D07EC7EE6475DB6A3C19BE5"
+        },
+        {
+          "path": "data/background/BG_construction_01.mbb",
+          "length": 2796,
+          "sha256": "9788102EA2DF9B7E64EE0B7564CB85555E9C81901226D49E53846E6B492842D9"
+        },
+        {
+          "path": "data/background/BG_contest_01.mbb",
+          "length": 2764,
+          "sha256": "D4A9BD3C126F554A8C7C0B9E30389454EBC2D0B4314FACAC43F2B4D2AEFBDACB"
+        },
+        {
+          "path": "data/background/BG_contest_list_bottom.mbb",
+          "length": 724,
+          "sha256": "E7D6FC02DE7F3572EE4923C39F6D7D31DBB49DDF04B708A29391C85FAF646F61"
+        },
+        {
+          "path": "data/background/BG_contest_top.mbb",
+          "length": 4784,
+          "sha256": "AB219D860F20E5E832291EC3C8CD3B5DBCA9A62CA46FDB42DA3CDB7FE5C392A8"
+        },
+        {
+          "path": "data/background/BG_friendcode_bottom.mbb",
+          "length": 8064,
+          "sha256": "11CA012B273612D87EE6A1A15532BBF64B943BF997147B50F3D45473F9BFA2AD"
+        },
+        {
+          "path": "data/background/BG_friendcode_top.mbb",
+          "length": 3936,
+          "sha256": "8836F675802773C0E615A2D96ECEDD167C8A5543B065F9AE5C9579DF3D65D0CC"
+        },
+        {
+          "path": "data/background/BG_gameover_bottom.mbb",
+          "length": 2520,
+          "sha256": "052DEBA80A57C26057B20C001662AD2B86533E7BFCDE548916837A8D227DFA37"
+        },
+        {
+          "path": "data/background/BG_keyboard_bottom.mbb",
+          "length": 6508,
+          "sha256": "4CEEC3F7D2E038DAC1EB8C9B69A80EDDDBE929D1CEDF0CBF8E9CE475EB6251C8"
+        },
+        {
+          "path": "data/background/BG_level_list_bottom.mbb",
+          "length": 716,
+          "sha256": "0B3C63AC707E1FBDB7E1FA513A2C15CAE355947D33C8E6A970C1C8DBF64F90DE"
+        },
+        {
+          "path": "data/background/BG_level_list_top.mbb",
+          "length": 15708,
+          "sha256": "E9E78439158C8D38EA538B2AC6B0583FF67788AF9C61FCDD905180C945386ABE"
+        },
+        {
+          "path": "data/background/BG_options_01.mbb",
+          "length": 2796,
+          "sha256": "4EC906260E03184DDDBACAC15D5759E395A9603A3C9B1F72D408B7BD3ABD1392"
+        },
+        {
+          "path": "data/background/BG_rating_bottom.mbb",
+          "length": 4388,
+          "sha256": "EC446FE47DAA522D5E7CA7C0FB5B2F98DEE214290F90C81D368BC477FD7CE057"
+        },
+        {
+          "path": "data/background/BG_results.mbb",
+          "length": 2796,
+          "sha256": "4EC906260E03184DDDBACAC15D5759E395A9603A3C9B1F72D408B7BD3ABD1392"
+        },
+        {
+          "path": "data/background/BG_share_online_pub.mbb",
+          "length": 2560,
+          "sha256": "F18CA31E6CDC45821A6FBEED2BFBA15AB61111C1621748180295809867C45400"
+        },
+        {
+          "path": "data/background/BG_share_online_top.mbb",
+          "length": 4784,
+          "sha256": "E8EC8F43DCD5BB520B93E1F5A82D75EA34B4DB0189A68C24AF7DA8F61CBFFB79"
+        },
+        {
+          "path": "data/background/BG_template_main_top.mbb",
+          "length": 1044,
+          "sha256": "38053261D8019A0A9B06B8BF9FF72E6F13422FFD16BD677C597E1F518D32D7B3"
+        },
+        {
+          "path": "data/background/BG_title_bottom.mbb",
+          "length": 29244,
+          "sha256": "401AE359B9AFDA86FD3E7735F42656F7CE3DD618EA6150DB975497D9E41C3B41"
+        },
+        {
+          "path": "data/background/BG_title_top.mbb",
+          "length": 25612,
+          "sha256": "C0AE8C40B2FDBED0A95F18454CD8DA34A94AA99F978EEEFF3F7B7C120A4AB7A0"
+        },
+        {
+          "path": "data/background/BG_whiteness_01.mbb",
+          "length": 76,
+          "sha256": "1C1B7BB61AFC451A52BCD1FC1052BB62712079363E2327FE9DBB7C8D97084FAF"
+        },
+        {
+          "path": "data/background/Gift_BG_bottom.mbb",
+          "length": 25128,
+          "sha256": "DBBD69506D12F893956A69893F28E4F579901F371A77E505F03D967AD0125D1E"
+        },
+        {
+          "path": "data/background/Gift_BG_top.mbb",
+          "length": 20840,
+          "sha256": "17F57F6535D61E8081E4D1D13DB352D3AA36B4A660858FDD801859E87206CB92"
+        },
+        {
+          "path": "data/background/bg_ss_challenge_bottom_normal.mbb",
+          "length": 22020,
+          "sha256": "84C9095A8D0DEFBC64B89E9079DD188BD54B427164413CBDAEA614CB83D664FB"
+        },
+        {
+          "path": "data/background/bg_ss_challenge_top_normal.mbb",
+          "length": 4104,
+          "sha256": "3DD218D9FE8240703AB7F2C2B3BEE62F1C3F7BFA37B9B64A0A63FD3C61018579"
+        },
+        {
+          "path": "data/background/bg_ss_challenge_top_plus.mbb",
+          "length": 3856,
+          "sha256": "575DF1E5819A2E58053E0C155F76A3C52C7502B81836CF9F9D2E305DEE47AD93"
+        },
+        {
+          "path": "data/background/bg_ss_finalboss_bottom_normal.mbb",
+          "length": 25444,
+          "sha256": "A61378F153737DEDDD79C55E2E29F43A322B19ED3501A014BE867C8A8F2F70DE"
+        },
+        {
+          "path": "data/background/bg_ss_finalboss_top_normal.mbb",
+          "length": 7000,
+          "sha256": "BB18BC2B13D630D7334369C4A37A197DAB35F7E154DCA70220542E0E351590E1"
+        },
+        {
+          "path": "data/background/bg_ss_finalboss_top_plus.mbb",
+          "length": 3744,
+          "sha256": "B3DE8CA2EF5BF0E31661F75ECC266141652E8C771B99FBD44DE77F9D95A53DA3"
+        },
+        {
+          "path": "data/background/bg_ss_special_bottom_normal.mbb",
+          "length": 12480,
+          "sha256": "C2CBDFC93E1A56C8291EDDC230B5841BF7C62B26EACA827C375355D64CA1966F"
+        },
+        {
+          "path": "data/background/bg_ss_special_top_normal.mbb",
+          "length": 12136,
+          "sha256": "61E2E667A9539A8F20710AEDDC7BBD5D925B41A18A9B7700E30D8C367BED9D50"
+        },
+        {
+          "path": "data/background/bg_ss_special_top_plus.mbb",
+          "length": 9652,
+          "sha256": "900DF84010BFEE434EA7A78906B48E8476F91C4E77ACFB965820970F64705C91"
+        },
+        {
+          "path": "data/background/bg_stageselect_bottom_normal.mbb",
+          "length": 24024,
+          "sha256": "F9F21FED4586D64D40752393E5A328EAD7E55C4D1E650C94E54BC49763EC73A0"
+        },
+        {
+          "path": "data/background/bg_stageselect_top_normal.mbb",
+          "length": 3912,
+          "sha256": "4EB0C929B996CCFC05A9B7AD345D0CE0132E29FEB77F46D4F0B43AC673AA5769"
+        },
+        {
+          "path": "data/background/options.mbb",
+          "length": 18920,
+          "sha256": "9E69C98C5082A093ED8F263AB32A5EFBA58824EAA020B401C41EE5E411B100C7"
+        },
+        {
+          "path": "data/bmpBG/End1_01.binc",
+          "length": 21584,
+          "sha256": "CB36DCAF4256A1312C268FA9646897B6A55C00EF2DBF0767C4C6FF033F0F9F21"
+        },
+        {
+          "path": "data/bmpBG/End1_02.binc",
+          "length": 16900,
+          "sha256": "1432411056AEE15293516DAFC45A569E5C08666B9DF0A3248CEFF871CC4A4923"
+        },
+        {
+          "path": "data/bmpBG/End1_03.binc",
+          "length": 23032,
+          "sha256": "5371F0E1A746330D4E903898747A52873229293821C066915AFDDF0C39D9B900"
+        },
+        {
+          "path": "data/bmpBG/End1_04.binc",
+          "length": 18300,
+          "sha256": "38D93F0349D80ED8D39667297BCD62F646728EF983E6574F3B51969DCEF38412"
+        },
+        {
+          "path": "data/bmpBG/End1_05.binc",
+          "length": 20392,
+          "sha256": "D99243336C5227DD917C4D9974A8B9240F4A7345B78171CE15DF4DB8E975D57C"
+        },
+        {
+          "path": "data/bmpBG/End1_06.binc",
+          "length": 21444,
+          "sha256": "A9A7C8A36CDC299C5485F786184C6E82E157AA48FCDCAA18F55D51E7C394E65C"
+        },
+        {
+          "path": "data/bmpBG/End2_04.binc",
+          "length": 22060,
+          "sha256": "A5F051CDB87126829E74E00CA04A464BA7C873A3ED45DBCEB5FB0024789FFB4E"
+        },
+        {
+          "path": "data/bmpBG/End2_05.binc",
+          "length": 21648,
+          "sha256": "30B5034E2B399ED32D0BEBE7FBD32EBAF63A57EF12376AD03700E226A7EC80BA"
+        },
+        {
+          "path": "data/bmpBG/End2_06.binc",
+          "length": 20556,
+          "sha256": "0A7F3AB84DBE84F262DBC7921F720A715E0AC596C6DEAA18F2514220AE26B89B"
+        },
+        {
+          "path": "data/bmpBG/End2_07.binc",
+          "length": 21936,
+          "sha256": "0767D33FEB951062B424E93521F4A68A508BB0C1B769DF56236C9773C030185E"
+        },
+        {
+          "path": "data/bmpBG/End2_08.binc",
+          "length": 22276,
+          "sha256": "CF1AE056481A05389548EC20913F341297CABAADABA848761C0A80184F499441"
+        },
+        {
+          "path": "data/bmpBG/Intro_01.binc",
+          "length": 32752,
+          "sha256": "2D5FD6A04FA8839508A048B52A1767DA7A261E0EDE4F5B6B90E2FAFBB772E978"
+        },
+        {
+          "path": "data/bmpBG/Intro_02.binc",
+          "length": 33524,
+          "sha256": "8EF41942533D71653EAB52C3E0653950BC2C253C6EC574CAAC46BE9C0482340E"
+        },
+        {
+          "path": "data/bmpBG/Intro_03.binc",
+          "length": 21516,
+          "sha256": "294A6B0EE394E0366A3369B38A19C4202497619235A44DBF5EFAD4EBB49A1FE8"
+        },
+        {
+          "path": "data/bmpBG/Intro_04.binc",
+          "length": 21528,
+          "sha256": "4E170E502F49F02624D10F315B32648F8159E8303D9B44553387CE629BD8E7E9"
+        },
+        {
+          "path": "data/bmpBG/Intro_05.binc",
+          "length": 20016,
+          "sha256": "D5C974257DFB5A5D39EB5037831D867B6407921BF1A1422E0427EB205063FDC1"
+        },
+        {
+          "path": "data/bmpBG/Intro_06.binc",
+          "length": 31396,
+          "sha256": "A2A09B1A2FA9D596FB508A76C0D766590F2DE08B980E9023E502FF6D24D464FC"
+        },
+        {
+          "path": "data/bmpBG/Intro_07.binc",
+          "length": 20976,
+          "sha256": "2FD37348E641938F1B4F8BFFB4016A398B582C0A3A1A323B11D808714298573D"
+        },
+        {
+          "path": "data/bmpBG/Intro_08.binc",
+          "length": 20224,
+          "sha256": "13E6128CA8E72E933856722C59AA555B3EF3335BDC41CDDB33BB18E428AE37F6"
+        },
+        {
+          "path": "data/bmpBG/Intro_09.binc",
+          "length": 20804,
+          "sha256": "42DC988741A6B4EEF3F701BA7DC669B72C6F8B0AB9C5A73FE6B3D142AF1A588E"
+        },
+        {
+          "path": "data/bmpBG/Intro_10.binc",
+          "length": 20408,
+          "sha256": "3F9298BDE5F2369952B78938A2467EA06F5B2F7647A09276923147AB5705671F"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_01.binc",
+          "length": 16240,
+          "sha256": "3058E42A3EC643E5A9A5D43557E461AE27F0AF33F09304EF45A1F446308F31C6"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_02.binc",
+          "length": 16348,
+          "sha256": "21C0A4E9558D378D87FEE7A408BAF1C3F1B56A36D987D9FEC419154CC8949A59"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_03.binc",
+          "length": 16280,
+          "sha256": "6870E91E755F1D089A9CD624AFA39B223F97ED5FDA92466C80524F7961F8DB65"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_04.binc",
+          "length": 16776,
+          "sha256": "1E48C19B15838339439641D7BEBC21DEF3067D6D80272A1AB56261AD6157976D"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_05.binc",
+          "length": 16664,
+          "sha256": "60DACF461C2F71193BBF9C9624616F84739A87DEAEC867A62D9E8ED12489F7C9"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_06.binc",
+          "length": 16620,
+          "sha256": "B5FA8DFE82F446E954369C0E2940E51BFDE1E7A0B3EA9C7B946FEFC4252BB9BB"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_07.binc",
+          "length": 16248,
+          "sha256": "83E484B69D91B71B838D94EC565362108FCC2912D28983D684F78040E2739714"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_en/level_intro_top_08.binc",
+          "length": 16524,
+          "sha256": "764F8E9932EC34A3A7E0A8EA1C4319AA89C19B5BA7FF33DAD25C9902C03798FF"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_01.binc",
+          "length": 16784,
+          "sha256": "9B4FDB13F9DB687D9BC4D42030E63301E4C94C17757E8FE439B77020E22FF3B8"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_02.binc",
+          "length": 16764,
+          "sha256": "106A716E36A6E85EDEE2934F5A75B8EF40F274D3DF4316BE149AD4EDE4D0CDF1"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_03.binc",
+          "length": 16588,
+          "sha256": "C75945EC75A3421E417A6E766121F7593EA2CAAC9FF5EEF53D14F3B3F9610FA1"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_04.binc",
+          "length": 16992,
+          "sha256": "F892FB20D152343994CB2717B1068EB03D5F8075B95CA2409F477BA5B24F559F"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_05.binc",
+          "length": 16984,
+          "sha256": "AD75044F9B670F0322A355C563E3A6CA0D620126510EED6EC598B2E58E84C757"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_06.binc",
+          "length": 16860,
+          "sha256": "675C8D48142618B946B624DD7263722A2084424BB06E2DC6CA3161757CF1D319"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_07.binc",
+          "length": 16608,
+          "sha256": "7F51912127BE5AF35CE05A2320EEBB9BC96E50EDB23D847CE66878C6623D45BE"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_es/level_intro_top_08.binc",
+          "length": 17020,
+          "sha256": "3FC7E848B74BAAD3CFE0FFF73091746CC7023CE41E0164B934346A1E78239001"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_01.binc",
+          "length": 17076,
+          "sha256": "4980566800630AF92FF31DC8D8CC35845ADE7B64D358E03955084498689322AE"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_02.binc",
+          "length": 16940,
+          "sha256": "70C205E2492B19E8DDECA9E2CCF1E66733C5350DA8333EB0F6AF20A918EE017D"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_03.binc",
+          "length": 16856,
+          "sha256": "D09A683AF5C6D68746583CD9576C8AAAAF4531246FFBEBDF6AD42510E0AC9ECE"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_04.binc",
+          "length": 17132,
+          "sha256": "DBE227886948AE4889A0E1EE68A0ED9C812850110C475C4563105956FB31A9F0"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_05.binc",
+          "length": 17136,
+          "sha256": "E6D5CBEEDE2B4EDA77B6FC1A5855759A7D63C77480F770EF682C958F59748F49"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_06.binc",
+          "length": 17132,
+          "sha256": "0AF08B0EA30E5B9E391691ADA6CF467FE9F359E878DC72FA0352E921C877C0D3"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_07.binc",
+          "length": 16960,
+          "sha256": "0A627509C56F8FF8D64C99071ED6D9DC09EC9BA174422502A183CA308361BA19"
+        },
+        {
+          "path": "data/bmpBG/level_intro_top_fr/level_intro_top_08.binc",
+          "length": 16704,
+          "sha256": "4BC9C1B31DA7C62BB1D8C6F4F6D45E47A12A6F72E0A88BB16799D472CBCCA044"
+        },
+        {
+          "path": "data/default_palette/default.ncl",
+          "length": 544,
+          "sha256": "66FDCFF446DCEFD4405D54AD8FE0DAFA5325E133874BEB4793970A6B16168FC9"
+        },
+        {
+          "path": "data/dwc/utility.bin",
+          "length": 929852,
+          "sha256": "DB8EE36170897F60791F713B7669C50A125E62C6AD775FDA98466C85FE48E81E"
+        },
+        {
+          "path": "data/font/playground_font_01.NFTR",
+          "length": 5676,
+          "sha256": "3C40D9162FB431588C823DE2D54AE20D3301AB77F6C16BFE96287C3783E1C19A"
+        },
+        {
+          "path": "data/font/playground_font_01_ds.NFTR",
+          "length": 10700,
+          "sha256": "0A5DABDE016E5518267E64F1054441062AFF58CAA951A88BFC7E04D72BE42754"
+        },
+        {
+          "path": "data/font/playground_font_03.NFTR",
+          "length": 1292,
+          "sha256": "F56555E1BB3943192D4BFB224A5A2E1DA556A046F84657E2BE35431E6ADF331A"
+        },
+        {
+          "path": "data/font/playground_font_03_numbers.NFTR",
+          "length": 308,
+          "sha256": "28810AB028B8F9A470352282128F165D7F5B8F73B8181D11A3400A2CA321684F"
+        },
+        {
+          "path": "data/font/playground_font_05.NFTR",
+          "length": 15812,
+          "sha256": "D188562253916748DB4F3FA999427564805CB8810277737429D47385160C451B"
+        },
+        {
+          "path": "data/font/playground_font_07.NFTR",
+          "length": 5300,
+          "sha256": "CBA9C2D5CEADE3E5EB48EBD2F3869ABF5F4661B1A6F59A908E2D5F4246EE12D5"
+        },
+        {
+          "path": "data/font/playground_font_08.NFTR",
+          "length": 26112,
+          "sha256": "333B14C7428C0EB5F79D8F31F47AC7AFDB73DC890420C59C2F5ED308286AE607"
+        },
+        {
+          "path": "data/gameMusicAssign.bin",
+          "length": 7044,
+          "sha256": "764CEB11EF61235E1701DE0AD80FE840A4A2A00B9ABFEBBA00F16BDBA32BFFB1"
+        },
+        {
+          "path": "data/localized/English/text/UserInterface_Default.bmg",
+          "length": 8576,
+          "sha256": "2EC97727A126F1130F6F93C556CCC98589642E69823FB07F90C8470CC406AED4"
+        },
+        {
+          "path": "data/localized/English/text/UserInterface_E3Strings.bmg",
+          "length": 704,
+          "sha256": "20D453D4ED5AA57F67727BCBE686E3C380A4B4A3FFA78174AF54B3705FE6F1A0"
+        },
+        {
+          "path": "data/localized/English/text/UserInterface_LibraryCommon.bmg",
+          "length": 224,
+          "sha256": "1A86F5A22E676C64DA104641F7E15773063763E678BA4A24074A0A7BEE355503"
+        },
+        {
+          "path": "data/localized/English/text/UserInterface_MG_Dialogs.bmg",
+          "length": 2304,
+          "sha256": "3385F7D210F6D713DF13B87BAE924A7AC0274DDD4F4C429AD4F027647822B647"
+        },
+        {
+          "path": "data/localized/English/text/UserInterface_UGC_Default.bmg",
+          "length": 1024,
+          "sha256": "303350D1E641613E9E77BE25AC7C805072F95DDB527DE9D7704BBDAE7CC75DE8"
+        },
+        {
+          "path": "data/localized/English/text/UserInterface_UGC_Dialogs.bmg",
+          "length": 13824,
+          "sha256": "414A8950F1F3DDFBDF69B1AD67B4A6DD02905E61FEA925FB20C4034E9C0D11B8"
+        },
+        {
+          "path": "data/localized/French/background/BG_contest_top.mbb",
+          "length": 4892,
+          "sha256": "88BF9A220BBCDEBC1B80D7BFDABFFDC38D4AE8BD5936E80C74641E452A2D1E8D"
+        },
+        {
+          "path": "data/localized/French/background/BG_share_online_top.mbb",
+          "length": 4892,
+          "sha256": "4EFA9C44AE3EB5E719D714D311656DE2A19F56CDB4E575BEB39F6B31D818272E"
+        },
+        {
+          "path": "data/localized/French/background/BG_title_top.mbb",
+          "length": 25612,
+          "sha256": "C0AE8C40B2FDBED0A95F18454CD8DA34A94AA99F978EEEFF3F7B7C120A4AB7A0"
+        },
+        {
+          "path": "data/localized/French/text/UserInterface_Default.bmg",
+          "length": 9120,
+          "sha256": "A3DBF41AD9FB5B340C4648C687355372C6EA6AE7C894C20DC9C103E483639B15"
+        },
+        {
+          "path": "data/localized/French/text/UserInterface_E3Strings.bmg",
+          "length": 128,
+          "sha256": "CEDC55E39D3B12790DBA8CB7034022679628723DA5CAA04FC4EE7EF0276014CD"
+        },
+        {
+          "path": "data/localized/French/text/UserInterface_LibraryCommon.bmg",
+          "length": 224,
+          "sha256": "902F8A96021DC3BA23824EAD94896FADB77CEF0A7B23F1FC5613EEFA400D38E0"
+        },
+        {
+          "path": "data/localized/French/text/UserInterface_MG_Dialogs.bmg",
+          "length": 2464,
+          "sha256": "B5A1D212CEE5D785FE7D0E941C4FF5FFCD6BFEDA3D6F4CC9F3825514B527F68E"
+        },
+        {
+          "path": "data/localized/French/text/UserInterface_UGC_Default.bmg",
+          "length": 1056,
+          "sha256": "DA096F4C8035B39690A2D552A9108E53E87BD2666D7F0829B45BF0BA020448B1"
+        },
+        {
+          "path": "data/localized/French/text/UserInterface_UGC_Dialogs.bmg",
+          "length": 16448,
+          "sha256": "A39D9DE7B41497A74B79A2B11536A2F27BFF35CDA68A2AF9A0797103017D999C"
+        },
+        {
+          "path": "data/localized/Spanish/background/BG_contest_top.mbb",
+          "length": 4928,
+          "sha256": "5305282C2F97F4E47F8FFAFEB5FBE3EBF09736FA7C04CB99C6EAF04D94FA8E9E"
+        },
+        {
+          "path": "data/localized/Spanish/background/BG_share_online_top.mbb",
+          "length": 4936,
+          "sha256": "6C0ED35367EB94919B7AA2D6FF46F40105D3C75C67805F73D9D982D6633497D4"
+        },
+        {
+          "path": "data/localized/Spanish/background/BG_title_top.mbb",
+          "length": 25612,
+          "sha256": "C0AE8C40B2FDBED0A95F18454CD8DA34A94AA99F978EEEFF3F7B7C120A4AB7A0"
+        },
+        {
+          "path": "data/localized/Spanish/text/UserInterface_Default.bmg",
+          "length": 8704,
+          "sha256": "05D4D695C98920DFB5050D13EEBF0BD0227A6F77C9F4F84B1A47831057632592"
+        },
+        {
+          "path": "data/localized/Spanish/text/UserInterface_E3Strings.bmg",
+          "length": 128,
+          "sha256": "CEDC55E39D3B12790DBA8CB7034022679628723DA5CAA04FC4EE7EF0276014CD"
+        },
+        {
+          "path": "data/localized/Spanish/text/UserInterface_LibraryCommon.bmg",
+          "length": 224,
+          "sha256": "56910516E57083A66678BEBACE65C317F190A69A686B410501AC7C78B338E53C"
+        },
+        {
+          "path": "data/localized/Spanish/text/UserInterface_MG_Dialogs.bmg",
+          "length": 2272,
+          "sha256": "E6D550E119F9E54E66CA32551380183A9F1746CD24BC03D080EE1A3333BAB01F"
+        },
+        {
+          "path": "data/localized/Spanish/text/UserInterface_UGC_Default.bmg",
+          "length": 1024,
+          "sha256": "DFC6FCDFEE567191BF3006CBB64A3187B494EFF648C81B82423EBE368ECDCCCF"
+        },
+        {
+          "path": "data/localized/Spanish/text/UserInterface_UGC_Dialogs.bmg",
+          "length": 14528,
+          "sha256": "85F049CA1EEA2FC78C305E482A29498642AE09F5E64F3BA821CD3D4297712AB6"
+        },
+        {
+          "path": "data/mbbAssets.bin",
+          "length": 1646172,
+          "sha256": "14C7ED654EF145EA4B1F39724FB6634F12EEE09B39E4FAAC3A469DA1F44E8AD5"
+        },
+        {
+          "path": "data/nitro_assets.bin",
+          "length": 33152,
+          "sha256": "045331824713874F500FB272A749FECF704A8D20ADC1A20A66526E81B3132736"
+        },
+        {
+          "path": "data/nitro_sprite/BROADCAST.ncl",
+          "length": 544,
+          "sha256": "9869A5A63CC5D6C0F558A4FC624F4072E62EBADD50A2B7E52CC8F5B965F0FDD5"
+        },
+        {
+          "path": "data/nitro_sprite/Boss_Normal.ncl",
+          "length": 544,
+          "sha256": "C97FB45930F85F99CEF0F2CA67E894D42FABB09C96CE55FD0B6449BBF33C7E7E"
+        },
+        {
+          "path": "data/nitro_sprite/Boss_Top_Plus.ncl",
+          "length": 544,
+          "sha256": "31A84469BB596CC15A0B246FA52879ADA34509D0DA361453FE603377CC1FEED8"
+        },
+        {
+          "path": "data/nitro_sprite/Boss_Top_normal.ncl",
+          "length": 544,
+          "sha256": "4A3454E3821F6A92D8B5B2FB2B2CCF80E9F349E2061DE4F3DE21C0264DE8F240"
+        },
+        {
+          "path": "data/nitro_sprite/CONSTRUCTIONZONE.ncl",
+          "length": 544,
+          "sha256": "B989F38B6F7D3336A6231837F273E00B1AF770E5382E414A4B5EB7B6E6DACC95"
+        },
+        {
+          "path": "data/nitro_sprite/CONTEST.ncl",
+          "length": 544,
+          "sha256": "0DEA8C0ECBD6D391F350E730329039526FE609800AF720C974F36A8E8F69B749"
+        },
+        {
+          "path": "data/nitro_sprite/CONTEST_LIST.ncl",
+          "length": 544,
+          "sha256": "D06ECCBDE56114AF72C02239EB24BFA027B418745AD9A6524A8CC8FA0193477A"
+        },
+        {
+          "path": "data/nitro_sprite/CONTEST_MAIN.ncl",
+          "length": 544,
+          "sha256": "90185CC4030D4193467A60E736F42FD0CC152C1FBC4ED335F1CE10342E88D126"
+        },
+        {
+          "path": "data/nitro_sprite/CONTEST_VIEW.ncl",
+          "length": 544,
+          "sha256": "A1BBA6AAB640F8EAFBB9BE0F5411F87912937AE37EDCFF04DC4B55D96255EBB9"
+        },
+        {
+          "path": "data/nitro_sprite/Challenge_Normal.ncl",
+          "length": 544,
+          "sha256": "4474472688910A53DAAF433BBF96CB4FFE9039EE4607451A6BE6B67FA6896A7D"
+        },
+        {
+          "path": "data/nitro_sprite/Challenge_top_Plus.ncl",
+          "length": 544,
+          "sha256": "BD653F95F23BE496178BFE5B5597F3EB4FC2681C614E5D82FC29AEA9BEAE6B9E"
+        },
+        {
+          "path": "data/nitro_sprite/FRIENDCODE.ncl",
+          "length": 544,
+          "sha256": "88249F3D831107DEF847B98713A993DBD7B7BEF681CF3A1E9AAACC743F7018C1"
+        },
+        {
+          "path": "data/nitro_sprite/GAMEOVER.ncl",
+          "length": 544,
+          "sha256": "E48A0A992A4FE27D5EA7503B37888667CCB9D88E476F8BDC0075A46F7EB8FEBA"
+        },
+        {
+          "path": "data/nitro_sprite/KEYBOARD.ncl",
+          "length": 544,
+          "sha256": "6C24A2C5DE31EE71ED719D26547D28260088528A06230C2427724A30761C9038"
+        },
+        {
+          "path": "data/nitro_sprite/LEVEL_LIST.ncl",
+          "length": 544,
+          "sha256": "ED2241CF474397FEE87079EC7A344B36F2314DE7EBD27357702126CC826DA703"
+        },
+        {
+          "path": "data/nitro_sprite/OPTIONS.ncl",
+          "length": 544,
+          "sha256": "F667DDC71EC66018A95A2FFF72C222D29F128A33678A1023466C93F75FDE252B"
+        },
+        {
+          "path": "data/nitro_sprite/RATING.ncl",
+          "length": 544,
+          "sha256": "D092992CBDACAF67B93319B293F345A60F8E2F830A8BD94B6163389B5E568021"
+        },
+        {
+          "path": "data/nitro_sprite/Results.ncl",
+          "length": 544,
+          "sha256": "23DC73C7C7764865A5B69E7383DCFF4D6E77FEF65B48CD8A8A31B548DA3D319B"
+        },
+        {
+          "path": "data/nitro_sprite/SHARE_ONLINE.ncl",
+          "length": 544,
+          "sha256": "7197D1E9D489A766B134A5855C9D9954603065CADBB84BD06987B0CFB324F933"
+        },
+        {
+          "path": "data/nitro_sprite/SHARE_ONLINE_PUB.ncl",
+          "length": 544,
+          "sha256": "DB77457D40867ECE674FB9D32960B3FDA3E5508FA9106D8164AD3D30B2E23E22"
+        },
+        {
+          "path": "data/nitro_sprite/Special_Normal.ncl",
+          "length": 544,
+          "sha256": "AD10D3E5CFE3E504D7A1D8E30B12391F3EDC6C7402D60FCD4F019A60439379EF"
+        },
+        {
+          "path": "data/nitro_sprite/Special_Top_Plus.ncl",
+          "length": 544,
+          "sha256": "CCBFC46F0394814599DE349CE9CBEFAC0091906572CFBDC1CFFE338C33DDAD2E"
+        },
+        {
+          "path": "data/nitro_sprite/TEMPLATE_MAIN.ncl",
+          "length": 544,
+          "sha256": "8BE26EAE1D271763E19CA580D59C32E1FE0161823A2342F872E03F45202723B6"
+        },
+        {
+          "path": "data/nitro_sprite/TEMPLATE_STARTER.ncl",
+          "length": 544,
+          "sha256": "5A4BB0C5DAA4D668FF62ECA5F7CD797E59FDBF478A5B09181C4AF50C74280D3C"
+        },
+        {
+          "path": "data/nitro_sprite/common.ncl",
+          "length": 544,
+          "sha256": "66FDCFF446DCEFD4405D54AD8FE0DAFA5325E133874BEB4793970A6B16168FC9"
+        },
+        {
+          "path": "data/nitro_sprite/main.ncl",
+          "length": 544,
+          "sha256": "CBA62A5F028091618793D0D1A79CD446BACD645CEAB4C3EFC936DF489AFF27CA"
+        },
+        {
+          "path": "data/nitro_sprite/stageselect.ncl",
+          "length": 544,
+          "sha256": "65AEF54CB747961FD5AE6274CFA84008E7DD0518EC3111A7CFEFE7DE097588BD"
+        },
+        {
+          "path": "data/nitro_sprite/stageselect_Top_Normal.ncl",
+          "length": 544,
+          "sha256": "022BB8B2284B40DA54C280723152E2274D5EBEF8B5697E93F7E0E522D9C9EE82"
+        },
+        {
+          "path": "data/nitro_sprite/stageselect_normal.ncl",
+          "length": 544,
+          "sha256": "6309F0F1AC7918B699AAE13EDAE54171F6CB535C1CCCA80D01E17610923F1F09"
+        },
+        {
+          "path": "data/nitro_sprite/title.ncl",
+          "length": 544,
+          "sha256": "0FA08358520E3478C8DD8C7F710D0D7EA0B75D2F4BA1809B4AB1D529260664DD"
+        },
+        {
+          "path": "data/nitro_sprite/uis_nitro_sprite.bin",
+          "length": 174580,
+          "sha256": "D12331AA0D44A6A4545A3A91DF576DF8C3C2929684A272DECF0C11C3C1042764"
+        },
+        {
+          "path": "data/paletteSwapList.bin",
+          "length": 2604,
+          "sha256": "25466CD2101001BDF0E00BCAC68A3E0B0EFC7BE925EFC5F1173C4A753C500743"
+        },
+        {
+          "path": "data/playgroundAssets.bin",
+          "length": 18108,
+          "sha256": "DE8759AD7D8C800425DE6492324472D130BC865AA1A9843234A2472464E0F853"
+        },
+        {
+          "path": "data/ptclData.spa",
+          "length": 25164,
+          "sha256": "E4D6ECE4B0E3220C896C205DF69FDAA465277B4930ECFC4F44BCF2C8AE4AE4B1"
+        },
+        {
+          "path": "data/ptclDataAll.spa",
+          "length": 31992,
+          "sha256": "F4B19F38FD55CBAAF4807DA234AEE62AE9768E7EC61F0D96D3C87863EAF41ED0"
+        },
+        {
+          "path": "data/ptclDataDKBoss.spa",
+          "length": 27676,
+          "sha256": "274205E37DCA5F645B1E551D9D86C4504B44336C02F1AB08A4ACED8E5D4D1904"
+        },
+        {
+          "path": "data/ptclDataDKFinal.spa",
+          "length": 22324,
+          "sha256": "FEB6C951B8AACD38E696C7D5CF1416ACC760FB428BB8084CD28901C8A2E8556A"
+        },
+        {
+          "path": "data/ptclDataMiniGame.spa",
+          "length": 19048,
+          "sha256": "3C1C016D1260D7729970A846274645A7E6DC01176CD4DBE668FC4684F48F3722"
+        },
+        {
+          "path": "data/singlePlayerLevels.binc",
+          "length": 41764,
+          "sha256": "908E9A090F5372D296371EB4CC129B4176694A7F74E16778DD038464452E2CBE"
+        },
+        {
+          "path": "data/sound/ADSRINFO.DAT",
+          "length": 212,
+          "sha256": "9139D24209F18EE9E9E6E2B49F01B54CDA86D035C8D825D5DE50CD9585026EA8"
+        },
+        {
+          "path": "data/sound/BGMSELECTLIST.DAT",
+          "length": 4952,
+          "sha256": "D2CC3FDFA4E2A4973DCD868E5AFA38D193F7B68CEF0431315F89B6DF1C98F171"
+        },
+        {
+          "path": "data/sound/DGNFILES.DAT",
+          "length": 368,
+          "sha256": "D6B6F1A1CF3F208BD9CC7BD2427B9B3C4D31D9471B2B070CB8C7E3FC8510E96E"
+        },
+        {
+          "path": "data/sound/INTERMUSICINFO.DAT",
+          "length": 9468,
+          "sha256": "B40A4A7B5AA225338D7A12A0992AF5BF0CD3262E365DDD41061194A362833A03"
+        },
+        {
+          "path": "data/sound/MIDIFILEINFO.DAT",
+          "length": 504,
+          "sha256": "BC0313737A1364C8A352F8C68EB99D0910DCC6E3CE3ADBBAB2F78835FA92E713"
+        },
+        {
+          "path": "data/sound/MOVIEVOLINFO.DAT",
+          "length": 4,
+          "sha256": "DF3F619804A92FDB4057192DC43DD748EA778ADC52BC498CE80524C014B81119"
+        },
+        {
+          "path": "data/sound/SFXSCRIPTFILES.DAT",
+          "length": 51188,
+          "sha256": "4F1A459D1E22D66024CB1710854243CAC536F556309D29336D1F64C845243A58"
+        },
+        {
+          "path": "data/sound/SFXSELECTLIST.DAT",
+          "length": 8888,
+          "sha256": "AD56C2CE362F20A1228CBFAA23219AC945D3FBF598F7319E6035AE0D76C97CBB"
+        },
+        {
+          "path": "data/sound/SND3DLIST.DAT",
+          "length": 12,
+          "sha256": "7B87D39241E500A99127A0B3E26C1DCEBB1B67C0BA4A9F866C40CF1FF6A838B3"
+        },
+        {
+          "path": "data/sound/SNDSAMPLES.DAT",
+          "length": 1854976,
+          "sha256": "0D9D4976BDF71CEB4D63B78106BB24CF8CADA76508ADE93E49FFFF67949D7319"
+        },
+        {
+          "path": "data/sound/SNDTBLS.DAT",
+          "length": 8640,
+          "sha256": "160A0DBDB5B65F9BB66C73B985B4AD6B0AC48228ACDC1D2E3C71B1C7759DE751"
+        },
+        {
+          "path": "data/sound/STREAMFILEINFO.DAT",
+          "length": 8,
+          "sha256": "6CC16ABD70EEFB90DC0BA0D14FB088630873B2C6AD943F7442356735984C35A3"
+        },
+        {
+          "path": "data/sound/sound_data.sdat",
+          "length": 6361088,
+          "sha256": "2CD1671ACD282746CE3FA43DECF1C1B961F9AA7536A95AA84E4945088F6CC55B"
+        },
+        {
+          "path": "data/superGuides/SGCutscene1-1-1.bin",
+          "length": 40,
+          "sha256": "D41123342F39F7C3EB9AE49C538D69EFAAC2F66461CA63A314C8D055068E212D"
+        },
+        {
+          "path": "data/superGuides/SGCutsceneSpecial.bin",
+          "length": 60,
+          "sha256": "79EFC08596E952925C53794162967051D5E555B6E10AEDF7BAA27FABDB6F78FC"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide01.bin",
+          "length": 390,
+          "sha256": "DDAA523C2E69CE2E9D232BB4AA753F52D4AF74F18812DAE80DF90DBF0643185E"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide02.bin",
+          "length": 410,
+          "sha256": "C267160F5D5F3F57D15AC9F041ECF689141A42DBED0D7B715CFFC1DC616F1F7E"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide03.bin",
+          "length": 270,
+          "sha256": "C5963E17EC2DA50324B9CCEEAD00110BCBB16C8506092F5634F769196A63D7D3"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide04.bin",
+          "length": 190,
+          "sha256": "1EFA570D1B8CB418135B58B6BAF1BB98D5D1082D3D5AD4D9052DCF4D4C9FD8AF"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide05.bin",
+          "length": 145,
+          "sha256": "97C1C10DEB0386A871D644DA1131F2B82A64DE5A7290E0E35BD11886AC05D4E7"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide06.bin",
+          "length": 235,
+          "sha256": "2278011614C3C5A5880B95EAC599CA6FFC7DB451FECA08244C01A529C50E3726"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide07.bin",
+          "length": 310,
+          "sha256": "DA6089373903B788A8475065528FE711EAF7DB9CDEF60A15A3FD299BA74287FD"
+        },
+        {
+          "path": "data/superGuides/attractMode/superGuide08.bin",
+          "length": 290,
+          "sha256": "09CE990D5916F98A6930F998B1FB1075244A02A7129AF64392D478C35C91CDAA"
+        },
+        {
+          "path": "data/superGuides/superGuide1-1.bin",
+          "length": 310,
+          "sha256": "E260960F2F25EF42AC929AD14FBB1C3D0A1DF426EA73666C4A1C3C5CD136D42F"
+        },
+        {
+          "path": "data/superGuides/superGuide1-1_2Q.bin",
+          "length": 355,
+          "sha256": "9DC5D7EEE0B735B71976431E4F9F27DB94B843CD8A3EFB4F08EEA83664C8452D"
+        },
+        {
+          "path": "data/superGuides/superGuide1-2.bin",
+          "length": 755,
+          "sha256": "779CA875FFED296D0D5D633ECCB20CCB08B1981BF4CA01A9FB05D7809F9BE2E1"
+        },
+        {
+          "path": "data/superGuides/superGuide1-2_2Q.bin",
+          "length": 1340,
+          "sha256": "B1A407CFB5C1AAD89EB090457A26A34141A5D0FC59209A4BB3B2D05EC6F80656"
+        },
+        {
+          "path": "data/superGuides/superGuide1-3.bin",
+          "length": 970,
+          "sha256": "8918304DC50E7D21CF51AB491B5C860F5531D066FBCE11363E32C26837796D8C"
+        },
+        {
+          "path": "data/superGuides/superGuide1-3_2Q.bin",
+          "length": 700,
+          "sha256": "DCBA35DFB155A2850C40565093B9C3740FBEC694C8603990B612106C2BB28DB8"
+        },
+        {
+          "path": "data/superGuides/superGuide1-4.bin",
+          "length": 805,
+          "sha256": "43DB6F394785E5B25F2398BA8ED98EA11FF79A74CABCDD6FD54792C7A2382862"
+        },
+        {
+          "path": "data/superGuides/superGuide1-4_2Q.bin",
+          "length": 655,
+          "sha256": "37ADBE1A0995D475899A386903061043CD9A4CFDB564936E4C198EB6503AD937"
+        },
+        {
+          "path": "data/superGuides/superGuide1-5.bin",
+          "length": 1185,
+          "sha256": "57EE96B2423AF7BBE1E5D5D3328AFD52917050D90F071D5054F71F9D00B33E58"
+        },
+        {
+          "path": "data/superGuides/superGuide1-5_2Q.bin",
+          "length": 510,
+          "sha256": "4E0E11EBA6FD70B2A62438DD4E49200C35AE27258061CE238F5A3B8D31600917"
+        },
+        {
+          "path": "data/superGuides/superGuide1-6.bin",
+          "length": 575,
+          "sha256": "23992D62228A8BC1B35C27F145E50693681FFC31AD4FBB083C889A9BAF9241C4"
+        },
+        {
+          "path": "data/superGuides/superGuide1-6_2Q.bin",
+          "length": 740,
+          "sha256": "0F0F068FA35B206AE5DC50D68533D848B51423C8016DFCF6AB163DF9E65F27D3"
+        },
+        {
+          "path": "data/superGuides/superGuide1-7.bin",
+          "length": 625,
+          "sha256": "88EAEB0520C4BCECF9829FFF4581F9CB1CEC44F7DFB2A881177D6123838039E0"
+        },
+        {
+          "path": "data/superGuides/superGuide1-7_2Q.bin",
+          "length": 825,
+          "sha256": "C71164657A466218571A39E75B88E0EFAED3CAEF31D3321AC83532A867F9B4FC"
+        },
+        {
+          "path": "data/superGuides/superGuide1-8.bin",
+          "length": 1090,
+          "sha256": "78CB332B933E81224126AD8223E70F72A18718D3A349D64A9A213EB7BA6722B9"
+        },
+        {
+          "path": "data/superGuides/superGuide1-8_2Q.bin",
+          "length": 1090,
+          "sha256": "78CB332B933E81224126AD8223E70F72A18718D3A349D64A9A213EB7BA6722B9"
+        },
+        {
+          "path": "data/superGuides/superGuide1-DK.bin",
+          "length": 3000,
+          "sha256": "62042FA064DE27E88303577D9BF53E4BC6363C4DD61EA77A5F03725CA9AAE075"
+        },
+        {
+          "path": "data/superGuides/superGuide1-DK_2Q.bin",
+          "length": 4015,
+          "sha256": "CE8C1B376C694E3284BFEC446E27F01C428495699D8E3D440EE1F097E5A437E4"
+        },
+        {
+          "path": "data/superGuides/superGuide2-1.bin",
+          "length": 245,
+          "sha256": "6D9562D0D74A91F67C4F47ADD2FEB318A2FA3D4FD21ACC562C127F49AD1448BB"
+        },
+        {
+          "path": "data/superGuides/superGuide2-1_2Q.bin",
+          "length": 240,
+          "sha256": "6333F1BE942D8A09AAD14DE2807CB5694A4341F6152D12CA3903EEC2C80702FE"
+        },
+        {
+          "path": "data/superGuides/superGuide2-2.bin",
+          "length": 525,
+          "sha256": "66A0E6B8C5342249884949E6E4453DD9215B1DAB5BFFC4B04EEF4BCD61126E78"
+        },
+        {
+          "path": "data/superGuides/superGuide2-2_2Q.bin",
+          "length": 525,
+          "sha256": "3A0E4F94A3DA595A3C1CE875FD8A550976E654A6EDC80F490673D7903B92FD79"
+        },
+        {
+          "path": "data/superGuides/superGuide2-3.bin",
+          "length": 1005,
+          "sha256": "5081DDEF349B64E22CD8282A7D0716D9CE02DA5260869C7C172E098B7EFEF7CE"
+        },
+        {
+          "path": "data/superGuides/superGuide2-3_2Q.bin",
+          "length": 1085,
+          "sha256": "0428A74E193015D1D98B5B816500E08C65CDE421D0AC57BEED1D491BE56EF8B9"
+        },
+        {
+          "path": "data/superGuides/superGuide2-4.bin",
+          "length": 800,
+          "sha256": "C6DCBC19E682835202B5CFBDD2D54C82F0ABF6097AAA8E45336E6DDC6B32D69E"
+        },
+        {
+          "path": "data/superGuides/superGuide2-4_2Q.bin",
+          "length": 810,
+          "sha256": "966FE818AEDD95C5FF21578817433111AC4E31E2DC61F5FD0FF430CF1F1E60F0"
+        },
+        {
+          "path": "data/superGuides/superGuide2-5.bin",
+          "length": 780,
+          "sha256": "54ECAA3C657515AF8C6BAFB077E961E308E119489AB5F9AF49E45FC11BB76537"
+        },
+        {
+          "path": "data/superGuides/superGuide2-5_2Q.bin",
+          "length": 860,
+          "sha256": "050F76C067B010FC67328BF6E7DC6B210FE0BAE0435453752C8929BF8C77DA81"
+        },
+        {
+          "path": "data/superGuides/superGuide2-6.bin",
+          "length": 360,
+          "sha256": "E69C56CB8A3E9173A25A7B692542E41D8291D66C8B977F75D63442DB42513CDB"
+        },
+        {
+          "path": "data/superGuides/superGuide2-6_2Q.bin",
+          "length": 380,
+          "sha256": "7C8EFA5A7CA6C56AED6820721297DC19E025B66554F59E5FD2D2EB798F052946"
+        },
+        {
+          "path": "data/superGuides/superGuide2-7.bin",
+          "length": 905,
+          "sha256": "0AFBD0FB6C84BA5EA9B8AB51B097474880792F5D77EF69B6658DE7EE8800E22F"
+        },
+        {
+          "path": "data/superGuides/superGuide2-7_2Q.bin",
+          "length": 560,
+          "sha256": "462A8A73FB36524974EF25A8B128627328561D0B2C75BEC4C848362FD8A446FE"
+        },
+        {
+          "path": "data/superGuides/superGuide2-8.bin",
+          "length": 730,
+          "sha256": "D4BE90A11B329950A753B4E66C9A33A9234CE7CA759A56621CEFC474EF5E6275"
+        },
+        {
+          "path": "data/superGuides/superGuide2-8_2Q.bin",
+          "length": 730,
+          "sha256": "D4BE90A11B329950A753B4E66C9A33A9234CE7CA759A56621CEFC474EF5E6275"
+        },
+        {
+          "path": "data/superGuides/superGuide2-DK.bin",
+          "length": 2040,
+          "sha256": "FB2023C016EB0481CD1050BDFD259C4E6752FC6F0AEE09E3B799B44AD8CF7F58"
+        },
+        {
+          "path": "data/superGuides/superGuide2-DK_2Q.bin",
+          "length": 1240,
+          "sha256": "98EC03A866A2241EE1057A0348E97027832EB87F62CE9D543D4AEDC1CFDE2D33"
+        },
+        {
+          "path": "data/superGuides/superGuide3-1.bin",
+          "length": 990,
+          "sha256": "5C3D4685AF67A97F3790B945214A2F26817B7A06E05A22A9A0C494599F18BA48"
+        },
+        {
+          "path": "data/superGuides/superGuide3-1_2Q.bin",
+          "length": 950,
+          "sha256": "6F4B5E2C99BF56E384838E354C4E508BD21E327C269FC255CC2E8A25C2FE6309"
+        },
+        {
+          "path": "data/superGuides/superGuide3-2.bin",
+          "length": 1260,
+          "sha256": "28FDF2EBE490073A962277AFB30F942A5342F24962BE5D1D1BC6A91D7A0FCB1A"
+        },
+        {
+          "path": "data/superGuides/superGuide3-2_2Q.bin",
+          "length": 1320,
+          "sha256": "93D76E007DC0F4511EBEFC352F0E46139118D6CAD36406E5CCBFF5298566E84D"
+        },
+        {
+          "path": "data/superGuides/superGuide3-3.bin",
+          "length": 1335,
+          "sha256": "B81FC1A6279A9EFD4842995AC9F4AD6550A49EDF9C2DB4CCF591582E34C95EE8"
+        },
+        {
+          "path": "data/superGuides/superGuide3-3_2Q.bin",
+          "length": 1505,
+          "sha256": "DC2B877460E9EB6E509E1F543051E79266064386BCCDDB81C8271B29111E1A2D"
+        },
+        {
+          "path": "data/superGuides/superGuide3-4.bin",
+          "length": 1040,
+          "sha256": "581B0A371765B4EA2B2DB9EE32C43F6FBB4C59AE56026C4E1B8B6BC324D538EE"
+        },
+        {
+          "path": "data/superGuides/superGuide3-4_2Q.bin",
+          "length": 1495,
+          "sha256": "1A168043C1EBF2FF213767C1092FFEC29F9481F3A98041CF0B38084B20D8D127"
+        },
+        {
+          "path": "data/superGuides/superGuide3-5.bin",
+          "length": 580,
+          "sha256": "11EB708245FDE2CC6F038A9C387F1351CE7E3DB2CAEF4D58A87D4D85B6D4A02E"
+        },
+        {
+          "path": "data/superGuides/superGuide3-5_2Q.bin",
+          "length": 985,
+          "sha256": "A5625DB937F9AF52CE346AF1DA9D29C82AC185E7095B01A8A7A482B3C4488944"
+        },
+        {
+          "path": "data/superGuides/superGuide3-6.bin",
+          "length": 730,
+          "sha256": "7CDB0E1C4788F9D52C8C0F0813F91CA3C0C56067317C0F0C7BA295D4DFE37501"
+        },
+        {
+          "path": "data/superGuides/superGuide3-6_2Q.bin",
+          "length": 860,
+          "sha256": "86DDC569AEBF5693AE4508CDCF6701C00E339928798AA2C2A988AED164E27627"
+        },
+        {
+          "path": "data/superGuides/superGuide3-7.bin",
+          "length": 1115,
+          "sha256": "87F21A4224701BD3AE4C10B428BE71DC5DFE32D7FD47643FBFE0882FEA1E5CA3"
+        },
+        {
+          "path": "data/superGuides/superGuide3-7_2Q.bin",
+          "length": 1075,
+          "sha256": "DE4DCEB966153B589B9CD3CDE53BD4437D0FDB205472DAA798867CB0B495CEB8"
+        },
+        {
+          "path": "data/superGuides/superGuide3-8.bin",
+          "length": 955,
+          "sha256": "B0B409C476C83C052D23A507D8858B4A0C3A7A2CCD992B99640B7C7450347B9A"
+        },
+        {
+          "path": "data/superGuides/superGuide3-8_2Q.bin",
+          "length": 895,
+          "sha256": "53C9E0690666213BDB155C80888B2F61C9B04BEF3FC28809FA62FE74DE4B4A21"
+        },
+        {
+          "path": "data/superGuides/superGuide3-DK.bin",
+          "length": 2550,
+          "sha256": "D64FDFB6E7D6F363391CE6B3B15822C7A081B52A17F1E1988A207DC4A29530FB"
+        },
+        {
+          "path": "data/superGuides/superGuide3-DK_2Q.bin",
+          "length": 2540,
+          "sha256": "719A45B075A25FA29B061C615097FE2911889490DCFB20E774283ECB6FF258E8"
+        },
+        {
+          "path": "data/superGuides/superGuide4-1.bin",
+          "length": 325,
+          "sha256": "758D345FB7B989D3796A05E3D62ABA1148C8DBC63171E1520E006673BC86C384"
+        },
+        {
+          "path": "data/superGuides/superGuide4-1_2Q.bin",
+          "length": 270,
+          "sha256": "F6E00C579DC26D28CD5A8F3644C50A0BE6111657953B400736B6B6281D943E99"
+        },
+        {
+          "path": "data/superGuides/superGuide4-2.bin",
+          "length": 885,
+          "sha256": "6D363A9CDBFD9792981AD4641EC82D2812D4B43E7B7A125A80B2BCC26794D308"
+        },
+        {
+          "path": "data/superGuides/superGuide4-2_2Q.bin",
+          "length": 1065,
+          "sha256": "3A7D7056D86963E991FAD322A35089762AA28EFA2E33D815D9AC7954A8F61BA7"
+        },
+        {
+          "path": "data/superGuides/superGuide4-3.bin",
+          "length": 560,
+          "sha256": "6D765DA0B1A7BAFC374F773568AED362AAA3BDB442944D9D4D379168B355B1EF"
+        },
+        {
+          "path": "data/superGuides/superGuide4-3_2Q.bin",
+          "length": 525,
+          "sha256": "E7E8C9B958DF62AE4424F940DE23D5D16C789CEC5FF9D01135EB4DDA15A8E71D"
+        },
+        {
+          "path": "data/superGuides/superGuide4-4.bin",
+          "length": 1220,
+          "sha256": "8F708DE9C138C6947350A6931E756CD5C64827A2323859FF829055750CC09758"
+        },
+        {
+          "path": "data/superGuides/superGuide4-4_2Q.bin",
+          "length": 1220,
+          "sha256": "8F708DE9C138C6947350A6931E756CD5C64827A2323859FF829055750CC09758"
+        },
+        {
+          "path": "data/superGuides/superGuide4-5.bin",
+          "length": 400,
+          "sha256": "851A9BBD9A35BA84F23B75985BF5A733983E01888447EC4F6F85492233DA3D7A"
+        },
+        {
+          "path": "data/superGuides/superGuide4-5_2Q.bin",
+          "length": 400,
+          "sha256": "851A9BBD9A35BA84F23B75985BF5A733983E01888447EC4F6F85492233DA3D7A"
+        },
+        {
+          "path": "data/superGuides/superGuide4-6.bin",
+          "length": 430,
+          "sha256": "0C4111BC2A25DB3C046D2D1EC9BD69532A113F9B62E240A97FB3F70573E02408"
+        },
+        {
+          "path": "data/superGuides/superGuide4-6_2Q.bin",
+          "length": 915,
+          "sha256": "0DF072CC3E74D82B4839143BAF3B8A6A46F2DCE385B46CA4017FA7225B02899F"
+        },
+        {
+          "path": "data/superGuides/superGuide4-7.bin",
+          "length": 770,
+          "sha256": "E5E688826D9961A4DCBF180E5B006893EAB2394CFE83296AE9FD5C395C4F203A"
+        },
+        {
+          "path": "data/superGuides/superGuide4-7_2Q.bin",
+          "length": 895,
+          "sha256": "EAEA8A40056B41C29D1951CD59E05F7AEACF840CA07A55C23B0A3445DEA91643"
+        },
+        {
+          "path": "data/superGuides/superGuide4-8.bin",
+          "length": 560,
+          "sha256": "1EB2DB3C1B02C0EDC580F37B2B49D0BCA28AD474184025F40C96B3FF0909D247"
+        },
+        {
+          "path": "data/superGuides/superGuide4-8_2Q.bin",
+          "length": 1090,
+          "sha256": "309465243FF2404507298300CEB6DF6F4A4CDBF7DAC2078EECD335F5A4C3D6A8"
+        },
+        {
+          "path": "data/superGuides/superGuide4-DK.bin",
+          "length": 1460,
+          "sha256": "730BFCCA5AD0580ABC21E228A435B8F5A8C9B66D3B2945C18D502CC0F9F37CE9"
+        },
+        {
+          "path": "data/superGuides/superGuide4-DK_2Q.bin",
+          "length": 1985,
+          "sha256": "16C91F6C0EB2FE1A2806A9D016D6194A2AD773944DA613A8E81CCA4985241EA4"
+        },
+        {
+          "path": "data/superGuides/superGuide5-1.bin",
+          "length": 1105,
+          "sha256": "7CBEF1A6FA30812B20A887A8CD34608BEAC3C78627CF3913B5DB8CCF7267E6A9"
+        },
+        {
+          "path": "data/superGuides/superGuide5-1_2Q.bin",
+          "length": 1295,
+          "sha256": "925EF8C8A3D3B4355AE58A89F9791ACF35BFC7A98DEC381FFC9D9AB28F652DCB"
+        },
+        {
+          "path": "data/superGuides/superGuide5-2.bin",
+          "length": 600,
+          "sha256": "2CA2F29F4E3868FE870F357487E6DC429562F2B2110D93D113FB97EC18B74712"
+        },
+        {
+          "path": "data/superGuides/superGuide5-2_2Q.bin",
+          "length": 990,
+          "sha256": "C8F461AA3BFB57805D125771F51C73E3FCD4638CDA13C9DE657640F537F473DA"
+        },
+        {
+          "path": "data/superGuides/superGuide5-3.bin",
+          "length": 1490,
+          "sha256": "2EFEDDD380A7762227DF659EAC2E45152E7D2511E125E77A54A040AAFA117713"
+        },
+        {
+          "path": "data/superGuides/superGuide5-3_2Q.bin",
+          "length": 1560,
+          "sha256": "615247D7E952FD28490BAE29FF6DC188A464BAE565F1314E6F951CF922AA8653"
+        },
+        {
+          "path": "data/superGuides/superGuide5-4.bin",
+          "length": 1265,
+          "sha256": "BD462204DC7CCD6A0162384E201771D33687BD235362B93F2E2DFE8EF8930ACC"
+        },
+        {
+          "path": "data/superGuides/superGuide5-4_2Q.bin",
+          "length": 1865,
+          "sha256": "5441AD425E38E05786BCA8ABA2F25B8212F9E8B971FDEA3E615EF9688E861BA9"
+        },
+        {
+          "path": "data/superGuides/superGuide5-5.bin",
+          "length": 625,
+          "sha256": "7EAEC0B68E08B36EAF579CD8F96E6C44CE7BFF1FFE8FC70C9D9DC7E761824D05"
+        },
+        {
+          "path": "data/superGuides/superGuide5-5_2Q.bin",
+          "length": 815,
+          "sha256": "6EE4F39871814A43800EBF60A170DC5002EC2703CC85850061BF61A46F88EC1D"
+        },
+        {
+          "path": "data/superGuides/superGuide5-6.bin",
+          "length": 930,
+          "sha256": "20C7BDD6CFDF062C13DEB61DCDC2C3D8609C220E2E810240CA8B428B22196EE4"
+        },
+        {
+          "path": "data/superGuides/superGuide5-6_2Q.bin",
+          "length": 835,
+          "sha256": "992045A498CE8E201C42162F22DAA60690D60DE9DC3598B4ACC49EBE34DF4099"
+        },
+        {
+          "path": "data/superGuides/superGuide5-7.bin",
+          "length": 530,
+          "sha256": "B9F082099463B02541769A77BD1E303514BC69E2F316A0D3663A013021347016"
+        },
+        {
+          "path": "data/superGuides/superGuide5-7_2Q.bin",
+          "length": 800,
+          "sha256": "9A47D3C787B3891C07DD8AA697880A0AAE5C5C82B685B52D098D081094CAC299"
+        },
+        {
+          "path": "data/superGuides/superGuide5-8.bin",
+          "length": 1025,
+          "sha256": "53701C18098D009D751E6DECF081DF309114D3F00F8BE5E2666B34380892705E"
+        },
+        {
+          "path": "data/superGuides/superGuide5-8_2Q.bin",
+          "length": 1205,
+          "sha256": "6D96EE237C299BB3CAC82B4A7E874B82F30FF788FB9A80162B16E6DE73A70F8C"
+        },
+        {
+          "path": "data/superGuides/superGuide5-DK.bin",
+          "length": 1670,
+          "sha256": "CA3ECDE050F618AE1A2DB55857BE7361F48027F17AAD01FC7181F0AB7387E290"
+        },
+        {
+          "path": "data/superGuides/superGuide5-DK_2Q.bin",
+          "length": 1490,
+          "sha256": "BAD4F9091D03E9BA0E1A219A21750960FE80966EFB4FCB679FAF7B366C64EE28"
+        },
+        {
+          "path": "data/superGuides/superGuide6-1.bin",
+          "length": 710,
+          "sha256": "7D6C52DD229BAB896CEA2452FC3EF44510836CC343A1729DE6A153D1674D9C5A"
+        },
+        {
+          "path": "data/superGuides/superGuide6-1_2Q.bin",
+          "length": 720,
+          "sha256": "6A15E36F85BC67C75E26A594B303D99B4EAD3BAE61D5EA0971DA034078C1250B"
+        },
+        {
+          "path": "data/superGuides/superGuide6-2.bin",
+          "length": 400,
+          "sha256": "769B811733848872012D38CFF1AD921227940A0424D6A066056320510BFD02E8"
+        },
+        {
+          "path": "data/superGuides/superGuide6-2_2Q.bin",
+          "length": 520,
+          "sha256": "5DD2CE4DD4B5E5D7D5AA0224EEEBA0608AF382B4EBC98FD8E426AC563111597A"
+        },
+        {
+          "path": "data/superGuides/superGuide6-3.bin",
+          "length": 455,
+          "sha256": "485542EA6DB7321EF0760BDD7C49E8A314CA91D3628DBEC9E699804159F01A99"
+        },
+        {
+          "path": "data/superGuides/superGuide6-3_2Q.bin",
+          "length": 480,
+          "sha256": "8751226BE7B18728310DEA52D8018DB326F9F38684F1CF02528C26A92878B451"
+        },
+        {
+          "path": "data/superGuides/superGuide6-4.bin",
+          "length": 710,
+          "sha256": "5015E069851613C06D2E494384B7BFA31CA8531398BD3C9A828CE869A41FA6D3"
+        },
+        {
+          "path": "data/superGuides/superGuide6-4_2Q.bin",
+          "length": 710,
+          "sha256": "5015E069851613C06D2E494384B7BFA31CA8531398BD3C9A828CE869A41FA6D3"
+        },
+        {
+          "path": "data/superGuides/superGuide6-5.bin",
+          "length": 555,
+          "sha256": "FC6841FB14B581417880C7450D39FA285AD00CB626954097D7A0465B7987647D"
+        },
+        {
+          "path": "data/superGuides/superGuide6-5_2Q.bin",
+          "length": 565,
+          "sha256": "B198F1968CA951CBF3853D574F9E2A44395B39217ECA27C35523CF8BF964B4FF"
+        },
+        {
+          "path": "data/superGuides/superGuide6-6.bin",
+          "length": 720,
+          "sha256": "2799E8DF1FAF2556806E0EE076AC99D1B7BBB9C39A8472E72A4466451E24968D"
+        },
+        {
+          "path": "data/superGuides/superGuide6-6_2Q.bin",
+          "length": 635,
+          "sha256": "9F01AC18067A512B6DBDE6B9194349092DAEC2047DF80BDB0DC603E2A8592007"
+        },
+        {
+          "path": "data/superGuides/superGuide6-7.bin",
+          "length": 535,
+          "sha256": "234C647628232C16110B67F6448DE4E22C9F3EA8249A0AECFCDFAACD74EF0115"
+        },
+        {
+          "path": "data/superGuides/superGuide6-7_2Q.bin",
+          "length": 795,
+          "sha256": "A954A32E6FCB3D6206A1CE877A10AB904600614C6CEE9531FFDDDA4D9F17D63A"
+        },
+        {
+          "path": "data/superGuides/superGuide6-8.bin",
+          "length": 445,
+          "sha256": "BD7E8B48B77B52F70C0EA9520D2D5372E8C76B13D8868A1959163514AFF44176"
+        },
+        {
+          "path": "data/superGuides/superGuide6-8_2Q.bin",
+          "length": 285,
+          "sha256": "4C26C8E35A794D92DFFAA10F9B236C737375C6CEBEC2DAE4ABCFC2C5E191CECC"
+        },
+        {
+          "path": "data/superGuides/superGuide6-DK.bin",
+          "length": 555,
+          "sha256": "BA9461307E382BC2F96C94B4188C2DFACFEB60D82CBCCC330346BF6E4DF97E1B"
+        },
+        {
+          "path": "data/superGuides/superGuide6-DK_2Q.bin",
+          "length": 575,
+          "sha256": "645D1F5A86A4261DFDEA96916F9728A60CD43370F57F677151930D9D78237AC9"
+        },
+        {
+          "path": "data/superGuides/superGuide7-1.bin",
+          "length": 755,
+          "sha256": "4ED1E864EEDEABF0FE924B6BCAE2D40D2C57DA0F4D12CB15B2C4C83EFBDB9C11"
+        },
+        {
+          "path": "data/superGuides/superGuide7-1_2Q.bin",
+          "length": 740,
+          "sha256": "7D8F1194C603065D2103F0227DEC226E3C664F2744FDC20D8DA1DF9BFFB3DCFF"
+        },
+        {
+          "path": "data/superGuides/superGuide7-2.bin",
+          "length": 310,
+          "sha256": "221919D484B9D16417C74562E682B8FE7CE556E3B300C1E2715EE05E9BA84163"
+        },
+        {
+          "path": "data/superGuides/superGuide7-2_2Q.bin",
+          "length": 300,
+          "sha256": "DCDFCA83AFD8F2249297968B7453CA0033BD1C3AD9D6E6599F53CFB56802A9F1"
+        },
+        {
+          "path": "data/superGuides/superGuide7-3.bin",
+          "length": 1165,
+          "sha256": "69CB83F24968FA94A0BAC85C1D26ADE9E34D08331F12C00C111134429814E13F"
+        },
+        {
+          "path": "data/superGuides/superGuide7-3_2Q.bin",
+          "length": 1220,
+          "sha256": "982C79117FA5F79DE60A4431D1A9C58B9BDE062E4CFBD55FEB13934841B11965"
+        },
+        {
+          "path": "data/superGuides/superGuide7-4.bin",
+          "length": 1400,
+          "sha256": "691154D81E83D92066735DE3FB5C2F0FEA7D029E7F555BE134C1ED8C6CA2C330"
+        },
+        {
+          "path": "data/superGuides/superGuide7-4_2Q.bin",
+          "length": 1510,
+          "sha256": "77FC7D053AA2E229E12AF40546AD4D8076A638DF3FA71001218D0C78721B8BE8"
+        },
+        {
+          "path": "data/superGuides/superGuide7-5.bin",
+          "length": 725,
+          "sha256": "AAE8DF3BBCD5D552A84D6557E6A3E29C387CC7EAE214437A744C3E5B5643BFF3"
+        },
+        {
+          "path": "data/superGuides/superGuide7-5_2Q.bin",
+          "length": 595,
+          "sha256": "339FBC60B3AA99112720CBC0898E759E03990D8D025ADE145A17AD70E36F547A"
+        },
+        {
+          "path": "data/superGuides/superGuide7-6.bin",
+          "length": 295,
+          "sha256": "536D2C50A2DF003C5C6FB28F9C93BAE1491F2CC69A0EF7C687B6418E2B0B8286"
+        },
+        {
+          "path": "data/superGuides/superGuide7-6_2Q.bin",
+          "length": 1000,
+          "sha256": "E569A69D2C7DF19475FDA55FB4FB5220DC6D311E77D3B7420FE2C21A60D90B2F"
+        },
+        {
+          "path": "data/superGuides/superGuide7-7.bin",
+          "length": 1055,
+          "sha256": "BD0266F3D10EF495EF32F2E3A7DA092BBBF7E69DF5449EAD731884D4E9528407"
+        },
+        {
+          "path": "data/superGuides/superGuide7-7_2Q.bin",
+          "length": 1410,
+          "sha256": "31510153DC4D85951F78244412DFE3DFE6B5467EF35A80D4CFAC9C84938CB13A"
+        },
+        {
+          "path": "data/superGuides/superGuide7-8.bin",
+          "length": 1010,
+          "sha256": "5F7E1D3A388573E351DA771A02002DB0F6F6974E1D7C1784674784E60CB61920"
+        },
+        {
+          "path": "data/superGuides/superGuide7-8_2Q.bin",
+          "length": 1245,
+          "sha256": "B03B8FD0C39E9E2CA459F79C4DC75F4BD67B0FC3F31D2C3CD31CF3E3DEBEF81B"
+        },
+        {
+          "path": "data/superGuides/superGuide7-DK.bin",
+          "length": 650,
+          "sha256": "28043D1E1599E2B56FC9A90DC6F329A04929394F4B10D52D73A6D214B5509F30"
+        },
+        {
+          "path": "data/superGuides/superGuide7-DK_2Q.bin",
+          "length": 685,
+          "sha256": "1724B2DCC691E0CD29886647A947E4A273F0EBC34EB3D727344F362C2022D8FC"
+        },
+        {
+          "path": "data/superGuides/superGuide8-1.bin",
+          "length": 670,
+          "sha256": "F43A3CED1279F22AC28D22C1B3F99B71FFCCDFEC535B401CE698249079593EA8"
+        },
+        {
+          "path": "data/superGuides/superGuide8-1_2Q.bin",
+          "length": 885,
+          "sha256": "A3090984E16B427B2673FD97BA7CD46F73205C342D54D14810DE2B34BC389B3D"
+        },
+        {
+          "path": "data/superGuides/superGuide8-2.bin",
+          "length": 1785,
+          "sha256": "D1155815AD5AD8568FB85B76B3185464D61E525B66561184C76AF13C790D56B3"
+        },
+        {
+          "path": "data/superGuides/superGuide8-2_2Q.bin",
+          "length": 1530,
+          "sha256": "1B9C2EE113696CA9714125F16913341FB298318ADC09DE8FECBDDECB48D5907C"
+        },
+        {
+          "path": "data/superGuides/superGuide8-3.bin",
+          "length": 665,
+          "sha256": "850C19CB001587C4A0222E3BF82395ABD58FC50A3C41F90D0BE6689202C8E394"
+        },
+        {
+          "path": "data/superGuides/superGuide8-3_2Q.bin",
+          "length": 995,
+          "sha256": "7EE02CEBEFE685578C8571106ACB6F7E9D41948CA8CB4DE6F28EB4DF4BE29022"
+        },
+        {
+          "path": "data/superGuides/superGuide8-4.bin",
+          "length": 880,
+          "sha256": "483C51E3FE6B19621BA54B880B56223039F135DFF827261B8664CAF421A9C1C2"
+        },
+        {
+          "path": "data/superGuides/superGuide8-4_2Q.bin",
+          "length": 1650,
+          "sha256": "A8F2161D63F7D0F3F0E2B1F63407D8FA9DAECAC70DC126511AE1B6172527FD92"
+        },
+        {
+          "path": "data/superGuides/superGuide8-5.bin",
+          "length": 640,
+          "sha256": "2B8360D57BFB1F4274A20DDE5314CD91A26FD40DFDC51D527A8BA8AE54A05D94"
+        },
+        {
+          "path": "data/superGuides/superGuide8-5_2Q.bin",
+          "length": 985,
+          "sha256": "1DFB96386A1C4DA675FEEF0E7B9EFD23D4F52CECD0BC81B758EC7A51FEC061E8"
+        },
+        {
+          "path": "data/superGuides/superGuide8-6.bin",
+          "length": 490,
+          "sha256": "DD1CB960E80F65050948643E9E60090085F135B6D90F439EB7775042D46C7170"
+        },
+        {
+          "path": "data/superGuides/superGuide8-6_2Q.bin",
+          "length": 510,
+          "sha256": "DA65FA529E3EB7556AF0F2CE6FABAEF1C4BB314FC662C652574E1D74BB6F3EE1"
+        },
+        {
+          "path": "data/superGuides/superGuide8-7.bin",
+          "length": 1640,
+          "sha256": "6DDFE9A0A547E4AFD859B87CAF6D2FC3BD7F0560DA85491B283B9DF1EB928CF2"
+        },
+        {
+          "path": "data/superGuides/superGuide8-7_2Q.bin",
+          "length": 1610,
+          "sha256": "435DD4C7E738575D14608D5F70E39680A35489CE27080549CAD727BE33DC697C"
+        },
+        {
+          "path": "data/superGuides/superGuide8-8.bin",
+          "length": 1490,
+          "sha256": "528410B7957F6E49102BF77EBF82EE2224580DC8EADE12CE4EA2D6470723229C"
+        },
+        {
+          "path": "data/superGuides/superGuide8-8_2Q.bin",
+          "length": 1465,
+          "sha256": "AB9EB7E2367099B2FB478B12E565E86E5A2197DD6301463C1C7366A59633DC70"
+        },
+        {
+          "path": "data/superGuides/superGuide8-DK.bin",
+          "length": 2470,
+          "sha256": "1E11EAC845244F214E4C6C6560D6167C0A9BEC72F9C641A382366D05CEA17327"
+        },
+        {
+          "path": "data/superGuides/superGuide8-DK_2Q.bin",
+          "length": 2785,
+          "sha256": "57D966D6829B1B672B41035FAFE93967C5F388864E156B57903F5AB4910ED01B"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt1Int.bin",
+          "length": 295,
+          "sha256": "B28312EBB337B0755945A43F147F0F43BA0FF6BBCCA90644893D61103101B14E"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt2Int.bin",
+          "length": 105,
+          "sha256": "30BD2F121C36E5CC420B0D0E74225D614A4EF06994452CB9D46E4F3E74CC2BEE"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt3Int.bin",
+          "length": 80,
+          "sha256": "35204243724F475EAB9AE2828E2CAB9C4E7F27918C3F8B240A81942C0298A256"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt4Int.bin",
+          "length": 130,
+          "sha256": "5496809C7547A0AFFBB8A90170E63AEBF515E56F0470A5A416D8148C06EB8180"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt5Int.bin",
+          "length": 285,
+          "sha256": "6CDEE63C52A4DE40418CABD5C956F94627E8BEE7FF904F1BD8947F767784DE27"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt6Int.bin",
+          "length": 140,
+          "sha256": "512BF20C2B3F56274EF032BD6F1BD66DFE380EE5E45EE43619B2AB2E1C345E61"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt7Int.bin",
+          "length": 80,
+          "sha256": "A54404DDA51847FB08D7B4FBC6C319C5D88FEEAB259896F17623330F546DEB27"
+        },
+        {
+          "path": "data/superGuides/superGuideAtt8Int.bin",
+          "length": 115,
+          "sha256": "E952023C402F7B79AC9CA31D1183D127BC900A7116144A3092A27388622E53D5"
+        },
+        {
+          "path": "data/superGuides/superGuideCutScene1-4.bin",
+          "length": 80,
+          "sha256": "EBD6A6E3A9DE92A327A6B9AA02935C3D8BE186A2D89B57283F650C489FF05C3F"
+        },
+        {
+          "path": "data/superGuides/superGuideCutScene1-8.bin",
+          "length": 40,
+          "sha256": "E3359AFE0B537AA0F3884E544A27D1C17F001F0802711C02621EEDB246DFFC29"
+        },
+        {
+          "path": "data/superGuides/superGuideFinal-DK.bin",
+          "length": 3585,
+          "sha256": "F00409D87108C912FB38BCDB34AEDBD471C2662501A11832A9FBBF64A68FCB93"
+        },
+        {
+          "path": "data/superGuides/superGuideFinal-DK_2Q.bin",
+          "length": 2930,
+          "sha256": "CA5875652E910CE5A8F1F4BD51670BA775AE78D1488E7F583511F68D97E8C71E"
+        },
+        {
+          "path": "data/superGuides/superGuideS-1.bin",
+          "length": 2210,
+          "sha256": "575A4B9E519228F0F4E3D4E9DB14A03BA063B637357F3D0A866AD33BDF072A5F"
+        },
+        {
+          "path": "data/superGuides/superGuideS-10.bin",
+          "length": 1295,
+          "sha256": "D196E7CBD7674353F925C586EA9D984A1EA12F7981F0557DBD94CB78015D0DE3"
+        },
+        {
+          "path": "data/superGuides/superGuideS-10_2Q.bin",
+          "length": 1405,
+          "sha256": "A3B1EA4CE40284D83580E69F7147AA9E843CAAE3D58F03E9F8EFF7B7B854CC62"
+        },
+        {
+          "path": "data/superGuides/superGuideS-11.bin",
+          "length": 480,
+          "sha256": "6883807A2E2A1AC1F64CB6DF359DE519A0B3FAB7F06883A246909B0A44963650"
+        },
+        {
+          "path": "data/superGuides/superGuideS-11_2Q.bin",
+          "length": 880,
+          "sha256": "43E42A470B9CE30952C745F65271E151D8174EB808BD5312FB7DF813BE69E049"
+        },
+        {
+          "path": "data/superGuides/superGuideS-12.bin",
+          "length": 690,
+          "sha256": "F3510D0AB0AF8B9B45F0460B0FFF262663E758FB37F404C20591CEAABFCFC6B4"
+        },
+        {
+          "path": "data/superGuides/superGuideS-12_2Q.bin",
+          "length": 725,
+          "sha256": "E44808D5AF647D8932A255F15D5E7924D300170BAA3673C46DF54C7479D067D2"
+        },
+        {
+          "path": "data/superGuides/superGuideS-13.bin",
+          "length": 750,
+          "sha256": "073D79E00B1AA0911B8C06167FFFFD8EE10A35ECC1008238CCEC93E4198BCB33"
+        },
+        {
+          "path": "data/superGuides/superGuideS-13_2Q.bin",
+          "length": 895,
+          "sha256": "BBA2C0570155107A3F2C963DE0B1FCD768026BD0C51BC67B86720C92CC1CD5F6"
+        },
+        {
+          "path": "data/superGuides/superGuideS-14.bin",
+          "length": 1295,
+          "sha256": "4BF7647E3936C7F0C410238599F8218DDE5D076C8D86325F53556E23F36AE5A9"
+        },
+        {
+          "path": "data/superGuides/superGuideS-14_2Q.bin",
+          "length": 1510,
+          "sha256": "ADF09B747F4762A7263F3821C4E639FD16073577A7EA2647BD2D2F18C70E0F38"
+        },
+        {
+          "path": "data/superGuides/superGuideS-15.bin",
+          "length": 1810,
+          "sha256": "BB34F6C3D205CAEE8A72BFC64001FEF350B6CAAD74123E9EF9FAD060C09543DB"
+        },
+        {
+          "path": "data/superGuides/superGuideS-15_2Q.bin",
+          "length": 1850,
+          "sha256": "F64F2E1BF034D3521B499807DD2582132EE1A7956F499A6E8F7B6F7C552EB0C1"
+        },
+        {
+          "path": "data/superGuides/superGuideS-16.bin",
+          "length": 1300,
+          "sha256": "EAED6939188BB6DF5BFC0D57A97AE24C23560118625FD6BDBD42D50A4CC0C799"
+        },
+        {
+          "path": "data/superGuides/superGuideS-16_2Q.bin",
+          "length": 1460,
+          "sha256": "B4EDE5E942AEA0C1DC9B12D39FC2BCE3AD8EE1B07D4BAD0AEC97840C2A114661"
+        },
+        {
+          "path": "data/superGuides/superGuideS-17.bin",
+          "length": 2020,
+          "sha256": "ABDF3599FBF96D599702E43CE2887AC41D950BD9F9DA00267FFFBBE9498684C3"
+        },
+        {
+          "path": "data/superGuides/superGuideS-17_2Q.bin",
+          "length": 3070,
+          "sha256": "BC7F0CE4770388C35862983810EF3136ED1AAC17907074468CF5E2761D9C7067"
+        },
+        {
+          "path": "data/superGuides/superGuideS-18.bin",
+          "length": 1545,
+          "sha256": "7C72BFB54C54A944D1947D326E6600B3564C32D63F489C570900A6B930B85056"
+        },
+        {
+          "path": "data/superGuides/superGuideS-18_2Q.bin",
+          "length": 1375,
+          "sha256": "8788922A02B94803EA96233E41C2A7D5B3A61A0745C9C28333D1E1550BC6F279"
+        },
+        {
+          "path": "data/superGuides/superGuideS-19.bin",
+          "length": 1870,
+          "sha256": "A337697FFFFD9FFA5350D88A2C34E01F5482CF79FF733CA6205E19AB72CD8808"
+        },
+        {
+          "path": "data/superGuides/superGuideS-19_2Q.bin",
+          "length": 1720,
+          "sha256": "5E19B6DA291F8556C57D2B0ABB733E11C1B43E0A24751ABA9A0A448DADDD34E7"
+        },
+        {
+          "path": "data/superGuides/superGuideS-1_2Q.bin",
+          "length": 1870,
+          "sha256": "D7CB3CD133C46294061F5CA93B591CC86BD56059E0986CE2B287BAC65BBC6908"
+        },
+        {
+          "path": "data/superGuides/superGuideS-2.bin",
+          "length": 1235,
+          "sha256": "6E3D950981EAAA3A5A84891BB16FFC3C540E462FE2EB45FB6D12F50B4D4145BF"
+        },
+        {
+          "path": "data/superGuides/superGuideS-20.bin",
+          "length": 2980,
+          "sha256": "C8CB1A8928065673381EC0511E35DFB6D967D91A35C372F1FDFF72B015D19E48"
+        },
+        {
+          "path": "data/superGuides/superGuideS-20_2Q.bin",
+          "length": 3135,
+          "sha256": "A80D72C160FA93766A89E795000ED251FE99D13458AA9E9A1C835B9DDAAA7BF4"
+        },
+        {
+          "path": "data/superGuides/superGuideS-2_2Q.bin",
+          "length": 1205,
+          "sha256": "411940915785E2665C3D0978313A4C0DF4A0A2FB5BF04D7346247A8B15B2BD68"
+        },
+        {
+          "path": "data/superGuides/superGuideS-3.bin",
+          "length": 235,
+          "sha256": "4001E7158F8B3B18A0F6B1A042AA021503D626FBE7EAB698D963D29D719C105D"
+        },
+        {
+          "path": "data/superGuides/superGuideS-3_2Q.bin",
+          "length": 385,
+          "sha256": "FD559C603EC107AD9AF28929AA5B31AFDFC5C54D983ABF849A1EB10FB3AD43B0"
+        },
+        {
+          "path": "data/superGuides/superGuideS-4.bin",
+          "length": 1355,
+          "sha256": "BC517A2BD641B4B6606CF115759407AEA99BB9327B8A5C5072162D8090F492EB"
+        },
+        {
+          "path": "data/superGuides/superGuideS-4_2Q.bin",
+          "length": 1205,
+          "sha256": "86DBF74A2F88BE1236187834B15C58DBCF266BDB0BAD10C871791F746AF3CA9A"
+        },
+        {
+          "path": "data/superGuides/superGuideS-5.bin",
+          "length": 1555,
+          "sha256": "49BC68DF00EDA041F2B671D1328E5461F6C46C4E842AF5CC6845B48A0692F372"
+        },
+        {
+          "path": "data/superGuides/superGuideS-5_2Q.bin",
+          "length": 1540,
+          "sha256": "1D42239D27DE2C27E610C98CA2B6FDF3F6D70304CB7010539B08285196205B61"
+        },
+        {
+          "path": "data/superGuides/superGuideS-6.bin",
+          "length": 1315,
+          "sha256": "4569B9741D40994A55F0911A4D0342006FF5AC5CB80FD781535DB983816C0FDD"
+        },
+        {
+          "path": "data/superGuides/superGuideS-6_2Q.bin",
+          "length": 1190,
+          "sha256": "C1E9AD81036C3861EF6475CE5C2B1A72D87A938D979AC84FA2A35A926A1A2C55"
+        },
+        {
+          "path": "data/superGuides/superGuideS-7.bin",
+          "length": 1270,
+          "sha256": "2800E30A205224A282D6D5537F6E5ED043F31A2597373C9B7A44BE85960F744A"
+        },
+        {
+          "path": "data/superGuides/superGuideS-7_2Q.bin",
+          "length": 1325,
+          "sha256": "40A50AF29413704AE581AC2E804F82C3C6D9A62B553A81FD30722DC9E4F6CB50"
+        },
+        {
+          "path": "data/superGuides/superGuideS-8.bin",
+          "length": 1225,
+          "sha256": "B8D3807AB66137AEE25854E2ABF088A5CF7229B15347904B4BFB0A391D9686D8"
+        },
+        {
+          "path": "data/superGuides/superGuideS-8_2Q.bin",
+          "length": 870,
+          "sha256": "9B1AF0B9F28B45F6FE7B6997EB300245C0C5E01366DF55749A64528D9918BFF0"
+        },
+        {
+          "path": "data/superGuides/superGuideS-9.bin",
+          "length": 1060,
+          "sha256": "F72F767C6EAC4073D480049015DB6A107E76C9E7112604945E9AD883B9A04B10"
+        },
+        {
+          "path": "data/superGuides/superGuideS-9_2Q.bin",
+          "length": 755,
+          "sha256": "F8CEA49D4412A5B0DDD49B27A03AAD2DC0EDB9184344CFE28884CF4526C55AEF"
+        },
+        {
+          "path": "data/superGuides/superGuideX-1.bin",
+          "length": 650,
+          "sha256": "80D8470F54B27254D803D4FFF27B7C5B3BAC180A9D5E202C514C9C9490301243"
+        },
+        {
+          "path": "data/superGuides/superGuideX-10.bin",
+          "length": 3245,
+          "sha256": "B44498C783A5E97C86B2AC9DAE0284FCD86EB470394BE46803D07C56735AD5C6"
+        },
+        {
+          "path": "data/superGuides/superGuideX-10_2Q.bin",
+          "length": 4000,
+          "sha256": "833C2B1A6955774455739DB26510CE8DC11A988F3F40A5A2C605A9A165582202"
+        },
+        {
+          "path": "data/superGuides/superGuideX-1_2Q.bin",
+          "length": 580,
+          "sha256": "6446DAA0D93AC6C4E5CE78212A4A97D595682BDF1260A07D9F85C60959F5B7EA"
+        },
+        {
+          "path": "data/superGuides/superGuideX-2.bin",
+          "length": 1195,
+          "sha256": "E08A1ECD2E54FDFC9C71BEFD35048575CCCC3FD1711CCC5F30CD0B6ACD29F196"
+        },
+        {
+          "path": "data/superGuides/superGuideX-2_2Q.bin",
+          "length": 1255,
+          "sha256": "F331E6BBB3E1F82E230A052749D0A97FD40522740011E6896A8052ED49EDF368"
+        },
+        {
+          "path": "data/superGuides/superGuideX-3.bin",
+          "length": 1145,
+          "sha256": "99B2BE98CFBB78A75CB232ACBD9B6A4C883595E8CFB61EC165743AE0554B6C58"
+        },
+        {
+          "path": "data/superGuides/superGuideX-3_2Q.bin",
+          "length": 1155,
+          "sha256": "54E2BFB108F26622DBE0FAD2993EABF9FF25A7358F5F8896CEEC25CC6AC7C441"
+        },
+        {
+          "path": "data/superGuides/superGuideX-4.bin",
+          "length": 2085,
+          "sha256": "AF7D3D30E483127E1597D1E48B57020177129A25FD791E515992CCF4A5361629"
+        },
+        {
+          "path": "data/superGuides/superGuideX-4_2Q.bin",
+          "length": 1730,
+          "sha256": "287A14AC8B1D34793E36E8A97E65229BB9F957901ADAAC2D0D3685FF514C7C9E"
+        },
+        {
+          "path": "data/superGuides/superGuideX-5.bin",
+          "length": 3025,
+          "sha256": "55F0BACBFB5C93F5142E13B570E8DC46CDD6BD52F885295438BCED047207A1E1"
+        },
+        {
+          "path": "data/superGuides/superGuideX-5_2Q.bin",
+          "length": 3025,
+          "sha256": "55F0BACBFB5C93F5142E13B570E8DC46CDD6BD52F885295438BCED047207A1E1"
+        },
+        {
+          "path": "data/superGuides/superGuideX-6.bin",
+          "length": 1590,
+          "sha256": "3FAFF753907D1A6D5E95D4AC55FA59C40D6DD8E88EA02E4AF5A6645CBEF8BC83"
+        },
+        {
+          "path": "data/superGuides/superGuideX-6_2Q.bin",
+          "length": 1240,
+          "sha256": "FC7623238727C01A2F6948CAC1D37445D3E09EDE21C1B2F9C8462AF7CD16D735"
+        },
+        {
+          "path": "data/superGuides/superGuideX-7.bin",
+          "length": 1220,
+          "sha256": "00BE40ED436DDC26C39EDD1E7AD3E04AD7B9D8836B8D8C4CBF56B50CE4305319"
+        },
+        {
+          "path": "data/superGuides/superGuideX-7_2Q.bin",
+          "length": 1220,
+          "sha256": "10AA4380A9B341B3A4AB29B81820FC595C115E9A29C13372D7CA52A533D976F2"
+        },
+        {
+          "path": "data/superGuides/superGuideX-8.bin",
+          "length": 1220,
+          "sha256": "762DFE429E4E04F397341146B763BB61CFE5684727C428D0E0473D87C08EB08D"
+        },
+        {
+          "path": "data/superGuides/superGuideX-8_2Q.bin",
+          "length": 1335,
+          "sha256": "5E7A86D30ECD5AFC6991F2BECC246B7233D5353FDBFCEF612C1DAD3E44FE8286"
+        },
+        {
+          "path": "data/superGuides/superGuideX-9.bin",
+          "length": 1160,
+          "sha256": "720BA20FB8699E13B0C17430E355A30D085D9A9D55D58EFEBA7DF07EA77889DC"
+        },
+        {
+          "path": "data/superGuides/superGuideX-9_2Q.bin",
+          "length": 1465,
+          "sha256": "3254506A9D055362736A308608BC4C4AE3ACEC876191083DA1EE526FF0B9890E"
+        },
+        {
+          "path": "data/text/Credits.bmg",
+          "length": 2240,
+          "sha256": "3BFACFFFBB978ED27E88E69546F3191519E71144B372C7988E65A5D233A47218"
+        },
+        {
+          "path": "data/text/Cutscene.bmg",
+          "length": 416,
+          "sha256": "FB564412F4C5BAB7AB8533986434A61EC4AE7E20319FDC765D15DB39DE4FF3D0"
+        },
+        {
+          "path": "data/text/Edit.bmg",
+          "length": 1888,
+          "sha256": "F049D3064499CEE46C44C0EBDEFBDE2B3CE49061F2AC17DBDE494F04FE53A310"
+        },
+        {
+          "path": "data/text/Test.bmg",
+          "length": 2400,
+          "sha256": "13029AA6ED2767B5DE3018D042848BFE58A137B93A339F5A1FE457453D831A5C"
+        },
+        {
+          "path": "data/text/Test_Menu.bmg",
+          "length": 896,
+          "sha256": "84B46E67230CF746117FFDA3181BE1F281E8DEB809795BCCC07D602A08BF2515"
+        },
+        {
+          "path": "data/text/control.bin",
+          "length": 4,
+          "sha256": "E8613F5A5BC9F9FEEDA32A8E7C80B69DD4878E47B6A91723FB15EB84236B6A2B"
+        },
+        {
+          "path": "data/text_fra/Credits.bmg",
+          "length": 2240,
+          "sha256": "47B02B8EACC56316390AC94417CE3A4ACDB0EB05F3BA841DE1DDA73213E33672"
+        },
+        {
+          "path": "data/text_fra/Cutscene.bmg",
+          "length": 544,
+          "sha256": "021F9AAE07C63B2E09BCC1A645C32B1C1CA4FE4447D6B0B0BA3507C1C884CAD3"
+        },
+        {
+          "path": "data/text_fra/Edit.bmg",
+          "length": 2048,
+          "sha256": "1603DF4D3CB15E56C43624C91C51C072B7CDF367C160140B8F7758A382090516"
+        },
+        {
+          "path": "data/text_fra/Test.bmg",
+          "length": 2688,
+          "sha256": "107ED7F55E5EF776B58F0FC2A87B3070E9F5C9EEBC60D5B09DBB6FFD4CBBAE9C"
+        },
+        {
+          "path": "data/text_fra/Test_Menu.bmg",
+          "length": 320,
+          "sha256": "63417BEDDE1BA63C6A0C035A221DBEBD320EBDD032F5A3B79A70BF662745DD9B"
+        },
+        {
+          "path": "data/text_spa/Credits.bmg",
+          "length": 2240,
+          "sha256": "660EA8DC0E9D2E219D0E9FF6D7C6F4DA86FCE10F2DFDAE700A546389B0715B5F"
+        },
+        {
+          "path": "data/text_spa/Cutscene.bmg",
+          "length": 416,
+          "sha256": "AAA0E0CE3147CC7C9B8189CA43ED152FC1D86267226BF3620ADCAD9EF9F20FD8"
+        },
+        {
+          "path": "data/text_spa/Edit.bmg",
+          "length": 2144,
+          "sha256": "9E7046F7364210639239D84D094544D1881D4DEA099746E6F49830B65F67F27F"
+        },
+        {
+          "path": "data/text_spa/Test.bmg",
+          "length": 2464,
+          "sha256": "D53872153DACDBBDA22301111C79DE5A064A6DF177BEDD6681249A6956E3F424"
+        },
+        {
+          "path": "data/text_spa/Test_Menu.bmg",
+          "length": 320,
+          "sha256": "63417BEDDE1BA63C6A0C035A221DBEBD320EBDD032F5A3B79A70BF662745DD9B"
+        },
+        {
+          "path": "data/uibg/BGScroll.txt",
+          "length": 301,
+          "sha256": "CBCF4F84FC8FBEBDDB69C6399113D275DD96EC543A98B9A63A13FA2EDF678109"
+        },
+        {
+          "path": "data/uipal/Boss_Normal.ncl",
+          "length": 544,
+          "sha256": "C97FB45930F85F99CEF0F2CA67E894D42FABB09C96CE55FD0B6449BBF33C7E7E"
+        },
+        {
+          "path": "data/uipal/Boss_Plus.ncl",
+          "length": 544,
+          "sha256": "634AC2D35D4FB855C89D539D6F8792032E0AC281ACF49542A426E089E8E0E3C1"
+        },
+        {
+          "path": "data/uipal/Boss_Top_Plus.ncl",
+          "length": 544,
+          "sha256": "31A84469BB596CC15A0B246FA52879ADA34509D0DA361453FE603377CC1FEED8"
+        },
+        {
+          "path": "data/uipal/Boss_Top_normal.ncl",
+          "length": 544,
+          "sha256": "4A3454E3821F6A92D8B5B2FB2B2CCF80E9F349E2061DE4F3DE21C0264DE8F240"
+        },
+        {
+          "path": "data/uipal/Challenge_Normal.ncl",
+          "length": 544,
+          "sha256": "4474472688910A53DAAF433BBF96CB4FFE9039EE4607451A6BE6B67FA6896A7D"
+        },
+        {
+          "path": "data/uipal/Challenge_Plus.ncl",
+          "length": 544,
+          "sha256": "F2C76B7F8E81C5AEFEE40410325B065DD9D63795BE57432DD7B259E62B6ECF1E"
+        },
+        {
+          "path": "data/uipal/Challenge_top_Normal.ncl",
+          "length": 544,
+          "sha256": "B7B168F64E1979199CC2A7F9012484D3E8C3BE66A74E84EA7FF497D29EFC5F76"
+        },
+        {
+          "path": "data/uipal/Challenge_top_Plus.ncl",
+          "length": 544,
+          "sha256": "BD653F95F23BE496178BFE5B5597F3EB4FC2681C614E5D82FC29AEA9BEAE6B9E"
+        },
+        {
+          "path": "data/uipal/Special_Normal.ncl",
+          "length": 544,
+          "sha256": "AD10D3E5CFE3E504D7A1D8E30B12391F3EDC6C7402D60FCD4F019A60439379EF"
+        },
+        {
+          "path": "data/uipal/Special_Plus.ncl",
+          "length": 544,
+          "sha256": "0B916D194E51A30CE835A8BEFAAC081427D2B9E100BAA4F0EBDF2E49E560FD5E"
+        },
+        {
+          "path": "data/uipal/Special_Top_Normal.ncl",
+          "length": 544,
+          "sha256": "CCA819438B3B28ACE5080613CDC23AA9E9B886CE525A06BE6AC1BB1BC0F96700"
+        },
+        {
+          "path": "data/uipal/Special_Top_Plus.ncl",
+          "length": 544,
+          "sha256": "CCBFC46F0394814599DE349CE9CBEFAC0091906572CFBDC1CFFE338C33DDAD2E"
+        },
+        {
+          "path": "data/uipal/Stageselect_Plus.ncl",
+          "length": 544,
+          "sha256": "D83DB9EE4334C8D7145D9335B852146737745B92924BD3B85408F0BF92AD8213"
+        },
+        {
+          "path": "data/uipal/Stageselect_Top_Normal.ncl",
+          "length": 544,
+          "sha256": "022BB8B2284B40DA54C280723152E2274D5EBEF8B5697E93F7E0E522D9C9EE82"
+        },
+        {
+          "path": "data/uipal/Stageselect_Top_Plus.ncl",
+          "length": 544,
+          "sha256": "4B7D2CF17F8706ED43F4FAEFD103F78AD49B99C775E98D8F6AC9A4EF5A96ABE7"
+        },
+        {
+          "path": "data/uipal/stageselect_buttons.ncl",
+          "length": 544,
+          "sha256": "01B5DBB2718B7256E27529E3A410452BDD3A087408A66D2681018EAA22AC33DF"
+        },
+        {
+          "path": "data/uipal/stageselect_buttons_Plus.ncl",
+          "length": 544,
+          "sha256": "39B42E73D1E152765BF93EBD5050FE9DFB8A5CEBB8AF7699EEAF6DED973D215B"
+        },
+        {
+          "path": "data/uipal/stageselect_normal.ncl",
+          "length": 544,
+          "sha256": "6309F0F1AC7918B699AAE13EDAE54171F6CB535C1CCCA80D01E17610923F1F09"
+        },
+        {
+          "path": "data/uisfx/uiSFXMap.txt",
+          "length": 594,
+          "sha256": "B28C4C22BBF1C0EEECBC329B9266546A50E839D333E28C7E84D13FFDC0598486"
+        },
+        {
+          "path": "data/uistudio/broadcast_b.uss",
+          "length": 2576,
+          "sha256": "F129B1DF96CA41A4B53E48A3CCA68E21335D8903EA1048DB1D18D43E642E24EE"
+        },
+        {
+          "path": "data/uistudio/broadcast_t.uss",
+          "length": 524,
+          "sha256": "A054391233E442EABADB0AE2C7666BFE0192A523C757D4F89AA4824C56561B57"
+        },
+        {
+          "path": "data/uistudio/construction_b.uss",
+          "length": 5796,
+          "sha256": "7FCFF09F0573B70ABB510464C280018A930BFC719497F7E8CC0CDEF32005BD77"
+        },
+        {
+          "path": "data/uistudio/construction_t.uss",
+          "length": 456,
+          "sha256": "15870D5CF2CDD89313DC5A3F4E608D84830E0CFB75F932C8BAC35F4CFA74AC25"
+        },
+        {
+          "path": "data/uistudio/contest_b.uss",
+          "length": 5100,
+          "sha256": "20D80D8BA0AD1056D726EDFDDA26B855E0249F5B4D5C54F445265501CD17CED4"
+        },
+        {
+          "path": "data/uistudio/contest_dialog_b.uss",
+          "length": 3448,
+          "sha256": "D721EEC5F533A72AFB47210C64FF4C966B81DDF991EFA1D7AFDFC06DA95FDBB4"
+        },
+        {
+          "path": "data/uistudio/contest_dialog_t.uss",
+          "length": 1080,
+          "sha256": "870DB77D3D75D207AF8D6E3DCB4FC189F849D2DA7F56590EFD73F18FA1106F4B"
+        },
+        {
+          "path": "data/uistudio/contest_list_b.uss",
+          "length": 10080,
+          "sha256": "1177CF64DEE830BF019155898D39FA7A3417105518510CD5BBF245F93B8B385C"
+        },
+        {
+          "path": "data/uistudio/contest_list_t.uss",
+          "length": 716,
+          "sha256": "C63F0F4D4AF3FE2C3DFDE961E743B92D744D4E933E0979ECEA07CF2790A1E671"
+        },
+        {
+          "path": "data/uistudio/contest_main_b.uss",
+          "length": 3508,
+          "sha256": "D44C57B16E3D611B4E04E6E8D11576B2E6DBE4D02C8F11083818180EACA3D7FE"
+        },
+        {
+          "path": "data/uistudio/contest_main_t.uss",
+          "length": 268,
+          "sha256": "DEF368E27958371CB3ED813233ADAA7FBF3B8BC3D485ADF764088E72E1C2F3FA"
+        },
+        {
+          "path": "data/uistudio/contest_submit_b.uss",
+          "length": 1988,
+          "sha256": "4B1FA68B1CC807E7542D0ED54CC54EEE7005DD2B1DEF7EDFC1E75744CAB1FB9E"
+        },
+        {
+          "path": "data/uistudio/contest_submit_t.uss",
+          "length": 488,
+          "sha256": "5FA45B9B657B1F49D5BD4491413287B4FFFD5B6088EF7858C41923297550813A"
+        },
+        {
+          "path": "data/uistudio/contest_t.uss",
+          "length": 952,
+          "sha256": "901EDB510A4E9EBF45A1A53EE9C61D495BFE525EBFB5A0032BB0A74832DF3ECD"
+        },
+        {
+          "path": "data/uistudio/contest_view_b.uss",
+          "length": 6856,
+          "sha256": "ABBAE502EFB49AF94E01B5714939346C14E710F19B3B75DEFF3FDFF0CE70D4CB"
+        },
+        {
+          "path": "data/uistudio/contest_view_t.uss",
+          "length": 1080,
+          "sha256": "E621F3E5A870FE457CD5D25C761C45440B4D7B04DD5F5499AC679B30032C5E5D"
+        },
+        {
+          "path": "data/uistudio/editor_dialog_b.uss",
+          "length": 660,
+          "sha256": "CCEA1DF527C3FD152CBC1D9B52AA70CF2E4E32349C47C3B0934DB1623E8D6AAE"
+        },
+        {
+          "path": "data/uistudio/editor_dialog_t.uss",
+          "length": 216,
+          "sha256": "8BAD4C73811B1F236AE5664B122B28FF4012D7C458BEF04DE1675B281E52362D"
+        },
+        {
+          "path": "data/uistudio/friend_list_b.uss",
+          "length": 9076,
+          "sha256": "8B037895F354C35DDB9CD9C03E3210C58B454468E5DF2F868C9832B3A9D11EB8"
+        },
+        {
+          "path": "data/uistudio/friend_list_t.uss",
+          "length": 580,
+          "sha256": "7BB0AA02EFBD9F698710716160EA4E4F985A928DCD82F5225855B9F854EC05CE"
+        },
+        {
+          "path": "data/uistudio/friendcode_b.uss",
+          "length": 3552,
+          "sha256": "E70D882E994DDCCD632971EA6C33A1CDF43063313525D1EC7DEB2E1D5A96A8C7"
+        },
+        {
+          "path": "data/uistudio/friendcode_t.uss",
+          "length": 4188,
+          "sha256": "4C25575A667BB9AFCB360D424D2EFF96358FC8E9ED3E2B050094C166197DAC27"
+        },
+        {
+          "path": "data/uistudio/keyboard_b.uss",
+          "length": 17284,
+          "sha256": "377A553F57FA1425BC03BA454E69CFBE879DAAA9F575FD31CFC79092A116F05A"
+        },
+        {
+          "path": "data/uistudio/keyboard_t.uss",
+          "length": 792,
+          "sha256": "BBAB1D2AD93188A46DA9F3B096974377026A41E832B3EAEE28B5AAF638DE7867"
+        },
+        {
+          "path": "data/uistudio/level_list_b.uss",
+          "length": 10788,
+          "sha256": "738A9C7BE5B3C7724C71DF022395309805C5E16DFADDB17241A7BC2F4FCE14D9"
+        },
+        {
+          "path": "data/uistudio/level_list_t.uss",
+          "length": 716,
+          "sha256": "DEDC3D645DFBB447FC6441FB4A16DBB4E1B5807A27C337D24F95E6C185479A8D"
+        },
+        {
+          "path": "data/uistudio/loading_b.uss",
+          "length": 204,
+          "sha256": "814E30A50F7FD18FDE811F2AA7743B5A8442C6925D315BE3D4EF79DC212C61EB"
+        },
+        {
+          "path": "data/uistudio/loading_t.uss",
+          "length": 148,
+          "sha256": "CAA4B04D86205A2BC346F1D10483F7FC2E8134ABAE0904AEF9D8B519242141E9"
+        },
+        {
+          "path": "data/uistudio/local_error_b.uss",
+          "length": 660,
+          "sha256": "DAB2E6D4F22141A9F208D884578A5F17F5D638CEB129A0BDC781A8400968AFEC"
+        },
+        {
+          "path": "data/uistudio/local_error_t.uss",
+          "length": 280,
+          "sha256": "4696FA60428AEF988C0DCCA8D19AE6D3DCC60151B64D973BEF63234BF1A23093"
+        },
+        {
+          "path": "data/uistudio/local_shutdown_b.uss",
+          "length": 460,
+          "sha256": "E3B3503B9F454778C98D7DF02765E4CA2C9A146BEFD28B3BDC2CA5CB5F00C8FC"
+        },
+        {
+          "path": "data/uistudio/local_shutdown_t.uss",
+          "length": 216,
+          "sha256": "2B37A24B419638E5153EDC8F7118B3D29BF02211DC146760D1403380D8B2BFDF"
+        },
+        {
+          "path": "data/uistudio/nintendo_b.uss",
+          "length": 236,
+          "sha256": "3FCF5F3FB66F23AC8E3593D4AC94EAD23FF9AAF83B60A89944E0FE13A18025AC"
+        },
+        {
+          "path": "data/uistudio/nintendo_t.uss",
+          "length": 244,
+          "sha256": "B0B4FEAF50E8CD822E3CA89DBE1212756EA77479F84CC23C5F5B0941D476B024"
+        },
+        {
+          "path": "data/uistudio/options_main_b.uss",
+          "length": 20672,
+          "sha256": "B99BBF918110308FBAF53787FBE0CF2B0AC69DB95847B6454C4C0AC8BAFE2634"
+        },
+        {
+          "path": "data/uistudio/options_main_t.uss",
+          "length": 384,
+          "sha256": "01354E39B5C7C23465EAC7713A5AE9FA93B16B7336D3F521C1D2C2803AB923F8"
+        },
+        {
+          "path": "data/uistudio/playtest_normal_b.uss",
+          "length": 2940,
+          "sha256": "9E1F9E8717EAE9599B47B851C2464236A7CB8971147E6A36A27EA72BC58FEE47"
+        },
+        {
+          "path": "data/uistudio/playtest_normal_t.uss",
+          "length": 1700,
+          "sha256": "2DF061AD990276B2DEDBC53C3E588668BFB8AD8B3210C54B2791A742F618705D"
+        },
+        {
+          "path": "data/uistudio/playtest_starter_b.uss",
+          "length": 2320,
+          "sha256": "A71BEF8606D4156E6A48D6361AA403B130729D915EBBCAF6A06A440D79B00F3A"
+        },
+        {
+          "path": "data/uistudio/playtest_starter_t.uss",
+          "length": 1676,
+          "sha256": "8BD21BA4768426E5312939A755D00AF5CBAF52315E3536DD8923F0184E03D2B9"
+        },
+        {
+          "path": "data/uistudio/preload_b.uss",
+          "length": 820,
+          "sha256": "FA8E76F2C7DEDB385F4736B388492E6CB431567F3BFCEBD5D1A5F69A7AB76403"
+        },
+        {
+          "path": "data/uistudio/preload_t.uss",
+          "length": 180,
+          "sha256": "B2158523B7B94171CBB1FD6701E5BC1C50C99894AFCA9F0DD25376BABA8E886A"
+        },
+        {
+          "path": "data/uistudio/rating_b.uss",
+          "length": 3404,
+          "sha256": "3C8B34B81D628C01A7B3531AA1EE7F4C8A15CF5B77B6C3B5B557EA0AC13E2F09"
+        },
+        {
+          "path": "data/uistudio/rating_t.uss",
+          "length": 392,
+          "sha256": "5A79FDEBFB45A3D10A52C46C19E198AA36E7F2F89FB0693B8B65B4667675F6F7"
+        },
+        {
+          "path": "data/uistudio/receive_b.uss",
+          "length": 1988,
+          "sha256": "073E01ADE157902FEB0EF4058A1E511B71DCF2F81509520FA5E2423D646CEC1A"
+        },
+        {
+          "path": "data/uistudio/receive_t.uss",
+          "length": 524,
+          "sha256": "08586022079386A3ACCD25BDA5ABC9B8E80698B4FFA45DDB9D7438EF133376C3"
+        },
+        {
+          "path": "data/uistudio/results_boss_b.uss",
+          "length": 1288,
+          "sha256": "6C6B68D6AF03EA3A77BE6C14D5494422209BF41F6AF261CF78FB64D668263DC0"
+        },
+        {
+          "path": "data/uistudio/results_boss_t.uss",
+          "length": 4456,
+          "sha256": "99C431AE4D63359578BFF01F7890184789E3F3FC65812A9813E71B3315D63CA1"
+        },
+        {
+          "path": "data/uistudio/results_gameover_b.uss",
+          "length": 2356,
+          "sha256": "7BB6A6939B3BBD0D1A549355A1DE4CBBBC0B947AD06B701795F0B9F09335517A"
+        },
+        {
+          "path": "data/uistudio/results_gameover_t.uss",
+          "length": 1016,
+          "sha256": "1ACF968C5E9DF5FAA2D77D9DE175466B57ACFE852B9C22D37111A5C404DA1EA4"
+        },
+        {
+          "path": "data/uistudio/results_maingame_b.uss",
+          "length": 3484,
+          "sha256": "73E44C7C131D5FB4248D416BEE94479FDF8305B541583D36ED90BCD72491A9CC"
+        },
+        {
+          "path": "data/uistudio/results_maingame_t.uss",
+          "length": 4456,
+          "sha256": "1763930CE6CC59B6C5546AF0B6CC63FC6B19B40A6B881CC3802B900C665C3B85"
+        },
+        {
+          "path": "data/uistudio/results_minigame_b.uss",
+          "length": 1356,
+          "sha256": "F8013D634839EB80675BACD63AD55EA405AEE1B9C591A4B8D681A6463656DA7E"
+        },
+        {
+          "path": "data/uistudio/results_minigame_t.uss",
+          "length": 696,
+          "sha256": "52061B88BE8DF5B276B1BDC57BF2D68726135FE5577E88FDBCA4DB26676BA4F7"
+        },
+        {
+          "path": "data/uistudio/results_sguide_b.uss",
+          "length": 880,
+          "sha256": "D8D269E788EA7C58059E77C7EE1D9D2809EC2DB03C16EB55CBB970CC76EE99CB"
+        },
+        {
+          "path": "data/uistudio/results_sguide_t.uss",
+          "length": 464,
+          "sha256": "CA7D40B2A0198A1B71275B1CE3673CD1EA63CCF574A5015E6FB0E00C9DA5B755"
+        },
+        {
+          "path": "data/uistudio/share_local_b.uss",
+          "length": 3144,
+          "sha256": "83C4856C60B87E63B2AB69730871E7625762419B7008D0D925B7438223B6BA9A"
+        },
+        {
+          "path": "data/uistudio/share_local_t.uss",
+          "length": 272,
+          "sha256": "ED2DC380705ED3A2FE293B60B92485E01E20E06559D68E57D39D88F1E30F0B3C"
+        },
+        {
+          "path": "data/uistudio/share_online_b.uss",
+          "length": 4604,
+          "sha256": "32B9F37EC8F77BD6A15306E4817F8C1D384972DE6239603DF29BEB27DB9CD0FE"
+        },
+        {
+          "path": "data/uistudio/share_online_pub_b.uss",
+          "length": 7564,
+          "sha256": "6EFF8B80F94B7BD04E9AF7C70BF96797E4D8C9810EF1F8E17860B83B33AD3DC7"
+        },
+        {
+          "path": "data/uistudio/share_online_pub_t.uss",
+          "length": 2252,
+          "sha256": "73F4986F997CBD213D7E82465EF021CD841877938CEAA97DB107047D30458AD9"
+        },
+        {
+          "path": "data/uistudio/share_online_t.uss",
+          "length": 928,
+          "sha256": "613B65BF0E0120F5387C901B886757B4D4024154BD5815917F17C87BA9A86BFC"
+        },
+        {
+          "path": "data/uistudio/special_gift_b.uss",
+          "length": 716,
+          "sha256": "29859C3ACAD21927F2059273AA7F4AF43E9E3910DBAC2261A396B2CCD9A0FCCC"
+        },
+        {
+          "path": "data/uistudio/special_gift_t.uss",
+          "length": 420,
+          "sha256": "EBE2FCB6B8BA8E220FDCF7D83F8EB02B587824879CD0A98DB8872B25442ACE59"
+        },
+        {
+          "path": "data/uistudio/ss_challenge_b.uss",
+          "length": 11336,
+          "sha256": "F42F1B6E6AFD447BA38072F37813D5B3C7EFD3AC74B6671C224C7D6FE85AC1E1"
+        },
+        {
+          "path": "data/uistudio/ss_challenge_t.uss",
+          "length": 1264,
+          "sha256": "AFD31AD924CF6873B49E4C2BEE2617FD30D7AC7953D4F43D781161167CCADF4E"
+        },
+        {
+          "path": "data/uistudio/ss_finalboss_b.uss",
+          "length": 3900,
+          "sha256": "83ADFD518F3AC756B5EB8DB583520F5C17BAF38C9C912A654ECFC4E9F7503306"
+        },
+        {
+          "path": "data/uistudio/ss_finalboss_t.uss",
+          "length": 1196,
+          "sha256": "E605377CCD8C9E68850601DCB11B6DA995CB4F803F03CC43E4AE82365AAB2603"
+        },
+        {
+          "path": "data/uistudio/ss_special_b.uss",
+          "length": 19496,
+          "sha256": "1E50C5879A728EA90A85E3A6FC661D4DE8FFACDFCE07C33E1EED485F74E0B873"
+        },
+        {
+          "path": "data/uistudio/ss_special_t.uss",
+          "length": 1260,
+          "sha256": "6E010E3A594C3F8675E7A063B7BE81D0B76AB4B8873E28BC25BBE2A1ADB42849"
+        },
+        {
+          "path": "data/uistudio/stage_select_b.uss",
+          "length": 14964,
+          "sha256": "EDB1DAAB634B0FD926F2B1EEB02D8A7F72657424A82117D2FB3F14FD63015070"
+        },
+        {
+          "path": "data/uistudio/stage_select_t.uss",
+          "length": 2056,
+          "sha256": "5FD565DAF9CA8D5DAE782F4B6251D3086703FACE8CC56E3F0161D0D2CDC8AA90"
+        },
+        {
+          "path": "data/uistudio/template_main_b.uss",
+          "length": 4240,
+          "sha256": "39051DD57BAC14AFD8175730149BE9A9106173D846AE3B11D3FFAEB875070D13"
+        },
+        {
+          "path": "data/uistudio/template_main_t.uss",
+          "length": 1832,
+          "sha256": "CE0495A8BE60F0F02B49A9067AB5EEF6DC5376755ABD6DC2A277CA04E51975B8"
+        },
+        {
+          "path": "data/uistudio/template_starter_b.uss",
+          "length": 5208,
+          "sha256": "E97199158EE046C25D25CF107289BCBC9A47062824C207B36A552479F04398A0"
+        },
+        {
+          "path": "data/uistudio/template_starter_t.uss",
+          "length": 664,
+          "sha256": "A253A655664DEC6EE6080E75CB915D1494E63FC8249544B5AE1F07EE632328C6"
+        },
+        {
+          "path": "data/uistudio/thanks_b.uss",
+          "length": 248,
+          "sha256": "FBC80BD5E5B403999EF8E02F4E4BA09FB48B9AE15A0FC5D38C4745F58E95C2DD"
+        },
+        {
+          "path": "data/uistudio/thanks_t.uss",
+          "length": 336,
+          "sha256": "333C16EB501EEBCF93D3788DC67535752875B3323D8CFB59FA4478F92537AED6"
+        },
+        {
+          "path": "data/uistudio/title_b.uss",
+          "length": 9800,
+          "sha256": "23688A58F53EB8EBC36F1F3143E5552606EA722BA575CF88341A1CFFBFB15A99"
+        },
+        {
+          "path": "data/uistudio/title_t.uss",
+          "length": 284,
+          "sha256": "8DF010F4883795398EF4C124F2F50B225F381CBEFFCBF766E9CF8B15EE0EA96A"
+        },
+        {
+          "path": "data/uistudio/upload_level_b.uss",
+          "length": 4520,
+          "sha256": "28F5B820C2E25EDED38112ABDA71EE27A295F261858356151E8BE6D16E729CEB"
+        },
+        {
+          "path": "data/uistudio/upload_level_t.uss",
+          "length": 488,
+          "sha256": "BAE03DA00609825716F787EBCC608EE66307E1AFB79D71D44605351F4A02CFF7"
+        },
+        {
+          "path": "data/uistudio/userinterface.usm",
+          "length": 5328,
+          "sha256": "E7CD8706FF141A6FB507A3D176E9906BDFD30DCAF250434B602A3BBCD0D9FD1B"
+        },
+        {
+          "path": "data/uistudio/wfc_dialog_b.uss",
+          "length": 2132,
+          "sha256": "6789B896B25538F08D1143AF0C64AF08AC4B67DA06235ACFA9BD5E54C5C069D7"
+        },
+        {
+          "path": "data/uistudio/wfc_dialog_t.uss",
+          "length": 936,
+          "sha256": "C1DF75E054572618720E8E4D177182E9AA9883065DBC749028F55E90ABE8081B"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "D022E31960151FAF1E495DF7D2F117CB60920E70F27040FFD70F1DC83B113650"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 83200,
+          "sha256": "D1AAD88FFF7C6BF01BA9D034898BCE9124802CC2234A0371D6BF95B33DA9902E"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 25632,
+          "sha256": "E5E02972A8D59B5F2A6DA91038F6FA618D9264B6FA3329AFC6C7E408B203D86C"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 191936,
+          "sha256": "619B62CBEE2E87897D18828D301663267849AF2309D9DC4384839FEE17F53444"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 234016,
+          "sha256": "AEAFF365B2E9764C5D66BB8B59F9BF170609881BE9BE1BB509D943B7CFEF6366"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 175744,
+          "sha256": "5C36F358ACAA9FE5E1BF437739AC339A102D9D340090B142D3BC448494A56F01"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 151328,
+          "sha256": "D561A012228AF42C5D0D9C31B4CE14CFF21511304D9E43611D62796F183B9367"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 28896,
+          "sha256": "E025467ACAFA5B37BA29968E34A67B9F2BB23EE7B17E38CB5F2BD0F3FFB07F52"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 27712,
+          "sha256": "D3B3D918B3F3D8D7FB65BEF5D5A4409CDC69B9D986825BB564B5A40BA2FF5D30"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 82016,
+          "sha256": "925F3A3113A34174859CBC5E3376F47AD367F6449F58FCB72E3F1866D39F7BAE"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 471808,
+          "sha256": "1F77FA47FDED4B0844E776DD07C0BB3687950A5249800C8175682DF3B8E7A996"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 66944,
+          "sha256": "86FEC46B4832D46691F6322E76A2DEB1D4EC286D59E45FB301689A4146B38343"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 47936,
+          "sha256": "F62D79B4661B21E596A5ADF49457E03DD108DF2A379D8D3DF4B7EABD0714E5CC"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 50816,
+          "sha256": "3612D664570C22B9D0F47A788E21FB7B981563A65561A55787E6CF608D3704E8"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 7136,
+          "sha256": "BE692E6C3CD38AC20120BD9E2DF92CA799FF036E43075A5960CD7B8E5B291EEE"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 31370664,
+          "sha256": "31DF93C4263F9697E1D4A4673AD11CEF8BB9B1A6AF63DCEB998CD333E35BD376"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 33554432,
+          "sha256": "1B04AE3884A809A74A9CEACE9200E1C85E442C6E8C0769295438253815FC6001"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 33554432,
+          "sha256": "73693BAFBA8E30CD32E6A9AF76AC41410FF6EE28CDE7450C72DFB38901F8E63F"
+        }
+      ]
+    }
+  ]
+}

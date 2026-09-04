@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Rune Factory 3 - A Fantasy Harvest Moon - Natsume Inc. [BRFE] [USA - English].nds",
+    "length": 134217728,
+    "sha256": "3a98c6677cdc61eaf74f4f779c8e67e6dbc9ec98bfdfb41fc73b57a573f2d1d6",
+    "headerTitle": "RUNEFACTORY3",
+    "gameCode": "BRFE",
+    "makerCode": "E9",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Rune Factory 3 - A Fantasy Harvest Moon - Natsume Inc.",
+    "bannerTitles": {
+      "Japanese": "Rune Factory 3\nA Fantasy Harvest Moon\nNatsume Inc.",
+      "English": "Rune Factory 3\nA Fantasy Harvest Moon\nNatsume Inc.",
+      "French": "Rune Factory 3\nA Fantasy Harvest Moon\nNatsume Inc.",
+      "German": "Rune Factory 3\nA Fantasy Harvest Moon\nNatsume Inc.",
+      "Italian": "Rune Factory 3\nA Fantasy Harvest Moon\nNatsume Inc.",
+      "Spanish": "Rune Factory 3\nA Fantasy Harvest Moon\nNatsume Inc."
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 160048,
+          "sha256": "9F40087972CCB8B89D4CC4BAF8288123E26A479BB43FA68B18A30A59650633A1"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 608,
+          "sha256": "05BBDC5806B6625FCDFED6E19FAC5BF754F73BAB6D687CCAF3CBCBF91395CC2A"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1330980,
+          "sha256": "7ECF44D8849A3AA36630A61B9E807696EE518E220D44F799F400F4F97EB13018"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "3D50B966EF1825DE2505664604EF790900838C0964066E86677F3B4B699C1AFC"
+        },
+        {
+          "path": "data/dwc/utility.bin",
+          "length": 929852,
+          "sha256": "DB8EE36170897F60791F713B7669C50A125E62C6AD775FDA98466C85FE48E81E"
+        },
+        {
+          "path": "data/res/obj/RUNE3_00.mods",
+          "length": 2407688,
+          "sha256": "2F4C819EB40EA5B2219C074122800CADE3E3C0A5AE56DF8C498A3E06D9391ECC"
+        },
+        {
+          "path": "data/res/obj/RUNE3_01.mods",
+          "length": 2692856,
+          "sha256": "67D597DA78E03B65C15528898965416723186C2045EC0BB64D323E5938A16DD2"
+        },
+        {
+          "path": "data/res/obj/rf3Archive.arc",
+          "length": 103271302,
+          "sha256": "1948716E6D3B650D5E3C7AE94908F852A6925DBA8134B460C3158D70CD67FCDC"
+        },
+        {
+          "path": "data/res/obj/sound_data.sdat",
+          "length": 17519264,
+          "sha256": "1EEA716E9BD1AA3EE54C540C8435E2D1F22C21CA4076D445A5BFBD2931D27501"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "5E039F402E22E1EC58497D891F655B2933EE72E92EB980EC591E85BB4F9A87CA"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 192,
+          "sha256": "47AB7F8618F7D871EC9571A4B53B0A01DD4C0F503EAD1AA0B08836F249E34E3E"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 78720,
+          "sha256": "CC58FE907DC497E3F130FF8202EFECCDF1F4E44CD64E305C2AE4A38D6D498F6D"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 4640,
+          "sha256": "BF04BA6D6E61CCB8CCEAD165133ECD1C7266D3E7DF869BA336CF317378C388D1"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 31552,
+          "sha256": "84416EF1FF72CF7E810233AC20B436D3F54BB41A08FA5B288BC1176165E3F9A7"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 35424,
+          "sha256": "0F651A07D5C1F5F27FAAA7D02890EC546B023E6436EBC5B3A3FD5AD2AA651C90"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 7200,
+          "sha256": "579244323E096391FE99ED28A6677EF1E2484C5C2079DDE294CDD7F37E5A0162"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 14400,
+          "sha256": "02CF665C5CFE5BD850EA5564C72898C943FDDDAA618FF04EA35FD0CEB86236CD"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 11840,
+          "sha256": "3A2D05682BA75A4E322E43A24373F79BBDEDE07283DC9E17A310627652A516CA"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 10368,
+          "sha256": "F803AB23DECDF36472D0B612378401DBFFF99EC8367373903E70ECDDCF644E6C"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 10240,
+          "sha256": "D77A685B14B6327565250A95FCC50175E67E349539B9BF2A4EBBB87AAB3F4F66"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 11648,
+          "sha256": "8C3D49C4E13CDB5052C0405B3A9C1D7D143DED83AEC7DAF3A860569CB74688D0"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 24128,
+          "sha256": "3528592C2E5A07F8ACEB27168B16E1A192C3AD46C81C841D284CEF6F0CD73420"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 44480,
+          "sha256": "E6BB2062B4C6E927A461DE35CADC81D06C1521C4275D15386B6010CC5A5A737C"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 120608,
+          "sha256": "3096A46B8399FBF55EC8428AF8CBC265EBD0E67FEC5660E9501267585E352ED1"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 37056,
+          "sha256": "0634BDC7041D1AD4FAC1D92307FE0EBB4D5ADB91153BD2E00E86E034A66E5A87"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 216384,
+          "sha256": "DB6283CDE108606E5B59E14052BD0B97A62B0824E8BA111A7F60C4151FBB84F1"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 20576,
+          "sha256": "40F2646098DC6586590BB09CF5CC201D1FA41ED5FE33D5BCA9E687033A662D0C"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 129019552,
+          "sha256": "ECBB51C8EB3C3986DB4ACD8CA95966B45277CB8D4C9B252963D23DC35CE7098E"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 134217728,
+          "sha256": "B05D9359507ACAE54C5C4A83F8915CD2FB5B30A6C61A27BEA29D0F514AD0883F"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 134217728,
+          "sha256": "145D3112F313BF487625D990A2FBE4369D38622FB0F41334247210FF9791D86D"
+        }
+      ]
+    }
+  ]
+}

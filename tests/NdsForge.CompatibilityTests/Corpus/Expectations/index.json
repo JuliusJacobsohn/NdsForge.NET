@@ -8,9 +8,34 @@
       "expectationFile": "ATDP-9a3f3001dee8.json"
     },
     {
+      "name": "AVALON CODE - Marvelous - Entertainment USA [YOGE] [USA - English].nds",
+      "romSha256": "c45e5df17c006268506af0371d0c811048e118220e9297967a1e283c6c65deb9",
+      "expectationFile": "YOGE-c45e5df17c00.json"
+    },
+    {
+      "name": "Advance Wars- Days of Ruin [YW2E] [USA - English].nds",
+      "romSha256": "aa17e43b468ef525e6e4e634eb02c66e9318a6d808c78107ff5a905900d0b2db",
+      "expectationFile": "YW2E-aa17e43b468e.json"
+    },
+    {
+      "name": "Advance Wars- Dual Strike [AWRE] [USA - English].nds",
+      "romSha256": "834860dd973b04984f1ed9cfdfb7e5cb0a108dad4ee37902baffb60ab7621743",
+      "expectationFile": "AWRE-834860dd973b.json"
+    },
+    {
+      "name": "Aliens- Infestation - SEGA [CEYE] [USA - English].nds",
+      "romSha256": "ada5940028f68d0374aff8295ab86f9882c9b2f56c75f28dbd54143281ed0088",
+      "expectationFile": "CEYE-ada5940028f6.json"
+    },
+    {
       "name": "Animal Crossing- Wild World [ADME] [USA - English].nds",
       "romSha256": "b2b7031f1d08dd0544952757a1ab2164501b16fae2a44b64954a03a76e31fb87",
       "expectationFile": "ADME-b2b7031f1d08.json"
+    },
+    {
+      "name": "Bangai-O Spirits - D3Publisher of America, Inc. [AY6E] [USA - English].nds",
+      "romSha256": "9280eeb8163c6cff5dab94d86af167f6c1374533bcbfda36f8db945f8bfd3ec8",
+      "expectationFile": "AY6E-9280eeb8163c.json"
     },
     {
       "name": "Bratz Forever Diamondz - THQ [AVDS] [Spain - Spanish].nds",
@@ -18,9 +43,34 @@
       "expectationFile": "AVDS-2a96a464d031.json"
     },
     {
+      "name": "CHRONO TRIGGER - SQUARE ENIX [YQUE] [USA - English].nds",
+      "romSha256": "46df8e729e5f0d67ad382ff208d803efd88154a16b39e820d318bb1a1e7549d5",
+      "expectationFile": "YQUE-46df8e729e5f.json"
+    },
+    {
       "name": "Call of Duty\u00AE- Black Ops - Activision [BDYE] [USA - English].nds",
       "romSha256": "f497e9f5b2cb834142f29a8e1943500e63cf0c04840d5aa2e21aa6a82b1521ac",
       "expectationFile": "BDYE-f497e9f5b2cb.json"
+    },
+    {
+      "name": "Castlevania - Dawn of Sorrow - KONAMI [ACVE] [USA - English].nds",
+      "romSha256": "3ddc8b0eac841b6005ff4c38a184b517fa8225ac905aad951b0572850358d8b0",
+      "expectationFile": "ACVE-3ddc8b0eac84.json"
+    },
+    {
+      "name": "Castlevania - Order of Ecclesia - Konami Digital Entertainment [YR9E] [USA - English].nds",
+      "romSha256": "9525838929f3d11f34e52fdb7ae3ccddafdaf00995170117da963124522a28d4",
+      "expectationFile": "YR9E-9525838929f3.json"
+    },
+    {
+      "name": "Castlevania - Portrait of Ruin - Konami Digital Entertainment [ACBE] [USA - English].nds",
+      "romSha256": "1174a36fd91f79e95e90b76aa1268af8fc09f69c04cc8e5b4ff791e872254abd",
+      "expectationFile": "ACBE-1174a36fd91f.json"
+    },
+    {
+      "name": "Contra 4 - Konami Digital Entertainment [YCTE] [USA - English].nds",
+      "romSha256": "35c976c5e0037e4bc556a76311d8ac9c1b7eea8a29d5793235454bde2e2eeff8",
+      "expectationFile": "YCTE-35c976c5e003.json"
     },
     {
       "name": "Cooking Mama - Majesco Entertainment [ACCE] [USA - English].nds",
@@ -38,14 +88,124 @@
       "expectationFile": "CRLE-336f5b398cef.json"
     },
     {
+      "name": "DRAGON QUEST HEROES - ROCKET SLIME - SQUARE ENIX [ADQE] [USA - English].nds",
+      "romSha256": "99dc6346b9f66d0a578a7dcb2fe8f8566551e76082f7fd0afa7c2573e804c374",
+      "expectationFile": "ADQE-99dc6346b9f6.json"
+    },
+    {
+      "name": "DRAGON QUEST IV - Chapters of the Chosen - SQUARE ENIX [YIVE] [USA - English].nds",
+      "romSha256": "7f25b79cf9e8feca0aacf6f12f3ddd9ae5b7f4b00ed01d2173853d33869bd24f",
+      "expectationFile": "YIVE-7f25b79cf9e8.json"
+    },
+    {
+      "name": "DRAGON QUEST IX - Sentinels of the Starry Skies [YDQE] [USA - English].nds",
+      "romSha256": "a5bbe96f69256d973c145d92e69bb8813b6f07edf28abfd9d69b9c2c75599b32",
+      "expectationFile": "YDQE-a5bbe96f6925.json"
+    },
+    {
+      "name": "DRAGON QUEST MONSTERS - Joker - SQUARE ENIX [AJRE] [USA - English].nds",
+      "romSha256": "2d11475a7c392567bfc2cdaa944826a79b36686fc85d7cc0e86b7c755ff32f6f",
+      "expectationFile": "AJRE-2d11475a7c39.json"
+    },
+    {
+      "name": "DRAGON QUEST VI - Realms of Revelation [YVIE] [USA - English].nds",
+      "romSha256": "66b9f6d3c7eb1f2bbbf09b3004d46b86b08f87d3c1674a37f8246d2d544a3f33",
+      "expectationFile": "YVIE-66b9f6d3c7eb.json"
+    },
+    {
+      "name": "Devil Survivor 2 - Index Digital Media, Inc. [TDVE] [USA - English].nds",
+      "romSha256": "4318041807e4ae9cdce4bfa8a85e49363a2d4c7517b7aa3411f87c37f5791227",
+      "expectationFile": "TDVE-4318041807e4.json"
+    },
+    {
+      "name": "Dig Dug - Digging Strike - NAMCO LTD. [ADDE] [USA - English].nds",
+      "romSha256": "50c898435f5802fc46d3e993f67ee4a0eb89da7aa362abd0fe34c7845efa8679",
+      "expectationFile": "ADDE-50c898435f58.json"
+    },
+    {
+      "name": "Dragon Quest Monsters - Joker 2 [CJRE] [USA - English].nds",
+      "romSha256": "95dda06ed0a889effc57dac9633c9e35555733c7282060db120ed272d5842c5f",
+      "expectationFile": "CJRE-95dda06ed0a8.json"
+    },
+    {
+      "name": "Dragon Quest V - Hand of the Heavenly Bride - SQUARE ENIX [YV5E] [USA - English].nds",
+      "romSha256": "8498ffdbe8af66637ce45cd7ee04a4b7c247f6cd1dc66ca65ef1c19dcf3c71d7",
+      "expectationFile": "YV5E-8498ffdbe8af.json"
+    },
+    {
+      "name": "ELITE BEAT AGENTS [AOSE] [USA - English].nds",
+      "romSha256": "6c186a424b63de5e128db613f414235ca192c2541f6819e183dd4417718c12dc",
+      "expectationFile": "AOSE-6c186a424b63.json"
+    },
+    {
+      "name": "FINAL FANTASY III - SQUARE ENIX [AFFE] [USA - English].nds",
+      "romSha256": "1ed4a5e438a513ee6fd6748eee88fc7f196118128607a419e69a2226893806bd",
+      "expectationFile": "AFFE-1ed4a5e438a5.json"
+    },
+    {
+      "name": "FINAL FANTASY IV - SQUARE ENIX [YF4E] [USA - English].nds",
+      "romSha256": "d878ac2792d9185d7e065294754d04bf82377d0853c1924b2358aac5cff6e94a",
+      "expectationFile": "YF4E-d878ac2792d9.json"
+    },
+    {
+      "name": "FINAL FANTASY TACTICS A2 - Grimoire of the Rift - SQUARE ENIX [A6FE] [USA - English].nds",
+      "romSha256": "3b5d469aae5d351de31a89cf2bf592c98cb5b68cb4efc30b34426a119fee2372",
+      "expectationFile": "A6FE-3b5d469aae5d.json"
+    },
+    {
+      "name": "Fire Emblem - Shadow Dragon [YFEE] [USA - English].nds",
+      "romSha256": "bebe9ce0d727a61f1676dd8360e2d4fe7be936b9123e187f106c6cbd555714d7",
+      "expectationFile": "YFEE-bebe9ce0d727.json"
+    },
+    {
+      "name": "GHOST TRICK - Phantom Detective - CAPCOM [BGTE] [USA - English].nds",
+      "romSha256": "70893fad64333cf2ca12a9c332d5e2d3e83bcae4aac31d7eb635ac320f240685",
+      "expectationFile": "BGTE-70893fad6433.json"
+    },
+    {
+      "name": "GTA- Chinatown Wars - ROCKSTAR GAMES\u2122 [YGXE] [USA - English].nds",
+      "romSha256": "4aa733fa233c6210589ab02c6ef0ce993bf22987a155c2b8f2e9f22b2e30b632",
+      "expectationFile": "YGXE-4aa733fa233c.json"
+    },
+    {
       "name": "GTA- Chinatown Wars - ROCKSTAR GAMES\u2122 [YGXP] [Europe - Multilingual].nds",
       "romSha256": "3c944ef4408e321aa0887855054d8b53c86a2e250c2e69cd46f38a162c45fad4",
       "expectationFile": "YGXP-3c944ef4408e.json"
     },
     {
+      "name": "Golden Sun - DARK DAWN [BO5E] [USA - English].nds",
+      "romSha256": "a8c19413b847ac73b2cddab76cf361944e56754594e3f938cda19812091ff8cf",
+      "expectationFile": "BO5E-a8c19413b847.json"
+    },
+    {
+      "name": "Hotel Dusk- Room 215 [AWIE] [USA - English].nds",
+      "romSha256": "134236d0793bad5d563de119068774a3e1c43a9b1614b1fe1c1fbf923eab676b",
+      "expectationFile": "AWIE-134236d0793b.json"
+    },
+    {
+      "name": "KINGDOM HEARTS - 358-2 Days - SQUARE ENIX [YKGE] [USA - English].nds",
+      "romSha256": "3cbbe3f15b49fc26f43edaf0050899b3cc1091a25e7a496373409c7c8c6fd0cb",
+      "expectationFile": "YKGE-3cbbe3f15b49.json"
+    },
+    {
+      "name": "Kirby Mass Attack [TADE] [USA - English].nds",
+      "romSha256": "7daee44de44c79164a1c252d1d313506151e5f2e0a5e48a8e492b9f462bdec0d",
+      "expectationFile": "TADE-7daee44de44c.json"
+    },
+    {
       "name": "Kirby Super Star Ultra [YKWE] [USA - English].nds",
       "romSha256": "b2573313a582c8dfaf2d93834a670c1ca8f389e5daa744e2dbe1a4ca903f3027",
       "expectationFile": "YKWE-b2573313a582.json"
+    },
+    {
+      "name": "Kirby- Canvas Curse [ATKE] [USA - English].nds",
+      "romSha256": "c416113d3300029354780c0f1c1cb0aff5b71a567d55b196349f2f27aaa73ca0",
+      "expectationFile": "ATKE-c416113d3300.json"
+    },
+    {
+      "name": "Kirby- Squeak Squad [AKWE] [USA - English].nds",
+      "romSha256": "2e68416d932f124b7191f926fbf80091a47614fa563ac9bf89e292655fb30b8f",
+      "expectationFile": "AKWE-2e68416d932f.json"
     },
     {
       "name": "LEGO\u00AE MARVEL - WB Games Inc. [TLME] [USA - English].nds",
@@ -58,9 +218,24 @@
       "expectationFile": "YLGE-354004fbf17f.json"
     },
     {
+      "name": "Last Window - The Secret of Cape West [YLUP] [Europe - Multilingual].nds",
+      "romSha256": "a1ed4036516242548cc7ff24c57137812e59b08589fb6678837b0bb354dc82e1",
+      "expectationFile": "YLUP-a1ed40365162.json"
+    },
+    {
+      "name": "MARIO \u0026 LUIGI - Bowser\u0027s Inside Story [CLJE] [USA - English] [951a73eb].nds",
+      "romSha256": "951a73ebd6d57d132c9aaf9abab27fc69ef3669a6636d5ab2670877646f84fd3",
+      "expectationFile": "CLJE-951a73ebd6d5.json"
+    },
+    {
       "name": "MARIO \u0026 LUIGI - Bowser\u0027s Inside Story [CLJE] [USA - English].nds",
       "romSha256": "9126963d6c6b6f81a9a666ba766e223781ff286634486e2a56d07a4c82eef4f1",
       "expectationFile": "CLJE-9126963d6c6b.json"
+    },
+    {
+      "name": "MARIO \u0026 LUIGI - PARTNERS IN TIME [ARME] [USA - English].nds",
+      "romSha256": "164c82b37531f561b9a5e5457edcb20417cbc2e04dd4f8234c2d16db4bfcb23a",
+      "expectationFile": "ARME-164c82b37531.json"
     },
     {
       "name": "MARIO KART DS [AMCE] [USA - English].nds",
@@ -73,6 +248,11 @@
       "expectationFile": "AMCP-d1dd7a96e6c8.json"
     },
     {
+      "name": "METEOS - NINTENDO [AMTE] [USA - English].nds",
+      "romSha256": "7dc308c634379ed2e1505836967cf1b64214fd9b97c2e15abc308a1e931045dd",
+      "expectationFile": "AMTE-7dc308c63437.json"
+    },
+    {
       "name": "Mario Party DS [A8TE] [USA - English].nds",
       "romSha256": "50a8df48d0cc78d45506825217278598fac2c87cb2bb090e0da304a8b4f31433",
       "expectationFile": "A8TE-50a8df48d0cc.json"
@@ -83,9 +263,49 @@
       "expectationFile": "A8TP-ab76a6ac3121.json"
     },
     {
+      "name": "Mario vs. Donkey Kong - Mini-Land Mayhem! [V2GE] [USA - English].nds",
+      "romSha256": "0b3c6c9f0287880249f04b032e4da0ccde1ce9e11cdf6bcf2fe77344a585cb5b",
+      "expectationFile": "V2GE-0b3c6c9f0287.json"
+    },
+    {
+      "name": "Mario vs. Donkey Kong 2 - March of the Minis [AMQE] [USA - English].nds",
+      "romSha256": "9eb0630cb61d2f8c154d678241fa71cf3a0fe4b3ebe7deb8fc5fa772964fa398",
+      "expectationFile": "AMQE-9eb0630cb61d.json"
+    },
+    {
       "name": "Metal Slug 7 - \u00A9SNK PLAYMORE - Ignition [YM7E] [USA - English].nds",
       "romSha256": "b4562b43b003675bddb25a886f3905fcccff0943192b9babde717715ce954499",
       "expectationFile": "YM7E-b4562b43b003.json"
+    },
+    {
+      "name": "Metroid Prime Hunters [AMHE] [USA - English].nds",
+      "romSha256": "bcd9c2d408825589c35c6754c0efb547cbae78fbda9ce7f69500a9cab8e70b8f",
+      "expectationFile": "AMHE-bcd9c2d40882.json"
+    },
+    {
+      "name": "Might \u0026 Magic - Clash of Heroes - Ubisoft [CHNE] [USA - English].nds",
+      "romSha256": "c2f47af33d2102985adb0925c4740e55080a8202389cfa8e3f67a53231a49011",
+      "expectationFile": "CHNE-c2f47af33d21.json"
+    },
+    {
+      "name": "Moon - Mastiff - Renegade Kid LLC [COOE] [USA - English].nds",
+      "romSha256": "228e17a9f6862fec1a96136007c90965b96f2041503f6a8bdced0085e9ef5cbc",
+      "expectationFile": "COOE-228e17a9f686.json"
+    },
+    {
+      "name": "NINJA GAIDEN - Dragon Sword - TECMO, INC. [YNGE] [USA - English].nds",
+      "romSha256": "92ef9c5a8aa225da52e63ff517a09a3e290d7eb4daa110f0b6899ecb8c7a77e8",
+      "expectationFile": "YNGE-92ef9c5a8aa2.json"
+    },
+    {
+      "name": "Nanostray - Majesco Entertainment [ANSE] [USA - English].nds",
+      "romSha256": "48bdbfcf94ab76d9e020acf7418370907b94ab5a83d889cd0591dfb7b7415c41",
+      "expectationFile": "ANSE-48bdbfcf94ab.json"
+    },
+    {
+      "name": "Nanostray 2 - Majesco Entertainment [ANXE] [USA - English].nds",
+      "romSha256": "273c869dec32a298b660187499c88b43e24c61a45e27134a7713d5acfc9c5291",
+      "expectationFile": "ANXE-273c869dec32.json"
     },
     {
       "name": "New Super Mario Bros. [A2DE] [USA - English].nds",
@@ -98,6 +318,16 @@
       "expectationFile": "A2DP-dd2e519a9e46.json"
     },
     {
+      "name": "Nine Hours, Nine Persons, - Nine Doors - Aksys Games [BSKE] [USA - English].nds",
+      "romSha256": "05843a3ee682bc388299ce35b9347d9d1bdda4d3890fcffbde6de785a5de5e15",
+      "expectationFile": "BSKE-05843a3ee682.json"
+    },
+    {
+      "name": "Ninjatown - SouthPeak Games [CNJE] [USA - English].nds",
+      "romSha256": "55f31a3b2d5f8acbd49795441a7944b94a9badc0ca5960174751cfb7971350b9",
+      "expectationFile": "CNJE-55f31a3b2d5f.json"
+    },
+    {
       "name": "Nintendogs [AD3P] [Europe - Multilingual].nds",
       "romSha256": "a5c795e837bec9c984f5a38178a423c9b1b810852c57576ea757c7845a49af02",
       "expectationFile": "AD3P-a5c795e837be.json"
@@ -108,9 +338,49 @@
       "expectationFile": "AD7P-6bf1ad5172b3.json"
     },
     {
+      "name": "Nostalgia - Ignition Entertainment [CJKE] [USA - English].nds",
+      "romSha256": "5e6fd9e0a3b50ae8435907a1432c3be17657969023840eb5f77b3506b2f03c88",
+      "expectationFile": "CJKE-5e6fd9e0a3b5.json"
+    },
+    {
+      "name": "OKAMIDEN - CAPCOM [BOOE] [USA - English].nds",
+      "romSha256": "5a5be02eacde12d177035f23633dc10d8a664792bf88d0df4a242d0c0506148f",
+      "expectationFile": "BOOE-5a5be02eacde.json"
+    },
+    {
+      "name": "Peggle Dual Shot - PopCap Games, Inc. [C7PE] [USA - English].nds",
+      "romSha256": "0ae433a60183ccddccefe914412bbe5097ed5bb92c30d59b43f447fc335c6f8d",
+      "expectationFile": "C7PE-0ae433a60183.json"
+    },
+    {
+      "name": "Phoenix Wright - Ace Attorney - CAPCOM [AGYE] [USA - English].nds",
+      "romSha256": "d8e532c2dc65650a0eb28ece2bf9ecafb638319999da15a2f28d18d2f458993c",
+      "expectationFile": "AGYE-d8e532c2dc65.json"
+    },
+    {
+      "name": "PhoenixWright-AceAttorney - Justice For All - CAPCOM [A2GE] [USA - English].nds",
+      "romSha256": "ecc16381aa55c6cd129b8e4e2e9b2726c4afde26d7e881bd8bd1d6d6bf47de0c",
+      "expectationFile": "A2GE-ecc16381aa55.json"
+    },
+    {
+      "name": "PhoenixWright-AceAttorney - Trials and Tribulations - CAPCOM [YG3E] [USA - English].nds",
+      "romSha256": "488f3321e71d5157085d4487ce2d951527f8297bf1d09f399ef87143ccaac646",
+      "expectationFile": "YG3E-488f3321e71d.json"
+    },
+    {
+      "name": "Planet Puzzle League [A8NE] [USA - English].nds",
+      "romSha256": "19d9f117229f76f1428d7363e0c50db8619e4e4ab4acef44bbf9a1b0c574425e",
+      "expectationFile": "A8NE-19d9f117229f.json"
+    },
+    {
       "name": "Plants vs. Zombies\u2122 - PopCap Games, Inc. [BWBE] [USA - English].nds",
       "romSha256": "43dfad7bcaea611a770034919d3fbf77c0ffe41b81483a0eec7774d7c5c418ad",
       "expectationFile": "BWBE-43dfad7bcaea.json"
+    },
+    {
+      "name": "Pok\u00E9mon - Black Version 2 [IREO] [USA - English] [2e6b2415].nds",
+      "romSha256": "2e6b2415354aa41471bc7617068dce059a59931bf5c4348a264f8043f297683a",
+      "expectationFile": "IREO-2e6b2415354a.json"
     },
     {
       "name": "Pok\u00E9mon - Black Version 2 [IREO] [USA - English].nds",
@@ -148,9 +418,19 @@
       "expectationFile": "IPKE-65f02a56842b.json"
     },
     {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Darkness [YFYE] [USA - English].nds",
+      "romSha256": "7991162c817befbfbea45838cbe485eab256e453c80d0ec697b7011b9f271a7d",
+      "expectationFile": "YFYE-7991162c817b.json"
+    },
+    {
       "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Skies [C2SE] [USA - English] [Staro Mod].nds",
       "romSha256": "add506595ffad785e2a426ca826fb2538824e8450bb1af8f6819260f0739fe6b",
       "expectationFile": "C2SE-add506595ffa.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SE] [USA - English] [91161cb2].nds",
+      "romSha256": "91161cb227c44a3e79fa2a622060385815f565647357062d7887f13f49d591e2",
+      "expectationFile": "C2SE-91161cb227c4.json"
     },
     {
       "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SE] [USA - English] [Randomized 202100228].nds",
@@ -186,6 +466,16 @@
       "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Sky [C2SP] [Europe - Multilingual].nds",
       "romSha256": "ed94666fc2ce2aa2afc29755add1d7d086568fc5eafedbfde9f6334ab67e9447",
       "expectationFile": "C2SP-ed94666fc2ce.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon - Explorers of Time [YFTE] [USA - English].nds",
+      "romSha256": "e86fcc3873751d780e82cfdc9bf47ef13911aa7ed65500d353285e879e25caad",
+      "expectationFile": "YFTE-e86fcc387375.json"
+    },
+    {
+      "name": "Pok\u00E9mon Mystery Dungeon [APHE] [USA - English].nds",
+      "romSha256": "4bdf72ce0dd7a19c66f49e840f046124994d719678e88a0814d0148f705d3e8b",
+      "expectationFile": "APHE-4bdf72ce0dd7.json"
     },
     {
       "name": "Pok\u00E9mon Mystery Dungeon [APHP] [Europe - Multilingual].nds",
@@ -233,6 +523,96 @@
       "expectationFile": "IPGE-94ad298c32bb.json"
     },
     {
+      "name": "Professor Layton - and the Curious Village [A5FE] [USA - English].nds",
+      "romSha256": "0d6c06e010f4228605f08f934bf30d994e9986898ddc68a5260f6937c41bda57",
+      "expectationFile": "A5FE-0d6c06e010f4.json"
+    },
+    {
+      "name": "Professor Layton - and the Diabolical Box [YLTE] [USA - English].nds",
+      "romSha256": "604e962ad3eda65a637c6cace2a521d99133501b59c9cac150d7face11cba3f7",
+      "expectationFile": "YLTE-604e962ad3ed.json"
+    },
+    {
+      "name": "Professor Layton - and the Unwound Future [C3JE] [USA - English].nds",
+      "romSha256": "75c0a9c7efc5868e122e20422714ed7b6f7f6af0866135278448288e6a880688",
+      "expectationFile": "C3JE-75c0a9c7efc5.json"
+    },
+    {
+      "name": "Professor Layton and - the Last Specter [BLFE] [USA - English].nds",
+      "romSha256": "269a3e11c35529833246a219d19b139d70cfd8f519fbde3cf01c90dba06ec0a7",
+      "expectationFile": "BLFE-269a3e11c355.json"
+    },
+    {
+      "name": "RADIANT HISTORIA - ATLUS [BRJE] [USA - English].nds",
+      "romSha256": "2dfb6544317750bc2bed23612f1cd946c96a06966514952c5f28d34d464155ba",
+      "expectationFile": "BRJE-2dfb65443177.json"
+    },
+    {
+      "name": "Retro Game Challenge - XSEED Games [YCXE] [USA - English].nds",
+      "romSha256": "1d3765e6bb9f572274906c477fcea3f42a8ae2e63d27918c7b94c8ad57b944fd",
+      "expectationFile": "YCXE-1d3765e6bb9f.json"
+    },
+    {
+      "name": "Rhapsody - A Musical Adventure - NIS America,Inc. [CM6E] [USA - English].nds",
+      "romSha256": "2803d8ecc8fd22296accc4045e94a67591a17f25bcf82bc233d61a746fd67908",
+      "expectationFile": "CM6E-2803d8ecc8fd.json"
+    },
+    {
+      "name": "Rhythm Heaven [YLZE] [USA - English].nds",
+      "romSha256": "bec89eea936220811069c7eeb0c35a13ab5b4e47ec35db8130556f16cad36401",
+      "expectationFile": "YLZE-bec89eea9362.json"
+    },
+    {
+      "name": "Rune Factory - A Fantasy Harvest Moon - Natsume Inc. [ARFE] [USA - English].nds",
+      "romSha256": "77eca4985226b8e900ee6bab798c7a93c8259e5d9dd943a4d4893576a6c356b0",
+      "expectationFile": "ARFE-77eca4985226.json"
+    },
+    {
+      "name": "Rune Factory 2 - A Fantasy Harvest Moon - Natsume Inc. [A6NE] [USA - English].nds",
+      "romSha256": "47af9906d40d217b0f937e683ba0a7a7e2f30dbc1d533e2fbca3c7355218c277",
+      "expectationFile": "A6NE-47af9906d40d.json"
+    },
+    {
+      "name": "Rune Factory 3 - A Fantasy Harvest Moon - Natsume Inc. [BRFE] [USA - English].nds",
+      "romSha256": "3a98c6677cdc61eaf74f4f779c8e67e6dbc9ec98bfdfb41fc73b57a573f2d1d6",
+      "expectationFile": "BRFE-3a98c6677cdc.json"
+    },
+    {
+      "name": "SONIC RUSH - SEGA [ASCE] [USA - English].nds",
+      "romSha256": "9fb3c797f08fd69d7f52f1266d2f0ab6c37727a3b4e808910d5d5a9599b26986",
+      "expectationFile": "ASCE-9fb3c797f08f.json"
+    },
+    {
+      "name": "SONIC RUSH ADVENTURE - SEGA [A3YE] [USA - English].nds",
+      "romSha256": "0c6cca0e21c6f1ac0b52ad9929a597af3184798cbf13b7e4565cdf8db4a583e5",
+      "expectationFile": "A3YE-0c6cca0e21c6.json"
+    },
+    {
+      "name": "SOUL BUBBLES - Eidos - Mekensleep [YLEE] [USA - English].nds",
+      "romSha256": "241ae624e4e1bc997acddd34373c4e6208de70ae7b8cd229f7719bcee77412ff",
+      "expectationFile": "YLEE-241ae624e4e1.json"
+    },
+    {
+      "name": "ScribbleNauts - WB Games, Inc. [BSLE] [USA - English].nds",
+      "romSha256": "876ece326931608e2a18ab24b22497ed3189238d4514f2a4c047d37d38fc2ec2",
+      "expectationFile": "BSLE-876ece326931.json"
+    },
+    {
+      "name": "Shin Megami Tensei - Devil Survivor - Atlus U.S.A., Inc. [CVIE] [USA - English].nds",
+      "romSha256": "df72364a1d6aa034c227b3b7a73e4e5c1107f3437d9d1833e72db99c31266c4a",
+      "expectationFile": "CVIE-df72364a1d6a.json"
+    },
+    {
+      "name": "Shin Megami Tensei - Strange Journey - Atlus U.S.A., Inc. [BMTE] [USA - English].nds",
+      "romSha256": "f4709745c10fca7024bd34dec4c0c6251a29088037aad596c8d52b63409a49ab",
+      "expectationFile": "BMTE-f4709745c10f.json"
+    },
+    {
+      "name": "Solatorobo - Red the Hunter - XSEED Games [VCDE] [USA - English].nds",
+      "romSha256": "a490149bd2abae6558b0fa420e97da435d19c8f4f864eab7b0d53ee61a9f9d0c",
+      "expectationFile": "VCDE-a490149bd2ab.json"
+    },
+    {
       "name": "Sonic Classic Collection\u2122 - SEGA [VSOE] [USA - English].nds",
       "romSha256": "11aa9fbd1b4ee4264a35dcca1467566520cd84922a86c4103ec0c97784da81b1",
       "expectationFile": "VSOE-11aa9fbd1b4e.json"
@@ -241,6 +621,11 @@
       "name": "Style Savvy\u2122 [AZLE] [USA - English].nds",
       "romSha256": "cc4c3bb50d723a73e6e01e5075344edfe543fab3b176ac0b9a64136abb26162b",
       "expectationFile": "AZLE-cc4c3bb50d72.json"
+    },
+    {
+      "name": "Super Dodgeball - Brawlers - Aksys Games [YDVE] [USA - English].nds",
+      "romSha256": "fbfa1df2dbb45c4add16aa4ad3a25b26a9973ea9268d94f785c6929c2dbbda29",
+      "expectationFile": "YDVE-fbfa1df2dbb4.json"
     },
     {
       "name": "Super Mario 64 DS [ASME] [USA - English].nds",
@@ -253,9 +638,24 @@
       "expectationFile": "ASMP-ce5829aaa79f.json"
     },
     {
+      "name": "Super Princess Peach [ASPE] [USA - English].nds",
+      "romSha256": "f175da705686803ca39af1558c14fc466f8d1e92af18c632ab51c650ad0aebd8",
+      "expectationFile": "ASPE-f175da705686.json"
+    },
+    {
       "name": "Super Princess Peach [ASPP] [Europe - Multilingual].nds",
       "romSha256": "e6dc5120731fecc38e1aff6c29d283a84d62443b1320776a6332803cfab94d79",
       "expectationFile": "ASPP-e6dc5120731f.json"
+    },
+    {
+      "name": "Super Scribblenauts - WB Games Inc. [BH2E] [USA - English].nds",
+      "romSha256": "682f4256778ece460355d19b9efbfb3f830566021b24f878d5b37d19a2e741b9",
+      "expectationFile": "BH2E-682f4256778e.json"
+    },
+    {
+      "name": "TETRIS DS [ATRE] [USA - English].nds",
+      "romSha256": "4e443f9b03363900dda6fa308229a3b14631b0fedd14f1c2e4cc1d5b3224db68",
+      "expectationFile": "ATRE-4e443f9b0336.json"
     },
     {
       "name": "The Legend of Zelda - Phantom Hourglass [AZEE] [USA - English].nds",
@@ -278,9 +678,34 @@
       "expectationFile": "VS3E-d42e03e66bc2.json"
     },
     {
+      "name": "The World Ends with You - SQUARE ENIX [AWLE] [USA - English].nds",
+      "romSha256": "3129ce0d35f082eb37e53de1e454a1ff12c98787a93037f2351084e377e1d74d",
+      "expectationFile": "AWLE-3129ce0d35f0.json"
+    },
+    {
+      "name": "Tony Hawk\u0027s - American SK8Land - Activision [AH9E] [USA - English].nds",
+      "romSha256": "0256a27d15fe08c2b5910da7264c06f192426cbb208bc86c7de63630c7db0b1f",
+      "expectationFile": "AH9E-0256a27d15fe.json"
+    },
+    {
+      "name": "Trauma Center - Under the Knife 2 - ATLUS USA [YYKE] [USA - English].nds",
+      "romSha256": "293a25556899336636af4266e16d99f17830e36df68b3cb40be21a1b02514cb2",
+      "expectationFile": "YYKE-293a25556899.json"
+    },
+    {
       "name": "Ultimate Mortal Kombat - \u00A9 2007 Midway [YUTE] [USA - English].nds",
       "romSha256": "898cfecec88de512e7cc9987601942a0e74bb5428af9a63d4c70ab944bfed70e",
       "expectationFile": "YUTE-898cfecec88d.json"
+    },
+    {
+      "name": "WarioWare- D.I.Y. [UORE] [USA - English].nds",
+      "romSha256": "0bb4eac0d9227db2739a4534abea71dc443f0e56e8a65ab861d2a3a9e6ee0bdc",
+      "expectationFile": "UORE-0bb4eac0d922.json"
+    },
+    {
+      "name": "WarioWare- Touched! [AZWE] [USA - English].nds",
+      "romSha256": "3a203638c8a5ace080b503a7789d5885467425f39de20e80a693400237bcb2bf",
+      "expectationFile": "AZWE-3a203638c8a5.json"
     },
     {
       "name": "YOSHI\u0027S ISLAND DS [AYWP] [Europe - Multilingual].nds",

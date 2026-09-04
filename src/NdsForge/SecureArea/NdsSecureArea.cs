@@ -21,7 +21,7 @@ public static class NdsSecureArea
     public static NdsSecureAreaInspection Inspect(NdsImage image, NdsKey1KeyTable? keyTable = null)
     {
         ArgumentNullException.ThrowIfNull(image);
-        if (image.Header.Arm9.Data.Offset < Offset)
+        if (image.CarrierLayout.Kind == NdsImageCarrier.DigitalSrl || image.Header.Arm9.Data.Offset < Offset)
         {
             return new(NdsSecureAreaState.Absent, default, image.Header.SecureAreaCrc, null);
         }

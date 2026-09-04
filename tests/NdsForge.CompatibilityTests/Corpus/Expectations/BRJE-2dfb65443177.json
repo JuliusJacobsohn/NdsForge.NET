@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "RADIANT HISTORIA - ATLUS [BRJE] [USA - English].nds",
+    "length": 134217728,
+    "sha256": "2dfb6544317750bc2bed23612f1cd946c96a06966514952c5f28d34d464155ba",
+    "headerTitle": "HISTORIA",
+    "gameCode": "BRJE",
+    "makerCode": "EB",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "RADIANT HISTORIA - ATLUS",
+    "bannerTitles": {
+      "Japanese": "RADIANT HISTORIA\nATLUS",
+      "English": "RADIANT HISTORIA\nATLUS",
+      "French": "RADIANT HISTORIA\nATLUS",
+      "German": "RADIANT HISTORIA\nATLUS",
+      "Italian": "RADIANT HISTORIA\nATLUS",
+      "Spanish": "RADIANT HISTORIA\nATLUS"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 156716,
+          "sha256": "67CB7DBC851451ACF2533D52826EECA44C49213A11A3AC9300B576A5485F90F5"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 32,
+          "sha256": "3E3C662360B1BDA01DA091CE1EEF88F03C97905B6BD339D162BF598808B3BB01"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 833632,
+          "sha256": "BCC803A3D535194EFF01C9FECD28BF03267381525C6FC63A401BC6A017031539"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "24C2C30005F5161291814A96442AC418E105603EE5A1BA138820B5BA7659C5AF"
+        },
+        {
+          "path": "data/Data/Data.bin",
+          "length": 35155000,
+          "sha256": "C17FC80CC85DDF4CAF6E3A3A3FE98BAA496B2D6C006B62CDFFD4A1F14C367ABD"
+        },
+        {
+          "path": "data/Data/Data.idx",
+          "length": 285668,
+          "sha256": "7B177413C446EEB78BCE0BA6AC5135AAD1A8A57DF4840C31235929921AFB2F5F"
+        },
+        {
+          "path": "data/Data/Data.ndx",
+          "length": 466718,
+          "sha256": "DD8E6A5F63A04AC8EE0922CDC5CB83A779B9B816FB8B2CB518EF60BEAABAA69A"
+        },
+        {
+          "path": "data/Snd/01.adx",
+          "length": 2543616,
+          "sha256": "70730DFFF2F5990968F42B3DD758CDDCAB5F612F11119FBFA8B7C8F5FC150726"
+        },
+        {
+          "path": "data/Snd/02.adx",
+          "length": 1982464,
+          "sha256": "8EEF1E73011C7142832DFE41D09EC3CF31E48D0CE40FA5F63F30CB74A4EFB949"
+        },
+        {
+          "path": "data/Snd/03.adx",
+          "length": 2217984,
+          "sha256": "ECBBD58D47C288EDCDF6EE13E1F47E2EF117D3D6A0C7DCBEC3F377BCA02F18F2"
+        },
+        {
+          "path": "data/Snd/04.adx",
+          "length": 1472512,
+          "sha256": "29B83A817AF45EF813EBE4D341E472BCC5EB45FEDAA3457232CBD8C0CCF7D895"
+        },
+        {
+          "path": "data/Snd/05.adx",
+          "length": 1914880,
+          "sha256": "EDC20C85913C5CDF20D912DD5C831120F47E31DC83BB786C2480950ACCAD6F52"
+        },
+        {
+          "path": "data/Snd/06.adx",
+          "length": 2252800,
+          "sha256": "E0F6775CD9FF2A9D5F9500CE81C8D13E9FB53809EAC4C96156B103BA03472210"
+        },
+        {
+          "path": "data/Snd/07.adx",
+          "length": 1984512,
+          "sha256": "25867389C17B99197BC0A7E955790A179E6E834CC2F7A9401083700DE0BACAAE"
+        },
+        {
+          "path": "data/Snd/08.adx",
+          "length": 2609152,
+          "sha256": "FDE3840F90012AE7A08A2A373310A527CA885CA99568A01597F72553EE522E69"
+        },
+        {
+          "path": "data/Snd/09.adx",
+          "length": 1859584,
+          "sha256": "13764DAA6107E685A116EBFCE5DD906BA5CA81CA5130047E476304E5101E1180"
+        },
+        {
+          "path": "data/Snd/10.adx",
+          "length": 1685504,
+          "sha256": "826CDB3A0FFB53216533179AF4D8637E28EC8326D997A9171C55C8A4AA041AAD"
+        },
+        {
+          "path": "data/Snd/11.adx",
+          "length": 1075200,
+          "sha256": "DFD7418CE3A0F373E1A47AA7EAF946FF69162B686601BC02B1D5C56306BF823F"
+        },
+        {
+          "path": "data/Snd/12.adx",
+          "length": 1030144,
+          "sha256": "92E18D046AA0BDE74A39B1303E1522F3EEE0BB3A78D351D2F4888A3ECBC8771E"
+        },
+        {
+          "path": "data/Snd/13.adx",
+          "length": 1800192,
+          "sha256": "607FAF206599DB6D9BED51B1C95307183AB0E68C1E7C09520C4A9E4FA5C398BF"
+        },
+        {
+          "path": "data/Snd/14.adx",
+          "length": 1632256,
+          "sha256": "12B29EE2701628AD8806EB86A186679A38A9337F33E39C92586446893F4700E6"
+        },
+        {
+          "path": "data/Snd/15.adx",
+          "length": 688128,
+          "sha256": "E5ED73AA68EA898B4227F6A08B1ADC46DC387EDB1F4DD1F9A7A0A3D2E680026F"
+        },
+        {
+          "path": "data/Snd/16.adx",
+          "length": 2516992,
+          "sha256": "F4C4796261E23ECA5DEB88DAC9C0F97C7D935665A72A8356E9676317FE40FBB3"
+        },
+        {
+          "path": "data/Snd/17.adx",
+          "length": 1548288,
+          "sha256": "8B9124F748C028771C76D9666CBEC7495D91A2AB6B26A756F280432E8F28C6FD"
+        },
+        {
+          "path": "data/Snd/18.adx",
+          "length": 999424,
+          "sha256": "41FB65596491E91E231A76651CE03295229BD363CC3FA5B84DF1B007C5E70022"
+        },
+        {
+          "path": "data/Snd/19.adx",
+          "length": 1769472,
+          "sha256": "5A03678A5708E706D85E16BDA13F912B3B0C5EEAFAF8C0547518EB3DDA484146"
+        },
+        {
+          "path": "data/Snd/20.adx",
+          "length": 1280000,
+          "sha256": "47A5DE50F6324602971E48D1F2D923BF50EDEBA5A104B12E35DD93C6A0B0DFFA"
+        },
+        {
+          "path": "data/Snd/21.adx",
+          "length": 4884070,
+          "sha256": "FB9CDCE4A157A7099A89277AB4E5122DD38EB2D8D4E1D96109534A60FE5801B5"
+        },
+        {
+          "path": "data/Snd/22.adx",
+          "length": 657408,
+          "sha256": "085A07C9750967DFF67A14BDECDED67A78B06A1A911C99FE27CF6A6FA2009EA4"
+        },
+        {
+          "path": "data/Snd/23.adx",
+          "length": 1550336,
+          "sha256": "0CCBEA080AD58A6CDD4A2D62C9A502E6F8CF7CB6F126B00AD0400B06633AC229"
+        },
+        {
+          "path": "data/Snd/24.adx",
+          "length": 1918976,
+          "sha256": "27358B67295341E90E065164E71A56FE48862657B7D915FD0F99388F450DE57E"
+        },
+        {
+          "path": "data/Snd/sound_data.sdat",
+          "length": 1584320,
+          "sha256": "63339034A7DD7EE4558A3C68A4587FB5341EAAD79F2039556A0FD53B0465F9B3"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "3548619C71C32A8BBDF4C598007B6D260B483C5D015B3C23CD0F81B154F7A7C7"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 6540,
+          "sha256": "C1A01BCB21F56CDCD12589BDC49A3ACA9571BAE42AC30E4B6A503CADFD7E8D33"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 82384576,
+          "sha256": "4923877CF8A9EC14635E9A2BB14B2C92C7E6365FF54AB7178DC29CFDCAF94C2C"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 134217728,
+          "sha256": "9163E063705A84FF065CB1C56F60483BE4F0B355A6F8A713EE1AF4FA8EDE7999"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 134217728,
+          "sha256": "52CDDC8D0E25DD0F1038A6E223B99D6F58B8A6ECC599B57E61FE937966EE77F8"
+        }
+      ]
+    }
+  ]
+}

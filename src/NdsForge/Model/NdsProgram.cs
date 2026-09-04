@@ -14,6 +14,12 @@ public sealed record NdsProgram(
     /// <summary>Identifies the optional 12-byte SDK footer recognized by its <c>0xDEC00621</c> marker after ARM9.</summary>
     public NdsRegion? Footer { get; internal set; }
 
+    /// <summary>Gets typed SDK footer pointers when the optional ARM9 footer marker is present.</summary>
+    public NdsProgramFooter? FooterMetadata { get; internal set; }
+
+    /// <summary>Gets bounded SDK initialization and compression metadata when a coherent table pointer is available.</summary>
+    public NdsProgramParameters? Parameters { get; internal set; }
+
     /// <summary>Extends the executable region through a recognized SDK footer for byte-compatible extraction.</summary>
     public NdsRegion CompleteData => Footer is null ? Data : new(Data.Offset, Data.Length + Footer.Value.Length);
 }

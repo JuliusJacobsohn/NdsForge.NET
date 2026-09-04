@@ -27,8 +27,11 @@ internal static class NdsImageBuildWriter
         ValidateRecipe(builder);
         NdsImageBuildContent content = NdsImageBuildContentPreparer.Prepare(builder, options);
         NdsImageBuildLayout layout = NdsImageLayoutPlanner.Plan(builder, content, options);
+        layout = NdsDsHeaderWriter.CompleteLayout(builder, content, layout, options);
+        layout = NdsImageCapacityPlanner.Apply(builder, layout, options, destination);
         byte[] fat = BuildFat(layout.FileRegions);
 
+        cancellationToken.ThrowIfCancellationRequested();
         destination.Position = 0;
         destination.SetLength(0);
         byte paddingByte = options.Profile == NdsImageBuildProfile.Ndstool1503 ? (byte)0 : options.PaddingByte;
@@ -82,6 +85,16 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
+        if (layout.DebugProgram is not null)
+        {
+            await WriteAtAsync(
+                destination,
+                layout.DebugProgram.Value.Offset,
+                builder.DebugProgram!.Contents,
+                paddingByte,
+                cancellationToken).ConfigureAwait(false);
+        }
+
         if (layout.Arm9i is not null)
         {
             await WriteAtAsync(
@@ -102,6 +115,7 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
+        await FillToAsync(destination, layout.ContentSize, paddingByte, cancellationToken).ConfigureAwait(false);
         NdsDsiDigestBuildResult? digestResult = null;
         if (builder.DsiMetadata?.Digests is not null)
         {
@@ -125,11 +139,22 @@ internal static class NdsImageBuildWriter
                 cancellationToken).ConfigureAwait(false);
         }
 
-        await FillToAsync(destination, layout.PhysicalSize, paddingByte, cancellationToken).ConfigureAwait(false);
+        if (builder.DownloadPlaySignature is not null)
+        {
+            await FillToAsync(destination, layout.UsedSize, paddingByte, cancellationToken).ConfigureAwait(false);
+            await NdsDownloadPlaySignatureWriter.WriteAsync(destination, builder.DownloadPlaySignature, layout.UsedSize, cancellationToken).ConfigureAwait(false);
+        }
+        await FillToAsync(destination, layout.ContentSize, paddingByte, cancellationToken).ConfigureAwait(false);
+        await FillToAsync(destination, layout.PhysicalSize, options.PaddingByte, cancellationToken).ConfigureAwait(false);
         destination.SetLength(layout.PhysicalSize);
         byte[] header = NdsImageHeaderWriter.Write(builder, layout, content, options, digestResult);
         destination.Position = 0;
         await destination.WriteAsync(header, cancellationToken).ConfigureAwait(false);
+        await NdsTwlReservationWriter.WriteAsync(destination, builder, layout.TwlReserved, cancellationToken).ConfigureAwait(false);
+        IReadOnlyList<NdsDiagnostic> diagnostics = builder.DsMetadata is null
+            ? Array.Empty<NdsDiagnostic>()
+            : await NdsDsHeaderWriter.FinalizeAsync(destination, header, builder.DsMetadata.Integrity, cancellationToken).ConfigureAwait(false);
+        diagnostics = NdsDownloadPlaySignatureWriter.AppendDiagnostic(diagnostics, builder.DownloadPlaySignature, layout.UsedSize);
         await destination.FlushAsync(cancellationToken).ConfigureAwait(false);
         if (options.VerifyOutput)
         {
@@ -148,18 +173,21 @@ internal static class NdsImageBuildWriter
             layout.FileNameTable,
             layout.FileAllocationTable,
             layout.Banner,
+            layout.DebugProgram,
             layout.Arm9i,
             layout.Arm7i,
             layout.SectorHashTable,
             layout.BlockHashTable,
             content.FileSystem.FilesInIdOrder.Count,
-            layout.FileRegions.Count);
+            layout.FileRegions.Count,
+            diagnostics);
     }
 
     /// <summary>Rejects incomplete or mismatched Program definitions and validates fixed-width ASCII identity fields.</summary>
     /// <param name="builder">Recipe checked before any destination bytes are changed.</param>
     private static void ValidateRecipe(NdsImageBuilder builder)
     {
+        NdsCarrierBuildValidator.Validate(builder);
         if (builder.Arm9 is null || builder.Arm9.Processor != NdsProcessor.Arm9 || builder.Arm9.Contents.IsEmpty)
         {
             throw new InvalidDataException("A non-empty ARM9 definition with the ARM9 processor identity is required.");
@@ -181,6 +209,8 @@ internal static class NdsImageBuildWriter
             ValidateDsiRecipe(builder);
         }
 
+        builder.DsMetadata?.Validate(builder);
+
         ValidateAscii(builder.Title, 0, 12, nameof(builder.Title));
         ValidateAscii(builder.GameCode, 4, 4, nameof(builder.GameCode));
         ValidateAscii(builder.MakerCode, 2, 2, nameof(builder.MakerCode));
@@ -195,16 +225,18 @@ internal static class NdsImageBuildWriter
             throw new InvalidDataException("A DSi recipe requires explicit extended metadata and integrity policy.");
         }
 
-        if (builder.Arm9i is null || builder.Arm9i.Processor != NdsProcessor.Arm9i || builder.Arm9i.Contents.IsEmpty ||
+        if (builder.Arm9i is null || builder.Arm9i.Processor != NdsProcessor.Arm9i ||
+            (builder.Arm9i.Contents.IsEmpty && (builder.Carrier != NdsImageCarrier.DigitalSrl || builder.Arm9i.LoadAddress == 0)) ||
             builder.Arm9i.EntryAddress != builder.Arm9i.LoadAddress)
         {
-            throw new InvalidDataException("A DSi recipe requires non-empty ARM9i data whose entry and load addresses match.");
+            throw new InvalidDataException("A DSi recipe requires matching ARM9i entry/load addresses and non-empty data, or an explicit empty digital tuple with a nonzero load address.");
         }
 
-        if (builder.Arm7i is null || builder.Arm7i.Processor != NdsProcessor.Arm7i || builder.Arm7i.Contents.IsEmpty ||
+        if (builder.Arm7i is null || builder.Arm7i.Processor != NdsProcessor.Arm7i ||
+            (builder.Arm7i.Contents.IsEmpty && (builder.Carrier != NdsImageCarrier.DigitalSrl || builder.Arm7i.LoadAddress == 0)) ||
             builder.Arm7i.EntryAddress != builder.Arm7i.LoadAddress)
         {
-            throw new InvalidDataException("A DSi recipe requires non-empty ARM7i data whose entry and load addresses match.");
+            throw new InvalidDataException("A DSi recipe requires matching ARM7i entry/load addresses and non-empty data, or an explicit empty digital tuple with a nonzero load address.");
         }
 
         if (builder.DsiMetadata.Integrity is null)

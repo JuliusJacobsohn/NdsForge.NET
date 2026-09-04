@@ -21,6 +21,14 @@ public sealed record NdsImageBuildOptions
     /// <summary>Fills every Layout gap after the reserved header area, making otherwise unspecified bytes reproducible.</summary>
     public byte PaddingByte { get; init; } = 0xFF;
 
+    /// <summary>Requests a cartridge capacity of exactly 128 KiB times a power of two, up to 4 GiB; null selects the smallest capacity containing the layout.</summary>
+    /// <remarks>This changes the header capacity, not the physical length, unless <see cref="PadToDeviceCapacity"/> is enabled. Digital SRL recipes reject explicit cartridge-capacity requests.</remarks>
+    public long? RequestedDeviceCapacityBytes { get; init; }
+
+    /// <summary>Extends cartridge output to its selected capacity using <see cref="PaddingByte"/>, without enlarging common or DSi used-size fields.</summary>
+    /// <remarks>False retains the compact structural layout. Digital SRL recipes reject this cartridge-only policy.</remarks>
+    public bool PadToDeviceCapacity { get; init; }
+
     /// <summary>Reopens the completed stream and validates its structure, checksums, and NitroFS payload mapping.</summary>
     public bool VerifyOutput { get; init; } = true;
 
@@ -35,6 +43,12 @@ public sealed record NdsImageBuildOptions
         {
             throw new ArgumentException(
                 "The header must be at least 0x4000 bytes and all alignments must be positive powers of two.");
+        }
+
+        if (RequestedDeviceCapacityBytes is long capacity &&
+            (capacity < 0x20000 || capacity > 0x100000000L || (capacity & (capacity - 1)) != 0))
+        {
+            throw new ArgumentException("Requested cartridge capacity must be a power of two from 128 KiB through 4 GiB.");
         }
     }
 

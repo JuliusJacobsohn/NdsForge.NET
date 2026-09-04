@@ -9,6 +9,14 @@ DS-family software images without tying the model to one command-line tool.
 A complete Nintendo DS or DSi software image, including its header, executable regions, metadata, and optional NitroFS content.
 _Avoid_: ROM file, cartridge dump
 
+**Carrier**:
+The storage form of an Image: cartridge or digital SRL. Carrier is distinct from whether a Program executes in DS mode, DSi mode, or both.
+_Avoid_: Unit code, file extension, console generation
+
+**Digital SRL**:
+An executable Image distributed as title content for DSi internal storage or an SD card, including DSiWare and system applications.
+_Avoid_: DSi-exclusive cartridge, NAND dump
+
 **Region**:
 A bounded byte range in an Image with a defined role, such as an executable, table, banner, or filesystem payload.
 _Avoid_: Blob, chunk
@@ -24,6 +32,10 @@ _Avoid_: Overlay number, file index
 **NitroFS**:
 The hierarchical filesystem described by an Image's filename and allocation tables.
 _Avoid_: Data folder, ROM files
+
+**Wi-Fi Utility Archive**:
+A named asset container supplied with wireless-capable software, which may include graphics, messages, sound, and an embedded Image. The archive itself is not an Image or a wireless connection protocol.
+_Avoid_: Wi-Fi ROM, firmware, SDK version
 
 **Program**:
 An ARM7, ARM9, ARM7i, or ARM9i executable region together with its load and entry addresses.
@@ -45,9 +57,25 @@ _Avoid_: Icon file
 The physical placement, alignment, padding, and capacity of all Regions in an Image.
 _Avoid_: Offsets, packing
 
+**Physical Size**:
+The number of bytes actually present in an Image's storage, including any padding or trailing material.
+_Avoid_: Used size, device capacity
+
+**Device Capacity**:
+The nominal cartridge storage size declared by an Image's header, independently of its physical length. For a Digital SRL, this declaration is informational rather than a physical cartridge limit.
+_Avoid_: File size, meaningful extent
+
+**Declared Content Extent**:
+The exclusive end needed to retain an Image's declared components, used-size declarations, and recognized post-used structures. Material beyond this extent is not automatically known to be disposable padding.
+_Avoid_: Last nonzero byte, last non-FF byte
+
 **Build Recipe**:
 A complete declarative description from which an Image can be assembled deterministically.
 _Avoid_: Project, command options
+
+**Image Workspace**:
+A self-contained Build Recipe together with every byte-bearing input and preservation material needed to assemble its Image. An inventory or extraction folder alone is not an Image Workspace.
+_Avoid_: Extraction directory, inventory manifest
 
 **Edit Session**:
 A set of proposed changes against an existing Image that does not mutate its source and can be inspected before saving.

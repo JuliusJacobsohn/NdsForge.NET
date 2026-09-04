@@ -288,7 +288,7 @@ internal static class NdsDsiIntegrityValidator
         }
     }
 
-    /// <summary>Recomputes all five component HMAC fields for which the DSi header exposes exact regions.</summary>
+    /// <summary>Recomputes all six component HMAC fields for which the DSi header exposes exact regions.</summary>
     /// <param name="image">Image used for bounded reads.</param>
     /// <param name="diagnostics">Accumulator receiving mismatches.</param>
     /// <param name="dsi">Stored HMAC bytes and Banner size.</param>
@@ -305,6 +305,19 @@ internal static class NdsDsiIntegrityValidator
         ValidateHmac(image, diagnostics, "NDS1312", "Banner", banner, dsi.BannerHmac.Span, key);
         ValidateHmac(image, diagnostics, "NDS1313", "ARM9i", image.Header.Arm9i!.Data, dsi.Arm9iHmac.Span, key);
         ValidateHmac(image, diagnostics, "NDS1314", "ARM7i", image.Header.Arm7i!.Data, dsi.Arm7iHmac.Span, key);
+        NdsRegion arm9 = image.Header.Arm9.Data;
+        long secureAreaLength = Math.Min(NdsSecureArea.ByteLength, arm9.Length);
+        var arm9WithoutSecureArea = new NdsRegion(
+            arm9.Offset + secureAreaLength,
+            arm9.Length - secureAreaLength);
+        ValidateHmac(
+            image,
+            diagnostics,
+            "NDS1322",
+            "ARM9 without secure area",
+            arm9WithoutSecureArea,
+            dsi.Arm9WithoutSecureAreaHmac.Span,
+            key);
     }
 
     /// <summary>Streams one component through the mandated HMAC-SHA1 algorithm and reports a constant-time mismatch.</summary>

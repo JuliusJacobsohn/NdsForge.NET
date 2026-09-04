@@ -27,7 +27,11 @@ internal static class CliApplication
                 "VALIDATE" => await ValidateAsync(args, cancellation.Token).ConfigureAwait(false),
                 "LIST" or "LS" => await ListAsync(args, cancellation.Token).ConfigureAwait(false),
                 "EXTRACT" => await ExtractAsync(args, cancellation.Token).ConfigureAwait(false),
+                "UNPACK" => await CliWorkspaceCommand.UnpackAsync(args, cancellation.Token).ConfigureAwait(false),
+                "PACK" => await CliWorkspaceCommand.PackAsync(args, cancellation.Token).ConfigureAwait(false),
+                "BUILD" => await CliBuildCommand.RunAsync(args, cancellation.Token).ConfigureAwait(false),
                 "REPLACE" => await ReplaceAsync(args, cancellation.Token).ConfigureAwait(false),
+                "RESIZE" => await CliResizeCommand.RunAsync(args, cancellation.Token).ConfigureAwait(false),
                 "MANIFEST" => await ManifestAsync(args, cancellation.Token).ConfigureAwait(false),
                 "DIFF" => await DiffAsync(args, cancellation.Token).ConfigureAwait(false),
                 _ => InvalidArguments($"Unknown command '{args[0]}'."),
@@ -38,7 +42,7 @@ internal static class CliApplication
             Console.Error.WriteLine("Cancelled.");
             return 130;
         }
-        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or ArgumentException)
+        catch (Exception exception) when (exception is IOException or InvalidDataException or UnauthorizedAccessException or ArgumentException)
         {
             Console.Error.WriteLine($"Error: {exception.Message}");
             return 1;
@@ -63,9 +67,20 @@ internal static class CliApplication
         Console.WriteLine($"Game code:        {header.GameCode}");
         Console.WriteLine($"Maker code:       {header.MakerCode}");
         Console.WriteLine($"Image kind:       {header.Kind}");
+        Console.WriteLine($"Storage carrier:  {image.CarrierLayout.Kind}");
         Console.WriteLine($"Version:          {header.Version}");
         Console.WriteLine($"Physical size:    {FormatSize(image.Length)}");
         Console.WriteLine($"Declared used:    {FormatSize(header.UsedImageSize)}");
+        NdsImageSizeInfo sizes = image.SizeInfo;
+        Console.WriteLine($"Declared extent:  {FormatSize(sizes.DeclaredContentEnd)}");
+        Console.WriteLine($"Device capacity:  {(sizes.DeviceCapacityBytes is long capacity ? FormatSize(capacity) : "unrepresentable")}, exponent {sizes.DeviceCapacityExponent}");
+        if (sizes.DsiUsedSize is uint dsiSize) { Console.WriteLine($"DSi total used:   {FormatSize(dsiSize)}"); }
+        Console.WriteLine($"Trailing bytes:   {FormatSize(sizes.TrailingData?.Length ?? 0)} (not assumed padding)");
+        if (header.NandRomEndUnits != 0 || header.NandWritableStartUnits != 0)
+        {
+            Console.WriteLine($"NAND ROM end:     {FormatSize(header.NandRomEndOffset)}, raw units {header.NandRomEndUnits}");
+            Console.WriteLine($"NAND write start: {FormatSize(header.NandWritableStartOffset)}, raw units {header.NandWritableStartUnits} (zero means unspecified)");
+        }
         PrintProgram(header.Arm9);
         PrintProgram(header.Arm7);
         if (header.Arm9i is not null)
@@ -184,6 +199,10 @@ internal static class CliApplication
         Console.WriteLine(
             $"Replaced {change.Path} ({change.OriginalLength:N0} -> {change.ReplacementLength:N0} bytes); " +
             $"{result.RelocatedFiles:N0} relocation(s), used size {FormatSize(result.UsedImageSize)}.");
+        foreach (NdsDiagnostic diagnostic in result.Diagnostics)
+        {
+            Console.Error.WriteLine($"{diagnostic.Severity} {diagnostic.Code}: {diagnostic.Message}");
+        }
         return 0;
     }
 
@@ -289,6 +308,13 @@ internal static class CliApplication
         Console.WriteLine("  replace <image.nds> <path> <file> <output.nds> [--overwrite]");
         Console.WriteLine("                                       Replace one NitroFS file and verify output");
         Console.WriteLine("  manifest <image.nds> [output.json]   Emit a strict SHA-256 image manifest");
+        Console.WriteLine("  resize <input.nds> <output.nds> <preserve|trim|pad|exact> [options]");
+        Console.WriteLine("                                       Resize without moving content or changing headers");
+        Console.WriteLine("  unpack <image.nds> <new-directory>    Export a self-contained image workspace");
+        Console.WriteLine("  pack <workspace> <output.nds> [--overwrite]");
+        Console.WriteLine("                                       Verify unchanged inputs and pack byte-exactly");
+        Console.WriteLine("  build <workspace> <output.nds> [options]");
+        Console.WriteLine("                                       Rebuild payload edits with explicit sizing and authentication policy");
         Console.WriteLine("  diff <left.nds> <right.nds>          Compare content, identities, and layout");
     }
 }

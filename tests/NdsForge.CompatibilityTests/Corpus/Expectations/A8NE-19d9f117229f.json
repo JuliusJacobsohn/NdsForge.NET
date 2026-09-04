@@ -1,0 +1,2660 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Planet Puzzle League [A8NE] [USA - English].nds",
+    "length": 33554432,
+    "sha256": "19d9f117229f76f1428d7363e0c50db8619e4e4ab4acef44bbf9a1b0c574425e",
+    "headerTitle": "PANELDEPONDS",
+    "gameCode": "A8NE",
+    "makerCode": "01",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Planet Puzzle League",
+    "bannerTitles": {
+      "Japanese": "Planet Puzzle League\nNintendo",
+      "English": "Planet Puzzle League\nNintendo",
+      "French": "Planet Puzzle League\nNintendo",
+      "German": "Planet Puzzle League\nNintendo",
+      "Italian": "Planet Puzzle League\nNintendo",
+      "Spanish": "Planet Puzzle League\nNintendo"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 166336,
+          "sha256": "50437F370148D003E5CCEE09587222CEE2651191969E5064D1567074C7996161"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 736,
+          "sha256": "F179F45B77F6A25E2BF099FCB577A6F63135564FF8B6BC1973AB22C98E8ACF03"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 2076932,
+          "sha256": "D0FA77EFD05B500451A9F827B9223364566BF30C1EEF0FFC72CB2F27D6B569D6"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "87E0985CDF1FE2AA6ECB793F8D4D7FB594F525A2CD4B42CAA666467176BCA91A"
+        },
+        {
+          "path": "data/EdObjSta01.ncl_Cut",
+          "length": 79,
+          "sha256": "0CBD79F2F09ABEB3715D258D5377D9F57D5C6F860AA831B02C4DF3AF981C0FC7"
+        },
+        {
+          "path": "data/EdObjSta01_USA.ncg_Cut",
+          "length": 4509,
+          "sha256": "1F76739140FCB29556B8BC843906479F0C8ADBF1FDE47A27ECCE46BD02D5B90C"
+        },
+        {
+          "path": "data/GameBgFonApu_T.nsc_Cut",
+          "length": 410,
+          "sha256": "BF7684F5B270ABFDD0F35B66BE7051EC291DA2935FF6EDFADE7D1EEE2AB8C4E9"
+        },
+        {
+          "path": "data/GameBgFonApu_Y.nsc_Cut",
+          "length": 382,
+          "sha256": "7B22CFA7053C48380EB60A3885759850B644BB9CC171EBD4B3D112633F894F2A"
+        },
+        {
+          "path": "data/GameBgFonEnd_T.nsc_Cut",
+          "length": 492,
+          "sha256": "538F67CEE9ED4529A2FD6E24804FE65A77D5757FDC92191BCAFBDDE31E2891DD"
+        },
+        {
+          "path": "data/GameBgFonEnd_Y.nsc_Cut",
+          "length": 461,
+          "sha256": "55235363D4AB492CF79481ADDE07F59F22EEE4E95D8FF74FCA544F19ACF26ED8"
+        },
+        {
+          "path": "data/GameBgFonKad_T.nsc_Cut",
+          "length": 272,
+          "sha256": "99C501D5D12EE1E0CB323D0F467D53C5830ECF38E2182A8C52B02502DEE25672"
+        },
+        {
+          "path": "data/GameBgFonKad_Y.nsc_Cut",
+          "length": 270,
+          "sha256": "EF0FADB3EBEEF672AD2B93A375C037B788A8B38A95834A47EDAC15C80CCAE4B8"
+        },
+        {
+          "path": "data/GameBgFonMli_T.nsc_Cut",
+          "length": 354,
+          "sha256": "AC1893C8F385609021964798E116E31B6582181CDDFA4FACA5D07E7E78097A79"
+        },
+        {
+          "path": "data/GameBgFonMli_Y.nsc_Cut",
+          "length": 343,
+          "sha256": "225404718C1A01AAD49DE9641F7FDBC065A78EF56822EB03A816C40536AE44C4"
+        },
+        {
+          "path": "data/GameBgFonMsc_T.nsc_Cut",
+          "length": 407,
+          "sha256": "C2D68062DF7A354AC8DDA4C611594F22368167C281D69600B95AFF91D6CF0663"
+        },
+        {
+          "path": "data/GameBgFonMsc_Y.nsc_Cut",
+          "length": 382,
+          "sha256": "60E4BDD482FB1D60562F587C7F1988F979390C2DEDCD86ED4A7EB8FDFF3D154A"
+        },
+        {
+          "path": "data/GameBgFonOat_T.nsc_Cut",
+          "length": 492,
+          "sha256": "B80F8FE8EAA6ACBB1D523A48418B2E5AC8C9F19C85F680DBDEB8A742F872C159"
+        },
+        {
+          "path": "data/GameBgFonOat_Y.nsc_Cut",
+          "length": 461,
+          "sha256": "851B95F382AB9D4B6617517C1177780B97A9E549BE744A34DBF7F20552CA2DE3"
+        },
+        {
+          "path": "data/GameBgFonPuz_T.nsc_Cut",
+          "length": 290,
+          "sha256": "8EB0EF174F2FEF72422D6F28F3E7350BF53D73908D69F90E7C3C586DE3FAAB55"
+        },
+        {
+          "path": "data/GameBgFonPuz_Y.nsc_Cut",
+          "length": 291,
+          "sha256": "ED6A2B03C42B18155CFD931E940B90B9A18102728CDED3987BBA90AFCD4B6ED2"
+        },
+        {
+          "path": "data/GameBgFonSta_T.nsc_Cut",
+          "length": 400,
+          "sha256": "3CB89EA8073BF0C004C0AD2B135C8E13C1F6B30D92534FF35C5F138499F82430"
+        },
+        {
+          "path": "data/GameBgFonSta_Y.nsc_Cut",
+          "length": 387,
+          "sha256": "25597A4DD31F9388C164663BEB9CEE6501F9582DCBBF3D67C9CADF5B57EAF312"
+        },
+        {
+          "path": "data/GameBgFonUlt_Tl.nsc_Cut",
+          "length": 318,
+          "sha256": "135533058605605446139A7C1F45E5145E53FBEE943200D58250A3621556D752"
+        },
+        {
+          "path": "data/GameBgFonUlt_Yl.nsc_Cut",
+          "length": 317,
+          "sha256": "01709EB69A814FD4D2B8851619A1A09FD74507D3722B646EA1EA8E576A885090"
+        },
+        {
+          "path": "data/GameBgFonVsc_Tl.nsc_Cut",
+          "length": 348,
+          "sha256": "7A3AC7F77EBE45FB6609C21DD25E0F101AF70C72126020B20FBD84506011DC87"
+        },
+        {
+          "path": "data/GameBgFonVsc_Tr.nsc_Cut",
+          "length": 275,
+          "sha256": "06782B227BA5A72F1E8631E25047572A8977AF5B0A2074287BE30F081E196969"
+        },
+        {
+          "path": "data/GameBgFonVsc_Yl.nsc_Cut",
+          "length": 340,
+          "sha256": "99379326B36CBE05F308C1EC9FB6C15F4A2A88C84DBC48956C98A17F828DEC08"
+        },
+        {
+          "path": "data/GameBgFonVsc_Yr.nsc_Cut",
+          "length": 270,
+          "sha256": "71B1CD88CF059A90B510FF0D02641A7D58F8026BCF320BF81C662F3DF7FD635B"
+        },
+        {
+          "path": "data/GameBgFonVst_Tl.nsc_Cut",
+          "length": 319,
+          "sha256": "1457ED9B4143D76407BC3C191CECB9019FB6C4106D15771A0EE420583C00A909"
+        },
+        {
+          "path": "data/GameBgFonVst_Tr.nsc_Cut",
+          "length": 246,
+          "sha256": "5300CC7849EFDD2A7765B6F47F7D022BB5C0C69542625E9D17F7B44669DE1F8B"
+        },
+        {
+          "path": "data/GameBgFonVst_Yl.nsc_Cut",
+          "length": 317,
+          "sha256": "838992196AAC635E37CD8529C350C165FA8E7433DCAFFA994DB25FE751EC9A7F"
+        },
+        {
+          "path": "data/GameBgFonVst_Yr.nsc_Cut",
+          "length": 243,
+          "sha256": "4172A634FDEAA3F5C57E443A8F1A5F9E8E587BFE96BE92AD84029B68BFD7D38F"
+        },
+        {
+          "path": "data/GameBgFonZen_T.nsc_Cut",
+          "length": 342,
+          "sha256": "FFE1322B5A8B2E5430E213E0958FB5F11C1807E5E5435C083F94E6409A3B0C0E"
+        },
+        {
+          "path": "data/GameBgFonZen_Y.nsc_Cut",
+          "length": 340,
+          "sha256": "0FBA6D7C2A97D7DAC4148A07B7FF3E146D41051E4B8D2AA175BE47CD1445E271"
+        },
+        {
+          "path": "data/GameBgPic020_Tl.NCGR",
+          "length": 6957,
+          "sha256": "D3400B226779114F61B4F5CC9B800133BC0C8FFAB42B4FCF760955B41D27B0B8"
+        },
+        {
+          "path": "data/GameBgPic020_Tl.NCLR",
+          "length": 1091,
+          "sha256": "13301DDCBD71C3A0F2658FF2C8FA43360C10E2544CB3FF96A598A0342C2BCBA0"
+        },
+        {
+          "path": "data/GameBgPic020_Tl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic020_Tr.NCGR",
+          "length": 6495,
+          "sha256": "BFF1F36CA968DB8963018BF6BDF6D8B3F9624CE6C166200986BF9A3236A8016E"
+        },
+        {
+          "path": "data/GameBgPic020_Tr.NCLR",
+          "length": 1029,
+          "sha256": "026B0B2BE3BF505EBB0DFB018C57A6FBF920C15F1015CBD87B7B1A9AF4096B5F"
+        },
+        {
+          "path": "data/GameBgPic020_Tr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic030_Tl.NCGR",
+          "length": 9164,
+          "sha256": "4BAAC39DF5C367640058AA8E3F6E1D69E4F2148FA5B6B64EC7DC66B8647132A3"
+        },
+        {
+          "path": "data/GameBgPic030_Tl.NCLR",
+          "length": 277,
+          "sha256": "DE7F73A0BD38F3E19BA4587155D88F1F4491950B87E2DDE291F7797CA9E41A22"
+        },
+        {
+          "path": "data/GameBgPic030_Tl.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPic030_Tr.NCGR",
+          "length": 13691,
+          "sha256": "2C8D23C207F78D4AC371FB15B1C2FD8C1911A2BAB295DB8543EF07F05A80EFE7"
+        },
+        {
+          "path": "data/GameBgPic030_Tr.NCLR",
+          "length": 277,
+          "sha256": "0F9A870A134564CA142F26EB65354E851E2CEB3F887503D388DBB822C5B74811"
+        },
+        {
+          "path": "data/GameBgPic030_Tr.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPic031_Tr.NCGR",
+          "length": 2836,
+          "sha256": "6F84DD15CD961D75F25C45A521B78A3D060A18920D0024A9D48CFAD8511999C5"
+        },
+        {
+          "path": "data/GameBgPic031_Tr.NCLR",
+          "length": 370,
+          "sha256": "4329D608086E74386907393FC63626C312F87EA17E3C1E7FFEDECF206A5D89CA"
+        },
+        {
+          "path": "data/GameBgPic031_Tr.NSCR",
+          "length": 1492,
+          "sha256": "4FAA7D414F6DC5478CCA14199F33F3D56289C81F4520425F1DF52143877DE1B5"
+        },
+        {
+          "path": "data/GameBgPic040_Tl.NCGR",
+          "length": 37961,
+          "sha256": "B4429AAEB7DFA758C5524153CDEB91CD85C615C75E4383D77B454428D156E848"
+        },
+        {
+          "path": "data/GameBgPic040_Tl.NCLR",
+          "length": 2207,
+          "sha256": "0795BF8D88DCA422F08E2609D93912D722837C51FD19CC5B493F96E729755D78"
+        },
+        {
+          "path": "data/GameBgPic040_Tl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic040_Tr.NCGR",
+          "length": 39423,
+          "sha256": "C69E9E581A3A345363D637FEA40677EB6E2D6D8B8AC94A10E9EF4E94B4CB0C12"
+        },
+        {
+          "path": "data/GameBgPic040_Tr.NCLR",
+          "length": 2207,
+          "sha256": "95889DD5EEF76C026D192152848A8F6C21020AEB2FF844F1DDE8424ADD5F59D8"
+        },
+        {
+          "path": "data/GameBgPic040_Tr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic050_Tl.NCGR",
+          "length": 1780,
+          "sha256": "95D29125C000585912C355245E5B6277C8EF264F06A3BCE4C273A2F1C881582A"
+        },
+        {
+          "path": "data/GameBgPic050_Tl.NCLR",
+          "length": 63,
+          "sha256": "1A8BBA310C1B58C3870A427BF4665188DC0728D6683AECFE91855FEF94332549"
+        },
+        {
+          "path": "data/GameBgPic050_Tl.NSCR",
+          "length": 380,
+          "sha256": "6B72D98FC4D9DB7CC77D10F8E324C7D87EEA4B1639328146CD4B538B94DE2E4F"
+        },
+        {
+          "path": "data/GameBgPic050_Tr.NSCR",
+          "length": 452,
+          "sha256": "0FA462F6483AD7614B5778462BD32FD7DA0BB47E737F5004B2A2EC0B41BDEA04"
+        },
+        {
+          "path": "data/GameBgPic060_Tl.NCGR",
+          "length": 7814,
+          "sha256": "C19126C9478C71D874B77076C6168B583C167272114276AB373470CA1851D33F"
+        },
+        {
+          "path": "data/GameBgPic060_Tl.NCLR",
+          "length": 232,
+          "sha256": "AA9C96A8EAEB2E95401D68579156C951153CE71C8608274E636A0A8C72996A78"
+        },
+        {
+          "path": "data/GameBgPic060_Tl.NSCR",
+          "length": 1848,
+          "sha256": "6F2522861FB980A8C221591E7308357256C1736EA0B7FA24F73FFA77572CADB7"
+        },
+        {
+          "path": "data/GameBgPic060_Tr.NCGR",
+          "length": 6882,
+          "sha256": "0475143CC1583FA8A42EF3353A4F12A89F16DEF786AAFE8DEFF693667893A453"
+        },
+        {
+          "path": "data/GameBgPic060_Tr.NCLR",
+          "length": 228,
+          "sha256": "E9E7C30994BDBA15A35FFFA695011F299436F772405357C5C4FF7839B092D84D"
+        },
+        {
+          "path": "data/GameBgPic060_Tr.NSCR",
+          "length": 1848,
+          "sha256": "6F2522861FB980A8C221591E7308357256C1736EA0B7FA24F73FFA77572CADB7"
+        },
+        {
+          "path": "data/GameBgPic061_Tr.NCGR",
+          "length": 1193,
+          "sha256": "F40E2F4A5831276281630F7BDC1586FC7A961C2A5EE5C4D52C69DBD2E8E08D7A"
+        },
+        {
+          "path": "data/GameBgPic061_Tr.NSCR",
+          "length": 315,
+          "sha256": "4660848C4D80D459615F3DCC2D760B044025CCFDA6875E101537C3408FE74906"
+        },
+        {
+          "path": "data/GameBgPic070_Tl.NCGR",
+          "length": 8883,
+          "sha256": "2B1D804A5F5CA91AC2AB6FD5B43AF1BA3BE5013C416ACB81F41CE9E430C77DD0"
+        },
+        {
+          "path": "data/GameBgPic070_Tl.NCLR",
+          "length": 506,
+          "sha256": "6170B892874E6527215B7FCA969809D20B154EB61D8486C205234C2D60C502D3"
+        },
+        {
+          "path": "data/GameBgPic070_Tl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic070_Tr.NCGR",
+          "length": 3947,
+          "sha256": "A49CC3D1BDBAC7BD15BE998960F3B20D11A33F08CF565FA5820C1BA010C92240"
+        },
+        {
+          "path": "data/GameBgPic070_Tr.NCLR",
+          "length": 298,
+          "sha256": "80E55A5134F1B0B432F6294BF281BC8772D31DED22DE5B82201D77EE6866A387"
+        },
+        {
+          "path": "data/GameBgPic070_Tr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic080_Tl.NCGR",
+          "length": 5219,
+          "sha256": "18A26AEAA108BEB294C776F9E9DB033ABAA5F38CC4846E4FEC2FB2930C0E90FF"
+        },
+        {
+          "path": "data/GameBgPic080_Tl.NCLR",
+          "length": 215,
+          "sha256": "285FF662573625733DD5427E3B59A7A3A592D3507185711BA8A5BD64547B4196"
+        },
+        {
+          "path": "data/GameBgPic080_Tl.NSCR",
+          "length": 1896,
+          "sha256": "A31382A144C24D5C2AD693EE42CA72BE1145E5B955C7BC8E02DD2840ED9FEA11"
+        },
+        {
+          "path": "data/GameBgPic080_Tr.NCGR",
+          "length": 5085,
+          "sha256": "5CBF0C537535E82C01663AA6EB55EE3CF9BDF7DABCB886D34B2E1C6B80A399BB"
+        },
+        {
+          "path": "data/GameBgPic080_Tr.NCLR",
+          "length": 215,
+          "sha256": "C4A2023F279C13C452D97721A1D4338CB42C544ED483C04AC5D9E56E8B776326"
+        },
+        {
+          "path": "data/GameBgPic080_Tr.NSCR",
+          "length": 1900,
+          "sha256": "9FE2ECF054B233B30DDA214142E2E11CC5919D02CDAE387A85144752B1BDA05B"
+        },
+        {
+          "path": "data/GameBgPic081_Tr.NCGR",
+          "length": 1108,
+          "sha256": "A1FF1D4A6DE530B2CE96AC66FF3DCC4DBEA8E0AB96130B8CE605F68F4F0A5026"
+        },
+        {
+          "path": "data/GameBgPic081_Tr.NSCR",
+          "length": 329,
+          "sha256": "9DE59AE5A8F174013495908D55BD1A4F6239F9E030A41590CC48B724B919A359"
+        },
+        {
+          "path": "data/GameBgPic090_Tl.NCGR",
+          "length": 10990,
+          "sha256": "9006EFF9A4271AE9949F23D156C5F2E732AC5B37DA231E0849824F4E543000C2"
+        },
+        {
+          "path": "data/GameBgPic090_Tl.NCLR",
+          "length": 1327,
+          "sha256": "42CE356D6E1D6A472FA73EC0CEF01A4A1B283E2407AF88B79F34430EE1E4C37E"
+        },
+        {
+          "path": "data/GameBgPic090_Tl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic090_Tr.NCGR",
+          "length": 10410,
+          "sha256": "DC5DF14BDC34676F1A6DC898C9AB4D6C5C046FD9EAC35E67FE2C6671C5CDDEE1"
+        },
+        {
+          "path": "data/GameBgPic090_Tr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic091_Tr.NCGR",
+          "length": 666,
+          "sha256": "ABC4BC9DFF27B083D9590B14C50AF4F61F5BBBE0756DE32E71233EA42057AF1E"
+        },
+        {
+          "path": "data/GameBgPic091_Tr.NCLR",
+          "length": 115,
+          "sha256": "04D888B6534C14B61E42D63B7F7591302EE00F47172EABBBAC4C6F85DC749488"
+        },
+        {
+          "path": "data/GameBgPic091_Tr.NSCR",
+          "length": 306,
+          "sha256": "B59611F8F07FD05FA5385CDD684CB0F42968BD9CB6375ADC2C0EA73A107557D1"
+        },
+        {
+          "path": "data/GameBgPic100_Tl.NCGR",
+          "length": 566,
+          "sha256": "A7AF9B2D0202549FA07C652FBD91E3524935421AB7B76490037C48AF37D09992"
+        },
+        {
+          "path": "data/GameBgPic100_Tl.NCLR",
+          "length": 120,
+          "sha256": "5712324E93CC9D740EAB42F4B8054C4614D783CE1228A76E3F01F96C3410F080"
+        },
+        {
+          "path": "data/GameBgPic100_Tl.NSCR",
+          "length": 286,
+          "sha256": "E9CC60A3414A463675E1E8130C259C896750A41B26811DF607D97F488FAD841B"
+        },
+        {
+          "path": "data/GameBgPic110_Tl.NCGR",
+          "length": 7874,
+          "sha256": "9E8BD83C4DD86526FBE967348093629CF93C001AAEDB0168B4140BBD5CE30355"
+        },
+        {
+          "path": "data/GameBgPic110_Tl.NCLR",
+          "length": 1238,
+          "sha256": "4B70DA12769585D1DADD8862EC00CD39F3657FC000E862FECF3CFD5CD1D0C0CA"
+        },
+        {
+          "path": "data/GameBgPic110_Tl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic110_Tr.NCGR",
+          "length": 7810,
+          "sha256": "D2F52658CC56FE6368B2931E5A16F1409C94EE05008268733BC511EBB9BE01ED"
+        },
+        {
+          "path": "data/GameBgPic110_Tr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic120_Tl.NCGR",
+          "length": 1988,
+          "sha256": "3EE7D46A59CBF9ED9C0493D6AD96E8FCCDD25671FF486CF6957696215E5B19CA"
+        },
+        {
+          "path": "data/GameBgPic120_Tl.NCLR",
+          "length": 80,
+          "sha256": "EDF09F3E90CAC8800373AA07A60A986F6EF863C9FE371B670102BDC46C185D02"
+        },
+        {
+          "path": "data/GameBgPic120_Tl.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPic120_Tr.NCGR",
+          "length": 2255,
+          "sha256": "6C86D63DE96F0D1169EFBA27D9D013FFF0E828B5F5C0EBE04521AF24B9605B33"
+        },
+        {
+          "path": "data/GameBgPic120_Tr.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPic120_Yl.NCGR",
+          "length": 9940,
+          "sha256": "915CF88EB695BBB91FB140F54E1D208EEBD31D0EAB6C7B41E54E89BD4E217B3E"
+        },
+        {
+          "path": "data/GameBgPic120_Yl.NCLR",
+          "length": 80,
+          "sha256": "EDF09F3E90CAC8800373AA07A60A986F6EF863C9FE371B670102BDC46C185D02"
+        },
+        {
+          "path": "data/GameBgPic120_Yl.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPic120_Yr.NCGR",
+          "length": 5137,
+          "sha256": "93A8204F0A211082A38574915C5E008DA9578657B79506627B2A768E6ADCCA6B"
+        },
+        {
+          "path": "data/GameBgPic120_Yr.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPic121_Tl.NCGR",
+          "length": 7103,
+          "sha256": "7EFFF3C37AE06E7D8E08E33152A5BF5C075E1DD6C94669330413DB1D38AE6B41"
+        },
+        {
+          "path": "data/GameBgPic121_Tl.NCLR",
+          "length": 268,
+          "sha256": "26DF791D3FE688906C13C6F6B67BBB016A20454A70403A6307DD79DBB9B3A542"
+        },
+        {
+          "path": "data/GameBgPic121_Tl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic121_Tr.NCGR",
+          "length": 7939,
+          "sha256": "2745AF9408B446A02AF8D468BEC3000B10FD9F8B9FF439370EEE228895F3AF38"
+        },
+        {
+          "path": "data/GameBgPic121_Tr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic121_Yl.NCGR",
+          "length": 820,
+          "sha256": "E048371E65397CD7C518BEB5560850856A6F029553325CF114B24829FFACCC53"
+        },
+        {
+          "path": "data/GameBgPic121_Yl.NCLR",
+          "length": 268,
+          "sha256": "2285A6D44A0CD500BC55240522B16E62255D1E228A68AA311461EF68C34EBB6D"
+        },
+        {
+          "path": "data/GameBgPic121_Yl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPic121_Yr.NCGR",
+          "length": 8032,
+          "sha256": "E66F64EB6AD2A4CAE3971A7A1F90F69985C41845BDF8FF65AEC9DA5D7973E3B0"
+        },
+        {
+          "path": "data/GameBgPic121_Yr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPicL120_Tl.NCGR",
+          "length": 1985,
+          "sha256": "A59DDC4A9419176761BC76329FA461EBB479C0F7790EE7B49B345C729647DE6F"
+        },
+        {
+          "path": "data/GameBgPicL120_Tl.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPicL120_Tr.NCGR",
+          "length": 2276,
+          "sha256": "12D9FC12563FB8EED17F5B00937FD9A35EAAB71E53576F912F448C6246EE35EF"
+        },
+        {
+          "path": "data/GameBgPicL120_Tr.NSCR",
+          "length": 1596,
+          "sha256": "9ED44652923DEB740E9F57C999A61AE6365CBE2B441EB93CD0C4926507B8F557"
+        },
+        {
+          "path": "data/GameBgPicL121_Tl.NCGR",
+          "length": 7079,
+          "sha256": "C6EE78FE77DB604296528AA95864EC57503C61BE0229CFF772B5AF22F9A7B109"
+        },
+        {
+          "path": "data/GameBgPicL121_Tl.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgPicL121_Tr.NCGR",
+          "length": 7911,
+          "sha256": "16B938DF4A328EBDD72D1B6DB1CF9B1F0833F774C21BFAB99488C2E651988D7A"
+        },
+        {
+          "path": "data/GameBgPicL121_Tr.NSCR",
+          "length": 1492,
+          "sha256": "78AD57AA5DE55A78C9D934926EDF75445562326228A532D7C5159C76F4D3B45F"
+        },
+        {
+          "path": "data/GameBgWinKad_T.nsc_Cut",
+          "length": 384,
+          "sha256": "D23613AFE45821B76107C648DF975A94813E24D41D9680B72DAAA1C980A2FE1A"
+        },
+        {
+          "path": "data/GameBgWinKad_Y.nsc_Cut",
+          "length": 353,
+          "sha256": "1DEA214B86552C4C4C1E2AB3AB41E80D5571F5EC21977A2ADBCCA7A28293F51F"
+        },
+        {
+          "path": "data/GameObjButCan_T.ncg_Cut",
+          "length": 268,
+          "sha256": "F2475AE7CAC1C9789D133F1AC2E2EAC9A6FA11859B5341C57440C10BACBF5F8D"
+        },
+        {
+          "path": "data/GameObjButCan_Y.ncg_Cut",
+          "length": 263,
+          "sha256": "76462D86D7956FB358A6AA314ED3F8C2900D80359331BC62457BD2BC9D3EABA9"
+        },
+        {
+          "path": "data/GameObjButHin_T.ncg_Cut",
+          "length": 183,
+          "sha256": "552942D4CE6B92E24BDDA352B1B01B76A1541B4EAAAB38EA72A07C1F0EB67A1F"
+        },
+        {
+          "path": "data/GameObjButHin_Y.ncg_Cut",
+          "length": 205,
+          "sha256": "52981F550EDBB1431C541F6BFF5750E9AA97A2686AFF091D282FC419A53F9A78"
+        },
+        {
+          "path": "data/GameObjButMov_T_USA.ncg_Cut",
+          "length": 684,
+          "sha256": "A76E74F429E16338F28905A289DDF9B003D34305E39E5194BBBD45861AB07A67"
+        },
+        {
+          "path": "data/GameObjButMov_Y_USA.ncg_Cut",
+          "length": 824,
+          "sha256": "E073A3925B1265E490D4A8C2E4BD7DFD6807C198149986EABDFC7A11ABD6CD50"
+        },
+        {
+          "path": "data/GameObjButUnd_T.ncg_Cut",
+          "length": 272,
+          "sha256": "221E60C6B4E45EB80570F526529AA360681ECA73A1F7295520685432167F662F"
+        },
+        {
+          "path": "data/GameObjButUnd_Y.ncg_Cut",
+          "length": 272,
+          "sha256": "91DCED87C36367D4AF1D7149ECC024128BFA7C4678FE3CE93C1D824B30B5EF6D"
+        },
+        {
+          "path": "data/GameObjMu_T.ncg_Cut",
+          "length": 112,
+          "sha256": "927DE1B1C1ADE9296C552B38E8A951C8E6276EC94D1302C11DA2F16F2FA38595"
+        },
+        {
+          "path": "data/GameObjMu_Y.ncg_Cut",
+          "length": 112,
+          "sha256": "7E33125557E691A3A3DE365A0E2C1CF701F801EA65F8C0D1C1C657D639A59FBB"
+        },
+        {
+          "path": "data/GameObjPic020_Tl.NANR",
+          "length": 199,
+          "sha256": "07A1839D913BB440E97E20E4202F18619D02A414A028493DE2DADA2FDB58A3CA"
+        },
+        {
+          "path": "data/GameObjPic020_Tl.NCBR",
+          "length": 4919,
+          "sha256": "90E7198624ADCC81AD8C094ED941CB109CC83AFD3534EEF7BBE113059595908C"
+        },
+        {
+          "path": "data/GameObjPic020_Tl.NCER",
+          "length": 484,
+          "sha256": "4929D71E5D2CD5CE9AEA9109A2F5A47A0CCDDE47926D7DD68CF62DEBB9A49C34"
+        },
+        {
+          "path": "data/GameObjPic020_Tl.NCLR",
+          "length": 235,
+          "sha256": "33CC9FB83FF10F66F1918E220D191F077773AD5D616ED387EA7EB2EC5B1B0D34"
+        },
+        {
+          "path": "data/GameObjPic020_Tr.NANR",
+          "length": 93,
+          "sha256": "0721B2F6A986331C600C43972D2DDF8DB0518E4973A2A75C003D6FF3FE3B6C06"
+        },
+        {
+          "path": "data/GameObjPic020_Tr.NCER",
+          "length": 197,
+          "sha256": "DB3A98881CCDA647A33005676792E7383C094A6AB4D2E17A4A86AB88D7921A16"
+        },
+        {
+          "path": "data/GameObjPic020_Tr.NCGR",
+          "length": 2919,
+          "sha256": "50EE1815B247C7223803F2F9BE76C072DC66F8E4F5D78737AAA786151FD93B7E"
+        },
+        {
+          "path": "data/GameObjPic020_Tr.NCLR",
+          "length": 231,
+          "sha256": "BC9CBA5E45FB703C1F545B35E3A8FD79232A64E990EC81AAF946D5BBC6912B72"
+        },
+        {
+          "path": "data/GameObjPic021_Tl.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/GameObjPic021_Tl.NCBR",
+          "length": 2900,
+          "sha256": "025CE75ADBB13835E631E9351EA762533EEDA1E40247D4F017189166C699F30B"
+        },
+        {
+          "path": "data/GameObjPic021_Tl.NCER",
+          "length": 192,
+          "sha256": "70E258E2CB69B18F65D0759BCA4F4E50B52F70B85B24A33B01256C13C16B209C"
+        },
+        {
+          "path": "data/GameObjPic022_Tl.NANR",
+          "length": 323,
+          "sha256": "1F68D132154951CD8771438CAD243C8BE89E4E66DF9A700B0463095BF70703D5"
+        },
+        {
+          "path": "data/GameObjPic022_Tl.NCBR",
+          "length": 4060,
+          "sha256": "2132A4BB30F5F7790A669098EB22F0CECE7FE88D55E14F840BBF2BFEBF1FA7D9"
+        },
+        {
+          "path": "data/GameObjPic022_Tl.NCER",
+          "length": 431,
+          "sha256": "52A96DB18D561E793257628A1835B4CD242742E3A56D71F65CB96385520E8336"
+        },
+        {
+          "path": "data/GameObjPic030_Tl.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/GameObjPic030_Tl.NCBR",
+          "length": 4354,
+          "sha256": "4C2A168759371F388A1090DA64FA5550ABD144ED2249607BD6D45A0213BD8977"
+        },
+        {
+          "path": "data/GameObjPic030_Tl.NCER",
+          "length": 210,
+          "sha256": "A882B5B66220E3A963D93C704896AC9B42CADF696B09094F1FF27EA9A838B5A0"
+        },
+        {
+          "path": "data/GameObjPic030_Tl.NCLR",
+          "length": 298,
+          "sha256": "368441784261EE11A5D2E027454CE8B68168CF512CE8F1D1C92D864D31781D74"
+        },
+        {
+          "path": "data/GameObjPic030_Tr.NANR",
+          "length": 2686,
+          "sha256": "C1C339774F9828489A919F500B9D822EC67B388C42491CD8740FFC53684FC4A9"
+        },
+        {
+          "path": "data/GameObjPic030_Tr.NCER",
+          "length": 576,
+          "sha256": "12D942A5A8CA77DE93A450EE229E12052BEF61876FCE21587EB727860836EFD7"
+        },
+        {
+          "path": "data/GameObjPic030_Tr.NCGR",
+          "length": 4767,
+          "sha256": "98B0DE3A9A964B872D82B3852CAA5EEF95FA2EB9D6342647D34102415EB2BA80"
+        },
+        {
+          "path": "data/GameObjPic030_Tr.NCLR",
+          "length": 126,
+          "sha256": "75650AF9B8131630891B1B95B9E88B405B3FDC760BB6BC9DCFE0775DF21BA9DD"
+        },
+        {
+          "path": "data/GameObjPic031_Tl.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/GameObjPic031_Tl.NCBR",
+          "length": 3103,
+          "sha256": "A54E1D83F545E975FFB19AFD71155D30B7EFB9778BE6285042F62DFBBC643534"
+        },
+        {
+          "path": "data/GameObjPic031_Tl.NCER",
+          "length": 138,
+          "sha256": "81FBFFD752BB0A6BAD0906F65B6FDB2AA953D23D6C16AC477E6D5620990F318B"
+        },
+        {
+          "path": "data/GameObjPic040_Tl.NANR",
+          "length": 555,
+          "sha256": "0668749D0CE5100F3888D7CD1983A0285FB21045199105E13115659CC561D429"
+        },
+        {
+          "path": "data/GameObjPic040_Tl.NCBR",
+          "length": 5202,
+          "sha256": "4D5A84FD3617D338C4906FD5AFA5AFAD330F2C17568D24C8E495C5ED8DA7AB0E"
+        },
+        {
+          "path": "data/GameObjPic040_Tl.NCER",
+          "length": 423,
+          "sha256": "0B27361A996B39CB697C5D79096BDB006EF838968AFFD270E9C841107005D178"
+        },
+        {
+          "path": "data/GameObjPic040_Tl.NCGR",
+          "length": 1560,
+          "sha256": "82547A8280E22D6B65864562D459D9C7213909B5EE780EABEA612FC886E56DEF"
+        },
+        {
+          "path": "data/GameObjPic040_Tl.NCLR",
+          "length": 392,
+          "sha256": "4F91FB2C330086834875EAF244E999BE029F42D5E4C44E81B4A82448A0EFDD5A"
+        },
+        {
+          "path": "data/GameObjPic040_Tr.NANR",
+          "length": 391,
+          "sha256": "97B503DB75ED9145B322860751F7ECCBD234854421D5D25925B65401F3EDF2E5"
+        },
+        {
+          "path": "data/GameObjPic040_Tr.NCER",
+          "length": 317,
+          "sha256": "2DC66CB1FEB4E46DE8932D0099E22DF014DAF9D3CD269DB3FD87ED352EC1E5F9"
+        },
+        {
+          "path": "data/GameObjPic040_Tr.NCGR",
+          "length": 1552,
+          "sha256": "55EEE4A84E1E7D0DFC7FEDBE0B360C2FBFBEFDF4BAEA51C7AE237A399E94B7C5"
+        },
+        {
+          "path": "data/GameObjPic040_Tr.NCLR",
+          "length": 215,
+          "sha256": "88F2A67F308FC979CD9294C035E0C3AE85B54BB946930C69BDA58A2E30C755D2"
+        },
+        {
+          "path": "data/GameObjPic050AniE_Tl.NCLR",
+          "length": 101,
+          "sha256": "4FCBC21724519D1709A0527B1A17A867DD643327927B15F8D826841A6FDDAC56"
+        },
+        {
+          "path": "data/GameObjPic050AniF_Tl.NCLR",
+          "length": 292,
+          "sha256": "B300117181C4756A5B5AD25F7A4381C8915EEDE8DBBD9B38C9220814A223484B"
+        },
+        {
+          "path": "data/GameObjPic050_Tl.NANR",
+          "length": 467,
+          "sha256": "E5F61B982476ECA129E2E5EC63072B6C3D306322A7480AB1F1E1B47EA5F951F0"
+        },
+        {
+          "path": "data/GameObjPic050_Tl.NCBR",
+          "length": 4815,
+          "sha256": "CBD44CB3938859A061AFC9676F6C2E1F6842FC5E93394DF96B2B3A5AC825284A"
+        },
+        {
+          "path": "data/GameObjPic050_Tl.NCER",
+          "length": 456,
+          "sha256": "25687E6E8B0793E4E282DD39E1A2D6A9F83E57A72E60CA1AAADDF5FF1AD1A691"
+        },
+        {
+          "path": "data/GameObjPic050_Tl.NCLR",
+          "length": 108,
+          "sha256": "00F8E992585BE8BE2AB8D7CDAF9850695AD94223F1E268E266ACDD9CA8B9E003"
+        },
+        {
+          "path": "data/GameObjPic050_Tr.NANR",
+          "length": 467,
+          "sha256": "2CDA44FD3CFE339B2D11F3396CF5881B9F40DB02939C2EB3ED2CFFFF20C23949"
+        },
+        {
+          "path": "data/GameObjPic050_Tr.NCER",
+          "length": 456,
+          "sha256": "1CF68DA9697E3C7E5F4AFE57EAC4265D146E63323CB8891FB1942F615723C709"
+        },
+        {
+          "path": "data/GameObjPic050_Tr.NCGR",
+          "length": 5131,
+          "sha256": "9F87136AB0B2D1A52A4B0A3477BE32034D1C888CC2AB35E39477483BD8342476"
+        },
+        {
+          "path": "data/GameObjPic050_Tr.NCLR",
+          "length": 108,
+          "sha256": "00F8E992585BE8BE2AB8D7CDAF9850695AD94223F1E268E266ACDD9CA8B9E003"
+        },
+        {
+          "path": "data/GameObjPic051AniF_Tl.NCLR",
+          "length": 253,
+          "sha256": "D9C9D9B9B4681DAFD31230462AEB2EB771A04DF9021100EF571293FE0C19D9B7"
+        },
+        {
+          "path": "data/GameObjPic051_Tl.NANR",
+          "length": 467,
+          "sha256": "2CDA44FD3CFE339B2D11F3396CF5881B9F40DB02939C2EB3ED2CFFFF20C23949"
+        },
+        {
+          "path": "data/GameObjPic051_Tl.NCER",
+          "length": 394,
+          "sha256": "E8B567A54C57564EF8C68D870D5C8CDC77DF8A2DFA147296FA8BCFD0B3D7E2AB"
+        },
+        {
+          "path": "data/GameObjPic051_Tl.NCGR",
+          "length": 4808,
+          "sha256": "CE1D45760546AE7FC85950B1C663784927E3245249D647C015C5691D973F2FA8"
+        },
+        {
+          "path": "data/GameObjPic051_Tl.NCLR",
+          "length": 169,
+          "sha256": "CACF9B53C5E5B97B3881E22FC393EC43DED1F8D3B2A7A0E910B4AA1001F668BB"
+        },
+        {
+          "path": "data/GameObjPic060_Tl.NANR",
+          "length": 493,
+          "sha256": "3EDBB2EC5BA550DDBD95BC29C5E25047A2DA2E0BB5542C155CBB6F07FC55072E"
+        },
+        {
+          "path": "data/GameObjPic060_Tl.NCBR",
+          "length": 4454,
+          "sha256": "3954B5E8C107EE16D420921574E2590E3F93557276EAE193D0FB437375F0BA86"
+        },
+        {
+          "path": "data/GameObjPic060_Tl.NCER",
+          "length": 661,
+          "sha256": "07A302D1129E8DD12A0C26E8A6DAC1D465E5D9D064738A3FD5FCC467EB91DF4A"
+        },
+        {
+          "path": "data/GameObjPic060_Tl.NCLR",
+          "length": 204,
+          "sha256": "AC25F4869F08B4C514AE3C3901390AB7EF12CCC28C1D928BDAF9FC4E6C914252"
+        },
+        {
+          "path": "data/GameObjPic060_Tr.NANR",
+          "length": 405,
+          "sha256": "AC2F8006D94DE9B9A1F59B56DEAE476BFF9F8EC645F1B1D4EACE78AE18F66394"
+        },
+        {
+          "path": "data/GameObjPic060_Tr.NCER",
+          "length": 691,
+          "sha256": "5C24658FFAAA63AA9B74DEF2AA6B53AF0FFA62C40C2B28CB14119E3D6D187088"
+        },
+        {
+          "path": "data/GameObjPic060_Tr.NCGR",
+          "length": 6033,
+          "sha256": "E04B826D13AA6C2553F6B334D439F3E8A730AA51695004F396C4693D2867273D"
+        },
+        {
+          "path": "data/GameObjPic060_Tr.NCLR",
+          "length": 175,
+          "sha256": "869C9BC161BF80078F5DD999360CC33A5E7270A61E4AB46B378D5C44C97ABF5D"
+        },
+        {
+          "path": "data/GameObjPic061_Tl.NANR",
+          "length": 172,
+          "sha256": "6084182FCEE8BC596632B98BE0F262C5D6E9F0E3AEB9D3429973E796FEDD9C73"
+        },
+        {
+          "path": "data/GameObjPic061_Tl.NCBR",
+          "length": 4276,
+          "sha256": "7F643E151A467E2A5A4905C971AF74CDEEBF9FA6582C49BD71E0491F9E8AB6BC"
+        },
+        {
+          "path": "data/GameObjPic061_Tl.NCER",
+          "length": 217,
+          "sha256": "ED3827FCA4B424F37625E669FDFD53235331A8C1D4DD598BA76D81C5FC3316BC"
+        },
+        {
+          "path": "data/GameObjPic062_Tl.NANR",
+          "length": 137,
+          "sha256": "72788C6F76D20266CB6D951CEBED178934FCCEBBA5C3DCC1CC1D348426D71EA3"
+        },
+        {
+          "path": "data/GameObjPic062_Tl.NCBR",
+          "length": 3061,
+          "sha256": "D6A97E55A80E85D3C960EE4CBAFE11F63DE4D23784E79D53710B921D57E34554"
+        },
+        {
+          "path": "data/GameObjPic062_Tl.NCER",
+          "length": 140,
+          "sha256": "1042420C403A18BB1B713EE6AAAA99D573941A2E36E1D49E514C30F40A84EB68"
+        },
+        {
+          "path": "data/GameObjPic063_Tl.NANR",
+          "length": 223,
+          "sha256": "DC4FA27D241D6B4CC5E01B7D25549826362F76404D200087294EB84A6E6ECEB4"
+        },
+        {
+          "path": "data/GameObjPic063_Tl.NCBR",
+          "length": 4544,
+          "sha256": "486FF659FC3C4DBFEEF8C9ED94701B4889B09042D4E594390C80BE80D06AAE7B"
+        },
+        {
+          "path": "data/GameObjPic063_Tl.NCER",
+          "length": 210,
+          "sha256": "FC59C1B1AB0196F09C3A66CE523539D4D3483AFCD24738ABF72D0AF5CF947324"
+        },
+        {
+          "path": "data/GameObjPic070_Tl.NANR",
+          "length": 794,
+          "sha256": "63EA12A91445F8110ABC92A298E916AA9569899A20CF2AAEDC70B970C3B9110E"
+        },
+        {
+          "path": "data/GameObjPic070_Tl.NCBR",
+          "length": 4408,
+          "sha256": "03DCBE2C2735515612F84FC3637C0E319838FAE163AF3B5FF77AA2AE307B358F"
+        },
+        {
+          "path": "data/GameObjPic070_Tl.NCER",
+          "length": 1534,
+          "sha256": "A4F8622056A854645E8462165F871BA94A5515850C7A9843D59A39015820E58A"
+        },
+        {
+          "path": "data/GameObjPic070_Tl.NCLR",
+          "length": 339,
+          "sha256": "9989D9C9430D1DD8B95FF23DCD929F7A68BCEFFCFDD1A6C19F930E27050DEFDC"
+        },
+        {
+          "path": "data/GameObjPic070_Tr.NANR",
+          "length": 143,
+          "sha256": "368E0608D06C7CD8A4D58ED92BD4C8ADC04DDB66BE687863E5B4E80262582CEC"
+        },
+        {
+          "path": "data/GameObjPic070_Tr.NCER",
+          "length": 156,
+          "sha256": "B83BA7BA73D5A1E5D32EDEA0CDA568A1B9B88A58EB613EE404C58FAD4F7A1431"
+        },
+        {
+          "path": "data/GameObjPic070_Tr.NCGR",
+          "length": 3571,
+          "sha256": "689F17E23963C4DFC5AED3F05D5A5C36163EDF04F62DBA2A986B49B6627EF35A"
+        },
+        {
+          "path": "data/GameObjPic070_Tr.NCLR",
+          "length": 233,
+          "sha256": "7467D95DD8EE5574AE02D81CB63E4F9E68AC3988C53B403002B87B625EA24448"
+        },
+        {
+          "path": "data/GameObjPic071_Tl.NANR",
+          "length": 408,
+          "sha256": "D417F6DA3D700C73A7C3403D3F50288A560811F8806D7239EE3927BEB5823E49"
+        },
+        {
+          "path": "data/GameObjPic071_Tl.NCBR",
+          "length": 12694,
+          "sha256": "938A617C6924A77F00C476001E895353143D1D206CABC81CA4824A61EC18326F"
+        },
+        {
+          "path": "data/GameObjPic071_Tl.NCER",
+          "length": 444,
+          "sha256": "54FC6D91D95120B94EF9531B935481EB97FE3FB9CA8E74ED999CDC4CC64FC4D7"
+        },
+        {
+          "path": "data/GameObjPic072_Tl.NANR",
+          "length": 340,
+          "sha256": "7EE324068851DC46FBC7FF55C9A44255146BCEA483CCBE7F79F7D9DEE8D264E9"
+        },
+        {
+          "path": "data/GameObjPic072_Tl.NCBR",
+          "length": 5283,
+          "sha256": "FF1BA8817EB7F44A01F233E01892615A43F2AC71F95368917659791FB207631A"
+        },
+        {
+          "path": "data/GameObjPic072_Tl.NCER",
+          "length": 401,
+          "sha256": "1C5A43A2D7BD7134966204F26EA5093759415CFC61AB7DC0C0ED2BDB65242F3E"
+        },
+        {
+          "path": "data/GameObjPic080_Tl.NANR",
+          "length": 93,
+          "sha256": "377E64EF8419F5A2A4A46D896AC9C402690F6533906B3F0F7F49EFE477166307"
+        },
+        {
+          "path": "data/GameObjPic080_Tl.NCBR",
+          "length": 4596,
+          "sha256": "B7E5CD1FB0CFB1D169C0107AF6078409465C19F767B6D06B3D5FF0F3D1E13983"
+        },
+        {
+          "path": "data/GameObjPic080_Tl.NCER",
+          "length": 208,
+          "sha256": "14A56A468C72D111E1779A2279F9A94508E9B8F891984CBECD4D5307AE9C49EC"
+        },
+        {
+          "path": "data/GameObjPic080_Tl.NCLR",
+          "length": 326,
+          "sha256": "CD6F90535D02AF1D20135F31039B56348AA5ABE3659D923A075BDAE12018FA69"
+        },
+        {
+          "path": "data/GameObjPic080_Tr.NANR",
+          "length": 1421,
+          "sha256": "1FB0F3EA2F4B9D4F98F6AAF3D8FE9E5445764BC357E9A565BC0E5A32B9046CCD"
+        },
+        {
+          "path": "data/GameObjPic080_Tr.NCER",
+          "length": 5321,
+          "sha256": "962A93EE119484246E316E2F6EEB28D95B0F675BEF06818FD57EA3D84270F20F"
+        },
+        {
+          "path": "data/GameObjPic080_Tr.NCGR",
+          "length": 5325,
+          "sha256": "68BC64225DCDF94A8872475C073EAC0AA64F3A710420A90105B6C3D9C5DBD26C"
+        },
+        {
+          "path": "data/GameObjPic080_Tr.NCLR",
+          "length": 178,
+          "sha256": "B9403C52D01672ADB3A0BEA12D74744B8EA49415EE04BD4D0E6A6E09950F557A"
+        },
+        {
+          "path": "data/GameObjPic081_Tl.NANR",
+          "length": 1695,
+          "sha256": "50C63AB0649C6B7C2BC676DDD7A35CAF146583D942AD392C92105A03CE541237"
+        },
+        {
+          "path": "data/GameObjPic081_Tl.NCBR",
+          "length": 8060,
+          "sha256": "6FFA71839AC0B48091A61FB17CFA9AC21E73F3F873485A107FB2B006CC82F3E1"
+        },
+        {
+          "path": "data/GameObjPic081_Tl.NCER",
+          "length": 5517,
+          "sha256": "44C7B3C4741F26E16AD10834EA1A5C76676F40BC247D683028D7EF7E88C423E8"
+        },
+        {
+          "path": "data/GameObjPic090_Tl.NANR",
+          "length": 165,
+          "sha256": "FC2A5A09D65601A732CFDA1CEA846BA836EE3DA54E02D1311863847C20D4C5E3"
+        },
+        {
+          "path": "data/GameObjPic090_Tl.NCBR",
+          "length": 4785,
+          "sha256": "A2B4C22B599BE9E91B6237702F1969B8DD751064CFE51E8C80BF1B2A82F59B74"
+        },
+        {
+          "path": "data/GameObjPic090_Tl.NCER",
+          "length": 590,
+          "sha256": "9289F150BC94B7E59F8AAD3AC5AECCA943D2C673670A426D3FB6A24ED0265112"
+        },
+        {
+          "path": "data/GameObjPic090_Tl.NCLR",
+          "length": 276,
+          "sha256": "07B5A47AC06F4D7F54ADF63FA2415A2E4320F2794ED51516151BB9DD7BEFB3C8"
+        },
+        {
+          "path": "data/GameObjPic090_Tr.NANR",
+          "length": 579,
+          "sha256": "F5CE12D004BBF58CB9EB96172F6396BFB42AB0B28B9E955C6D8120591834221A"
+        },
+        {
+          "path": "data/GameObjPic090_Tr.NCER",
+          "length": 559,
+          "sha256": "04B940CABBF80667ED5AB92247C06BB8053FF26DFD844133447AA320B82BC897"
+        },
+        {
+          "path": "data/GameObjPic090_Tr.NCGR",
+          "length": 5269,
+          "sha256": "88A4F73A42E03D45CB0539C1F280F1CA658C283EB195DCC4A2B581F4F5C71BE4"
+        },
+        {
+          "path": "data/GameObjPic090_Tr.NCLR",
+          "length": 291,
+          "sha256": "98C571DB4E3E9AD958B3B62FA97C620B89C9A1CE4F0147D410CDBA0377085BCE"
+        },
+        {
+          "path": "data/GameObjPic100_Tl.NANR",
+          "length": 433,
+          "sha256": "F734272A6654580CB54591996AFCE9BC20924A931C9CC748F5400996F7379EC4"
+        },
+        {
+          "path": "data/GameObjPic100_Tl.NCBR",
+          "length": 5136,
+          "sha256": "1ED07C66A989E5BEDF9FBA029B894FC048B651D8A4588F0F3C5FB2FB0B9438FA"
+        },
+        {
+          "path": "data/GameObjPic100_Tl.NCER",
+          "length": 465,
+          "sha256": "27265BF643C1103E1CE19D9665AF92449DD882C21FD94E3B83B0371DDA19508E"
+        },
+        {
+          "path": "data/GameObjPic100_Tl.NCLR",
+          "length": 299,
+          "sha256": "081275D128B8C95562ECF89953BB073F9783B67E6CC4E8BA93FB76B17A02A153"
+        },
+        {
+          "path": "data/GameObjPic100_Tr.NANR",
+          "length": 1385,
+          "sha256": "D3985D0FFA786BC141A0D82FB1206E0CBE5C0A609DBF4FB5CDD79A85E9883540"
+        },
+        {
+          "path": "data/GameObjPic100_Tr.NCER",
+          "length": 362,
+          "sha256": "B6C26681DD4CC9ABA1C3277718487EED0AB50D3AE2FFC7F01115ECA9CB2C89DA"
+        },
+        {
+          "path": "data/GameObjPic100_Tr.NCGR",
+          "length": 2630,
+          "sha256": "B56B60A8A1932065C7FA686F41E53865D56AF604F28FF2A59D5BBC71FABBFF28"
+        },
+        {
+          "path": "data/GameObjPic100_Tr.NCLR",
+          "length": 195,
+          "sha256": "A9B031D55C05BCAAF421B1A61E62F695047706D4950404B69BEEA7BB7A9E195B"
+        },
+        {
+          "path": "data/GameObjPic110_Tl.NANR",
+          "length": 319,
+          "sha256": "7B0721906DF7875E7B1334BEC2DAA8E68C51DA89A5DAF0C09746C4A35F9C20B8"
+        },
+        {
+          "path": "data/GameObjPic110_Tl.NCBR",
+          "length": 5571,
+          "sha256": "E69A7C56B1CFC27D93286A26107E01BC897371B2034FDAB70CAFF99FE4F85890"
+        },
+        {
+          "path": "data/GameObjPic110_Tl.NCER",
+          "length": 281,
+          "sha256": "06130C5DD8019F98538BDE6D81A992FCB113BEB7F29A8C8652EA20F34D8E7459"
+        },
+        {
+          "path": "data/GameObjPic110_Tl.NCLR",
+          "length": 177,
+          "sha256": "0953A7FB760B7661ADD5ACFC1223009CC72855C290BC738D0F9DA58B63CEA355"
+        },
+        {
+          "path": "data/GameObjPic110_Tr.NANR",
+          "length": 294,
+          "sha256": "446C05FDE35576F6C76FDB6A7E5430BFA2BFFBF8F6D8429C8A3E730481409BFA"
+        },
+        {
+          "path": "data/GameObjPic110_Tr.NCER",
+          "length": 287,
+          "sha256": "73F142D2FDA7679F4E0F0D3640723A7E1085CA3C88F065227871E074D626B7FF"
+        },
+        {
+          "path": "data/GameObjPic110_Tr.NCGR",
+          "length": 3818,
+          "sha256": "D24FA3C1D790CAB5D4B98A01F8E8415AF576C8BFB0D3CDDC589A1240F0D74ABA"
+        },
+        {
+          "path": "data/GameObjPic110_Tr.NCLR",
+          "length": 177,
+          "sha256": "BC91A9FC5948BB9C1A81BCCC5DFF87897D8C3F36433C6426FD8D8B43A9BC0BE3"
+        },
+        {
+          "path": "data/GameObjPic111_Tl.NANR",
+          "length": 309,
+          "sha256": "54E1EFC1DCE544759E8817408BF77EA712DEB1E31A57C8C3A548B873F99C7B57"
+        },
+        {
+          "path": "data/GameObjPic111_Tl.NCBR",
+          "length": 4425,
+          "sha256": "567A722A1943FF439DDB4524BED73CCFC639C6A3F9A3D7A18D6BF05F056CC6A6"
+        },
+        {
+          "path": "data/GameObjPic111_Tl.NCER",
+          "length": 604,
+          "sha256": "071C17B03ED5AFDB5DC0BA43C7E4256BDC16F14CB7F7970238C2FD8FBAB85244"
+        },
+        {
+          "path": "data/GameObjPic112_Tl.NANR",
+          "length": 137,
+          "sha256": "59793A81470A351C8FD41F5EF9178D8481839D64662A807223CBDFEECA0533C2"
+        },
+        {
+          "path": "data/GameObjPic112_Tl.NCBR",
+          "length": 3999,
+          "sha256": "E6A0335AACC13BCAE91B32021FE60B03275D3BF8EAF00B3FF6D8E8C827457D5B"
+        },
+        {
+          "path": "data/GameObjPic112_Tl.NCER",
+          "length": 221,
+          "sha256": "2E66F5F26F7B4C33DB928FDB61FD21B8DED52E31B9C3DD181D5ECAD8895AD364"
+        },
+        {
+          "path": "data/GameObjPic120_Tl.NANR",
+          "length": 226,
+          "sha256": "450A9C7F5019D9472B71ED0EE5F5C77E024366523E3BB34297A3A1E6394DA70D"
+        },
+        {
+          "path": "data/GameObjPic120_Tl.NCER",
+          "length": 210,
+          "sha256": "5B8B14D6B522C19A16D4CEA6E668F0DFA1AFDD27EC584625883FA057FF6A940A"
+        },
+        {
+          "path": "data/GameObjPic120_Tl.NCGR",
+          "length": 5265,
+          "sha256": "8641B59872BAAA8AE1AF5486A3D937559C98800D76B21FE6B7269C056CDBD152"
+        },
+        {
+          "path": "data/GameObjPic120_Tl.NCLR",
+          "length": 162,
+          "sha256": "FD4D3C70C5CB457D2215BC98BDBBC702F263F2613DFC8D5C21323C28241CD4F5"
+        },
+        {
+          "path": "data/GameObjPic120_Yl.NCLR",
+          "length": 162,
+          "sha256": "FD4D3C70C5CB457D2215BC98BDBBC702F263F2613DFC8D5C21323C28241CD4F5"
+        },
+        {
+          "path": "data/GameObjPic120_Yr.NANR",
+          "length": 226,
+          "sha256": "450A9C7F5019D9472B71ED0EE5F5C77E024366523E3BB34297A3A1E6394DA70D"
+        },
+        {
+          "path": "data/GameObjPic120_Yr.NCER",
+          "length": 210,
+          "sha256": "ADD202D63F71B4AEA6C98A86B3AA394B83BFBB3091FEB601DA5AC23943ED505A"
+        },
+        {
+          "path": "data/GameObjPic120_Yr.NCGR",
+          "length": 5164,
+          "sha256": "298C72B22ECC48203C0C7FF0676B89888BC7F37F22C58882FAD81DBF2B1B1655"
+        },
+        {
+          "path": "data/GameObjVsEnd_T.nce_Cut",
+          "length": 122,
+          "sha256": "07BB747BF3B25FE402CF2EDDB6F12C16255678664DC2C1463EDC4A0F125739C4"
+        },
+        {
+          "path": "data/GameObjVsEnd_Y.nce_Cut",
+          "length": 162,
+          "sha256": "2C2ADF1EC43F5433F132C59D1B669862713D4D40D41881D2D5F32079F075E3D1"
+        },
+        {
+          "path": "data/LCFont12x12.NFTR",
+          "length": 14356,
+          "sha256": "15DAC32AEDB91481F632B27974DA676084A5C8D7AB26D7C7035001C02CF5D2A8"
+        },
+        {
+          "path": "data/LCFont16x16.NFTR",
+          "length": 10048,
+          "sha256": "AF8FDCF5C32669275F8CA8C2DA0A4C68D25FED8578ED63DF606819B7B9E2DDE2"
+        },
+        {
+          "path": "data/LCFont6x12.NFTR",
+          "length": 1740,
+          "sha256": "240CAC6821E0D314B47C28FF986E845C862382F2359E8E9E8A9295B4E67C3AF0"
+        },
+        {
+          "path": "data/LCFontNin.NFTR",
+          "length": 2480,
+          "sha256": "AD8C59F20B670E95E3C6A9D35B9A3E5542BA9E0055C5FFA95D3700B2D2BF263B"
+        },
+        {
+          "path": "data/MenuBgPic01_Tl.NCGR",
+          "length": 564,
+          "sha256": "0251903DDE68D8C00AFD946F8AE28F8385C33E6B6FD014B503E84D806815A8D6"
+        },
+        {
+          "path": "data/MenuBgPic01_Tl.NSCR",
+          "length": 64,
+          "sha256": "2709F63CFB536C0102A68761043DFF9892D569A45494E28202656D305D5488E8"
+        },
+        {
+          "path": "data/MenuBgPic01_Tl_USA.NCLR",
+          "length": 181,
+          "sha256": "FA89AC4FB088E8E38637463FE2CE44C214A473F81B1FD95FADD2FA5363D671DD"
+        },
+        {
+          "path": "data/MenuBgPic01_Tr.NCLR",
+          "length": 117,
+          "sha256": "2C683DBA51E9622E1FF8588339A6299FDFF9572EF494FD23383DA391E5676B91"
+        },
+        {
+          "path": "data/MenuBgPic02_Tl.NCGR",
+          "length": 816,
+          "sha256": "14730F281B5C036B188379188987B64D65A7505A2741E52EF17108890B8D67AE"
+        },
+        {
+          "path": "data/MenuBgPic02_Tl.NCLR",
+          "length": 183,
+          "sha256": "B744EC85B769CA297F833C428EEDD050259BBCA19BB723F02D7ED5F51563E5BD"
+        },
+        {
+          "path": "data/MenuBgPic02_Tl.NSCR",
+          "length": 75,
+          "sha256": "AF7DB81AFF416DB4122D49B139042D63DC09E98FBAAFADCB0B1D196CF8D5913C"
+        },
+        {
+          "path": "data/MenuBgPic02_Tr.NCGR",
+          "length": 816,
+          "sha256": "14730F281B5C036B188379188987B64D65A7505A2741E52EF17108890B8D67AE"
+        },
+        {
+          "path": "data/MenuBgPic02_Tr.NCLR",
+          "length": 183,
+          "sha256": "B744EC85B769CA297F833C428EEDD050259BBCA19BB723F02D7ED5F51563E5BD"
+        },
+        {
+          "path": "data/MenuBgPic02_Tr.NSCR",
+          "length": 75,
+          "sha256": "AF7DB81AFF416DB4122D49B139042D63DC09E98FBAAFADCB0B1D196CF8D5913C"
+        },
+        {
+          "path": "data/MenuBgWin01_T.NCGR",
+          "length": 2972,
+          "sha256": "C45CEC9222A1FB9D27C23D23537C4F978DDADC4A9CA2FBCADA03064478C8A304"
+        },
+        {
+          "path": "data/MenuBgWin01_T.NSCR",
+          "length": 362,
+          "sha256": "4D99D24B99AB60FBE2E2A1A0A282FD9CF77AD1C6D0C1924EA1F82EDA7D2BDAE5"
+        },
+        {
+          "path": "data/MenuBgWin01_Tr.NSCR",
+          "length": 362,
+          "sha256": "292CCF9FA0ACC882D050BE2DC9F9088C0BEE02BE6D0670E64B8EC45E976A3199"
+        },
+        {
+          "path": "data/MenuBgWin01_Y.NSCR",
+          "length": 352,
+          "sha256": "E8A8156DE5FAB026B9221EC7B6E88A67CCE821AE195D28708EA7B5329E588965"
+        },
+        {
+          "path": "data/MenuBgWin02_T.NSCR",
+          "length": 304,
+          "sha256": "56C71AC3B7CDFBB24ECF824239E2CFCFCC4A6AEFF93179DFF3AD477DBA914BA2"
+        },
+        {
+          "path": "data/MenuBgWin02_Tr.NSCR",
+          "length": 304,
+          "sha256": "56C71AC3B7CDFBB24ECF824239E2CFCFCC4A6AEFF93179DFF3AD477DBA914BA2"
+        },
+        {
+          "path": "data/MenuBgWin02_Y.NSCR",
+          "length": 305,
+          "sha256": "9A5828D00569E779EB0FCE4C2A0F1042AAC64E2405E24F37F4C9D4E6BC428981"
+        },
+        {
+          "path": "data/MenuBgWin03_T.NSCR",
+          "length": 327,
+          "sha256": "2EF410E35E6594ECB463365426BEB9D0A79B9A9C895992BA797E623812EAA39E"
+        },
+        {
+          "path": "data/MenuBgWin03_Tr.NSCR",
+          "length": 326,
+          "sha256": "AE9EC533C2193F9A33BE1DA442BF5474197294E5AB9F8FED78F87699DF73F144"
+        },
+        {
+          "path": "data/MenuBgWin03_Y.NSCR",
+          "length": 322,
+          "sha256": "9DEFD2FD7E3712B33FDC2121F7D97F44388A85B5B5AC6FEAF5ADE0131B65A0B4"
+        },
+        {
+          "path": "data/MenuBgWin04_T.NSCR",
+          "length": 353,
+          "sha256": "A3910C17C1D377D08F5B11C8991EDE109E1DEC26333BED1088F0434761857704"
+        },
+        {
+          "path": "data/MenuBgWin04_Tr.NSCR",
+          "length": 355,
+          "sha256": "3F8F856091B27BEDDC2191B8921FA97119F83E31F3CD53031E34101ED821663A"
+        },
+        {
+          "path": "data/MenuBgWin04_Y.NSCR",
+          "length": 339,
+          "sha256": "9090C592F432A030C4C7B6088253120BC76BBA7FAA24511F67DE0C32E9B0ADFD"
+        },
+        {
+          "path": "data/MenuBgWin05_T.NSCR",
+          "length": 318,
+          "sha256": "24AA692F1654665673F2B32FDBB067B5D4D0D8F0463F7342B1C2A750731FC8F2"
+        },
+        {
+          "path": "data/MenuBgWin05_Tr.NSCR",
+          "length": 320,
+          "sha256": "915B8348C29A040B35C5FCC2064B6FD3C8DD601C2F9AF441C9E98F9BA1C6FA28"
+        },
+        {
+          "path": "data/MenuBgWin05_Y.NSCR",
+          "length": 300,
+          "sha256": "B236294A406B22EA23854F42D021EA28888ED6F5643131F6E1AF1931DF9DFC0A"
+        },
+        {
+          "path": "data/MenuBgWin06_T.NSCR",
+          "length": 304,
+          "sha256": "1FB5B75FD6FDC1E422F68290945A2813282B7686C0DB6E204BCE784CF210EBB7"
+        },
+        {
+          "path": "data/MenuBgWin06_Tr.NSCR",
+          "length": 304,
+          "sha256": "1FB5B75FD6FDC1E422F68290945A2813282B7686C0DB6E204BCE784CF210EBB7"
+        },
+        {
+          "path": "data/MenuBgWin06_Y.NSCR",
+          "length": 305,
+          "sha256": "836EFBE0F06C22DFD3D557030F3433C5C9C0C70ED73E1A6904DC89E97F72A389"
+        },
+        {
+          "path": "data/MenuBgWin07_T.NSCR",
+          "length": 325,
+          "sha256": "A50A422A1D8222B926DEBAAF364C112448E90D4C836A5324AAA26A080F264741"
+        },
+        {
+          "path": "data/MenuBgWin07_Tr.NSCR",
+          "length": 328,
+          "sha256": "E396B1DE17FC76499B5D3DD5EB82DFAEAEE4D8CA1A22C7421C818E17B16BDB0E"
+        },
+        {
+          "path": "data/MenuBgWin07_Y.NSCR",
+          "length": 325,
+          "sha256": "40A2C9C5879C00E8F5F4088DB8A3D0047B70246D48AC436FAD25B479B68C0701"
+        },
+        {
+          "path": "data/MenuBgWin08_T.NSCR",
+          "length": 350,
+          "sha256": "8C0C807A2388CF8CF2BFD04D5116434DE7BDF55074216086A05568222A804E48"
+        },
+        {
+          "path": "data/MenuBgWin08_Tr.NSCR",
+          "length": 353,
+          "sha256": "1E56E63C16B5772F0D8DC425F8C2664FFBE7091F59F42CF08762895FD529B560"
+        },
+        {
+          "path": "data/MenuBgWin08_Y.NSCR",
+          "length": 340,
+          "sha256": "5EDB2846411E489C7B8C591DC3B6B0D9274F41DA224E19729BE7B57DE39AD271"
+        },
+        {
+          "path": "data/MenuBgWin09_T.NSCR",
+          "length": 312,
+          "sha256": "477EB00A66BA3A05A7996CD24CE8CA3065900CBCB58D4C83D15C6DFF114F8A0C"
+        },
+        {
+          "path": "data/MenuBgWin09_Tr.NSCR",
+          "length": 310,
+          "sha256": "EA5D4561E844693E4FB48BADF9F8DD87A8FFFBE58D16B020F3630E4B4603F153"
+        },
+        {
+          "path": "data/MenuBgWin09_Y.NSCR",
+          "length": 306,
+          "sha256": "5790DD3AE472D92F720D191C740575267B4B06DAA7E23DFDA2ADE1043D63A348"
+        },
+        {
+          "path": "data/MenuBgWin10_T.NSCR",
+          "length": 307,
+          "sha256": "2BA957A700AB72EC58B4238FEC892F66436A18FCA4DD1086A49146609C88B8DB"
+        },
+        {
+          "path": "data/MenuBgWin10_Tr.NSCR",
+          "length": 318,
+          "sha256": "69D51557556569D6CC0CB822E1A2C54C8A7B81F986AD7313083DBAF9FE829372"
+        },
+        {
+          "path": "data/MenuBgWin10_Y.NSCR",
+          "length": 308,
+          "sha256": "1377F1B12994DEDA5B9AB2AE22721D2441284D7FA8CF8A253D8016A8D905F87A"
+        },
+        {
+          "path": "data/MenuBgWin11_T.NSCR",
+          "length": 307,
+          "sha256": "4F0A8AF3F4BC6E149BB8C5C7AD6800EBA79453CAC0C19FE6C3A21592B53BD2B6"
+        },
+        {
+          "path": "data/MenuBgWin11_Tr.NSCR",
+          "length": 311,
+          "sha256": "5167277A05A93AD1DEE6B8317157BBD74A780A8FBF463FFDE38365C4387C5793"
+        },
+        {
+          "path": "data/MenuBgWin11_Y.NSCR",
+          "length": 306,
+          "sha256": "A6F06C1FD6DEC967C0F79BE06B08278D892B0764559E382B96E4B3FA9A4E22F8"
+        },
+        {
+          "path": "data/MenuBgWin12_T.NSCR",
+          "length": 310,
+          "sha256": "1CB22C27FB3FBB108A71BB26FA50C34A917D6F8FE19D616E3C70660C0B2EC7FF"
+        },
+        {
+          "path": "data/MenuBgWin12_Tr.NSCR",
+          "length": 315,
+          "sha256": "F55D6CD93AA659395DDA364893F840CE0B542838F5D6EF6DA4C522879B9B32B4"
+        },
+        {
+          "path": "data/MenuBgWin12_Y.NSCR",
+          "length": 306,
+          "sha256": "5B88F48D5C74053AF6135B4A6CBA821C4BD65602452BBC887ADDC126D4C05516"
+        },
+        {
+          "path": "data/MenuBgWin13_T.NSCR",
+          "length": 308,
+          "sha256": "D220B310726A9CB1A43C91A1BC6CF8492A0A7D47C78C48D2F936850722D929F5"
+        },
+        {
+          "path": "data/MenuBgWin13_Tr.NSCR",
+          "length": 316,
+          "sha256": "A8823212B2730362F9D69C2351B1C5D7D8CFE2E46ECD765DBB170CF0FC83ADEA"
+        },
+        {
+          "path": "data/MenuBgWin13_Y.NSCR",
+          "length": 308,
+          "sha256": "8E712FE1B7F4D0F59217B3E776696FBDCCA2CD529FC4B82823851D5B68FF9632"
+        },
+        {
+          "path": "data/MenuObj01_USA.NCLR",
+          "length": 470,
+          "sha256": "AD10C9306CBB62FFDD397C20A848526A3B50A3BB4C7FA7A718A2B4BA24223C9B"
+        },
+        {
+          "path": "data/MenuObjBacIco02.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco02.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco02.NCGR",
+          "length": 983,
+          "sha256": "EF4F46055198F6ABBA3D5ACBED821DCD57B38C709FEC8FC19BEF931C7803C12C"
+        },
+        {
+          "path": "data/MenuObjBacIco02.NCLR",
+          "length": 114,
+          "sha256": "993718BECE5FE9718BA9BEB501C770EBE53D705C67CA890FD908546EFE8BD9CB"
+        },
+        {
+          "path": "data/MenuObjBacIco03.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco03.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco03.NCGR",
+          "length": 845,
+          "sha256": "81BB902C5EFD78BBD7EB477208395C123CF276C27E0C49B78D2F03C283FEA388"
+        },
+        {
+          "path": "data/MenuObjBacIco03.NCLR",
+          "length": 114,
+          "sha256": "5ACE4D85C1304A28393754167E39D807874AECDF7E58B21C9DB52BED9EDA45FC"
+        },
+        {
+          "path": "data/MenuObjBacIco04.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco04.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco04.NCGR",
+          "length": 1620,
+          "sha256": "363FDEB295B98FA4F2B0B20B0DFABB14B7C06C547FA02142160E596C0C1A96B5"
+        },
+        {
+          "path": "data/MenuObjBacIco04.NCLR",
+          "length": 114,
+          "sha256": "00E6CE038E545D26D3FC0B845FF1E742E010A0C3041FD2AAE3AF274B069EC908"
+        },
+        {
+          "path": "data/MenuObjBacIco05.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco05.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco05.NCGR",
+          "length": 648,
+          "sha256": "7AEFD60BC4B48A04FA779A1C47F5C60D4691DDA3F4BDE6EB268F11B0C9DEC031"
+        },
+        {
+          "path": "data/MenuObjBacIco05.NCLR",
+          "length": 92,
+          "sha256": "550286DC067A4D9D9483DEE1EEC801D041DF19276376EFE639FD85C436FE1DAC"
+        },
+        {
+          "path": "data/MenuObjBacIco06.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco06.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco06.NCGR",
+          "length": 1666,
+          "sha256": "510BDA851E00AFC9A13B9A7EA75685A669E2FB5AAED7FC2D399D54BEC191DC9E"
+        },
+        {
+          "path": "data/MenuObjBacIco06.NCLR",
+          "length": 114,
+          "sha256": "7B3C383815ECA5402E8B66046EF9129255F954FA2C6B6FD8B67F5597B21CE2BF"
+        },
+        {
+          "path": "data/MenuObjBacIco07.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco07.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco07.NCGR",
+          "length": 1233,
+          "sha256": "940F899E0376E75069630BA722735B04FA922702FED7B7EE5A5555BD475B7306"
+        },
+        {
+          "path": "data/MenuObjBacIco07.NCLR",
+          "length": 114,
+          "sha256": "FFED1AE88AA70A2407F991B2E75FF137FD22ABE9DB548B459863F91BFD40F631"
+        },
+        {
+          "path": "data/MenuObjBacIco08.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco08.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco08.NCGR",
+          "length": 1041,
+          "sha256": "58AB02F7D899C74F2F50DC813AB1ED7BB9A2A052A4F3DE076298BDD87308540E"
+        },
+        {
+          "path": "data/MenuObjBacIco08.NCLR",
+          "length": 147,
+          "sha256": "4FC7B811CA029CB50E4D575F5B199B4AE0F54D9E447430ADB59184FD7EA49A80"
+        },
+        {
+          "path": "data/MenuObjBacIco09.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco09.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco09.NCGR",
+          "length": 746,
+          "sha256": "FE2154F577668ADE63C01BE703CC0098CD6E908F493B8EA9C1D9A4D969BF8830"
+        },
+        {
+          "path": "data/MenuObjBacIco09.NCLR",
+          "length": 147,
+          "sha256": "775EA57C353135189B46F4BAD1C14D1F714989A53C898D01E3CB795E2B353F1A"
+        },
+        {
+          "path": "data/MenuObjBacIco10.NANR",
+          "length": 93,
+          "sha256": "82B1988652BF4574ACCD300289ED5F7CE3765B156E5D78448B141D48D1DF10B4"
+        },
+        {
+          "path": "data/MenuObjBacIco10.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco10.NCGR",
+          "length": 849,
+          "sha256": "B0EBDCFC2C2822DEA5CD39DF4E804FEB0ABB7795019953E007BBEC86B19CF853"
+        },
+        {
+          "path": "data/MenuObjBacIco10.NCLR",
+          "length": 114,
+          "sha256": "24606CCFCEE4E4F0E201DD6F84E67C7C40D412F4405EC3C36AFB6379D1F6FB94"
+        },
+        {
+          "path": "data/MenuObjBacIco11.NANR",
+          "length": 93,
+          "sha256": "82B1988652BF4574ACCD300289ED5F7CE3765B156E5D78448B141D48D1DF10B4"
+        },
+        {
+          "path": "data/MenuObjBacIco11.NCER",
+          "length": 96,
+          "sha256": "DE8DF74271DD58AE5D90854D5E414B6DDF598D2377098DDF0BA63F4E03100A34"
+        },
+        {
+          "path": "data/MenuObjBacIco11.NCGR",
+          "length": 1391,
+          "sha256": "412446E8476269421A725FF4B643176BE376860E173A690DA47AB79B6A668A2E"
+        },
+        {
+          "path": "data/MenuObjBacIco11.NCLR",
+          "length": 147,
+          "sha256": "8D8031C43803279113869C71CBEB26B5A8B374B86A224E983EA57B357661A12E"
+        },
+        {
+          "path": "data/MenuObjBacIco12.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjBacIco12.NCER",
+          "length": 96,
+          "sha256": "6ABF4765D3AAD09BCCC9651A4FCE6DD0E4254C3720BE8CB1F3E39C22D70657A8"
+        },
+        {
+          "path": "data/MenuObjBacIco12.NCGR",
+          "length": 1161,
+          "sha256": "4ED0E2A1E2C9797E565AE7F41F54DC8609835D349594118C84E54FF60DBC7F33"
+        },
+        {
+          "path": "data/MenuObjBacIco12.NCLR",
+          "length": 114,
+          "sha256": "D2CB92890B523154DB8A7F6B1EA581ABD828DF349F1E8498E8C927F0B4DCFCC0"
+        },
+        {
+          "path": "data/MenuObjCus01_USA.NANR",
+          "length": 510,
+          "sha256": "DBCF240319E4A267E23D40A0FA4D8B0366C9DC032B780DEE9425A351A49345B3"
+        },
+        {
+          "path": "data/MenuObjCus01_USA.NCER",
+          "length": 994,
+          "sha256": "27FEBE60A2C69BBDAD1EB5201480493CE6EFCD34C59BAF772CAE178E8660227F"
+        },
+        {
+          "path": "data/MenuObjCus01_USA.NCGR",
+          "length": 4047,
+          "sha256": "56DDB8B1CC3F962FA38315937D2658199D54E97F5D72C59EBD44FA9B23520084"
+        },
+        {
+          "path": "data/MenuObjCus01_Y_USA.NANR",
+          "length": 510,
+          "sha256": "DBCF240319E4A267E23D40A0FA4D8B0366C9DC032B780DEE9425A351A49345B3"
+        },
+        {
+          "path": "data/MenuObjCus01_Y_USA.NCER",
+          "length": 720,
+          "sha256": "6ADD9709355278CEDD8FE0237E512F31C6B14354AE483204140CAC5E0D4EBC52"
+        },
+        {
+          "path": "data/MenuObjCus01_Y_USA.NCGR",
+          "length": 2977,
+          "sha256": "D66DF9081A1B6E15DC254160DD829EB1D63FE03DF750B2400FB02F1FE7DAF769"
+        },
+        {
+          "path": "data/MenuObjCus02.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjCus02.NCER",
+          "length": 272,
+          "sha256": "EDDFA55FA87003B84133A799BA0FB48F562FB9C885D5BF8633D4CFB7AC17BB00"
+        },
+        {
+          "path": "data/MenuObjCus02.NCGR",
+          "length": 1692,
+          "sha256": "8D003EF962350917A763D8E0D9201514878F3D9526D86E0AED77EEED68EDAA74"
+        },
+        {
+          "path": "data/MenuObjCus_USA.NCLR",
+          "length": 371,
+          "sha256": "7A75FC8B271094AD876A7C353157AFDF5A2FC8AB6DCF40A3FA4330D6EE2B9EDF"
+        },
+        {
+          "path": "data/MenuObjDowLog.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjDowLog.NCER",
+          "length": 121,
+          "sha256": "C1132FAB7D3C4DEC473D986D819FF41DD10411288C71E18D8E4C03CF6FCE46ED"
+        },
+        {
+          "path": "data/MenuObjDowLog.NCGR",
+          "length": 3220,
+          "sha256": "2FBB781ED258696E1917E4F4ED3CCE19021671F4177677FC6BF47FB49E0F5CB8"
+        },
+        {
+          "path": "data/MenuObjDowLog.NCLR",
+          "length": 144,
+          "sha256": "616D4EEA8FEE7CCA3F17E0315B92169F86FA10469CCBF94A70160FADBE26EDB3"
+        },
+        {
+          "path": "data/MenuObjFonHev.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/MenuObjFonHev.NCBR",
+          "length": 5207,
+          "sha256": "D466F398C149781D5D713B5CE95145F6165522BB45B15C7A9EAE2609933E14F9"
+        },
+        {
+          "path": "data/MenuObjFonHev.NCER",
+          "length": 374,
+          "sha256": "E23FBF878F2273958272017E584426D03F0CEB004E7D25E5A452FFCC8ED3360F"
+        },
+        {
+          "path": "data/MenuObjFonHev.NCGR",
+          "length": 2869,
+          "sha256": "BA3F11765C2B54F746D062C7FEFC2DFF613B01D39AA5897FCA8770E163296387"
+        },
+        {
+          "path": "data/MenuObjFonHev_Tl.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjFonHev_Tl.NCER",
+          "length": 361,
+          "sha256": "D9FFAB4AE67D87038372747657A8332CBD97D73EE2CDF3A1C1E0E42F363AA9BD"
+        },
+        {
+          "path": "data/MenuObjFonMul1.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/MenuObjFonMul1.NCBR",
+          "length": 2902,
+          "sha256": "FB0816DEE330844234A1BAFFE32C943DDD0B0615A4CAC0C4BF8BAFD7C2455C31"
+        },
+        {
+          "path": "data/MenuObjFonMul1.NCER",
+          "length": 442,
+          "sha256": "73EE22A848FD4C70AD904C370AC48C18A97B0703AB13D59534846784D557373B"
+        },
+        {
+          "path": "data/MenuObjFonTop_Tl.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjFonTop_Tl.NCER",
+          "length": 431,
+          "sha256": "7F0EC8D26731A20BDAEA10571D3F03E4B790F13F0BC50B0CAB6D4DD5F803950E"
+        },
+        {
+          "path": "data/MenuObjHelFon.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjHelFon.NCER",
+          "length": 169,
+          "sha256": "A17A035D76DC64A9E3A586B5D12A4539BFADD884117FB68755CCDF7A86EA59DE"
+        },
+        {
+          "path": "data/MenuObjHelFon.NCGR",
+          "length": 412,
+          "sha256": "0F28F2F00AC33CB651D1545E6AAECF3A6AC117A1E65DCC0BAD66867F264A6356"
+        },
+        {
+          "path": "data/MenuObjHelFon_Y.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjHelFon_Y.NCER",
+          "length": 166,
+          "sha256": "0EBB620B2585898B4E5373F58BD8AFBEEDCF335CA44AB20E1EC90CD1E00FE420"
+        },
+        {
+          "path": "data/MenuObjHelFon_Y.NCGR",
+          "length": 423,
+          "sha256": "C72C2F169607C804DE197AF58A4177F51BB679CE20744180CCB9C5F28A3D3D49"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Tl.NANR",
+          "length": 476,
+          "sha256": "C3550654F6051B4721F67575B616AD9D7E2A433D2FD2187F08E5B4EC6FA1D1C6"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Tl.NCBR",
+          "length": 6543,
+          "sha256": "834E8BA36C0B9E3F2799F44F3F891CC690A3A85EF7402F7850D538A698561140"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Tl.NCER",
+          "length": 618,
+          "sha256": "319272299AD6C201F7E8DB771A1862634F2C038477594720154AE304C095EA40"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Tr.NANR",
+          "length": 476,
+          "sha256": "C3550654F6051B4721F67575B616AD9D7E2A433D2FD2187F08E5B4EC6FA1D1C6"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Tr.NCBR",
+          "length": 6496,
+          "sha256": "B5F8166B099C11FA39B9690A70C7EFBDC4A41BB728266F1C29A09479A5C8CD7E"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Tr.NCER",
+          "length": 618,
+          "sha256": "319272299AD6C201F7E8DB771A1862634F2C038477594720154AE304C095EA40"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Tr.NCLR",
+          "length": 205,
+          "sha256": "0A0FB2EA461C4CD770931BA277565D76552594851466A7400794B3643CCA543C"
+        },
+        {
+          "path": "data/MenuObjLesDs01_USA.NCLR",
+          "length": 205,
+          "sha256": "3E83EAF37DCA0D397F077E86DEC4EBF0B1638044A6A0D26B77D1C8725B92B7B6"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Yl.NANR",
+          "length": 476,
+          "sha256": "C3550654F6051B4721F67575B616AD9D7E2A433D2FD2187F08E5B4EC6FA1D1C6"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Yl.NCBR",
+          "length": 6845,
+          "sha256": "57B4EBB43E7B785F60AEE4B3DA5D8C8C7627727302AE137F04D58343C6709D76"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Yl.NCER",
+          "length": 618,
+          "sha256": "319272299AD6C201F7E8DB771A1862634F2C038477594720154AE304C095EA40"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Yr.NANR",
+          "length": 476,
+          "sha256": "C3550654F6051B4721F67575B616AD9D7E2A433D2FD2187F08E5B4EC6FA1D1C6"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Yr.NCBR",
+          "length": 6931,
+          "sha256": "386B67B737A12DE776C52A0B5056BAA931ADB91AB6D0046DFE785CB0414595E3"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Yr.NCER",
+          "length": 618,
+          "sha256": "319272299AD6C201F7E8DB771A1862634F2C038477594720154AE304C095EA40"
+        },
+        {
+          "path": "data/MenuObjLesDs01_Yr.NCLR",
+          "length": 204,
+          "sha256": "46B66C34DF3990684B9AAA2B48EF477FB1E271A0944EC9B56001D97E9B2FF397"
+        },
+        {
+          "path": "data/MenuObjLesDs02_USA.NANR",
+          "length": 488,
+          "sha256": "741A8F202137E5272081AA19B3A389972E9B2E1505C5C12421B1D3C0D37DA8D5"
+        },
+        {
+          "path": "data/MenuObjLesDs02_USA.NCBR",
+          "length": 4653,
+          "sha256": "1BF98FB3625C8A5CDBAA1C82DE266D7A08CB54CA3E664E6412CF143F177709AD"
+        },
+        {
+          "path": "data/MenuObjLesDs02_USA.NCER",
+          "length": 462,
+          "sha256": "506AEFE198CE5216604E9CCAB714A2510663BB0FFD579884863051A5D5817AD2"
+        },
+        {
+          "path": "data/MenuObjMaiGra_USA.NANR",
+          "length": 146,
+          "sha256": "831C443D248DBFECE5C0A3C7F4AA924EB2DBBDA1BAA7E82D24C4B52472BF5721"
+        },
+        {
+          "path": "data/MenuObjMaiGra_USA.NCBR",
+          "length": 3386,
+          "sha256": "BE2908278B559D47F00A919A3EC0B08AC185DBC0D8369272007BEB3DFFB409B3"
+        },
+        {
+          "path": "data/MenuObjMaiGra_USA.NCER",
+          "length": 406,
+          "sha256": "9084522AF062D786D9DC465E21B3F9E00027B1307A618063EF87F4DC25150030"
+        },
+        {
+          "path": "data/MenuObjMaiGra_USA.NCLR",
+          "length": 183,
+          "sha256": "3D799FA395E6AB714810C643197F5AD3A7457946B5FB957D15B527EA5AFE32F7"
+        },
+        {
+          "path": "data/MenuObjMulDl.NANR",
+          "length": 103,
+          "sha256": "0125C3DED34CADA441C434ECAC1A4A2F1B1B65EA925A7608822CF85970F8869C"
+        },
+        {
+          "path": "data/MenuObjMulDl.NCBR",
+          "length": 4392,
+          "sha256": "4E636866407AC417EEF720098AD833031BD0F133168C86E6413039048C2916AA"
+        },
+        {
+          "path": "data/MenuObjMulDl.NCER",
+          "length": 172,
+          "sha256": "08E20EDF096D363111DE84D767790FCCDD80A511BAAA666DD920A36D2D01EFDA"
+        },
+        {
+          "path": "data/MenuObjMulDl.NCLR",
+          "length": 166,
+          "sha256": "50D235A0CA8BB5E6084CD8432E9FD9F4CAC860B7E85F3ADF884F695F558EBE53"
+        },
+        {
+          "path": "data/MenuObjMulMul.NANR",
+          "length": 103,
+          "sha256": "0125C3DED34CADA441C434ECAC1A4A2F1B1B65EA925A7608822CF85970F8869C"
+        },
+        {
+          "path": "data/MenuObjMulMul.NCBR",
+          "length": 3262,
+          "sha256": "3485251CD501175CC052B137AAEB365FAF75F776E22D0E790366347D2D6BE269"
+        },
+        {
+          "path": "data/MenuObjMulMul.NCER",
+          "length": 283,
+          "sha256": "727D22A534007C0D0205908D6CB2294B66833006D2C61F12DB92B28D71DD577A"
+        },
+        {
+          "path": "data/MenuObjMulMul.NCLR",
+          "length": 182,
+          "sha256": "7FDDB6A1BA4B55BBC5793518E42E56BC1ED89F3A41B39F9E4A87A0281E187A1D"
+        },
+        {
+          "path": "data/MenuObjPerFri.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/MenuObjPerFri.NCBR",
+          "length": 1127,
+          "sha256": "2F798CD98ED7542BC1DA92FDA80B3F86ACFE6BEDE95F4744D0682E2DE87D0759"
+        },
+        {
+          "path": "data/MenuObjPerFri.NCER",
+          "length": 300,
+          "sha256": "C4939BE2EFBFB346661A5478D2F903E203FCF7C2460C416C95B6E0C4A9F4164E"
+        },
+        {
+          "path": "data/MenuObjPerFri.NCLR",
+          "length": 161,
+          "sha256": "67C599749E3FF26143CF3DCF4B31D38F787E22D59446AF10F8F125B1CF37852D"
+        },
+        {
+          "path": "data/MenuObjPerMov.NANR",
+          "length": 111,
+          "sha256": "4260E19C3DE6DA15FBA01082E7F566CA4D8CCAF019EBC680A10956F88EEDDB24"
+        },
+        {
+          "path": "data/MenuObjPerMov.NCBR",
+          "length": 3124,
+          "sha256": "2FC6814CE9328C07F863E8158442A268FFE32EDE8698AB34863BC4257C4EAA0A"
+        },
+        {
+          "path": "data/MenuObjPerMov.NCER",
+          "length": 212,
+          "sha256": "7EF40FBF3AF350ACA4DAF547C7223E478B4DE9767E761560C4ACA8663714897A"
+        },
+        {
+          "path": "data/MenuObjPerMov.NCLR",
+          "length": 151,
+          "sha256": "B364E657EC8F5DE8435141C1F884945B6BA018E4C715426088D23AB58F1A9689"
+        },
+        {
+          "path": "data/MenuObjPerMov2D.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjPerMov2D.NCER",
+          "length": 165,
+          "sha256": "7CC2D5394D41FACAE8CEEF3A0EB4D9F5554C45155EDA1F2761AC21FC5E590B14"
+        },
+        {
+          "path": "data/MenuObjPerMov2D.NCGR",
+          "length": 919,
+          "sha256": "311099525073824A56F3F9D354A4F26C5570C0C80FCC8E83776E84D421846DE1"
+        },
+        {
+          "path": "data/MenuObjPerMov2D_Y.NANR",
+          "length": 93,
+          "sha256": "7C2601B538AF4C60E5EEB4F3C11E2B5B73F40C58C86F43C3E0BE7F7C2397E4E6"
+        },
+        {
+          "path": "data/MenuObjPerMov2D_Y.NCER",
+          "length": 165,
+          "sha256": "6376A95EA818088C84289E1DBF0BBED5B0680BC83FB257430F96813DC80E564C"
+        },
+        {
+          "path": "data/MenuObjPerMov2D_Y.NCGR",
+          "length": 934,
+          "sha256": "C58C2B05A69319578B8DCEA0B114C591FDB67377413EFB6672AC306601BDDD58"
+        },
+        {
+          "path": "data/MenuObjPerRec.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/MenuObjPerRec.NCBR",
+          "length": 805,
+          "sha256": "C793EE261CD58D1EFF620E8B009FF00A7C5ADC4547EAED7C566F8E7E06C41CFF"
+        },
+        {
+          "path": "data/MenuObjPerRec.NCER",
+          "length": 128,
+          "sha256": "7AC3451506B5AB0B242C279CDE2A108C35EEE59AA05BF6C691377FFF48526464"
+        },
+        {
+          "path": "data/MenuObjPerRec.NCLR",
+          "length": 151,
+          "sha256": "AD6A5A1F3C3C7C9F6BEABA3F19C0399C3845E5A597D02E42636DB0128EC1D857"
+        },
+        {
+          "path": "data/MenuObjPicPar_USA.NANR",
+          "length": 110,
+          "sha256": "366DBD3FAA54C73533E89DF2FA9E37708284FEE733E9B8CE4383E2D835280C9E"
+        },
+        {
+          "path": "data/MenuObjPicPar_USA.NCBR",
+          "length": 5551,
+          "sha256": "CB39317795D9C55768CDC476CBE6E682D40850E03FB1B35F885122D44D3971BA"
+        },
+        {
+          "path": "data/MenuObjPicPar_USA.NCER",
+          "length": 1783,
+          "sha256": "5895476E0C46FBC18FD7A06CA8D31AD2811D49995BCCF9C188CB5A9ECF2C5307"
+        },
+        {
+          "path": "data/MenuObjSwi_Tl.NANR",
+          "length": 221,
+          "sha256": "2BF62C19A1C7756AE5E79624D5B63B7CD4689867F1BDB90E785C64BC20237E82"
+        },
+        {
+          "path": "data/MenuObjSwi_Tl.NCER",
+          "length": 1079,
+          "sha256": "BE6FEE3F19535DB49943009BADFFA57E16C66692760C61A284C6BD40B05189B8"
+        },
+        {
+          "path": "data/MenuObjSwi_USA.NANR",
+          "length": 873,
+          "sha256": "EF0D0BD6C1619253E4AAFBB3D34C2C19D6E04026ED2E34742FEB0A3AE34F1DD8"
+        },
+        {
+          "path": "data/MenuObjSwi_USA.NCBR",
+          "length": 6415,
+          "sha256": "E1DD5BE20C962430C2A93121624DD532A729DB69F93F26CD610824F41D7F6867"
+        },
+        {
+          "path": "data/MenuObjSwi_USA.NCER",
+          "length": 4372,
+          "sha256": "8984FE43D7FEA8A9B61E679FC74C35F5CD5F9537174898EBCB5016A3CD06B52E"
+        },
+        {
+          "path": "data/MenuObjSwi_USA.NCGR",
+          "length": 7401,
+          "sha256": "E8411AF66497623CF6952B7AF7CC264F7E640AA412EB49A3F9BE413A91D3CDD9"
+        },
+        {
+          "path": "data/MenuObjWifFri_USA.NANR",
+          "length": 103,
+          "sha256": "0125C3DED34CADA441C434ECAC1A4A2F1B1B65EA925A7608822CF85970F8869C"
+        },
+        {
+          "path": "data/MenuObjWifFri_USA.NCBR",
+          "length": 2256,
+          "sha256": "00AE4FA4EBD1E7B973387915EB6D46CAE8DD62596F5DD03981645D33BA29C904"
+        },
+        {
+          "path": "data/MenuObjWifFri_USA.NCER",
+          "length": 322,
+          "sha256": "753A17815BABB6D993AAF548CE129D0A296A8F881E2E30528E96814336BE4B8E"
+        },
+        {
+          "path": "data/MenuObjWifFri_USA.NCLR",
+          "length": 231,
+          "sha256": "7ECA095821BE9BE1ACB053F3A2923A04D53AFF60EB39DDAD3648A2A1D43B0CDD"
+        },
+        {
+          "path": "data/MenuObjWifRan.NCLR",
+          "length": 79,
+          "sha256": "724B6826C0928515EBA1ABF175A36A1B63AECE05BC28209A4BE4E84A52F4D893"
+        },
+        {
+          "path": "data/NewMenuMoji01.NANR",
+          "length": 93,
+          "sha256": "26B16F2B6AB58271BCB4645907553ED411BBA5F40F76D63B4041056B016A97BF"
+        },
+        {
+          "path": "data/NewMenuMoji01.NCER",
+          "length": 492,
+          "sha256": "04902B6FCD1ED2B0BC12D821DF91367E03C6EFA60B0D7C81014096666E75ECB2"
+        },
+        {
+          "path": "data/NewTitleBg01_L_USA.ncg_Cut",
+          "length": 7831,
+          "sha256": "3B2F8C42B25550BBE0AFB38D9EDED72A7035485A62713A761D49EA1A18902BFF"
+        },
+        {
+          "path": "data/NewTitleBg01_L_USA.ncl_Cut",
+          "length": 137,
+          "sha256": "F2CAA847CE1DC38A89FE2EC18332CDA6F78AFD189C55EE991E21D03CFBB848C7"
+        },
+        {
+          "path": "data/NewTitleBg01_L_USA.nsc_Cut",
+          "length": 1328,
+          "sha256": "F8EF59CB7B88EC346F28ADA65FCB01D2E5FC5D020682AFE117DA50A60946DD00"
+        },
+        {
+          "path": "data/NewTitleBg01_R_USA.ncg_Cut",
+          "length": 8297,
+          "sha256": "AB6B7248B5FA018EE44ED73ED7499CB4254F98644E4A7841C5377F832E927FE5"
+        },
+        {
+          "path": "data/NewTitleBg01_R_USA.ncl_Cut",
+          "length": 137,
+          "sha256": "F2CAA847CE1DC38A89FE2EC18332CDA6F78AFD189C55EE991E21D03CFBB848C7"
+        },
+        {
+          "path": "data/NewTitleBg01_R_USA.nsc_Cut",
+          "length": 1328,
+          "sha256": "F8EF59CB7B88EC346F28ADA65FCB01D2E5FC5D020682AFE117DA50A60946DD00"
+        },
+        {
+          "path": "data/NewTitleBg02_L_USA.ncg_Cut",
+          "length": 5434,
+          "sha256": "63ED380DDEC4B35E7DC2C6C261CF8BF027AFCD172C5849089126A13090E3F59B"
+        },
+        {
+          "path": "data/NewTitleBg02_L_USA.ncl_Cut",
+          "length": 145,
+          "sha256": "C4A84A34FDE619FD0F25E203414A77371EFB6A7523994E892A8BEB13FE51B12E"
+        },
+        {
+          "path": "data/NewTitleBg02_L_USA.nsc_Cut",
+          "length": 693,
+          "sha256": "94D560B1C6B8D63194AA21BC85B7BF6FE3BDE9D07A3706C283E021F2516A7ADA"
+        },
+        {
+          "path": "data/NewTitleBg02_R_USA.ncg_Cut",
+          "length": 3068,
+          "sha256": "D69799339CF32C403753D4D3C71E1A763C5D67BAFEC0808321849BC87216DF0D"
+        },
+        {
+          "path": "data/NewTitleBg02_R_USA.ncl_Cut",
+          "length": 48,
+          "sha256": "A598925900E03B4DEEBE68D49B0102068B6BD8B12A9977561CAB5514AF82C7D3"
+        },
+        {
+          "path": "data/NewTitleBg02_R_USA.nsc_Cut",
+          "length": 1328,
+          "sha256": "F8EF59CB7B88EC346F28ADA65FCB01D2E5FC5D020682AFE117DA50A60946DD00"
+        },
+        {
+          "path": "data/NewTitleBg03_L_USA.nsc_Cut",
+          "length": 466,
+          "sha256": "82E167D4CFF91F4DC216FA90D253AAA8025B7D42258E4377C5649EEBFD3A7A58"
+        },
+        {
+          "path": "data/NewTitleBg04_L_USA.nsc_Cut",
+          "length": 466,
+          "sha256": "9E1BB000383B72DD7874885958EAAE6E7BEE1BB4C6C62C21CD44F34388CC588A"
+        },
+        {
+          "path": "data/NewTitleObj01_USA.ncg_Cut",
+          "length": 5832,
+          "sha256": "D0320286C695A7AEB1D6CF03D54F69819047C0AA1A8464D7FFA22C8254FE0944"
+        },
+        {
+          "path": "data/NewTitleObj01_USA.ncl_Cut",
+          "length": 189,
+          "sha256": "31723340A012003CD1CC0145877EF1EE6A34CF1FBA5DE13AC36CD9032A26D096"
+        },
+        {
+          "path": "data/OpBgLogIs.ncg_Cut",
+          "length": 6954,
+          "sha256": "B429B6DF259853519491B8BE76691E01EA2A28ACB274BFBB477C6660F6400139"
+        },
+        {
+          "path": "data/OpBgLogIs.ncl_Cut",
+          "length": 580,
+          "sha256": "4AF87F2C3C19AE7B4A593104959924247EE059170E67F9E68B6B978C6A421488"
+        },
+        {
+          "path": "data/OpBgLogIs.nsc_Cut",
+          "length": 1328,
+          "sha256": "F8EF59CB7B88EC346F28ADA65FCB01D2E5FC5D020682AFE117DA50A60946DD00"
+        },
+        {
+          "path": "data/OpBgLogNin.ncg_Cut",
+          "length": 4741,
+          "sha256": "9DB395C04D80CA68AC43A7B108BE289D346F81F31C86EB2E6826C0C0EFD1CCF5"
+        },
+        {
+          "path": "data/OpBgLogNin.ncl_Cut",
+          "length": 138,
+          "sha256": "00B79D47D7B5541C88355D61B2CA9EE5D2C04B9332F31FEBA0D6C229E320E43B"
+        },
+        {
+          "path": "data/OpBgLogNin.nsc_Cut",
+          "length": 1328,
+          "sha256": "F8EF59CB7B88EC346F28ADA65FCB01D2E5FC5D020682AFE117DA50A60946DD00"
+        },
+        {
+          "path": "data/download.srl",
+          "length": 1670344,
+          "sha256": "92EEC67FD302CD3EE01223C8C8C76B808B2FD480F9FAAD7EACB3DB1F06118B07"
+        },
+        {
+          "path": "data/dwc/utility.bin",
+          "length": 898240,
+          "sha256": "1D2EC39E86493319E724DC1DEEF8DA848B794A4BB36176218FD6532727DB4774"
+        },
+        {
+          "path": "data/icon.char",
+          "length": 512,
+          "sha256": "234289EC10E7A98C69829D19EB7F7AABB9DDBB92662E32244B54E6219A07D868"
+        },
+        {
+          "path": "data/icon.plt",
+          "length": 32,
+          "sha256": "8F0A2DA432F7640960A71F3D4D93A48DF216640B40E29F9DDFC5D56AE7F87154"
+        },
+        {
+          "path": "data/multiplay.srl",
+          "length": 1588936,
+          "sha256": "AF362A14551AECAD5311B977BCBDDD16CB47CF866C8A002AD2E65F4D36BEE5F5"
+        },
+        {
+          "path": "data/sound/ds_sound/DSPon.sdat",
+          "length": 13289472,
+          "sha256": "C18876FA1CE755B8B96A9D47996EEB2DFD956673B6891A4293DA34DD655ADDA7"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "DABFBA558B8CEEF194EF754BDFC962B4562EFFBCFC58BA19F3164CC0B4DEE4ED"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 4864,
+          "sha256": "0AFB10CAC55F38B4DC3C814CE70523EF25F0744906AF240714EB6A697CB5BE6E"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 16384,
+          "sha256": "0A311DE6B4CCA328DC7620C8BB3CD6D3F7C2521FFB9B71DD662D0764A60E0B6A"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 10336,
+          "sha256": "BFAD7F0E4B75CCAAA1EF858093F176B13CF1C89FA3683A855A05F00F72328ED1"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 4576,
+          "sha256": "FA19BA51AE5E284E01CEC3DAC61EED0661091BCBB459B59664CFB92BA26F908B"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 16096,
+          "sha256": "4D922C978434D65B1031AFA175229FFDFA876298B4F401A4F02F69B82F65A58A"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 9760,
+          "sha256": "788DDD121E1DE3728D028DAB0A30644090B366B7863FF5584C2F8458E3475584"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 9344,
+          "sha256": "18499A40C943F4056134BFE2E0A670AE854DE44B4FB8F59D3008609C8DEB7CA4"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 11520,
+          "sha256": "1F7CD4B2B369C5D9561798EEF3FB9D12FAF41837B9AA6041A4839E50019E7FEE"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 23616,
+          "sha256": "EAD450928369E7810045D6F425E6C103D00F0FB7750024D6347C59770A28EE6F"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 15296,
+          "sha256": "248E8624BCA84C7691BCA06AF2404F0025A9B35C1579BCB339461A8938DC96F0"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 22464,
+          "sha256": "2C5BCA75F80FBACEDC8118A04DB918DEBCFD838DCDAC192C944E3E8987D059A0"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 16320,
+          "sha256": "21CE59B6A19873B7CA9D5E82CE80B41BF082A8F45B04CC4CD8FAC9F888FBE95E"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 19904,
+          "sha256": "4DEEF81565031B90EE61AB1E3DBA0C092B74D628659EAA84FB835E80181CBFB1"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 21152,
+          "sha256": "350F37CD4308F64FB158FAA1F014FBF2B416F0A7463DC28020D317D5E551D84B"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 17536,
+          "sha256": "98EA67F473FF6D6F50B45A9C74109D7E3C40F9F2B62D37E5330DEC89BEBC0933"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 13952,
+          "sha256": "C2ED92255E3495162BA389D85340BCB8A4786DE18EAAF832B978A6EB3948160E"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 19328,
+          "sha256": "64B8BF4B6EA14D610BCAB4A08015C539D2013D1E6FE2507342FE81476092B0FE"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 14976,
+          "sha256": "B7E9B98255E55DA161D96528A42A57B15B0BC112832B8DB79D6A7F3E0FB4EC57"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 17536,
+          "sha256": "E806B04028D2622EDF9A51B3B6E95017439FBEF5C38F5B25506D5E29E1EBE743"
+        },
+        {
+          "path": "overlays/overlay_0021.bin",
+          "length": 19584,
+          "sha256": "96C45FE13599D0FC432F08432EE6B8DCBEB0C680932583A7713AE104200336DB"
+        },
+        {
+          "path": "overlays/overlay_0022.bin",
+          "length": 21056,
+          "sha256": "BBD04E09D0FA7B62AFEF2F5EC4C1CAB03062903D6E75FC9223B13B4849EB157C"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 20965888,
+          "sha256": "334D57C984A2C254DD6AA0E802224F19236F6C98B49A632B73091351C77D34BA"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 33554432,
+          "sha256": "00BD1C39414F4ADB9990DCF59FF39A9B9068B22D6D75086B43B065B084F0EDA4"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 33554432,
+          "sha256": "40302071AFF73F28347577A81E9DB6C67B01DC4F59888F43B5F21C7104F992A9"
+        }
+      ]
+    }
+  ]
+}

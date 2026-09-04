@@ -15,8 +15,10 @@ public sealed class PrivateCorpusTransformTests
         ArgumentNullException.ThrowIfNull(entry);
         CorpusExpectation expectation = CorpusExpectations.Read(entry);
         string path = CorpusExpectations.Resolve(entry);
-        ExpectedArtifact oracle = expectation.Operations.Single(static item => item.Name == "create-binary")
-            .Artifacts.Single(static item => item.Path == "rebuilt-binary.nds");
+        ExpectedOperation creation = expectation.Operations.Single(static item => item.Name == "create-binary");
+        ExpectedArtifact? oracle = creation.ExitCode == 0
+            ? creation.Artifacts.Single(static item => item.Path == "rebuilt-binary.nds")
+            : null;
         string output = Path.Combine(Path.GetTempPath(), $"ndsforge-corpus-build-{Guid.NewGuid():N}.nds");
         try
         {
@@ -25,22 +27,48 @@ public sealed class PrivateCorpusTransformTests
             NdsValidationResult sourceValidation = image.Validate();
             NdsImageManifest sourceManifest = await image.CreateManifestAsync(cancellationToken).ConfigureAwait(true);
             NdsImageBuilder builder = await NdsImageBuilder.FromImageAsync(image, cancellationToken).ConfigureAwait(true);
+            if (builder.DsMetadata is not null) { builder.DsMetadata.Integrity = NdsDsIntegrityOptions.PreserveStored; }
             Assert.Equal(image.Header.NormalCardControl, builder.NormalCardControl);
             Assert.Equal(image.Header.SecureCardControl, builder.SecureCardControl);
+            Assert.Equal(image.Header.NandRomEndUnits, builder.NandRomEndUnits);
+            Assert.Equal(image.Header.NandWritableStartUnits, builder.NandWritableStartUnits);
             NdsImageBuildProfile profile = expectation.Rom.Kind == NdsImageKind.NintendoDs
                 ? NdsImageBuildProfile.Ndstool1503
                 : NdsImageBuildProfile.Deterministic;
+            if (image.Arm9OverlayAuthentication is { State: NdsOverlayAuthenticationTableState.MissingTablePointer })
+            {
+                Assert.Contains(sourceValidation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1211");
+                Assert.False(builder.Arm9OverlayAuthentication!.CanRegenerate);
+                foreach (NdsImageBuildProfile rejectedProfile in new[] { profile, NdsImageBuildProfile.Deterministic })
+                {
+                    InvalidDataException error = await Assert.ThrowsAsync<InvalidDataException>(async () =>
+                        await builder.WriteAsync(output, new NdsImageBuildOptions { Profile = rejectedProfile }, cancellationToken)
+                            .ConfigureAwait(true)).ConfigureAwait(true);
+                    Assert.Contains("authentication", error.Message, StringComparison.OrdinalIgnoreCase);
+                    Assert.False(File.Exists(output));
+                }
+                return;
+            }
+
             await builder.WriteAsync(
                 output,
                 new NdsImageBuildOptions { Profile = profile, VerifyOutput = sourceValidation.IsValid },
                 cancellationToken).ConfigureAwait(true);
             await using FileStream stream = File.OpenRead(output);
-            if (profile == NdsImageBuildProfile.Ndstool1503)
-            {
-                Assert.Equal(oracle.Length, stream.Length);
-            }
             using NdsImage rebuilt = await NdsImage.OpenAsync(stream, leaveOpen: true, cancellationToken: cancellationToken).ConfigureAwait(true);
+            if (profile == NdsImageBuildProfile.Ndstool1503 && oracle is not null)
+            {
+                AssertCompatiblePhysicalExtent(oracle.Length, rebuilt);
+            }
             AssertIntroducesNoValidationErrors(sourceValidation, rebuilt.Validate());
+            Assert.Equal(image.CarrierLayout.Kind, rebuilt.CarrierLayout.Kind);
+            Assert.Equal(image.Header.NandRomEndUnits, rebuilt.Header.NandRomEndUnits);
+            Assert.Equal(image.Header.NandWritableStartUnits, rebuilt.Header.NandWritableStartUnits);
+            Assert.Equal(image.CarrierLayout.PostHeaderData.ToArray(), rebuilt.CarrierLayout.PostHeaderData.ToArray());
+            if (image.CarrierLayout is NdsCartridgeLayout cartridge && rebuilt.CarrierLayout is NdsCartridgeLayout rebuiltCartridge)
+            {
+                Assert.Equal(cartridge.TwlReservedData.ToArray(), rebuiltCartridge.TwlReservedData.ToArray());
+            }
             NdsImageManifest rebuiltManifest = await rebuilt.CreateManifestAsync(cancellationToken).ConfigureAwait(true);
             AssertSemanticManifestEquality(sourceManifest, rebuiltManifest, profile);
         }
@@ -48,6 +76,30 @@ public sealed class PrivateCorpusTransformTests
         {
             File.Delete(output);
         }
+    }
+
+    /// <summary>Allows only the exact padding needed to keep a final empty FAT entry inside the output image.</summary>
+    private static void AssertCompatiblePhysicalExtent(long expectedLength, NdsImage rebuilt)
+    {
+        long contentExtent = rebuilt.DownloadPlaySignatureRegion?.Offset ?? rebuilt.Length;
+        if (rebuilt.DownloadPlaySignatureRegion is NdsRegion signature)
+        {
+            Assert.Equal(signature.End, rebuilt.Length);
+        }
+
+        if (expectedLength == contentExtent)
+        {
+            return;
+        }
+
+        long lastPayloadEnd = rebuilt.FileSystem.Allocations.Where(static item => item.Data.Length != 0)
+            .Max(static item => item.Data.End);
+        long lastEmptyOffset = rebuilt.FileSystem.Allocations.Where(static item => item.Data.Length == 0)
+            .Max(static item => item.Data.Offset);
+        Assert.Equal(expectedLength, lastPayloadEnd);
+        Assert.Equal((expectedLength + 0x1FF) & ~0x1FFL, lastEmptyOffset);
+        Assert.Equal(lastEmptyOffset, contentExtent);
+        Assert.Equal(contentExtent, rebuilt.Header.UsedImageSize);
     }
 
     /// <summary>Verifies the legacy ARM7 trainer insertion against ndstool for every exact input image.</summary>
@@ -103,7 +155,7 @@ public sealed class PrivateCorpusTransformTests
             Assert.Contains(image.Validate().Diagnostics, static diagnostic => diagnostic.Code == "NDS1001");
             await image.Edit().RepairHeaderCrc().SaveAsync(
                 output,
-                new NdsWriteOptions { VerifyOutput = verifyOutput },
+                new NdsWriteOptions { VerifyOutput = verifyOutput, DsIntegrity = image.Header.DsExtended is null ? null : NdsDsIntegrityOptions.PreserveStored },
                 cancellationToken).ConfigureAwait(true);
             await using FileStream stream = File.OpenRead(output);
             string actual = Convert.ToHexString(await SHA256.HashDataAsync(stream, cancellationToken).ConfigureAwait(true));
@@ -117,16 +169,18 @@ public sealed class PrivateCorpusTransformTests
     }
 
     /// <summary>Compares every logical field while excluding only physical offsets and capacity padding chosen by the build profile.</summary>
-    private static void AssertSemanticManifestEquality(
+    internal static void AssertSemanticManifestEquality(
         NdsImageManifest source,
         NdsImageManifest rebuilt,
         NdsImageBuildProfile profile)
     {
         Assert.Equal(
             (source.Header.Title, source.Header.GameCode, source.Header.MakerCode, source.Header.Kind,
-                source.Header.Version, source.Header.RegionCode, source.Header.AutoStart),
+                source.Header.Version, source.Header.RegionCode, source.Header.DsiFlags, source.Header.AutoStart,
+                source.Header.DebugRomSize, source.Header.DebugLoadAddress, source.Header.DebugRomSha256),
             (rebuilt.Header.Title, rebuilt.Header.GameCode, rebuilt.Header.MakerCode, rebuilt.Header.Kind,
-                rebuilt.Header.Version, rebuilt.Header.RegionCode, rebuilt.Header.AutoStart));
+                rebuilt.Header.Version, rebuilt.Header.RegionCode, rebuilt.Header.DsiFlags, rebuilt.Header.AutoStart,
+                rebuilt.Header.DebugRomSize, rebuilt.Header.DebugLoadAddress, rebuilt.Header.DebugRomSha256));
         if (profile != NdsImageBuildProfile.Ndstool1503)
         {
             Assert.Equal(
@@ -166,9 +220,15 @@ public sealed class PrivateCorpusTransformTests
         {
             Assert.Equal(
                 (source.Dsi.TitleId, source.Dsi.RegionFlags, source.Dsi.AccessControl,
+                    source.Dsi.ScfgExtMask, source.Dsi.ApplicationFlags, source.Dsi.EulaVersion,
+                    source.Dsi.AgeRatingsUsage, source.Dsi.MemoryBankSettingsHex,
+                    source.Dsi.SharedDataFileSizesHex, source.Dsi.AgeRatingsHex,
                     source.Dsi.HasModcryptAreas, source.Dsi.UsesInsecureModcryptKey,
                     source.Dsi.ModcryptArea1.Length, source.Dsi.ModcryptArea2.Length),
                 (rebuilt.Dsi.TitleId, rebuilt.Dsi.RegionFlags, rebuilt.Dsi.AccessControl,
+                    rebuilt.Dsi.ScfgExtMask, rebuilt.Dsi.ApplicationFlags, rebuilt.Dsi.EulaVersion,
+                    rebuilt.Dsi.AgeRatingsUsage, rebuilt.Dsi.MemoryBankSettingsHex,
+                    rebuilt.Dsi.SharedDataFileSizesHex, rebuilt.Dsi.AgeRatingsHex,
                     rebuilt.Dsi.HasModcryptAreas, rebuilt.Dsi.UsesInsecureModcryptKey,
                     rebuilt.Dsi.ModcryptArea1.Length, rebuilt.Dsi.ModcryptArea2.Length));
         }
@@ -197,7 +257,7 @@ public sealed class PrivateCorpusTransformTests
     }
 
     /// <summary>Allows known source defects while rejecting any new error category introduced by reconstruction.</summary>
-    private static void AssertIntroducesNoValidationErrors(NdsValidationResult source, NdsValidationResult rebuilt)
+    internal static void AssertIntroducesNoValidationErrors(NdsValidationResult source, NdsValidationResult rebuilt)
     {
         string[] permitted = source.Diagnostics
             .Where(static diagnostic => diagnostic.Severity == NdsDiagnosticSeverity.Error)

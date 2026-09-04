@@ -12,6 +12,11 @@ internal static class NdsImageBuildImporter
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(image);
+        NdsDownloadPlaySignatureWriter.ValidateSource(image);
+        if (image.CarrierLayout.Kind == NdsImageCarrier.Unknown || image.CarrierLayout.Diagnostics.Any(static item => item.Severity == NdsDiagnosticSeverity.Error))
+        {
+            throw new InvalidDataException("A malformed or unresolved carrier layout cannot be structurally imported.");
+        }
         byte[] arm9 = await ReadRegionAsync(image, image.Header.Arm9.Data, cancellationToken).ConfigureAwait(false);
         byte[] arm7 = await ReadRegionAsync(image, image.Header.Arm7.Data, cancellationToken).ConfigureAwait(false);
         var arm9Definition = new NdsProgramDefinition(
@@ -44,9 +49,18 @@ internal static class NdsImageBuildImporter
                     .OfType<NdsProgram>());
         }
 
+        NdsDebugProgramDefinition? debugProgram = image.Header.DebugRomSize == 0
+            ? null
+            : new(
+                await ReadRegionAsync(image, image.Header.DebugRom, cancellationToken).ConfigureAwait(false),
+                image.Header.DebugLoadAddress);
+
         var builder = new NdsImageBuilder
         {
             Kind = image.Header.Kind,
+            Carrier = image.CarrierLayout.Kind,
+            ImportedDigitalCapacity = image.CarrierLayout.Kind == NdsImageCarrier.DigitalSrl ? image.Header.DeviceCapacityExponent : null,
+            ImportedDigitalSecureCrc = image.Header.SecureAreaCrc,
             Title = image.Header.Title,
             GameCode = image.Header.GameCode,
             MakerCode = image.Header.MakerCode,
@@ -60,6 +74,9 @@ internal static class NdsImageBuildImporter
             Arm9AutoLoad = image.Header.Arm9AutoLoad,
             Arm7AutoLoad = image.Header.Arm7AutoLoad,
             SecureDisable = image.Header.SecureDisable,
+            NandRomEndUnits = image.Header.NandRomEndUnits,
+            NandWritableStartUnits = image.Header.NandWritableStartUnits,
+            DebugProgram = debugProgram,
             Arm9 = arm9Definition,
             Arm7 = new(
                 NdsProcessor.Arm7,
@@ -69,9 +86,14 @@ internal static class NdsImageBuildImporter
             Arm9i = arm9iDefinition,
             Arm7i = arm7iDefinition,
             DsiMetadata = dsiMetadata,
+            DsMetadata = image.Header.DsExtended is null ? null : NdsDsBuildMetadata.FromImage(image),
+            DownloadPlaySignature = image.DownloadPlaySignature,
+            Arm9OverlayAuthentication = ImportOverlayAuthentication(image),
             Banner = image.Banner,
         };
         builder.SetNintendoLogo(image.Header.RawData.Span.Slice(0xC0, 156));
+        builder.SetPostHeaderData(image.CarrierLayout.PostHeaderData.Span);
+        if (image.CarrierLayout is NdsCartridgeLayout cartridge) { builder.SetTwlReservedData(cartridge.TwlReservedData.Span); }
 
         foreach (NdsDirectory directory in image.FileSystem.Directories)
         {
@@ -100,6 +122,29 @@ internal static class NdsImageBuildImporter
         }
 
         return builder;
+    }
+
+    /// <summary>Retains repairable embedded-key state or an exact failure reason for a malformed/stale source table.</summary>
+    private static NdsOverlayAuthenticationBuildOptions? ImportOverlayAuthentication(NdsImage image)
+    {
+        NdsOverlayAuthenticationTable? table = image.Arm9OverlayAuthentication;
+        if (table is null)
+        {
+            return null;
+        }
+
+        if (table.State != NdsOverlayAuthenticationTableState.Complete)
+        {
+            return NdsOverlayAuthenticationBuildOptions.CreateUnrepairable(
+                table,
+                $"The source ARM9 overlay authentication table state is {table.State}.");
+        }
+
+        return NdsOverlayAuthenticationValidator.TryFindEmbeddedKey(image, table, out byte[] key, out _)
+            ? NdsOverlayAuthenticationBuildOptions.FromImported(table, key)
+            : NdsOverlayAuthenticationBuildOptions.CreateUnrepairable(
+                table,
+                "No conventional embedded ARM9 key block validates every stored overlay authentication record.");
     }
 
     /// <summary>Materializes one optional DSi Program while retaining its single-address tuple semantics.</summary>

@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $true)][string]$PackagePath,
-    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Cli")][string]$PackageId,
+    [Parameter(Mandatory = $true)][ValidateSet("NdsForge", "NdsForge.Nitro", "NdsForge.Graphics", "NdsForge.Audio.Wav", "NdsForge.Cli")][string]$PackageId,
     [string]$ExpectedVersion
 )
 
@@ -60,15 +60,17 @@ try {
     foreach ($entry in $archive.Entries) { $entries[$entry.FullName] = $entry }
 
     $common = @("README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md")
-    $specific = if ($PackageId -eq "NdsForge") {
-        @("lib/net10.0/NdsForge.dll", "lib/net10.0/NdsForge.xml")
-    } else {
-        @(
+    $specific = switch ($PackageId) {
+        "NdsForge" { @("lib/net10.0/NdsForge.dll", "lib/net10.0/NdsForge.xml") }
+        "NdsForge.Nitro" { @("lib/net10.0/NdsForge.Nitro.dll", "lib/net10.0/NdsForge.Nitro.xml") }
+        "NdsForge.Graphics" { @("lib/net10.0/NdsForge.Graphics.dll", "lib/net10.0/NdsForge.Graphics.xml") }
+        "NdsForge.Audio.Wav" { @("lib/net10.0/NdsForge.Audio.Wav.dll", "lib/net10.0/NdsForge.Audio.Wav.xml") }
+        "NdsForge.Cli" { @(
             "tools/net10.0/any/DotnetToolSettings.xml",
             "tools/net10.0/any/NdsForge.Cli.dll",
             "tools/net10.0/any/NdsForge.Cli.xml",
             "tools/net10.0/any/NdsForge.dll",
-            "tools/net10.0/any/NdsForge.xml")
+            "tools/net10.0/any/NdsForge.xml") }
     }
     foreach ($required in @($common + $specific)) {
         if (-not $entries.ContainsKey($required) -or $entries[$required].Length -eq 0) {
@@ -76,10 +78,12 @@ try {
         }
     }
 
-    $documentationPath = if ($PackageId -eq "NdsForge") {
-        "lib/net10.0/NdsForge.xml"
-    } else {
-        "tools/net10.0/any/NdsForge.Cli.xml"
+    $documentationPath = switch ($PackageId) {
+        "NdsForge" { "lib/net10.0/NdsForge.xml" }
+        "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.xml" }
+        "NdsForge.Graphics" { "lib/net10.0/NdsForge.Graphics.xml" }
+        "NdsForge.Audio.Wav" { "lib/net10.0/NdsForge.Audio.Wav.xml" }
+        "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.xml" }
     }
     if ((Read-Text $entries[$documentationPath]) -notmatch '<members>') {
         throw "$PackageId XML documentation does not contain API members."
@@ -120,7 +124,11 @@ try {
     $namespaces = [System.Xml.XmlNamespaceManager]::new($nuspec.NameTable)
     $namespaces.AddNamespace("n", $nuspec.DocumentElement.NamespaceURI)
     $dependencies = @($nuspec.SelectNodes("/n:package/n:metadata/n:dependencies//n:dependency", $namespaces))
-    if ($dependencies.Count -ne 0) { throw "$PackageId unexpectedly exposes runtime NuGet dependencies." }
+    if ($PackageId -in @("NdsForge.Graphics", "NdsForge.Audio.Wav")) {
+        if ($dependencies.Count -ne 1 -or $dependencies[0].GetAttribute("id") -ne "NdsForge.Nitro") {
+            throw "$PackageId must expose exactly its NdsForge.Nitro package dependency."
+        }
+    } elseif ($dependencies.Count -ne 0) { throw "$PackageId unexpectedly exposes runtime NuGet dependencies." }
     $toolTypes = @($nuspec.SelectNodes("/n:package/n:metadata/n:packageTypes/n:packageType[@name='DotnetTool']", $namespaces))
     if (($PackageId -eq "NdsForge.Cli") -ne ($toolTypes.Count -eq 1)) {
         throw "$PackageId has incorrect dotnet-tool package metadata."
@@ -134,10 +142,12 @@ if (-not (Test-Path -LiteralPath $symbolPath -PathType Leaf)) { throw "Symbol pa
 $symbolArchive = [System.IO.Compression.ZipFile]::OpenRead($symbolPath)
 try {
     Assert-SafeArchive $symbolArchive "Symbol package"
-    $pdbPath = if ($PackageId -eq "NdsForge") {
-        "lib/net10.0/NdsForge.pdb"
-    } else {
-        "tools/net10.0/any/NdsForge.Cli.pdb"
+    $pdbPath = switch ($PackageId) {
+        "NdsForge" { "lib/net10.0/NdsForge.pdb" }
+        "NdsForge.Nitro" { "lib/net10.0/NdsForge.Nitro.pdb" }
+        "NdsForge.Graphics" { "lib/net10.0/NdsForge.Graphics.pdb" }
+        "NdsForge.Audio.Wav" { "lib/net10.0/NdsForge.Audio.Wav.pdb" }
+        "NdsForge.Cli" { "tools/net10.0/any/NdsForge.Cli.pdb" }
     }
     $pdb = $symbolArchive.GetEntry($pdbPath)
     if ($null -eq $pdb -or $pdb.Length -eq 0) { throw "Symbol package is missing '$pdbPath'." }

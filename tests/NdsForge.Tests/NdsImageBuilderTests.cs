@@ -52,16 +52,23 @@ public sealed class NdsImageBuilderTests
     {
         byte[] hmacKey = [1, 2, 3, 4];
         NdsImageBuilder builder = CreateBuilder();
+        byte[] arm9Data = Enumerable.Range(0, NdsSecureArea.ByteLength + 32)
+            .Select(static index => (byte)(index * 17))
+            .ToArray();
+        builder.Arm9 = new(NdsProcessor.Arm9, arm9Data, 0x02000000, 0x02000000);
         builder.Kind = NdsImageKind.NintendoDsiEnhanced;
         builder.Arm9i = new(NdsProcessor.Arm9i, [0x91, 1, 2, 3, 4], 0x02E00000, 0x02E00000);
         builder.Arm7i = new(NdsProcessor.Arm7i, [0x71, 5, 6], 0x02E80000, 0x02E80000);
         builder.Banner = new NdsBannerBuilder().SetTitle(NdsBannerLanguage.English, "DSi Build").Build();
-        builder.DsiMetadata = new()
+        var metadata = new NdsDsiBuildMetadata
         {
-            RegionFlags = 0x11223344,
-            AccessControl = 0x55667788,
+            DsiFlags = 0xA0,
+            RegionFlags = 0x11223340,
+            AccessControl = 0x55660000,
             ScfgExtMask = 0x99AABBCC,
-            ApplicationFlags = 0x5A,
+            ApplicationFlags = 0,
+            EulaVersion = 9,
+            AgeRatingsUsage = 0x80,
             Arm7DeviceListAddress = 0x02E81000,
             TitleId = 0x0003000442543031,
             PublicSaveSize = 0x10000,
@@ -71,13 +78,33 @@ public sealed class NdsImageBuilderTests
                 hmacKey,
                 NdsDsiSignatureMode.NoGbaDevelopmentMarker),
         };
+        metadata.CryptoPolicy = NdsDsiCryptoPolicy.HasDsiRegion | NdsDsiCryptoPolicy.UsesModcrypt;
+        metadata.Regions = NdsDsiRegionPermissions.Japan | NdsDsiRegionPermissions.Europe;
+        metadata.AccessControlFlags = NdsDsiAccessCapabilities.SdCard | NdsDsiAccessCapabilities.PhotoRead;
+        metadata.ApplicationFeatures = NdsDsiApplicationFeatures.RequiresEula |
+            NdsDsiApplicationFeatures.ShowsWirelessIcon;
+        metadata.SetMemoryBankSettings(Enumerable.Range(0, 0x30).Select(static index => (byte)index).ToArray());
+        metadata.SetSharedDataFileSizes([9, 8, 7, 6, 5, 4]);
+        metadata.SetAgeRatings(Enumerable.Repeat((byte)0x80, 16).ToArray());
+        metadata.SetAgeRating(new(NdsDsiAgeRatingAuthority.Esrb, 0xEA));
+        builder.DsiMetadata = metadata;
+        builder.Carrier = NdsImageCarrier.DigitalSrl;
 
         byte[] data = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
         using NdsImage image = NdsImage.Load(data);
         NdsDsiHeader dsi = Assert.IsType<NdsDsiHeader>(image.Header.Dsi);
 
         Assert.Equal(NdsImageKind.NintendoDsiEnhanced, image.Header.Kind);
-        Assert.Equal(0x11223344U, dsi.RegionFlags);
+        Assert.Equal(0xA3, image.Header.DsiFlags);
+        Assert.Equal(0x11223345U, dsi.RegionFlags);
+        Assert.Equal(0x55660808U, dsi.AccessControl);
+        Assert.Equal(NdsDsiApplicationFeatures.RequiresEula |
+            NdsDsiApplicationFeatures.ShowsWirelessIcon, dsi.ApplicationFeatures);
+        Assert.Equal(Enumerable.Range(0, 0x30).Select(static index => (byte)index), dsi.MemoryBankSettings.ToArray());
+        Assert.Equal([9, 8, 7, 6, 5, 4], dsi.SharedDataFileSizes);
+        Assert.Equal(9, dsi.EulaVersion);
+        Assert.Equal(0x80, dsi.AgeRatingsUsage);
+        Assert.Equal(0xEA, dsi.Ratings[(int)NdsDsiAgeRatingAuthority.Esrb].RawValue);
         Assert.Equal(0x0003000442543031UL, dsi.TitleId);
         Assert.Equal((uint)data.Length, dsi.TotalImageSize);
         Assert.Equal((uint)builder.Banner.RawData.Length, dsi.BannerSize);
@@ -90,6 +117,9 @@ public sealed class NdsImageBuilderTests
             await ReadRegionAsync(image, image.Header.Arm9i.Data, TestContext.Current.CancellationToken));
 #pragma warning disable CA5350 // The test independently verifies the DSi format's mandated HMAC-SHA1 bytes.
         Assert.Equal(HMACSHA1.HashData(hmacKey, new byte[] { 0x91, 1, 2, 3, 4 }), dsi.Arm9iHmac.ToArray());
+        Assert.Equal(
+            HMACSHA1.HashData(hmacKey, arm9Data.AsSpan(NdsSecureArea.ByteLength)),
+            dsi.Arm9WithoutSecureAreaHmac.ToArray());
         byte[] firstSector = await ReadRegionAsync(
             image,
             new(dsi.NtrDigest.Offset, Math.Min(dsi.DigestSectorSize, dsi.NtrDigest.Length)),
@@ -106,6 +136,26 @@ public sealed class NdsImageBuilderTests
         Assert.Equal(1, dsi.RsaSignature.Span[1]);
         Assert.True(image.Validate().IsValid);
         Assert.True(image.Validate(new NdsValidationOptions().SetDsiHmacKey(hmacKey)).IsValid);
+
+        byte[] secureAreaTamper = data.ToArray();
+        secureAreaTamper[checked((int)image.Header.Arm9.Data.Offset + 0x100)] ^= 0xFF;
+        using (NdsImage tamperedSecureArea = NdsImage.Load(secureAreaTamper))
+        {
+            NdsValidationResult validation = tamperedSecureArea.Validate(
+                new NdsValidationOptions().SetDsiHmacKey(hmacKey));
+            Assert.Contains(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1310");
+            Assert.DoesNotContain(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1322");
+        }
+
+        byte[] nonSecureAreaTamper = data.ToArray();
+        nonSecureAreaTamper[checked((int)image.Header.Arm9.Data.Offset + NdsSecureArea.ByteLength)] ^= 0xFF;
+        using (NdsImage tamperedNonSecureArea = NdsImage.Load(nonSecureAreaTamper))
+        {
+            NdsValidationResult validation = tamperedNonSecureArea.Validate(
+                new NdsValidationOptions().SetDsiHmacKey(hmacKey));
+            Assert.Contains(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1310");
+            Assert.Contains(validation.Diagnostics, static diagnostic => diagnostic.Code == "NDS1322");
+        }
 
         byte[] tamperedData = data.ToArray();
         tamperedData[checked((int)image.Header.Arm9i.Data.Offset)] ^= 0xFF;
@@ -137,9 +187,46 @@ public sealed class NdsImageBuilderTests
             rebuilt.Header.Arm9i!.Data,
             TestContext.Current.CancellationToken));
         Assert.Equal(0x0003000442543031UL, rebuilt.Header.Dsi!.TitleId);
+        Assert.Equal(0xA3, rebuilt.Header.DsiFlags);
+        Assert.Equal(0x11223345U, rebuilt.Header.Dsi.RegionFlags);
+        Assert.Equal(0x55660808U, rebuilt.Header.Dsi.AccessControl);
+        Assert.Equal([9, 8, 7, 6, 5, 4], rebuilt.Header.Dsi.SharedDataFileSizes);
+        Assert.Equal(0xEA, rebuilt.Header.Dsi.Ratings[(int)NdsDsiAgeRatingAuthority.Esrb].RawValue);
         Assert.Equal(new byte[20], rebuilt.Header.Dsi.Arm9iHmac.ToArray());
         Assert.Equal([9, 8, 7], await rebuilt.FileSystem.GetFile("/added.bin")
             .ReadAllBytesAsync(TestContext.Current.CancellationToken));
+    }
+
+    [Fact]
+    public async Task BuildsImportsAndVerifiesOptionalDebugProgram()
+    {
+        NdsImageBuilder builder = CreateBuilder();
+        builder.DebugProgram = new([0xDE, 0xB6, 0x01, 0x02, 0x03], 0x027F_0000);
+
+        byte[] first = await builder.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        NdsImageBuilder imported;
+        using (NdsImage image = NdsImage.Load(first))
+        {
+            Assert.Equal((uint)5, image.Header.DebugRomSize);
+            Assert.Equal(0x027F_0000U, image.Header.DebugLoadAddress);
+            Assert.Equal([0xDE, 0xB6, 0x01, 0x02, 0x03], await ReadRegionAsync(
+                image,
+                image.Header.DebugRom,
+                TestContext.Current.CancellationToken));
+            imported = await NdsImageBuilder.FromImageAsync(image, TestContext.Current.CancellationToken);
+        }
+
+        byte[] rebuilt = await imported.BuildAsync(cancellationToken: TestContext.Current.CancellationToken);
+        using NdsImage reparsed = NdsImage.Load(rebuilt);
+        NdsImageManifest manifest = await reparsed.CreateManifestAsync(TestContext.Current.CancellationToken);
+        Assert.Equal((uint)5, reparsed.Header.DebugRomSize);
+        Assert.Equal(0x027F_0000U, reparsed.Header.DebugLoadAddress);
+        Assert.Equal(Convert.ToHexStringLower(SHA256.HashData(new byte[] { 0xDE, 0xB6, 0x01, 0x02, 0x03 })),
+            manifest.Header.DebugRomSha256);
+        Assert.Equal([0xDE, 0xB6, 0x01, 0x02, 0x03], await ReadRegionAsync(
+            reparsed,
+            reparsed.Header.DebugRom,
+            TestContext.Current.CancellationToken));
     }
 
     [Fact]

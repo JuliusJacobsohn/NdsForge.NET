@@ -8,6 +8,14 @@ public sealed class NdsValidationOptions
 {
     /// <summary>Retains a copied DSi HMAC key so validation cannot observe later caller buffer mutation.</summary>
     private byte[]? _dsiHmacKey;
+    /// <summary>Retains an optional classic-DS per-overlay key for layouts whose program does not expose it conventionally.</summary>
+    private byte[]? _arm9OverlayHmacKey;
+    /// <summary>Retains the late-DS program/overlay credential independently from the other HMAC keys.</summary>
+    private byte[]? _dsProgramHmacKey;
+    /// <summary>Retains the late-DS banner key without substituting either other HMAC credential.</summary>
+    private byte[]? _dsBannerHmacKey;
+    /// <summary>Retains explicitly selected late-DS RSA trust independently from DSi validation settings.</summary>
+    private NdsDsiRsaPublicKey? _dsRsaPublicKey;
     /// <summary>Retains the immutable caller table used to distinguish and checksum KEY1 secure-area states.</summary>
     private NdsKey1KeyTable? _secureAreaKeyTable;
     /// <summary>Retains immutable caller trust material for DSi header authenticity checks.</summary>
@@ -15,6 +23,49 @@ public sealed class NdsValidationOptions
 
     /// <summary>Returns a fresh keyless policy suitable for structural validation without shared mutable state.</summary>
     public static NdsValidationOptions Default => new();
+
+    /// <summary>
+    /// Requests late-DS authentication checks and explicit missing-credential findings. Supplying any late-DS
+    /// HMAC or RSA credential also enables these checks. The default keyless structural policy leaves them off.
+    /// </summary>
+    public bool ValidateDsAuthentication { get; init; }
+
+    /// <summary>Copies the late-DS program/aggregate HMAC key and enables late-DS authentication validation.</summary>
+    /// <param name="key">Non-empty caller credentials, distinct from the classic per-overlay key.</param>
+    /// <returns>This validation policy.</returns>
+    public NdsValidationOptions SetDsProgramHmacKey(ReadOnlySpan<byte> key)
+    {
+        if (key.IsEmpty)
+        {
+            throw new ArgumentException("A late-DS program HMAC key cannot be empty.", nameof(key));
+        }
+
+        _dsProgramHmacKey = key.ToArray();
+        return this;
+    }
+
+    /// <summary>Copies the separate late-DS banner HMAC key and enables late-DS authentication validation.</summary>
+    /// <param name="key">Non-empty caller credentials for the banner field.</param>
+    /// <returns>This validation policy.</returns>
+    public NdsValidationOptions SetDsBannerHmacKey(ReadOnlySpan<byte> key)
+    {
+        if (key.IsEmpty)
+        {
+            throw new ArgumentException("A late-DS banner HMAC key cannot be empty.", nameof(key));
+        }
+
+        _dsBannerHmacKey = key.ToArray();
+        return this;
+    }
+
+    /// <summary>Selects an explicitly trusted late-DS RSA key and enables late-DS authentication validation.</summary>
+    /// <param name="publicKey">Caller-trusted RSA-1024 parameters; no publisher key is inferred.</param>
+    /// <returns>This validation policy.</returns>
+    public NdsValidationOptions SetDsRsaPublicKey(NdsDsiRsaPublicKey publicKey)
+    {
+        _dsRsaPublicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey));
+        return this;
+    }
 
     /// <summary>
     /// Recomputes DSi component HMAC-SHA1 fields with caller-supplied trust material. Merely storing a matching
@@ -30,6 +81,23 @@ public sealed class NdsValidationOptions
         }
 
         _dsiHmacKey = key.ToArray();
+        return this;
+    }
+
+    /// <summary>
+    /// Verifies classic-DS Download Play records with an explicit HMAC-SHA1 key instead of discovering a matching
+    /// 64-byte key block inside decoded ARM9 bytes.
+    /// </summary>
+    /// <param name="key">Non-empty caller-owned key bytes, copied immediately.</param>
+    /// <returns>The same options object for fluent validation configuration.</returns>
+    public NdsValidationOptions SetArm9OverlayHmacKey(ReadOnlySpan<byte> key)
+    {
+        if (key.IsEmpty)
+        {
+            throw new ArgumentException("An ARM9 overlay validation HMAC key cannot be empty.", nameof(key));
+        }
+
+        _arm9OverlayHmacKey = key.ToArray();
         return this;
     }
 
@@ -74,6 +142,22 @@ public sealed class NdsValidationOptions
 
     /// <summary>Exposes optional copied key bytes only to the internal integrity validator.</summary>
     internal ReadOnlyMemory<byte> DsiHmacKey => _dsiHmacKey;
+
+    /// <summary>Exposes optional classic-DS overlay key bytes only to the format-specific validator.</summary>
+    internal ReadOnlyMemory<byte> Arm9OverlayHmacKey => _arm9OverlayHmacKey;
+
+    /// <summary>Enables checks only after the caller selects late-DS validation or supplies a related credential.</summary>
+    internal bool RequiresDsAuthentication => ValidateDsAuthentication ||
+        _dsProgramHmacKey is not null || _dsBannerHmacKey is not null || _dsRsaPublicKey is not null;
+
+    /// <summary>Exposes the copied late-DS program/overlay credential only to integrity calculations.</summary>
+    internal ReadOnlyMemory<byte> DsProgramHmacKey => _dsProgramHmacKey;
+
+    /// <summary>Exposes the copied late-DS banner credential only to integrity calculations.</summary>
+    internal ReadOnlyMemory<byte> DsBannerHmacKey => _dsBannerHmacKey;
+
+    /// <summary>Exposes immutable explicitly selected late-DS RSA trust.</summary>
+    internal NdsDsiRsaPublicKey? DsRsaPublicKey => _dsRsaPublicKey;
 
     /// <summary>Exposes optional KEY1 material only to the internal secure-area validator.</summary>
     internal NdsKey1KeyTable? SecureAreaKeyTable => _secureAreaKeyTable;

@@ -12,6 +12,9 @@ internal static class NdsImageValidator
     public static NdsValidationResult Validate(NdsImage image, NdsValidationOptions options)
     {
         var diagnostics = new List<NdsDiagnostic>();
+        diagnostics.AddRange(image.CarrierLayout.Diagnostics);
+        diagnostics.AddRange(image.SizeInfo.Diagnostics);
+        NdsNandHeader.Validate(image, diagnostics);
         ValidateChecksum(
             diagnostics, "NDS1001", "header", image.Header.HeaderCrc,
             image.Header.RawData.Span[..0x15E], new(0, 0x160));
@@ -35,8 +38,11 @@ internal static class NdsImageValidator
             ValidateRegion(diagnostics, image.Length, "NDS1108", "ARM7i program", image.Header.Arm7i.Data);
         }
 
+        ValidateDebugProgram(diagnostics, image.Length, image.Header);
+
         ValidateOverlays(diagnostics, image.Arm9Overlays);
         ValidateOverlays(diagnostics, image.Arm7Overlays);
+        NdsOverlayAuthenticationValidator.Validate(image, diagnostics, options);
         if (image.Banner is not null)
         {
             diagnostics.AddRange(image.Banner.ValidateCrcs(image.Header.BannerOffset));
@@ -44,8 +50,34 @@ internal static class NdsImageValidator
 
         NdsSecureAreaValidator.Validate(image, diagnostics, options.SecureAreaKeyTable);
         NdsDsiIntegrityValidator.Validate(image, diagnostics, options);
+        NdsDsIntegrityValidator.Validate(image, diagnostics, options);
+        if (image.HasTruncatedDownloadPlaySignature)
+        {
+            diagnostics.Add(new("NDS1551", NdsDiagnosticSeverity.Error,
+                "A Download Play trailer identifier is present, but its complete 0x88-byte payload extends beyond the image.",
+                new(image.Header.UsedImageSize, image.Length - image.Header.UsedImageSize)));
+        }
 
         return new NdsValidationResult(diagnostics);
+    }
+
+    /// <summary>Requires debug source offset and length to be jointly absent or a physically bounded interval.</summary>
+    private static void ValidateDebugProgram(List<NdsDiagnostic> diagnostics, long imageLength, NdsHeader header)
+    {
+        if ((header.DebugRomOffset == 0) != (header.DebugRomSize == 0))
+        {
+            diagnostics.Add(new(
+                "NDS1109",
+                NdsDiagnosticSeverity.Error,
+                "The optional debug program must declare both a nonzero source offset and a nonzero length, or neither.",
+                header.DebugRom));
+            return;
+        }
+
+        if (header.DebugRomSize != 0)
+        {
+            ValidateRegion(diagnostics, imageLength, "NDS1109", "debug program", header.DebugRom);
+        }
     }
 
     /// <summary>Compares one stored little-endian CRC16 with the library's Modbus-polynomial calculation.</summary>

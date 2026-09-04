@@ -1,0 +1,4310 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "WarioWare- Touched! [AZWE] [USA - English].nds",
+    "length": 33554432,
+    "sha256": "3a203638c8a5ace080b503a7789d5885467425f39de20e80a693400237bcb2bf",
+    "headerTitle": "WARIOTOUCHED",
+    "gameCode": "AZWE",
+    "makerCode": "01",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "WarioWare: Touched!",
+    "bannerTitles": {
+      "Japanese": "WarioWare: Touched!\nNintendo",
+      "English": "WarioWare: Touched!\nNintendo",
+      "French": "WarioWare: Touched!\nNintendo",
+      "German": "WarioWare: Touched!\nNintendo",
+      "Italian": "WarioWare: Touched!\nNintendo",
+      "Spanish": "WarioWare: Touched!\nNintendo"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 158304,
+          "sha256": "998F66C1F818C9EBE7E79C97CA5AED409AFA407D86D5C3A01A114FD4F294C527"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 8416,
+          "sha256": "F2C391C87F8150A427F3EF96B8FBA30089E1AA648F88BCBAC3DB2DD449BAD0CA"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1157636,
+          "sha256": "D17536B9C93E36E6D4332CD8B7E69792D3B68B033C366080FCD9CE3A422D7C8B"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "BE49CF6AD7F8CAA746929C6D057E426F5A4F6222E90289A11B2EB1BA9B8899E6"
+        },
+        {
+          "path": "data/Data/FontData.bin",
+          "length": 346760,
+          "sha256": "E51CF60252F1DC8AD728ED26E695303F4B0311E908EB935FB87B9BFE4D57798A"
+        },
+        {
+          "path": "data/Data/cg_PetitCapture.nccarc",
+          "length": 568228,
+          "sha256": "DD4704572054BA785FF5B8E2D7E7BA1A1C185094EA88390385D05C1B8034ED10"
+        },
+        {
+          "path": "data/Menu/Common/CommonObjLPresent00_US.nanr_c",
+          "length": 772,
+          "sha256": "3D18BA4551ECAC8B27D99A1C531AB8FDAB835F5FA831B8335D11BA9F85900C3F"
+        },
+        {
+          "path": "data/Menu/Common/CommonObjLPresent00_US.ncbr_c",
+          "length": 8493,
+          "sha256": "DE8BBD0D9A4F5CF58A19F3A0E77949A5A16EDA51FCE66B58146EEF10A1CD2373"
+        },
+        {
+          "path": "data/Menu/Common/CommonObjLPresent00_US.ncer_c",
+          "length": 619,
+          "sha256": "94F6E5F9187464F74399F1AE295F7F3B524237B0B526154A5C08A1D09A34A935"
+        },
+        {
+          "path": "data/Menu/Common/CommonObjLPresent_US.nclr_c",
+          "length": 331,
+          "sha256": "FCCDDEB580B0AA57C48DDD5B31F03833F3A7D8B10704E65E6F94F35B8B0779C1"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL00.nanr_c",
+          "length": 3044,
+          "sha256": "FBD8BFFF6DCDC891508749872DA89F2CDC5E94EA99F76BA962D76840B5A51DCE"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL00.ncbr_c",
+          "length": 12614,
+          "sha256": "A4B24BB8A2CF23060027D98EFD0461B5C2999B2CCA5A3F194ED825D0B08D5D04"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL00.ncer_c",
+          "length": 3037,
+          "sha256": "357A72374D6C2987D74EEA5DF5215244F3C68D2B613207ED6FD27A967F725025"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL00.nclr_c",
+          "length": 272,
+          "sha256": "DBF8F222C60C742271F4D7F73B72FD4C0D96A48EAE2680D76532B8ADA254E6AB"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL01.nanr_c",
+          "length": 2557,
+          "sha256": "668BA205109BF06F8C24E00A664CFE534708DBA4B317FF7FB9F0A7265ACF54DF"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL01.ncbr_c",
+          "length": 11070,
+          "sha256": "8C6E13006F20D4C56975F6565462194BB9555343C6C08EDCD602DBF2938D1E09"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL01.ncer_c",
+          "length": 2499,
+          "sha256": "DF0AB79709BA3DA88DEAC4CED24F8298C628CFEB51E10A604F78CF0E63F5EEBB"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL01.nclr_c",
+          "length": 256,
+          "sha256": "B10DC2CC3526865B91512B03A2CE5D05961EC4A906871D1EEE911604A36BA569"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL02.nanr_c",
+          "length": 3642,
+          "sha256": "FF5305966640CA120D227CF330C784FCE0BCCD9A0B95130DC7B905A32006B509"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL02.ncbr_c",
+          "length": 11410,
+          "sha256": "FD84F978066EDEB126BE303C728FDF6F690926C2B3119E2BF361259E9A5E4AC6"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL02.ncer_c",
+          "length": 3742,
+          "sha256": "75EF463C8A71A0CDFD1C3D657746DEE305A2A26B8FABE4D699248BEA964C1F38"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL02.nclr_c",
+          "length": 373,
+          "sha256": "53908E8FF797544E9BBA82D393EADD8CB8A2F5F699F509555331BF7858B6F448"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL03.nanr_c",
+          "length": 1675,
+          "sha256": "C727352BAB618902055EBCDC4AF1FCBCD4C0BE38A6E457C12164538B90CA1EEF"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL03.ncbr_c",
+          "length": 9383,
+          "sha256": "9D1009BC2C75DF6CD1096E082C90194FA6A950FB0F7E88113C3E28921E04A1AA"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL03.ncer_c",
+          "length": 1937,
+          "sha256": "113C30859410F09809C0D88D21BFD4304FAE9B73828C823729557A3C92010C2C"
+        },
+        {
+          "path": "data/Menu/Game/GameObjL03.nclr_c",
+          "length": 269,
+          "sha256": "32E85B965F9426EEC5862776D03972020B8CD3C5ACF10865FE0F7AA58260EAD2"
+        },
+        {
+          "path": "data/Menu/Option/OptionWindow.nanr_c",
+          "length": 321,
+          "sha256": "E50419DB7261E86A00334DBE35C53F98A7F2BB8B401E993BFE9C977CD46C9540"
+        },
+        {
+          "path": "data/Menu/Option/OptionWindow.ncbr_c",
+          "length": 4373,
+          "sha256": "C20608DB14B823D80EF6DFF4BE6647361F2659294119CDB00DE391D6BB07652B"
+        },
+        {
+          "path": "data/Menu/Option/OptionWindow.ncer_c",
+          "length": 668,
+          "sha256": "E1F2FB840F8832FEDCB706B27884778C7EA5399DCD0C15F91788837A6A3ABC37"
+        },
+        {
+          "path": "data/Menu/Option/OptionWindow.nclr_c",
+          "length": 148,
+          "sha256": "0DCDC8EDF97C5FE58D9BAF4780BD6D08F47B1073E9C0BA108B0CCCF80E0D7C4D"
+        },
+        {
+          "path": "data/Menu/cg_CharacterIllust.nccarc",
+          "length": 359088,
+          "sha256": "AEDAC3D60F21CC9E1C52A7984C804C41D5B07F52D1F96B8E6E88D7B0376525D7"
+        },
+        {
+          "path": "data/Menu/cg_MainMenu.nccarc_c",
+          "length": 216295,
+          "sha256": "ECA8AF14B4EE5AF826FF4298DB7440BB88CE1CF81495F190553AB689CC7CFFEF"
+        },
+        {
+          "path": "data/Petit/Aggregate/cg_PetitAggregate.nccarc_c",
+          "length": 586,
+          "sha256": "F8570D6786ED5B30552943CB87943C64207A1856DCDDDEA49C67F689FE60963D"
+        },
+        {
+          "path": "data/Petit/AirCap/cg_PetitAirCap.nccarc_c",
+          "length": 5584,
+          "sha256": "6AF84420EB19638AF49A7C34958CBB69FE64AC259BFA035784D389CD69EA4B55"
+        },
+        {
+          "path": "data/Petit/AirPlane/AirPlane.nclr_c",
+          "length": 280,
+          "sha256": "DC8CC75771AAF7167B6CA385540561986A38E9FF638A70516FD4091BA79AF713"
+        },
+        {
+          "path": "data/Petit/AirPlane/AirPlaneA.nanr_c",
+          "length": 394,
+          "sha256": "9E8AF653DF2A91FDEABE9B756DE08F94D8134113EA49DEFF5360F075D4704CB6"
+        },
+        {
+          "path": "data/Petit/AirPlane/AirPlaneA.ncbr_c",
+          "length": 5304,
+          "sha256": "FD0CC56B15598E2C01739501F1FD57B760FCB6E834D4325292A96E2F3C0AA3A0"
+        },
+        {
+          "path": "data/Petit/AirPlane/AirPlaneA.ncer_c",
+          "length": 641,
+          "sha256": "5C5CC8A235DE70F79A18277BF06477B0CA8FB05427DAEE93FC7471AD14302EE5"
+        },
+        {
+          "path": "data/Petit/AirPlane/cg_PetitAirPlane.nccarc_c",
+          "length": 18422,
+          "sha256": "4C8F20F6163E8003B5B063DD6D8566E0729A6ACC78F6514E9660C06460AAA830"
+        },
+        {
+          "path": "data/Petit/AmericanCracker/cg_PetitAmericanCracker.nccarc_c",
+          "length": 6791,
+          "sha256": "D0AE142B3A15CF13BDF38F5BBDD567521C3F3FD507F4A3641CE00E7B2682B02F"
+        },
+        {
+          "path": "data/Petit/AnimalHunter/cg_PetitAnimalHunter.nccarc_c",
+          "length": 3655,
+          "sha256": "F835A6D040B42E2B08961372E2F70982C85EDC373CCE7EE3D2102A87C1AD3944"
+        },
+        {
+          "path": "data/Petit/Arrow/cg_PetitArrow.nccarc_c",
+          "length": 5216,
+          "sha256": "E3DD7E4F301B9CEAF8C762F00FFBFFEDB13FD89E0EA7CA7AFC4882800E827F8F"
+        },
+        {
+          "path": "data/Petit/BabyPenguin/Common.nsbca_c",
+          "length": 8387,
+          "sha256": "7FC512CFAF6CBD4D5C3FFF5918AEE0528A3C1B6B884A66438BAAA8171728DF6A"
+        },
+        {
+          "path": "data/Petit/BabyPenguin/Common.nsbmd_c",
+          "length": 18692,
+          "sha256": "AA434ED9788EAF307CCBAC5AC8E9E96A73A2A35201819B2B82B6E4E19850919B"
+        },
+        {
+          "path": "data/Petit/BabyPenguin/Common.nsbtp_c",
+          "length": 268,
+          "sha256": "78B28C9D03E825D270BF4652990C90EA1259C8CA6204629DE4EDE8DB3D47A2A5"
+        },
+        {
+          "path": "data/Petit/BabyPenguin/Common.nsbva_c",
+          "length": 202,
+          "sha256": "C99D42D37138C05E0972CBA0EE3885A758897334C28E4F5B8AC89C0A72F35332"
+        },
+        {
+          "path": "data/Petit/BabyPenguin/cg_PetitBabyPenguin.nccarc_c",
+          "length": 40,
+          "sha256": "FE6F06953F88574BA341D4F435AD778B90055781F932F91B5181E49401717331"
+        },
+        {
+          "path": "data/Petit/BalloonCrash2/cg_PetitBalloonCrash2.nccarc_c",
+          "length": 24865,
+          "sha256": "F98A0EC3E1684F823B52A21FB79CDBD04AA55344AA81008D1F228A44C39630CF"
+        },
+        {
+          "path": "data/Petit/BalloonCrash/cg_PetitBalloonCrash.nccarc_c",
+          "length": 15165,
+          "sha256": "C245DE570849F5E53375E65A620941D0CE0F792DF1B6C433C3D4F24128048831"
+        },
+        {
+          "path": "data/Petit/BalloonFight/cg_PetitBalloonFight.nccarc_c",
+          "length": 4588,
+          "sha256": "565827547BAED081AFF1F608E4C755781495ECC7804337C7009C1CE8350BB435"
+        },
+        {
+          "path": "data/Petit/BargainSale/BargainSale.nanr",
+          "length": 1548,
+          "sha256": "4C9FCCBD35F3771B1CB1AE6ADD4A5C62A07D778E7517B283CA28DA7A2471A1EC"
+        },
+        {
+          "path": "data/Petit/BargainSale/BargainSale.ncbr",
+          "length": 32816,
+          "sha256": "A0B5403EC78E83892C028903361D6937446873CEC03582AD609723063C306CF4"
+        },
+        {
+          "path": "data/Petit/BargainSale/BargainSale.ncer",
+          "length": 1744,
+          "sha256": "E86D7A947CA0862341B648D2B0D8F25527C434BBE304A514459134738B92EADB"
+        },
+        {
+          "path": "data/Petit/BargainSale/BargainSale.nclr",
+          "length": 552,
+          "sha256": "E673612C201BC8F4083C8B930DE1C25109DA966B4CC45A7FDE63C0D4500AC26C"
+        },
+        {
+          "path": "data/Petit/BargainSale/cg_PetitBargainSale.nccarc_c",
+          "length": 6471,
+          "sha256": "2C2E1DF0A2A379331722E1317E049D012B99EB0DB0C22F5E6052BB35EE8DF6CE"
+        },
+        {
+          "path": "data/Petit/Basketball/cg_PetitBasketball.nccarc_c",
+          "length": 5861,
+          "sha256": "A97F3C4CEDB3726FB16AF1B8A62B8BBBF489187A0B11950E16644345E96AEB5E"
+        },
+        {
+          "path": "data/Petit/Birdman/cg_PetitBirdman.nccarc_c",
+          "length": 92795,
+          "sha256": "A92D27A8C19744FC8906A7ED93105239BE79FB32FED564A8AAF057F79D33C55F"
+        },
+        {
+          "path": "data/Petit/BlackHole/cg_PetitBlackHole.nccarc_c",
+          "length": 32411,
+          "sha256": "66F46AF95C1203BBE511F720F8E69DECEAC4FE9BEDD24A2538B685BE4C4DC26F"
+        },
+        {
+          "path": "data/Petit/Blackboard/cg_PetitBlackboard.nccarc_c",
+          "length": 7924,
+          "sha256": "3E89F8A719F65C1D413CA79364515616394310CCFCF8F6D174B621518976C036"
+        },
+        {
+          "path": "data/Petit/BlowgunDart/cg_PetitBlowgunDart.nccarc_c",
+          "length": 15337,
+          "sha256": "5640D64C433C78896315B0A4FB247BC05661A2E55C6D6D09CEB6F979E739B169"
+        },
+        {
+          "path": "data/Petit/BlowingBubble/BlowingBubbleTex.ncbr_c",
+          "length": 8014,
+          "sha256": "0683C46A306431284C20D8F59BF538E0774AE6CECD5373617FD06581F51790E8"
+        },
+        {
+          "path": "data/Petit/BlowingBubble/BlowingBubbleTex.nclr_c",
+          "length": 177,
+          "sha256": "CCE0CE3A45766D8E0EA95D8DF69D47DE5139F3B73B1FC658583E99D1B8C359BB"
+        },
+        {
+          "path": "data/Petit/BlowingBubble/cg_PetitBlowingBubble.nccarc_c",
+          "length": 2878,
+          "sha256": "AA74DAA44AECDA45F5323E81543790831FF8F787AD0592E6ADB440E6EB1359C0"
+        },
+        {
+          "path": "data/Petit/BlownOff/BlownOff.nanr_c",
+          "length": 1124,
+          "sha256": "6D96A3B6C096AC54FDD538F395B57C68E8C31BF2924D40403BF8E20B910E4767"
+        },
+        {
+          "path": "data/Petit/BlownOff/BlownOff.ncbr_c",
+          "length": 6067,
+          "sha256": "EA239CECC52F2E26BB23321CE1A687EADE98B11333D11E605162F9071099A8F2"
+        },
+        {
+          "path": "data/Petit/BlownOff/BlownOff.ncer_c",
+          "length": 2909,
+          "sha256": "BB77F1F84B62069137C84EEEEE11CBDEE3B538A414A1BB854A92C53364440D2E"
+        },
+        {
+          "path": "data/Petit/BlownOff/BlownOff.nclr_c",
+          "length": 262,
+          "sha256": "D338BAB0B62CBE9C2F092D709992E09B0149832363A98A3FFCE98117094128E7"
+        },
+        {
+          "path": "data/Petit/BlownOff/cg_PetitBlownOff.nccarc_c",
+          "length": 48375,
+          "sha256": "7501264749B5246C53E3C057872E3D96E513E384C012FE8C2BC6B1FAD43A6D28"
+        },
+        {
+          "path": "data/Petit/Bones/cg_PetitBones.nccarc_c",
+          "length": 24119,
+          "sha256": "6051DD01D57C2A5551C3365C5FB5E92E150F382E87608612081A281AAFEA9D47"
+        },
+        {
+          "path": "data/Petit/Borderline/cg_PetitBorderline.nccarc_c",
+          "length": 5008,
+          "sha256": "C3A0AD6DC77854FB2D75DEE6915E60599815B9107BD20338130413DD0B180282"
+        },
+        {
+          "path": "data/Petit/BossDraw/cg_PetitBossDraw.nccarc_c",
+          "length": 36715,
+          "sha256": "E0C9E38AF4404EFD1259011C265C692A42F5FB5426D222085020E999C5522B44"
+        },
+        {
+          "path": "data/Petit/Bowling/Bowling.nanr",
+          "length": 2703,
+          "sha256": "7EC22D4569F101025C4380F08026B17F51E3720C61D18640B253D746A0C6B762"
+        },
+        {
+          "path": "data/Petit/Bowling/Bowling.ncbr",
+          "length": 32816,
+          "sha256": "4B947E862ABBC67D2A92218F9158CC72BCBC1D8F277B5700D23DD4F61358C687"
+        },
+        {
+          "path": "data/Petit/Bowling/Bowling.ncer",
+          "length": 2173,
+          "sha256": "122548075246C61955FEDDE97E894D34551058D800B13E2A20E13089FBEE4A48"
+        },
+        {
+          "path": "data/Petit/Bowling/Bowling.nclr",
+          "length": 552,
+          "sha256": "EBD0608F656337CD41B0BD97ED2A4EC900E7CF53ACA03B8087CBA32E89486AEF"
+        },
+        {
+          "path": "data/Petit/Bowling/cg_PetitBowling.nccarc_c",
+          "length": 16547,
+          "sha256": "108DD6158CDCFCE238ECC3B6C847F2D6D657A9098E4D04F08D88EEDF91A57385"
+        },
+        {
+          "path": "data/Petit/BreakAshley/cg_PetitBreakAshley.nccarc_c",
+          "length": 2612,
+          "sha256": "D2BA42B6203CF2FED158DEBF9B32901ED0A8A07092E1E32FFF43DB151CAEE885"
+        },
+        {
+          "path": "data/Petit/BreakCrygor/cg_PetitBreakCrygor.nccarc_c",
+          "length": 4397,
+          "sha256": "E77ACE25A1B7F0462C9A7E4885DD602D184BDF4787E5893E600C411AA2F2CAAC"
+        },
+        {
+          "path": "data/Petit/BreakElevator/cg_PetitBreakElevator.nccarc_c",
+          "length": 9,
+          "sha256": "3AC4BD60DB24E68FB89735B3F73EE10719F1B8DB1474D0BE12EF2A5E67DAA86B"
+        },
+        {
+          "path": "data/Petit/BreakJimmy/cg_PetitBreakJimmy.nccarc_c",
+          "length": 5274,
+          "sha256": "66A99689157735B1F9666C4307ADFD5873DF9C04D5262238D5A45977BEFB72C0"
+        },
+        {
+          "path": "data/Petit/BreakKatAna/cg_PetitBreakKatAna.nccarc_c",
+          "length": 7706,
+          "sha256": "35BD6117B03438F09816397BB7EE98B0F3C3B5EB07ECD3CF107DA6089AA4D2A7"
+        },
+        {
+          "path": "data/Petit/BreakMike/cg_PetitBreakMike.nccarc_c",
+          "length": 3598,
+          "sha256": "49387976F323CED1573C88D7BE75016920E9B57AE930EA6629D727E94A9BBF63"
+        },
+        {
+          "path": "data/Petit/BreakMona/cg_PetitBreakMona.nccarc_c",
+          "length": 6875,
+          "sha256": "AABDF4EF78886FE6EDD5A19CCEA11B67A192EB7777167731ABAF81F4C73E5E98"
+        },
+        {
+          "path": "data/Petit/BreakNinevolt/cg_PetitBreakNinevolt.nccarc_c",
+          "length": 6779,
+          "sha256": "43EAC6F338EE17D4942DE41B55CAFEB9337E7666C37B1586267EFBAC0D26763C"
+        },
+        {
+          "path": "data/Petit/BreakWario/cg_PetitBreakWario.nccarc_c",
+          "length": 4400,
+          "sha256": "CA09579C1F23934D69D87F6CF6D60269DC4382AD09879B89ED6C393988B66A42"
+        },
+        {
+          "path": "data/Petit/BreakWarioman/cg_PetitBreakWarioman.nccarc_c",
+          "length": 4207,
+          "sha256": "72E3FA3E2648E163ACE1A8FED6AB87A1410F7ACDD9404A3A2C4007C311B08E2D"
+        },
+        {
+          "path": "data/Petit/BreatheGame/cg_PetitBreatheGame.nccarc_c",
+          "length": 41849,
+          "sha256": "91EA02F736BC0C68DD231E975ECE5761261CED5D6E545796063BCFBA6EAA487D"
+        },
+        {
+          "path": "data/Petit/BreathesSkipping/cg_PetitBreathesSkipping.nccarc_c",
+          "length": 26651,
+          "sha256": "157A7A201F14AC7D2176FF81DB32AFF6287E8B54DB1FE6676DCCA30F6B37FA98"
+        },
+        {
+          "path": "data/Petit/BubbleUp/cg_PetitBubbleUp.nccarc_c",
+          "length": 6693,
+          "sha256": "0AC6AA4A49358CA9CABA0C0AC66470204BE37B9A11E76E67CD5E030BEF5DE650"
+        },
+        {
+          "path": "data/Petit/Bunbetu2/cg_PetitBunbetu2.nccarc_c",
+          "length": 6891,
+          "sha256": "ADEA45D65CDD4ADEC251593DF43A03D4B1EB6996C4FC2126AC086A7043D62540"
+        },
+        {
+          "path": "data/Petit/BundleUp/cg_PetitBundleUp.nccarc_c",
+          "length": 23293,
+          "sha256": "09FA515EE2C3E8155AC2047A0006B0928F623A0D714FC989A6A41CBF92C52F0A"
+        },
+        {
+          "path": "data/Petit/BuriedCoin/BuriedCoin.ncbr_c",
+          "length": 6016,
+          "sha256": "C1A95C5F2AD0973CC330ABEA365398B8597F6D1C662E07228E14E96AF94FFC47"
+        },
+        {
+          "path": "data/Petit/BuriedCoin/BuriedCoin.nclr_c",
+          "length": 208,
+          "sha256": "07CD337E53B099CAE68E9110CE3ACC51D1CB2B9B786A5C1F4A8323EAF7D2C42D"
+        },
+        {
+          "path": "data/Petit/BuriedCoin/cg_PetitBuriedCoin.nccarc_c",
+          "length": 11941,
+          "sha256": "F6A97C9110C7D13526107829EC73490E257FC7F595732727D683061C00DE1846"
+        },
+        {
+          "path": "data/Petit/ByeBye/ByeByeArm.ncbr_c",
+          "length": 4647,
+          "sha256": "5B838750AACFE70D837BCE8265B2ACD6B267F8EF4D704897DF25B6BE8DC6CAC9"
+        },
+        {
+          "path": "data/Petit/ByeBye/ByeByeArm.nclr_c",
+          "length": 226,
+          "sha256": "D6AA0AB957199B75A1D522A895FD0CBD486720F9A868106BB0130E7B6ACC5607"
+        },
+        {
+          "path": "data/Petit/ByeBye/cg_PetitByeBye.nccarc_c",
+          "length": 16991,
+          "sha256": "07543C462502FC8CACF60F6BE5E25E2ECA31D8B32F5DA19303AC4191FFE05BF6"
+        },
+        {
+          "path": "data/Petit/Calculator/cg_PetitCalculator.nccarc_c",
+          "length": 11393,
+          "sha256": "D4982B9CAB2AAACFD130040AEEEC45D6BAB99DEABB66296E4728DCC0B38B22E3"
+        },
+        {
+          "path": "data/Petit/Calendar/cg_PetitCalendar.nccarc_c",
+          "length": 18924,
+          "sha256": "98417101147AAE4BF95CD00C4AD2F6C67DDA980A101E097FF1711F363BB60236"
+        },
+        {
+          "path": "data/Petit/Candle/cg_PetitCandle.nccarc_c",
+          "length": 13941,
+          "sha256": "1AE5FA828DF662235CBD36077DA39D31B2D613F5E217247C8B9E1FCE882A99B3"
+        },
+        {
+          "path": "data/Petit/Caress/cg_PetitCaress.nccarc_c",
+          "length": 57275,
+          "sha256": "898ECA42EC077261642B191FD942DC6536457D97B16A21E757ACDABC2DF524E7"
+        },
+        {
+          "path": "data/Petit/Castroll/cg_PetitCastroll.nccarc_c",
+          "length": 5918,
+          "sha256": "1AE62CADC00112B99017A4234D8C62E2E375F28FEC7858017469BD704426FBE7"
+        },
+        {
+          "path": "data/Petit/CatPanic/cg_PetitCatPanic.nccarc_c",
+          "length": 7955,
+          "sha256": "BE1BE134D37A28F149B987CBBB1AADEC6236C09BC0B3C6EEEF6B85538B030960"
+        },
+        {
+          "path": "data/Petit/CatTongue/cg_PetitCatTongue.nccarc_c",
+          "length": 50809,
+          "sha256": "FD6107D33DCFFA834E8C25908E969E56D0B28FF37B4BF571B4C1D80EF840A659"
+        },
+        {
+          "path": "data/Petit/Chameleon/cg_PetitChameleon.nccarc_c",
+          "length": 19380,
+          "sha256": "8480D35AB0A0EB4E3A2DF6D882C510353580813515ACB80EA981EDDFE511F53C"
+        },
+        {
+          "path": "data/Petit/ChiChi/cg_PetitChiChi.nccarc_c",
+          "length": 14260,
+          "sha256": "45CEA417E784D5F18072E8FA4DCC3532225E0EA7C2F34B46A93A4AAF92ED1029"
+        },
+        {
+          "path": "data/Petit/ChinningExercises/cg_PetitChinningExercises.nccarc_c",
+          "length": 14572,
+          "sha256": "017FC0B3490251840899492827ECA8FD97D4ED51C71614A72BA856F938605EDF"
+        },
+        {
+          "path": "data/Petit/Cladocera/CladoceraTex.ncbr_c",
+          "length": 1064,
+          "sha256": "9058316214D575DE37DB0F06D67744222B1D019EC4D47E179E8A01B7CDF10C8C"
+        },
+        {
+          "path": "data/Petit/Cladocera/CladoceraTex.nclr_c",
+          "length": 134,
+          "sha256": "DAC612CF3119DCDC9F89D26AE5553A91BBD0C84BA38031225EDE0C0AEA9909E7"
+        },
+        {
+          "path": "data/Petit/Cladocera/cg_PetitCladocera.nccarc_c",
+          "length": 18503,
+          "sha256": "D71BD2D75F3AD99685C4E95DBFFE65578E727D90E9A2C180E2D0CDB502BA3418"
+        },
+        {
+          "path": "data/Petit/Clip/cg_PetitClip.nccarc_c",
+          "length": 26248,
+          "sha256": "22E1A72900B4BCFF7FF5CB377AD03A4B8F16DD6A31B07989FE94DBAC4ADC11ED"
+        },
+        {
+          "path": "data/Petit/Clock/cg_PetitClock.nccarc_c",
+          "length": 7001,
+          "sha256": "6908612DD018784BCB052293A4E4D72CAF56E029366F95B49D927502F58EE984"
+        },
+        {
+          "path": "data/Petit/Cluck/cg_PetitCluck.nccarc_c",
+          "length": 21486,
+          "sha256": "C4C39B28048B08BC9A5500AE48F7CDA455AF47FE00AF644897787015A368CCF6"
+        },
+        {
+          "path": "data/Petit/Coin/cg_PetitCoin.nccarc_c",
+          "length": 31553,
+          "sha256": "5489491B7922F615AA090D31D64FE200DA8F99E05D2AD7E04A90965518EFBC56"
+        },
+        {
+          "path": "data/Petit/Constellation/cg_PetitConstellation.nccarc_c",
+          "length": 12172,
+          "sha256": "D42D3B0135D46728815FDDDB3FFE179C164D8A39EB3F11E78033A45950D6303E"
+        },
+        {
+          "path": "data/Petit/Controller1/cg_PetitController1.nccarc_c",
+          "length": 15307,
+          "sha256": "2A56D02CC6704A61DEDE7DC901E2B7FAD9006C95BC759EEB6513FE1F479F44F2"
+        },
+        {
+          "path": "data/Petit/Controller2/cg_PetitController2.nccarc_c",
+          "length": 20858,
+          "sha256": "D4E3CF106FB6ACAF5D2979535AC3F6AB47566A60CB88E91469B591A696CA733C"
+        },
+        {
+          "path": "data/Petit/Cracker/cg_PetitCracker.nccarc_c",
+          "length": 41207,
+          "sha256": "8DFC1D4EAB8C0D0CDE629D0C92308EF55CA8646E48327AAFF95FD89627211696"
+        },
+        {
+          "path": "data/Petit/Daruma/cg_PetitDaruma.nccarc_c",
+          "length": 5779,
+          "sha256": "609FB244B6A8FDE776127D9E82522ABABF0A77583C57D4DB5914F8330F3C693F"
+        },
+        {
+          "path": "data/Petit/DialTower/DiTo_Lv1.nsbmd_c",
+          "length": 11862,
+          "sha256": "702DFC2E808FBC16BAB96A09261B86126713209720C050F562812453CF583E69"
+        },
+        {
+          "path": "data/Petit/DialTower/DiTo_Lv2.nsbmd_c",
+          "length": 22868,
+          "sha256": "D62F7F7C1C106163A99D34412B310BFD717E3DA6B23332A480A471B747425B0F"
+        },
+        {
+          "path": "data/Petit/DialTower/DiTo_Lv3.nsbmd_c",
+          "length": 21411,
+          "sha256": "5EA4171394F4815118C133D73104B1ABD9AA14F035E13664F6CF8073BDD1949B"
+        },
+        {
+          "path": "data/Petit/DialTower/cg_PetitDialTower.nccarc_c",
+          "length": 32,
+          "sha256": "08F4295472D351C1FA90455D02ACD538D316CADCAD7AC7D024C76E2391DABC9B"
+        },
+        {
+          "path": "data/Petit/Divide/PetitDivide_00.ntfp_c",
+          "length": 40,
+          "sha256": "9FF11CEB395F067AFDF0541B96A356BE649D3FE11F65BC02C510007422C4DEEC"
+        },
+        {
+          "path": "data/Petit/Divide/PetitDivide_00.ntft_c",
+          "length": 9995,
+          "sha256": "6948CBDD41D9B0D7FC70525CF2C993376ACEC62ADFE29CC20AA1CC655D4A3FCD"
+        },
+        {
+          "path": "data/Petit/Divide/PetitDivide_01.ntfp_c",
+          "length": 13,
+          "sha256": "FC991C22BF4A3E3E20AEF5681ED6DAEFC984086F4E7010239EB9443CFCD319CB"
+        },
+        {
+          "path": "data/Petit/Divide/PetitDivide_01.ntft_c",
+          "length": 8442,
+          "sha256": "9E5B8E052C08D34C78472450A172F810BE066E13128AD479BB04659D0C2B17D4"
+        },
+        {
+          "path": "data/Petit/Divide/PetitDivide_02.ntfp_c",
+          "length": 20,
+          "sha256": "3DFB3819B6DBD1F32832E4A8F74B6DB3E08735FCAF699603CEDFC96C1E8F1879"
+        },
+        {
+          "path": "data/Petit/Divide/PetitDivide_02.ntft_c",
+          "length": 8044,
+          "sha256": "CAE2DC7E2440712077D1A78B757E50C34B4069899EAB2A64DBF27EB206D01CD6"
+        },
+        {
+          "path": "data/Petit/Divide/cg_PetitDivide.nccarc_c",
+          "length": 14504,
+          "sha256": "8ED7552F676976850924FD9D35605DACE580FAF60DE44F72C699525032DA685E"
+        },
+        {
+          "path": "data/Petit/Domino/Domino.nanr",
+          "length": 1227,
+          "sha256": "DEF3062C97D8A21E4D40C80773FCE79BB894B9FE980AA2A23AC33B5A8B17BBDD"
+        },
+        {
+          "path": "data/Petit/Domino/Domino.ncbr",
+          "length": 32816,
+          "sha256": "89B63557D7E8D79C33CA1AFFBA5350CD8442173F5D25081D2C68EEA768057267"
+        },
+        {
+          "path": "data/Petit/Domino/Domino.ncer",
+          "length": 1375,
+          "sha256": "B3C10DDE009BAC2E7BEC1FAF91B3CC025C6320B05C01B73E13C27FD4CAB8C275"
+        },
+        {
+          "path": "data/Petit/Domino/Domino.nclr",
+          "length": 552,
+          "sha256": "CB7A7C1E335851CB519C21A60357C4AAF2F26A60B9F18F8B4A6F98F5D0DE9445"
+        },
+        {
+          "path": "data/Petit/Domino/cg_PetitDomino.nccarc_c",
+          "length": 47,
+          "sha256": "A065CAB25A5B6398832DC08D00173609147F6BB82DFF1DDA44E9AEFD577CA7F1"
+        },
+        {
+          "path": "data/Petit/DonkeyKong3/cg_PetitDonkeyKong3.nccarc_c",
+          "length": 8319,
+          "sha256": "A67A8F027F420AC732A99C9AA28ACFC46BD5DF09228C6771534C77E986439B08"
+        },
+        {
+          "path": "data/Petit/DontFoo/cg_PetitDontFoo.nccarc_c",
+          "length": 21561,
+          "sha256": "A69B41183710BD1CF1FBA47EC3E59B9CCDE372D5D76BFF47CBB43F2337CC227F"
+        },
+        {
+          "path": "data/Petit/DontFoo/rope.nsbmd_c",
+          "length": 584,
+          "sha256": "1E4E0C3E5DD71A8B6D213187B65F96C8BF0D41AC9E1B02AA101D85909BB0AC66"
+        },
+        {
+          "path": "data/Petit/DontFoo/shagy.nsbca_c",
+          "length": 5834,
+          "sha256": "AB638A1E2C20D78CBFD997975789984E1135DB3A8C593A10F82AE93FAA90429A"
+        },
+        {
+          "path": "data/Petit/DontFoo/shagy.nsbmd_c",
+          "length": 3643,
+          "sha256": "2BAE074C17F1B69BD237AAE81D76FDEEA6F660D6D35756D306E86E373EF14CFD"
+        },
+        {
+          "path": "data/Petit/DontFoo/shagy.nsbtp_c",
+          "length": 336,
+          "sha256": "1E267514AA8EEC3A60D66B1DED30DA4713CF3FCED4230FF297B3A04ED1E3B651"
+        },
+        {
+          "path": "data/Petit/DontFoo/shagy_main.nsbca_c",
+          "length": 4797,
+          "sha256": "D5AD59FA9C22CC4A9DA85DFBAD06D002F2F026D64D76305669483D1918ACBE96"
+        },
+        {
+          "path": "data/Petit/DontFoo/shagy_main.nsbmd_c",
+          "length": 9676,
+          "sha256": "99C3832751012A9E5E9220EEE075B1C5098C10B7D546C65B7BB66D097AC24B74"
+        },
+        {
+          "path": "data/Petit/Dot/cg_PetitDot.nccarc_c",
+          "length": 37471,
+          "sha256": "AA31804E2542DD8B8BE3CD7657917D34AC938D47C1F41985C41898A845028A1F"
+        },
+        {
+          "path": "data/Petit/Doughnut/cg_PetitDoughnut.nccarc_c",
+          "length": 26299,
+          "sha256": "EBE330DD97EF37C1CC26B0AF01DE790148182383E3A1E22C192A0817E083DDFE"
+        },
+        {
+          "path": "data/Petit/DuckHunt/cg_PetitDuckHunt.nccarc_c",
+          "length": 7099,
+          "sha256": "EB524F292D4C33F0E5983A586D040FD9B8DBFFAB8D1B228C597A50964FDBC2FD"
+        },
+        {
+          "path": "data/Petit/Electrostatic/cg_PetitElectrostatic.nccarc_c",
+          "length": 4025,
+          "sha256": "000932B0E2668A874825B4566916EDBE194C71ABE3EBC69642661847E230AC35"
+        },
+        {
+          "path": "data/Petit/Emptybottle/cg_PetitEmptybottle.nccarc_c",
+          "length": 20416,
+          "sha256": "41E7DF3C76F69EC154ACD29671D6A3E27CF86A9489635DF8ED374F2429E5F7FD"
+        },
+        {
+          "path": "data/Petit/Emptybottle/empty.nanr_c",
+          "length": 662,
+          "sha256": "7F5E49226B5AA4F2003B9A4B106BE973FF8C0C2ECFA217EA21F5B234465B0885"
+        },
+        {
+          "path": "data/Petit/Emptybottle/empty.ncbr_c",
+          "length": 5734,
+          "sha256": "17B6C157CAE7665BB802A5BF96397749AABAAE973CCA41C9651A978181C72C89"
+        },
+        {
+          "path": "data/Petit/Emptybottle/empty.ncer_c",
+          "length": 1042,
+          "sha256": "7358DC0681205447B79F7E0FF11B134C570CF5D66A863CBD04C39380F6D01BB1"
+        },
+        {
+          "path": "data/Petit/Emptybottle/empty.nclr_c",
+          "length": 213,
+          "sha256": "954E0A20F479D62CDBC26C46E9B2A40FE89EEFBC83E2CAECFFBE1BA06720C9C3"
+        },
+        {
+          "path": "data/Petit/EncourageMachine/cg_PetitEncourageMachine.nccarc_c",
+          "length": 9543,
+          "sha256": "2BEFE4849E480644125022D7482E380BCF8FF8E009D7C609EE539A5F138FC2F2"
+        },
+        {
+          "path": "data/Petit/EnglishPlay/Common.nsbca_c",
+          "length": 3480,
+          "sha256": "E3F96B8FFF6DA35FA4E3C598262B853A980CD02E5AF04C953339539177873885"
+        },
+        {
+          "path": "data/Petit/EnglishPlay/Common.nsbmd_c",
+          "length": 28091,
+          "sha256": "79F1D504AFEF411FC09FDD2D84A6A57AE365A90D8548C7FC5B436CBBB2402827"
+        },
+        {
+          "path": "data/Petit/EnglishPlay/cg_PetitEnglishPlay.nccarc_c",
+          "length": 6813,
+          "sha256": "EFED01A19B736A3DFE151B4E535A65EABD7D26FE049E7541F7371C6C95F9BC03"
+        },
+        {
+          "path": "data/Petit/Eraser/cg_PetitEraser.nccarc_c",
+          "length": 59554,
+          "sha256": "4BE415A39E01F71A38AF1A94630E90F05436A7859B86D3D9140D0FB2346747C8"
+        },
+        {
+          "path": "data/Petit/Escape/cg_PetitEscape.nccarc_c",
+          "length": 9086,
+          "sha256": "FAB6C1F878DB6E4C52B176D35CEBF13CEAD4ED12B3800589EC66792B4DBCC0AB"
+        },
+        {
+          "path": "data/Petit/FaceImitation/cg_PetitFaceImitation.nccarc_c",
+          "length": 5149,
+          "sha256": "5581DB232BC7A7A4349AE9944FB05236E107C60C2316F5A553E2DD062BD148B4"
+        },
+        {
+          "path": "data/Petit/FaceWash/cg_PetitFaceWash.nccarc_c",
+          "length": 8525,
+          "sha256": "706A02ADC93F1168F3ED0F0B2D939AF088522A477EF09A4A23B2C078B1576E43"
+        },
+        {
+          "path": "data/Petit/Faucet/cg_PetitFaucet.nccarc_c",
+          "length": 10524,
+          "sha256": "8050A619350748EB78D8AAC81A33424D9C0A80C11284EA42FBF30C007529A0C3"
+        },
+        {
+          "path": "data/Petit/FindHim/cg_PetitFindHim.nccarc_c",
+          "length": 10898,
+          "sha256": "20DFB5B0A307DC79A599BA2477418AA667A136C232C80654A3E15F66B1FC281F"
+        },
+        {
+          "path": "data/Petit/FireworksAgain/cg_PetitFireworksAgain.nccarc_c",
+          "length": 6652,
+          "sha256": "7995F5E97663690D16F7862655F3C80A5735E222922E46EB26791E0D7CFD24FE"
+        },
+        {
+          "path": "data/Petit/FishCatch/cg_PetitFishCatch.nccarc_c",
+          "length": 3410,
+          "sha256": "F476A2187EE9EE837DAC7957374781C83002C31B1141C0C88DF6F0BC11485C11"
+        },
+        {
+          "path": "data/Petit/Fishing/cg_PetitFishing.nccarc_c",
+          "length": 21437,
+          "sha256": "EF45E331D8FBCD4B5244A61FA6E23A1321426C5B8663F17689F0A6E30C2968A0"
+        },
+        {
+          "path": "data/Petit/Flat/PetitFlat_00.ntfp_c",
+          "length": 54,
+          "sha256": "EF7AA63E91E3B075D034CB8CFA44DC1690829EF7521AAB20FF2736B30AD117E7"
+        },
+        {
+          "path": "data/Petit/Flat/PetitFlat_00.ntft_c",
+          "length": 8114,
+          "sha256": "18EE7B0780B4F2AABBE57E4925E865FA41FA417942E36EEF345EFD5CB7E62471"
+        },
+        {
+          "path": "data/Petit/Flat/cg_PetitFlat.nccarc_c",
+          "length": 7557,
+          "sha256": "A7E774D2FD4351479C9F80EB110E557D4922E2A67A6AF7EE3867F7849B04A308"
+        },
+        {
+          "path": "data/Petit/Flower/cg_PetitFlower.nccarc_c",
+          "length": 81230,
+          "sha256": "90ADC849AB7FA004B84A0ADD66A8340C36CF47A62F530AB8EC4B817E166ECEAC"
+        },
+        {
+          "path": "data/Petit/FoggedGlass/cg_PetitFoggedGlass.nccarc_c",
+          "length": 31282,
+          "sha256": "910F2B40E0A2A5D43057DFEC3A30B7DA488B937BBEB870E04F8E595F8F9032FB"
+        },
+        {
+          "path": "data/Petit/Foo/cg_PetitFoo.nccarc_c",
+          "length": 5378,
+          "sha256": "7BA64B86325D68DBBF3BF104C67C16274078695E86178A124ADEA1AFFFDCFFBB"
+        },
+        {
+          "path": "data/Petit/FruitCuts/cg_PetitFruitCuts.nccarc_c",
+          "length": 14984,
+          "sha256": "0EC4D945C084E3B2279E1AE0CD9FCDE52CA3C95DA8AB479BF3F5C9348616CB39"
+        },
+        {
+          "path": "data/Petit/Fuse/cg_PetitFuse.nccarc_c",
+          "length": 28044,
+          "sha256": "5F442F39F8D0CF5C22B63016B6EE801BDF1FD87274CEB0FB242DED04765C0581"
+        },
+        {
+          "path": "data/Petit/Fusen/cg_PetitFusen.nccarc_c",
+          "length": 17706,
+          "sha256": "45ED23B459B02F0EC0576AB5C288EB96AB2C0B03D2E2E6DB553A7B256AB63CDB"
+        },
+        {
+          "path": "data/Petit/GameGame/cg_PetitGameGame.nccarc_c",
+          "length": 12569,
+          "sha256": "882A07B02B520AD57BA2FCF9D15A6DAA63F5471264295E94DC7D4E547788FC58"
+        },
+        {
+          "path": "data/Petit/GameWatchBall/cg_PetitGameWatchBall.nccarc_c",
+          "length": 4389,
+          "sha256": "929EC2269F08BCD0C6E2D225805F8247803F465ED1E686D1F8770A1308E25CBC"
+        },
+        {
+          "path": "data/Petit/GameWatchFlag/cg_PetitGameWatchFlag.nccarc_c",
+          "length": 6437,
+          "sha256": "081765C122CAE14A39CA17945419D14BBCE08683FDECB3069E998B8404231152"
+        },
+        {
+          "path": "data/Petit/GameWatchLion/cg_PetitGameWatchLion.nccarc_c",
+          "length": 6718,
+          "sha256": "FE56DF69D224AAEE3E336C6AADDC451EC9E0CAB8408F482CF9AE87457CB923CF"
+        },
+        {
+          "path": "data/Petit/GameWatchOil/cg_PetitGameWatchOil.nccarc_c",
+          "length": 6068,
+          "sha256": "B8FE0509D25AAFE4FB2510A701C044D7A7610DA7E37D676F0BA8A128FF37F7B7"
+        },
+        {
+          "path": "data/Petit/Gamecube/cg_PetitGamecube.nccarc_c",
+          "length": 31729,
+          "sha256": "98DD02FD54B74E101BC005DB7EC54476E95D5C03443CE97D570F0DEC270553DF"
+        },
+        {
+          "path": "data/Petit/GetAcross/cg_PetitGetAcross.nccarc_c",
+          "length": 9670,
+          "sha256": "E759964134D08AA049F8BB698A2E944FE1D8DE5EA3C2615090B3B4DD3B207413"
+        },
+        {
+          "path": "data/Petit/Gig/cg_PetitGig.nccarc_c",
+          "length": 21176,
+          "sha256": "361C2C766F7E4C9F819AE89431BED2E6637F1814A803AB6995F4E0F3A65700B2"
+        },
+        {
+          "path": "data/Petit/Gitai/cg_PetitGitai.nccarc_c",
+          "length": 67749,
+          "sha256": "048431BDD3B15F6E02FD24CA11F3E34F24A70979CDAEBA2AD2C9120972B89F9E"
+        },
+        {
+          "path": "data/Petit/Goingmyway/cg_PetitGoingmyway.nccarc_c",
+          "length": 3657,
+          "sha256": "C56DC9D313C408643A39ACC8FB3D3425CCE293FBDED27C78E970E18F87AC65E5"
+        },
+        {
+          "path": "data/Petit/Gondola/cg_PetitGondola.nccarc_c",
+          "length": 11411,
+          "sha256": "B33BD93EA9B36783AFDE713A4FAF578FC72B473097251DDA8B6D61594AEA1AC1"
+        },
+        {
+          "path": "data/Petit/Gum/cg_PetitGum.nccarc_c",
+          "length": 16959,
+          "sha256": "BF69E952CD3641DBC24884D8DAAEBA8962FFD5405DB6941FD74CC07AC286E5B7"
+        },
+        {
+          "path": "data/Petit/HammerThrow/cg_PetitHammerThrow.nccarc_c",
+          "length": 8838,
+          "sha256": "32C8E39B3CB6A184D4EA7A938EF7E91E2910B71779D7D9CCD651E6735783D89E"
+        },
+        {
+          "path": "data/Petit/HanaRoad/cg_PetitHanaRoad.nccarc_c",
+          "length": 35442,
+          "sha256": "E6A2DB4400AE4564878A81128D99BF8B413FF6F5F6D1E291380F31627473324C"
+        },
+        {
+          "path": "data/Petit/HillMyna/cg_PetitHillMyna.nccarc_c",
+          "length": 15811,
+          "sha256": "65E4B700A4C4C469A5E9AB6EEA3E9D5D0A1F7DEA8165929C441F1A32259CB005"
+        },
+        {
+          "path": "data/Petit/HogansAlley/cg_PetitHogansAlley.nccarc_c",
+          "length": 22809,
+          "sha256": "311AAEE1730F8B2B4354D14BAE26011E2E8ABAC0F7C944D46201BBB355F8C1ED"
+        },
+        {
+          "path": "data/Petit/Horse/cg_PetitHorse.nccarc_c",
+          "length": 24133,
+          "sha256": "F8D3B14452DD6452013A1E833DE938E131878FE577DA3A58CB8999080D7B7D34"
+        },
+        {
+          "path": "data/Petit/Iron/cg_PetitIron.nccarc_c",
+          "length": 27352,
+          "sha256": "E8778657C1169A2CE3BEA273C0FEA6D0821997A2654CE6241FFC9F9A8AD41B75"
+        },
+        {
+          "path": "data/Petit/JointMagic/cg_PetitJointMagic.nccarc_c",
+          "length": 5305,
+          "sha256": "4CE67BC859D02653E9ADD646DAB8A3693BB3DB1A7BDF8DE7FC9CB162BF3A1F58"
+        },
+        {
+          "path": "data/Petit/Juggling/cg_PetitJuggling.nccarc_c",
+          "length": 23535,
+          "sha256": "259F0238CDDAC9DD2C7E69A11C2731570DA815D05CA822F41CFB200D11F97A97"
+        },
+        {
+          "path": "data/Petit/KitchenTimer/cg_PetitKitchenTimer.nccarc_c",
+          "length": 13122,
+          "sha256": "0957F7E50E99BE27787AE0E19E747B7757A09AC214450C4CF268FC64596C7349"
+        },
+        {
+          "path": "data/Petit/Landing/cg_PetitLanding.nccarc_c",
+          "length": 7335,
+          "sha256": "FC6E69ACBB8EF4CF7E63690536FF48428F15904341966477031F1B5FBA85BAA3"
+        },
+        {
+          "path": "data/Petit/Leak/cg_PetitLeak.nccarc_c",
+          "length": 18409,
+          "sha256": "9905A7EC7F09F360E1F78B5BBD1543164BB0F362EF1D4E2EE847DE37EC23D3CA"
+        },
+        {
+          "path": "data/Petit/Lice/Lice.nanr_c",
+          "length": 674,
+          "sha256": "793C0B1FCAB07B90438DFA9E6CD5683A112962EB2058750A494A0E903583F5AD"
+        },
+        {
+          "path": "data/Petit/Lice/Lice.ncbr_c",
+          "length": 6759,
+          "sha256": "8E9FFA7B24957C34FC35BC6EFB78AC10BD8EF0A6A3861B6FAA1B361547015826"
+        },
+        {
+          "path": "data/Petit/Lice/Lice.ncer_c",
+          "length": 998,
+          "sha256": "05E2C1A7583CDA4F0C9C824F13DABFB707371A6AAEBC67C6DAFC8C1EDBCAA3C3"
+        },
+        {
+          "path": "data/Petit/Lice/Lice.nclr_c",
+          "length": 188,
+          "sha256": "A4636AA3AFDCED0A8C45171A1A91C998CD83D03AC636BB42095D957A0A8BF9E8"
+        },
+        {
+          "path": "data/Petit/Lice/cg_PetitLice.nccarc_c",
+          "length": 133,
+          "sha256": "8B8591AA47E147223A64C8D04A77A068BB3E4BFEFE1516CB9BDFA318FBD78861"
+        },
+        {
+          "path": "data/Petit/LightBulb/cg_PetitLightBulb.nccarc_c",
+          "length": 20611,
+          "sha256": "4A3E408F9FFF12B7ABCF3714CC279B1C1BFA0D758FBA7F172105CDB949DC2DC9"
+        },
+        {
+          "path": "data/Petit/LongTone/cg_PetitLongTone.nccarc_c",
+          "length": 5071,
+          "sha256": "3D10C53CEE5E4CAF2EEBEB23AB9CD0F84CEA3EA1495D6437AFCB3A4C5DBF420A"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal1.nanr_c",
+          "length": 443,
+          "sha256": "C65C1D271E8628F9BD9CE26364A5DCB8F17E2F22C8F87F53A24D7B461CFF41CB"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal1.ncbr_c",
+          "length": 6430,
+          "sha256": "75C1BBDC2B85E76745436D7687482D13709055AEDCA14AC58545D0A10D6E1BC2"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal1.ncer_c",
+          "length": 527,
+          "sha256": "16EDD610B2D6649671E749DBFE598580BBCE40ADFCE274738C92D9638D878A5E"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal1.nclr_c",
+          "length": 326,
+          "sha256": "FCEFD62505199AC63EA2C63EE5F031B62498B5B1DA029FA9740E6F3680014613"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal2.nanr_c",
+          "length": 449,
+          "sha256": "4F3EE568C75FC29E4746329AD5D9D106D0E8FE484529DD5FABF6F2E4C535B6F0"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal2.ncbr_c",
+          "length": 8905,
+          "sha256": "68877ED75FD18EE5EA2DB8E1C93DE6CC55BD95315AEC4648769071EBFBF78B06"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal2.ncer_c",
+          "length": 533,
+          "sha256": "9804FA8E88890149DEE939B34493A1811FEF6E5CACF51029051A9E690922ADDD"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal2.nclr_c",
+          "length": 326,
+          "sha256": "FCEFD62505199AC63EA2C63EE5F031B62498B5B1DA029FA9740E6F3680014613"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal3.nanr_c",
+          "length": 644,
+          "sha256": "20CF0E733FF4F39CBA4FA62E5FD1DE55A14187CCA85CBD4927CAC5083143FAE9"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal3.ncbr_c",
+          "length": 11847,
+          "sha256": "794668D27BECECB4F731A66D1F28D22EE00A5B3FB55C52BA02398FE97F5D3197"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal3.ncer_c",
+          "length": 725,
+          "sha256": "989B9ED52B59B3337BCA44E22DAE807A4A24E785B496841C2AE6CD9E2554426D"
+        },
+        {
+          "path": "data/Petit/Longanimal/Longanimal3.nclr_c",
+          "length": 326,
+          "sha256": "FCEFD62505199AC63EA2C63EE5F031B62498B5B1DA029FA9740E6F3680014613"
+        },
+        {
+          "path": "data/Petit/Longanimal/cg_PetitLonganimal.nccarc_c",
+          "length": 14778,
+          "sha256": "1221B0E622E6180CC201A372CFF45580250F8798EA36156B4A431EA1B7444238"
+        },
+        {
+          "path": "data/Petit/Loop/Loop.nanr_c",
+          "length": 428,
+          "sha256": "80BA482BB5D6BED9AA6936C39C0F253EB586FA3FFF7EFED5C6315EA367E3A066"
+        },
+        {
+          "path": "data/Petit/Loop/Loop.ncbr_c",
+          "length": 4846,
+          "sha256": "37E06A83E869CBECB5CC4DF6BD2CDCAF1D8D2C7B61CC1E4803B9E049C95F815D"
+        },
+        {
+          "path": "data/Petit/Loop/Loop.ncer_c",
+          "length": 349,
+          "sha256": "C27BB92AD82D991A383BF19419CE7D539984630EBD3FDEE3CB85CB314BCF7F93"
+        },
+        {
+          "path": "data/Petit/Loop/Loop.nclr_c",
+          "length": 337,
+          "sha256": "961B8C4DFE7DD24E89D93CF4C7EF88A0C7795256073CE659383FD76740933527"
+        },
+        {
+          "path": "data/Petit/Loop/cg_PetitLoop.nccarc_c",
+          "length": 19316,
+          "sha256": "7D347D6DACECEA10CEB60604B21822747783F02304F23BF630A25E89D479FEA0"
+        },
+        {
+          "path": "data/Petit/MagicLamp/cg_PetitMagicLamp.nccarc_c",
+          "length": 15966,
+          "sha256": "9F45B05B1991CC7F608A3DE9FB55E5680AECBF70167D75D84CB871983853739F"
+        },
+        {
+          "path": "data/Petit/MagicPowder/MagicPowder.nanr_c",
+          "length": 1138,
+          "sha256": "11F7EC234616B0573DE26CA66BEBAB5FA84B45FF50E47276C5166E1224E02744"
+        },
+        {
+          "path": "data/Petit/MagicPowder/MagicPowder.ncbr_c",
+          "length": 7280,
+          "sha256": "9C0FA088B7AC17BFA0471FB54ACA8A8034DACBA2027831F2A00C159E6E917F8A"
+        },
+        {
+          "path": "data/Petit/MagicPowder/MagicPowder.ncer_c",
+          "length": 1891,
+          "sha256": "0DA3DDD14550DA7D501B09DACCDBA78DE4BCACBAF864C064A16F99F32A06A669"
+        },
+        {
+          "path": "data/Petit/MagicPowder/MagicPowder.nclr_c",
+          "length": 256,
+          "sha256": "31B6624F4565ED172B058CFD0C6354B40159353F307CCD2BF3E4016E97D08D2B"
+        },
+        {
+          "path": "data/Petit/MagicPowder/cg_PetitMagicPowder.nccarc_c",
+          "length": 11784,
+          "sha256": "3A2E6CB025B17A8E0533B44BFD2E38834740146DE91A497C538524132E6AE784"
+        },
+        {
+          "path": "data/Petit/Manicure/cg_PetitManicure.nccarc_c",
+          "length": 18718,
+          "sha256": "644E9D4D340C45AB5731868D957FE1F9611123D784E2ECC80AAF84393197B2B7"
+        },
+        {
+          "path": "data/Petit/ManikinPiss/cg_PetitManikinPiss.nccarc_c",
+          "length": 10638,
+          "sha256": "2CBC2292B618B3CA99DA412AAE3FFE7862410482CC9100E1C080C48B27F1ED1D"
+        },
+        {
+          "path": "data/Petit/MarioPaint/cg_PetitMarioPaint.nccarc_c",
+          "length": 17651,
+          "sha256": "01E092CB61EE2F1DFCB090FC698F70146231F956C8694C5276DADA3508837ED0"
+        },
+        {
+          "path": "data/Petit/MarioPaint/cg_PetitMarioPaint02.nccarc_c",
+          "length": 18311,
+          "sha256": "427A4AB4E2A00A1527C7B9CC382AD91168380AECC49B66903A3DB41F413BB9BE"
+        },
+        {
+          "path": "data/Petit/MarioPaint/cg_PetitMarioPaint03.nccarc_c",
+          "length": 21799,
+          "sha256": "885D3C1CA301D934B441F55C9937F321766C3F09ABE5E11D2C7F2EB924680A21"
+        },
+        {
+          "path": "data/Petit/Marking/cg_PetitMarking.nccarc_c",
+          "length": 4735,
+          "sha256": "7CFD76022BB425F0C2BC75DC673C49C654E9EA415D62565ED0104DB69E219319"
+        },
+        {
+          "path": "data/Petit/Matches/cg_PetitMatches.nccarc_c",
+          "length": 17756,
+          "sha256": "B5477955669F4880E2B19384C993582FBCE304177364B22164DC171E00C6CFE8"
+        },
+        {
+          "path": "data/Petit/Maze/cg_PetitMaze.nccarc_c",
+          "length": 9331,
+          "sha256": "8CF92DE58343E9982D8417A53CD64C2A717E55B723FE8046C186F13455F4DC72"
+        },
+        {
+          "path": "data/Petit/Metroid/cg_PetitMetroid.nccarc_c",
+          "length": 4894,
+          "sha256": "C9ACE2EC9CFAAF0E78E5F5F75EAE20B88B0C373290631372AE0D5A5FAC945FB6"
+        },
+        {
+          "path": "data/Petit/Metronome/cg_PetitMetronome.nccarc_c",
+          "length": 4468,
+          "sha256": "36F04AB4B3CCE32ADD3D65D99C24BFE105060AB3D94EBA2DC39ECAC3024AF37D"
+        },
+        {
+          "path": "data/Petit/Microscope/cg_PetitMicroscope.nccarc_c",
+          "length": 10338,
+          "sha256": "BC30247D8C3D210238DF736606E495B9BD5B1F6B5D5320DDE7405336BF4CC5D7"
+        },
+        {
+          "path": "data/Petit/MiniCalculator/cg_PetitMiniCalculator.nccarc_c",
+          "length": 11393,
+          "sha256": "15FB9281F8835946D807CAA57A328B522F30228C3834D865C1F9252E6319EEC3"
+        },
+        {
+          "path": "data/Petit/MiniDraw/cg_PetitMiniDraw.nccarc_c",
+          "length": 71653,
+          "sha256": "42ED18678C5C3D9B1E3D5AF2A47BC3F5078B9CC8A41B14A5A92457BEEB5D1F31"
+        },
+        {
+          "path": "data/Petit/MiniHammerThrow/cg_PetitMiniHammerThrow.nccarc_c",
+          "length": 26046,
+          "sha256": "F9F5834BA774E37BFF6B2DF344D45404ECF0B263378605DCFD0772E68A612D9D"
+        },
+        {
+          "path": "data/Petit/Mushi/Mushi.nanr_c",
+          "length": 450,
+          "sha256": "07ECC6610E660F934428EDD2CF9364593242A3EA31CE64EA3C95B05C4E702CC7"
+        },
+        {
+          "path": "data/Petit/Mushi/Mushi.ncbr_c",
+          "length": 5136,
+          "sha256": "6835A990D543E180108B0F775C478A9CABAA947C63E090F6AC5CE6D0AF8D4B6D"
+        },
+        {
+          "path": "data/Petit/Mushi/Mushi.ncer_c",
+          "length": 864,
+          "sha256": "19C51B5CE720B6D797A86B9EC592EA0AC3DA241B3C2C25A9F1E4433D242AD839"
+        },
+        {
+          "path": "data/Petit/Mushi/Mushi.nclr_c",
+          "length": 219,
+          "sha256": "845DBCC94A8C28776FA4187A8D2A10EC44FB53F8717D469217AA6DEFCA38C5CD"
+        },
+        {
+          "path": "data/Petit/Mushi/cg_PetitMushi.nccarc_c",
+          "length": 21940,
+          "sha256": "0096EF9A6BB15DEB90DDD3022AC388936E7E221A9D0D4DB021D2FF951E777706"
+        },
+        {
+          "path": "data/Petit/Mustache/cg_PetitMustache.nccarc_c",
+          "length": 11759,
+          "sha256": "E5D66040AEEA211321B2A8E4B99A65EB94D33D96B775C46AC54FEB31F3E1E75F"
+        },
+        {
+          "path": "data/Petit/MyBackItches/cg_PetitMyBackItches.nccarc_c",
+          "length": 28041,
+          "sha256": "27322C168B888FBE8EFD0735C6401A10D7725E58690E3E4C02360FA3070F002B"
+        },
+        {
+          "path": "data/Petit/NaviCut/Earth.nsbmd_c",
+          "length": 50849,
+          "sha256": "84F7F47BE122927918E37D26C108866B5428BAE6B38E99AE93883CAC818A28E9"
+        },
+        {
+          "path": "data/Petit/NaviCut/Melon.nsbmd_c",
+          "length": 104388,
+          "sha256": "15668BE406AADD575287601CF58CBF2CBD30859847A76E5FEF84E2BB2195C314"
+        },
+        {
+          "path": "data/Petit/NaviCut/Watermelon.nsbca_c",
+          "length": 2635,
+          "sha256": "F7FE1D8285E053413ECD52D69E71A23C6B128944D546842758BCE45662A0C8D5"
+        },
+        {
+          "path": "data/Petit/NaviCut/Watermelon.nsbmd_c",
+          "length": 101185,
+          "sha256": "1987A577E4F386FCC495872242E7CB5B2C1AA0448F4AAF55DFBA5853CE304A4C"
+        },
+        {
+          "path": "data/Petit/NaviCut/Watermelon.nsbva_c",
+          "length": 464,
+          "sha256": "86D5BF29B3732EAE9F9853CA1CAA5AC207C05128F38DF041B97EF76ADA621184"
+        },
+        {
+          "path": "data/Petit/NaviCut/cg_PetitNaviCut.nccarc_c",
+          "length": 1861,
+          "sha256": "9948C82EE01A6E8DC97DA82059791D5931784734E7275EF7B21F01CEF29E1CD0"
+        },
+        {
+          "path": "data/Petit/NeedleThread/cg_PetitNeedleThread.nccarc_c",
+          "length": 1280,
+          "sha256": "021010989C49C22567A6A3F1F06F671F6FA19044FE2B14EAA93DDDF5C224DCA3"
+        },
+        {
+          "path": "data/Petit/NiceCatch/cg_PetitNiceCatch.nccarc_c",
+          "length": 4265,
+          "sha256": "72EE9D5424B0A0BD77DE5E5370A3E0B25CAB9DEA6B7C1180871F39B0D23EFCDA"
+        },
+        {
+          "path": "data/Petit/NinePuzzle/cg_PetitNinePuzzle.nccarc_c",
+          "length": 54231,
+          "sha256": "35FC532EF3C2117170BA93737BABC70BE898BBAE73560EB63EF7FABF5516B6B8"
+        },
+        {
+          "path": "data/Petit/Ninja2/cg_PetitNinja2.nccarc_c",
+          "length": 15635,
+          "sha256": "AF4A79D3D39D761A14F8787FA4FDF1F87D3EB7A7BAF5E68530CFA1C007979EB4"
+        },
+        {
+          "path": "data/Petit/NoseSneeze/cg_PetitNoseSneeze.nccarc_c",
+          "length": 3866,
+          "sha256": "D72FF56552EE7BC0623CA74BA74E7C231D3FE2B39350F7579D13C53465FCAE93"
+        },
+        {
+          "path": "data/Petit/OceanFloor/cg_PetitOceanFloor.nccarc_c",
+          "length": 10363,
+          "sha256": "C6387D3267A4E650C32E5ABFDE045F5EA85BC66EC2980F4F152E47294E529C15"
+        },
+        {
+          "path": "data/Petit/Omrice/cg_PetitOmrice.nccarc_c",
+          "length": 36025,
+          "sha256": "96CF21166FDA4AF1579E9D812A26505DF428203FFF8CA6E843C15CB546C9C494"
+        },
+        {
+          "path": "data/Petit/Pachinko/Pachinko.nanr_c",
+          "length": 963,
+          "sha256": "939632A4ED4F162EAD3A38BFEC6E52349BF38307CDCFA29871482ADCB3F921F2"
+        },
+        {
+          "path": "data/Petit/Pachinko/Pachinko.ncbr_c",
+          "length": 6376,
+          "sha256": "21560497DE0C31A56987395C91756655038FBED328E186BACE175D52EB55A71E"
+        },
+        {
+          "path": "data/Petit/Pachinko/Pachinko.ncer_c",
+          "length": 2168,
+          "sha256": "6222A3AEE9CF40A6C705D25138FCF4A5E78C238DD92118505C7C5FCA96C9A529"
+        },
+        {
+          "path": "data/Petit/Pachinko/Pachinko.nclr_c",
+          "length": 270,
+          "sha256": "201162628655F5CD6D5B0D30080AECBC3565AEA75BEFAE6642715C19531C17E3"
+        },
+        {
+          "path": "data/Petit/Pachinko/cg_PetitPachinko.nccarc_c",
+          "length": 9398,
+          "sha256": "8D51E287AFB4235B362F3751E5CBDEFC45009B8AD1D8E3AF0889F751FBF73441"
+        },
+        {
+          "path": "data/Petit/PaperPlane/cg_PetitPaperPlane.nccarc_c",
+          "length": 8691,
+          "sha256": "8C776AB9FE8AC345247A2DAB5DB0C771417E8DEC2D7783E5EE85FA7EE3C336C9"
+        },
+        {
+          "path": "data/Petit/PastureTale/cg_PetitPastureTale.nccarc_c",
+          "length": 6435,
+          "sha256": "00743993AB93166CCF3BA351068A460B5047E9D3E332BEFFEC71A1FE875BC99A"
+        },
+        {
+          "path": "data/Petit/Pelmanism/cg_PetitPelmanism.nccarc_c",
+          "length": 12572,
+          "sha256": "6C515A478BFF3A0DC168F7B7C9EC7AD7F92655618D6B9C58F8AE6B67E651FDFF"
+        },
+        {
+          "path": "data/Petit/Penlight/cg_PetitPenlight.nccarc_c",
+          "length": 529,
+          "sha256": "FBB56C39CC0DD0C9F9BF9BEC444BC70E34E9B54C7A5CE8B5BF1C570940E3C184"
+        },
+        {
+          "path": "data/Petit/Penmanship/cg_PetitPenmanship.nccarc_c",
+          "length": 47089,
+          "sha256": "A53E456C17B3B6DFC0475A96124AA67C24B595AB6C9CF88D4A13A882DE0090AC"
+        },
+        {
+          "path": "data/Petit/Pianist/cg_PetitPianist.nccarc_c",
+          "length": 6567,
+          "sha256": "6F8EA64E0005E67B404E31AEA0B73D9FA0A1CF6EB7A29FD0D0C68E3BBF84A7B6"
+        },
+        {
+          "path": "data/Petit/Piano/cg_PetitPiano.nccarc_c",
+          "length": 3204,
+          "sha256": "C30CB24C8C7FAB54E023702A586050452D51DB648E026FE6A51D3A47B3E4E1C9"
+        },
+        {
+          "path": "data/Petit/PickUpMoney/cg_PetitPickUpMoney.nccarc_c",
+          "length": 4420,
+          "sha256": "BAD5CCE1FEB577350DB73A7B60D81BC071C9D763763B0FA8D6FD14ED317B25DD"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp.nanr_c",
+          "length": 299,
+          "sha256": "68BC6FD8764483D326D6F742ED3EED784C87CBD93492EEC1EC6B6D273D8CB621"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp.ncbr_c",
+          "length": 6780,
+          "sha256": "ED57E6634A507F6C14F2B9A734EAC494131B550019AC1F4A75C05B497DA14407"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp.ncer_c",
+          "length": 275,
+          "sha256": "92A22B781B9E3366BAC5D193815FA591B0CD95BD080B0550848831711B5AC25B"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp.nclr_c",
+          "length": 199,
+          "sha256": "5691CBAAED0EE55873E46F077A6291CC0EEF6EE321BA6CE71F5214F34629E10C"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp2.nanr_c",
+          "length": 304,
+          "sha256": "D0E146C2F5329CE9CD74D8122555692D04CE6967C519352C11699F42A40D7D6F"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp2.ncbr_c",
+          "length": 6339,
+          "sha256": "A8A1C7CE4FECDEB33865FBD1CC2B67619953C07E69EF1CD64F4F58FAA8E00955"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp2.ncer_c",
+          "length": 281,
+          "sha256": "4799805C3875135E22078523CF8EE56EE96741860FF5DB3182337518CEE418DD"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUp2.nclr_c",
+          "length": 199,
+          "sha256": "5691CBAAED0EE55873E46F077A6291CC0EEF6EE321BA6CE71F5214F34629E10C"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUpWario.nanr_c",
+          "length": 747,
+          "sha256": "2C7D2AE87664B93D111A5257C42DA10ADF73EA342A25C898961478B8B356A6FD"
+        },
+        {
+          "path": "data/Petit/PileUp/PileUpWario.ncer_c",
+          "length": 1031,
+          "sha256": "6C3628F370067B538F2742A4864B6E8EB33AA64D5A14EB2A6082E5CE8F16DB9D"
+        },
+        {
+          "path": "data/Petit/PileUp/cg_PetitPileUp.nccarc_c",
+          "length": 1097,
+          "sha256": "8052C801E415B452D2D88B8480E3FA277C1105B6F6440DC008D299BF921D9908"
+        },
+        {
+          "path": "data/Petit/PingPong/cg_PetitPingPong.nccarc_c",
+          "length": 51460,
+          "sha256": "584E00AFD8EE43FB5D5DFF77B90C083D845A5FC6516DA72C16264C4C89DEDA38"
+        },
+        {
+          "path": "data/Petit/Pinwheel/cg_PetitPinwheel.nccarc_c",
+          "length": 20315,
+          "sha256": "24C3B33005AE8AB9DEF31543D4BEBC64FBC1F3AEEB664219CD21130286779B30"
+        },
+        {
+          "path": "data/Petit/Pipe/cg_PetitPipe.nccarc_c",
+          "length": 7558,
+          "sha256": "2FD526141B7288E1C3A75787D9350DBC8CD46BD54D603D61E45202741AF3A1DA"
+        },
+        {
+          "path": "data/Petit/Pizza/cg_PetitPizza.nccarc_c",
+          "length": 11795,
+          "sha256": "D235EA4C8350E5B7C6AC0D5A645CC4FCAD391CEF7B6D719CB6A4D0CDBEE203C8"
+        },
+        {
+          "path": "data/Petit/Projector/cg_PetitProjector.nccarc_c",
+          "length": 35646,
+          "sha256": "708E35DA867FDC196DD89412120D1261C4D2971C3EC312419E634B6BD282BE35"
+        },
+        {
+          "path": "data/Petit/Pudding/PetitPudding.ntfp_c",
+          "length": 63,
+          "sha256": "CEC7FBF14C2F9A3DE08B25FC02532104E952AA0E854F01936069F1F11A60555B"
+        },
+        {
+          "path": "data/Petit/Pudding/PetitPudding.ntft_c",
+          "length": 3147,
+          "sha256": "4B412AB1B82647836C6EEE456D31DD6E5458762ABEAE97341CE2825FE08A56F6"
+        },
+        {
+          "path": "data/Petit/Pudding/cg_PetitPudding.nccarc_c",
+          "length": 21210,
+          "sha256": "01A919CAB75D29B0E05C1E4251AD1244BB4FB92FDD146D553BB31122FB85BCD1"
+        },
+        {
+          "path": "data/Petit/PunchRush/cg_PetitPunchRush.nccarc_c",
+          "length": 14193,
+          "sha256": "0D578E6CA2C0F70697C6E550B93DBEB2713625C666643AEBA9F6D8E3FE15BA9B"
+        },
+        {
+          "path": "data/Petit/Pyoro/cg_PetitPyoro.nccarc_c",
+          "length": 61714,
+          "sha256": "BC6679C5D4DE2129590D1CE32E4C61D5426062A338AFB67B6DB0B2297858B120"
+        },
+        {
+          "path": "data/Petit/Radio/cg_PetitRadio.nccarc_c",
+          "length": 11943,
+          "sha256": "7AC1E4A1E9DAE5F8C24F20A68C4763ACA456E6CCB50118EBD5C3705AA559DF12"
+        },
+        {
+          "path": "data/Petit/RcCar/cg_PetitRcCar.nccarc_c",
+          "length": 17539,
+          "sha256": "192BA43CEA2FCB773301B4D3B7EA429F05FA1E77AD51F9DCA47A87F3CD9DE791"
+        },
+        {
+          "path": "data/Petit/Record/cg_PetitRecord.nccarc_c",
+          "length": 29158,
+          "sha256": "1BF5321E282DD2C2F08907EABAC6FF3CB8043E277CBB9FB3FCB5B19592202A70"
+        },
+        {
+          "path": "data/Petit/Recorder/cg_PetitRecorder.nccarc_c",
+          "length": 8597,
+          "sha256": "63D4FA50C4923A8AA684FC0DA1C322E9F1620B8C787EB7D70691D6C12EE901FE"
+        },
+        {
+          "path": "data/Petit/RedDragonfly/cg_PetitRedDragonfly.nccarc_c",
+          "length": 12722,
+          "sha256": "03740E26630327C1157DE66E986BF85C01464EC3D4A874E767DD53EB3E74CE0F"
+        },
+        {
+          "path": "data/Petit/RedThreadofFate/cg_PetitRedThreadofFate.nccarc_c",
+          "length": 24467,
+          "sha256": "7C9F3BBC2FF00CEB115319C7811FA954F6CBC6DDC90BA1AF80EBEF1BF2080075"
+        },
+        {
+          "path": "data/Petit/RescueAnimal/cg_PetitRescueAnimal.nccarc_c",
+          "length": 4322,
+          "sha256": "45045795837D7F59303F86ECAF0064574FBCC17806CF22BE0623F553A40C3DB7"
+        },
+        {
+          "path": "data/Petit/RescueBills/cg_PetitRescueBills.nccarc_c",
+          "length": 34083,
+          "sha256": "4396286D651926D7C66982E2BBBF7C1C3EA2BA94DBC9750FE3E84FF599A23C48"
+        },
+        {
+          "path": "data/Petit/Reverse/Cap.nsbmd_c",
+          "length": 15345,
+          "sha256": "5827BBE5D7977B97BD2765CAC2FEDC5E3EDBA6E20F724C3CF7A479F7E887DC82"
+        },
+        {
+          "path": "data/Petit/Reverse/Cap.nsbtp_c",
+          "length": 145,
+          "sha256": "3F3238812FBAF6A5EE776BA6C036E25D7EA0AFBC79193059502E74EC65BD5D15"
+        },
+        {
+          "path": "data/Petit/Reverse/Card.nsbmd_c",
+          "length": 28989,
+          "sha256": "E766D4E4CF49E2E4186A503ABC6485054305366D67251C88B1BB9A87B5494114"
+        },
+        {
+          "path": "data/Petit/Reverse/Card.nsbtp_c",
+          "length": 145,
+          "sha256": "22581148AEAA11C0AF87BCA59AA9A450B7F8B1F52CE24C223D590E3C0B7F23C9"
+        },
+        {
+          "path": "data/Petit/Reverse/Coin.nsbmd_c",
+          "length": 43229,
+          "sha256": "08733F7979ABB5A9C1AC7563D0FAEFDE9638254EB6E9199A878D74C801CE39EB"
+        },
+        {
+          "path": "data/Petit/Reverse/Coin.nsbtp_c",
+          "length": 142,
+          "sha256": "307F6A2BBF33F6471962B6BF52D7A83EF670D6B5C6FDA143645FF6AF8F86DCE0"
+        },
+        {
+          "path": "data/Petit/Reverse/Common.nsbmd_c",
+          "length": 57499,
+          "sha256": "3F1F9D405E96A51A57DBAE606867DA893A5C622BD82BCAA523BDDB3A788A5F81"
+        },
+        {
+          "path": "data/Petit/Reverse/cg_PetitReverse.nccarc_c",
+          "length": 45,
+          "sha256": "35CA8269D98933984249053ADFEC5F70A19D1B4BCB15603C3823CA6BC10BB145"
+        },
+        {
+          "path": "data/Petit/Ring/Ring.nanr_c",
+          "length": 829,
+          "sha256": "1538DE9BECC32C744B518611BD3C90E0A0ADF85F80197A51A8734B78CBD6612B"
+        },
+        {
+          "path": "data/Petit/Ring/Ring.ncbr_c",
+          "length": 5599,
+          "sha256": "4D93091469ACF58F27751C2E9801E18C16279F2552AD27298782C5FB8E5F0E49"
+        },
+        {
+          "path": "data/Petit/Ring/Ring.ncer_c",
+          "length": 1120,
+          "sha256": "6EB1F5E47F22957942DA117E56DAF43F56607E60B372518FE6B67155D7B8760A"
+        },
+        {
+          "path": "data/Petit/Ring/Ring.nclr_c",
+          "length": 237,
+          "sha256": "9CAD8327733D1F1C172427B8690D9A2A3691CC3E74E3D0EF9E9C135C7565FD38"
+        },
+        {
+          "path": "data/Petit/Ring/cg_PetitRing.nccarc_c",
+          "length": 5587,
+          "sha256": "95AF0B9150860FB39E444227A9DB45BCDC6DA0494BB9C240D86EC4D513D8C964"
+        },
+        {
+          "path": "data/Petit/RocketFire/cg_PetitRocketFire.nccarc_c",
+          "length": 17486,
+          "sha256": "D1CEB376F3EC090D35305CB27D0C249F4A8D2C089E207D9AEB07217658CA48ED"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_agb.nsbca_c",
+          "length": 1729,
+          "sha256": "61C60CBEAA168F67FEDC51D6F9185C6EA0B70A8F7113DC5C538C92F43805A854"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_agb.nsbmd_c",
+          "length": 44992,
+          "sha256": "5F8CA0BC39DE5B4B5EF22A728C944A00E7D549DD533C2CEF985A519F4F401450"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_agb_fin.nsbta",
+          "length": 1596,
+          "sha256": "E1151721A3039868389772292FE3901F350C3CFEA6501F9AB82CDE97D740EEFB"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_agb_fin.nsbtp",
+          "length": 164,
+          "sha256": "F572B71BC14B55A76F4C2FE0F69ED32091FD34D7E1A366F7969C7EB3600888C9"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_ags.nsbca_c",
+          "length": 1649,
+          "sha256": "AC2432A3123C1B8E6DA29D24F59DC940E6248A44369A8B2361DEEA78B8890E0C"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_ags.nsbmd_c",
+          "length": 39530,
+          "sha256": "37FF7795DC8619786BD9393D12D186E034FE65FE73ABDD44B674D4109F557FA4"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_ags_fin.nsbta",
+          "length": 1596,
+          "sha256": "EA3E50E92002EE27C2B0259AFEE8C8A3F6A37BCCABD4A5ABC0F2B1ABECF35F11"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_ags_fin.nsbtp",
+          "length": 164,
+          "sha256": "5FB50F50A4A5247264909DDEF8F085B352AB3CD77EC2802DF88223FD8835F7C7"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_nds.nsbca_c",
+          "length": 1924,
+          "sha256": "70570BC0DE4E018064DD4FE2391B379A8AF6B182EBBE235B939CEC45F0038BE4"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_nds.nsbmd_c",
+          "length": 43014,
+          "sha256": "71E1122CDD669BC82D21893AF77B7CFCCBD061203938DFDCA27F03882A76E2E1"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_nds_fin.nsbta",
+          "length": 1912,
+          "sha256": "EA5B97720B9378958EF065F11BE5A74BDD9DF183452D26C739811EC244C9C7BE"
+        },
+        {
+          "path": "data/Petit/RollingAgb/agb_nds_fin.nsbtp",
+          "length": 252,
+          "sha256": "D7C901EDE118FE977BE4EB4D3F5556C0193857B9373E522DF4EE65BF7E0BF8F0"
+        },
+        {
+          "path": "data/Petit/RollingAgb/cg_PetitRollingAgb.nccarc_c",
+          "length": 19189,
+          "sha256": "A939FCB374CB6C44D6BFDA4902BE0E77C473A393A34DDAE407C676D9754F44CD"
+        },
+        {
+          "path": "data/Petit/RollingBall/RollingBall_Lv1_Lv2.nsbmd_c",
+          "length": 58173,
+          "sha256": "5F7F9FA6828BF41DE4B8ABFA615671D7E9794A911E205CA630A91021415753C9"
+        },
+        {
+          "path": "data/Petit/RollingBall/RollingBall_Lv3.nsbmd_c",
+          "length": 30656,
+          "sha256": "1D9513C881B8842868C57860A921805B50B4CB0B6EAAA51465216188918807E4"
+        },
+        {
+          "path": "data/Petit/RollingBall/cg_PetitRollingBall.nccarc_c",
+          "length": 9056,
+          "sha256": "33C71161DA43E46A0C17BBF8CC9C4FA12CE93719F50002FB57BBA743628E684C"
+        },
+        {
+          "path": "data/Petit/RollingDs/cg_PetitRollingDs.nccarc_c",
+          "length": 8533,
+          "sha256": "74AB50ACE308C1CC561E0C61F9C60C16BAC57A79A2EC87CE02AFFD723005C454"
+        },
+        {
+          "path": "data/Petit/RollingStand/cg_PetitRollingStand.nccarc_c",
+          "length": 11995,
+          "sha256": "F0CC319F898DE7006A8ED66BCA0E7DFA26F4A8C0604DCDED8E47150B28EC042C"
+        },
+        {
+          "path": "data/Petit/RootOfHair/cg_PetitRootOfHair.nccarc_c",
+          "length": 7120,
+          "sha256": "5DABFBE2E8308E7B02AE9B5F44DA982F086E942A18E15AE3EEEA78F78D63824B"
+        },
+        {
+          "path": "data/Petit/Sailing/cg_PetitSailing.nccarc_c",
+          "length": 11642,
+          "sha256": "C241BA2844526FAAD02EF5235ACA0E8BBE8BB5D67CF2B7FD375B915D213052D4"
+        },
+        {
+          "path": "data/Petit/ScratchCard/cg_PetitScratchCard.nccarc_c",
+          "length": 25191,
+          "sha256": "2EA658C9103240AD511752D4C35F4593867F3DB80C8227949429D14FD7519A47"
+        },
+        {
+          "path": "data/Petit/Sculpture/cg_PetitSculpture.nccarc_c",
+          "length": 15316,
+          "sha256": "CBF2D97D9A9777D83BE2AEF9EFD247EEA34AE34B6B1CB58E4BDC8BF8A9B698C8"
+        },
+        {
+          "path": "data/Petit/SearchHouse/cg_PetitSearchHouse.nccarc_c",
+          "length": 10041,
+          "sha256": "C10CF9C6F426C7BEE4AB6C007F9F9C2BE8403ADFEBA0F8A9DC47886AF69D999C"
+        },
+        {
+          "path": "data/Petit/SequenceNumber/cg_PetitSequenceNumber.nccarc_c",
+          "length": 10060,
+          "sha256": "26C1126DD79C1B0A1007F549DFD2D0342CF6EB00C462081CCC7E940AC8299092"
+        },
+        {
+          "path": "data/Petit/SexyHarmonica/cg_PetitSexyHarmonica.nccarc_c",
+          "length": 8483,
+          "sha256": "5256EB65FA204AD067709114D1D28EA3CA5DD1C7C0484B6215674A23CF22A4A7"
+        },
+        {
+          "path": "data/Petit/Shampoo/Shampoo.nanr_c",
+          "length": 828,
+          "sha256": "393A1E866C4576E4F2E9AD18FD6C464514CC2D694ECE30467AFAEBC38054A634"
+        },
+        {
+          "path": "data/Petit/Shampoo/Shampoo.ncbr_c",
+          "length": 16681,
+          "sha256": "B0570B4F41837FE0E0699A5FD18E78E5A2E06D451ECDC3F23BFD4E388FA80C37"
+        },
+        {
+          "path": "data/Petit/Shampoo/Shampoo.ncer_c",
+          "length": 3002,
+          "sha256": "9F1F64F36B0F03B264E07A873F09A0A667B17716375AFD9A46ADDAC2EE81C057"
+        },
+        {
+          "path": "data/Petit/Shampoo/Shampoo.nclr_c",
+          "length": 234,
+          "sha256": "A775C11AA47C7755F55519A37B2D91D54E242EBFB87B90FD2C50AF99046C729F"
+        },
+        {
+          "path": "data/Petit/Shampoo/cg_PetitShampoo.nccarc_c",
+          "length": 4318,
+          "sha256": "DDF1AA61147AE9F2B21FCD825C83832D83E1D66DAC4B959DC4B8F7CCBF8918F0"
+        },
+        {
+          "path": "data/Petit/SharpPen/cg_PetitSharpPen.nccarc_c",
+          "length": 4515,
+          "sha256": "6E97F2DE2BA7558F9876DED59E0E83C808B0DC7E91F95B4CE65D937A64985108"
+        },
+        {
+          "path": "data/Petit/Shower/cg_PetitShower.nccarc_c",
+          "length": 33925,
+          "sha256": "90A9E05EA3F5A9BF1847A67112B59E0C56E1F798DC68535A3BE25A2C4E939D43"
+        },
+        {
+          "path": "data/Petit/Shu/cg_PetitShu.nccarc_c",
+          "length": 33128,
+          "sha256": "818CBE96B67C772244A3FD82EC7F0FB876ECF2DB217F7B0CD5813A4649A3E3D8"
+        },
+        {
+          "path": "data/Petit/SingleStroke/cg_PetitSingleStroke.nccarc_c",
+          "length": 195,
+          "sha256": "EC84AC7ED19AA7848167B27DEC373877111B052B9917104745FE28E4CAA111C8"
+        },
+        {
+          "path": "data/Petit/Skeleton/cg_PetitSkeleton.nccarc_c",
+          "length": 9,
+          "sha256": "3AC4BD60DB24E68FB89735B3F73EE10719F1B8DB1474D0BE12EF2A5E67DAA86B"
+        },
+        {
+          "path": "data/Petit/Slalom/cg_PetitSlalom.nccarc_c",
+          "length": 5064,
+          "sha256": "C8D3B0664A7AE21A79BEA40653D800BA363032A3B83DE12942113916D8BB1E0C"
+        },
+        {
+          "path": "data/Petit/Slice/cg_PetitSlice.nccarc_c",
+          "length": 20968,
+          "sha256": "D0A6295B4A6B4BEA1B99DA13BF9E8B02BCA14E812FD7D88B370E09979D4156D3"
+        },
+        {
+          "path": "data/Petit/Smoke/Smoke.nanr_c",
+          "length": 151,
+          "sha256": "9FDA7FB0951CAC348429C067BA6CBA08AB1A47FF45B0475256D8CFA539E76809"
+        },
+        {
+          "path": "data/Petit/Smoke/Smoke.ncbr_c",
+          "length": 3980,
+          "sha256": "507F55E46E0F9ABF4DC9C0831FDED956F2C81D241212B1D9A02C401893B3F399"
+        },
+        {
+          "path": "data/Petit/Smoke/Smoke.ncer_c",
+          "length": 115,
+          "sha256": "C9379C28EBD4AFA507271AB50615716B1C686B9FBA579F0325455130A5BF19D0"
+        },
+        {
+          "path": "data/Petit/Smoke/Smoke.nclr_c",
+          "length": 173,
+          "sha256": "A0B72FA6137F5D82A8F6FB9E276F41FAA276ED6BF2674BFD03EA1A0EBF242D94"
+        },
+        {
+          "path": "data/Petit/Smoke/cg_PetitSmoke.nccarc_c",
+          "length": 74462,
+          "sha256": "DE06A374A47FBCFB6578A57F9E2E6194934F719E5B8E0D6E701706E62C1B33E7"
+        },
+        {
+          "path": "data/Petit/Snail/cg_PetitSnail.nccarc_c",
+          "length": 20656,
+          "sha256": "34814674B2177C90F7209521BFCB6EBFADD636921D816D65AD7B9B9B10ECC91C"
+        },
+        {
+          "path": "data/Petit/SnivelGirl/cg_PetitSnivelGirl.nccarc_c",
+          "length": 14299,
+          "sha256": "14AADE304C1D2B0C2864C2CEFFBE664C9E0496DD67AB55317DF1E4EE0255841B"
+        },
+        {
+          "path": "data/Petit/SnowBall/cg_PetitSnowBall.nccarc_c",
+          "length": 12587,
+          "sha256": "E82B0A979A81F90325929E8606BC9CB1CB535F7A485F1977FBAA75DA682D09A7"
+        },
+        {
+          "path": "data/Petit/Snowman2/cg_PetitSnowman2.nccarc_c",
+          "length": 13863,
+          "sha256": "BAA3B35DDA0030C64E3138EF6F8508CDA4D1EE0B81AEC8CEF6AB2F822F6E90E3"
+        },
+        {
+          "path": "data/Petit/SoapBubble/cg_PetitSoapBubble.nccarc_c",
+          "length": 5237,
+          "sha256": "EEE2BF9E2AAD50D9C8F7D046B0A6EC1D27DAC4DB060522FDBA80E3EDD8D7303C"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring.nanr_c",
+          "length": 442,
+          "sha256": "26AB5843FAD2DE00E93C43EF61FAA826F4D51132822CEBD2CFAAFB08FC857787"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring.ncbr_c",
+          "length": 8338,
+          "sha256": "5754BF13D3449D72FFFE724E2FE8FC32EAB45FE48A4C13C20F53B0654194C099"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring.ncer_c",
+          "length": 1011,
+          "sha256": "089A1F8E71F568E9C8BC1BDC9B5A1ED4E4CC6326701564A6BC1FF4B6A2F92FC2"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring.nclr_c",
+          "length": 328,
+          "sha256": "8A6A0384B01BBBCCAFD55A7DFB4746CF33D3CCF87534D708C8ECE7E7E231899C"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring2.nanr_c",
+          "length": 442,
+          "sha256": "26AB5843FAD2DE00E93C43EF61FAA826F4D51132822CEBD2CFAAFB08FC857787"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring2.ncbr_c",
+          "length": 8424,
+          "sha256": "2338E92B9331AE76B116E042A526E013D676231B1FE24BAD80CA95BF2C045F01"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring2.ncer_c",
+          "length": 1011,
+          "sha256": "089A1F8E71F568E9C8BC1BDC9B5A1ED4E4CC6326701564A6BC1FF4B6A2F92FC2"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring2.nclr_c",
+          "length": 237,
+          "sha256": "553F59B2D7778DF86D4EEB1A6AF6C92729F2ABD33250FC7A51566D47F6C1ABFA"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring2_arm.nanr_c",
+          "length": 204,
+          "sha256": "A8D5632FCE76E57EA31EBDD4E88B270CA075B28C55FCD6535FC84B15BEEC45B3"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring2_arm.ncbr_c",
+          "length": 5325,
+          "sha256": "CC8E42F944D345F5982F591C984E07E2847667DEAC6392C4ABCD13110963B7E7"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring2_arm.ncer_c",
+          "length": 363,
+          "sha256": "18CA8F50369B71C9FD61ABCD9C35E8C2A62F03BCDD9357E41131DCC1A86F16E9"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring_arm.nanr_c",
+          "length": 204,
+          "sha256": "A8D5632FCE76E57EA31EBDD4E88B270CA075B28C55FCD6535FC84B15BEEC45B3"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring_arm.ncbr_c",
+          "length": 5518,
+          "sha256": "B2155F27E24E107F733BB48366DC0F734F1773FFCD36F984680B7AD9F1B54C1C"
+        },
+        {
+          "path": "data/Petit/Sparring/Sparring_arm.ncer_c",
+          "length": 363,
+          "sha256": "18CA8F50369B71C9FD61ABCD9C35E8C2A62F03BCDD9357E41131DCC1A86F16E9"
+        },
+        {
+          "path": "data/Petit/Sparring/cg_PetitSparring.nccarc_c",
+          "length": 15231,
+          "sha256": "4657CCDB2A07FBBD4C5D52B0DCE36770060F249A2A2A6A3ABAE80E8C9596E872"
+        },
+        {
+          "path": "data/Petit/SpinDish/cg_PetitSpinDish.nccarc_c",
+          "length": 8724,
+          "sha256": "108B0C42699D972C3FBBA8CFEA2E7A85A8F00B2B7541356D04912D1CB65CF21D"
+        },
+        {
+          "path": "data/Petit/Spirometer/cg_PetitSpirometer.nccarc_c",
+          "length": 27619,
+          "sha256": "87C7FA445AB79A833504128F807280F9AE7FABDEA6AA8AA1E74B17651F6EA92D"
+        },
+        {
+          "path": "data/Petit/Staffroll/cg_PetitStaffroll.nccarc_c",
+          "length": 4975,
+          "sha256": "8714AA3AA37947BDC6E250794A380F0364A46A8F5CCC218896475098F9BCB98B"
+        },
+        {
+          "path": "data/Petit/StickCatch/cg_PetitStickCatch.nccarc_c",
+          "length": 4158,
+          "sha256": "BFFDBC282814EE71A4B8A35B7DA6510F683A992C7A26962C39E7EA1CC1BF5A3F"
+        },
+        {
+          "path": "data/Petit/StopDisk/cg_PetitStopDisk.nccarc_c",
+          "length": 21236,
+          "sha256": "F19B1B3BE124E59C9E77FBA219DEE1CC32263BDA78C17975B79C6A00B38740F9"
+        },
+        {
+          "path": "data/Petit/StopDisk/disk.nsbca_c",
+          "length": 3031,
+          "sha256": "60187924743D0771CC0D23D5A7C42A09871BD7F2B4E140B902052998D99CA8EE"
+        },
+        {
+          "path": "data/Petit/StopDisk/disk.nsbmd_c",
+          "length": 12024,
+          "sha256": "EBA17C30A742D0C973212EEB2A5B0521E9CB8215EDD770909C879FC55E8A914A"
+        },
+        {
+          "path": "data/Petit/StopDisk/egg.nsbca_c",
+          "length": 37328,
+          "sha256": "BC282A22F295A959892EF1AB3086A55C07B0797A1BAAB5A5DF8680DDEB3A2F56"
+        },
+        {
+          "path": "data/Petit/StopDisk/egg.nsbmd_c",
+          "length": 17248,
+          "sha256": "A9AD5AF0BCC79D8D6458CA155497DFF1C691A5EA7345437D231E7FEC261E2946"
+        },
+        {
+          "path": "data/Petit/StopDisk/egg.nsbtp_c",
+          "length": 161,
+          "sha256": "902E4AC881F009DA33F27CDEEF6323ECCFEA07B2BE6BD0ABAF155686C1EAA963"
+        },
+        {
+          "path": "data/Petit/Stop/cg_PetitStop.nccarc_c",
+          "length": 20554,
+          "sha256": "AEAFFF004A64BA2AA6FE7778008F8E428300EE2319962FC1AC2E2DF8DFE90F69"
+        },
+        {
+          "path": "data/Petit/StrongBox/cg_PetitStrongBox.nccarc_c",
+          "length": 13000,
+          "sha256": "FA9F5DE2DE264B8F63AF644AC43E99D3D0285D56B44C2C1725D7EC2B57399D92"
+        },
+        {
+          "path": "data/Petit/SuperMario2/cg_PetitSuperMario2.nccarc_c",
+          "length": 11988,
+          "sha256": "638211A46054E1F1A49D3CF66B7382BBBA60B523A848E7D8EA4B15F1466088B5"
+        },
+        {
+          "path": "data/Petit/SuperMario/cg_PetitSuperMario.nccarc_c",
+          "length": 13529,
+          "sha256": "A58D7F474E94D36D8F19371C83D6BA7DE5F276ED277C8F2CE99094715213BC22"
+        },
+        {
+          "path": "data/Petit/Swim/cg_PetitSwim.nccarc_c",
+          "length": 10894,
+          "sha256": "C2CDA04970887E9FF37C9B6122CBDFE3CF963A69D853B8E9DD11C5F2F3C2542B"
+        },
+        {
+          "path": "data/Petit/Tabero/cg_PetitTabero.nccarc_c",
+          "length": 11572,
+          "sha256": "4A639B71669D785D50E24D29D0A5512BE066E0BE411DEC3F13AF8FD2EED6FB1F"
+        },
+        {
+          "path": "data/Petit/Taiko/cg_PetitTaiko.nccarc_c",
+          "length": 18647,
+          "sha256": "73ACC440F549CB764D4EC17D027DB3EE7EE560D4B381104F5AE3B5CC261CC73E"
+        },
+        {
+          "path": "data/Petit/TailCut/cg_PetitTailCut.nccarc_c",
+          "length": 36700,
+          "sha256": "80BEE062CD400DC91741F27D50001486DC391429152CFB9D9328F26787C9044A"
+        },
+        {
+          "path": "data/Petit/Telescope/cg_PetitTelescope.nccarc_c",
+          "length": 6328,
+          "sha256": "CC7BB0822E6BB9EEA8BF5D3375A2E706938008DBE9B83DC322018A5E70F4535A"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/alpha_1.nsbmd_c",
+          "length": 3708,
+          "sha256": "49446C3EC1768E7B430116AEF6B429194B48D677031FA86C42F69F6AC95869AB"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/alpha_2.nsbmd_c",
+          "length": 5182,
+          "sha256": "F28275B8F070E7DA59DBC1480468A996907DBC999B6FAE1C838E395AFD5C5603"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/alpha_3.nsbmd_c",
+          "length": 4452,
+          "sha256": "D41BFE3A218301FEF658F5F6D9A1CDF26614B927869925462ECCAA9F7D14A045"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/alpha_4.nsbmd_c",
+          "length": 4154,
+          "sha256": "F357D83689618D69C4F31CEF22FB51A715BE80DDC8BE07F06D64B39B479C2E8C"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/cg_PetitThreeDQuiz.nccarc_c",
+          "length": 10333,
+          "sha256": "7DE4C9F38AB2A4EAC2AE91A64C996AA8619BD9544C62CA935532B02A1FF12667"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/mush_1.nsbmd_c",
+          "length": 19447,
+          "sha256": "12FD21651CFC8E5D45513922F029A456F1199F02FD4AF5F34B75C8E622298A06"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/mush_2.nsbmd_c",
+          "length": 21103,
+          "sha256": "2A356F35CF896E8CEB4EDA291B87DA74F19E83DE49820F66E08C03D6FD0F0ED9"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/mush_3.nsbmd_c",
+          "length": 16123,
+          "sha256": "23C2CCFE5C904C26184EFCC319E7AFFA11EA998234B39ED4F5D300F7B212E4C5"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/mush_4.nsbmd_c",
+          "length": 12506,
+          "sha256": "3A4484AD800571001537A68C913E5707CE24FC7397F320D4B5DEDF5B2C980F47"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/veget_1.nsbmd_c",
+          "length": 20106,
+          "sha256": "B64039DFDB1E5640DED052F3F620595CB172B0CC9A76F6339EA36146A4A7450E"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/veget_2.nsbmd_c",
+          "length": 28568,
+          "sha256": "95F68FBEDCD9E2F53D462E08CD3ABD133F3317EC488A66A0FDB134C76B4917C4"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/veget_3.nsbmd_c",
+          "length": 36336,
+          "sha256": "7349289C3CD479A80B098397DF144BA4EE2057FC3F630EDE9A0CF6D3F42B2423"
+        },
+        {
+          "path": "data/Petit/ThreeDQuiz/veget_4.nsbmd_c",
+          "length": 27897,
+          "sha256": "74A9C3703C90E7D19A7736546D9A6DC33727AEFFF3A2248C0CE9F4EFC682F74A"
+        },
+        {
+          "path": "data/Petit/Tickle/cg_PetitTickle.nccarc_c",
+          "length": 8494,
+          "sha256": "53F31CA02645CE044D7721B1D50A8F5BBF4D3E7234E8BC6395F1CE367DE838C7"
+        },
+        {
+          "path": "data/Petit/TimeBomb/cg_PetitTimeBomb.nccarc_c",
+          "length": 15298,
+          "sha256": "8301AA69AC1FC2E3334CBBEC0D6E13308F70B8BAB89E6E1EE2AFF4F31E886119"
+        },
+        {
+          "path": "data/Petit/ToiletPaper/cg_PetitToiletPaper.nccarc_c",
+          "length": 9990,
+          "sha256": "C78ECBC0148122AE55E885519A45A1F0C51988685719C58197B99F7235738CA0"
+        },
+        {
+          "path": "data/Petit/TouchDoll/cg_PetitTouchDoll.nccarc_c",
+          "length": 42657,
+          "sha256": "62123BFA423A35FE27C53BB9725ED468AEAB51793EE07EC56F63003C784360C5"
+        },
+        {
+          "path": "data/Petit/Transformation/cg_PetitTransformation.nccarc_c",
+          "length": 19067,
+          "sha256": "E50E5C18C0AF6F5334732525C43AF0AC710EC23D01756C41BB27FD97F0938DED"
+        },
+        {
+          "path": "data/Petit/TravelingSoot/TravelingSoot.nanr_c",
+          "length": 354,
+          "sha256": "7041A57AEA5DB68E184EF9A967FD4782A5ACAC8E70B016535E92E62B16AD904D"
+        },
+        {
+          "path": "data/Petit/TravelingSoot/TravelingSoot.ncbr_c",
+          "length": 4231,
+          "sha256": "2D79730D0F6C27010FEFF09B3058961DF188CC60DBA0C322DA0C6108883552B0"
+        },
+        {
+          "path": "data/Petit/TravelingSoot/TravelingSoot.ncer_c",
+          "length": 377,
+          "sha256": "38E9C36D5EC91AD9CA8E7382B5CF8D246286ABCC291241A17BA4E7AC386C9D12"
+        },
+        {
+          "path": "data/Petit/TravelingSoot/TravelingSoot.nclr_c",
+          "length": 207,
+          "sha256": "E1AF24DBC986DE419C9FE0685B2E53AA4E278337C6084C0DD09696BD7C94FD87"
+        },
+        {
+          "path": "data/Petit/TravelingSoot/cg_PetitTravelingSoot.nccarc_c",
+          "length": 18627,
+          "sha256": "6A161BA13129640446329D8805D7E1C6F18D2CC9A4F9A88B40D52D1AB881B1AE"
+        },
+        {
+          "path": "data/Petit/Tree/cg_PetitTree.nccarc_c",
+          "length": 11937,
+          "sha256": "232DC98E688E5F909BC8A0A6D6A58378A4D93E6F38ECD8FC608C3E18D4F740A4"
+        },
+        {
+          "path": "data/Petit/TrickShot/cg_PetitTrickShot.nccarc_c",
+          "length": 18384,
+          "sha256": "3E0F281E7E614C331EFEA0F8174D66E284DA6EEE6A6CD92FCA75F2C1FF4620F0"
+        },
+        {
+          "path": "data/Petit/TrickShot/drumcan.nsbmd_c",
+          "length": 41294,
+          "sha256": "56733FC2D630637CB36E4FCBF1C58EC8522DEF6023783C118C37803DCACA28F8"
+        },
+        {
+          "path": "data/Petit/Truck/cg_PetitTruck.nccarc_c",
+          "length": 8229,
+          "sha256": "192BCD61F7947FF2A8D9A18C3C927AFE89C68DA5F8379B65F387E55AA0F99CE4"
+        },
+        {
+          "path": "data/Petit/Tumbledown/cg_PetitTumbledown.nccarc_c",
+          "length": 15066,
+          "sha256": "FFE5FACC79EB26C75D8E2FCD9D0E62369B83A4026A2D8BE53D9253DD131BE6F4"
+        },
+        {
+          "path": "data/Petit/TutorialAshley/cg_PetitTutorialAshley.nccarc_c",
+          "length": 4744,
+          "sha256": "14190F21DA3A2F81BA276441F306EDF314BE312BCC75CD80AEC1274507BE70F4"
+        },
+        {
+          "path": "data/Petit/TutorialCrygor/cg_PetitTutorialCrygor.nccarc_c",
+          "length": 13908,
+          "sha256": "2B79776F2E56DD0C354851523A9B862862BA66E985C82E251C9EAB8BBB635E18"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_Tut2A.nanr_c",
+          "length": 454,
+          "sha256": "8D14A5AA2A960121104CCBBE1CA71F2E558147B02F49265163A0FB8FBF083CEC"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_Tut2A.ncbr_c",
+          "length": 5386,
+          "sha256": "03D65512EC0BEECC90B75BFDB225AA3A773244F8EC0DB150CB008B76EEBBBB78"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_Tut2A.ncer_c",
+          "length": 441,
+          "sha256": "9C7B561464E79A16E7DCB4D4349AB6001508591E04E55CD88CE627B7F49693F6"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_Tut2A.nclr_c",
+          "length": 272,
+          "sha256": "0C52DF7E41D079B265B0630D2988EFE35177ADFC7EA713693E81A4F5B58640CE"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_TutA.nanr_c",
+          "length": 218,
+          "sha256": "F5E0E1C74E68150FF22A0C964DA07FB58BEBAD1E706F66D78AD5A7F6DE0816E3"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_TutA.ncbr_c",
+          "length": 5838,
+          "sha256": "753F1FFD82105ADBBA9A4ADEC8534262553EF6B6B9D8A1522DF4D793EC95B086"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_TutA.ncer_c",
+          "length": 428,
+          "sha256": "4B49587FAC15FE2C3157D912C709F072D4D828E8C1CA0E55A6B3D97585D95006"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/Jimmy_TutA.nclr_c",
+          "length": 272,
+          "sha256": "0C52DF7E41D079B265B0630D2988EFE35177ADFC7EA713693E81A4F5B58640CE"
+        },
+        {
+          "path": "data/Petit/TutorialJimmy/cg_PetitTutorialJimmy.nccarc_c",
+          "length": 5589,
+          "sha256": "F18C6C8B87ECD91CC4C65B1FF9E63D4E43F76B778466F0A10C1EA0B34C1FD1D6"
+        },
+        {
+          "path": "data/Petit/TutorialKatAna/cg_PetitTutorialKatAna.nccarc_c",
+          "length": 6955,
+          "sha256": "EE68B384CDC2A69EDB052CF99A565C5B6B931171B2E36770DD7AEA7042D627C8"
+        },
+        {
+          "path": "data/Petit/TutorialMike/cg_PetitTutorialMike.nccarc_c",
+          "length": 7660,
+          "sha256": "1F21D32C74C607C4DBA83507973EE584EC1BD25417488FBAF0FD4595C9469289"
+        },
+        {
+          "path": "data/Petit/TutorialMona/cg_PetitTutorialMona.nccarc_c",
+          "length": 14340,
+          "sha256": "DBAFCEE49BD94C00CFBD5B6DB1A9BF65045030DA6F12E64EB88ABEF9D6A43EFB"
+        },
+        {
+          "path": "data/Petit/TutorialNinevolt/cg_PetitTutorialNinevolt.nccarc_c",
+          "length": 7050,
+          "sha256": "857826BEEC28EF1A1CB48A9748C75A454DF8FDEA76B95A1784D2043CDF48B454"
+        },
+        {
+          "path": "data/Petit/TutorialWario/cg_PetitTutorialWario.nccarc_c",
+          "length": 16124,
+          "sha256": "14BA27C88FBDA24BBC65169BE3547BE92BEC76528551EF37CF94D88BF39AE115"
+        },
+        {
+          "path": "data/Petit/TutorialWarioman/cg_PetitTutorialWarioman.nccarc_c",
+          "length": 12025,
+          "sha256": "3091C7D0B1ADBA73A12B5A5246E9127E9C201303180F3AFF9EACCC8FA7B93200"
+        },
+        {
+          "path": "data/Petit/UltraHand/cg_PetitUltraHand.nccarc_c",
+          "length": 7202,
+          "sha256": "1D75B4E003152623423706B34550C80BC7DCE5A723DED664C722BEDFAC72C672"
+        },
+        {
+          "path": "data/Petit/UnravelKnitting/cg_PetitUnravelKnitting.nccarc_c",
+          "length": 19745,
+          "sha256": "D3C9E2A354C865B4CD689A0F120176E6381DAB8D341048EFA067F129795D336B"
+        },
+        {
+          "path": "data/Petit/UnworldlyMan/cg_PetitUnworldlyMan.nccarc_c",
+          "length": 8303,
+          "sha256": "3A344A865C5D38E0F5C5E112E3E2357E16D7547CD5DCC425B2A3440D44D09A4F"
+        },
+        {
+          "path": "data/Petit/VinylDoll/cg_PetitVinylDoll.nccarc_c",
+          "length": 8593,
+          "sha256": "C44CE5FDCD532EBF863021D3382842D1DD0E3ADC7DC35F506FDEFA35BA0FD065"
+        },
+        {
+          "path": "data/Petit/WakeUp/cg_PetitWakeUp.nccarc_c",
+          "length": 10119,
+          "sha256": "D6B05BBFBCBDC93DC5C88E85F4CBB825F4228FA1AF35CD93C21612668728B72D"
+        },
+        {
+          "path": "data/Petit/Wanage/cg_PetitWanage.nccarc_c",
+          "length": 9779,
+          "sha256": "1355B415E5921517A23CA1371EB48105A23A221B40CA0306FF57AB26A68547A3"
+        },
+        {
+          "path": "data/Petit/WarioPaint/cg_PetitWarioPaint.nccarc_c",
+          "length": 44563,
+          "sha256": "C4B1D0F01B232E919DEE18C6839860D78F51FF9B1063FF5A60E0DDD9379FDECD"
+        },
+        {
+          "path": "data/Petit/WarioTease/cg_PetitWarioTease.nccarc_c",
+          "length": 17784,
+          "sha256": "CE74EFB181F03AB42F06CC3CC992954555DF4024AD61E8A4A8862BC59E7429C3"
+        },
+        {
+          "path": "data/Petit/Watage/cg_PetitWatage.nccarc_c",
+          "length": 13546,
+          "sha256": "47D7AAFE030CEFA98AFE382F17D55CE9BF1DA14E88885FF6F91A294DD166DDAC"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_00.ntfp_c",
+          "length": 398,
+          "sha256": "0F0B305EDBECB50D83065EB9570D34217FEFBD46888726326E3555153FBA85BA"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_00.ntft_c",
+          "length": 6073,
+          "sha256": "1C6E7F50C63C0350F4FA924815CB0F50D19DCF7CAE13BE0F99A4908B561A87B4"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_01.ntfp_c",
+          "length": 398,
+          "sha256": "115B0E0EE2C8DD7AB2ED6AD5964E3798697C8C7548B39C797A0C41341E535817"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_01.ntft_c",
+          "length": 6656,
+          "sha256": "7A5B5D6801930E65CBEDADBC21AF74A9457FA684D6BB4A6D0C7EB6600A362159"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_02.ntfp_c",
+          "length": 369,
+          "sha256": "F9D37C3110863ECCCB46A8BECFA97EF5D7EC176687D62B38DA8D683578854D78"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_02.ntft_c",
+          "length": 4455,
+          "sha256": "99E09B52966C961716FA8DBE91A23C8C9E321D50F1198C559E9FD018750BB57B"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_03.ntfp_c",
+          "length": 265,
+          "sha256": "42E8AC150C626DA477B91FFEAA611A66D0D863D74AEA925E8C84707A0E7A6980"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_03.ntft_c",
+          "length": 4510,
+          "sha256": "C58A2977427629EEB8E83CAE19FFB394E731C86041545AE47232E1F4FFEC723D"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_04.ntfp_c",
+          "length": 418,
+          "sha256": "D61EC268A540619F816BD3B6BAC41E69E3CE87F04ABA33BB0ED9B7A3D1BCDCE1"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_04.ntft_c",
+          "length": 3600,
+          "sha256": "A9967F68DB0913D356BDCCBA152918D2DF18D81158D47989BFA9CBBB3DECF580"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_05.ntfp_c",
+          "length": 403,
+          "sha256": "E248E38705DB292A64116F13820EA8D7E5DB49512BF5D0C484E78C3D5F44C08C"
+        },
+        {
+          "path": "data/Petit/Whirlpool/PetitWhirlpool_05.ntft_c",
+          "length": 3685,
+          "sha256": "85F9AE900777982B0579CBE4ADC30F778BA9B9DDF7A7E12CA736DEC65D10671F"
+        },
+        {
+          "path": "data/Petit/Whirlpool/cg_PetitWhirlpool.nccarc_c",
+          "length": 30,
+          "sha256": "1F87F6849BE721C0241CC1CAF213C3EF8D83222782520464CAF1A9785A1A10B2"
+        },
+        {
+          "path": "data/Petit/Whistle/cg_PetitWhistle.nccarc_c",
+          "length": 17874,
+          "sha256": "04A1041DCD5B69BB91B530FEF0368AA79700AF4159A9843C309269EF25D61426"
+        },
+        {
+          "path": "data/Petit/WindBell/WindBellTex.ncbr_c",
+          "length": 29785,
+          "sha256": "82F0DAAD176E7B597879ED46EE47B699455652D70F3817DE7A532FC3CFAE22CC"
+        },
+        {
+          "path": "data/Petit/WindBell/WindBellTex.nclr_c",
+          "length": 227,
+          "sha256": "FD8A31A0E0BB27DAAE92F387AC6256FF6C60F763299B1C362826F781ABC88EC1"
+        },
+        {
+          "path": "data/Petit/WindBell/cg_PetitWindBell.nccarc_c",
+          "length": 16208,
+          "sha256": "CD162F228F5551AD58B223E7CBC97A7FCE81744F18EDCF32DE6C7D3683126239"
+        },
+        {
+          "path": "data/Petit/WindCar/cg_PetitWindCar.nccarc_c",
+          "length": 6995,
+          "sha256": "6DA63F48647A4A53D9A3AABF222F6D26A59909D42FAD70300D995EF4753CA7FE"
+        },
+        {
+          "path": "data/Petit/WindowWipe/cg_PetitWindowWipe.nccarc_c",
+          "length": 60825,
+          "sha256": "09CD02C877DB243F75A9EAB1803FFCDA3E6ED6F4D135E9939ED7E903D6307C76"
+        },
+        {
+          "path": "data/Petit/Yoyo/cg_PetitYoyo.nccarc_c",
+          "length": 7671,
+          "sha256": "0A512AAB75CD326C36BFFAE16CE600D8B0F7085BACDB9D76C39CA526208DA33C"
+        },
+        {
+          "path": "data/Petit/Zatsugidan/cg_PetitZatsugidan.nccarc_c",
+          "length": 4146,
+          "sha256": "0B4D7B0C6708447720068F11901C10385C7EE0D588F224A5AF1B17C824DBBCAD"
+        },
+        {
+          "path": "data/Petit/ZeldaLegend/cg_PetitZeldaLegend.nccarc_c",
+          "length": 12874,
+          "sha256": "E744D241C52F466F5E453927922FF1584B6E6610555C1FD73D6B253C0ECA7EE9"
+        },
+        {
+          "path": "data/Petit/dummy",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "data/Play/Ashley/cg_PlayAshley.nccarc_c",
+          "length": 80119,
+          "sha256": "ECB1734B306468F9203B42287CD82B60D8D9FD506B47E20D292A575447359136"
+        },
+        {
+          "path": "data/Play/Ashley/cg_PlayAshley1.nccarc_c",
+          "length": 137690,
+          "sha256": "71584068C90BD42ACEB5C521E1B96E7341A4A504E11C91B7C9B8A1FBBC409588"
+        },
+        {
+          "path": "data/Play/Crygor/cg_PlayCrygor.nccarc_c",
+          "length": 49315,
+          "sha256": "DEC50C70D1284A8969FBBB415DA465557885DFE44DEAE160F54F818FEDA50B53"
+        },
+        {
+          "path": "data/Play/Crygor/cg_PlayCrygorEpi.nccarc_c",
+          "length": 47414,
+          "sha256": "F8A2957D614E1DA30681808CF4905A2E0B26855DF0B44E18C393C2E510565F41"
+        },
+        {
+          "path": "data/Play/Crygor/cg_PlayCrygorPro.nccarc_c",
+          "length": 114756,
+          "sha256": "1B7A86E008CF273C2075E8F69EE1A1EEE40AB3EC412AADDA58ECA5FD68C7D220"
+        },
+        {
+          "path": "data/Play/Elevator/cg_PlayElevator.nccarc_c",
+          "length": 94544,
+          "sha256": "7EE5121740D6476724C0D871A6794060901918B6F6957FD92325D9D48FCC1D7B"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3A.nanr_c",
+          "length": 1129,
+          "sha256": "8C739AEA54470748B58B2F9FDE95237122308943566E6C508EA4D950574366B2"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3A.ncbr_c",
+          "length": 11918,
+          "sha256": "F8C024FF813082E559AB094DEC2B026A59D300654E8FA6FC77619424CE0264C4"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3A.ncer_c",
+          "length": 3132,
+          "sha256": "BA24EA4E7104B74CA380BE638E6E4901C6566E5AB6D6F11DFDD51DBF70E2FE11"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3A.nclr_c",
+          "length": 218,
+          "sha256": "1BCE644EE243A826E4FBB605E55DAF8BB5A407AD65E430DA2705942B749A330A"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3ABg.nanr_c",
+          "length": 422,
+          "sha256": "02905D3A6740D8E74A5FE3E2465332CE0FDDBF15F57B49DCD9CF03B1EFF71928"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3ABg.ncbr_c",
+          "length": 6073,
+          "sha256": "8CDE1D90D842B2A743F6C8CDC4C2545E4BE135067DE28CD1C7E160104062D587"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3ABg.ncer_c",
+          "length": 1200,
+          "sha256": "B6B7C88DD6F7974922931EEDC215BC3D738717FB6B2DDF1C4C36243807339292"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro3ABg.nclr_c",
+          "length": 233,
+          "sha256": "8A08EA607996EE830B40CBBF9E6A98ED56F305B4CC08E6AC48CBD8614A5EB557"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro4A.nanr_c",
+          "length": 1152,
+          "sha256": "060554A4F53E1B6ADE45D7A8A244561643704B0A381719CF4252AE724A413323"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro4A.ncbr_c",
+          "length": 10593,
+          "sha256": "6B3A2439CA77C90B957F9D8698E5D58CC24A6844E235D2A601DF29D1C8FACA0A"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro4A.ncer_c",
+          "length": 3113,
+          "sha256": "AFB87AF572D177D3E2A629E3C145171F1243D5F88C1D6AFA23C871DB2A0B6A29"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro4A.nclr_c",
+          "length": 218,
+          "sha256": "1BCE644EE243A826E4FBB605E55DAF8BB5A407AD65E430DA2705942B749A330A"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro5A.nanr_c",
+          "length": 1124,
+          "sha256": "933440E3C9141574B2DA37A525A13631534C54C8960C7F1E700FE278596A664A"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro5A.ncbr_c",
+          "length": 11912,
+          "sha256": "4D9D87F5DFB4D2A6406F525A9DA938B6D68000DEC3C25A452DF63E1AFF7DF0EE"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro5A.ncer_c",
+          "length": 3044,
+          "sha256": "0A67EEB716A218DDADA9771435362B0414274E0F62A1586829A17F347C8EB9CC"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_Pro5A.nclr_c",
+          "length": 218,
+          "sha256": "1BCE644EE243A826E4FBB605E55DAF8BB5A407AD65E430DA2705942B749A330A"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_SepiaA.nclr_c",
+          "length": 199,
+          "sha256": "DB271D51D3764D007625C10669BB663575226CDDAE2C19940A1634D8B5A94B27"
+        },
+        {
+          "path": "data/Play/Jimmy/Jimmy_SepiaABg.nclr_c",
+          "length": 225,
+          "sha256": "B63E8A1E547443F99611DA0A21814AADFCDA2839529CAE6986B2C29210C4D657"
+        },
+        {
+          "path": "data/Play/Jimmy/cg_PlayJimmy.nccarc_c",
+          "length": 85980,
+          "sha256": "4BC4F6A9E80EBCE991C264E48D21D33D382DD83B4B479EA0D95565A32F4CBB68"
+        },
+        {
+          "path": "data/Play/Jimmy/cg_PlayJimmy2.nccarc_c",
+          "length": 98110,
+          "sha256": "1D01E0871CFD1F8D04F87955FE8CDE2E565FC6C6B20C8D6A6F2E9AD2531E253B"
+        },
+        {
+          "path": "data/Play/KatAna/cg_PlayKatAna.nccarc_c",
+          "length": 93312,
+          "sha256": "B696781AF53372399F90648DC47A157DA6A8EB845F1ED4707E4DAD7B31A0C883"
+        },
+        {
+          "path": "data/Play/KatAna/cg_PlayKatAnaSec.nccarc_c",
+          "length": 106805,
+          "sha256": "FC447FE0F25EEB2B5F87AE519A326E9301E1D32318AAF9581C2AA12F5F52F2B5"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouse1.nccarc_c",
+          "length": 23869,
+          "sha256": "84FE7B7C29FEB0A77BDD01367F1E20D9AB083FE9A21AECF4945F9049973B3D82"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouse2.nccarc_c",
+          "length": 26920,
+          "sha256": "B5CEF92911CF72C396D69AE874B58E9512C22B3CD25FDACF1D4B909C870F5967"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouse3.nccarc_c",
+          "length": 11445,
+          "sha256": "44B06D219A3B9A23F3200E102A9B1681441D7BFDEB6A939C462C3D12B448C7AA"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseAshley.nccarc_c",
+          "length": 9261,
+          "sha256": "0290FD59DCA6910BA70A023A516A9B717A9EF2F1FF0AE5D8AFEBC7B833DE88CF"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseCrygor.nccarc_c",
+          "length": 9287,
+          "sha256": "2D7BD0BAAA33CC7B90C8D17A32F4F0E3684B899DB4736406709C74732BDB6ACB"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseJimmy.nccarc_c",
+          "length": 6851,
+          "sha256": "B42D5DB19D69968DCA3219DD299F59F98E033052BE2B24AD6B90E8DCE38DF47A"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseKatAna.nccarc_c",
+          "length": 8166,
+          "sha256": "7AEB8222ABC1530E849B1FE58F73254C2CF871A307D296A00A847443CB3CB0C1"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseMike.nccarc_c",
+          "length": 7605,
+          "sha256": "4E8E6EBEE3FFC7E71F115271146321553F5A2F3A8105CA3D6986E7B5F226B3E2"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseMona.nccarc_c",
+          "length": 9570,
+          "sha256": "4E0DB0335ED3338BAD64696DB8D1CA6606819CD92E3B21B6D256FA7215FD6BD3"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseNinevolt.nccarc_c",
+          "length": 11771,
+          "sha256": "47F9D435DAD227A3AE65031CB3E835CFB01965700A9631009698AE26CB6A982B"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseRemix1.nccarc_c",
+          "length": 7491,
+          "sha256": "F4F22346AADF6BB6DE5F2809AEAC493973CA042278948628F37D57EC13F54F62"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseRemix2.nccarc_c",
+          "length": 7626,
+          "sha256": "6D0FA0847AA0A529E2478748796A499914342C6A8580FCE1C6056CD367E5A4BE"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseWario.nccarc_c",
+          "length": 10576,
+          "sha256": "1C24995245550351BE363CC77D30C4CDB7CD8BE004622916197E88DE850008FE"
+        },
+        {
+          "path": "data/Play/LiveHouse/cg_PetitLiveHouseWarioman.nccarc_c",
+          "length": 10850,
+          "sha256": "25E65F17CE35D03FA3E38EBEC8B1EF4D52EB31A4CE08E17B261232E6D5D59320"
+        },
+        {
+          "path": "data/Play/Mike/cg_PlayMike.nccarc_c",
+          "length": 86408,
+          "sha256": "C89A5443600915F3EFE11FFDE6F51268429621E2DD7B7CF74C76F279CAB81E7F"
+        },
+        {
+          "path": "data/Play/Mike/cg_PlayMike2.nccarc_c",
+          "length": 76335,
+          "sha256": "27CE7878B73FB85350D66355AFA0E1A46283BC061CA6C0E41B5931A3832A0906"
+        },
+        {
+          "path": "data/Play/Mona/cg_PlayMonaEpi.nccarc_c",
+          "length": 100020,
+          "sha256": "9DFEC45A101AA217CECC2AA4F3DE605E63481E90B8C262555E8E32C0397E59A1"
+        },
+        {
+          "path": "data/Play/Mona/cg_PlayMonaPro.nccarc_c",
+          "length": 170195,
+          "sha256": "86D4FD8A4F410562392D46A8BAD919852446419188D3F395755314B389B5FE88"
+        },
+        {
+          "path": "data/Play/Mona/cg_PlayMonaSec.nccarc_c",
+          "length": 44521,
+          "sha256": "624A79EF09F7C8B60904CB81F7C495B8417F87D3989BA19B577B3D41A1258E02"
+        },
+        {
+          "path": "data/Play/Monapizza/cg_PlayMonapizza.nccarc_c",
+          "length": 98948,
+          "sha256": "BB85A81E5B3CDA37656CF5E5C091C5A9224CD35D5A93BCF89418F74B25AF2485"
+        },
+        {
+          "path": "data/Play/Ninevolt/cg_PlayNinevolt.nccarc_c",
+          "length": 157892,
+          "sha256": "3BBE141331EA09B0EE5C5DBC79BAD828AE935BFE92248C14FFE72DCF2D0EB384"
+        },
+        {
+          "path": "data/Play/Ninevolt/cg_PlayNinevoltSec.nccarc_c",
+          "length": 81869,
+          "sha256": "EC670C92F4B4C0F491EE5B548A09F5B7CB37699646BE96FE49DC22D31DF837BE"
+        },
+        {
+          "path": "data/Play/Opening/cg_PlayOpening.nccarc_c",
+          "length": 41113,
+          "sha256": "2C430AC8BE490AE1FA8146C2EF473405CF738DAA909A8441C348B4940D501273"
+        },
+        {
+          "path": "data/Play/Remix1/cg_PlayRemix1.nccarc_c",
+          "length": 39527,
+          "sha256": "23F308C7F5BD0AFDE14C7292720326BB2193BCB425DBC8D9BF1337D98354F88E"
+        },
+        {
+          "path": "data/Play/Remix2/cg_PlayRemix2.nccarc_c",
+          "length": 37855,
+          "sha256": "EAC17F4D278A8A233D5B6910A5689607B5634ECED5047D6A410FDBE4F5766E5F"
+        },
+        {
+          "path": "data/Play/Wario/cg_PlayWario.nccarc_c",
+          "length": 92359,
+          "sha256": "BA2020BDCD81455535C88251449AF67E6CD53433D6368FD2EAFA0AE8C84DEE2F"
+        },
+        {
+          "path": "data/Play/Wario/cg_PlayWario1.nccarc_c",
+          "length": 129702,
+          "sha256": "71C70CE39F5486A7647F9AE6CAD099F838E6BBC66A0ECD96864E5D7CE1E63D50"
+        },
+        {
+          "path": "data/Play/Warioman/cg_PlayWarioman.nccarc_c",
+          "length": 108959,
+          "sha256": "34611ABEA0EAF0AC23EB1279F6EC32A8F61E577709E09382200C112A947608C7"
+        },
+        {
+          "path": "data/Play/Warioman/cg_PlayWarioman1.nccarc_c",
+          "length": 133283,
+          "sha256": "DEF881FA6D6A8F3A73EF38F86A97E1B8D98E0D4CAE265915E437843D1BE7AC02"
+        },
+        {
+          "path": "data/Play/Warioman/cg_PlayWarioman2.nccarc_c",
+          "length": 31213,
+          "sha256": "12E3BBFACC5257AEBDE027E3C71F42F7CEF9BD5EB83B4BF592C4B1CC92EE8636"
+        },
+        {
+          "path": "data/Play/WorldMap/Ashley.nsbca",
+          "length": 64848,
+          "sha256": "2CCC093463B55294E0306B2DF49F3273153B92D79CACE390F823F2A597E40F6F"
+        },
+        {
+          "path": "data/Play/WorldMap/Ashley.nsbmd_c",
+          "length": 78016,
+          "sha256": "2F44FF8697E30FAE033D14E4550FFC84D75DB805C1E69BBC53A0AFAEC9109729"
+        },
+        {
+          "path": "data/Play/WorldMap/Clinic.nsbca",
+          "length": 96536,
+          "sha256": "21BD62DDB102E31869883599ADC79FBD0B181988B5C83BBD1184785389A7D0AE"
+        },
+        {
+          "path": "data/Play/WorldMap/Clinic.nsbmd_c",
+          "length": 75387,
+          "sha256": "5D404CDB5D65C5BB397E570A95C28A3850ADE436BF6AF41ABEF65C8561622079"
+        },
+        {
+          "path": "data/Play/WorldMap/Crygor.nsbca",
+          "length": 70160,
+          "sha256": "6E3DAAB09D345E2A32C8B9EE828F1BE87D073D270559F32F7D79E3A29F1A3523"
+        },
+        {
+          "path": "data/Play/WorldMap/Crygor.nsbmd_c",
+          "length": 58720,
+          "sha256": "0246F0AAE99A09638D69181753A92905D5DD99ADC7E0912BCE82FAE0FA8EDD01"
+        },
+        {
+          "path": "data/Play/WorldMap/Downtown.nsbca",
+          "length": 75504,
+          "sha256": "8135DCCCD3C6D6F424099AE03558B0239458B12D9EAC1F76B32611DF2727C62F"
+        },
+        {
+          "path": "data/Play/WorldMap/Downtown.nsbmd_c",
+          "length": 65209,
+          "sha256": "D1D46ACDE4077E9F8B23E216ADC3E1E2D72A742A6FAA8DE9B06E5BA553993104"
+        },
+        {
+          "path": "data/Play/WorldMap/Jimmy.nsbca",
+          "length": 99092,
+          "sha256": "FD6C681A9E94A8921FA166C0AD4E7B43B63B239FB452A5790CC6275DF0625F1E"
+        },
+        {
+          "path": "data/Play/WorldMap/Jimmy.nsbmd_c",
+          "length": 62464,
+          "sha256": "47E86A3B699F7A2891ED0D2B7EE7927A55A95FE7C69521C08CC9997E7B822438"
+        },
+        {
+          "path": "data/Play/WorldMap/Jumble.nsbca",
+          "length": 91116,
+          "sha256": "618844CAA0C85049663ABCAD326C06FF2D98EA62CA3F2300F008E5C1A469943E"
+        },
+        {
+          "path": "data/Play/WorldMap/Jumble.nsbmd_c",
+          "length": 57160,
+          "sha256": "7C88CB0B8E62C0DF2092AC758B988D317B9654286463305DD4BCCD8110D22A84"
+        },
+        {
+          "path": "data/Play/WorldMap/KatAna.nsbca",
+          "length": 83084,
+          "sha256": "D451799833C2AAB206DCD60D6861A2B417C67C36D27589FE809A4F2797AC8825"
+        },
+        {
+          "path": "data/Play/WorldMap/KatAna.nsbmd_c",
+          "length": 83318,
+          "sha256": "9292849B1F5AF0C424FFF7C30ACC919E48EDADA8B28740D48C92CD9DBF5C3C57"
+        },
+        {
+          "path": "data/Play/WorldMap/LiveHouse.nsbca",
+          "length": 101556,
+          "sha256": "D8650DD8FC0BDA309CCE65A8DDFC12948513084A07AA19A973CD16CD571FC184"
+        },
+        {
+          "path": "data/Play/WorldMap/LiveHouse.nsbmd_c",
+          "length": 88736,
+          "sha256": "B6453EFB524A9B6324508D445C0B41D76BC51EB4A993FF5183C0C0A72F78C539"
+        },
+        {
+          "path": "data/Play/WorldMap/Mona.nsbca",
+          "length": 93412,
+          "sha256": "685D3DE5B37956A81EADC8105F3AC67FF59A4831576B1BFFECFEDE06E88FC38A"
+        },
+        {
+          "path": "data/Play/WorldMap/Mona.nsbmd_c",
+          "length": 75773,
+          "sha256": "CD5BFAE49984517EF9F92228EC225692D4C7DCB05FEFAB553DA2F61AED3BEAA9"
+        },
+        {
+          "path": "data/Play/WorldMap/Ninevolt.nsbca",
+          "length": 101988,
+          "sha256": "CDF4AE00F0995F34212B46C8F29DDA4AE4B35D3B7147678F95CD14FAB8C50794"
+        },
+        {
+          "path": "data/Play/WorldMap/Ninevolt.nsbmd_c",
+          "length": 74920,
+          "sha256": "F39EF453738C1622F63475B8628538C6C8264BFD7AAEF72AF216F5F5034096EF"
+        },
+        {
+          "path": "data/Play/WorldMap/Thrilling.nsbca",
+          "length": 92368,
+          "sha256": "1814D4019EA194DE0F4EF0F2454F96CDC5010C0BD8750E1E086FC096D33743AC"
+        },
+        {
+          "path": "data/Play/WorldMap/Thrilling.nsbmd_c",
+          "length": 56898,
+          "sha256": "036B802052EC2DB8924965550616495C202B64E05695EDE716996361D903C025"
+        },
+        {
+          "path": "data/Play/WorldMap/Toyshop.nsbca",
+          "length": 102612,
+          "sha256": "1701F11B65A0522C847E965B76FD78DB8E93EDC6AEB6E1774625F7093CB0B558"
+        },
+        {
+          "path": "data/Play/WorldMap/Toyshop.nsbmd_c",
+          "length": 74880,
+          "sha256": "E02DB0AAE5D896F6A8AD28B274ECB9BBF7ECF44E8D87E8D4E9C76C997A339F6C"
+        },
+        {
+          "path": "data/Play/WorldMap/VeryHard.nsbca",
+          "length": 92092,
+          "sha256": "8EAC47D96B4B348F08F4F21C261DE357BA53EEC77957DB827FDE8225991359C0"
+        },
+        {
+          "path": "data/Play/WorldMap/VeryHard.nsbmd_c",
+          "length": 65606,
+          "sha256": "589AAFC080B4B948707AD29C975DF7402F5E9AC35E712F65D75183F02F5CA9E1"
+        },
+        {
+          "path": "data/Play/WorldMap/Wario.nsbca",
+          "length": 99152,
+          "sha256": "625E3D97135D2339D302F23468F921DEA9584FF5670B1942350D6EA7E864984B"
+        },
+        {
+          "path": "data/Play/WorldMap/Wario.nsbmd_c",
+          "length": 68794,
+          "sha256": "D34378643FF31C64A429E363DAE909054154FA726E51C219B42FB57E101C3317"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapAshley.nccarc_c",
+          "length": 12915,
+          "sha256": "29FF58A19D2D48C562B2DD1440CD23BA1F55C3F9DF7782D1349014CE81A30235"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapClinic.nccarc_c",
+          "length": 13064,
+          "sha256": "8B5AEFA13A40A2E23FB992144215E7E6F84CF5832DACE1194600C0B50FD3BBE2"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapCommon.nccarc_c",
+          "length": 782,
+          "sha256": "FFFE1DD3796E33CB3F443AAC8324C77334989E335DAB0570366CC71DDE42C638"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapCrygor.nccarc_c",
+          "length": 12873,
+          "sha256": "F122075648FAC54CF5C60B1A2A503AC1E91F56E6FB19BA8F00EB6771C1257D98"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapDowntown.nccarc_c",
+          "length": 14484,
+          "sha256": "2DA6CE3CFB105DDE731C8444A3E8DF8BC528037632D8F680ACA86FFC85EE76A6"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapJimmy.nccarc_c",
+          "length": 12501,
+          "sha256": "E202B0117A617A944CAF9640BEEB8638599448B08D1264F3AC441150144862B5"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapJumble.nccarc_c",
+          "length": 8803,
+          "sha256": "8AE18D3DD232DA3E67791BB9E51A5F0213F732BAA83A00F5CC7CE2C451BFAA73"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapKatAna.nccarc_c",
+          "length": 12104,
+          "sha256": "AEDD28441382C5CC203CCE81AC26CDE98714AEF7B5B8167371FFAF426F00C82C"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapLiveHouse.nccarc_c",
+          "length": 13778,
+          "sha256": "B3610F2FDEED17705A7AAE6F0AF0829C0E92F0D1DAA79976D49A128C711050A9"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapMona.nccarc_c",
+          "length": 13778,
+          "sha256": "B3610F2FDEED17705A7AAE6F0AF0829C0E92F0D1DAA79976D49A128C711050A9"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapNinevolt.nccarc_c",
+          "length": 14598,
+          "sha256": "8658B2193845A2E4536780A2FBCE2D17C26A3C62401CB42331EC972CDB0028C0"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapThrilling.nccarc_c",
+          "length": 8803,
+          "sha256": "8AE18D3DD232DA3E67791BB9E51A5F0213F732BAA83A00F5CC7CE2C451BFAA73"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapToyshop.nccarc_c",
+          "length": 14598,
+          "sha256": "8658B2193845A2E4536780A2FBCE2D17C26A3C62401CB42331EC972CDB0028C0"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapVeryHard.nccarc_c",
+          "length": 8803,
+          "sha256": "8AE18D3DD232DA3E67791BB9E51A5F0213F732BAA83A00F5CC7CE2C451BFAA73"
+        },
+        {
+          "path": "data/Play/WorldMap/cg_WorldMapWario.nccarc_c",
+          "length": 13064,
+          "sha256": "8B5AEFA13A40A2E23FB992144215E7E6F84CF5832DACE1194600C0B50FD3BBE2"
+        },
+        {
+          "path": "data/Title/cg_Title.nccarc_c",
+          "length": 40512,
+          "sha256": "795C42D82CC938B63FCEB98C0A509DFA727A0CF3B0668BF6E4DE6A3F6D98152D"
+        },
+        {
+          "path": "data/dummy",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "data/sound_data_US.sdat",
+          "length": 16060640,
+          "sha256": "C4683BC71A43FB2D7139D04450218E49AB9698F142A80A9FA44CAABE0111B16C"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "311AAF22C0A3CDAD5393925905A8F5687BBFF9BEB618B2FB4014EB766863041C"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 9440,
+          "sha256": "BE64BB07EDAFA4343280EF8659F892373825FC554BCB050E5B2A0BCF9607B715"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 44672,
+          "sha256": "A349103EF71A56366C9F24A5C1715006BA21586F9FF6E12F89CEC56F6FABE3F1"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 86496,
+          "sha256": "AE314212436CBBBBB9EA268A8CED24F9D28C5947083E61C9A2FDF716E491C352"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 70464,
+          "sha256": "A9DE7B304EAFA5969F955C61CBB295BD1324BD23A70EF24164C3B6C1B47C4953"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 34336,
+          "sha256": "23F9840AFB35B2551C46493CE172C71F62B33FE1B2EDBBB8E7BC3D092C3F07A9"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 35232,
+          "sha256": "B30F702B3830DF45505568B7B3FAF1A3511AEDAE3DFE0C70C00D0E2451EA2341"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 54400,
+          "sha256": "9B58D7A4A49BDD1A493564B2FF5E76E3D0F33621819FF1B7D1E8DF5E696556A4"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 54944,
+          "sha256": "F51E4DEBE24689670D4A8B9DCB845D178CDFAE49B7DCF92D247AFC84AB974FCF"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 42592,
+          "sha256": "4C1096B8CA3514D9EE6664548A0CC7F4C11261BB918D03672E68558B20D4F8BC"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 39776,
+          "sha256": "3228ED1A635B57766A0814D602F7A3698F7BE49BF699C60FF9A9B88558C635F8"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 18304,
+          "sha256": "2712DE9B99F70EE72FC9B9DE8B1A641A64A95E67156FDD9B7F73941642677445"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 18304,
+          "sha256": "0FA3FA3B9198C231C921708BBCB9C989D63E2A165C1AA586BC67C10A82077911"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 16704,
+          "sha256": "44FE7B38BC9C5EFA3D2AB9E7B938BB87C51DA4D4F7C0550F086FBF74BEEEDD6E"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 11200,
+          "sha256": "F65626514889CFC15FBB2CE5D34536E73AEA8C3F3BF67FB21E74060E7ACE64DC"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 672,
+          "sha256": "CC5A12F9ED1AF0EBDBF8F0C5CF98E1730FAE90567D31894FEBE8EB77225E954D"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 5664,
+          "sha256": "C3F64A145BC67E622118CA01456105997821F058C83C19213FB41561B3093432"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 3520,
+          "sha256": "14EA6935A0006C8FC8881DA01ABDA394240FA7BD344CDEE292D9CFB2A6214D4C"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 10208,
+          "sha256": "C83B2BA0907DCAF2106D3F251FA3271C14E8C6F59263940FDF797700A965844B"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 5728,
+          "sha256": "083580E508364A7CAF6B9BBA57335129DDAA6AD461242FD952FEBB979B723D65"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 10208,
+          "sha256": "652CC1E68CD3D8F28FEAE7428EC453006D71EBF87A6E44BF3DFF1D0ABC46202A"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 8352,
+          "sha256": "E4746C5B081DABD12D1EA0B388B5BA2593BF2EF0ACA05B18DF3F83EDC1E0CBA0"
+        },
+        {
+          "path": "overlays/overlay_0021.bin",
+          "length": 4576,
+          "sha256": "D49B74619E44F947EA2744DB6D6D7A96B27D50997A403A55008F6070DFB9AEAD"
+        },
+        {
+          "path": "overlays/overlay_0022.bin",
+          "length": 6080,
+          "sha256": "9B42CA426B4BD1937A96572A1A80A1550850D76120C1B11FB42D6069FDF3A0FB"
+        },
+        {
+          "path": "overlays/overlay_0023.bin",
+          "length": 4864,
+          "sha256": "0FBAFE30B6A554A11F81F6D7FE0BE5856595723300E2F09BBAD9D0639FFA5F44"
+        },
+        {
+          "path": "overlays/overlay_0024.bin",
+          "length": 5024,
+          "sha256": "12E2C2FFB176E1CE55BABD20194D39CACA7D8DE8760CF5215B215E406FBA7AF3"
+        },
+        {
+          "path": "overlays/overlay_0025.bin",
+          "length": 7648,
+          "sha256": "63CB00F046294A3629E5658FABF3C81CC60B526A3D1B30905F3822223C06165E"
+        },
+        {
+          "path": "overlays/overlay_0026.bin",
+          "length": 2912,
+          "sha256": "FE2606A96C519C9BE9D07E6BBF42BFA60F0929593A45FCFD4B0B61C6E672096F"
+        },
+        {
+          "path": "overlays/overlay_0027.bin",
+          "length": 7488,
+          "sha256": "2B0E2B79BC6BF415FDA1DA1F82D40671080549DF5090B8EBDFAE771719CE7F9F"
+        },
+        {
+          "path": "overlays/overlay_0028.bin",
+          "length": 11168,
+          "sha256": "263D9B85D136BA8F9A26C361C76C7D6A5CD8B126EF172BDF28ADC76BBDE03437"
+        },
+        {
+          "path": "overlays/overlay_0029.bin",
+          "length": 9312,
+          "sha256": "25C12EA303CD758A9547C870D0210BC8A3335F6F7C27B5907C8732D24ACFA841"
+        },
+        {
+          "path": "overlays/overlay_0030.bin",
+          "length": 3776,
+          "sha256": "983C981295ADE31D86033285A13F744A566F77A744D8ED48FE3065C705ECD9E0"
+        },
+        {
+          "path": "overlays/overlay_0031.bin",
+          "length": 6688,
+          "sha256": "EF461E231156456EA941B5613A74847664F99A5AE40C065817084F2ACF892529"
+        },
+        {
+          "path": "overlays/overlay_0032.bin",
+          "length": 6176,
+          "sha256": "2AF208ED01DD2BEB2193CCF252479D7C1D785E6E1BC54A5F2DD68CEDEAE8A167"
+        },
+        {
+          "path": "overlays/overlay_0033.bin",
+          "length": 8096,
+          "sha256": "AF6A9FCAED872BC06D0B3531F2717DBE9F386FD621D13729DE0FF9C7C08E01FE"
+        },
+        {
+          "path": "overlays/overlay_0034.bin",
+          "length": 12800,
+          "sha256": "DF3983DD32ECB3EFA5EA046959514CE6BD775C6C1FA363ADB711AE57539541C0"
+        },
+        {
+          "path": "overlays/overlay_0035.bin",
+          "length": 3840,
+          "sha256": "7DEEB6ACCB4B47FFA6FE80604158FA3570B17AF21A8B4C030D42892946692E61"
+        },
+        {
+          "path": "overlays/overlay_0036.bin",
+          "length": 12960,
+          "sha256": "DE2BEE7FEDBDEF71A4F71C5AC2D9363908E288CD47A22C9057AFBFE4ED56948D"
+        },
+        {
+          "path": "overlays/overlay_0037.bin",
+          "length": 3968,
+          "sha256": "89280607F7D5E034DBD439B6096C3EB7CD44127A47D3670BE23D0DB01B1BB219"
+        },
+        {
+          "path": "overlays/overlay_0038.bin",
+          "length": 8896,
+          "sha256": "FE2DEBA3C2542F878030C054A5F48CC8F57AF3782B85207DE8F446AE27A96F96"
+        },
+        {
+          "path": "overlays/overlay_0039.bin",
+          "length": 6976,
+          "sha256": "26C34E9A1B5708FA373E662B4710FCCF9811F032E153390FD9728F963FF7DC48"
+        },
+        {
+          "path": "overlays/overlay_0040.bin",
+          "length": 4672,
+          "sha256": "71EF328599F089AE147DD157955C48836BDF4C5C3AF1351B3FD3B15C13DCC676"
+        },
+        {
+          "path": "overlays/overlay_0041.bin",
+          "length": 7648,
+          "sha256": "FD419EE0FABBE41B117A1978B14E5AD52F616B55351F0D096F6609B7C7BBB8D1"
+        },
+        {
+          "path": "overlays/overlay_0042.bin",
+          "length": 5792,
+          "sha256": "394E8F52FB17B33B6D41D8671E0B012CF24EC78DEE75DC2728D1BD37231D935C"
+        },
+        {
+          "path": "overlays/overlay_0043.bin",
+          "length": 7200,
+          "sha256": "6147121E4B51DFF66E0D053074AB3D5D617085E71C4A0574DBACD424BE4A695F"
+        },
+        {
+          "path": "overlays/overlay_0044.bin",
+          "length": 4704,
+          "sha256": "47B550D9F632E187D0D9AE290374910754B73858BE56A3C3973F092C5429D9E7"
+        },
+        {
+          "path": "overlays/overlay_0045.bin",
+          "length": 7936,
+          "sha256": "E1A68C0BFA254AFF66E6B73CE3EAA56E756985ED01371D2585D38645EE9876F8"
+        },
+        {
+          "path": "overlays/overlay_0046.bin",
+          "length": 4096,
+          "sha256": "C0C504E41FA58ACFBE0C99451989140D0A8AE1776E3B3DAB9786C2E3A11D9B44"
+        },
+        {
+          "path": "overlays/overlay_0047.bin",
+          "length": 10272,
+          "sha256": "C8458C7FACCD44239A78D63A772B460EAE1669371B9424E821169101BAE1734E"
+        },
+        {
+          "path": "overlays/overlay_0048.bin",
+          "length": 5728,
+          "sha256": "EBF4EB4D93F5DF3FCC1A3AC198AC74F79471D2D69A762A06A362F8E285B0A3AC"
+        },
+        {
+          "path": "overlays/overlay_0049.bin",
+          "length": 8448,
+          "sha256": "3E8CA08789D1D602B8E857B054E4DF60BFE5EF2EE464833431D901BCE2558B8C"
+        },
+        {
+          "path": "overlays/overlay_0050.bin",
+          "length": 5088,
+          "sha256": "72B9320185FA8512CA518C3963EF4842B241C22D62235FD89FA3E5543900465C"
+        },
+        {
+          "path": "overlays/overlay_0051.bin",
+          "length": 7200,
+          "sha256": "8535DCBB8D6FD243B956FCBDD95238076A2C342B29CCE18A43997923D67EAF83"
+        },
+        {
+          "path": "overlays/overlay_0052.bin",
+          "length": 11968,
+          "sha256": "FA74D4245AD77BE3FD088A815F4FFFA218C6ADFC6676A3D00E1CB19DB9409A60"
+        },
+        {
+          "path": "overlays/overlay_0053.bin",
+          "length": 6816,
+          "sha256": "614B10DEA4BBF1FA8BEDC139D8A70D5079E3228EA4DC2B8A84746CD355CD57F6"
+        },
+        {
+          "path": "overlays/overlay_0054.bin",
+          "length": 13984,
+          "sha256": "8E7EB0132FF86BF24AC690D2BCFD19581F7360C6049C29158E278BBD38D5B0B1"
+        },
+        {
+          "path": "overlays/overlay_0055.bin",
+          "length": 4512,
+          "sha256": "1FB8FD873C94E32B945C3C86E5983CD5BFABEF9210F1A05579B94614F8DEDDF0"
+        },
+        {
+          "path": "overlays/overlay_0056.bin",
+          "length": 6752,
+          "sha256": "BAA13FEEA19977FBC6EA141C807A2476D4019AE425AAA23CC1EBDC1FF06FF501"
+        },
+        {
+          "path": "overlays/overlay_0057.bin",
+          "length": 9664,
+          "sha256": "7D54E55A847DE31705651A7BF30AE1CE31B9AFB483601DB3F979ADC13A409B74"
+        },
+        {
+          "path": "overlays/overlay_0058.bin",
+          "length": 8384,
+          "sha256": "73CACBEFD312B7D3DCF843BE6DF9E07D3086727B82018473D6AF677C92F76EDA"
+        },
+        {
+          "path": "overlays/overlay_0059.bin",
+          "length": 7680,
+          "sha256": "C1AD6A44FC086A3C86A5089D17FD5F8588EAD1251AEE050B59C6CEC23D3481DF"
+        },
+        {
+          "path": "overlays/overlay_0060.bin",
+          "length": 10016,
+          "sha256": "52FF61A8965B60DF71BF1DA983502B78A173ADDE000A90C5FDDCA34B22DE53D1"
+        },
+        {
+          "path": "overlays/overlay_0061.bin",
+          "length": 5088,
+          "sha256": "4752D80DE6348C54C8E8EFF17263ADD056CE5804AA248AEB1941A5B95A3E3EA9"
+        },
+        {
+          "path": "overlays/overlay_0062.bin",
+          "length": 7200,
+          "sha256": "1F36024CAA7A8D48DAEFC892DC75AC07B18DC2D66700B7EABC845600C609151F"
+        },
+        {
+          "path": "overlays/overlay_0063.bin",
+          "length": 4480,
+          "sha256": "7B403DD722ED7D7158D40C99098F5FEC1189FBFD2D6FD01763497C101FBDA989"
+        },
+        {
+          "path": "overlays/overlay_0064.bin",
+          "length": 5024,
+          "sha256": "4EBD0E512F81B357443335DE0CA01526A9AF59B65950C745169F4F394FD1C77F"
+        },
+        {
+          "path": "overlays/overlay_0065.bin",
+          "length": 10112,
+          "sha256": "3A3D4FBC1B37580355108A734342844C0061FCDD2FF043FD47888DA0DC3A0468"
+        },
+        {
+          "path": "overlays/overlay_0066.bin",
+          "length": 8352,
+          "sha256": "AE797C80EF361CDF1BABABECB7AF77BB5920BD8CE1F51958319ACF5AEE79F808"
+        },
+        {
+          "path": "overlays/overlay_0067.bin",
+          "length": 7328,
+          "sha256": "44DB436FF3F8B2A30F6931C72D7B968B15766D46F3B58FB0ED832B0A699743D7"
+        },
+        {
+          "path": "overlays/overlay_0068.bin",
+          "length": 5728,
+          "sha256": "CCC21548B8FE8077EF37E3F1251DEFAF8167CA8BD80DCFBF520E7A5B4882AB1E"
+        },
+        {
+          "path": "overlays/overlay_0069.bin",
+          "length": 7296,
+          "sha256": "B0B86C9EAE46D71CD9C79D14B5C85008F19B43E9AC5C8C24CDF6696FD60BBF87"
+        },
+        {
+          "path": "overlays/overlay_0070.bin",
+          "length": 7712,
+          "sha256": "9D80A336084DC72B79A5535DD86B9F90FA06C9C740E0700D22495F032DE43061"
+        },
+        {
+          "path": "overlays/overlay_0071.bin",
+          "length": 9440,
+          "sha256": "90E06AF11163FE4BFDDFEE61DFE83D9D6FE90EA044AB13D6F82C0C3C0DFCB59C"
+        },
+        {
+          "path": "overlays/overlay_0072.bin",
+          "length": 7456,
+          "sha256": "0F2EA1917156CB3F87ED74F8A04DA734CD47A6D66DBD63DB0EF78F6314A95A8D"
+        },
+        {
+          "path": "overlays/overlay_0073.bin",
+          "length": 6912,
+          "sha256": "2F137F06D6C58D05FFA7243ED82644D8E40B5450D1F7CB97BB75087B6E7A2B45"
+        },
+        {
+          "path": "overlays/overlay_0074.bin",
+          "length": 4160,
+          "sha256": "E2D8CA63C60AE3180962B72C3B0CD28B3F2B7F8B3C55CCAB5272B9FA65AAC295"
+        },
+        {
+          "path": "overlays/overlay_0075.bin",
+          "length": 7424,
+          "sha256": "DC9496B1384C1036AF6AAED5E8DAEFD048EAC292C0871CF41D22C6E932305927"
+        },
+        {
+          "path": "overlays/overlay_0076.bin",
+          "length": 7616,
+          "sha256": "EE48C183D241459A89D82CEF3FEBB5DE3021715468B28E72A4D6152C6F4A0691"
+        },
+        {
+          "path": "overlays/overlay_0077.bin",
+          "length": 10272,
+          "sha256": "D0160F7D589C0B79D89C584A8459F931E5D525D1297E2A493CF1D7DD2ED3475B"
+        },
+        {
+          "path": "overlays/overlay_0078.bin",
+          "length": 9152,
+          "sha256": "1503862468FBDB0A374D835F4E732FC9BF4FD7DDE806B508AB5744B21D773A8D"
+        },
+        {
+          "path": "overlays/overlay_0079.bin",
+          "length": 9984,
+          "sha256": "A798B7466E60794B837141BFB8243BA2DBB252241FA13EBFED09EABC87A9CE41"
+        },
+        {
+          "path": "overlays/overlay_0080.bin",
+          "length": 9216,
+          "sha256": "458B170A29915126AB3DDB37DDDFC4E8E350B7D6E651D9B78FC648513C9D12F9"
+        },
+        {
+          "path": "overlays/overlay_0081.bin",
+          "length": 9504,
+          "sha256": "58B61B2FC34F9D55DA6F9C29F957894C8055C050217E9A85E360CF0D1D6CEF03"
+        },
+        {
+          "path": "overlays/overlay_0082.bin",
+          "length": 11328,
+          "sha256": "BD95369A43C4E95F461F6A29AD45E569097DD78C3721EF39683A3D9E5F0CB60E"
+        },
+        {
+          "path": "overlays/overlay_0083.bin",
+          "length": 11008,
+          "sha256": "BEFA1E23F29B7A26D12E9BB62E78958F723671A49C73279B80BC6051917DC64E"
+        },
+        {
+          "path": "overlays/overlay_0084.bin",
+          "length": 8256,
+          "sha256": "B6495487D9FBA25115D2606A71CD18C6D971481D3B78B38400F7E4F46F719816"
+        },
+        {
+          "path": "overlays/overlay_0085.bin",
+          "length": 7808,
+          "sha256": "FEAD13907729C80DDDDE67D55817FA772681B740271D8AC5843B056C76ED80FB"
+        },
+        {
+          "path": "overlays/overlay_0086.bin",
+          "length": 6336,
+          "sha256": "780553655350513ADF96F1842F5C254DE0C4AFD3E4643638F0A7F90448BE33FD"
+        },
+        {
+          "path": "overlays/overlay_0087.bin",
+          "length": 6080,
+          "sha256": "2A9193A40872DDE56619AD58A9F72C7983A09B64FC79D922703E5559E9F3116D"
+        },
+        {
+          "path": "overlays/overlay_0088.bin",
+          "length": 9696,
+          "sha256": "583DDB70B10426E162E64FC9CC1D47192E75BC4B2FF5064C6ADF3203AB072864"
+        },
+        {
+          "path": "overlays/overlay_0089.bin",
+          "length": 4960,
+          "sha256": "3765F49A9FC987EA7FAF3EFC3333BEA6EB4C080AEC07FF299813074BF87ED141"
+        },
+        {
+          "path": "overlays/overlay_0090.bin",
+          "length": 8416,
+          "sha256": "B45A9D874D08BDA2997FDE9F1DD94759C83B9B970BC5C91F76C9AFFE5493B338"
+        },
+        {
+          "path": "overlays/overlay_0091.bin",
+          "length": 8736,
+          "sha256": "4C59E30F8AA0F8E7F4D5B99ED0412AF93CE28D40ED9872DA8025B6FB077C68E2"
+        },
+        {
+          "path": "overlays/overlay_0092.bin",
+          "length": 9952,
+          "sha256": "91ED6A0BC20E5C9D8B4CC102E7384BB365740D06421285BA0480C331F3638CCE"
+        },
+        {
+          "path": "overlays/overlay_0093.bin",
+          "length": 4256,
+          "sha256": "067F1F6810CEE3C428D00DA20FF3364C4250212E2F5A9269BC72939EB261A293"
+        },
+        {
+          "path": "overlays/overlay_0094.bin",
+          "length": 3104,
+          "sha256": "65DCB9D3B9A2DA30CCD30B661A32C214AE98C1CEE3E18AED4E5833DDAC87C053"
+        },
+        {
+          "path": "overlays/overlay_0095.bin",
+          "length": 7936,
+          "sha256": "161E5A1165E88F61E62689FD105B533B4ADCC60590968E8F715551B8AE7D0413"
+        },
+        {
+          "path": "overlays/overlay_0096.bin",
+          "length": 4096,
+          "sha256": "E5E8AADF97B5933893285B3637D14491CE696DA204DCE5DBCEB99B3C750CF3BE"
+        },
+        {
+          "path": "overlays/overlay_0097.bin",
+          "length": 7584,
+          "sha256": "09F65D1DD663D30490AC5615DF6133366AFF03069D414124D3E3089B0E9E5631"
+        },
+        {
+          "path": "overlays/overlay_0098.bin",
+          "length": 5728,
+          "sha256": "FEB9010C0ED54C5C267648262EC887F915890492396E0D4CC4FCE4872413ACA7"
+        },
+        {
+          "path": "overlays/overlay_0099.bin",
+          "length": 6144,
+          "sha256": "74083CEF4255B991D16C16E408CA62B0D24E1A47EFC166A882DC6A868A2DF589"
+        },
+        {
+          "path": "overlays/overlay_0100.bin",
+          "length": 8896,
+          "sha256": "BF5C66B9952CC5E6C8E4F69C93E4942006B0489D2D6FB8898E597B054268D221"
+        },
+        {
+          "path": "overlays/overlay_0101.bin",
+          "length": 12288,
+          "sha256": "6DBCA87FF919114C91F7174CA9064677DBBDC9627B05350F10EF3551029D173B"
+        },
+        {
+          "path": "overlays/overlay_0102.bin",
+          "length": 8096,
+          "sha256": "893BBF30E3210D3749A2ECD7DE2C4927D213E4BABCBC5CF94CDB35D2572D9B72"
+        },
+        {
+          "path": "overlays/overlay_0103.bin",
+          "length": 4800,
+          "sha256": "9C4855A79D2964633BF3B2471FE502C90DCE8A5A08B912D1894CA3A605C3D4DC"
+        },
+        {
+          "path": "overlays/overlay_0104.bin",
+          "length": 6816,
+          "sha256": "491C65FBB326CA0D207881676CB589BFAD481B025C1CC97C11E7A4A6746D5B00"
+        },
+        {
+          "path": "overlays/overlay_0105.bin",
+          "length": 8800,
+          "sha256": "0FB501C179A4C0976ACB044D599A10E5CA5DC282846748EDA75745C95F3AE34A"
+        },
+        {
+          "path": "overlays/overlay_0106.bin",
+          "length": 4960,
+          "sha256": "FBFFB095D783D8942F7E4F6C887AE6109A1A0BF5FFAE6DCBC4AB9A45EF8DFCB8"
+        },
+        {
+          "path": "overlays/overlay_0107.bin",
+          "length": 3552,
+          "sha256": "33A49F311A3B71C7D0CA9E8C1F16CB91DFF6F240A4A6620AC417DBD7CBE004D5"
+        },
+        {
+          "path": "overlays/overlay_0108.bin",
+          "length": 8864,
+          "sha256": "6D214D427B698D4155306FF2B5EC4800B7D3262F8822914FC93F11B8EC8626C9"
+        },
+        {
+          "path": "overlays/overlay_0109.bin",
+          "length": 12832,
+          "sha256": "3F738CB18E6083869DFD3C0DF344E720D44197DA0C7803831D0DAFB497CD3DA0"
+        },
+        {
+          "path": "overlays/overlay_0110.bin",
+          "length": 8256,
+          "sha256": "6037AF6F77E7113240B1117A6EB1359207BC6BF44D3F90586559211D73119895"
+        },
+        {
+          "path": "overlays/overlay_0111.bin",
+          "length": 5920,
+          "sha256": "921CEAAC0CCB8A31DF210E04DCAFD1AB17B0E6B6B0A6E54C9A81A605AC1D6C7D"
+        },
+        {
+          "path": "overlays/overlay_0112.bin",
+          "length": 9344,
+          "sha256": "2C4A214E5A822A86296FCCF259774550C9EF5FA8B561521B065C7414C8F9C3F0"
+        },
+        {
+          "path": "overlays/overlay_0113.bin",
+          "length": 15296,
+          "sha256": "CA2E2F157A0D3531568F718D9523FE22E500350C477AF5D54C13BDD1A462B509"
+        },
+        {
+          "path": "overlays/overlay_0114.bin",
+          "length": 11360,
+          "sha256": "8EFAE71213B6C1FBB1F510705635237BE2DC7B3350469B14000A22AC971943B2"
+        },
+        {
+          "path": "overlays/overlay_0115.bin",
+          "length": 11328,
+          "sha256": "CEC6DC20E5BBC74EC461B838BAFC3ECC371BD0B8A8AB6CDB95BD78DCD5835635"
+        },
+        {
+          "path": "overlays/overlay_0116.bin",
+          "length": 7360,
+          "sha256": "092851B7115355FD96215B507CEBA7606F5F9D8D7941998F1B038B56BBF447C0"
+        },
+        {
+          "path": "overlays/overlay_0117.bin",
+          "length": 8768,
+          "sha256": "11E65BEF4FC49280F550735B9CB1B24A9F32186C9A1B9CACFAB974FF8BB3687A"
+        },
+        {
+          "path": "overlays/overlay_0118.bin",
+          "length": 7008,
+          "sha256": "228EBCA1BD7E940F1ECFAC85223E21FF72528EC664DD98028368192291D098BC"
+        },
+        {
+          "path": "overlays/overlay_0119.bin",
+          "length": 6112,
+          "sha256": "E371F017B2F6DCE372AD970B9FA6C2D47233529D7888D52DFE1C8E2945CB7A81"
+        },
+        {
+          "path": "overlays/overlay_0120.bin",
+          "length": 11136,
+          "sha256": "DA9E529673B6303BB631320431994E9B6495C56C7B36BAA1890F7D8AF8C91B43"
+        },
+        {
+          "path": "overlays/overlay_0121.bin",
+          "length": 5376,
+          "sha256": "D1C873D83132CDF090662C21DBF5BC0B6E3FAE656F6B392584049B819501B26E"
+        },
+        {
+          "path": "overlays/overlay_0122.bin",
+          "length": 10720,
+          "sha256": "DAF3758DD8767D84A33D1252E9F879A9CA4E5B851215948FBF79D4F7BDF5D458"
+        },
+        {
+          "path": "overlays/overlay_0123.bin",
+          "length": 4896,
+          "sha256": "BD26ABE24C284764B606D9C8A18675CE6AEDFDD80324B9B3E68B63A925BD1F1B"
+        },
+        {
+          "path": "overlays/overlay_0124.bin",
+          "length": 6624,
+          "sha256": "391BCADCB5F35C57DFA2C8906E661D2762755411ECC8DA1E478EB99F25D8E1E6"
+        },
+        {
+          "path": "overlays/overlay_0125.bin",
+          "length": 12896,
+          "sha256": "DAE1EC26DB49311BE357386A66CC3B08E5C2073EC6BA31130BA4A5480DEAB35C"
+        },
+        {
+          "path": "overlays/overlay_0126.bin",
+          "length": 5600,
+          "sha256": "7430C376B2FFC22295BF8DA1F55451F83C67FE336AC0F6B00F52C9382ED9AD16"
+        },
+        {
+          "path": "overlays/overlay_0127.bin",
+          "length": 7584,
+          "sha256": "EEFE6D26FF2D7026FBE6E2ACB2E42E641FF38996D61D0747DD75A98F98D449C8"
+        },
+        {
+          "path": "overlays/overlay_0128.bin",
+          "length": 5088,
+          "sha256": "81581D0B9375B9A65D314614D7F9F984861E41DD205CA0C0E24F02AAF5BB8A5A"
+        },
+        {
+          "path": "overlays/overlay_0129.bin",
+          "length": 10240,
+          "sha256": "284AD1CA653F120AA355C1EC916DFFC0DD44D69FABE3B883143782DBF7D60094"
+        },
+        {
+          "path": "overlays/overlay_0130.bin",
+          "length": 12544,
+          "sha256": "69775DC46242039015D06DE35A4D8540DFEAB35ABDE86C00932B900322413ADB"
+        },
+        {
+          "path": "overlays/overlay_0131.bin",
+          "length": 5888,
+          "sha256": "C9E97E71CF20C48FDD2CF6D282BC73131FE7A05B680514C894E5E1B769BE61E8"
+        },
+        {
+          "path": "overlays/overlay_0132.bin",
+          "length": 7648,
+          "sha256": "895AB90972730BDD4091AAC227A65A6BCB946649E1B511F714BD18019D1B3B17"
+        },
+        {
+          "path": "overlays/overlay_0133.bin",
+          "length": 6368,
+          "sha256": "18F55E977B6B4541EE0AA3FD8BB8D7FE8C7537D636FEC36437A8E24C0810BDC3"
+        },
+        {
+          "path": "overlays/overlay_0134.bin",
+          "length": 7648,
+          "sha256": "86ED3160A640519B273E5EA0A12D7B238AA460D7199F64908258188D43C3D875"
+        },
+        {
+          "path": "overlays/overlay_0135.bin",
+          "length": 6080,
+          "sha256": "23AA85EF33A62CBA14C642AAAC4051527C278D0D747BF07A9FA7784484BA2D3E"
+        },
+        {
+          "path": "overlays/overlay_0136.bin",
+          "length": 6240,
+          "sha256": "F75363A1A1C0DE9918B677522EAC902186FFCA9DF45FDB8ACE1E110E684FEDEC"
+        },
+        {
+          "path": "overlays/overlay_0137.bin",
+          "length": 8512,
+          "sha256": "E867C323F687DAB84D57A77739E00CA973735EDD2837FECF04432B903B253AC8"
+        },
+        {
+          "path": "overlays/overlay_0138.bin",
+          "length": 5472,
+          "sha256": "3C50CDA8410C2B9B0696515232058E9B5C51154453F592A87F9B4A7634B8B353"
+        },
+        {
+          "path": "overlays/overlay_0139.bin",
+          "length": 11616,
+          "sha256": "97545C5BE6CF1D845AF1BA006A7AB489777E911D993107E106F4BA699020FCBA"
+        },
+        {
+          "path": "overlays/overlay_0140.bin",
+          "length": 4576,
+          "sha256": "2367073DCF3C6E4A553D52D418B183D42E2060CD5B776D98D8105A052CE180FA"
+        },
+        {
+          "path": "overlays/overlay_0141.bin",
+          "length": 6688,
+          "sha256": "1BA3BC31B25354A9C43C7991AFEC8E299FB9E44C4C86DE25E57E44999A2B9BCA"
+        },
+        {
+          "path": "overlays/overlay_0142.bin",
+          "length": 8448,
+          "sha256": "89BDC60F1C6C15C3B25CEF0DF4FA32912A43D466D9C53A47658BC2FABFB47D56"
+        },
+        {
+          "path": "overlays/overlay_0143.bin",
+          "length": 11392,
+          "sha256": "E3FD2CAE34945B4156D9860354C922347A4F1C4569B38A6CF9A941B75D5F4D65"
+        },
+        {
+          "path": "overlays/overlay_0144.bin",
+          "length": 10592,
+          "sha256": "CDD37A52D1C4E13FA65E28121273A906991DAEBF1628A5EF5FB74EA3C578FF7F"
+        },
+        {
+          "path": "overlays/overlay_0145.bin",
+          "length": 8864,
+          "sha256": "960BC4EE9EA732EAE3B112FBC08713C1A7893D1CF27D07C7CD19B775D0B4EFB9"
+        },
+        {
+          "path": "overlays/overlay_0146.bin",
+          "length": 9184,
+          "sha256": "0FB76B8B301D0F3D42AEE827FE4AC4404C8E5AE686A48880A7D610569B1CF770"
+        },
+        {
+          "path": "overlays/overlay_0147.bin",
+          "length": 11680,
+          "sha256": "5E1F6A980F73DC80CB77226FC6576B27B1F4AD145B5C22FEA76F0D249A0BDCD8"
+        },
+        {
+          "path": "overlays/overlay_0148.bin",
+          "length": 7616,
+          "sha256": "1EA2470027CA86CCE9EB7731A4B241E36E78D45A7AAD72DFBF43B2E5D0B1DC60"
+        },
+        {
+          "path": "overlays/overlay_0149.bin",
+          "length": 7232,
+          "sha256": "96E5BAADD43F0C2CCFA4934C9A0E64F14536D4692B81E4A561E447FE29F37D68"
+        },
+        {
+          "path": "overlays/overlay_0150.bin",
+          "length": 6336,
+          "sha256": "F8C4D0910534D5507EAB1B67FF17B56089E82806AC1D0F7FC76C32F69017540F"
+        },
+        {
+          "path": "overlays/overlay_0151.bin",
+          "length": 10432,
+          "sha256": "3CAB9F43D346AE449D5C0D901F6AC9968BF31C5210D184B787757C8232DE017A"
+        },
+        {
+          "path": "overlays/overlay_0152.bin",
+          "length": 15296,
+          "sha256": "31DAAFC492E492AB666F8FE32C124E39C3FEC875D27D28BB78C14A967FEEC66B"
+        },
+        {
+          "path": "overlays/overlay_0153.bin",
+          "length": 5728,
+          "sha256": "CB9462F42C85ABC2F9E9F44407CC064070AA3A8BB80352777D51D7C4CA25A7BA"
+        },
+        {
+          "path": "overlays/overlay_0154.bin",
+          "length": 8160,
+          "sha256": "8056B93DB0143D3E0291538F21E6B27B7B83AA4207AB2DC930702400C803B04B"
+        },
+        {
+          "path": "overlays/overlay_0155.bin",
+          "length": 10368,
+          "sha256": "4F2D201AA96BF084044A432C9E4E5E823876F556321FBA06875367EC1CA8C95E"
+        },
+        {
+          "path": "overlays/overlay_0156.bin",
+          "length": 7648,
+          "sha256": "B2D0149CA68F6C387E6A66CB68910D45BA590984B88375838091D420549DC0B9"
+        },
+        {
+          "path": "overlays/overlay_0157.bin",
+          "length": 19840,
+          "sha256": "4F8A0431D10E1D010E018068FF9D7F5525428E72F166FAF4F0D9F82F261B013F"
+        },
+        {
+          "path": "overlays/overlay_0158.bin",
+          "length": 10560,
+          "sha256": "EE4FBB47CA995BD8754160DE090C09B770920A6F0B059682D06D3DCB1726F5B2"
+        },
+        {
+          "path": "overlays/overlay_0159.bin",
+          "length": 12160,
+          "sha256": "6EB14018189E08705A018AB5FFC8582095FFB370519879F184E271D115D7A4C3"
+        },
+        {
+          "path": "overlays/overlay_0160.bin",
+          "length": 15872,
+          "sha256": "00D61185339490EC14F4E60624B9E0BFC93A68A0C6FA78107DE94567ABDB6B1E"
+        },
+        {
+          "path": "overlays/overlay_0161.bin",
+          "length": 8032,
+          "sha256": "79EC4F157A5B0960A86F279D50BFCFBE74B545E51881D2E6C6B41F546791B145"
+        },
+        {
+          "path": "overlays/overlay_0162.bin",
+          "length": 5760,
+          "sha256": "AE4E54E7933B7DAB302AFE3D92CDBB2462EDF1DB2010F6DF195A72F0550E5A98"
+        },
+        {
+          "path": "overlays/overlay_0163.bin",
+          "length": 8224,
+          "sha256": "DEC1807E0CBACC977C408C6E16C11599702B7F99BCF0828363680C4E5BD9C054"
+        },
+        {
+          "path": "overlays/overlay_0164.bin",
+          "length": 5152,
+          "sha256": "5A7D5D86EA99F9B0DF9E99834A8C5D958966E039084C70B7FB5B6C4F1D370B28"
+        },
+        {
+          "path": "overlays/overlay_0165.bin",
+          "length": 8608,
+          "sha256": "D2B128A47D1632A95B577354877883FFBDE327D4B3C3DBD58FCA72318CF8AFB7"
+        },
+        {
+          "path": "overlays/overlay_0166.bin",
+          "length": 8320,
+          "sha256": "8E66D7C4F32A7C46DF57F6F0CE87F6DB1CDA5BD8F926C8F2C96FA02730F6E8B0"
+        },
+        {
+          "path": "overlays/overlay_0167.bin",
+          "length": 16352,
+          "sha256": "8CEF2D8708A752EAB3C730D4A9BC72E92BDAA3666FECD7671A87C6344F75B3EA"
+        },
+        {
+          "path": "overlays/overlay_0168.bin",
+          "length": 9696,
+          "sha256": "4A6CF4C78E443F76913A4705FA850FC3F3906E041A5D5D8C0B8E12DDDD5A80FB"
+        },
+        {
+          "path": "overlays/overlay_0169.bin",
+          "length": 12704,
+          "sha256": "6AAAC6EDD0FC9A840C6F6EA542C05F21085EBE25DEE0B578DD773A3EA9278CD8"
+        },
+        {
+          "path": "overlays/overlay_0170.bin",
+          "length": 15968,
+          "sha256": "40DF0CFAA201C15630249709E2F3ABB0CC6CE9C639CBDA41DF80B0A156971798"
+        },
+        {
+          "path": "overlays/overlay_0171.bin",
+          "length": 19488,
+          "sha256": "A3307E7D8DE0EF4064496C08E5DB7991AD92DE6F4694DB7B7F266A15F7BEA5A1"
+        },
+        {
+          "path": "overlays/overlay_0172.bin",
+          "length": 8192,
+          "sha256": "4B674B2F338A26BA12271DAA10E068DE4FCE3CB3DCBD0CECA76E1CBA08D1DF78"
+        },
+        {
+          "path": "overlays/overlay_0173.bin",
+          "length": 10272,
+          "sha256": "848B249D35699A6EE40BAEC18BC9EEA44C699623B8D3375CD6E89F6B4F6B60C5"
+        },
+        {
+          "path": "overlays/overlay_0174.bin",
+          "length": 9856,
+          "sha256": "A56F730076AAA1F5A3A1E6DA5F96505F56E2E1B40E8CC1E12183F05E44F496E1"
+        },
+        {
+          "path": "overlays/overlay_0175.bin",
+          "length": 6656,
+          "sha256": "7795FBEFFE6C8101AA47C4F7E0F95CF3617B5D8A7CDB02908CFC41C86039DA34"
+        },
+        {
+          "path": "overlays/overlay_0176.bin",
+          "length": 7616,
+          "sha256": "3F5B5FAF09ECA9F7A261CB4EB682B6042BFD708B21B876336EBA9AAE97B4DE5E"
+        },
+        {
+          "path": "overlays/overlay_0177.bin",
+          "length": 5952,
+          "sha256": "2CC80B6052F1836B620EC982CCCD533A2290C03C55CA7F523B7C4649F9EBD83B"
+        },
+        {
+          "path": "overlays/overlay_0178.bin",
+          "length": 5600,
+          "sha256": "796F7B253197EE160F9B9083FC1793D51D8E82CC9C498F7DE5CF2A96F23480B9"
+        },
+        {
+          "path": "overlays/overlay_0179.bin",
+          "length": 4640,
+          "sha256": "135BCA62CEA1563472153F6EE9863DCC1661988E02EB12BD876BEF056E332B93"
+        },
+        {
+          "path": "overlays/overlay_0180.bin",
+          "length": 7008,
+          "sha256": "7B4A2DA6AFE39CFC90A59F276091758F56FB4B7949AD6DC34676700DA23D120E"
+        },
+        {
+          "path": "overlays/overlay_0181.bin",
+          "length": 8320,
+          "sha256": "D4136B6F380118515D40FF7176E89A7940649CA2E4E287D3401C9184E5FE0C69"
+        },
+        {
+          "path": "overlays/overlay_0182.bin",
+          "length": 10464,
+          "sha256": "F10D7D3E738EF6004DFC4BE947C502F6913679DE5D7952B3F3A170BB90E188DB"
+        },
+        {
+          "path": "overlays/overlay_0183.bin",
+          "length": 6464,
+          "sha256": "3077EAD292F507FDA4F55E75F3D37DA23547AC506A0976E59985AD2D66E9C46A"
+        },
+        {
+          "path": "overlays/overlay_0184.bin",
+          "length": 10464,
+          "sha256": "DE2C0034A889557C8D1B7C7139961621E07A44BEC19D05B93831819ACFA7DDB1"
+        },
+        {
+          "path": "overlays/overlay_0185.bin",
+          "length": 5088,
+          "sha256": "D9C7A5E87EA176CC10E6141E568F2B4851ED218714C1DA2EC65FAC484D4C9166"
+        },
+        {
+          "path": "overlays/overlay_0186.bin",
+          "length": 7968,
+          "sha256": "0EAD160D0B88CA1EA5498850925EFF4C8BFD4919FA9C938B4F3B178A5A244F2A"
+        },
+        {
+          "path": "overlays/overlay_0187.bin",
+          "length": 14368,
+          "sha256": "218C3776982B8F046A46293964C318186CE5F8A3B4D8A5BDAC4EB0C1D7DEE806"
+        },
+        {
+          "path": "overlays/overlay_0188.bin",
+          "length": 11552,
+          "sha256": "CB65D924A922E7FAA33A0482A0AC85F298CDA7CB2744C519FA77810A3AF1B4A9"
+        },
+        {
+          "path": "overlays/overlay_0189.bin",
+          "length": 13312,
+          "sha256": "7AA365FE78881116D0FDA4B1A02C19DA11AE08D3DD31BCD0537725B46401AFB2"
+        },
+        {
+          "path": "overlays/overlay_0190.bin",
+          "length": 5536,
+          "sha256": "B02EEFCA80B3B8943CFC0F8D23E80DB04CCE3F1915772D2045F1FB1A2C48097E"
+        },
+        {
+          "path": "overlays/overlay_0191.bin",
+          "length": 10240,
+          "sha256": "AED9B8075BDAC0A7DFD2171B660B800DDF4A2B28C25FB57F692C5E28719CFFAC"
+        },
+        {
+          "path": "overlays/overlay_0192.bin",
+          "length": 17920,
+          "sha256": "00FBD51E9DC5FBB9892C1AFE22AD3C5A98244E48DBBE3730B85C68330B2752DE"
+        },
+        {
+          "path": "overlays/overlay_0193.bin",
+          "length": 10464,
+          "sha256": "A7028DD2CD41012C6A7DCE795267E6ABDDD37D623A9F20FCB141D0F59CE0A89E"
+        },
+        {
+          "path": "overlays/overlay_0194.bin",
+          "length": 6752,
+          "sha256": "38A147177206B1C9F98B29E966F84273B94A32ABD877E8EF0B481252BAA36F1D"
+        },
+        {
+          "path": "overlays/overlay_0195.bin",
+          "length": 4032,
+          "sha256": "382460E2650CCAF6C0F3C00D3D0C4FF0626BE3F53AA3BDC23425AE928F2D5847"
+        },
+        {
+          "path": "overlays/overlay_0196.bin",
+          "length": 9376,
+          "sha256": "D1C55F88B7CC8B644C6C79C3523D845010F029886159A09A8E4B830F5CF5CF9D"
+        },
+        {
+          "path": "overlays/overlay_0197.bin",
+          "length": 16960,
+          "sha256": "D2FB6161AE8FCD8E428E3EBA22FFFC6A7A78D6D5F144E52AEED9FEE814B7F28D"
+        },
+        {
+          "path": "overlays/overlay_0198.bin",
+          "length": 13856,
+          "sha256": "8F2DF08C822335F897C16A4AF78253B691F9CC86EE6CED7BA83FF8A9036B2787"
+        },
+        {
+          "path": "overlays/overlay_0199.bin",
+          "length": 12128,
+          "sha256": "3BE4768F0B4582D2D89F02E65BAA770DA43B63FBA59B4D1E52D6228764CD6B0F"
+        },
+        {
+          "path": "overlays/overlay_0200.bin",
+          "length": 11040,
+          "sha256": "605BE8D1AA4F98F31F96C868E3588975E7E2ABE232D733025E5A9A482AB3CE43"
+        },
+        {
+          "path": "overlays/overlay_0201.bin",
+          "length": 16736,
+          "sha256": "59A24C4BEFC5DF90909E66225D4EB058A18197DE4C83C1132DF099A644F777A6"
+        },
+        {
+          "path": "overlays/overlay_0202.bin",
+          "length": 11712,
+          "sha256": "A030F1FAF869B466855CA8F104A6F1ACF2ADA66A0B1E575FA8A39CED0CAA5E80"
+        },
+        {
+          "path": "overlays/overlay_0203.bin",
+          "length": 31936,
+          "sha256": "EC91D558300B0111662DB04CF1389E6E05EA3CD25F26F8045978D7945BE431A0"
+        },
+        {
+          "path": "overlays/overlay_0204.bin",
+          "length": 30016,
+          "sha256": "17E84C3B2BD6DBBD125569BE679D1DBE25384D362C1AFD0E6E2426B040A81B01"
+        },
+        {
+          "path": "overlays/overlay_0205.bin",
+          "length": 14144,
+          "sha256": "05D6C4F58189D0E84A172E4E0309FE246705F9C9993955C5F3D661068CD4E38F"
+        },
+        {
+          "path": "overlays/overlay_0206.bin",
+          "length": 2048,
+          "sha256": "C4E18DF1D9FCD601665D9E95078143BBF700E93A886D86C3206F629DE4EE64F4"
+        },
+        {
+          "path": "overlays/overlay_0207.bin",
+          "length": 8064,
+          "sha256": "BDBD4CB2BFDF6E2E5DDAE19554A54F90D81F2C899224C2BCFAF2A315577C569C"
+        },
+        {
+          "path": "overlays/overlay_0208.bin",
+          "length": 12096,
+          "sha256": "F828C1B0779D752580AFF229BB6B51B22B2CB2523B6BF524FBA6F6BA287CE470"
+        },
+        {
+          "path": "overlays/overlay_0209.bin",
+          "length": 6688,
+          "sha256": "E69C5E8D81CCF64CD608AA663BCF60698E04CDC808BBADD56BE00E9BF6E6FACC"
+        },
+        {
+          "path": "overlays/overlay_0210.bin",
+          "length": 7040,
+          "sha256": "AD5BD45C64FA7B8B62006DEE81534D2B2041F67902E459B40E5DDD0A17DCD67D"
+        },
+        {
+          "path": "overlays/overlay_0211.bin",
+          "length": 7936,
+          "sha256": "D670D117DCFE946A5BE72FF1547B2E1DBC0BC7B8EE189E27521719B9288EE8D3"
+        },
+        {
+          "path": "overlays/overlay_0212.bin",
+          "length": 7232,
+          "sha256": "C03030378DF4697DD805CEC2B8B2A1BDEDD2C881FE80890FF4CB296C63EFB152"
+        },
+        {
+          "path": "overlays/overlay_0213.bin",
+          "length": 17184,
+          "sha256": "DD6BB6E6C336A1B8FEB598ECF6B6FB3A6D31A67F9026447080B63306934AB131"
+        },
+        {
+          "path": "overlays/overlay_0214.bin",
+          "length": 3616,
+          "sha256": "4A6ECE748DFA2D0D60588C702763E1E0D031CF654306E1AD742B5D32DFD41B90"
+        },
+        {
+          "path": "overlays/overlay_0215.bin",
+          "length": 11296,
+          "sha256": "DA969BFA1F859653D5E78A9DADDEA1AC0C29AFBBB2A55E417079ADE4D26176B8"
+        },
+        {
+          "path": "overlays/overlay_0216.bin",
+          "length": 6848,
+          "sha256": "4DA23D0F88CF1471C6421CAE4C8B5E43612C47E85D3593B86C0F590A2F5A1F3B"
+        },
+        {
+          "path": "overlays/overlay_0217.bin",
+          "length": 2272,
+          "sha256": "6DB68AA3B1371C01DFC554C95C9972C1E6B48B6FC6FF633607253775C36C20BC"
+        },
+        {
+          "path": "overlays/overlay_0218.bin",
+          "length": 9760,
+          "sha256": "140FE60B626BEFAA1B9C7E3AA677AA33209075E3E5340F2D7AB8C1C92F025AD2"
+        },
+        {
+          "path": "overlays/overlay_0219.bin",
+          "length": 7072,
+          "sha256": "B40AB8482EE71C2F2C8B734D401A2937DAFB580CB149836599CA70070330443A"
+        },
+        {
+          "path": "overlays/overlay_0220.bin",
+          "length": 4288,
+          "sha256": "7097A7C96083FC9C5655C7F2F3E8BA3132D021E95AB1554B85DF732FFD5DC501"
+        },
+        {
+          "path": "overlays/overlay_0221.bin",
+          "length": 3968,
+          "sha256": "81C270BD57C03C4D611CD1CD81AD3EB564FF4478E840D6AC442098DC2AFEC762"
+        },
+        {
+          "path": "overlays/overlay_0222.bin",
+          "length": 6976,
+          "sha256": "198A6586738CC68F85A4B13223B8D727D89B7851DC37642CA93437D9C10BB496"
+        },
+        {
+          "path": "overlays/overlay_0223.bin",
+          "length": 9664,
+          "sha256": "56B429F02E2EC4E6220418F0FC01C474C22475FF056D3BB1C0E28AC8064D1B19"
+        },
+        {
+          "path": "overlays/overlay_0224.bin",
+          "length": 4512,
+          "sha256": "EAD89ED15A49CDE7B9DC18FEB0F3B69381DC86D5667D2116DB4F86119DC4C1C1"
+        },
+        {
+          "path": "overlays/overlay_0225.bin",
+          "length": 6784,
+          "sha256": "4DDB93490E70B9C6BE2CA0A5964F54D317A31505FF456B9B010DDF3DCFB7A104"
+        },
+        {
+          "path": "overlays/overlay_0226.bin",
+          "length": 10144,
+          "sha256": "E718EF59C9EC81B37ADD5E91AC964774049CDCE2AFA8D78FBCB50706A64D4067"
+        },
+        {
+          "path": "overlays/overlay_0227.bin",
+          "length": 3168,
+          "sha256": "15CF8A73CE7421699B9C121AFC18E24D459B9FDE3FEF2A4222F91EF31E6B9A5A"
+        },
+        {
+          "path": "overlays/overlay_0228.bin",
+          "length": 2912,
+          "sha256": "852F4C5AD42A392C3354F7B034B828F2D51184F3962FB7E2C118E61F5830FE15"
+        },
+        {
+          "path": "overlays/overlay_0229.bin",
+          "length": 5312,
+          "sha256": "C7C2A938FB5D9EB9B9A6669AA0A5C1DDF74433D8EC1E65A99DF54F44EF6917CE"
+        },
+        {
+          "path": "overlays/overlay_0230.bin",
+          "length": 15456,
+          "sha256": "B3D9FDB23B7707A0A55102425E6A0DD7103F21B738C3ED2332329B0182FB929C"
+        },
+        {
+          "path": "overlays/overlay_0231.bin",
+          "length": 5600,
+          "sha256": "212CB299849FEB866CF8EDBCE0CFF1B48091D94BD4549CF89C57FA84148A75F4"
+        },
+        {
+          "path": "overlays/overlay_0232.bin",
+          "length": 3104,
+          "sha256": "1734056431FAA2888C17985C1DAE3BB2A4D19BAF510D2B2404489FC58290BC5A"
+        },
+        {
+          "path": "overlays/overlay_0233.bin",
+          "length": 15232,
+          "sha256": "16AE5075503EFFB034FEABDAE142B3BCCFBE512B46EF8A663E5E5B4B4FCEE4F6"
+        },
+        {
+          "path": "overlays/overlay_0234.bin",
+          "length": 10656,
+          "sha256": "285BD17A5580CD54EC11F431168A2D89EFE61959AD327737B77EA07F263C05B9"
+        },
+        {
+          "path": "overlays/overlay_0235.bin",
+          "length": 416,
+          "sha256": "E75C5B2750E2238B739183B2D1C0DAFA0976C139519358242CFF11838751F97F"
+        },
+        {
+          "path": "overlays/overlay_0236.bin",
+          "length": 7488,
+          "sha256": "4B3C447BE8DA0723AE54F93C434BA73F6DD37D726B70EBE54D0067C628BEFB4E"
+        },
+        {
+          "path": "overlays/overlay_0237.bin",
+          "length": 19616,
+          "sha256": "D31DA57DF36F15B6FE9420A412E41591871038AC638D94571E080D7ED0C499B1"
+        },
+        {
+          "path": "overlays/overlay_0238.bin",
+          "length": 21152,
+          "sha256": "0DD476B27C8739E1F6BF8458DECE31B0A8EEF8A8BF8B18F153DED6043ED5A49C"
+        },
+        {
+          "path": "overlays/overlay_0239.bin",
+          "length": 31008,
+          "sha256": "72AE18D412EDDD95A458D831770D4F3FDFDD9DB570AE716CAC885D478089ACAC"
+        },
+        {
+          "path": "overlays/overlay_0240.bin",
+          "length": 48960,
+          "sha256": "5CBEEB62AEFD351AB18C93B6E6BAB532839275B92CA814B51B2052C8621F6EFD"
+        },
+        {
+          "path": "overlays/overlay_0241.bin",
+          "length": 23552,
+          "sha256": "BD33D6F639BEE830A561E8F681C329030502A0698FB7E22D5055D324ECC85513"
+        },
+        {
+          "path": "overlays/overlay_0242.bin",
+          "length": 19520,
+          "sha256": "24CEAE58B5C63AC5DDCF9DEC0261C81144771A1E06213FDADF9A5B92B99EEE06"
+        },
+        {
+          "path": "overlays/overlay_0243.bin",
+          "length": 14464,
+          "sha256": "69EEFD6F71B26458A3A037AEE4103445471BEF620C226BD3EE227559E7F777EC"
+        },
+        {
+          "path": "overlays/overlay_0244.bin",
+          "length": 5248,
+          "sha256": "13C8047B7DFB83C0E58B1CD080A20B0315484692316CE3696F7FD10CD2BD5CF7"
+        },
+        {
+          "path": "overlays/overlay_0245.bin",
+          "length": 3232,
+          "sha256": "490F712962C1EDD8E803D3AB279D83919A9E1283C1C0E7A32ECC06B36FA3BCCC"
+        },
+        {
+          "path": "overlays/overlay_0246.bin",
+          "length": 12704,
+          "sha256": "D456381F47EC971D398DCBFFE9380442D061B0F98F72BBFA3F07BE27CED9237B"
+        },
+        {
+          "path": "overlays/overlay_0247.bin",
+          "length": 3520,
+          "sha256": "177F8F11B71E3862F561EBC644F31BE62B73EA3438811943B4040CFA0C23F514"
+        },
+        {
+          "path": "overlays/overlay_0248.bin",
+          "length": 2560,
+          "sha256": "AD462C63B2481842362A830AF2B621C832DBE3FD103AD6F0989D8FEB213DD330"
+        },
+        {
+          "path": "overlays/overlay_0249.bin",
+          "length": 8256,
+          "sha256": "BDE348D803767C82F4800509CACFCC0D6BEB104B061AA709503AA6C25B37A6D8"
+        },
+        {
+          "path": "overlays/overlay_0250.bin",
+          "length": 9216,
+          "sha256": "36123C404E6A3CDA7DB99FC2A3BA62B014D61611644313898BBEEC63AD51B46B"
+        },
+        {
+          "path": "overlays/overlay_0251.bin",
+          "length": 2272,
+          "sha256": "E301AB674498A316115CDDC46CD16495E6B00A789C25F64CF9EBDD1A28D01EE1"
+        },
+        {
+          "path": "overlays/overlay_0252.bin",
+          "length": 5952,
+          "sha256": "244FFE29651BDC44C5CC305E8786E0C86AB3F30BD26170BD04FC868A949A37E5"
+        },
+        {
+          "path": "overlays/overlay_0253.bin",
+          "length": 768,
+          "sha256": "9FE0490D3EF4D430196B4468677FBD375D3DA0821CDF1C48528226F5A9212AAE"
+        },
+        {
+          "path": "overlays/overlay_0254.bin",
+          "length": 2624,
+          "sha256": "00816E7C83773845CE37B75EDEB1BF6CCD4E0F0F53B56FBB04749AD1C8F73E63"
+        },
+        {
+          "path": "overlays/overlay_0255.bin",
+          "length": 2528,
+          "sha256": "AD9C9372C732BB882BA82E47ED8B87D4E933A42EA543002F4A1EAA6BD95ACC85"
+        },
+        {
+          "path": "overlays/overlay_0256.bin",
+          "length": 3168,
+          "sha256": "67B24465645FE3E3F03B7E177BA7EFF81CFCBE426DB5FC6339B3203BD4A94A67"
+        },
+        {
+          "path": "overlays/overlay_0257.bin",
+          "length": 2784,
+          "sha256": "5615C4DA55D747ABC11EEF6864BCDFC9907407AAB4F74B3285DCA51E62272D38"
+        },
+        {
+          "path": "overlays/overlay_0258.bin",
+          "length": 1920,
+          "sha256": "D6DB7DA621F19F596478112EBC495C6F2E4243334F049C0F6834AEC8589C7E5A"
+        },
+        {
+          "path": "overlays/overlay_0259.bin",
+          "length": 1760,
+          "sha256": "58F9D162BE10CEB2F47505B3AE74AD8D3423342DFD7A13880FE24F676A746117"
+        },
+        {
+          "path": "overlays/overlay_0260.bin",
+          "length": 2656,
+          "sha256": "3F524CD3CAD8BCED3D1D91DC796A560A29C10C9EB3B6B0D27BBDF5DEE4A99102"
+        },
+        {
+          "path": "overlays/overlay_0261.bin",
+          "length": 2016,
+          "sha256": "8FCF6F6AC338B0F8333C0026E00B6FB0C8F310D13C65071E1D18D0D0171F174F"
+        },
+        {
+          "path": "overlays/overlay_0262.bin",
+          "length": 1856,
+          "sha256": "7840421D69878D3956A811E4F65001F2D08B660870EFABC98BFA0ACAADF230DC"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 32425536,
+          "sha256": "F066F1D5AEEB7CF7E9117D9D1D34640949B1F64D1A5971D88DB21B2C6BFEDBDF"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 33554432,
+          "sha256": "A9927ABB6C7AA63B02AF1222C3164E32836759B7C656106F363B445B75CC3480"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 33554432,
+          "sha256": "BD9C9F42E8CCA2042D449FF364E51B3161DC963A6526E8CACA4A71A6DA41D725"
+        }
+      ]
+    }
+  ]
+}

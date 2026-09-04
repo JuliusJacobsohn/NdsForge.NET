@@ -1,0 +1,4090 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Super Dodgeball - Brawlers - Aksys Games [YDVE] [USA - English].nds",
+    "length": 8388608,
+    "sha256": "fbfa1df2dbb45c4add16aa4ad3a25b26a9973ea9268d94f785c6929c2dbbda29",
+    "headerTitle": "KUNIO-DODGE",
+    "gameCode": "YDVE",
+    "makerCode": "XS",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Super Dodgeball - Brawlers - Aksys Games",
+    "bannerTitles": {
+      "Japanese": "Super Dodgeball\nBrawlers\nAksys Games",
+      "English": "Super Dodgeball\nBrawlers\nAksys Games",
+      "French": "Super Dodgeball\nBrawlers\nAksys Games",
+      "German": "Super Dodgeball\nBrawlers\nAksys Games",
+      "Italian": "Super Dodgeball\nBrawlers\nAksys Games",
+      "Spanish": "Super Dodgeball\nBrawlers\nAksys Games"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 159192,
+          "sha256": "296A68E0DB098CA0DA47C222D77F6CFD65924DB6D4513ACA1854DAF1DC6EF827"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 1044964,
+          "sha256": "AB6905FB44CB6C56A6CA8C86B10028962967A071D1B1A037316F71EA6A59A3C1"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "B155BAC0DEE4EA52FA439B68C1A61A46ED0FD74097506229BE540BABBEF8BEFB"
+        },
+        {
+          "path": "data/BattleRoyalName01.NANR",
+          "length": 115,
+          "sha256": "E59EED5F27FF0740AAE8362E5BC28BE9603AACC3A1C5CEE586EF773E223C59B3"
+        },
+        {
+          "path": "data/BattleRoyalName01.NCBR",
+          "length": 816,
+          "sha256": "1146B05BAE7EAA31621382213EFA4F4C20DAD93E44C9ADC8F4E9A5C7A598D91D"
+        },
+        {
+          "path": "data/BattleRoyalName01.NCER",
+          "length": 115,
+          "sha256": "5898D077987E8875B9CFD0A765B09EDB27215A7D7A21D217B57B9D84BAE5EA9A"
+        },
+        {
+          "path": "data/ChangeParameterArrow.NANR",
+          "length": 140,
+          "sha256": "6B7C73C2F3214D0F6638BA1B928702F3A39459C7B03A0DAD186A8FAA3A20A7E1"
+        },
+        {
+          "path": "data/ChangeParameterArrow.NCER",
+          "length": 112,
+          "sha256": "103C5BA0463038D13914ADA8FF7CB4DF0ABBE12C4D4B99FD200D64E65D192DC1"
+        },
+        {
+          "path": "data/ChangeParameterArrow.NCGR",
+          "length": 176,
+          "sha256": "3EDCA3C5FBE9DC56FEC5D1F8103C6E3432E43F08DC637EEDAF75DE77F82C808F"
+        },
+        {
+          "path": "data/CharacterInputButton.NANR",
+          "length": 262,
+          "sha256": "AAC8CB95BA7757203DD7B6D1897B8ADC5E51143306EB7E56B6044A2CA27C1AF7"
+        },
+        {
+          "path": "data/CharacterInputButton.NCER",
+          "length": 238,
+          "sha256": "813F1AD17B08080855D427115203F22D3B46025DC3BC6599A870BBCAD9CC7435"
+        },
+        {
+          "path": "data/CharacterInputButton.NCGR",
+          "length": 1008,
+          "sha256": "CB47F40C7D4A9CF6939E6C4071C57EDFFAC186849D5277DEB07736910E5B2174"
+        },
+        {
+          "path": "data/CharacterMakingStrip.NANR",
+          "length": 7311,
+          "sha256": "5BB8CA975D2B12E2E0AD6F1BB67E703565A8D01B2F8C650250DE46BCFCA28848"
+        },
+        {
+          "path": "data/CharacterMakingStrip.NCER",
+          "length": 4143,
+          "sha256": "17E8F99AE86E6EE659311E8DEA9689CF2D8DBCC2A1035912E10F64209ABEB2B7"
+        },
+        {
+          "path": "data/CharacterMakingStrip.NCGR",
+          "length": 7664,
+          "sha256": "4605CF14D8E16EEEF38EDA967FC4560B4B6B1779D216F8A44EC4D4041485C8AE"
+        },
+        {
+          "path": "data/CharacterPositionSettingLowerScreen.NSCR",
+          "length": 1572,
+          "sha256": "1B9B7CF24D5AFEB8210AA0982DD1D82C5B5CC4DADD8713577548A1CD79A28650"
+        },
+        {
+          "path": "data/CharacterPositionSettingUpperScreen.NSCR",
+          "length": 1572,
+          "sha256": "15701947B33A96038711CBFC3C1DDD53431B2FA3991C4030B11ECFB8E1FF3AD0"
+        },
+        {
+          "path": "data/ClubGameInvitationParts.NANR",
+          "length": 852,
+          "sha256": "323D435E98704AA9140214DACB7DE6490A6B6965632D536AC3C7F03FDE2AD5F9"
+        },
+        {
+          "path": "data/ClubGameInvitationParts.NCER",
+          "length": 420,
+          "sha256": "5086FD914ADA67E9FDE95B4D24C3AA94397C87D8DAD0820CF30B48D41D403C2F"
+        },
+        {
+          "path": "data/ClubGameInvitationParts.NCGR",
+          "length": 1456,
+          "sha256": "AD4B2CC2F26060C929A64F01D25C558A4AB2E2FC8D3970CE7A8D4FEA691B9843"
+        },
+        {
+          "path": "data/ClubGameParts.NANR",
+          "length": 3926,
+          "sha256": "E70C7B083C6669DF4DEDC9CA9F6D9EC86C137C0CA66B76963C3D673BFC1C4103"
+        },
+        {
+          "path": "data/ClubGameParts.NCER",
+          "length": 2710,
+          "sha256": "AD79A9256325D45CF3005054CC5F9C598E4E1810427C6CB163B867376E397EE4"
+        },
+        {
+          "path": "data/ClubGameParts.NCGR",
+          "length": 11120,
+          "sha256": "5705EF1AFA92929133B443EBA5580FC7428E9DC20441734C089797FBEA98D02D"
+        },
+        {
+          "path": "data/ClubRoomCharacterInformationFrame.NSCR",
+          "length": 1572,
+          "sha256": "19C1144D02243B97BE311BFEF551D6273B994A364A324C5B1F8D8EED6025DB43"
+        },
+        {
+          "path": "data/ClubRoomCharacterListFrame.NSCR",
+          "length": 1572,
+          "sha256": "8963326057CBACADA2FED95F2FBE74950F7C91CE8808458624809315774A35E0"
+        },
+        {
+          "path": "data/ClubRoomFormationFrame.NSCR",
+          "length": 1572,
+          "sha256": "A2A5C570D201B998440912454568AAE7A5D6C5D8451A769E9A9AB8A831063D80"
+        },
+        {
+          "path": "data/ClubRoomStrip.NANR",
+          "length": 1678,
+          "sha256": "AD27875BBB006DC246D4E68744CF75702C2A4CD0EE917481BD03505F446C1359"
+        },
+        {
+          "path": "data/ClubRoomStrip.NCER",
+          "length": 1254,
+          "sha256": "5F006359FA4909F71321BA852A552C784EF332AE9A6CDE92F715C9950E6FA35B"
+        },
+        {
+          "path": "data/ClubRoomStrip.NCGR",
+          "length": 3056,
+          "sha256": "1F7DAFC6A3CFEDF2AF393E6FB9D178EA6479EFE61D7585101BAA66AE8B0024E6"
+        },
+        {
+          "path": "data/ClubRoomTeamInformationFrame.NSCR",
+          "length": 1572,
+          "sha256": "7D051B9B81F28D53FC886FC98C4B20EEBD686AA9C7654B6AA2C616BE205B0802"
+        },
+        {
+          "path": "data/CommandSample.NANR",
+          "length": 848,
+          "sha256": "14F0EE8DBFB70BCFE4B5AB67F34F40C8BDB3212027419CD10C6B0A53870D2F9D"
+        },
+        {
+          "path": "data/CommandSample.NCER",
+          "length": 1076,
+          "sha256": "0522461064E9C3091934F7DA1E0C67ADDE4CFCEEF2A211D96CA12349A0BE31A8"
+        },
+        {
+          "path": "data/CommandSample.NCGR",
+          "length": 7184,
+          "sha256": "676666D4AE0128FC287F22A5E623816A24029852E9FFBF7ACCC924D5E7CD6623"
+        },
+        {
+          "path": "data/CommonMenuWindow.NSCR",
+          "length": 1572,
+          "sha256": "A0F2DF16ED0C79ACD219250767DED47D827B9C8782F7E01A73301B0BEFD968AF"
+        },
+        {
+          "path": "data/CommonPartsForLowerScreen.NANR",
+          "length": 2252,
+          "sha256": "A829F3EEF1B46CB24126ED4DD1CB3006221FB2C28D7BB33CDB1CF9D8C26F3455"
+        },
+        {
+          "path": "data/CommonPartsForLowerScreen.NCER",
+          "length": 1780,
+          "sha256": "A2D9F0A523BFBE150E1F6E61B0C8C7713BCD978359EE964AFBB4D5ECADF97CED"
+        },
+        {
+          "path": "data/CommonPartsForLowerScreen.NCGR",
+          "length": 4880,
+          "sha256": "806C1B34B54AE26B7FA3EBC9406C49028E1D4F82AA7B72EC723783DBC9BCA53A"
+        },
+        {
+          "path": "data/CommonPartsForUpperScreen.NANR",
+          "length": 3036,
+          "sha256": "15263285DFE66E4E09AF4611E54CD319F2E9395FC17FF968827054AB29BD8138"
+        },
+        {
+          "path": "data/CommonPartsForUpperScreen.NCER",
+          "length": 2448,
+          "sha256": "5453472C78D93D0B1F6D1034ADFA1F1EDC2AA4C92495DF53ECD9955239B22949"
+        },
+        {
+          "path": "data/CommonPartsForUpperScreen.NCGR",
+          "length": 11728,
+          "sha256": "FEA461FBF15FDD6B141A4039047F02B7AD39C37218A436BBE6FD444285617DDE"
+        },
+        {
+          "path": "data/CommonWindow.NCGR",
+          "length": 1088,
+          "sha256": "C3D5FCA887D15674D6D1E6037346DA890DB67068F3BD9C4EEC1B0703471035C4"
+        },
+        {
+          "path": "data/CommonWindow.NCLR",
+          "length": 158,
+          "sha256": "39953ED9ED97E1DD35C5B15071FA4ACA62089FC2A82E06999DAECB7CF7B5845B"
+        },
+        {
+          "path": "data/CommunicationVarsusFrame1.NSCR",
+          "length": 1572,
+          "sha256": "2D03B88E6E1C88A0337E4D8B71A03223A94EF2F8D7B9F38C0060D11321EBB4EE"
+        },
+        {
+          "path": "data/CommunicationVarsusFrame2.NSCR",
+          "length": 1572,
+          "sha256": "2D03B88E6E1C88A0337E4D8B71A03223A94EF2F8D7B9F38C0060D11321EBB4EE"
+        },
+        {
+          "path": "data/CommunicationVarsusFrame3.NSCR",
+          "length": 1572,
+          "sha256": "47B5D0794ADD50452D23BCED49F943E1228740AE2EAD8D30CB200078590E52C5"
+        },
+        {
+          "path": "data/CommunicationVarsusFrame4.NSCR",
+          "length": 1572,
+          "sha256": "C2B7D22E8852129DE310709ABEAA88A15028F74600551706A7E9180ED4C5626A"
+        },
+        {
+          "path": "data/CompetitionCommunicationParts.NANR",
+          "length": 1804,
+          "sha256": "58656F68C7D7E4FDA092CA00616AF6D8EC0B76A75BE78EF8A90FA879A35FC975"
+        },
+        {
+          "path": "data/CompetitionCommunicationParts.NCER",
+          "length": 2200,
+          "sha256": "00FA36229CCE08AB98C43CE1690759C10D1D8A4372385D1BAA9E403CC32E572D"
+        },
+        {
+          "path": "data/CompetitionCommunicationParts.NCGR",
+          "length": 6416,
+          "sha256": "01B7A1C06F667B5C455F77FB12297B0D9CA3AAE99A9B005081B95AC767C0CA80"
+        },
+        {
+          "path": "data/CompetitionGameParts.NANR",
+          "length": 3532,
+          "sha256": "285C484C86F40000FDF2251785AFE1894E542E0EFB5C6E1B10CAAB59B560EA33"
+        },
+        {
+          "path": "data/CompetitionGameParts.NCER",
+          "length": 2612,
+          "sha256": "0B9DD603EF7DB2D7EB844597805ADCA80C9195C1BB5A2667FA6F70D75185FBE8"
+        },
+        {
+          "path": "data/CompetitionGameParts.NCGR",
+          "length": 7792,
+          "sha256": "B7171440E231746FE8A177C7168990C186D118959F687DA5195058DF8A41BBD8"
+        },
+        {
+          "path": "data/CompetitionName01.NANR",
+          "length": 115,
+          "sha256": "2BB1ABE0818F46E0FD4C6BBC312DAC92832BC8DE1BE83FFBAADB90EFF003CBA9"
+        },
+        {
+          "path": "data/CompetitionName01.NCBR",
+          "length": 1200,
+          "sha256": "07C450CA4D0567F37A7796A8C9314A0A066F741EF5BA7EDC556C916A248A8A5A"
+        },
+        {
+          "path": "data/CompetitionName01.NCER",
+          "length": 127,
+          "sha256": "70E5649B2F40E13F7D03D0C4F7FBED425B9BD5BEFD18B149177F4CE19AA7ADF7"
+        },
+        {
+          "path": "data/DodgeBall.NFTR",
+          "length": 8036,
+          "sha256": "5AE5224ECA133B46EE0E227301CF7DB20ED700A19DE037505DC75442E3C2892E"
+        },
+        {
+          "path": "data/DodgeBallStrings.STIP",
+          "length": 37836,
+          "sha256": "ED28870CD7186B36D7B5239A293939EF1CD6C9ABCDF56EBCFB2114DCAF08191D"
+        },
+        {
+          "path": "data/DodgeFont8x8.NFTR",
+          "length": 5668,
+          "sha256": "BD3E5C7A71C3DA4C514C923CACA446B857B42F144D1CF3842DFEC2FB5E50E19C"
+        },
+        {
+          "path": "data/DodgeFontAdvanceBase.NFTR",
+          "length": 2100,
+          "sha256": "598DF9BD04F4E8D14C75855E7330B756CD8F226888FD02242A1F123060650194"
+        },
+        {
+          "path": "data/EDParts.NANR",
+          "length": 612,
+          "sha256": "3CF7C179A114AD32D16DE652EECE44021A35D6094D50629FB57FCAE71312C5B3"
+        },
+        {
+          "path": "data/EDParts.NCER",
+          "length": 520,
+          "sha256": "72A74DBB89FCD2F0C1013BEAEBEC0586739C83B43131618978725A8C0A48D7B3"
+        },
+        {
+          "path": "data/EDParts.NCGR",
+          "length": 7472,
+          "sha256": "911A2D9D0FF9DF283FFA0AA052DD484071BC525B01D2CC6FC10C0F2DAAFE7267"
+        },
+        {
+          "path": "data/EDParts.NCLR",
+          "length": 552,
+          "sha256": "0B1B532170C473FD1A58750B44CF7C1D1294C24C840F1AF3E79D09F3107C55D6"
+        },
+        {
+          "path": "data/FaceBase.NCBR",
+          "length": 4160,
+          "sha256": "2D6CAE3594A07CC6D6A85694BCE2017817FBD431573EF394F8B2A8AD227FCDC3"
+        },
+        {
+          "path": "data/FaceIconLower.NANR",
+          "length": 541,
+          "sha256": "DE147B27621BF12B3D1F4FA5BE724A01C3B987E33BE91A031AFAACCE7CCA941F"
+        },
+        {
+          "path": "data/FaceIconLower.NCBR",
+          "length": 112,
+          "sha256": "31DF435D8B1B67C132B77DD2F480595ECE4C0A43523D0E8F339063B5AA692B91"
+        },
+        {
+          "path": "data/FaceIconLower.NCER",
+          "length": 389,
+          "sha256": "760926F907EAC52928C28693DC52112EC90B808A8F85ACF79546C34D43E9AC1E"
+        },
+        {
+          "path": "data/FaceIconLower.NCLR",
+          "length": 552,
+          "sha256": "E8B6297D97580805DC81732E272CF5FC56B2D1F75EE06503066C4E6BCA75B077"
+        },
+        {
+          "path": "data/FaceIconLower_LZ.NCBR",
+          "length": 96,
+          "sha256": "09F2D9DB09F109321A4AC6F89F1EE4BC9E70D8B5F4FF5A1D3F03A29C96161CBD"
+        },
+        {
+          "path": "data/FaceIconMat.NANR",
+          "length": 852,
+          "sha256": "87348FDA4C3277D953299CE516552D7A5091B1A247A4A4E0588E5161747130C6"
+        },
+        {
+          "path": "data/FaceIconMat.NCER",
+          "length": 628,
+          "sha256": "583D92D9C8ABF1ACAF96AC0CB2B11E2B8AF6889056D816E64CF47105BC401D4F"
+        },
+        {
+          "path": "data/FaceIconMat.NCLR",
+          "length": 552,
+          "sha256": "CD1C4FA55BFB320C1AAD4CC47640E92D05BEAF6D750EE711188FF6AA0B1955BD"
+        },
+        {
+          "path": "data/FaceIconMat_LZ.NCBR",
+          "length": 112,
+          "sha256": "1307ABE582C8028450D1AFF8BBD31AB18AFDDFAE85FD91B8119F59737511FA75"
+        },
+        {
+          "path": "data/FightGauge.NANR",
+          "length": 624,
+          "sha256": "CCF2948800BB70C2F15FAB0875C01F6628119E160C3A15EAD2E0FFA34087CC5D"
+        },
+        {
+          "path": "data/FightGauge.NCER",
+          "length": 780,
+          "sha256": "DAC632435D04AA856CBB475E903A07DE97C42725BE0826208254BE0C7E4C1648"
+        },
+        {
+          "path": "data/FightGauge.NCGR",
+          "length": 10320,
+          "sha256": "7EAB02367D8EC793F615802ADC830D07AB6BCA8E8B06DCDF52B892E6A7511DA8"
+        },
+        {
+          "path": "data/FightGauge.NCLR",
+          "length": 260,
+          "sha256": "29BFBB84C2FB8487337BEE217A1474E038D61F566AD5C5E2B2FB45ECB30F68A0"
+        },
+        {
+          "path": "data/ForLowerScreenParts.NCLR",
+          "length": 552,
+          "sha256": "9C97D08E81FA7BA145AB48563EA77B2C35BB872119E356D7412AD63253A8EF0E"
+        },
+        {
+          "path": "data/GameOverOBJ.NANR",
+          "length": 113,
+          "sha256": "B5BBB1EB1391E22926D763DDF8B8E0B427E2857D875163A88F77193EFD6FD1D9"
+        },
+        {
+          "path": "data/GameOverOBJ.NCER",
+          "length": 117,
+          "sha256": "37AB028BE10CD8028CA6D222E49BEAB9EC149C7B24304C4A5B6778A8B1D6A82D"
+        },
+        {
+          "path": "data/GameOverOBJ.NCGR",
+          "length": 2352,
+          "sha256": "E29A8E234BCF1ABD0009C3E50A1F6B5AAFB8631BEDC39CBBF8D5952F7AAD2B14"
+        },
+        {
+          "path": "data/HeadBase.NCBR",
+          "length": 4160,
+          "sha256": "2D6CAE3594A07CC6D6A85694BCE2017817FBD431573EF394F8B2A8AD227FCDC3"
+        },
+        {
+          "path": "data/IconLarge.NCLR",
+          "length": 552,
+          "sha256": "F39655D0115FE5E6F8DB83EC068688C7AF1A696061957DEFBDB65B37A3FDCF03"
+        },
+        {
+          "path": "data/IconLarge01_Japan.NANR",
+          "length": 117,
+          "sha256": "58BA8605340B039BFB9D396A40E6ED87042288109D659A4A9F9322E7BB3D7495"
+        },
+        {
+          "path": "data/IconLarge01_Japan.NCER",
+          "length": 117,
+          "sha256": "66E1B12EDA14378C3D75EB2DBE2C472B08BFF89415468E1D118C9119ED279E77"
+        },
+        {
+          "path": "data/IconLarge01_Japan.NCGR",
+          "length": 9264,
+          "sha256": "44AF4F0036DC7C8B91133BA9AA797BEDC5CAD2B129DF74A4046827EFE4D615B4"
+        },
+        {
+          "path": "data/IconLarge02_Usa.NANR",
+          "length": 117,
+          "sha256": "D963C218EA332CCAE32FE89D550E1A3F9A2E985135F950BCE4B817F724834A69"
+        },
+        {
+          "path": "data/IconLarge02_Usa.NCER",
+          "length": 117,
+          "sha256": "31B302D8266306C7B509CCBE5DAFE5DEA6EC4D57B3633C7C44211780960956A3"
+        },
+        {
+          "path": "data/IconLarge02_Usa.NCGR",
+          "length": 9264,
+          "sha256": "B14DF7B01C5014B9C975EA90F1135A21C470BDDDE106C66F74096EDF31BAAD65"
+        },
+        {
+          "path": "data/IconLarge03_England.NANR",
+          "length": 117,
+          "sha256": "CA5793D5E73B73D24DBFD4F82972F7CFE9E986A39D4C93F41DC662B0249C9910"
+        },
+        {
+          "path": "data/IconLarge03_England.NCER",
+          "length": 117,
+          "sha256": "334CAECF2384537D6BAC646C876810AC1D4A25A4904A9E3FA31344584EDEA5B4"
+        },
+        {
+          "path": "data/IconLarge03_England.NCGR",
+          "length": 9264,
+          "sha256": "D3C1372C83442322A60B8B66CA5722E9080DA997F667C95BC1ACEB3AF7C4BD1A"
+        },
+        {
+          "path": "data/IconLarge04_India.NANR",
+          "length": 117,
+          "sha256": "CC35D7523CE024FDD060C57BC22A5AFD59420B8CBC7EC4A3DA81C731FB99C7F1"
+        },
+        {
+          "path": "data/IconLarge04_India.NCER",
+          "length": 117,
+          "sha256": "56D41888C999B50427A2D84562231149B51A8B4D58DCB523FF935C8A6855620A"
+        },
+        {
+          "path": "data/IconLarge04_India.NCGR",
+          "length": 9264,
+          "sha256": "8D3450D5F95568AED3459383AEA1096393F170053BB82891D726173AA99063E1"
+        },
+        {
+          "path": "data/IconLarge05_China.NANR",
+          "length": 117,
+          "sha256": "60083BD798B0EA32777ACEE56AB757E000077B5924DFAF5CF58A615C1318C7C9"
+        },
+        {
+          "path": "data/IconLarge05_China.NCER",
+          "length": 117,
+          "sha256": "1707163D9D75DFD8AA71254EB5995F2499CE3BC802AC995DC7AA5E9672201065"
+        },
+        {
+          "path": "data/IconLarge05_China.NCGR",
+          "length": 9264,
+          "sha256": "1AC76BCCDC36203352CB2F576E2F0B6A1BA513FA1BE2CEA50E3C683FC8785061"
+        },
+        {
+          "path": "data/IconLarge06_Russia.NANR",
+          "length": 117,
+          "sha256": "5A4192CFE8AC39D28B7CE5789A40F5616D6ED1086A0C46B25D131FC5A2F337CD"
+        },
+        {
+          "path": "data/IconLarge06_Russia.NCER",
+          "length": 117,
+          "sha256": "423CF21FA61BF0FF0CA3223CD6E1220233946F43ACE54427DCE87DAB806B8A2F"
+        },
+        {
+          "path": "data/IconLarge06_Russia.NCGR",
+          "length": 9264,
+          "sha256": "CB5AE9161A1E3152832F444428B348263FA023791D1F294E7F4367B731CA8387"
+        },
+        {
+          "path": "data/IconLarge07_Kenya.NANR",
+          "length": 117,
+          "sha256": "0B8EB5C31C6AD79C4FC3E64F1F6083E42E918F147C8E5C11A4DD1D8D0D7D9AB8"
+        },
+        {
+          "path": "data/IconLarge07_Kenya.NCER",
+          "length": 117,
+          "sha256": "36BA783B2112691A0C307E8F9BAEDD9934F67E8D572931B1AB8BEC68584C9D31"
+        },
+        {
+          "path": "data/IconLarge07_Kenya.NCGR",
+          "length": 9264,
+          "sha256": "E34DBE30B55146A025EF42356001E1E40F669927E8143DFE0EC5143ABF0083B9"
+        },
+        {
+          "path": "data/IconLarge08_Iceland.NANR",
+          "length": 117,
+          "sha256": "FCA0D92088159DBB6BC50F52BAE07EE3C129265831E40CEADEE25CF530E90D46"
+        },
+        {
+          "path": "data/IconLarge08_Iceland.NCER",
+          "length": 117,
+          "sha256": "199D2582A6C58255EE83FAE4DB00586326CDAEAD91875134C1478A917370FB14"
+        },
+        {
+          "path": "data/IconLarge08_Iceland.NCGR",
+          "length": 9264,
+          "sha256": "BF50E44610C118478AFF2CBD6F0420F99B173378EC39E5C7471ECDD838495A6A"
+        },
+        {
+          "path": "data/IconLarge09_Stadium.NANR",
+          "length": 117,
+          "sha256": "94AAEB3A15093DE9343D4AD0374B2BA74BA8101022EB4283C8BD9A7487839146"
+        },
+        {
+          "path": "data/IconLarge09_Stadium.NCER",
+          "length": 117,
+          "sha256": "666E384DB27D5ECBF6FA0AD91063B25560D43904AC712D45A63996572C9A4E42"
+        },
+        {
+          "path": "data/IconLarge09_Stadium.NCGR",
+          "length": 9264,
+          "sha256": "DEE6FB4A04CE2CC2AFE3726F1C4E7A37335D8F4AF2E2AAD3B60649EFCBB8B730"
+        },
+        {
+          "path": "data/IconLarge10_Random.NANR",
+          "length": 117,
+          "sha256": "409375E2F9A3BDEF68BC7CC18246C3187195BAD42584BF871C3BF44BD35C4AC7"
+        },
+        {
+          "path": "data/IconLarge10_Random.NCER",
+          "length": 117,
+          "sha256": "A721A56FC60C53806D69EF0703D035D4D7701D7D974191D1976E82727A6E1904"
+        },
+        {
+          "path": "data/IconLarge10_Random.NCGR",
+          "length": 9264,
+          "sha256": "D30BDE6BF4DDA1C204BD8EDB05B30BC6612839BA8D4DE9BB3F40FA81A8C1E8B5"
+        },
+        {
+          "path": "data/IconSmall.NCLR",
+          "length": 124,
+          "sha256": "DC44B2CDC4590C10CDD2C09851EB62E994A19F377AF77527274928B61C1E9788"
+        },
+        {
+          "path": "data/InformationWindow.NCGR",
+          "length": 576,
+          "sha256": "27DB1D4E96823073D85B066FB9DAB239AFDFE3DE58FE99DC5CECDF44010B5991"
+        },
+        {
+          "path": "data/InformationWindow.NCLR",
+          "length": 90,
+          "sha256": "54EC7D7E59657DB8F033573F728C3024A33A2E85169D016BA54552636E7608DC"
+        },
+        {
+          "path": "data/InformationWindow.NSCR",
+          "length": 1572,
+          "sha256": "16BC9A3E89E8C2E34033C195D25B0B7004983ED38F7415B101D244EEC45886E0"
+        },
+        {
+          "path": "data/InformationWindowEtc.NCGR",
+          "length": 3136,
+          "sha256": "2F6081D422A1B4CEB2EE506228E35B183A37014EF4509D48B08C421A6932E8B6"
+        },
+        {
+          "path": "data/InformationWindowEtc.NCLR",
+          "length": 124,
+          "sha256": "E76C6F95FE887FAD3D78CB793F18FE7656E5AFB897F2458007F012BF8401EC85"
+        },
+        {
+          "path": "data/ItemEquipUppserScreen.NSCR",
+          "length": 1572,
+          "sha256": "8713519FF8734FAA9824A2A685D67058A212264FE3DCBB6E1E7F062099DD228B"
+        },
+        {
+          "path": "data/ItemParts.NANR",
+          "length": 3412,
+          "sha256": "421482E57FE7908B29AFE443D970B6DB29F9727C20703F82FE07B4A31E5EE05B"
+        },
+        {
+          "path": "data/ItemParts.NCER",
+          "length": 2584,
+          "sha256": "C2D7D9BFA6D6018B7616E6336B869FEEA9951914569D2C282B1539224572E9EC"
+        },
+        {
+          "path": "data/ItemParts.NCGR",
+          "length": 10576,
+          "sha256": "DEAC2C0718A548BA35770E6E11EA5512B6193B24096E75182E26623131E85E66"
+        },
+        {
+          "path": "data/KeyBoard.NCGR",
+          "length": 4160,
+          "sha256": "B399423D39662755E87A119DD80412B1FAE9590088060DEAB6202A7D6B88C469"
+        },
+        {
+          "path": "data/KeyBoard.NCLR",
+          "length": 552,
+          "sha256": "DF98BD4F478687AF6FC052ADE57333BD5D89676A06CCC4BD57ABBC2AD7B78AB1"
+        },
+        {
+          "path": "data/KeyBoard.NSCR",
+          "length": 1572,
+          "sha256": "96485D723B436E008FFA6FDA856288653F8277C4974328B500B3D850DED389B9"
+        },
+        {
+          "path": "data/KeyBoard_key.NANR",
+          "length": 258,
+          "sha256": "DE5E243B1374F806E0B44C6969B138190EAE1759E9F33B8F8B4824FB96199BFC"
+        },
+        {
+          "path": "data/KeyBoard_key.NCER",
+          "length": 306,
+          "sha256": "EC132AAF6802A5399104EB83D13C5233BD6B48AEC1789095B539B4E982A5308C"
+        },
+        {
+          "path": "data/KeyBoard_key.NCGR",
+          "length": 1488,
+          "sha256": "6B7F13CDB5211B5477C2CA7CF064E63EF08C7A3978D0D5AC7C5F180455DD38FF"
+        },
+        {
+          "path": "data/Kunio_Dodge.sdat",
+          "length": 3052020,
+          "sha256": "2C4D9A878B21002A424479C4BAC86A4C2D67C24DBFA69E9EB9451565231073A5"
+        },
+        {
+          "path": "data/Licensed.NCGR",
+          "length": 1024,
+          "sha256": "3A9361A6F1F052AA09B57441DEEE937A2C13F5922E3506FEBA715E1A2B503A4F"
+        },
+        {
+          "path": "data/Licensed.NCLR",
+          "length": 552,
+          "sha256": "8575F9E9CDA7819B957F66F545334A7FE14C28FA249C1FB742B954457D6273D0"
+        },
+        {
+          "path": "data/Licensed.NSCR",
+          "length": 1572,
+          "sha256": "AF2F7A6BAD8C699EE71DD90B5CE1D21D0236917A8A793B0804BAE02E77B10133"
+        },
+        {
+          "path": "data/LowerScreenTeamInformationFrame.NSCR",
+          "length": 1572,
+          "sha256": "4195002393C0C1667B0CBFEAAE80251337AAD2E211174E751784D25B9E659985"
+        },
+        {
+          "path": "data/MGBG_ChinaBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "454B8943979B51760D77E88143984FEF716BF9A77453405C4D422979E1D63D6C"
+        },
+        {
+          "path": "data/MGBG_ChinaBgCourt.NCLR",
+          "length": 552,
+          "sha256": "A4EA2DD0088769BF04A0A3E1EA1A7094E957773EB9C45BD188BB690158AE27F3"
+        },
+        {
+          "path": "data/MGBG_ChinaBgRiver.NCGR",
+          "length": 23360,
+          "sha256": "3915706611E4272A45108E4496161AA72A0AE091D483AFF6FC1C9CCD1282A044"
+        },
+        {
+          "path": "data/MGBG_ChinaBgRiver.NCLR",
+          "length": 552,
+          "sha256": "3B02F745F5D326C02CBD3B8CEBD129D64D1726946CB6AE70E6704CE913E2A015"
+        },
+        {
+          "path": "data/MGBG_ChinaBgRiver.NSCR",
+          "length": 1076,
+          "sha256": "13B2624B1C785C6C7DFD0241E941E16D52FAEFE01969D069420668C601A014BE"
+        },
+        {
+          "path": "data/MGBG_ChinaObjEtc.NANR",
+          "length": 240,
+          "sha256": "8B71A79969D19EDA58BF23244F87E014A9FE8BA197DA0B0135F1F23496038B9E"
+        },
+        {
+          "path": "data/MGBG_ChinaObjEtc.NCER",
+          "length": 336,
+          "sha256": "F8802A517778E74C7661B821972695EE7467B64F2602B97FF13D7B4BB3D29834"
+        },
+        {
+          "path": "data/MGBG_ChinaObjEtc.NCGR",
+          "length": 10096,
+          "sha256": "172D3F49E1A3443F03784DBF947DAF479B4EF3EF750503FA99381F04510A8258"
+        },
+        {
+          "path": "data/MGBG_ChinaObjEtc.NCLR",
+          "length": 552,
+          "sha256": "1556EC620D6DAEE0B393AF6E295D866F0FB4A869D457A1651F8B8EC7802732A0"
+        },
+        {
+          "path": "data/MGBG_EnglandBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "D5A724829F2711410B56E5753F16A0AEE5A900EE2CC9681EB5F9D20C71C8A3A1"
+        },
+        {
+          "path": "data/MGBG_EnglandBgCourt.NCLR",
+          "length": 552,
+          "sha256": "6D382B90C9DBEB56220E19AF1C86D4810C3658B78E74812C43A813FCF9BAC726"
+        },
+        {
+          "path": "data/MGBG_EnglandBgGarden.NCGR",
+          "length": 23360,
+          "sha256": "9AD634EE733C7745B39155905CC00EE65F82B8D98C7C8D55E2472B81E3E5878D"
+        },
+        {
+          "path": "data/MGBG_EnglandBgGarden.NCLR",
+          "length": 552,
+          "sha256": "270D196A3839E0A9CEFDF5D8212CD913E901ACB8117027CCAA29327DF6C8B4D6"
+        },
+        {
+          "path": "data/MGBG_EnglandBgGarden.NSCR",
+          "length": 764,
+          "sha256": "E856FB84E52122841A6A229D9A9EB78552F208109A14245D0058E7BA8D84B173"
+        },
+        {
+          "path": "data/MGBG_EnglandObjFlower.NANR",
+          "length": 155,
+          "sha256": "E072BACDBF59921787B0CC09147A522F00F4AB0E02E731E930826B8FA33A9A1C"
+        },
+        {
+          "path": "data/MGBG_EnglandObjFlower.NCER",
+          "length": 395,
+          "sha256": "ED44AA156A3CFFBE11F521B7A1201DB6DD7EB684C79936EB8139DE258B12D881"
+        },
+        {
+          "path": "data/MGBG_EnglandObjFlower.NCGR",
+          "length": 15024,
+          "sha256": "8466CCFCBBA4A1DF8FEA41C67804E3F30681902F7DF74C026DBD5F38DDF83F9B"
+        },
+        {
+          "path": "data/MGBG_EnglandObjFlower.NCLR",
+          "length": 552,
+          "sha256": "5A3142306BC582787E4B864D592FB20FA1BA06C8C718D22E6DEC3A12E684538B"
+        },
+        {
+          "path": "data/MGBG_GroundBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "C0DEB1F423C17E4F3BB3D0A54FB139299D2CBFC324EB4E6AD45A561C1C8A79B6"
+        },
+        {
+          "path": "data/MGBG_GroundBgCourt.NCLR",
+          "length": 552,
+          "sha256": "58AEE63FA5F94E396A6B54E85E292CD18AD968A9619CD441420FB0877E56F191"
+        },
+        {
+          "path": "data/MGBG_GroundBgSchool.NCGR",
+          "length": 23360,
+          "sha256": "29B1CDB817564F882D8D18836B8082F196370355334E8EED939E6152767C20D4"
+        },
+        {
+          "path": "data/MGBG_GroundBgSchool.NCLR",
+          "length": 552,
+          "sha256": "FE44FFC9D3933E1DCD57E93E664B6296C945A1E5C28124F4D263509005A55BA5"
+        },
+        {
+          "path": "data/MGBG_GroundBgSchool.NSCR",
+          "length": 1076,
+          "sha256": "B826397E236B65DFDE8CCF164D8FD1319BC76FCBF7DF70B81FB1E29567B85FF8"
+        },
+        {
+          "path": "data/MGBG_GroundObjEtc.NANR",
+          "length": 907,
+          "sha256": "09FA7E4D8D0D2FD0CB565662A9078EEB0BD72A6DD35C6EFC167784D1C7752E59"
+        },
+        {
+          "path": "data/MGBG_GroundObjEtc.NCER",
+          "length": 499,
+          "sha256": "F193EF7EFBE7B7A9795E44E69336606FAEAA7F7869A8C8F9963113CF19C16C93"
+        },
+        {
+          "path": "data/MGBG_GroundObjEtc.NCGR",
+          "length": 5808,
+          "sha256": "9135803CBA363E076AB8428FC7F548C4DB7BD4F30F29295354BCE79F5EECB9F1"
+        },
+        {
+          "path": "data/MGBG_GroundObjEtc.NCLR",
+          "length": 552,
+          "sha256": "14148661BD42CBE6FCAB1A697DACFD48D340E0BEF81EDACB14774382BA723221"
+        },
+        {
+          "path": "data/MGBG_IcelandBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "250432A1E014BCD1D38079CE4A08CA479A95754051DFD3BDF33047997E1B6A0F"
+        },
+        {
+          "path": "data/MGBG_IcelandBgCourt.NCLR",
+          "length": 552,
+          "sha256": "D2594E094C502560012DD8BC5CB20FAF98B36CD8AFDB861A2A1786E79DEAFBA0"
+        },
+        {
+          "path": "data/MGBG_IcelandBgMount.NCGR",
+          "length": 16704,
+          "sha256": "10BBD373DF7971FABE449303B6E8D20339C168853987ACF6471486C887A865E1"
+        },
+        {
+          "path": "data/MGBG_IcelandBgMount.NCLR",
+          "length": 552,
+          "sha256": "E090C5C178834EE4B4D77F0208029EEA04CB695D9379BDC1077BC0FDC91DC75B"
+        },
+        {
+          "path": "data/MGBG_IcelandBgMount.NSCR",
+          "length": 764,
+          "sha256": "19EC2B0A7AA3DA34AFB9A36C581D9E359CB4DE635C4F12727D50BE4FC4BD1C19"
+        },
+        {
+          "path": "data/MGBG_IcelandObjAurora.NANR",
+          "length": 201,
+          "sha256": "8FF507CA773A15D23AAC289D54AEF27F5FB5A4FE48B9253FB8E901CA35E8D4C7"
+        },
+        {
+          "path": "data/MGBG_IcelandObjAurora.NCER",
+          "length": 401,
+          "sha256": "8BCE6E10232BE56E1A2031BF4925040C7AEBB6A65F464D5316023A103C9CE1D3"
+        },
+        {
+          "path": "data/MGBG_IcelandObjAurora.NCGR",
+          "length": 12848,
+          "sha256": "78778A1E61B20D2AFA702E62C52BA6ED12CBEB859974737F7F461E9D13A91B14"
+        },
+        {
+          "path": "data/MGBG_IcelandObjAurora.NCLR",
+          "length": 552,
+          "sha256": "9CDE67FB0DD48CB99A830D21C51387CF4921B8374E01406E23FF8C39D48E03BC"
+        },
+        {
+          "path": "data/MGBG_IndiaBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "4DE2BC7EB3952B290C70485C875ECC8691D9EDE6BDBD14AB578F9CAAA97CE6F7"
+        },
+        {
+          "path": "data/MGBG_IndiaBgCourt.NCLR",
+          "length": 552,
+          "sha256": "26AB114EEC68495C7405EB7D2A1147137BE03FD6A82E851C48BBE92510918BF2"
+        },
+        {
+          "path": "data/MGBG_IndiaBgTajMahal.NCGR",
+          "length": 20032,
+          "sha256": "831843A75DDEDD6B62F98B1BE26B0463E0E3573A7F166CFD9CA35C88C5A3064A"
+        },
+        {
+          "path": "data/MGBG_IndiaBgTajMahal.NCLR",
+          "length": 552,
+          "sha256": "9A32A0B1B0688333577FED3A96D52CBB9FD255ACF5D05307F62E5374C59AFF48"
+        },
+        {
+          "path": "data/MGBG_IndiaBgTajMahal.NSCR",
+          "length": 1076,
+          "sha256": "D714F937B2EAE87504B10EFDAAB4091694EDFEFAADC966AB4DAAEB326050D3F9"
+        },
+        {
+          "path": "data/MGBG_IndiaObjTreeAndElephant.NANR",
+          "length": 602,
+          "sha256": "2193CDC43320815CCEBF2CB035A7391774D45B2470DB1F7A770EB1E943ADB8E0"
+        },
+        {
+          "path": "data/MGBG_IndiaObjTreeAndElephant.NCER",
+          "length": 1174,
+          "sha256": "FE74152813D471855C6C6844AD49AA98479776418E4444BB062F82891F41D946"
+        },
+        {
+          "path": "data/MGBG_IndiaObjTreeAndElephant.NCGR",
+          "length": 15408,
+          "sha256": "34EB7A5D0C6886B610D8D5EA06D13E7FF8164C4022771E3CBE46EB459192F711"
+        },
+        {
+          "path": "data/MGBG_IndiaObjTreeAndElephant.NCLR",
+          "length": 552,
+          "sha256": "839F95000E4EBF5AFCE3E8591D06D06A13252B18BDE7F48F85599217F2B4682E"
+        },
+        {
+          "path": "data/MGBG_JapanBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "BE494324DD0746DF27005057DE918ECF59B724B44F9F4D6BE378093F3FFA7457"
+        },
+        {
+          "path": "data/MGBG_JapanBgCourt.NCLR",
+          "length": 552,
+          "sha256": "3C6FD05CC0046C351185D4A9E3FDE4F8E1837D68A6FE7D8200B12A6B7926B891"
+        },
+        {
+          "path": "data/MGBG_JapanBgMountFuji.NCGR",
+          "length": 26688,
+          "sha256": "3DC6791ECC135C3858F59B9EBD0ADC76FADD9F2417C5F47F2FFFB0A2D61DE6A2"
+        },
+        {
+          "path": "data/MGBG_JapanBgMountFuji.NCLR",
+          "length": 552,
+          "sha256": "A65DFB523C99150384E4360D6B0D953E622981FEB0E6441FEBF0892595383FE3"
+        },
+        {
+          "path": "data/MGBG_JapanBgMountFuji.NSCR",
+          "length": 1076,
+          "sha256": "E1E0675B4FBAF63691C53D46E83A21813EA499D6AB7A9EE729BEBBF3E655C7ED"
+        },
+        {
+          "path": "data/MGBG_JapanObjEtc.NANR",
+          "length": 147,
+          "sha256": "C5FE9B86005F530FAB3FB76E8688AF0D5BA2F74CC16D8C441E6734A98B834BF0"
+        },
+        {
+          "path": "data/MGBG_JapanObjEtc.NCER",
+          "length": 359,
+          "sha256": "A7C49BECB2C3A8064AECB252DEADB0A7423F01C561D8BFF60340F9AB9ED71FF5"
+        },
+        {
+          "path": "data/MGBG_JapanObjEtc.NCGR",
+          "length": 9776,
+          "sha256": "00D88E5AF20220F544A93F1993D9D400B089728E642E2DCA63174683401BAE01"
+        },
+        {
+          "path": "data/MGBG_JapanObjEtc.NCLR",
+          "length": 552,
+          "sha256": "C309109FE3222501C91D38EC9106E15A1307F263864BBFB9C7E7053B033AC48D"
+        },
+        {
+          "path": "data/MGBG_KenyaBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "2F2251229C7B59C818D0F7036D79D1C3E4991CBDF6DACF39C98F36512DB301FD"
+        },
+        {
+          "path": "data/MGBG_KenyaBgCourt.NCLR",
+          "length": 552,
+          "sha256": "6283FF59E6E6194D150A818366F5CAE0C41E2A0226FF5CF5F07E8640FF00D754"
+        },
+        {
+          "path": "data/MGBG_KenyaBgSky.NCGR",
+          "length": 23360,
+          "sha256": "840ACEC5BEE5747F556E71555EF2C9535531F42B854C40F1BFFF65A1004C47FB"
+        },
+        {
+          "path": "data/MGBG_KenyaBgSky.NCLR",
+          "length": 552,
+          "sha256": "7EF9F67397D0B06AC7C0B1B61FF47E87FFA637A82753D9CC4D924AF3371EE9B4"
+        },
+        {
+          "path": "data/MGBG_KenyaBgSky.NSCR",
+          "length": 868,
+          "sha256": "D944D45FD96B9892ADA45BDB2AF80A584B6BBFDFC2017CE50934A053C4D8F950"
+        },
+        {
+          "path": "data/MGBG_KenyaObjCheetah.NANR",
+          "length": 930,
+          "sha256": "AE0CB036151E8476F1F1FAD93D39306E1F4E73B0553C3A89A596235063237DD3"
+        },
+        {
+          "path": "data/MGBG_KenyaObjCheetah.NCBR",
+          "length": 6960,
+          "sha256": "004F422156D4A88CD734093F98FF96B1D44E406E56427E137D7CA0136E395E03"
+        },
+        {
+          "path": "data/MGBG_KenyaObjCheetah.NCER",
+          "length": 462,
+          "sha256": "F40C72EE94DAECA8132301846E8FF92B85BC3B7CF98D74AACC973500341BFAC0"
+        },
+        {
+          "path": "data/MGBG_KenyaObjCheetah.NCLR",
+          "length": 552,
+          "sha256": "DD5B1A985F735F51206982B1ACD7052DF1D616E6EA601A97F921CB8EE9E1D676"
+        },
+        {
+          "path": "data/MGBG_RussiaBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "59F659FC8EA76EA9B7DB2682406B013A21AE2D2578824D8F56ABAE79C8E00CD6"
+        },
+        {
+          "path": "data/MGBG_RussiaBgCourt.NCLR",
+          "length": 552,
+          "sha256": "57E75EDB21F00DA839FE036BA5BC91B469AFDBB3F0BC9E449F58E85FF620C59B"
+        },
+        {
+          "path": "data/MGBG_RussiaBgGuestSeat.NCGR",
+          "length": 16704,
+          "sha256": "9358C4E4540390EF8AA39D38E3FDA9F99AB160B93BBE35464912C948DB179F61"
+        },
+        {
+          "path": "data/MGBG_RussiaBgGuestSeat.NCLR",
+          "length": 552,
+          "sha256": "04AB24A42A4523DD710AC5E67A73390596BEF5FEA971C811C479964092A075C6"
+        },
+        {
+          "path": "data/MGBG_RussiaBgGuestSeat.NSCR",
+          "length": 764,
+          "sha256": "8432AB629D2859FCD0B8D3BD9E86E7E2F3EA5859D27DBC9744452D57753B6190"
+        },
+        {
+          "path": "data/MGBG_RussiaObjSnowman.NANR",
+          "length": 155,
+          "sha256": "ECE776488D043A1D0EFAABFDEA9CB27AB1D2A6DFC0C32A95E4EAB2CB0E1448D2"
+        },
+        {
+          "path": "data/MGBG_RussiaObjSnowman.NCBR",
+          "length": 2352,
+          "sha256": "00966594E0C87FAE5D526401687CD36DD6FFB57BD361805416502AAFAC887159"
+        },
+        {
+          "path": "data/MGBG_RussiaObjSnowman.NCER",
+          "length": 611,
+          "sha256": "292338E55CB4733D2A520AB8C7A7C20E75A5A007B6F962DE626E2CF6BBC610DD"
+        },
+        {
+          "path": "data/MGBG_RussiaObjSnowman.NCLR",
+          "length": 552,
+          "sha256": "8A46AE3B2D5A14D508C9210B4F36183F619DE0D47B5B3D0E7E387DAF1CB1CC73"
+        },
+        {
+          "path": "data/MGBG_StadiumBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "B5E5B66429148D101A97AC775A5A1A65EA44BB4A6CA6472292AA1B17F0E815AB"
+        },
+        {
+          "path": "data/MGBG_StadiumBgCourt.NCLR",
+          "length": 552,
+          "sha256": "FF9CBDF00F814B62B98E0556AE3D2EC13DD933CE47BE806AC34D12F4183C1A57"
+        },
+        {
+          "path": "data/MGBG_StadiumBgGuestSeat.NCGR",
+          "length": 23360,
+          "sha256": "418735810200A997DB88B181293B55B99C38F9D774AC84DC17B6516C0C7DAA10"
+        },
+        {
+          "path": "data/MGBG_StadiumBgGuestSeat.NCLR",
+          "length": 552,
+          "sha256": "5201514CE2F29EE3059543EAA3F78FD224D69560AEB0872290DDB9D04E86099D"
+        },
+        {
+          "path": "data/MGBG_StadiumBgGuestSeat.NSCR",
+          "length": 1076,
+          "sha256": "2DDFDBD4AE87295502F299313164A00541F5FC1295068DF604A2F20BABAB5F19"
+        },
+        {
+          "path": "data/MGBG_StadiumObjScoreBoard.NANR",
+          "length": 2315,
+          "sha256": "4D94F9E7935C4F7202B14170ACE32B78290FCC713BCCB0E2A012C66227FA32F5"
+        },
+        {
+          "path": "data/MGBG_StadiumObjScoreBoard.NCER",
+          "length": 10123,
+          "sha256": "FCB4602E042282B5DEE87E197411F622A420DD31BBDB49FA83016ACF05E35E56"
+        },
+        {
+          "path": "data/MGBG_StadiumObjScoreBoard.NCGR",
+          "length": 20208,
+          "sha256": "98D10B91AEF7B7182E015851FBFB3861162D765A2C6B027EF6FA473327EDFE13"
+        },
+        {
+          "path": "data/MGBG_StadiumObjScoreBoard.NCLR",
+          "length": 552,
+          "sha256": "DA439B64141FB3CD370C4832AF157EDEF7BB4C5388CB9118BE3080AD7C16ABBE"
+        },
+        {
+          "path": "data/MGBG_UsaBgCourt.NCBR",
+          "length": 98368,
+          "sha256": "BAA84BF16652270EB0075344E5534F53418441298E27043EDDF97C231FFB07FD"
+        },
+        {
+          "path": "data/MGBG_UsaBgCourt.NCLR",
+          "length": 552,
+          "sha256": "606239BF513AE259F64E59DBD154B3DD8F1E173EFFB99D09A7FABF2BB4EBD2DB"
+        },
+        {
+          "path": "data/MGBG_UsaBgSlot.NCGR",
+          "length": 23360,
+          "sha256": "01D810BC13CE844D9494F6F0C71F0BFE28B8DAAC1BA1A6B310D179CBE4A2EA36"
+        },
+        {
+          "path": "data/MGBG_UsaBgSlot.NCLR",
+          "length": 552,
+          "sha256": "AF4F91690F0DC755A41E882D22FDD24ED83EA62D857C46F717235CE175D061DB"
+        },
+        {
+          "path": "data/MGBG_UsaBgSlot.NSCR",
+          "length": 1076,
+          "sha256": "FB7F089CB724EA170C11E0A1317DE9C24815410CCE35B1DF4E90F85B0E808ACC"
+        },
+        {
+          "path": "data/MGBG_UsaObjEtc.NANR",
+          "length": 1643,
+          "sha256": "B4F5BDDFE02340034DB1195F72BD5D3FAFDCF5D51721B5E20E96E8879B8D22AE"
+        },
+        {
+          "path": "data/MGBG_UsaObjEtc.NCER",
+          "length": 13731,
+          "sha256": "ED838AA28ADD3748723B1348924F4AFCBB5F1C3459271CAC5D1C83F0466CF8F5"
+        },
+        {
+          "path": "data/MGBG_UsaObjEtc.NCGR",
+          "length": 9072,
+          "sha256": "61BF83E497F6C6EC9B340A8AD7577BAA0A808A403C09537E4B6D6247F241A4C9"
+        },
+        {
+          "path": "data/MGBG_UsaObjEtc.NCLR",
+          "length": 552,
+          "sha256": "654D5D9F9264EF3EB1314A64C053DE9BE51094ED7E54EDDDE69FA50CEA25D437"
+        },
+        {
+          "path": "data/MainGameEtcParts.NANR",
+          "length": 717,
+          "sha256": "DFC4FAD98A0DE282F8ED6E20F8671F310ACB40F9AB07E8C17A5BBDE16F79BA97"
+        },
+        {
+          "path": "data/MainGameEtcParts.NCER",
+          "length": 657,
+          "sha256": "3CA75E0FD202966FADA4A86F4A410CC2492EA9AC92ECB6498A6D4C7AA9AC7600"
+        },
+        {
+          "path": "data/MainGameEtcParts.NCLR",
+          "length": 552,
+          "sha256": "1174C5DFDA1DC26642611B5C06A65CB59DA9F007CF8551F5F89EAAA1E56BB2F3"
+        },
+        {
+          "path": "data/MainGameEtcParts_LZ.NCBR",
+          "length": 1728,
+          "sha256": "3FF7066EF1665EE85EF023B920CFB1BE37AAA502D204112124CE94A636778779"
+        },
+        {
+          "path": "data/MainGameLowerScreenBg.NCGR",
+          "length": 3136,
+          "sha256": "D088CE21F90253B54A89A240123E071C71908998A592B90190EC9E890389EF0C"
+        },
+        {
+          "path": "data/MainGameLowerScreenBg.NCLR",
+          "length": 192,
+          "sha256": "BCC82015F48315A1483A9670A2A6C4A0052F6D3EC95B5FFD3D35B7CC2DABCDF9"
+        },
+        {
+          "path": "data/MainGameLowerScreenBg.NSCR",
+          "length": 1572,
+          "sha256": "98E567510B051A654F32EC14A761A3B6EE589BC1D7CD9029AE702371BC31A2C5"
+        },
+        {
+          "path": "data/MainGameLowerScreenFarBg.NCGR",
+          "length": 4672,
+          "sha256": "A6C109C6892A1386458662FFC5E4D639398821BD8CC676FDE19343F0D00E7686"
+        },
+        {
+          "path": "data/MainGameLowerScreenFarBg.NCLR",
+          "length": 90,
+          "sha256": "29EE3C9484CE02F4492519DD657966E79BA55C37E70F1D9695672E2D850E1923"
+        },
+        {
+          "path": "data/MainGameLowerScreenFarBg.NSCR",
+          "length": 1572,
+          "sha256": "1D4AD1B5662B65629A4D21B34D2A18445BD6802D0BDEB1D4379C57E499A54A01"
+        },
+        {
+          "path": "data/MainGameLowerScreenGauge.NSCR",
+          "length": 164,
+          "sha256": "5602053AA7C51EF9D57E10EF87FBB157545CC4580A38A5B09CC7C5885E2AD197"
+        },
+        {
+          "path": "data/MainGamePause.NANR",
+          "length": 106,
+          "sha256": "A4B348A70860A11B8DFA12A809A606A714FD1A4EE165F07A771B8F8B37302851"
+        },
+        {
+          "path": "data/MainGamePause.NCER",
+          "length": 98,
+          "sha256": "135069998F7F48CFF8636D7087110C46D845608292390401503527D27F10DEAD"
+        },
+        {
+          "path": "data/MainGamePause.NCGR",
+          "length": 1200,
+          "sha256": "5E05480BACAB390704C3E7D991384BA9FF890D5FDECE4471DE0F660AA8E2A35D"
+        },
+        {
+          "path": "data/MainGamePause.NCLR",
+          "length": 90,
+          "sha256": "FE3C6E323B4F1FE95A0AFF9B87E42E8CB86C9E29A2F133D45F21EA75A7DDCC26"
+        },
+        {
+          "path": "data/MakerLogo.NCGR",
+          "length": 4160,
+          "sha256": "936AD7F5A67C376F5D418DDE8948286F334FCE15A1214F83B35D522E915BC2BA"
+        },
+        {
+          "path": "data/MakerLogo.NCLR",
+          "length": 552,
+          "sha256": "C587DB15C8FDDA6F678F5586DEAED04B8C8A52BF558EF412DD1D5A4B61A003A3"
+        },
+        {
+          "path": "data/MakerLogo.NSCR",
+          "length": 1572,
+          "sha256": "1BB050368DA31DB1BB1ECA7CD35899A07F5EFBD7A00D6298005F73689292D7D6"
+        },
+        {
+          "path": "data/MenuSample.NANR",
+          "length": 1348,
+          "sha256": "80847F40322D2013B6BAC96A4D056C575ECA929BA13E1E759EDA15C648E5E5EC"
+        },
+        {
+          "path": "data/MenuSample.NCER",
+          "length": 2332,
+          "sha256": "50DA49E84E41AFB645CAF9F9F6506691481F9BEA0A95C612D543D629815B445E"
+        },
+        {
+          "path": "data/MenuSample.NCGR",
+          "length": 19312,
+          "sha256": "550C09B5C5FBD3D79213F9FF9A3E6EE904244EE3D50BE214FBCA69276F60FD3A"
+        },
+        {
+          "path": "data/MenuSampleForEditDataProcess.NANR",
+          "length": 274,
+          "sha256": "B08A99C7633D462090DE48369CA83CDB99981139868900E7F42590CE8FA19112"
+        },
+        {
+          "path": "data/MenuSampleForEditDataProcess.NCER",
+          "length": 498,
+          "sha256": "FA474BDAEEF8148A41A6E7F90AC0B8ED40C92F5A9D46D530409C808F4FE0B459"
+        },
+        {
+          "path": "data/MenuSampleForEditDataProcess.NCGR",
+          "length": 9680,
+          "sha256": "5ACE0331C150CE35D87E6841A62063147D30C65ACBD6DB82A49D3ACA6A71810F"
+        },
+        {
+          "path": "data/MenuSampleForSelectDataProcess.NANR",
+          "length": 274,
+          "sha256": "66478A4C67225727BFF892A966CA7832380EB7743BCB44F5FF29927BF6BB4A50"
+        },
+        {
+          "path": "data/MenuSampleForSelectDataProcess.NCER",
+          "length": 522,
+          "sha256": "77F09F452E5E6C7ED38F5F4116475B064BC5D3E6CB741DD911ABE71BC7A6C146"
+        },
+        {
+          "path": "data/MenuSampleForSelectDataProcess.NCGR",
+          "length": 9776,
+          "sha256": "26BBB2C528EAD839E732F966236973812EA69B8512B994C0754179D082020288"
+        },
+        {
+          "path": "data/NULL.NCGR",
+          "length": 96,
+          "sha256": "C81C9AA9D85EC99464BE3044B9AF0B10706AC6A6775C65011E5578C0D633F63C"
+        },
+        {
+          "path": "data/NULL.NCLR",
+          "length": 56,
+          "sha256": "6CBF6F8AFAEB2F206C53D03B660E05DCEC361B782408A91C99396091B396E17E"
+        },
+        {
+          "path": "data/NULL.NSCR",
+          "length": 2084,
+          "sha256": "2D44D87392BB80505264C328BD682489C27A11849D917A4111DFC54BEAA4F421"
+        },
+        {
+          "path": "data/OptionStrip.NANR",
+          "length": 2459,
+          "sha256": "6C92AB7259F0E8F39ADDB1F97FCD464D2980C69A99AB1B86ABB792B575896E74"
+        },
+        {
+          "path": "data/OptionStrip.NCER",
+          "length": 1539,
+          "sha256": "3F989BF5F739EFAE8A6DB46DBB18A4F0CBBA4BFCBC67A9E2241B6FD5E382AA59"
+        },
+        {
+          "path": "data/OptionStrip.NCGR",
+          "length": 3632,
+          "sha256": "C25156F7664D1E9CB4C93D1A51F7D8D873B34695BEF9619F555D1EB0F598AEBA"
+        },
+        {
+          "path": "data/PlayerInformationBoard.NCGR",
+          "length": 2112,
+          "sha256": "FD6CA48149A926F834CDEFE34AB8D74218CE67E7D75E6CF2D01E3782DAE5D515"
+        },
+        {
+          "path": "data/PlayerInformationBoard.NCLR",
+          "length": 124,
+          "sha256": "EE1F147EE81B021CC3C7BDE3FF7126548CF8A0E493DFDCD03B89A67878D8DC91"
+        },
+        {
+          "path": "data/PlayerInformationBoard.NSCR",
+          "length": 228,
+          "sha256": "43BA100C7AE009BC82B525215F0584FC4B16DB2EBD554FA728A329990B697BD5"
+        },
+        {
+          "path": "data/SNT001.NANR",
+          "length": 112,
+          "sha256": "083078B1077FE65B2725A47B1ABE7BD33035635E1DB28B4B981A43CEAA7B9ACF"
+        },
+        {
+          "path": "data/SNT001.NCER",
+          "length": 112,
+          "sha256": "BF66691AB302E139C1AB78D65D157647294838D5FB66E8A843951320D71FCAF9"
+        },
+        {
+          "path": "data/SNT001.NCGR",
+          "length": 4144,
+          "sha256": "6B68DCF2A4E5034E08DED09B37FDA2BB98C832D9E1716FABEA7D7C286F179E1B"
+        },
+        {
+          "path": "data/SNT001.NCLR",
+          "length": 90,
+          "sha256": "109D9D8F68662EF4C8F496595D7D91385D96EEAB4241834BC9306C9ADD1720F1"
+        },
+        {
+          "path": "data/SNT002.NCGR",
+          "length": 4144,
+          "sha256": "1BFBAF695FC3FA0D6DDD60CDE6E4D1EDFB5465C224FB0793A0C7B211E63A25A6"
+        },
+        {
+          "path": "data/SNT003.NCGR",
+          "length": 4144,
+          "sha256": "E87FA33386DEBE0AAD47847E63ED32D4C90DA56E131A63ED3466B240626520EA"
+        },
+        {
+          "path": "data/SNT004.NCGR",
+          "length": 4144,
+          "sha256": "F0DCEB55BDF38C4FD8A79787AE05597848234FD382551D01FE8F90A7E82620FC"
+        },
+        {
+          "path": "data/SNT005.NCGR",
+          "length": 4144,
+          "sha256": "2B221642076EF7E6170873646BE560131C7765AAD9A2F8C85CE0403C0D061E2B"
+        },
+        {
+          "path": "data/SNT006.NCGR",
+          "length": 4144,
+          "sha256": "52CCAB9EA41E05838A33722EA88F4C676E3F49300ACA81C520338D37783AD757"
+        },
+        {
+          "path": "data/SNT007.NCGR",
+          "length": 4144,
+          "sha256": "83996B1C40FD6403508FA7C12A6E469B726E89C69E3371760FFBAAA3D6A33F46"
+        },
+        {
+          "path": "data/SNT008.NCGR",
+          "length": 4144,
+          "sha256": "38756BF0076B04120BD1EF8F06D5ECA8B4B8F913782A26D338EAE73BDB29A3FA"
+        },
+        {
+          "path": "data/SNT009.NCGR",
+          "length": 4144,
+          "sha256": "880F9048F3FC17CB9511DEAA7223E297CCD2F8B587577E7166636C51262A407B"
+        },
+        {
+          "path": "data/SNT010.NCGR",
+          "length": 4144,
+          "sha256": "DB653F03944EB974DBECBABC4EE8585C35578AFF0D5132A3DE5EC76307F0C4CA"
+        },
+        {
+          "path": "data/SNT011.NCGR",
+          "length": 4144,
+          "sha256": "E02AE8DAC313C2556980032B0A3EBF0EE78220833542BC247F689DA1F2F50F87"
+        },
+        {
+          "path": "data/SNT012.NCGR",
+          "length": 4144,
+          "sha256": "6013E9453BD97A9D8E7202C68095295B6EC6B757E5A95DAF66D07910567411DF"
+        },
+        {
+          "path": "data/SNT013.NCGR",
+          "length": 4144,
+          "sha256": "850E916361A58157DE362B58290429930EEAC9EE2952203FACD03841E7AB6DFA"
+        },
+        {
+          "path": "data/SNT014.NCGR",
+          "length": 4144,
+          "sha256": "A7269A0FAC3CF1FB05252F28F0195912EA1A1D0CF87F99BCC9E32E31F4DDCB7E"
+        },
+        {
+          "path": "data/SNT015.NCGR",
+          "length": 4144,
+          "sha256": "B902454F74993487E306016ABBF8AA993E9F392DE323DB78EBB3E324AC1BE56C"
+        },
+        {
+          "path": "data/SNT016.NCGR",
+          "length": 4144,
+          "sha256": "B1EB94991186C73B3C3ED5D9C082D7DD79F8B7D71E7ED43E7365705DA57967ED"
+        },
+        {
+          "path": "data/SNT017.NCGR",
+          "length": 4144,
+          "sha256": "D134DB05BE282D978D1923A7E54467AD8E91930DA131F6CA4CA0ADCA32ABC3B1"
+        },
+        {
+          "path": "data/SNT018.NCGR",
+          "length": 4144,
+          "sha256": "E62EE7ED92B05C04ED89C2F2AF1F356DC0EBBB28D7DC46F171C7A876BCB8D90A"
+        },
+        {
+          "path": "data/SNT019.NCGR",
+          "length": 4144,
+          "sha256": "4A0BD4549469387C80F03A74A58A0EA02C9A89DCE36EF522EB08E2417756F860"
+        },
+        {
+          "path": "data/SNT020.NCGR",
+          "length": 4144,
+          "sha256": "B1B7D7E8BCC34642B631649F60C99A19C9251EFC13C891F0AF803217AD4CF1CC"
+        },
+        {
+          "path": "data/SNT021.NCGR",
+          "length": 4144,
+          "sha256": "020E0C0CED254F84E59E4294188F864BF44F08A9693CDD068B46E146DF53CC91"
+        },
+        {
+          "path": "data/SNT022.NCGR",
+          "length": 4144,
+          "sha256": "83DF9174EC22190A93C7B392FAD0C0390736F5E24F9768EBE0178460E55C127E"
+        },
+        {
+          "path": "data/SNT023.NCGR",
+          "length": 4144,
+          "sha256": "158B32DFD779B5A672396DD637039C01A78EAFF2DD8E21B54140945ABB9B4969"
+        },
+        {
+          "path": "data/SNT024.NCGR",
+          "length": 4144,
+          "sha256": "A6A49C42B1632F48D80C8141D0B9C744528D7A544E0F27C4F1D57722FAF6ADFC"
+        },
+        {
+          "path": "data/SNT025.NCGR",
+          "length": 4144,
+          "sha256": "B760D0E2A7995CC92910244797819F905442425F34A8CD3D502866C600F675A5"
+        },
+        {
+          "path": "data/SNT026.NCGR",
+          "length": 4144,
+          "sha256": "24924481522E85AAB97B6BFD446E7CC350A764C95DBD123EE688257E4774A319"
+        },
+        {
+          "path": "data/SNT027.NCGR",
+          "length": 4144,
+          "sha256": "122012FD2CDBF9A4BA3F9DF51808FEE73EDEB99E84F2F734F8E28123FE5C99C7"
+        },
+        {
+          "path": "data/SNT028.NCGR",
+          "length": 4144,
+          "sha256": "D8C75A721B097BF48A931DBF08E81C7E246A2801C28CD8154C5101D3EA1E9EE2"
+        },
+        {
+          "path": "data/SNT029.NCGR",
+          "length": 4144,
+          "sha256": "4DD8E0AB40E12FF04D859B55907B08E737F2C9D53C627FBE18BF33FC608DF4BE"
+        },
+        {
+          "path": "data/SNT030.NCGR",
+          "length": 4144,
+          "sha256": "49A9C979E7CF42FA17752629CB4FCB7DF4DC5266D4A9B8D2EE617B21AE17ADB5"
+        },
+        {
+          "path": "data/SNT031.NCGR",
+          "length": 4144,
+          "sha256": "AEC951E72745B523A029F67941F52894E72FC9867ACD13EC29A7C240822E91E0"
+        },
+        {
+          "path": "data/SNT032.NCGR",
+          "length": 4144,
+          "sha256": "5CBC9562DF421C934D60F366C0D68BE62ED29917A39EB178B70B875B90F14A40"
+        },
+        {
+          "path": "data/SNT033.NCGR",
+          "length": 4144,
+          "sha256": "4E0F5C172A4D8B8738DBA4977059779C96C71CAC12FAC16D7C7BA82B320CA18C"
+        },
+        {
+          "path": "data/SNT034.NCGR",
+          "length": 4144,
+          "sha256": "12B909B69BB46ACE1E1E36379208B196583755A2BB0FF99F23359F69CA6B9325"
+        },
+        {
+          "path": "data/SNT035.NCGR",
+          "length": 4144,
+          "sha256": "FFA99B841808CF77E5BB60350254607C7A1F308F79FBD7132A85C2EC6B489A4C"
+        },
+        {
+          "path": "data/SNT036.NCGR",
+          "length": 4144,
+          "sha256": "C8BAE50D1220F9CEB2BB447A452B6AC3B768728E625EDC3EB717FFFCCFBCFEC9"
+        },
+        {
+          "path": "data/SNT037.NCGR",
+          "length": 4144,
+          "sha256": "A477E9CEB37D6B9D2E52C7F5B5CC31342632BA4789AEC643974F5B6A93083F7B"
+        },
+        {
+          "path": "data/SNT038.NCGR",
+          "length": 4144,
+          "sha256": "B9ACF5D1C441B1F55EE64F4CF4AFFA137D119BDCFD1A9AB22F5A56A15FC433E9"
+        },
+        {
+          "path": "data/SNT039.NCGR",
+          "length": 4144,
+          "sha256": "AF83601FE2A25FF64275F005C229663323EF7F0482BE06B6D722A82F7D2F0B1C"
+        },
+        {
+          "path": "data/SNT040.NCGR",
+          "length": 4144,
+          "sha256": "CDB46D2220576B17F679D15BF81BF6C40D36C46BBD19A21D088CEEB28FAAA130"
+        },
+        {
+          "path": "data/SNT041.NCGR",
+          "length": 4144,
+          "sha256": "9B7BAE70FA5563641C004564B37EE01FE3869D7BF10A6A7E2E5CCC5AB404D5AC"
+        },
+        {
+          "path": "data/SNT042.NCGR",
+          "length": 4144,
+          "sha256": "38A81A90A2AAA532DB65B33168D75D492A52509F5BF0BA5C870F92EC9CCF5A02"
+        },
+        {
+          "path": "data/SNT043.NCGR",
+          "length": 4144,
+          "sha256": "FEF91C735C9954B5BF44CE7701D825B5CF0DEDAC60A049A29EE227B180DFE497"
+        },
+        {
+          "path": "data/SNT044.NCGR",
+          "length": 4144,
+          "sha256": "11B7E15BA20C0A26D614C3FAC50032133B53F812FC4DE925086351FD48DC20DF"
+        },
+        {
+          "path": "data/SNT045.NCGR",
+          "length": 4144,
+          "sha256": "0324501B53FB86A17C20F04CE1CCB1D5F9CDCC2FBB47D4BF056E79E9E1A5C985"
+        },
+        {
+          "path": "data/SNT046.NCGR",
+          "length": 4144,
+          "sha256": "2FF0F616F85E4934A6A9C73098532D1843C7E67D6088706EDA54A1476A9967BF"
+        },
+        {
+          "path": "data/SNT047.NCGR",
+          "length": 4144,
+          "sha256": "89F9183C6BB1CFD742E49BE73D732D8588F3C3469CB549E2CE8CEB38EB23A699"
+        },
+        {
+          "path": "data/SNT048.NCGR",
+          "length": 4144,
+          "sha256": "215671E15B5DE18E156C42F15D89FCC9D953D27000F525A370690D044F50B999"
+        },
+        {
+          "path": "data/SNT049.NCGR",
+          "length": 4144,
+          "sha256": "A1EB8D014ACA8346D77B0C59D42C0C33038350AE8E95295E468BE609A1E00440"
+        },
+        {
+          "path": "data/SNT050.NCGR",
+          "length": 4144,
+          "sha256": "0454E7C62E1A15B0B9B2F54AF75C169E05E2E749A511E196427E879519DBC91C"
+        },
+        {
+          "path": "data/SNT051.NCGR",
+          "length": 4144,
+          "sha256": "81B58A146E4857E868A2015D700BA650CC6B5BE12C91B03DAB99C2EDCE717E48"
+        },
+        {
+          "path": "data/SNT052.NCGR",
+          "length": 4144,
+          "sha256": "0CB09CE621C8A612DB6CCE94444242215882F5FD1E1A6446A9163451A0E11D60"
+        },
+        {
+          "path": "data/SNT053.NCGR",
+          "length": 4144,
+          "sha256": "A9EDC7B71BFCF5B284A54C56F8708E7C173055A5C0B17590AB924B2C6DCF8BEC"
+        },
+        {
+          "path": "data/SNT054.NCGR",
+          "length": 4144,
+          "sha256": "F0D0E684CBA320290513CF9B0D3211CE316B07AD22DAAE9A26402508B982A61C"
+        },
+        {
+          "path": "data/SNT055.NCGR",
+          "length": 4144,
+          "sha256": "539362A1CD26A0B3F83CE9EDB0FB45A20554CC3740C7D4FB6D50C405BF463BB5"
+        },
+        {
+          "path": "data/SNT056.NCGR",
+          "length": 4144,
+          "sha256": "BD04CC79C049977692AAF801DD792AC77A88CBB05D1D168915D6585EF3A3ED1E"
+        },
+        {
+          "path": "data/SNT057.NCGR",
+          "length": 4144,
+          "sha256": "70C51CEFDBAFED735BEF8BF3856CE2381C9D06CED11A2048571DCE0FE67A137E"
+        },
+        {
+          "path": "data/SNT058.NCGR",
+          "length": 4144,
+          "sha256": "24B3FA602251CC6359624BAD2ACC3C758B1612B14027666FB95FF787CCD19294"
+        },
+        {
+          "path": "data/SNT059.NCGR",
+          "length": 4144,
+          "sha256": "1CCA942CB9E6A398E28C94271AAE14414FF771A230C006077233DF77425F2A25"
+        },
+        {
+          "path": "data/SNT060.NCGR",
+          "length": 4144,
+          "sha256": "C4BDC91E1569D2A7342CD84E95D241DF9E0B412A6D747F56B284C342CAA1C689"
+        },
+        {
+          "path": "data/SNT061.NCGR",
+          "length": 4144,
+          "sha256": "B9EE5B2C6D9B0C7A42D80F73DD85B6B39D3EE4DD076E633F8727FAEFF46DFE88"
+        },
+        {
+          "path": "data/SNT062.NCGR",
+          "length": 4144,
+          "sha256": "9E288EE435D244AAFBFDEB4AA740D30C1F29BEDF3252E5FC1DD1F13C924DB849"
+        },
+        {
+          "path": "data/SNT063.NCGR",
+          "length": 4144,
+          "sha256": "568A21B93A24736DB9D3F006DD261BB3A1B782016EE985ED504B5DDD3DFAE083"
+        },
+        {
+          "path": "data/SNT064.NCGR",
+          "length": 4144,
+          "sha256": "E914C5066CBF3C052A25C1EFF8CF23235E9B34B29E620D3E7A14139FD8EA99FC"
+        },
+        {
+          "path": "data/SNT065.NCGR",
+          "length": 4144,
+          "sha256": "C6CBC4925EAAA6437F3045DC2653D7589660F7D6E218C1A83D47AA08EEF34CCA"
+        },
+        {
+          "path": "data/SNT066.NCGR",
+          "length": 4144,
+          "sha256": "DA5DBA409CBF5935AFDE810929E212D67A89113E9A18242D78546AF2C5F0520F"
+        },
+        {
+          "path": "data/SNT067.NCGR",
+          "length": 4144,
+          "sha256": "91E9A0E4A28B603E1EC3E11CC7A1A914CC5A7E019E285CD52468FD9E5E776B56"
+        },
+        {
+          "path": "data/SNT068.NCGR",
+          "length": 4144,
+          "sha256": "6549DF02298D598E856E6CA9087C2E05126A1A7CCCF95948DFEDF7EA5694ACCA"
+        },
+        {
+          "path": "data/SNT069.NCGR",
+          "length": 4144,
+          "sha256": "D0E4EAC58837D430FE44E4B1DB89D5B112EFFBDE03BAD9EE44C5D405F119F462"
+        },
+        {
+          "path": "data/SNT070.NCGR",
+          "length": 4144,
+          "sha256": "8FD9C5ACA3C61CD0D46F3AE5552193FE878A4236A2C9093F55E598AA659A1990"
+        },
+        {
+          "path": "data/SNT071.NCGR",
+          "length": 4144,
+          "sha256": "D59981155DB1BFEC0FD7CC38262C70CBAFBEEBCA9039E1798D3671E2C033ECF6"
+        },
+        {
+          "path": "data/SNT072.NCGR",
+          "length": 4144,
+          "sha256": "3A4039411FE31EE5C77A321604547E6D16FDD9F14D63DAEDB680CCE480A12CDD"
+        },
+        {
+          "path": "data/SNT073.NCGR",
+          "length": 4144,
+          "sha256": "4CE2BBBAE2E63C816B85190E96CE72FDD4937A49C94587B4B83886C1E1A3FC7C"
+        },
+        {
+          "path": "data/SNT074.NCGR",
+          "length": 4144,
+          "sha256": "8FC92F2E56F35502AB4160E7292C4A35CFDDE194CD0BA825887E8B3FDAC0A580"
+        },
+        {
+          "path": "data/SNT075.NCGR",
+          "length": 4144,
+          "sha256": "95399B509FB3C46B63AD4D87D70E76EF41326E820FAAC7CBEA33DAF480A0489C"
+        },
+        {
+          "path": "data/SNT076.NCGR",
+          "length": 4144,
+          "sha256": "93E22B00227AA7A5F691E968EDF61C06DAA21B561C88F6BCCD2974AF8C84EAA1"
+        },
+        {
+          "path": "data/SNT077.NCGR",
+          "length": 4144,
+          "sha256": "060B9C5BDF3BBCB1EA914B98C7AB6E649C2CB60768E20523A052101AF2FF4A6B"
+        },
+        {
+          "path": "data/SNT078.NCGR",
+          "length": 4144,
+          "sha256": "0A19D46F4F8BA7CC4344617BBC39B99010779D4C687FA68FA3FB0B38C9A110AD"
+        },
+        {
+          "path": "data/SNT079.NCGR",
+          "length": 4144,
+          "sha256": "021AF9BCFF2820DE0EC1EFE60C742F2E386E9A9812EA21D2F7141C78AF0A25F9"
+        },
+        {
+          "path": "data/SNT080.NCGR",
+          "length": 4144,
+          "sha256": "5041F6E422D368B71BDBCBB3B1ACF8E3C8556FE26AE6E7806E7929DAE327E0B4"
+        },
+        {
+          "path": "data/SNT081.NCGR",
+          "length": 4144,
+          "sha256": "0187967CA37C47497593D7D585BC6D924E44B828F2BA9A921A031675D345758D"
+        },
+        {
+          "path": "data/SNT082.NCGR",
+          "length": 4144,
+          "sha256": "D661E670012CB2CDC624A0D8C1D8D764E522F6A07ABFFFFAAEF67C351C393E4A"
+        },
+        {
+          "path": "data/SNT083.NCGR",
+          "length": 4144,
+          "sha256": "9CC538F45D8B2C009166D25BBC5BBC696B67DAA233E0DA1013DE6774D139B164"
+        },
+        {
+          "path": "data/SNT084.NCGR",
+          "length": 4144,
+          "sha256": "D74DDF76F9AB7FA973AF1E98DE5D1603413C799C4CE9B592C38564160EA091EC"
+        },
+        {
+          "path": "data/SNT085.NCGR",
+          "length": 4144,
+          "sha256": "3E8FA6186B6B6F061D47FA88517DC56E6AEAE24F07E8B11EFCD6A7D44080561F"
+        },
+        {
+          "path": "data/SNT086.NCGR",
+          "length": 4144,
+          "sha256": "136E5B9832CC3AE65F3518F5241C96FA4A0D09F7F44FFE784E2246696AE4F1E0"
+        },
+        {
+          "path": "data/SNT087.NCGR",
+          "length": 4144,
+          "sha256": "6FC8D6A005EDF5FBF86D753E585F58362E096081A05C9CCD42711D58D5EA5F29"
+        },
+        {
+          "path": "data/SNT088.NCGR",
+          "length": 4144,
+          "sha256": "A73B2806929B94F4E5C01E4576F3279F2C96B3D99876B13BC0ED1EC7EBA0E274"
+        },
+        {
+          "path": "data/SNT089.NCGR",
+          "length": 4144,
+          "sha256": "660FD44022557F434B3AF39ED351677FBD9B20C265010A90E9AF4E68FDDFB882"
+        },
+        {
+          "path": "data/SNT090.NCGR",
+          "length": 4144,
+          "sha256": "EF63137F1EDBFDC7AAFC4AE99A65EB9741DC421993D234B429892EF9C0B65D36"
+        },
+        {
+          "path": "data/SNT091.NCGR",
+          "length": 4144,
+          "sha256": "AFA99CCED43920A1F607B33BD659120F601A1E4F2A43A775512B13595FD6F251"
+        },
+        {
+          "path": "data/SNT092.NCGR",
+          "length": 4144,
+          "sha256": "6D006BC733A68D2BB165C77BA677284903BB45C28BE418DFEB7C89BE5F4AAF6F"
+        },
+        {
+          "path": "data/SNT093.NCGR",
+          "length": 4144,
+          "sha256": "7713FB54D6695B0D23AD44D03F9E2FD81B142AF14EA8986C4BB2BC151228484F"
+        },
+        {
+          "path": "data/SNT094.NCGR",
+          "length": 4144,
+          "sha256": "56CB1421A1E4C30ACDA379A77FAD4A33D067353AE9DCA21A1980C134A7EBBE45"
+        },
+        {
+          "path": "data/SNT095.NCGR",
+          "length": 4144,
+          "sha256": "74C0F8DB54E166DB7576527724952CC32C135C11E0E34130A9825167B8FDF458"
+        },
+        {
+          "path": "data/SNT096.NCGR",
+          "length": 4144,
+          "sha256": "EF946A5B5E978C86950059DE4DE225B93BC831283235070615CF05BB3E0924E3"
+        },
+        {
+          "path": "data/SNT097.NCGR",
+          "length": 4144,
+          "sha256": "72381A3E2B9B017834299E1E46D26A994F6A1A84B13881BC174A25387C39D363"
+        },
+        {
+          "path": "data/SNT098.NCGR",
+          "length": 4144,
+          "sha256": "9B71B370F5ABA3C7A0D57C30AA5A0BB5364A29302957EB38A582C7733A18E759"
+        },
+        {
+          "path": "data/SNT099.NCGR",
+          "length": 4144,
+          "sha256": "9E0590A70A9AA4B3A0413F94C619C0DDB321EE7A67255847B1A36EB2758286AC"
+        },
+        {
+          "path": "data/SNT100.NCGR",
+          "length": 4144,
+          "sha256": "6A361014D6D1B3A509DC9256BB3124A24717DBBE863B3813D6BA12F55F93F60C"
+        },
+        {
+          "path": "data/SaveParts.NANR",
+          "length": 491,
+          "sha256": "D7EDF32459017BA5FD9401E11AC7FECE87D8E38F99E9979C4CA1079E3684D117"
+        },
+        {
+          "path": "data/SaveParts.NCER",
+          "length": 487,
+          "sha256": "4469A9EE7D4B0A42A429E7DBD0C655B6E37D1665164DA8A9971F1D4E028E959B"
+        },
+        {
+          "path": "data/SaveParts.NCGR",
+          "length": 5552,
+          "sha256": "3E1695E4A0428E75AF2B3EC9E125645A9AAD895C261356D395CFA34015455498"
+        },
+        {
+          "path": "data/ShopBack.NANR",
+          "length": 109,
+          "sha256": "51D95C7A2400E7D459A1E6086C26E713C2380FF2156E65D1EA5CDEE46D027FFF"
+        },
+        {
+          "path": "data/ShopBack.NCBR",
+          "length": 9264,
+          "sha256": "00F0FC5E8D9CADB5F18A86466E2AB098B5C5445299F8A8D2A61589108DB98A04"
+        },
+        {
+          "path": "data/ShopBack.NCER",
+          "length": 109,
+          "sha256": "1A4CF8F4153604A8433F9A0AE9E9FC3758515C4087D4506296EDA28ED095C5D2"
+        },
+        {
+          "path": "data/ShopBack.NCLR",
+          "length": 552,
+          "sha256": "19D0E56257CB98AA567CB43305672A38438FC0ACE9A21F42583392240815661C"
+        },
+        {
+          "path": "data/ShopClerk.NANR",
+          "length": 496,
+          "sha256": "DF7EEDC9994614987125E6AFDC2AF31509810A6B2D04E9F2212ED2FB9748D96A"
+        },
+        {
+          "path": "data/ShopClerk.NCER",
+          "length": 376,
+          "sha256": "CD2165D039E4B43FC67280F4A05B6F81AF5E3BFB0BE92AA1E645ADE453640BE0"
+        },
+        {
+          "path": "data/ShopClerk.NCGR",
+          "length": 3888,
+          "sha256": "3CBA7823B206B5C7C41EA05F4329DBA51E904418B80FD951E541E5E23F59287D"
+        },
+        {
+          "path": "data/ShopLowerScreenFrame.NSCR",
+          "length": 1572,
+          "sha256": "4E78CB189429B1906D33496CD3E817A4050DA8921F20B9AE83AF2220713139EF"
+        },
+        {
+          "path": "data/ShopParts.NANR",
+          "length": 485,
+          "sha256": "D5AFC4CF72D968F5669681A2CACC90ED06752199C9ABBC557946E50EF0ECCA18"
+        },
+        {
+          "path": "data/ShopParts.NCER",
+          "length": 429,
+          "sha256": "A6E780BD9491EE267FBCE6609A2FB7E620F3F4EB7C5674D75264475B8E805FAA"
+        },
+        {
+          "path": "data/ShopParts.NCGR",
+          "length": 1264,
+          "sha256": "4105CE5319ED0960938204236242956EBCED4D4E4653509552F2FBD7AA84E6AC"
+        },
+        {
+          "path": "data/ShopUpperScreenFrame.NSCR",
+          "length": 1572,
+          "sha256": "06A7C46CDD8FB8F5EA41263A88DA1532C536B7B39A56C01352F2AC8305BE953B"
+        },
+        {
+          "path": "data/StageSelect_SSize.NANR",
+          "length": 1241,
+          "sha256": "1C2F14E658508B500133274A8C45ECAC2E14221630B9D2D2A65E133335FD0FDA"
+        },
+        {
+          "path": "data/StageSelect_SSize.NCER",
+          "length": 1461,
+          "sha256": "1013A5E9D5B1E944B67D66C442F3B6740C0D9E578BD3511F65F2300091970CB9"
+        },
+        {
+          "path": "data/StageSelect_SSize.NCGR",
+          "length": 8624,
+          "sha256": "51FD621B790DCFC7A13556D927E8E6C503445AF17ED8AFF3F43DB442002E9576"
+        },
+        {
+          "path": "data/StandardCursor.NANR",
+          "length": 155,
+          "sha256": "59B502625AF8AF6362131FCD19D378E5742F1521019199A0A08F6006E4115202"
+        },
+        {
+          "path": "data/StandardCursor.NCER",
+          "length": 163,
+          "sha256": "571FC0937CCE4BB9388B9924E814E7010D212252635E45680314723EDA79133C"
+        },
+        {
+          "path": "data/StandardCursor.NCGR",
+          "length": 560,
+          "sha256": "2853A7F3EE4DB0C12E81A225E1BD20B9CC46BF83A9D2BC352CD2FC28BEDB4A23"
+        },
+        {
+          "path": "data/TeamListFrame.NSCR",
+          "length": 1572,
+          "sha256": "4555FFD55B2819E3C4291DF4FF2533634EBC1967EC7F3CB199B459754D8B8B8F"
+        },
+        {
+          "path": "data/TeamSelectUpperScreen.NSCR",
+          "length": 1572,
+          "sha256": "41D45FF4F712FAD00F5D3D430D5C913859FCA9684E88F215674ACB5B567806C2"
+        },
+        {
+          "path": "data/TestCursor.NANR",
+          "length": 157,
+          "sha256": "B71075C7FD7B1AD2CA1CE09345AE030F5DDBA6614F0E86C290287A6365DAC030"
+        },
+        {
+          "path": "data/TestCursor.NCER",
+          "length": 165,
+          "sha256": "546B46DADE5261CDA8BF70EF9C347DC5A8D3A6273594AEFD6C6CD56E844177C0"
+        },
+        {
+          "path": "data/TestCursor.NCGR",
+          "length": 560,
+          "sha256": "2853A7F3EE4DB0C12E81A225E1BD20B9CC46BF83A9D2BC352CD2FC28BEDB4A23"
+        },
+        {
+          "path": "data/TestCursor.NCLR",
+          "length": 90,
+          "sha256": "A2B556BE0234D0707611BDEC028DA698A809282560CFB45DA4CB14B50AC0DC2A"
+        },
+        {
+          "path": "data/TextFrame1.NCGR",
+          "length": 1088,
+          "sha256": "C3D5FCA887D15674D6D1E6037346DA890DB67068F3BD9C4EEC1B0703471035C4"
+        },
+        {
+          "path": "data/TextFrame1.NSCR",
+          "length": 1572,
+          "sha256": "4821A54736EBFEFA4D7F7DD58B6BA89616D02398930AB3457D8BAF8B307BDA19"
+        },
+        {
+          "path": "data/TextFrame2.NCGR",
+          "length": 1088,
+          "sha256": "C3D5FCA887D15674D6D1E6037346DA890DB67068F3BD9C4EEC1B0703471035C4"
+        },
+        {
+          "path": "data/TextFrame2.NSCR",
+          "length": 1572,
+          "sha256": "9EC86F3E489BC588CD550840AD4A92D45E0E0DBFEDF8347A7A74ED6A2E43D27A"
+        },
+        {
+          "path": "data/TextFrameOBJ.NANR",
+          "length": 194,
+          "sha256": "7DCE99F74353C7BB17A894AE8EE612759C227494889F60CAD3E2DA5CEC124E81"
+        },
+        {
+          "path": "data/TextFrameOBJ.NCER",
+          "length": 266,
+          "sha256": "3445FF198878E32914F54B1498AAC22B17CCC8723D30893582B383C7CED73C0F"
+        },
+        {
+          "path": "data/TextFrameOBJ.NCGR",
+          "length": 7728,
+          "sha256": "5107EC637C80AE48D207CE0AD6CA423CDFFBDC36140EAE01017A7FEE3773D9E6"
+        },
+        {
+          "path": "data/TitleBgLower.NCGR",
+          "length": 1664,
+          "sha256": "06B1C1F79889C7C7E220826830A8C81A9F37C14BF94AF5D694F719968126EC2A"
+        },
+        {
+          "path": "data/TitleBgLower.NCLR",
+          "length": 90,
+          "sha256": "10173E94EA82FC94FF1AAC68BC42453DE4A6CF4672C8FD05B9DC8EE570792CA0"
+        },
+        {
+          "path": "data/TitleBgLower.NSCR",
+          "length": 3036,
+          "sha256": "9544B6C7ACCDFCD87ACEA0780F7FC22D550C27C312F35806B49D62D8CDDF61D7"
+        },
+        {
+          "path": "data/TitleBgUpper.NCGR",
+          "length": 32832,
+          "sha256": "9E073D99DD042C1BF0FDAFF371C10415E50774EEE7E3F834805F8145B766EEAF"
+        },
+        {
+          "path": "data/TitleBgUpper.NCLR",
+          "length": 124,
+          "sha256": "4541831BC537414C39B4E948062B97941146584B63BD941C1BBBED589394E071"
+        },
+        {
+          "path": "data/TitleBgUpper.NSCR",
+          "length": 2084,
+          "sha256": "A116BB04D96565BE325689AB6404F92A42A68C5B71D7634C45F9E6F825AE09F0"
+        },
+        {
+          "path": "data/TitleLogo.NANR",
+          "length": 389,
+          "sha256": "0E45A6054AEC483293170EE0951E5BC9F069B3C5BC1470C2E05DCC81BA704DC7"
+        },
+        {
+          "path": "data/TitleLogo.NCBR",
+          "length": 30896,
+          "sha256": "623B217B27406770E7569B5797CEFE7B76D998AA9ED93BA94399AA03133C5B4F"
+        },
+        {
+          "path": "data/TitleLogo.NCER",
+          "length": 297,
+          "sha256": "8E1A2586F5F65BCDF78E2A070F0D82A86130356D0A2064FEC6FFB5840DC4B552"
+        },
+        {
+          "path": "data/TitleLogo.NCLR",
+          "length": 552,
+          "sha256": "896E6C2ED22EE6DB647B3DF60ACD398676CA2CBE133114C9ECF8F2F491A1BC8F"
+        },
+        {
+          "path": "data/TitleMenuFrame.NCGR",
+          "length": 10304,
+          "sha256": "7C3A5F5D5DDAE00DC27B5F890D281EE2C043D49C77419ADB54C2303167010AE7"
+        },
+        {
+          "path": "data/TitleMenuFrame.NCLR",
+          "length": 552,
+          "sha256": "2DDBFDDBDFDDD2DA7055444E5642B068A0F797C4BE910BEB8E56DF8CD19D0A01"
+        },
+        {
+          "path": "data/TitleMenuFrame.NSCR",
+          "length": 1572,
+          "sha256": "6E5FAED0C7348B4FBF76E237C5446F1216628572FE47C7F12B1D6F375CF2EEA8"
+        },
+        {
+          "path": "data/TitleS2Obj.NANR",
+          "length": 130,
+          "sha256": "D4726E2C022145C35F6C62037D32A8065E87CC7763BD28C74C13F7FAB8E47011"
+        },
+        {
+          "path": "data/TitleS2Obj.NCER",
+          "length": 134,
+          "sha256": "61A2DAA1DEEB12850830635AB6E46D138300B4EE99930B562FF9B7E1D9B9C68B"
+        },
+        {
+          "path": "data/TitleS2Obj.NCGR",
+          "length": 4176,
+          "sha256": "38B3029F4D2654F3D7FF357CD43FD241A9A540A8DED0DC4111747D6177249789"
+        },
+        {
+          "path": "data/VersusFrame.NSCR",
+          "length": 1572,
+          "sha256": "AC1C4B10AF7E122F277C46CEE9CC381E913B47FC08E9D9A3DD4CD5ADDAE10E26"
+        },
+        {
+          "path": "data/VisitGameParts.NANR",
+          "length": 2841,
+          "sha256": "54E5876149B9074A826A79672898F8A8CA19D540BFA28AF1D58328CA784EB857"
+        },
+        {
+          "path": "data/VisitGameParts.NCER",
+          "length": 1873,
+          "sha256": "3D3A3F3A44D9922259B97AAF406CE00C624F705FBCCB3F5383C84A96B3EE39A7"
+        },
+        {
+          "path": "data/VisitGameParts.NCGR",
+          "length": 4720,
+          "sha256": "351BE6266087A3681FB9B41986C379A9D9E1987FDFB84BC7C444BDDABBE62762"
+        },
+        {
+          "path": "data/VisitName01.NANR",
+          "length": 115,
+          "sha256": "9B313792F5CC32B088BCEBE83B3C7B1D60570F0557B7F0351A4BEC14BF7FB354"
+        },
+        {
+          "path": "data/VisitName01.NCBR",
+          "length": 1008,
+          "sha256": "450EC8CB5803960597ED53EE0C059ED6BC3C9EDC5DCA0AAD7DBCB360F19176FB"
+        },
+        {
+          "path": "data/VisitName01.NCER",
+          "length": 127,
+          "sha256": "667F156E3D38066E01F6CF02434B5D28DB93418D1FB901E93E47458BF3F6024F"
+        },
+        {
+          "path": "data/VisitName02.NANR",
+          "length": 115,
+          "sha256": "9B313792F5CC32B088BCEBE83B3C7B1D60570F0557B7F0351A4BEC14BF7FB354"
+        },
+        {
+          "path": "data/VisitName02.NCBR",
+          "length": 1008,
+          "sha256": "9DA84FC2AFE499B0F45A21292DFEF220103E740C8AAEA336CBF1928BDA9D6E26"
+        },
+        {
+          "path": "data/VisitName02.NCER",
+          "length": 127,
+          "sha256": "667F156E3D38066E01F6CF02434B5D28DB93418D1FB901E93E47458BF3F6024F"
+        },
+        {
+          "path": "data/VisitName03.NANR",
+          "length": 115,
+          "sha256": "9B313792F5CC32B088BCEBE83B3C7B1D60570F0557B7F0351A4BEC14BF7FB354"
+        },
+        {
+          "path": "data/VisitName03.NCBR",
+          "length": 1008,
+          "sha256": "837963464F655BD9B06941F6457BA0DD57A857E34AF3B6AE69FF64F2899ACF06"
+        },
+        {
+          "path": "data/VisitName03.NCER",
+          "length": 127,
+          "sha256": "667F156E3D38066E01F6CF02434B5D28DB93418D1FB901E93E47458BF3F6024F"
+        },
+        {
+          "path": "data/VisitName04.NANR",
+          "length": 115,
+          "sha256": "9B313792F5CC32B088BCEBE83B3C7B1D60570F0557B7F0351A4BEC14BF7FB354"
+        },
+        {
+          "path": "data/VisitName04.NCBR",
+          "length": 1008,
+          "sha256": "CA642AC54C40FD895347F97935C32818C22F9E81F4F367538B810415C5BB1499"
+        },
+        {
+          "path": "data/VisitName04.NCER",
+          "length": 127,
+          "sha256": "667F156E3D38066E01F6CF02434B5D28DB93418D1FB901E93E47458BF3F6024F"
+        },
+        {
+          "path": "data/VisitName05.NANR",
+          "length": 115,
+          "sha256": "F996FAC1FF0913D1B54012C69DD71DB2C41D79A3F88B8F9805DD51F4D4E4CDD4"
+        },
+        {
+          "path": "data/VisitName05.NCBR",
+          "length": 1008,
+          "sha256": "1B52F45520DCF2976B34E7E6B5F3315C3D4811D38BF1BD61FACA9C0C24DCD617"
+        },
+        {
+          "path": "data/VisitName05.NCER",
+          "length": 127,
+          "sha256": "667F156E3D38066E01F6CF02434B5D28DB93418D1FB901E93E47458BF3F6024F"
+        },
+        {
+          "path": "data/VisitName06.NANR",
+          "length": 115,
+          "sha256": "9B313792F5CC32B088BCEBE83B3C7B1D60570F0557B7F0351A4BEC14BF7FB354"
+        },
+        {
+          "path": "data/VisitName06.NCBR",
+          "length": 1008,
+          "sha256": "0102375A34AC230CC2900677AB166CEF09FE215FC7B033BE17097FC7A4006F67"
+        },
+        {
+          "path": "data/VisitName06.NCER",
+          "length": 127,
+          "sha256": "667F156E3D38066E01F6CF02434B5D28DB93418D1FB901E93E47458BF3F6024F"
+        },
+        {
+          "path": "data/VisitName07.NANR",
+          "length": 115,
+          "sha256": "9B313792F5CC32B088BCEBE83B3C7B1D60570F0557B7F0351A4BEC14BF7FB354"
+        },
+        {
+          "path": "data/VisitName07.NCBR",
+          "length": 1008,
+          "sha256": "6619070BD80152D831C1D0AD6A60A2683D246E09E7DAD2E103B995987B007196"
+        },
+        {
+          "path": "data/VisitName07.NCER",
+          "length": 127,
+          "sha256": "667F156E3D38066E01F6CF02434B5D28DB93418D1FB901E93E47458BF3F6024F"
+        },
+        {
+          "path": "data/VisitName08.NANR",
+          "length": 115,
+          "sha256": "2BB1ABE0818F46E0FD4C6BBC312DAC92832BC8DE1BE83FFBAADB90EFF003CBA9"
+        },
+        {
+          "path": "data/VisitName08.NCBR",
+          "length": 1200,
+          "sha256": "993E2C656E4D226A8A2E0DF4AF246D7B4ABF0F09555E979400A617B7EA671410"
+        },
+        {
+          "path": "data/VisitName08.NCER",
+          "length": 127,
+          "sha256": "70E5649B2F40E13F7D03D0C4F7FBED425B9BD5BEFD18B149177F4CE19AA7ADF7"
+        },
+        {
+          "path": "data/VisitName09.NANR",
+          "length": 115,
+          "sha256": "2BB1ABE0818F46E0FD4C6BBC312DAC92832BC8DE1BE83FFBAADB90EFF003CBA9"
+        },
+        {
+          "path": "data/VisitName09.NCBR",
+          "length": 1200,
+          "sha256": "0066351CDB6E2B192599DDD586B76226FF86BF80A375F89AAB23652D36A77CFB"
+        },
+        {
+          "path": "data/VisitName09.NCER",
+          "length": 127,
+          "sha256": "70E5649B2F40E13F7D03D0C4F7FBED425B9BD5BEFD18B149177F4CE19AA7ADF7"
+        },
+        {
+          "path": "data/VisitName10.NANR",
+          "length": 115,
+          "sha256": "2BB1ABE0818F46E0FD4C6BBC312DAC92832BC8DE1BE83FFBAADB90EFF003CBA9"
+        },
+        {
+          "path": "data/VisitName10.NCBR",
+          "length": 1200,
+          "sha256": "93C1A2C6660EA512F84D3E05F041C8761B650BD2AE5EA13A23DFD1F75DF20A22"
+        },
+        {
+          "path": "data/VisitName10.NCER",
+          "length": 127,
+          "sha256": "70E5649B2F40E13F7D03D0C4F7FBED425B9BD5BEFD18B149177F4CE19AA7ADF7"
+        },
+        {
+          "path": "data/VisitName11.NANR",
+          "length": 115,
+          "sha256": "2BB1ABE0818F46E0FD4C6BBC312DAC92832BC8DE1BE83FFBAADB90EFF003CBA9"
+        },
+        {
+          "path": "data/VisitName11.NCBR",
+          "length": 1200,
+          "sha256": "93C1A2C6660EA512F84D3E05F041C8761B650BD2AE5EA13A23DFD1F75DF20A22"
+        },
+        {
+          "path": "data/VisitName11.NCER",
+          "length": 127,
+          "sha256": "70E5649B2F40E13F7D03D0C4F7FBED425B9BD5BEFD18B149177F4CE19AA7ADF7"
+        },
+        {
+          "path": "data/YesNo.NANR",
+          "length": 254,
+          "sha256": "97F8C2BF382B1970E9E87B9D977F09B214FEB15F91F1C0FAED3094FE4D919970"
+        },
+        {
+          "path": "data/YesNo.NCER",
+          "length": 286,
+          "sha256": "49AC58B8A3653A2156548996115DDEBA9633D0A2C33FCEEC0279885AA8BE1203"
+        },
+        {
+          "path": "data/YesNo.NCGR",
+          "length": 2352,
+          "sha256": "558A07697F3E00C7520907B9A59D061FA98A591291C6F46A4DF0B876AD4CB113"
+        },
+        {
+          "path": "data/aksys.NCGR",
+          "length": 5632,
+          "sha256": "BB409D95731AC78291994312EDEB949901E2BAE90BBB52F95571A93B451700B4"
+        },
+        {
+          "path": "data/aksys.NCLR",
+          "length": 552,
+          "sha256": "D180A56A758B9B6337432660C0B08FF6255DAE246AE2F48E4756C998A55C3A82"
+        },
+        {
+          "path": "data/aksys.NSCR",
+          "length": 1572,
+          "sha256": "9F796E04206F81104A1D4B265B611BCC7D10ABBECB08D96B286A9A59B1EE86F6"
+        },
+        {
+          "path": "data/axss.NCGR",
+          "length": 3136,
+          "sha256": "DBDA4BF593CA6588DC6FAAEE2F97E0A6085FA45CF2AF8C550D0BDB9D7076698E"
+        },
+        {
+          "path": "data/axss.NCLR",
+          "length": 552,
+          "sha256": "27A10227FA762353316A9D103A459BD6C7A912306DC4961D52044134DF45BDD6"
+        },
+        {
+          "path": "data/axss.NSCR",
+          "length": 1572,
+          "sha256": "A9DA881BE7AFCA26F07C702E0D337AEA5644384800BEC2F846CEA41874251DAC"
+        },
+        {
+          "path": "data/ball_P.NANR",
+          "length": 22682,
+          "sha256": "2B5751197A0DE95E935A9D7BFA4B2650B9EDFBB49DC68AB0BA87B6E8108AE69B"
+        },
+        {
+          "path": "data/ball_P.NCER",
+          "length": 8074,
+          "sha256": "8056C2B834F2B09CD8941BB1B156EA3100E03E929CA74A2B3D884E6FA436FA34"
+        },
+        {
+          "path": "data/ball_P.NCLR",
+          "length": 552,
+          "sha256": "2F919523F25024ECD9CD1FF4F49275BF89819C8A10A49F98BAE967B1B7C2FF3D"
+        },
+        {
+          "path": "data/ball_P_LZ.NCBR",
+          "length": 13580,
+          "sha256": "D356FA587C51FF9CD503C9BD218A6DC4171E95681E03A142D7E19B3C3509D461"
+        },
+        {
+          "path": "data/balleffect.NANR",
+          "length": 1221,
+          "sha256": "B191986470D0B6303F8ADBBB4A4FDF1CEF4A6B3B5DEEAF439B3724C90691DB45"
+        },
+        {
+          "path": "data/balleffect.NCER",
+          "length": 1001,
+          "sha256": "A55BD375BF2D5B42B0BFC22A18915722EEFDE5D69055103B18C9EE0A974B54A5"
+        },
+        {
+          "path": "data/balleffect.NCLR",
+          "length": 552,
+          "sha256": "FFB9D91D661B2A08F07D92ADC2D28338B38638EA56AE6871C5014B7FB59A93C3"
+        },
+        {
+          "path": "data/balleffect_LZ.NCBR",
+          "length": 8696,
+          "sha256": "44D4646378E7F6A796A91DF931D927877ECF5989DDCA882FC9DEE1659712D226"
+        },
+        {
+          "path": "data/ds_db.NCBR",
+          "length": 32832,
+          "sha256": "D7413F846299A76AC5FA5A2282B56AD30AD7A49BFFA053401200FC98C23C8DB9"
+        },
+        {
+          "path": "data/ds_db.NCGR",
+          "length": 32832,
+          "sha256": "1AC042B31FD67CC373874DECF0E1E1B4D09E6500EA592FA4AD8CA26AEFF9B4DA"
+        },
+        {
+          "path": "data/ds_db.NCLR",
+          "length": 552,
+          "sha256": "26B697BF88E90FBE950EE660AEFC22D172E4F054AE1DDF70ECA7843543EE4998"
+        },
+        {
+          "path": "data/effect.NANR",
+          "length": 5665,
+          "sha256": "682B2C88E4096A13009590DBD4568FD273BC705AE41050BC353A91B36746BB15"
+        },
+        {
+          "path": "data/effect.NCER",
+          "length": 4421,
+          "sha256": "F55B881C7A7FD2440A864D072DD6AD7A296827E32888615E83741B75149F0DFF"
+        },
+        {
+          "path": "data/effect.NCLR",
+          "length": 552,
+          "sha256": "18C74A08E91E8623DFEC95E074AAFA7272B5226AAC199534CC2ADAC6898AA8F4"
+        },
+        {
+          "path": "data/effect_Ball.NANR",
+          "length": 532,
+          "sha256": "F8CAF95BF22B48F6DD30BAD6140565BEF023D0C2940CB0BE6A85C4C2A74D6BEA"
+        },
+        {
+          "path": "data/effect_Ball.NCER",
+          "length": 532,
+          "sha256": "8A08A91D13294410A19BFB46529695E93A3614977943AA498739CDFEC130F170"
+        },
+        {
+          "path": "data/effect_Hit.NANR",
+          "length": 818,
+          "sha256": "4F21ED17FAF2B867BE0B43914BF678D3F5A3DA35A74920EAA6D66717630BAAB4"
+        },
+        {
+          "path": "data/effect_Hit.NCER",
+          "length": 566,
+          "sha256": "4C43FE9DCBC583FCAC99D15A560A63576D6375FB50C2473E2DBF91D8742092DD"
+        },
+        {
+          "path": "data/effect_LZ.NCBR",
+          "length": 12104,
+          "sha256": "89CDD7FEDD951182CF9D369374A1BE06DBB0E998399D9C9973A897B886CA87BB"
+        },
+        {
+          "path": "data/face001_LZ.NCBR",
+          "length": 540,
+          "sha256": "A0EA011F6F78D6B694BA6FA5D79D572B0196B1FF04B9BFBA510A331871E1C561"
+        },
+        {
+          "path": "data/face002_LZ.NCBR",
+          "length": 560,
+          "sha256": "007305DE8608DA4EECFF9F3C604BA2871344EFD723CFA95BBC6CC78B970E69E7"
+        },
+        {
+          "path": "data/face003_LZ.NCBR",
+          "length": 520,
+          "sha256": "8DB8CF948FCF3F342129C25CBD7722BF1FBC082F54D49E87A09C4CE790C7FCD7"
+        },
+        {
+          "path": "data/face004_LZ.NCBR",
+          "length": 520,
+          "sha256": "8DB8CF948FCF3F342129C25CBD7722BF1FBC082F54D49E87A09C4CE790C7FCD7"
+        },
+        {
+          "path": "data/face005_LZ.NCBR",
+          "length": 552,
+          "sha256": "430EF05498B8826326C280AB6DF2323EE94EE45A2FEF9A918052C47E39A6E017"
+        },
+        {
+          "path": "data/face006_LZ.NCBR",
+          "length": 568,
+          "sha256": "BCD5B94D598D4CB15539D2B88272CB72CA6852D11E2EF0867AE78FC94AD71EC7"
+        },
+        {
+          "path": "data/face007_LZ.NCBR",
+          "length": 552,
+          "sha256": "087DD54E4C33B673538C88F8175A887F88540EA26DFCFE6218D4187EA5355C28"
+        },
+        {
+          "path": "data/face008_LZ.NCBR",
+          "length": 548,
+          "sha256": "DEEEA3117FA6ED15316614814BED69DBB8DA977DE5F63DDF93B7454111CAD6C9"
+        },
+        {
+          "path": "data/face009_LZ.NCBR",
+          "length": 564,
+          "sha256": "16896F8D3F5F8AE654084B1C716101FAE3B718C9944C18FF67D43BACD0E98614"
+        },
+        {
+          "path": "data/face010_LZ.NCBR",
+          "length": 556,
+          "sha256": "39B8E1932B1CAAB2043529B7E75C7355D6673E5055CE0C0DC60190360BCE936D"
+        },
+        {
+          "path": "data/face011_LZ.NCBR",
+          "length": 548,
+          "sha256": "6DE4215B62454B5C113126A88FCF515BFD91973E91563154DCE9FE30E8D64A2E"
+        },
+        {
+          "path": "data/face012_LZ.NCBR",
+          "length": 564,
+          "sha256": "3B2E2B6D896B27A7938B71936BEBCA3B16227D30257B4E52A37B3A8660867B88"
+        },
+        {
+          "path": "data/face013_LZ.NCBR",
+          "length": 560,
+          "sha256": "364B78AE4455C834ED502499664F0B7EB3C67F1154FE782D2BDD58F18F4FB742"
+        },
+        {
+          "path": "data/face014_LZ.NCBR",
+          "length": 568,
+          "sha256": "3D2EEC38AF46A25CFC9EF14DE9C7FC63D494AC273F8AC29D26B9D4A48A5285A2"
+        },
+        {
+          "path": "data/face015_LZ.NCBR",
+          "length": 552,
+          "sha256": "FD7310CFDE56FA2F9F255990E80BDBA92603F0FBC04D0AA35013DB371A71E9B7"
+        },
+        {
+          "path": "data/face016_LZ.NCBR",
+          "length": 540,
+          "sha256": "F364D281C94B0BE0D3ABC14FC804447CF27CD11D652D9F0EEB168A967CAD8EC4"
+        },
+        {
+          "path": "data/face017_LZ.NCBR",
+          "length": 544,
+          "sha256": "07EC45DC86B81D075D96E340C90200F429BAC1746B4122E4D0CA7E967A95CCDA"
+        },
+        {
+          "path": "data/face018_LZ.NCBR",
+          "length": 548,
+          "sha256": "536D282ECE4E959672325F638BF79FA30A8B6CE32FE00A0854C4AA8A843A8D6C"
+        },
+        {
+          "path": "data/face019_LZ.NCBR",
+          "length": 568,
+          "sha256": "19F5306ED094FF6EA73A68E17DC298AED86DA562C0A833B4D9445AA8B0D6C643"
+        },
+        {
+          "path": "data/face020_LZ.NCBR",
+          "length": 556,
+          "sha256": "1B02DB360E45A0938E35E01B827CC530CCCE884EE57A6A892D8F21F255950688"
+        },
+        {
+          "path": "data/face021_LZ.NCBR",
+          "length": 548,
+          "sha256": "2779C9009BC8E7AB4D3BDACC1D738F47C66D34234B66BA59A5C367C58AD504EF"
+        },
+        {
+          "path": "data/face022_LZ.NCBR",
+          "length": 556,
+          "sha256": "66387D947536616639154F2FE47BA6DF6AAF105D71342ED455B05FFAC9829F21"
+        },
+        {
+          "path": "data/face023_LZ.NCBR",
+          "length": 548,
+          "sha256": "49868DB6336554D276A344C831DBD10B63AE6BA251DC135D72E386B1379FD5B5"
+        },
+        {
+          "path": "data/face024_LZ.NCBR",
+          "length": 564,
+          "sha256": "6097816705431129880EB07A5A4D81FF0E0B7EEFE8ED928F81A23AF49CB11089"
+        },
+        {
+          "path": "data/face025_LZ.NCBR",
+          "length": 552,
+          "sha256": "2761D7F5CAF6CE5E594FE7797C32F12DC7FB8EF59A9040CC466841A402F0ED9A"
+        },
+        {
+          "path": "data/face026_LZ.NCBR",
+          "length": 540,
+          "sha256": "F4EE68D2C1EF1034604C83A95877B614CDEE8CC2EAABD38E7E52A95323292286"
+        },
+        {
+          "path": "data/face027_LZ.NCBR",
+          "length": 536,
+          "sha256": "16664FF1849CA5D05ED7EC976837B4E14F35201C7154C32BE460FCF18B1D5018"
+        },
+        {
+          "path": "data/face028_LZ.NCBR",
+          "length": 556,
+          "sha256": "3206A0B25ABD3C236E2EBF56D7CF8DCFB0A0E2B97A27CDF9F6883A3B536AC19E"
+        },
+        {
+          "path": "data/face029_LZ.NCBR",
+          "length": 584,
+          "sha256": "E07ECA2669FCAB40A1E23B47F2026EB7DE721EB9041866EB82515D60BCEEA38C"
+        },
+        {
+          "path": "data/face030_LZ.NCBR",
+          "length": 552,
+          "sha256": "1BBD6EFEF62AF3920FBF4CD72889527D94D6843E4ADC2561DD1C28B512F24E24"
+        },
+        {
+          "path": "data/face031_LZ.NCBR",
+          "length": 536,
+          "sha256": "4F40272D3D5ADED2EC3DA13CB521BF950ECCE69EF951DAB071B3A6247118C8E9"
+        },
+        {
+          "path": "data/face032_LZ.NCBR",
+          "length": 556,
+          "sha256": "2739F554FB83058570B8A319456D0DA5356D3247BA13F11B59A25C7960036A47"
+        },
+        {
+          "path": "data/face033_LZ.NCBR",
+          "length": 544,
+          "sha256": "C9D53F9C8F365702733F1AFF5A0AC1E92C1360E0F5BF44C686BD4E2919938117"
+        },
+        {
+          "path": "data/face034_LZ.NCBR",
+          "length": 552,
+          "sha256": "A935262C582C113923B30ACD652294518EE2E6F508D630961917E4B7AB1EA99F"
+        },
+        {
+          "path": "data/face035_LZ.NCBR",
+          "length": 552,
+          "sha256": "8482C88AE359F64D3616EE58EF2DF92FF1D2EF4B982203C6B70DA0705AA4A027"
+        },
+        {
+          "path": "data/face036_LZ.NCBR",
+          "length": 564,
+          "sha256": "61AA9E6940FE3AD8A9CDCD69B90374D318C601128E16C4A6DF845236D951814D"
+        },
+        {
+          "path": "data/face037_LZ.NCBR",
+          "length": 544,
+          "sha256": "2109D328F87DBB7DEA1BFCC6CF15011FF4879B1453791E7EDFB08D65A22ECAEA"
+        },
+        {
+          "path": "data/face038_LZ.NCBR",
+          "length": 548,
+          "sha256": "52BF9001939B3B4FDC742EBD4ABD89A017466E433D232FA94757930032FE37FA"
+        },
+        {
+          "path": "data/face039_LZ.NCBR",
+          "length": 544,
+          "sha256": "091769B5AC57906F6753E8FC7AC169F5BE73614BB68EA7B2ED69930BE580BFE8"
+        },
+        {
+          "path": "data/face040_LZ.NCBR",
+          "length": 544,
+          "sha256": "63284B1CDA132FFDB52ECB90A0C47159C0B750366AFEB7E60EA23A35E5180DC9"
+        },
+        {
+          "path": "data/face041_LZ.NCBR",
+          "length": 552,
+          "sha256": "119764488469F6D78AECECFFB906B4074E94AE67C5434B1BA540EBBF739EEB55"
+        },
+        {
+          "path": "data/face042_LZ.NCBR",
+          "length": 552,
+          "sha256": "6D46F300299E4B45EAB191808F9C2B46D6F015D82DAA8E1B5FC0885CB09ADFAB"
+        },
+        {
+          "path": "data/face043_LZ.NCBR",
+          "length": 552,
+          "sha256": "9198CE7B24FCC40E065FB91F220ACD3973B5946E242BDA8EB7E42DAE319DA0BB"
+        },
+        {
+          "path": "data/face044_LZ.NCBR",
+          "length": 552,
+          "sha256": "16EC6E3374B2C176DF6B6425136AC5A4E7EB3FD7485BDF9F0CEBCE9CCE591F91"
+        },
+        {
+          "path": "data/face045_LZ.NCBR",
+          "length": 560,
+          "sha256": "7B4B37010A5F806F8CCA0447223D788740288110A3B6959B7DBCF442A428E27F"
+        },
+        {
+          "path": "data/face046_LZ.NCBR",
+          "length": 584,
+          "sha256": "6E38DC64985065727F6E3F79E9102B26678F2ADED1DAD9A0C2A95B61974A2503"
+        },
+        {
+          "path": "data/face047_LZ.NCBR",
+          "length": 556,
+          "sha256": "F967338B24C940C80793997391D467FF13F79A4D06F186200B06FBDC8D89A3B6"
+        },
+        {
+          "path": "data/face048_LZ.NCBR",
+          "length": 568,
+          "sha256": "25DAC9AF03F63C2E0FCF3F9F4C5C1D3B29CC374E3FB4D0D59A34934CFED42D51"
+        },
+        {
+          "path": "data/face049_LZ.NCBR",
+          "length": 560,
+          "sha256": "EA4022D5BB78E37AEFA1B7C848BE400CDE3A13321A7066DF32800FFB1F7AD6E3"
+        },
+        {
+          "path": "data/face050_LZ.NCBR",
+          "length": 568,
+          "sha256": "A10F211755374097969619C93C461E1D6D4296FCBC0A4C5BA0F0E1A280BF31D8"
+        },
+        {
+          "path": "data/face051_LZ.NCBR",
+          "length": 564,
+          "sha256": "E179E39B1F5E16DD92353D7C092B0B3867969777D82359CCC72AE5E446D4837D"
+        },
+        {
+          "path": "data/face052_LZ.NCBR",
+          "length": 552,
+          "sha256": "CFBAF7CE39C5ED9D9D31C89B2B683F234E8B267AAF8D8B554E159239DA527A75"
+        },
+        {
+          "path": "data/face053_LZ.NCBR",
+          "length": 536,
+          "sha256": "7681537559FC85D3257EEA2617B5AE69157CE283F016DBF2B5A66D938EA927A3"
+        },
+        {
+          "path": "data/face054_LZ.NCBR",
+          "length": 568,
+          "sha256": "7AB99A28A5834ECAA9F8BB821B78982A0E1B660A0CAC37F98680D565DDF568D8"
+        },
+        {
+          "path": "data/face055_LZ.NCBR",
+          "length": 556,
+          "sha256": "81A0947CAA43052A6E641A0F9ED67460BD9AFE141C5D3EB0FF2A10047932E6D4"
+        },
+        {
+          "path": "data/face056_LZ.NCBR",
+          "length": 560,
+          "sha256": "9E214EC25B7C295E8165F7823C3824FDFC69E08460E1D19DBE3219987A3E87C5"
+        },
+        {
+          "path": "data/face057_LZ.NCBR",
+          "length": 580,
+          "sha256": "CD852C1B441943FC87E4AF7297D1A1B645069CE8565B71D34875BDCC8975D40E"
+        },
+        {
+          "path": "data/face058_LZ.NCBR",
+          "length": 536,
+          "sha256": "61C4A8E4E59BA40F4D05FBE99A225D7FB68C2E9395BFD170E86B978FEC1875C9"
+        },
+        {
+          "path": "data/face059_LZ.NCBR",
+          "length": 588,
+          "sha256": "C5154D9B60552E11681D7CD390536722945956149E7846FD409D6AA96F686FCE"
+        },
+        {
+          "path": "data/face060_LZ.NCBR",
+          "length": 540,
+          "sha256": "EA97B5AC86C25AFDBAE1AD4CA0B10937C82171C62F146644A24473BF7C62EC31"
+        },
+        {
+          "path": "data/face061_LZ.NCBR",
+          "length": 572,
+          "sha256": "756C389664018EBF415680A71920C9BE544668AC717508017441FD3B71FA33E6"
+        },
+        {
+          "path": "data/face062_LZ.NCBR",
+          "length": 552,
+          "sha256": "3D0F257E828CD2FE5014288AB724B647D94D30A672B0D7DC8BF05E41FF0118C4"
+        },
+        {
+          "path": "data/face063_LZ.NCBR",
+          "length": 552,
+          "sha256": "1C06A263362C146D3065A6727553B14C806080BC3B89D1BB286E43535E3A5F50"
+        },
+        {
+          "path": "data/face064_LZ.NCBR",
+          "length": 552,
+          "sha256": "3813A056EC9B645018CB805F30F42D97190E6775FF554143A83D6FBAFC6A6E9A"
+        },
+        {
+          "path": "data/face065_LZ.NCBR",
+          "length": 552,
+          "sha256": "469E3E8247E66EA4329B4FFE3747512E889168EC225515A04543D83B7AFDF550"
+        },
+        {
+          "path": "data/face066_LZ.NCBR",
+          "length": 576,
+          "sha256": "93C38ADB16C0B43A23223B1EEE40A01C8E7529DD9933480159992DBAF7E5C914"
+        },
+        {
+          "path": "data/face067_LZ.NCBR",
+          "length": 552,
+          "sha256": "4A5082CF5B7A08F71EE51877EEAA536C53C4692935F46EB0CDCFC6150558BC4D"
+        },
+        {
+          "path": "data/face068_LZ.NCBR",
+          "length": 588,
+          "sha256": "5A9D17E0B121A849D98C59FDF8AB70B8EC8E24F94DEE995F02C653F62061C0E7"
+        },
+        {
+          "path": "data/face069_LZ.NCBR",
+          "length": 556,
+          "sha256": "98EDDD18B6617664B32BAE6881C2D7676BD594855EC4A407ACA3D85E086F951B"
+        },
+        {
+          "path": "data/face070_LZ.NCBR",
+          "length": 568,
+          "sha256": "4372855BAE889BBF5FBCB18C0A4013087AB97F757396EB29209B6BFF5CB54688"
+        },
+        {
+          "path": "data/face071_LZ.NCBR",
+          "length": 572,
+          "sha256": "A0042E71CFB4E7CB2A357778890FF58238F4C6E3EB60AE85CE11712C201959E3"
+        },
+        {
+          "path": "data/face072_LZ.NCBR",
+          "length": 564,
+          "sha256": "B8793CDCA335D67E2D5E27389CDC667D657C5E538FAA1A8B59EAE074B199DAC5"
+        },
+        {
+          "path": "data/face073_LZ.NCBR",
+          "length": 572,
+          "sha256": "41918D8CF735441A8C79F2E128FA459C4F449FC4DDE1F4B6C8C2EDA05EA0D4B1"
+        },
+        {
+          "path": "data/face074_LZ.NCBR",
+          "length": 552,
+          "sha256": "09126977538C5EA2EC6FA00D6359523DC1FBA71C6329EB78786260CD3593AA0A"
+        },
+        {
+          "path": "data/face075_LZ.NCBR",
+          "length": 576,
+          "sha256": "5DD7FA279F16F7B6423D3A8311AD8185D98141810546DF1F1BFA1B0B0F36868B"
+        },
+        {
+          "path": "data/face076_LZ.NCBR",
+          "length": 544,
+          "sha256": "32775729CDFCAE32D855CDD9ECE2832405AB607BB86F1149B9EED6E7A52E027F"
+        },
+        {
+          "path": "data/face077_LZ.NCBR",
+          "length": 532,
+          "sha256": "DD8C5A3C87C5CAB266CB1B30816D12B63213625387C52C3BC5EA823660171023"
+        },
+        {
+          "path": "data/face078_LZ.NCBR",
+          "length": 552,
+          "sha256": "DA1D91AB3C4383CD0AEFBCC1C254D3C6B640B5A22208894304B926E580CCBD90"
+        },
+        {
+          "path": "data/face079_LZ.NCBR",
+          "length": 552,
+          "sha256": "0ECE6D742CCC5C828EF1E8213AA063E50F56DCBB9A93D3870740AF3AEE883DBE"
+        },
+        {
+          "path": "data/face080_LZ.NCBR",
+          "length": 572,
+          "sha256": "FE26724941C1D36AD8817C5FB66EA604EEE9D95E359C1E59D269D509B86FCCDA"
+        },
+        {
+          "path": "data/face081_LZ.NCBR",
+          "length": 564,
+          "sha256": "60F15CF964A24FE527B0955FA14AF061D3A189F88E79D0C3334E3025913FA3B2"
+        },
+        {
+          "path": "data/face082_LZ.NCBR",
+          "length": 540,
+          "sha256": "ACF33AB017ECD9222D8DED0DE5382D0900D8D338D2745D5C8664711D0E05DD57"
+        },
+        {
+          "path": "data/face083_LZ.NCBR",
+          "length": 560,
+          "sha256": "9BEF4D7C2150045F2277E4D23ECAA6E05F34852B802ACEB11FC8E855EFCA98B2"
+        },
+        {
+          "path": "data/face084_LZ.NCBR",
+          "length": 548,
+          "sha256": "552752F13EE12C2035EB3E47CABE623984A18297E6EF939618C85BDD2D4FF48E"
+        },
+        {
+          "path": "data/face085_LZ.NCBR",
+          "length": 580,
+          "sha256": "03C78847CB0A995037C15F5DF60277EF2F739D8BB1FF7EC3CEB814B6169617D6"
+        },
+        {
+          "path": "data/face086_LZ.NCBR",
+          "length": 580,
+          "sha256": "9489D8442ADE6F282A6A2F9CA64AE8EAE06FE24F60C9B7BCCC2F9F65824F8C10"
+        },
+        {
+          "path": "data/face087_LZ.NCBR",
+          "length": 556,
+          "sha256": "60A8335951DB9D519FAB50771A927AECA7B545C7A6BC3F3696638F695043FABB"
+        },
+        {
+          "path": "data/face088_LZ.NCBR",
+          "length": 560,
+          "sha256": "C7E552E8557A7CE6FEE69C4C0EC8FCE9E627E1C5FBAB9B396162AB7915530BBD"
+        },
+        {
+          "path": "data/face089_LZ.NCBR",
+          "length": 580,
+          "sha256": "1798AAFD67AAD0A1F38BF53D58D4D0299034886A4BCBB5338775431FB9377F1D"
+        },
+        {
+          "path": "data/face090_LZ.NCBR",
+          "length": 564,
+          "sha256": "F00B87F4E4DFF790B3EB41A1157B3CC8C390C7EB046505D14A15A525A21FA9C9"
+        },
+        {
+          "path": "data/face091_LZ.NCBR",
+          "length": 568,
+          "sha256": "6826D06375F28DE2BFB22BE1A67EE74DC877EE4FB5416EDD597D3DB201F76141"
+        },
+        {
+          "path": "data/face092_LZ.NCBR",
+          "length": 572,
+          "sha256": "D1648324056166AF72EA8C80967829FF281A3996D06BD4BCA18514292C37C170"
+        },
+        {
+          "path": "data/face093_LZ.NCBR",
+          "length": 556,
+          "sha256": "A048385D58C5691D6E4B2A952099589A7C310FA907D581571B5007E6F7C22A2E"
+        },
+        {
+          "path": "data/face094_LZ.NCBR",
+          "length": 592,
+          "sha256": "C15B7E7BAAD5312B12898D79D720F318B35D5CE680EC5B2C060471B2130B8EBE"
+        },
+        {
+          "path": "data/face095_LZ.NCBR",
+          "length": 564,
+          "sha256": "84D7E486B395BBFA557C1643403BE6A6874B6845DAFCFB0AC7FFE1F70CEAF006"
+        },
+        {
+          "path": "data/face096_LZ.NCBR",
+          "length": 600,
+          "sha256": "8BB62897940D9E4B403ACF14E776AB874DD1F35B1D5A997D555028BA9A712138"
+        },
+        {
+          "path": "data/face097_LZ.NCBR",
+          "length": 612,
+          "sha256": "498CAF619C4CE7118CFD653232C46A42D953B6D376E6A7A5A413CA058FE72E92"
+        },
+        {
+          "path": "data/face098_LZ.NCBR",
+          "length": 552,
+          "sha256": "19FA3D07A97140D694923E013D1A183397F3022D256B0EFC8BE7265D5FDDD7EA"
+        },
+        {
+          "path": "data/face099_LZ.NCBR",
+          "length": 592,
+          "sha256": "9102591CBFFDF512D63E3AA1559663E6EFCD858CA7ECE107223FB32B735721F9"
+        },
+        {
+          "path": "data/face100_LZ.NCBR",
+          "length": 568,
+          "sha256": "DA9AA356B0C8E5A0E2DCF862051E40F39856A3E9424D289AC6A053E43B8C21A9"
+        },
+        {
+          "path": "data/face101_LZ.NCBR",
+          "length": 544,
+          "sha256": "2B77A97841EC3CE619CE24B8420D481C2D05D0EAD255E79A08E9C930E6B85ECC"
+        },
+        {
+          "path": "data/face102_LZ.NCBR",
+          "length": 556,
+          "sha256": "E91CB65FAD40E52A842DA4DC974B5E1F4D878B8A72685996B3AC4A9E9BD0D6BA"
+        },
+        {
+          "path": "data/face103_LZ.NCBR",
+          "length": 552,
+          "sha256": "C43D8BD465AF5BA2703BE8DDB12CAF7953AEE13E4FE1251145F90A48BABEE331"
+        },
+        {
+          "path": "data/face104_LZ.NCBR",
+          "length": 564,
+          "sha256": "22AF8AD2F996F30DCC0225F78A7C92F98B76C027A2BC2B5CDF00531BD3A1274C"
+        },
+        {
+          "path": "data/face105_LZ.NCBR",
+          "length": 564,
+          "sha256": "0B8200E4F7C52562C80EC710B707CDC01BBD8F0D76A5E2149D396E56FD08476A"
+        },
+        {
+          "path": "data/face106_LZ.NCBR",
+          "length": 548,
+          "sha256": "CC229E3E9506D15D28A0624C490D2ADDCB37246598B4573F675CA7AE62F82919"
+        },
+        {
+          "path": "data/face107_LZ.NCBR",
+          "length": 528,
+          "sha256": "6A01F563FFF7A7AD14D887D110D6168446D1F71B74F6EBC912C4353118FA8C43"
+        },
+        {
+          "path": "data/face108_LZ.NCBR",
+          "length": 584,
+          "sha256": "723B2959F1BBFC8AA69502CCF5B885D07E981FF155B9C2222095C3C879C7F515"
+        },
+        {
+          "path": "data/face109_LZ.NCBR",
+          "length": 556,
+          "sha256": "A507D174BE775FC58942EFF300C762669F09E5160FAF93A2C61DBFB5981565D8"
+        },
+        {
+          "path": "data/face110_LZ.NCBR",
+          "length": 552,
+          "sha256": "3951FB5165F035C730F6EECE6CB8706B631CF45177C29764806DCC08F4FF853D"
+        },
+        {
+          "path": "data/face111_LZ.NCBR",
+          "length": 536,
+          "sha256": "8F9D5DB75ED386FED769E59F0C4E4FA67DE1CCE3391D214946198645DE48B7DF"
+        },
+        {
+          "path": "data/face112_LZ.NCBR",
+          "length": 548,
+          "sha256": "F7144672FE5F781485D4DCD3E586CC36150B45F20B0F901CA7C2AB8A96441E23"
+        },
+        {
+          "path": "data/face113_LZ.NCBR",
+          "length": 576,
+          "sha256": "C63CEDFAAF95C7F7E64E4970CD7AF4CA4E1B94B4B25269EF033A83894CF2A5D5"
+        },
+        {
+          "path": "data/face114_LZ.NCBR",
+          "length": 612,
+          "sha256": "9C1E7081ADC3AC9DEA627E7910937B87F078D5CC599AB141FE99895B0C657E6B"
+        },
+        {
+          "path": "data/face115_LZ.NCBR",
+          "length": 580,
+          "sha256": "3DE9C3219098FACC8C91D6DABD8D7472636126EA2C84C9A947671D0DEE470BFC"
+        },
+        {
+          "path": "data/face116_LZ.NCBR",
+          "length": 552,
+          "sha256": "35BCE9EB546FEC21A80C55701E56027AEF265A7166335A4A1A92185DCA8D706B"
+        },
+        {
+          "path": "data/face117_LZ.NCBR",
+          "length": 588,
+          "sha256": "A2407636740D9BF17B48896584B10AA96A67FD2037ECC0E6848F1966B39C4B43"
+        },
+        {
+          "path": "data/face118_LZ.NCBR",
+          "length": 564,
+          "sha256": "0F9461E259D18EF4AC88F80997595F91B2EF6EB45FD877B75AF372DD19E3A2CB"
+        },
+        {
+          "path": "data/face119_LZ.NCBR",
+          "length": 612,
+          "sha256": "6B191C365914A5890892AE40D64379B5F01B55129CB4E7357490208A275EA845"
+        },
+        {
+          "path": "data/face120_LZ.NCBR",
+          "length": 576,
+          "sha256": "3FF896322C71A0DDAD0C2AC526A2CD6EF60A796304F462A07B805ACF500752A9"
+        },
+        {
+          "path": "data/face121_LZ.NCBR",
+          "length": 544,
+          "sha256": "8E46477FF4B8167929AEBC73A750F8FBAF1B90E55B91B68D4091EC47F238B83B"
+        },
+        {
+          "path": "data/face122_LZ.NCBR",
+          "length": 556,
+          "sha256": "0273BAC70C3B29C0A155752FB7C75739D6D31DE5DB8DC34EFDFF30DDEB74283E"
+        },
+        {
+          "path": "data/face123_LZ.NCBR",
+          "length": 552,
+          "sha256": "50BF744775E767CEB1DBCD1AEE1D027D580BD03AD22BFCA55656BF95195AA392"
+        },
+        {
+          "path": "data/face124_LZ.NCBR",
+          "length": 556,
+          "sha256": "324C9B21D27FBF6B298305C38548FFED26E0ED311A00C08B8A0A7335DFA1B66E"
+        },
+        {
+          "path": "data/face125_LZ.NCBR",
+          "length": 556,
+          "sha256": "533CA0E7C0BB24EAE28D10D332A4564C75300326B0F1DC148900A711C08176C8"
+        },
+        {
+          "path": "data/face126_LZ.NCBR",
+          "length": 552,
+          "sha256": "7C6AE8FF5D1877936547E7C3047E5870AB2B887DA4895A402F41B868BEAF3BDA"
+        },
+        {
+          "path": "data/face127_LZ.NCBR",
+          "length": 532,
+          "sha256": "27E1EA313A11C674863A568F8C616ABDA64C95E7BE0A61494ECA2ABED85E54F8"
+        },
+        {
+          "path": "data/face128_LZ.NCBR",
+          "length": 560,
+          "sha256": "EDC220B98DB3F2273B6E44C2EAB7495892829F1528F841DE38BD53C584C15BBD"
+        },
+        {
+          "path": "data/face129_LZ.NCBR",
+          "length": 548,
+          "sha256": "3FB8006707407DECC266DE2AA167372794BBC590BF12AB92DC75416965E60ACC"
+        },
+        {
+          "path": "data/face130_LZ.NCBR",
+          "length": 572,
+          "sha256": "FF6335825A5C8830F7DA0B2D9727E670BD917E86FACC9AC9F00E6B8EA6000094"
+        },
+        {
+          "path": "data/face131_LZ.NCBR",
+          "length": 588,
+          "sha256": "2D80D7469291BA6E851C61005FD91B97187369DF644B0B16BA5E745ED220A83B"
+        },
+        {
+          "path": "data/face132_LZ.NCBR",
+          "length": 548,
+          "sha256": "AC96DE847DDD19724CC6B9AF3F4951B96EA8FAFFFB91508E7C2581BB6C6017E6"
+        },
+        {
+          "path": "data/face133_LZ.NCBR",
+          "length": 592,
+          "sha256": "C954502C27795CD5B6137C0EAEF7147991F37974D80DB7E28D6528C881062080"
+        },
+        {
+          "path": "data/face134_LZ.NCBR",
+          "length": 552,
+          "sha256": "7A5C2B636CB2007FBD723B36ACC629B98AEEA71A715E1B5CEBC40ADAA2CC97EB"
+        },
+        {
+          "path": "data/face135_LZ.NCBR",
+          "length": 512,
+          "sha256": "0E80099B9E53A217E41836835CE2B3BD63F69B7738042261ED49ECDC6ED01600"
+        },
+        {
+          "path": "data/face136_LZ.NCBR",
+          "length": 540,
+          "sha256": "79ED9DBE3F98457DFD4CFA7764FE5D933C35158B0F1BD0E71E69822FAA1C2028"
+        },
+        {
+          "path": "data/face137_LZ.NCBR",
+          "length": 496,
+          "sha256": "E5B089656A46955F3330894A3EEAF3DD925503A7A4113A8772F124AE44D827E0"
+        },
+        {
+          "path": "data/face138_LZ.NCBR",
+          "length": 564,
+          "sha256": "48E47A336F3908E6828FF90F0CB3F7FC7A7D27788B586A93BF4C086F16513443"
+        },
+        {
+          "path": "data/face139_LZ.NCBR",
+          "length": 544,
+          "sha256": "325A57B89C781ED6F0A49B2789D73DB71C961F20ABBD317EF5DE592F5776D6A9"
+        },
+        {
+          "path": "data/face140_LZ.NCBR",
+          "length": 520,
+          "sha256": "7C756845E98ADA149D4168D334D690538B6CDD2BC29576E977C6523FBFA7C152"
+        },
+        {
+          "path": "data/face141_LZ.NCBR",
+          "length": 540,
+          "sha256": "281D22108EB3EA245F0A5049373D2A1AE976A9CA09497A6DE3B62A98E37AEC0D"
+        },
+        {
+          "path": "data/face142_LZ.NCBR",
+          "length": 544,
+          "sha256": "823A438586B4A0F0C707945AB485B3D7631A6EB04EF70C512005B4D446A1CD92"
+        },
+        {
+          "path": "data/face143_LZ.NCBR",
+          "length": 544,
+          "sha256": "07EC45DC86B81D075D96E340C90200F429BAC1746B4122E4D0CA7E967A95CCDA"
+        },
+        {
+          "path": "data/face144_LZ.NCBR",
+          "length": 568,
+          "sha256": "8C8D6154C939451E846489C8F0302B7A35E72A5B00575FC257DEB05141F54073"
+        },
+        {
+          "path": "data/face145_LZ.NCBR",
+          "length": 544,
+          "sha256": "091769B5AC57906F6753E8FC7AC169F5BE73614BB68EA7B2ED69930BE580BFE8"
+        },
+        {
+          "path": "data/face146_LZ.NCBR",
+          "length": 556,
+          "sha256": "2739F554FB83058570B8A319456D0DA5356D3247BA13F11B59A25C7960036A47"
+        },
+        {
+          "path": "data/face147_LZ.NCBR",
+          "length": 544,
+          "sha256": "C9D53F9C8F365702733F1AFF5A0AC1E92C1360E0F5BF44C686BD4E2919938117"
+        },
+        {
+          "path": "data/face148_LZ.NCBR",
+          "length": 564,
+          "sha256": "8BBC61A458944B08CF4B62D988F33369DC69EF2EECDB7F34E655A058AE308F54"
+        },
+        {
+          "path": "data/face149_LZ.NCBR",
+          "length": 540,
+          "sha256": "7C8E66255F6D108AE2869F05C6DC179C4518D57004C2E90D142D5CA452C98A34"
+        },
+        {
+          "path": "data/face150_LZ.NCBR",
+          "length": 532,
+          "sha256": "5D3D19667E84FD683196DB63AD49C005D8041EBD0F0BCFFEBEDAD37FBAC4C36D"
+        },
+        {
+          "path": "data/face151_LZ.NCBR",
+          "length": 536,
+          "sha256": "22CD502AB5812C5E0DA2C381D945C344BCEFD974C9BB28B5EE63FAA28A7B39D7"
+        },
+        {
+          "path": "data/face152_LZ.NCBR",
+          "length": 536,
+          "sha256": "931927CBD21BC5DFA1DC643CCF10A150852FC6C058E4A14F94BBF7CEE00A7928"
+        },
+        {
+          "path": "data/face153_LZ.NCBR",
+          "length": 548,
+          "sha256": "AFD136E8441B444B0DED6345059B31F542204A9AE58C05BB40438F66A1996E90"
+        },
+        {
+          "path": "data/face154_LZ.NCBR",
+          "length": 548,
+          "sha256": "81E14BDF4DCDC73A62DE87B922C64204E380B8EDD08C2576DDF745AC5675C168"
+        },
+        {
+          "path": "data/face155_LZ.NCBR",
+          "length": 544,
+          "sha256": "E353469A06F04995E6526C4E9B2F3DE04C41B8BB769A46576F373FB16BDE1566"
+        },
+        {
+          "path": "data/hair001_LZ.NCBR",
+          "length": 656,
+          "sha256": "3C57D332254BF60FAB44E6959E01B7B0A2022BBD96383825F94C97CD69F95C46"
+        },
+        {
+          "path": "data/hair002_LZ.NCBR",
+          "length": 644,
+          "sha256": "6CC83ACBB73503E58E1D33E96BB8C4606E549540B4CD3D9A6D3FE0036C9FD4AE"
+        },
+        {
+          "path": "data/hair003_LZ.NCBR",
+          "length": 588,
+          "sha256": "EB349F1C1C56AA4DE1707A77275A4989156934E560498C954EFAAA6F7AF13938"
+        },
+        {
+          "path": "data/hair004_LZ.NCBR",
+          "length": 588,
+          "sha256": "EB349F1C1C56AA4DE1707A77275A4989156934E560498C954EFAAA6F7AF13938"
+        },
+        {
+          "path": "data/hair005_LZ.NCBR",
+          "length": 684,
+          "sha256": "D5778EDC46ABDB17B60F31A9321674F96FA3900B5CE141B78EEB48198C9279B9"
+        },
+        {
+          "path": "data/hair006_LZ.NCBR",
+          "length": 588,
+          "sha256": "0CE5D99C7A45A19045FF12E7E102F210034465CEDDEE87B174F9CDCB9ACD2F82"
+        },
+        {
+          "path": "data/hair007_LZ.NCBR",
+          "length": 592,
+          "sha256": "4DF3E94AD448F276FC454FA71E472C3B2C77A40510D209398AF1A623CBFD2576"
+        },
+        {
+          "path": "data/hair008_LZ.NCBR",
+          "length": 556,
+          "sha256": "94A94D4A802F2AE2FB7FC73D78CB92B4D405A17ACDE542239E2719EE9AF4F077"
+        },
+        {
+          "path": "data/hair009_LZ.NCBR",
+          "length": 604,
+          "sha256": "4703ED68F46981491E5BE4F3C426E77E41AD47BC959DF8C9F0045DFCBCB41943"
+        },
+        {
+          "path": "data/hair010_LZ.NCBR",
+          "length": 548,
+          "sha256": "DECD9EECA3FE7320345EA5C8D5C40AC058177EE2E321790F70CA9DB37BE75906"
+        },
+        {
+          "path": "data/hair011_LZ.NCBR",
+          "length": 680,
+          "sha256": "7D21705B7E06C2E51BFE1780F52C24786DB2CF5F747D004FD089C4E87B5CC037"
+        },
+        {
+          "path": "data/hair012_LZ.NCBR",
+          "length": 548,
+          "sha256": "CEEB25EE5D378C25552E51B2FB8BBF24A50DFF31D94FA113EDD11BD6B856AFA1"
+        },
+        {
+          "path": "data/hair013_LZ.NCBR",
+          "length": 636,
+          "sha256": "A8F9A445F77ACD71EF0F8A58702D3566B8AF676C9761CC5F263FDEC0E9634837"
+        },
+        {
+          "path": "data/hair014_LZ.NCBR",
+          "length": 608,
+          "sha256": "96055DD99BE9D0D38832A9187DC11FD1B5FE8487EDD6E9A2194AA19C4144F8CC"
+        },
+        {
+          "path": "data/hair015_LZ.NCBR",
+          "length": 652,
+          "sha256": "98C02288D6F19F984E4FC488B2E04EEBBBC86E185683BE1D8CEC04732CA60DFE"
+        },
+        {
+          "path": "data/hair016_LZ.NCBR",
+          "length": 584,
+          "sha256": "68ACDDAE659F693C9EE7FB1A577E6D5AA3CCDE560F5283C5F691D8E3705864DA"
+        },
+        {
+          "path": "data/hair017_LZ.NCBR",
+          "length": 660,
+          "sha256": "60C35CED2CCA39F1793F3EA882876E73B7DE3F0153B0AA03B32AE29BCB082FC2"
+        },
+        {
+          "path": "data/hair018_LZ.NCBR",
+          "length": 580,
+          "sha256": "DAE663D4B75753D68D3DF237B2CA4652749139565CEF7BA077A32DA4FD6699E8"
+        },
+        {
+          "path": "data/hair019_LZ.NCBR",
+          "length": 620,
+          "sha256": "4E4EAA999B7A41782A70382DB59BE9124C3F9441976B92CF900C001E9910FB5A"
+        },
+        {
+          "path": "data/hair020_LZ.NCBR",
+          "length": 672,
+          "sha256": "371E808ECD77ABC8F85BCC5ADC956F71F1B3887000F16675D242B50B9D3D7D18"
+        },
+        {
+          "path": "data/hair021_LZ.NCBR",
+          "length": 560,
+          "sha256": "DD82D3947FA5717546263192AF1838F7AD2BDFBE9437876B45234EF8CF0E4D3D"
+        },
+        {
+          "path": "data/hair022_LZ.NCBR",
+          "length": 624,
+          "sha256": "2260FC0C770B9247CC9F4DB699A6D96419E219DEA987309C1FD6D9498E0FB740"
+        },
+        {
+          "path": "data/hair023_LZ.NCBR",
+          "length": 624,
+          "sha256": "E2A62B94A5F0CC4A90431222221F58B5324CF50335BB0267E1BAB3AC5A1A6680"
+        },
+        {
+          "path": "data/hair024_LZ.NCBR",
+          "length": 624,
+          "sha256": "405CDC74E27AA2256B6A5B5252196D5B59C12F3795DFE83FF7E0002EE396E559"
+        },
+        {
+          "path": "data/hair025_LZ.NCBR",
+          "length": 600,
+          "sha256": "A624BF4B14E7D51CD41FFDC142771F6874BDBD45C43871D5AE4D368086137FE6"
+        },
+        {
+          "path": "data/hair026_LZ.NCBR",
+          "length": 628,
+          "sha256": "FF3C92757533DA9D57C3361D960D1F1F69B2FC6099224833CDA288D8C38DE20E"
+        },
+        {
+          "path": "data/hair027_LZ.NCBR",
+          "length": 644,
+          "sha256": "6B38234534D77AC81FF9EA8E3F39F70F7EB28E773BA8BD3900A0CE4DE4AAF2C6"
+        },
+        {
+          "path": "data/hair028_LZ.NCBR",
+          "length": 636,
+          "sha256": "A676EA8BE63DA4131394CEA61AC9DC10BEFD3D750FAA41E2A9BF438D5C1C4E27"
+        },
+        {
+          "path": "data/hair029_LZ.NCBR",
+          "length": 636,
+          "sha256": "8206116B4DA2771D9EB4C001D0B3C0AF3E8DA7A85CBEF022522C4DBDC05FFA85"
+        },
+        {
+          "path": "data/hair030_LZ.NCBR",
+          "length": 616,
+          "sha256": "38D05D392A71F1545FEB90C2B534FF23AA8BE4641A1C076FC2CFF82EF43FD8B8"
+        },
+        {
+          "path": "data/hair031_LZ.NCBR",
+          "length": 636,
+          "sha256": "E04E70850658630F85AA8B0F70583750F671E845C0CDA9EF5CDCD82A20420331"
+        },
+        {
+          "path": "data/hair032_LZ.NCBR",
+          "length": 624,
+          "sha256": "75AA23E39221C6F3CD39A39435636FB50A90F1B2854BD0CC4267C62A83A905D9"
+        },
+        {
+          "path": "data/hair033_LZ.NCBR",
+          "length": 592,
+          "sha256": "E3A8CB0E66F0B74DB878875163DFE9A1C0958A6B8E25CE703A0762ED9949AC64"
+        },
+        {
+          "path": "data/hair034_LZ.NCBR",
+          "length": 616,
+          "sha256": "1C106C891931D26908534EBAD2F1215BBE4996BE65C499A5F2E69748F3CD6FAD"
+        },
+        {
+          "path": "data/hair035_LZ.NCBR",
+          "length": 624,
+          "sha256": "71F95A31D109DFD11412DF472D50C83A56BF746D1619835C774AE65A7757851B"
+        },
+        {
+          "path": "data/hair036_LZ.NCBR",
+          "length": 612,
+          "sha256": "91B75E612CCDF4128B931C9175DE09981B3603071C1A6C544215B6492D52E079"
+        },
+        {
+          "path": "data/hair037_LZ.NCBR",
+          "length": 612,
+          "sha256": "16AC8EA52E92B49A68F529DBFF849CB27A6BDE63462A251F27C416BE1B747EE5"
+        },
+        {
+          "path": "data/hair038_LZ.NCBR",
+          "length": 692,
+          "sha256": "38ABD97D13FFECB2CF4F487BABB3ED2B129EA8646B28AFE14F60D680E351F6DC"
+        },
+        {
+          "path": "data/hair039_LZ.NCBR",
+          "length": 632,
+          "sha256": "5A5E10CBE5612DD09A3609E96CD89952FAFF106F3D1656DDEF29C04AC2EB89E8"
+        },
+        {
+          "path": "data/hair040_LZ.NCBR",
+          "length": 616,
+          "sha256": "8164DBAA3235D6F621E83A52A58942BB161A2065806618DD13BE337BBD32F944"
+        },
+        {
+          "path": "data/hair041_LZ.NCBR",
+          "length": 628,
+          "sha256": "C4A24071FA7C4B04724C9E570D1391576E6D4B51F2F201FDBDBA1ED9C3E64880"
+        },
+        {
+          "path": "data/hair042_LZ.NCBR",
+          "length": 592,
+          "sha256": "C2CC69E92F2721EA10C676036DBAEED4BF0C3FCD21D78C026F6D7BD167210A73"
+        },
+        {
+          "path": "data/hair043_LZ.NCBR",
+          "length": 672,
+          "sha256": "7E724F5D73F117CBFA88D49A5FAF68F72DA5D641FD6C11AD859A72D9D22DB296"
+        },
+        {
+          "path": "data/hair044_LZ.NCBR",
+          "length": 636,
+          "sha256": "93FB878CCE1A10CA00DFB6679D525EE37BC6AFEB2015D7C902F08190631ED64A"
+        },
+        {
+          "path": "data/hair045_LZ.NCBR",
+          "length": 560,
+          "sha256": "45C8B14B719256499C0431722ECE916DD868869FA27FC96EC53E647BFDB8CA7B"
+        },
+        {
+          "path": "data/hair046_LZ.NCBR",
+          "length": 488,
+          "sha256": "3B84D845C7687E9953C8FF26AFBB8002E00DCE6A5AE52F7FC830411B8A49D85B"
+        },
+        {
+          "path": "data/hair047_LZ.NCBR",
+          "length": 576,
+          "sha256": "BEBA64595E4B572E82FBB5B66D6A85A991BC4A619BCECD9038A0D5066213D67D"
+        },
+        {
+          "path": "data/hair048_LZ.NCBR",
+          "length": 560,
+          "sha256": "F943AC318C45E68F9BDB5F7CCF7B8F6EF63216868D25E3464E2CECF1A104A797"
+        },
+        {
+          "path": "data/hair049_LZ.NCBR",
+          "length": 612,
+          "sha256": "D8560F1CAF7418F1B4C6C7351C7F3E861FE17633A70FBBD3D5925ABB8E457773"
+        },
+        {
+          "path": "data/hair050_LZ.NCBR",
+          "length": 564,
+          "sha256": "A8940C180756DA78423B8E2C84E980B177649950243330E32A9B324B61BFD15B"
+        },
+        {
+          "path": "data/hair051_LZ.NCBR",
+          "length": 604,
+          "sha256": "1335916FB475106DC052FEA75294EAA3E24AC8E59E1E5A6F139BC4C67599DC31"
+        },
+        {
+          "path": "data/hair052_LZ.NCBR",
+          "length": 652,
+          "sha256": "407D56E661568366AC3287E48EF1D459E15303DCF8B850456BCC9E979285114D"
+        },
+        {
+          "path": "data/hair053_LZ.NCBR",
+          "length": 668,
+          "sha256": "89A936C8DDE5DDFA5626F6F509EAD4F17906DB8D01F19FFD23049968B763B700"
+        },
+        {
+          "path": "data/hair054_LZ.NCBR",
+          "length": 556,
+          "sha256": "EEC5D6F04284CCE8D5DBAB6116ABBA52CE1C2CF11C7946A43EC2FC2DCC67F2A3"
+        },
+        {
+          "path": "data/hair055_LZ.NCBR",
+          "length": 632,
+          "sha256": "5E98EF9D9E550D377DB789C2A8ABD95CA31ECF060111C29C18408ADC05799DAF"
+        },
+        {
+          "path": "data/hair056_LZ.NCBR",
+          "length": 532,
+          "sha256": "B101E39B81CF1A22D8C7AF757F3202B1504F53A2C70CCFAE3D3BA627C3CB936F"
+        },
+        {
+          "path": "data/hair057_LZ.NCBR",
+          "length": 608,
+          "sha256": "2C2A8A8BDA45821BF7332D23070DCCDF3ED6A7B3F1FB91A2FEB163615D7645D1"
+        },
+        {
+          "path": "data/hair058_LZ.NCBR",
+          "length": 736,
+          "sha256": "F9D06B5942BCA984D668C1B0D29A5E40D1642552D898FEFCFFE4C91691BCE52D"
+        },
+        {
+          "path": "data/hair059_LZ.NCBR",
+          "length": 564,
+          "sha256": "D7EFCB79EA479DCB660B71DD41F303A1CF46BDFE6AB3BC68B7810A395088D874"
+        },
+        {
+          "path": "data/hair060_LZ.NCBR",
+          "length": 736,
+          "sha256": "0048FAEB29F2D869970C43198DA7AF1D01EFA8C4566A23C0441B89FB86308BA7"
+        },
+        {
+          "path": "data/hair061_LZ.NCBR",
+          "length": 512,
+          "sha256": "D26833A2FB6A9C9506A754F2097D285A73A73C1A260BFDCDAAB0FAD65CD46DD8"
+        },
+        {
+          "path": "data/hair062_LZ.NCBR",
+          "length": 652,
+          "sha256": "9D314CF0D0C747A8DDCC4958694EEE0D6EF3C074CA111FF0A7ABD77779C4B6CD"
+        },
+        {
+          "path": "data/hair063_LZ.NCBR",
+          "length": 700,
+          "sha256": "919A1D3D166045D857E7703219C168DABD584ED7EEE7ACF5C4FB0FE4CE16FB33"
+        },
+        {
+          "path": "data/hair064_LZ.NCBR",
+          "length": 696,
+          "sha256": "DCF8FA819A4E04DA29D879FFA6F92C9372E858C6B183DA7AD56B8560AE585E43"
+        },
+        {
+          "path": "data/hair065_LZ.NCBR",
+          "length": 668,
+          "sha256": "85750DD79D47BC3B38E12D54DE1A2EBCDD5E41CDEAA905B040FEFB7C3749D725"
+        },
+        {
+          "path": "data/hair066_LZ.NCBR",
+          "length": 640,
+          "sha256": "95C4646FDB05B0829A3C73FD8AE20ACD75D977C4C56802555AF1936E0C322302"
+        },
+        {
+          "path": "data/hair067_LZ.NCBR",
+          "length": 656,
+          "sha256": "BE728BF56AE740475EE7FC98C9337603102757BEA22CB32EF523A3FCEE6EB063"
+        },
+        {
+          "path": "data/hair068_LZ.NCBR",
+          "length": 620,
+          "sha256": "D7C65EF4E5B54F9A3ACA1EFD52A127E58D006C6E21B59BD55E283A88ED09AEC8"
+        },
+        {
+          "path": "data/hair069_LZ.NCBR",
+          "length": 620,
+          "sha256": "B8B85A2CDE30FF149D69A098B6E3D2710BDC1700F16A8DA036BF7816104DE8DE"
+        },
+        {
+          "path": "data/hair070_LZ.NCBR",
+          "length": 664,
+          "sha256": "07EFA071C51EBCDBC6605FEFBF1DBA6ABF6AA4785DEE7237F2269AE75DE7A75C"
+        },
+        {
+          "path": "data/hair071_LZ.NCBR",
+          "length": 552,
+          "sha256": "467999195D5E5FB5AA084775A3D67745A2EE78E03D3437A4172DAEAB737A5880"
+        },
+        {
+          "path": "data/hair072_LZ.NCBR",
+          "length": 548,
+          "sha256": "D416B8AE7301E4E0F18F08042E6A973B55475B6C576E1839A3598A793DF9DD76"
+        },
+        {
+          "path": "data/hair073_LZ.NCBR",
+          "length": 592,
+          "sha256": "4D668112B5D90648E1531536A0EDE705B13B405E60CE65E49A16BF0FDFBC0D12"
+        },
+        {
+          "path": "data/hair074_LZ.NCBR",
+          "length": 588,
+          "sha256": "2C7D5060665EF03F2AA903E34AA49EC4B8142AFD639810C81F4C5DB9349EC16B"
+        },
+        {
+          "path": "data/hair075_LZ.NCBR",
+          "length": 612,
+          "sha256": "9A121A152C7B9036B88392E36DE64EA23C7482DC3E0DD42F615B2DEC32A4DBA9"
+        },
+        {
+          "path": "data/hair076_LZ.NCBR",
+          "length": 692,
+          "sha256": "6F9E0E01383E4F0E24F7B1383EE320949F63A26691E10DE20ADE69DD493EECCD"
+        },
+        {
+          "path": "data/hair077_LZ.NCBR",
+          "length": 584,
+          "sha256": "9496206191ADCB538657329A7C9CD371C5B1DEB49AB88DD063EDCE60E7C0F28B"
+        },
+        {
+          "path": "data/hair078_LZ.NCBR",
+          "length": 712,
+          "sha256": "9474AAFA12CD480B200AA9B1B8D9D99289EC82F658A3CA24779FEC6D6330A435"
+        },
+        {
+          "path": "data/hair079_LZ.NCBR",
+          "length": 700,
+          "sha256": "C4EEF189C08D12FA025BDDAB4E2415FF954DB505FB8282013EB850D1FDCC7222"
+        },
+        {
+          "path": "data/hair080_LZ.NCBR",
+          "length": 576,
+          "sha256": "C8E06B6C86284DA9B5F032249E4ADB06E0F172F06866AB0882760472386FAF25"
+        },
+        {
+          "path": "data/hair081_LZ.NCBR",
+          "length": 636,
+          "sha256": "C5D56C85303F9F368A684B9BDEB39B09D15DB8682E46F00274C22CAFE565BA4E"
+        },
+        {
+          "path": "data/hair082_LZ.NCBR",
+          "length": 612,
+          "sha256": "A35CC5E80BE08DF3FD63AD7C4D58DE446EF63E86F36853B49172D8B42372EFA3"
+        },
+        {
+          "path": "data/hair083_LZ.NCBR",
+          "length": 656,
+          "sha256": "6D4DCEA194896981A483BDBF78B9498F558A5B35F072D9842E1FECB88601EEF1"
+        },
+        {
+          "path": "data/hair084_LZ.NCBR",
+          "length": 716,
+          "sha256": "2E11E0B6DC325348323FED2EC02C9382E3A6C3F28A5D6904C010B6112A155D7B"
+        },
+        {
+          "path": "data/hair085_LZ.NCBR",
+          "length": 624,
+          "sha256": "EA3C9F824867D42D1CDA026EE8403D69B4773B166D7A1ADB9F6D33A6FD66D6A8"
+        },
+        {
+          "path": "data/hair086_LZ.NCBR",
+          "length": 544,
+          "sha256": "30E5D43EA73DA7CD7AC4D92A9436D553CE55EA17C23E7386CEA2CF367705F37D"
+        },
+        {
+          "path": "data/hair087_LZ.NCBR",
+          "length": 560,
+          "sha256": "7D2E8ADFF44031780110A2465540F5162C53599CA67C10D40C9C3E98C1884402"
+        },
+        {
+          "path": "data/hair088_LZ.NCBR",
+          "length": 512,
+          "sha256": "8D4080B3E1E656D658499B02281240FF74AE54B553DF668A3F9EAD5DF1AD59E4"
+        },
+        {
+          "path": "data/hair089_LZ.NCBR",
+          "length": 616,
+          "sha256": "A2D742EC35B3B04671DF861B4F3BFE61E6BD1063B6EB1EA0A3196F3EB9A7B762"
+        },
+        {
+          "path": "data/hair090_LZ.NCBR",
+          "length": 564,
+          "sha256": "044CF0EF372DD66DA395470442AD5A0B869634786B27005086F3C59869E4DA33"
+        },
+        {
+          "path": "data/hair091_LZ.NCBR",
+          "length": 636,
+          "sha256": "491A5C9AD82DA0AF53BD5AB5F9B8556D5E78D3EABE46DF1BA8AB1E5D2C3AB0D5"
+        },
+        {
+          "path": "data/hair092_LZ.NCBR",
+          "length": 768,
+          "sha256": "5DAF58D1FD60C16396FF27F369E1AC06DC060D8D29A8D490D157D7731458503D"
+        },
+        {
+          "path": "data/hair093_LZ.NCBR",
+          "length": 748,
+          "sha256": "479246EC88A9707283FB5E810E2DB63725E10DB8D76A1CBDB42EB7E59E3AC264"
+        },
+        {
+          "path": "data/hair094_LZ.NCBR",
+          "length": 636,
+          "sha256": "AC2AEF8B10E2557C6B4D5430FF6B610033344CFDA8351C151116F7D70609A789"
+        },
+        {
+          "path": "data/hair095_LZ.NCBR",
+          "length": 624,
+          "sha256": "BFAF33362E7E77DB9CC97E3179DC21261E89989D39C8CE800BD0EF8B80B2BFBF"
+        },
+        {
+          "path": "data/hair096_LZ.NCBR",
+          "length": 648,
+          "sha256": "04AD20E4215F3F1E652F4DEE050B90BBFF785BFF20B9C893F59C679203C2E3BE"
+        },
+        {
+          "path": "data/hair097_LZ.NCBR",
+          "length": 616,
+          "sha256": "49D1C25F313B9DF21C19250630BCD08603314EAFA4F930A63E5BDE7A077BEA76"
+        },
+        {
+          "path": "data/hair098_LZ.NCBR",
+          "length": 688,
+          "sha256": "3F514A01A2B935677A1C5452F58B2D36A7253356704A4FEA85A9F24071DC55BB"
+        },
+        {
+          "path": "data/hair099_LZ.NCBR",
+          "length": 632,
+          "sha256": "22FAE3E9A59FA95ECE82BBE380A69121E725569771B80F46C7D49A14EC73A629"
+        },
+        {
+          "path": "data/hair100_LZ.NCBR",
+          "length": 540,
+          "sha256": "36F4F593C9DD968792172DAA94623D76E2AEA6434CB93EF7AB92C983E99A2D50"
+        },
+        {
+          "path": "data/hair101_LZ.NCBR",
+          "length": 732,
+          "sha256": "E0D1601EC6C185C26BDDAEE21ED4CDD08963F470217AF83375DFFDA74D610239"
+        },
+        {
+          "path": "data/hair102_LZ.NCBR",
+          "length": 664,
+          "sha256": "383523820AEA2B01D36B5CCC799EE8B78BFB2262E3141CC8FD257622393AA469"
+        },
+        {
+          "path": "data/hair103_LZ.NCBR",
+          "length": 720,
+          "sha256": "7102DF9A48A65CB9D173B834515A96E9C1DAA8730DD6372EE32F025983590A56"
+        },
+        {
+          "path": "data/hair104_LZ.NCBR",
+          "length": 660,
+          "sha256": "9D3BEE51D650CF33BF86F92584C777BA6F3F0913F0C7605FAC0BF02BE68C4CBA"
+        },
+        {
+          "path": "data/hair105_LZ.NCBR",
+          "length": 760,
+          "sha256": "06DC0448896F4F8291A810351629BA139406AE28086827A7F7F261C87636775B"
+        },
+        {
+          "path": "data/hair106_LZ.NCBR",
+          "length": 600,
+          "sha256": "63DEF0C2BFA3FC70C32D6187D9339C44973F9FA96E73BD9261F49A209AB1AFD1"
+        },
+        {
+          "path": "data/hair107_LZ.NCBR",
+          "length": 744,
+          "sha256": "A47B99123D6B1992507DB3F09B560C0E9AAAEF375606FC7B333CD66DAA25CAA4"
+        },
+        {
+          "path": "data/hair108_LZ.NCBR",
+          "length": 524,
+          "sha256": "D53CD3993D79E725F1FAC5DFBF5E12F7C4F7E82DD8B103E480A64C3494636353"
+        },
+        {
+          "path": "data/hair109_LZ.NCBR",
+          "length": 508,
+          "sha256": "2975916D4D1AE2ACA738EE25B1C45B9B4227A99E6303CBC92622619A73878D4B"
+        },
+        {
+          "path": "data/hair110_LZ.NCBR",
+          "length": 664,
+          "sha256": "9103ED44C1697902B4A3772CEFFBCD837B39973A7E9A1D5E6A016B3ED3D173EA"
+        },
+        {
+          "path": "data/hair111_LZ.NCBR",
+          "length": 652,
+          "sha256": "29A3EFC4F7BA6D700D49581B9C4C6086E5A9FD37F23CCD999EEA63847CDC00C4"
+        },
+        {
+          "path": "data/hair112_LZ.NCBR",
+          "length": 596,
+          "sha256": "2277498B5FC5F1BAE347455C0F0A294D76D9D3C9EFB5E4C8C2746FD9EC1A809A"
+        },
+        {
+          "path": "data/hair113_LZ.NCBR",
+          "length": 688,
+          "sha256": "3713935714960F4F04FA42B2B526078F33E75C1D50DAD1178118738DD7B98C2C"
+        },
+        {
+          "path": "data/hair114_LZ.NCBR",
+          "length": 692,
+          "sha256": "1B0524B010E808ABA2E5ABA2A75945E3738D70E7E1C1C0D47D19904B700BC5AA"
+        },
+        {
+          "path": "data/hair115_LZ.NCBR",
+          "length": 600,
+          "sha256": "ACD7EF8E00393EAA01E136173E407C9963AF401E00235446C3F0311BBB8400E7"
+        },
+        {
+          "path": "data/hair116_LZ.NCBR",
+          "length": 732,
+          "sha256": "D1FDFF10570406239CA0DE2920220F4B03370F56412384FF04FA0B381934C5BE"
+        },
+        {
+          "path": "data/hair117_LZ.NCBR",
+          "length": 552,
+          "sha256": "F23D857A13FAAA26794D53C670482BEB4B0B1585AA3B7FC6354419DAC6D1EAAB"
+        },
+        {
+          "path": "data/hair118_LZ.NCBR",
+          "length": 648,
+          "sha256": "AEC96144D5E0E502BC436C4CA4C55BC6A70C0E2CAD609DF33B51608E672DF7A8"
+        },
+        {
+          "path": "data/hair119_LZ.NCBR",
+          "length": 708,
+          "sha256": "B6656E9CAB5E26E40ECABCAF65264BFC8432F6211672802E4620EEBB5A56970F"
+        },
+        {
+          "path": "data/hair120_LZ.NCBR",
+          "length": 588,
+          "sha256": "38248D0D1DB30B48CD4A4C70D5064B7103B22786D42259AACCBB849645FC7EAE"
+        },
+        {
+          "path": "data/hair121_LZ.NCBR",
+          "length": 600,
+          "sha256": "D2D78FBD3A7792F8630DA5E5454AAAD71310A6C91748F12FB7DFCAF4919D569C"
+        },
+        {
+          "path": "data/hair122_LZ.NCBR",
+          "length": 676,
+          "sha256": "F4E154735D7445C5AF5FFBC3FD3A14BF20FD3B0A682383F0D4EEFAD9808CA897"
+        },
+        {
+          "path": "data/hair123_LZ.NCBR",
+          "length": 640,
+          "sha256": "AD37EA447A8A2E4A85D613069D6CF494D1D028C4DBCAF42242519B0BFE0FB2C3"
+        },
+        {
+          "path": "data/hair124_LZ.NCBR",
+          "length": 504,
+          "sha256": "21258A1B3B4EBA5EE2FB4A62CF582C1250B86371B9FDD427920955447A4B5C47"
+        },
+        {
+          "path": "data/hair125_LZ.NCBR",
+          "length": 620,
+          "sha256": "6D18164203D5B33B2028087FDEA5AA3FAA52B0EDA2760271F02E4906EBE1ACDA"
+        },
+        {
+          "path": "data/hair126_LZ.NCBR",
+          "length": 592,
+          "sha256": "59CB3D4FA026F7FEBFAF8A42A8B068DF6E47965972298079E742E1CA5FDC52FA"
+        },
+        {
+          "path": "data/hair127_LZ.NCBR",
+          "length": 624,
+          "sha256": "F5EC91BC0374FF18BFC852BD5386964F5255F8AA5410181D4E9CB778AE77BF35"
+        },
+        {
+          "path": "data/hair128_LZ.NCBR",
+          "length": 652,
+          "sha256": "EB3678973AC51E3E23F00CE13BE3A9945EBBEE5B8C872905C8B6F9CF286AA005"
+        },
+        {
+          "path": "data/hair129_LZ.NCBR",
+          "length": 656,
+          "sha256": "C4B256BEE18748E10F28D19FFA2C38402DCD7FDEB78C8653A935A3BC85DFEBCB"
+        },
+        {
+          "path": "data/hair130_LZ.NCBR",
+          "length": 632,
+          "sha256": "EAB48F2E76C6870562CB98C92DEE9D7832C83A44D956E8C8134CB31EDF14FE08"
+        },
+        {
+          "path": "data/hair131_LZ.NCBR",
+          "length": 656,
+          "sha256": "7B2211EF20B5EBB7B1627665E626018B68BCFDE2FDBD2FBE8997B5498EEAE097"
+        },
+        {
+          "path": "data/hair132_LZ.NCBR",
+          "length": 660,
+          "sha256": "7C26E469908A2BD314AF5630DD7D9444ABEBDB4762A60980BC025E06A440CA0E"
+        },
+        {
+          "path": "data/hair133_LZ.NCBR",
+          "length": 524,
+          "sha256": "E76A6AF0FF8AC79587026F5EE881C23AF80F7DA09B11AD721FF05A7FB428D383"
+        },
+        {
+          "path": "data/hair134_LZ.NCBR",
+          "length": 648,
+          "sha256": "4D241907C3FD2327BB34D69E86D8CAC2CD069F8A03978DB8C2C96A29ED275527"
+        },
+        {
+          "path": "data/hair135_LZ.NCBR",
+          "length": 532,
+          "sha256": "4DFDDBFE37620BB1BD59FB8DE2A15F5DF6823755EA9B6848871243D5597D9B72"
+        },
+        {
+          "path": "data/hair136_LZ.NCBR",
+          "length": 656,
+          "sha256": "2A918E2AB888641D17AF7F884D030F1403D54AD4BA5B804873C0D6FAF76A1673"
+        },
+        {
+          "path": "data/hair137_LZ.NCBR",
+          "length": 656,
+          "sha256": "767E2B0424A386B1B3587A9AED476B1FF1F6C94A6F1C4AFC4AE3ED0DAAD91673"
+        },
+        {
+          "path": "data/hair138_LZ.NCBR",
+          "length": 692,
+          "sha256": "0290789C0DB93C56267DA07F379DDC14CF74ED68DF6F23F5B0E3CE08EF279DA3"
+        },
+        {
+          "path": "data/hair139_LZ.NCBR",
+          "length": 588,
+          "sha256": "1342C7E285ECBFB180310CB93CF5D6D55FEB1F9F9E7CE8943E6C82B4E3FF95C0"
+        },
+        {
+          "path": "data/hair140_LZ.NCBR",
+          "length": 672,
+          "sha256": "82AA718F24194DBBDE5D29B6CCDDAE0BE1E4FCDBA2ED4BBB224AF11336BF0529"
+        },
+        {
+          "path": "data/hair141_LZ.NCBR",
+          "length": 628,
+          "sha256": "5827B2971061A343DCFE7349385517C090375483B2FF9547BA301979BFB3A889"
+        },
+        {
+          "path": "data/hair142_LZ.NCBR",
+          "length": 660,
+          "sha256": "2380858CDF5CDE60BA720E5F07764D5B01F796596F7558BAC1CFAE310316E664"
+        },
+        {
+          "path": "data/hair143_LZ.NCBR",
+          "length": 708,
+          "sha256": "B0407A9ABE8017A421E958534DFDC722B9AB0904D22F2227A348D8A9283D6038"
+        },
+        {
+          "path": "data/hair144_LZ.NCBR",
+          "length": 656,
+          "sha256": "B54D94A5954A917454D58F2D4F725B096BAB299BF154630A53D35169101D9B79"
+        },
+        {
+          "path": "data/hair145_LZ.NCBR",
+          "length": 680,
+          "sha256": "DF931E6660FFADA279D9D098F01560FF32C533731C5B2C1DD04B0F93FED7392C"
+        },
+        {
+          "path": "data/hair146_LZ.NCBR",
+          "length": 676,
+          "sha256": "7B19F087FD65DA49A74DB2BD1A17A53113FD0958A065D12099037F29A3D2FF24"
+        },
+        {
+          "path": "data/hair147_LZ.NCBR",
+          "length": 648,
+          "sha256": "5C565F810C8DBB9219FE10656D190832BAF0C3858D6B67DA689748FFBD33CC27"
+        },
+        {
+          "path": "data/hair148_LZ.NCBR",
+          "length": 656,
+          "sha256": "E1312F88E126F585F31F5603C3A3BC8EBC56A36485F56F477FC590532E30453D"
+        },
+        {
+          "path": "data/hair149_LZ.NCBR",
+          "length": 676,
+          "sha256": "5AADCFCABE03EFABBC02BD1BE87A7417EBB3731BD8D32E36EF31DCBDF87B6B77"
+        },
+        {
+          "path": "data/hair150_LZ.NCBR",
+          "length": 656,
+          "sha256": "D70B977B328B350B0C0786782CD4E76D308E8C148B15B45F53ED97DC33600879"
+        },
+        {
+          "path": "data/hair151_LZ.NCBR",
+          "length": 676,
+          "sha256": "2AB03E7810EF2AE7FDDD97B95B0B111DB3E4CE6C3C055AEEBEB9F4B9B2E43034"
+        },
+        {
+          "path": "data/hair152_LZ.NCBR",
+          "length": 688,
+          "sha256": "8CC70F5DF288FD385C3C1464C52F5A086648F16E8A0F19C4AE7F5E1FDA9D9098"
+        },
+        {
+          "path": "data/hair153_LZ.NCBR",
+          "length": 664,
+          "sha256": "9D0D447F6C3A053F6081A360C23D73212FC42233909AFD4298958AC30FA800CD"
+        },
+        {
+          "path": "data/hair154_LZ.NCBR",
+          "length": 664,
+          "sha256": "2E6B81F679867D65DDC043ED35EEB65C2787F4790EA0EE1BBB7126881501F126"
+        },
+        {
+          "path": "data/hair155_LZ.NCBR",
+          "length": 660,
+          "sha256": "C7D12B37CBC89E231EC277FEB42456253D46526B749C9FF4EA15831C186C5B47"
+        },
+        {
+          "path": "data/icon_dodge.nbfc",
+          "length": 512,
+          "sha256": "8702A3C9BC6943405646F90D72B24CF9E80C3088D3B67FADAC20FDA3F2157BD7"
+        },
+        {
+          "path": "data/icon_dodge.nbfp",
+          "length": 32,
+          "sha256": "DE43555588C8989366B799883F8FA70AC5B6D310EE7EC98A1D305623518C2E38"
+        },
+        {
+          "path": "data/object.NANR",
+          "length": 12321,
+          "sha256": "BA8AFDB0DC4BFA8C53B45E78A64AB85C42E94F423E7C71E380FBBC69AB8EBF5B"
+        },
+        {
+          "path": "data/object.NCER",
+          "length": 7541,
+          "sha256": "701910A091F0A7529D158C5EE3E1107C6619D12A5C75735A8732DBB671FAAC19"
+        },
+        {
+          "path": "data/object.NCLR",
+          "length": 552,
+          "sha256": "8656C254DC5DA1A79F87740FE7440BD9BA9C59B7A9D0C3AB35990BC40201B6C2"
+        },
+        {
+          "path": "data/object_LZ.NCBR",
+          "length": 14540,
+          "sha256": "77EDDEADEDFDF96AC28FD6707866D0E7408A9A6F3171E740095088E955470D0C"
+        },
+        {
+          "path": "data/sum_bt_head.NANR",
+          "length": 420,
+          "sha256": "5B8CB4FCE356B6542661490BDF11F43BB8813151D9A2F4629F327DABB4644DA0"
+        },
+        {
+          "path": "data/sum_bt_head.NCER",
+          "length": 484,
+          "sha256": "29A9DFB794AB2D04818FDD59E2110B075E50A4F8F90ABA57463FFD6C9FF078CF"
+        },
+        {
+          "path": "data/sum_bt_head.NCGR",
+          "length": 2672,
+          "sha256": "3CA537D322A30346E4127AA753E4488DC0CD06A383A68F8E9F12287E130B0DE2"
+        },
+        {
+          "path": "data/sum_bt_head.NCLR",
+          "length": 552,
+          "sha256": "41BEE7048D69C588A361FC883E067CF36F0E3F95599866FCDC5EC3D094BB112F"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "4A399FE9EBFA1F826C1740AAB4F9A147EB3C0D7C0F302430392F8F0E3C7323D0"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 7380520,
+          "sha256": "E549706585F5419E1BCF6374D7047C5D2E409583CC3E935CD15D7FD368A637E9"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 8388608,
+          "sha256": "2BE66D8C26117F96F0B54B547B2D75C47CC7EC3D1ACD804E41892F15F5E3E9D4"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 8388608,
+          "sha256": "D9D6F824ECB23AD09680E6700F7912ADEBC4ACF1053D085995A75DAB316C6E12"
+        }
+      ]
+    }
+  ]
+}

@@ -13,11 +13,29 @@ jobs:
   release-gate:
     name: Ubuntu release gate
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
+      - name: Test release safety policy
+        shell: pwsh
+        run: ./build/test-release-policy.ps1
+      - name: Validate workflow definitions
+        run: go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.11
+      - name: Require a version increment for package changes
+        if: github.event_name == 'pull_request'
+        shell: pwsh
+        env:
+          BASE_COMMIT: ${{ github.event.pull_request.base.sha }}
+        run: ./build/verify-release-version.ps1 -BaseRef $env:BASE_COMMIT
+      - name: Check the main version transition
+        if: github.event_name == 'push'
+        shell: pwsh
+        run: ./build/verify-release-version.ps1 -BaseRef 'HEAD^'
       - name: Restore locked dependencies
         run: dotnet restore NdsForge.slnx --locked-mode
       - name: Resolve package version
@@ -51,15 +69,24 @@ jobs:
       - name: Pack library and tool
         run: |
           dotnet pack src/NdsForge/NdsForge.csproj --configuration Release --no-build --output artifacts/packages
+          dotnet pack src/NdsForge.Nitro/NdsForge.Nitro.csproj --configuration Release --no-build --output artifacts/packages
+          dotnet pack src/NdsForge.Graphics/NdsForge.Graphics.csproj --configuration Release --no-build --output artifacts/packages
+          dotnet pack src/NdsForge.Audio.Wav/NdsForge.Audio.Wav.csproj --configuration Release --no-build --output artifacts/packages
           dotnet pack src/NdsForge.Cli/NdsForge.Cli.csproj --configuration Release --no-build --output artifacts/packages
       - name: Validate packages and symbols
         shell: pwsh
         run: |
           ./build/validate-package.ps1 "artifacts/packages/NdsForge.$env:PACKAGE_VERSION.nupkg" NdsForge $env:PACKAGE_VERSION
+          ./build/validate-package.ps1 "artifacts/packages/NdsForge.Nitro.$env:PACKAGE_VERSION.nupkg" NdsForge.Nitro $env:PACKAGE_VERSION
+          ./build/validate-package.ps1 "artifacts/packages/NdsForge.Graphics.$env:PACKAGE_VERSION.nupkg" NdsForge.Graphics $env:PACKAGE_VERSION
+          ./build/validate-package.ps1 "artifacts/packages/NdsForge.Audio.Wav.$env:PACKAGE_VERSION.nupkg" NdsForge.Audio.Wav $env:PACKAGE_VERSION
           ./build/validate-package.ps1 "artifacts/packages/NdsForge.Cli.$env:PACKAGE_VERSION.nupkg" NdsForge.Cli $env:PACKAGE_VERSION
       - name: Test clean package consumers
         shell: pwsh
         run: ./build/test-package-consumer.ps1 artifacts/packages $env:PACKAGE_VERSION
+      - name: Build strict documentation
+        shell: pwsh
+        run: ./build/build-docs.ps1 -NoRestore
       - uses: actions/upload-artifact@v7
         if: always()
         with:
@@ -71,17 +98,34 @@ jobs:
   windows-portability:
     name: Windows portability
     runs-on: windows-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
+      - name: Test release safety policy
+        shell: pwsh
+        run: ./build/test-release-policy.ps1
       - name: Restore locked dependencies
         run: dotnet restore NdsForge.slnx --locked-mode
       - name: Build solution
         run: dotnet build NdsForge.slnx --configuration Release --no-restore
       - name: Run Windows tests
-        run: dotnet test tests/NdsForge.Tests/NdsForge.Tests.csproj --configuration Release --no-build --no-restore --results-directory artifacts/windows --logger "trx;LogFileName=windows.trx"
+        shell: pwsh
+        run: |
+          dotnet test tests/NdsForge.Tests/NdsForge.Tests.csproj --configuration Release --no-build --no-restore --results-directory artifacts/windows --logger "trx;LogFileName=core.trx"
+          if ($LASTEXITCODE -ne 0) { throw "Core Windows tests failed." }
+          dotnet test tests/NdsForge.Nitro.Tests/NdsForge.Nitro.Tests.csproj --configuration Release --no-build --no-restore --results-directory artifacts/windows --logger "trx;LogFileName=nitro.trx"
+          if ($LASTEXITCODE -ne 0) { throw "Nitro Windows tests failed." }
+          dotnet test tests/NdsForge.Graphics.Tests/NdsForge.Graphics.Tests.csproj --configuration Release --no-build --no-restore --results-directory artifacts/windows --logger "trx;LogFileName=graphics.trx"
+          if ($LASTEXITCODE -ne 0) { throw "Graphics Windows tests failed." }
+          dotnet test tests/NdsForge.Audio.Wav.Tests/NdsForge.Audio.Wav.Tests.csproj --configuration Release --no-build --no-restore --results-directory artifacts/windows --logger "trx;LogFileName=wav.trx"
+          if ($LASTEXITCODE -ne 0) { throw "WAV Windows tests failed." }
       - name: Verify Windows test discovery
         shell: pwsh
-        run: ./build/verify-test-result.ps1 artifacts/windows/windows.trx "Windows portability"
+        run: |
+          ./build/verify-test-result.ps1 artifacts/windows/core.trx "Windows core portability"
+          ./build/verify-test-result.ps1 artifacts/windows/nitro.trx "Windows Nitro portability"
+          ./build/verify-test-result.ps1 artifacts/windows/graphics.trx "Windows graphics portability"
+          ./build/verify-test-result.ps1 artifacts/windows/wav.trx "Windows WAV portability"

@@ -159,6 +159,21 @@
       },
       "ndsforge": {
         "type": "Project"
+      },
+      "ndsforge.audio.wav": {
+        "type": "Project",
+        "dependencies": {
+          "NdsForge.Nitro": "[1.0.1, )"
+        }
+      },
+      "ndsforge.graphics": {
+        "type": "Project",
+        "dependencies": {
+          "NdsForge.Nitro": "[1.0.1, )"
+        }
+      },
+      "ndsforge.nitro": {
+        "type": "Project"
       }
     }
   }

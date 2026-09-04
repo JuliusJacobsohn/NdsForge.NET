@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "PhoenixWright-AceAttorney - Trials and Tribulations - CAPCOM [YG3E] [USA - English].nds",
+    "length": 33554432,
+    "sha256": "488f3321e71d5157085d4487ce2d951527f8297bf1d09f399ef87143ccaac646",
+    "headerTitle": "PHOENIX 3",
+    "gameCode": "YG3E",
+    "makerCode": "08",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "PhoenixWright:AceAttorney - Trials and Tribulations - CAPCOM",
+    "bannerTitles": {
+      "Japanese": "PhoenixWright:AceAttorney\nTrials and Tribulations\nCAPCOM",
+      "English": "PhoenixWright:AceAttorney\nTrials and Tribulations\nCAPCOM",
+      "French": "PhoenixWright:AceAttorney\nTrials and Tribulations\nCAPCOM",
+      "German": "PhoenixWright:AceAttorney\nTrials and Tribulations\nCAPCOM",
+      "Italian": "PhoenixWright:AceAttorney\nTrials and Tribulations\nCAPCOM",
+      "Spanish": "PhoenixWright:AceAttorney\nTrials and Tribulations\nCAPCOM"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 165552,
+          "sha256": "0540BD6FBA14F886C542B3BFA15B1C0391B23DD4EAA3688367E1813CBC021139"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 758372,
+          "sha256": "DF1A9987BAA2BE08A0FC30E2E8576FDD333DEFC0CEE5A1656259663F05AD6F2E"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "44C9C74A9FE3A6A02F7193CB46B24E6FE800FB48F3E6528DF2CC5C51B160CD43"
+        },
+        {
+          "path": "data/data.bin",
+          "length": 17285628,
+          "sha256": "2B9BC52288300C1C1FA9140FD1D2D259FDB428CDEC1BF4983D59C9F12C6CE304"
+        },
+        {
+          "path": "data/english/dtb.bin",
+          "length": 52754,
+          "sha256": "EBFF7ACB57D01BB60FD7AF8510AFDD59D79BD6415495FFCA14C9A5FD6418BE35"
+        },
+        {
+          "path": "data/english/hmm.bin",
+          "length": 2804,
+          "sha256": "B16948A697E405E69C8ACCF08E761C49D04F6F911DA523FDF462B61F0CB8C8FC"
+        },
+        {
+          "path": "data/english/mdc.bin",
+          "length": 12056,
+          "sha256": "280CDCF067C68A248987E85FD5A473E61FCBFF467D63299BCF68596F0DC89AC0"
+        },
+        {
+          "path": "data/english/phn.bin",
+          "length": 75246,
+          "sha256": "3D835DDE3876CDE12D1D7545F1758DBDA21C517D950A185429A30532F0A365F0"
+        },
+        {
+          "path": "data/english/str.bin",
+          "length": 100,
+          "sha256": "0E16D7744078CB7053960C2CA9C365E79454014D2833C9607CC5E175276DB732"
+        },
+        {
+          "path": "data/english/tree.bin",
+          "length": 2670,
+          "sha256": "B4367BDD898E905967414B758459FEB66667A38A5E9AB3B67AF71A260D19631E"
+        },
+        {
+          "path": "data/japanese/dtb.bin",
+          "length": 52746,
+          "sha256": "22A20BB4546FB119B596B22B2C3C470D9508038488F0E0B5C9C0808926D030DF"
+        },
+        {
+          "path": "data/japanese/hmm.bin",
+          "length": 1852,
+          "sha256": "1C7DEF4E475FE2D6C6E9A3BAF13AA0F96C9E7B81BA4C2612C7CDC2AD1862D31A"
+        },
+        {
+          "path": "data/japanese/mdc.bin",
+          "length": 12056,
+          "sha256": "E97380FA71D2505118DC2CC9AC439FE39FE05F7BDE7774E9FE589421C3AFBF35"
+        },
+        {
+          "path": "data/japanese/phn.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "data/japanese/str.bin",
+          "length": 100,
+          "sha256": "F1BE9AE8011BED75D64A2254C6356E8BA3FF4DAAF23B091F4BA3AA874557590C"
+        },
+        {
+          "path": "data/japanese/tree.bin",
+          "length": 2379,
+          "sha256": "BA389498A7D70332384886AAD96A42EBC2360DDBB7E86E7BFE888E45D578134B"
+        },
+        {
+          "path": "data/mes_all.bin",
+          "length": 2605032,
+          "sha256": "0C0B6F84516E95CA53B531959FF37CE19639CCD0D51E824623D6B8A88FEF677D"
+        },
+        {
+          "path": "data/sound_data.sdat",
+          "length": 4107328,
+          "sha256": "F42DA3A6B8F450A6CD3D3C9BF801077E0CEDB36B354C6C46B57B8BB3F6FBCC92"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "688F6676030C2489B156288E2CFC22E45D472D17140015D8655EDF35278952BE"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 25161036,
+          "sha256": "EAC668B2F16151B44F5C59C459F57BD2BB5E0603609327D66556D7AFF48112C8"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 33554432,
+          "sha256": "D0B61B8F6230C10525D2CD7513649ECFB83CCC13BC6EE63105B100641F59A750"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 33554432,
+          "sha256": "E21FCE1B20BF6B831C83EC5088311BC7F4CF0C937B905919C13668B461035054"
+        }
+      ]
+    }
+  ]
+}

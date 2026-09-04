@@ -48,7 +48,15 @@ public sealed class PrivateCorpusExtractionTests
             .OrderBy(static artifact => artifact.Path, StringComparer.Ordinal)
             .ToArray();
         Assert.Equal(expected.Length, expected.Select(static artifact => artifact.Path).Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(expected.Select(static artifact => artifact.Path), actual.Keys.Order(StringComparer.Ordinal));
+        if (extraction.ExitCode == 0)
+        {
+            Assert.Equal(expected.Select(static artifact => artifact.Path), actual.Keys.Order(StringComparer.Ordinal));
+        }
+        else
+        {
+            Assert.NotEmpty(expected);
+            Assert.True(actual.Count > expected.Length);
+        }
         foreach (ExpectedArtifact artifact in expected)
         {
             Assert.True(actual.TryGetValue(artifact.Path, out ExpectedArtifact? observed), $"NdsForge did not map {artifact.Path}.");

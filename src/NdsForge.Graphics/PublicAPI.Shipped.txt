@@ -1,0 +1,356 @@
+#nullable enable
+NdsForge.Graphics.Animations.NanrAnimationBank
+NdsForge.Graphics.Animations.NanrAnimationBank.BankConstant.get -> uint
+NdsForge.Graphics.Animations.NanrAnimationBank.DeclaredFrameCount.get -> ushort
+NdsForge.Graphics.Animations.NanrAnimationBank.FrameDescriptorOffset.get -> uint
+NdsForge.Graphics.Animations.NanrAnimationBank.FramePayloadOffset.get -> uint
+NdsForge.Graphics.Animations.NanrAnimationBank.LabelData.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Animations.NanrAnimationBank.Sequences.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Animations.NanrSequence!>!
+NdsForge.Graphics.Animations.NanrAnimationBank.UserExtendedInfo.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Animations.NanrAnimationBank.Version.get -> ushort
+NdsForge.Graphics.Animations.NanrAnimationBank.WritePreserved() -> byte[]!
+NdsForge.Graphics.Animations.NanrFrame
+NdsForge.Graphics.Animations.NanrFrame.CellIndex.get -> ushort
+NdsForge.Graphics.Animations.NanrFrame.DataOffset.get -> uint
+NdsForge.Graphics.Animations.NanrFrame.DescriptorFlags.get -> ushort
+NdsForge.Graphics.Animations.NanrFrame.Duration.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence
+NdsForge.Graphics.Animations.NanrSequence.DataType.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence.FrameOffset.get -> uint
+NdsForge.Graphics.Animations.NanrSequence.Frames.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Animations.NanrFrame!>!
+NdsForge.Graphics.Animations.NanrSequence.LoopStartFrame.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence.PlaybackMode.get -> ushort
+NdsForge.Graphics.Animations.NanrSequence.SequenceFlags.get -> ushort
+NdsForge.Graphics.Colors.NitroColor555
+NdsForge.Graphics.Colors.NitroColor555.Equals(NdsForge.Graphics.Colors.NitroColor555 other) -> bool
+NdsForge.Graphics.Colors.NitroColor555.NitroColor555() -> void
+NdsForge.Graphics.Colors.NitroColor555.NitroColor555(ushort packedValue) -> void
+NdsForge.Graphics.Colors.NitroColor555.PackedValue.get -> ushort
+NdsForge.Graphics.Colors.NitroColor555.ToRgba32() -> NdsForge.Graphics.Colors.RgbaColor32
+NdsForge.Graphics.Colors.RgbaColor32
+NdsForge.Graphics.Colors.RgbaColor32.Alpha.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.Blue.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.Equals(NdsForge.Graphics.Colors.RgbaColor32 other) -> bool
+NdsForge.Graphics.Colors.RgbaColor32.Green.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.Red.get -> byte
+NdsForge.Graphics.Colors.RgbaColor32.RgbaColor32() -> void
+NdsForge.Graphics.Colors.RgbaColor32.RgbaColor32(byte red, byte green, byte blue, byte alpha = 255) -> void
+NdsForge.Graphics.Fonts.NftrCharacterMap
+NdsForge.Graphics.Fonts.NftrCharacterMap.FirstCharacter.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMap.LastCharacter.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMap.Mappings.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Fonts.NftrCharacterMapping>!
+NdsForge.Graphics.Fonts.NftrCharacterMap.Method.get -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod.Direct = 0 -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod.Scan = 2 -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapMethod.Table = 1 -> NdsForge.Graphics.Fonts.NftrCharacterMapMethod
+NdsForge.Graphics.Fonts.NftrCharacterMapping
+NdsForge.Graphics.Fonts.NftrCharacterMapping.CharacterCode.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMapping.CharacterCode.init -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.Deconstruct(out ushort CharacterCode, out ushort GlyphIndex) -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.Equals(NdsForge.Graphics.Fonts.NftrCharacterMapping other) -> bool
+NdsForge.Graphics.Fonts.NftrCharacterMapping.GlyphIndex.get -> ushort
+NdsForge.Graphics.Fonts.NftrCharacterMapping.GlyphIndex.init -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.NftrCharacterMapping() -> void
+NdsForge.Graphics.Fonts.NftrCharacterMapping.NftrCharacterMapping(ushort CharacterCode, ushort GlyphIndex) -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingX.get -> sbyte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingX.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingY.get -> sbyte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.BearingY.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.Deconstruct(out byte FontHeight, out byte FontWidth, out sbyte BearingY, out sbyte BearingX) -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.Equals(NdsForge.Graphics.Fonts.NftrExtendedMetrics other) -> bool
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontHeight.get -> byte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontHeight.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.FontWidth.init -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.NftrExtendedMetrics() -> void
+NdsForge.Graphics.Fonts.NftrExtendedMetrics.NftrExtendedMetrics(byte FontHeight, byte FontWidth, sbyte BearingY, sbyte BearingX) -> void
+NdsForge.Graphics.Fonts.NftrFont
+NdsForge.Graphics.Fonts.NftrFont.BitsPerPixel.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.CellHeight.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.CellWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.CharacterMaps.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Fonts.NftrCharacterMap!>!
+NdsForge.Graphics.Fonts.NftrFont.CreateBuilder() -> NdsForge.Graphics.Fonts.NftrFontBuilder!
+NdsForge.Graphics.Fonts.NftrFont.DefaultMetrics.get -> NdsForge.Graphics.Fonts.NftrGlyphMetrics
+NdsForge.Graphics.Fonts.NftrFont.Encoding.get -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrFont.ExtendedMetrics.get -> NdsForge.Graphics.Fonts.NftrExtendedMetrics?
+NdsForge.Graphics.Fonts.NftrFont.FallbackGlyphIndex.get -> ushort
+NdsForge.Graphics.Fonts.NftrFont.FontType.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.GlyphDataLength.get -> ushort
+NdsForge.Graphics.Fonts.NftrFont.GlyphFlags.get -> ushort
+NdsForge.Graphics.Fonts.NftrFont.Glyphs.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Fonts.NftrGlyph!>!
+NdsForge.Graphics.Fonts.NftrFont.LineHeight.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.RotationFlags.get -> byte
+NdsForge.Graphics.Fonts.NftrFont.TryGetGlyphIndex(ushort characterCode, out ushort glyphIndex) -> bool
+NdsForge.Graphics.Fonts.NftrFont.Version.get -> ushort
+NdsForge.Graphics.Fonts.NftrFontBuilder
+NdsForge.Graphics.Fonts.NftrFontBuilder.Build(bool preserveSourceLayout = true) -> byte[]!
+NdsForge.Graphics.Fonts.NftrFontBuilder.ReplaceGlyphMetrics(int glyphIndex, NdsForge.Graphics.Fonts.NftrGlyphMetrics metrics) -> NdsForge.Graphics.Fonts.NftrFontBuilder!
+NdsForge.Graphics.Fonts.NftrFontBuilder.ReplaceGlyphPixels(int glyphIndex, System.Collections.Generic.IReadOnlyList<byte>! pixels) -> NdsForge.Graphics.Fonts.NftrFontBuilder!
+NdsForge.Graphics.Fonts.NftrGlyph
+NdsForge.Graphics.Fonts.NftrGlyph.Index.get -> int
+NdsForge.Graphics.Fonts.NftrGlyph.Metrics.get -> NdsForge.Graphics.Fonts.NftrGlyphMetrics
+NdsForge.Graphics.Fonts.NftrGlyph.StoredPixels.get -> System.Collections.Generic.IReadOnlyList<byte>!
+NdsForge.Graphics.Fonts.NftrGlyphMetrics
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.AdvanceWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.AdvanceWidth.init -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.BearingX.get -> sbyte
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.BearingX.init -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.Deconstruct(out sbyte BearingX, out byte GlyphWidth, out byte AdvanceWidth) -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.Equals(NdsForge.Graphics.Fonts.NftrGlyphMetrics other) -> bool
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.GlyphWidth.get -> byte
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.GlyphWidth.init -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.NftrGlyphMetrics() -> void
+NdsForge.Graphics.Fonts.NftrGlyphMetrics.NftrGlyphMetrics(sbyte BearingX, byte GlyphWidth, byte AdvanceWidth) -> void
+NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.ShiftJis = 2 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.Utf16 = 1 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.Utf8 = 0 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Fonts.NftrTextEncoding.Windows1252 = 3 -> NdsForge.Graphics.Fonts.NftrTextEncoding
+NdsForge.Graphics.Images.IndexedConversionOptions
+NdsForge.Graphics.Images.IndexedConversionOptions.<Clone>$() -> NdsForge.Graphics.Images.IndexedConversionOptions!
+NdsForge.Graphics.Images.IndexedConversionOptions.AlphaThreshold.get -> byte
+NdsForge.Graphics.Images.IndexedConversionOptions.AlphaThreshold.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.ColorReduction.get -> NdsForge.Graphics.Images.NitroColorReduction
+NdsForge.Graphics.Images.IndexedConversionOptions.ColorReduction.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.Equals(NdsForge.Graphics.Images.IndexedConversionOptions? other) -> bool
+NdsForge.Graphics.Images.IndexedConversionOptions.IndexedConversionOptions() -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumColors.get -> int
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumColors.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumPixels.get -> int
+NdsForge.Graphics.Images.IndexedConversionOptions.MaximumPixels.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.PaletteOverflow.get -> NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.IndexedConversionOptions.PaletteOverflow.init -> void
+NdsForge.Graphics.Images.IndexedConversionOptions.ReserveTransparentIndex.get -> bool
+NdsForge.Graphics.Images.IndexedConversionOptions.ReserveTransparentIndex.init -> void
+NdsForge.Graphics.Images.IndexedImage4
+NdsForge.Graphics.Images.IndexedImage4.ColorCount.get -> int
+NdsForge.Graphics.Images.IndexedImage4.EncodePalette() -> byte[]!
+NdsForge.Graphics.Images.IndexedImage4.EncodeTiles() -> byte[]!
+NdsForge.Graphics.Images.IndexedImage4.HasTransparentIndex.get -> bool
+NdsForge.Graphics.Images.IndexedImage4.Height.get -> int
+NdsForge.Graphics.Images.IndexedImage4.Palette.get -> System.ReadOnlyMemory<ushort>
+NdsForge.Graphics.Images.IndexedImage4.PaletteIndices.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Images.IndexedImage4.Render() -> NdsForge.Graphics.Images.RgbaImage32!
+NdsForge.Graphics.Images.IndexedImage4.WasColorReduced.get -> bool
+NdsForge.Graphics.Images.IndexedImage4.Width.get -> int
+NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.IndexedPaletteOverflow.Reduce = 0 -> NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.IndexedPaletteOverflow.Reject = 1 -> NdsForge.Graphics.Images.IndexedPaletteOverflow
+NdsForge.Graphics.Images.NitroColorReduction
+NdsForge.Graphics.Images.NitroColorReduction.DiscardLowBits = 0 -> NdsForge.Graphics.Images.NitroColorReduction
+NdsForge.Graphics.Images.NitroColorReduction.Nearest = 1 -> NdsForge.Graphics.Images.NitroColorReduction
+NdsForge.Graphics.Images.RgbaImage32
+NdsForge.Graphics.Images.RgbaImage32.GetPixel(int x, int y) -> NdsForge.Graphics.Colors.RgbaColor32
+NdsForge.Graphics.Images.RgbaImage32.Height.get -> int
+NdsForge.Graphics.Images.RgbaImage32.Pixels.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Colors.RgbaColor32>!
+NdsForge.Graphics.Images.RgbaImage32.RgbaImage32(int width, int height, System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Colors.RgbaColor32>! pixels) -> void
+NdsForge.Graphics.Images.RgbaImage32.Width.get -> int
+NdsForge.Graphics.Maps.NitroBackgroundKind
+NdsForge.Graphics.Maps.NitroBackgroundKind.Affine = 1 -> NdsForge.Graphics.Maps.NitroBackgroundKind
+NdsForge.Graphics.Maps.NitroBackgroundKind.Extended = 2 -> NdsForge.Graphics.Maps.NitroBackgroundKind
+NdsForge.Graphics.Maps.NitroBackgroundKind.Text = 0 -> NdsForge.Graphics.Maps.NitroBackgroundKind
+NdsForge.Graphics.Maps.NitroPaletteSelection
+NdsForge.Graphics.Maps.NitroPaletteSelection.Extended256 = 2 -> NdsForge.Graphics.Maps.NitroPaletteSelection
+NdsForge.Graphics.Maps.NitroPaletteSelection.Single256 = 1 -> NdsForge.Graphics.Maps.NitroPaletteSelection
+NdsForge.Graphics.Maps.NitroPaletteSelection.SixteenBySixteen = 0 -> NdsForge.Graphics.Maps.NitroPaletteSelection
+NdsForge.Graphics.Maps.NscrMapEntry
+NdsForge.Graphics.Maps.NscrMapEntry.Equals(NdsForge.Graphics.Maps.NscrMapEntry other) -> bool
+NdsForge.Graphics.Maps.NscrMapEntry.HorizontalFlip.get -> bool
+NdsForge.Graphics.Maps.NscrMapEntry.NscrMapEntry() -> void
+NdsForge.Graphics.Maps.NscrMapEntry.NscrMapEntry(ushort tileIndex, bool horizontalFlip = false, bool verticalFlip = false, byte paletteIndex = 0) -> void
+NdsForge.Graphics.Maps.NscrMapEntry.PackedValue.get -> ushort
+NdsForge.Graphics.Maps.NscrMapEntry.PaletteIndex.get -> byte
+NdsForge.Graphics.Maps.NscrMapEntry.TileIndex.get -> ushort
+NdsForge.Graphics.Maps.NscrMapEntry.VerticalFlip.get -> bool
+NdsForge.Graphics.Maps.NscrScreenMap
+NdsForge.Graphics.Maps.NscrScreenMap.BackgroundKind.get -> NdsForge.Graphics.Maps.NitroBackgroundKind
+NdsForge.Graphics.Maps.NscrScreenMap.CreateBuilder() -> NdsForge.Graphics.Maps.NscrScreenMapBuilder!
+NdsForge.Graphics.Maps.NscrScreenMap.DeclaredDataLength.get -> int
+NdsForge.Graphics.Maps.NscrScreenMap.Entries.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Maps.NscrMapEntry>!
+NdsForge.Graphics.Maps.NscrScreenMap.Height.get -> int
+NdsForge.Graphics.Maps.NscrScreenMap.PaletteSelection.get -> NdsForge.Graphics.Maps.NitroPaletteSelection
+NdsForge.Graphics.Maps.NscrScreenMap.Render(NdsForge.Graphics.Tiles.NcgrCharacterGraphics! characters, NdsForge.Graphics.Palettes.NclrPalette! palette, bool transparentIndexZero = true) -> NdsForge.Graphics.Images.RgbaImage32!
+NdsForge.Graphics.Maps.NscrScreenMap.TileColumns.get -> int
+NdsForge.Graphics.Maps.NscrScreenMap.TileRows.get -> int
+NdsForge.Graphics.Maps.NscrScreenMap.Version.get -> ushort
+NdsForge.Graphics.Maps.NscrScreenMap.Width.get -> int
+NdsForge.Graphics.Maps.NscrScreenMapBuilder
+NdsForge.Graphics.Maps.NscrScreenMapBuilder.Build(bool preserveSourceLayout = true) -> byte[]!
+NdsForge.Graphics.Maps.NscrScreenMapBuilder.ReplaceEntry(int x, int y, NdsForge.Graphics.Maps.NscrMapEntry entry) -> NdsForge.Graphics.Maps.NscrScreenMapBuilder!
+NdsForge.Graphics.Palettes.NclrPalette
+NdsForge.Graphics.Palettes.NclrPalette.Colors.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Colors.NitroColor555>!
+NdsForge.Graphics.Palettes.NclrPalette.CreateBuilder() -> NdsForge.Graphics.Palettes.NclrPaletteBuilder!
+NdsForge.Graphics.Palettes.NclrPalette.DeclaredColorDataLength.get -> uint
+NdsForge.Graphics.Palettes.NclrPalette.Depth.get -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NclrPalette.IsExtendedPalette.get -> bool
+NdsForge.Graphics.Palettes.NclrPalette.PaletteMapping.get -> System.Collections.Generic.IReadOnlyList<ushort>?
+NdsForge.Graphics.Palettes.NclrPalette.Version.get -> ushort
+NdsForge.Graphics.Palettes.NclrPaletteBuilder
+NdsForge.Graphics.Palettes.NclrPaletteBuilder.Build(bool preserveSourceLayout = true) -> byte[]!
+NdsForge.Graphics.Palettes.NclrPaletteBuilder.ReplaceColor(int index, NdsForge.Graphics.Colors.NitroColor555 color) -> NdsForge.Graphics.Palettes.NclrPaletteBuilder!
+NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NitroColorDepth.Indexed4Bpp = 3 -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NitroColorDepth.Indexed8Bpp = 4 -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Palettes.NitroColorDepth.None = 0 -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Sprites.NcerCell
+NdsForge.Graphics.Sprites.NcerCell.Attributes.get -> ushort
+NdsForge.Graphics.Sprites.NcerCell.Bounds.get -> NdsForge.Graphics.Sprites.NcerCellBounds?
+NdsForge.Graphics.Sprites.NcerCell.DeclaredSquareDimension.get -> int
+NdsForge.Graphics.Sprites.NcerCell.ExtendedAttribute.get -> uint?
+NdsForge.Graphics.Sprites.NcerCell.IsSquare.get -> bool
+NdsForge.Graphics.Sprites.NcerCell.Objects.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Sprites.NitroObjectEntry>!
+NdsForge.Graphics.Sprites.NcerCellBank
+NdsForge.Graphics.Sprites.NcerCellBank.Attributes.get -> ushort
+NdsForge.Graphics.Sprites.NcerCellBank.Cells.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Sprites.NcerCell!>!
+NdsForge.Graphics.Sprites.NcerCellBank.CreateBuilder() -> NdsForge.Graphics.Sprites.NcerCellBankBuilder!
+NdsForge.Graphics.Sprites.NcerCellBank.HasExplicitBounds.get -> bool
+NdsForge.Graphics.Sprites.NcerCellBank.LabelData.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Sprites.NcerCellBank.Mapping.get -> NdsForge.Graphics.Sprites.NitroSpriteTileMapping
+NdsForge.Graphics.Sprites.NcerCellBank.UserExtendedInfo.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Sprites.NcerCellBank.Version.get -> ushort
+NdsForge.Graphics.Sprites.NcerCellBankBuilder
+NdsForge.Graphics.Sprites.NcerCellBankBuilder.Build(bool preserveSourceLayout = true) -> byte[]!
+NdsForge.Graphics.Sprites.NcerCellBankBuilder.ReplaceObject(int cellIndex, int objectIndex, NdsForge.Graphics.Sprites.NitroObjectEntry value) -> NdsForge.Graphics.Sprites.NcerCellBankBuilder!
+NdsForge.Graphics.Sprites.NcerCellBounds
+NdsForge.Graphics.Sprites.NcerCellBounds.Equals(NdsForge.Graphics.Sprites.NcerCellBounds other) -> bool
+NdsForge.Graphics.Sprites.NcerCellBounds.Height.get -> int
+NdsForge.Graphics.Sprites.NcerCellBounds.MaximumX.get -> short
+NdsForge.Graphics.Sprites.NcerCellBounds.MaximumY.get -> short
+NdsForge.Graphics.Sprites.NcerCellBounds.MinimumX.get -> short
+NdsForge.Graphics.Sprites.NcerCellBounds.MinimumY.get -> short
+NdsForge.Graphics.Sprites.NcerCellBounds.NcerCellBounds() -> void
+NdsForge.Graphics.Sprites.NcerCellBounds.NcerCellBounds(short minimumX, short minimumY, short maximumX, short maximumY) -> void
+NdsForge.Graphics.Sprites.NcerCellBounds.Width.get -> int
+NdsForge.Graphics.Sprites.NitroObjectEntry
+NdsForge.Graphics.Sprites.NitroObjectEntry.AffineGroup.get -> byte
+NdsForge.Graphics.Sprites.NitroObjectEntry.Attribute0.get -> ushort
+NdsForge.Graphics.Sprites.NitroObjectEntry.Attribute1.get -> ushort
+NdsForge.Graphics.Sprites.NitroObjectEntry.Attribute2.get -> ushort
+NdsForge.Graphics.Sprites.NitroObjectEntry.CharacterName.get -> ushort
+NdsForge.Graphics.Sprites.NitroObjectEntry.Depth.get -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Sprites.NitroObjectEntry.Equals(NdsForge.Graphics.Sprites.NitroObjectEntry other) -> bool
+NdsForge.Graphics.Sprites.NitroObjectEntry.Height.get -> int
+NdsForge.Graphics.Sprites.NitroObjectEntry.HorizontalFlip.get -> bool
+NdsForge.Graphics.Sprites.NitroObjectEntry.IsAffine.get -> bool
+NdsForge.Graphics.Sprites.NitroObjectEntry.IsDisabled.get -> bool
+NdsForge.Graphics.Sprites.NitroObjectEntry.IsDoubleSize.get -> bool
+NdsForge.Graphics.Sprites.NitroObjectEntry.IsMosaic.get -> bool
+NdsForge.Graphics.Sprites.NitroObjectEntry.Mode.get -> NdsForge.Graphics.Sprites.NitroObjectMode
+NdsForge.Graphics.Sprites.NitroObjectEntry.NitroObjectEntry() -> void
+NdsForge.Graphics.Sprites.NitroObjectEntry.NitroObjectEntry(ushort attribute0, ushort attribute1, ushort attribute2) -> void
+NdsForge.Graphics.Sprites.NitroObjectEntry.PaletteIndex.get -> byte
+NdsForge.Graphics.Sprites.NitroObjectEntry.Priority.get -> byte
+NdsForge.Graphics.Sprites.NitroObjectEntry.VerticalFlip.get -> bool
+NdsForge.Graphics.Sprites.NitroObjectEntry.Width.get -> int
+NdsForge.Graphics.Sprites.NitroObjectEntry.X.get -> int
+NdsForge.Graphics.Sprites.NitroObjectEntry.Y.get -> int
+NdsForge.Graphics.Sprites.NitroObjectMode
+NdsForge.Graphics.Sprites.NitroObjectMode.Bitmap = 3 -> NdsForge.Graphics.Sprites.NitroObjectMode
+NdsForge.Graphics.Sprites.NitroObjectMode.Normal = 0 -> NdsForge.Graphics.Sprites.NitroObjectMode
+NdsForge.Graphics.Sprites.NitroObjectMode.SemiTransparent = 1 -> NdsForge.Graphics.Sprites.NitroObjectMode
+NdsForge.Graphics.Sprites.NitroObjectMode.Window = 2 -> NdsForge.Graphics.Sprites.NitroObjectMode
+NdsForge.Graphics.Sprites.NitroSpriteTileMapping
+NdsForge.Graphics.Sprites.NitroSpriteTileMapping.OneDimensional128 = 2 -> NdsForge.Graphics.Sprites.NitroSpriteTileMapping
+NdsForge.Graphics.Sprites.NitroSpriteTileMapping.OneDimensional256 = 3 -> NdsForge.Graphics.Sprites.NitroSpriteTileMapping
+NdsForge.Graphics.Sprites.NitroSpriteTileMapping.OneDimensional32 = 0 -> NdsForge.Graphics.Sprites.NitroSpriteTileMapping
+NdsForge.Graphics.Sprites.NitroSpriteTileMapping.OneDimensional64 = 1 -> NdsForge.Graphics.Sprites.NitroSpriteTileMapping
+NdsForge.Graphics.Sprites.NitroSpriteTileMapping.TwoDimensional = 4 -> NdsForge.Graphics.Sprites.NitroSpriteTileMapping
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.CreateBuilder() -> NdsForge.Graphics.Tiles.NcgrCharacterGraphicsBuilder!
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Depth.get -> NdsForge.Graphics.Palettes.NitroColorDepth
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.GetTilePixel(int tileIndex, int x, int y) -> byte
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.HasUnspecifiedDimensions.get -> bool
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Height.get -> int
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.IsTileOrdered.get -> bool
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Mapping.get -> NdsForge.Graphics.Tiles.NitroTileMapping
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Pixels.get -> System.Collections.Generic.IReadOnlyList<byte>!
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.SourceRegion.get -> NdsForge.Graphics.Tiles.NcgrSourceRegion?
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.StorageFlags.get -> uint
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.StoredHeightInTiles.get -> ushort
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.StoredWidthInTiles.get -> ushort
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.UsesVramTransfer.get -> bool
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Version.get -> ushort
+NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Width.get -> int
+NdsForge.Graphics.Tiles.NcgrCharacterGraphicsBuilder
+NdsForge.Graphics.Tiles.NcgrCharacterGraphicsBuilder.Build(bool preserveSourceLayout = true) -> byte[]!
+NdsForge.Graphics.Tiles.NcgrCharacterGraphicsBuilder.ReplacePixel(int x, int y, byte colorIndex) -> NdsForge.Graphics.Tiles.NcgrCharacterGraphicsBuilder!
+NdsForge.Graphics.Tiles.NcgrSourceRegion
+NdsForge.Graphics.Tiles.NcgrSourceRegion.Equals(NdsForge.Graphics.Tiles.NcgrSourceRegion other) -> bool
+NdsForge.Graphics.Tiles.NcgrSourceRegion.Height.get -> ushort
+NdsForge.Graphics.Tiles.NcgrSourceRegion.NcgrSourceRegion() -> void
+NdsForge.Graphics.Tiles.NcgrSourceRegion.NcgrSourceRegion(ushort x, ushort y, ushort width, ushort height) -> void
+NdsForge.Graphics.Tiles.NcgrSourceRegion.Width.get -> ushort
+NdsForge.Graphics.Tiles.NcgrSourceRegion.X.get -> ushort
+NdsForge.Graphics.Tiles.NcgrSourceRegion.Y.get -> ushort
+NdsForge.Graphics.Tiles.NitroTileMapping
+NdsForge.Graphics.Tiles.NitroTileMapping.OneDimensional128K = 2097168 -> NdsForge.Graphics.Tiles.NitroTileMapping
+NdsForge.Graphics.Tiles.NitroTileMapping.OneDimensional256K = 3145744 -> NdsForge.Graphics.Tiles.NitroTileMapping
+NdsForge.Graphics.Tiles.NitroTileMapping.OneDimensional32K = 16 -> NdsForge.Graphics.Tiles.NitroTileMapping
+NdsForge.Graphics.Tiles.NitroTileMapping.OneDimensional64K = 1048592 -> NdsForge.Graphics.Tiles.NitroTileMapping
+NdsForge.Graphics.Tiles.NitroTileMapping.TwoDimensional = 0 -> NdsForge.Graphics.Tiles.NitroTileMapping
+override NdsForge.Graphics.Colors.NitroColor555.GetHashCode() -> int
+override NdsForge.Graphics.Colors.RgbaColor32.GetHashCode() -> int
+override NdsForge.Graphics.Fonts.NftrCharacterMapping.GetHashCode() -> int
+override NdsForge.Graphics.Fonts.NftrExtendedMetrics.GetHashCode() -> int
+override NdsForge.Graphics.Fonts.NftrGlyphMetrics.GetHashCode() -> int
+override NdsForge.Graphics.Images.IndexedConversionOptions.Equals(object? obj) -> bool
+override NdsForge.Graphics.Images.IndexedConversionOptions.GetHashCode() -> int
+override NdsForge.Graphics.Images.IndexedConversionOptions.ToString() -> string!
+override NdsForge.Graphics.Maps.NscrMapEntry.GetHashCode() -> int
+override NdsForge.Graphics.Sprites.NcerCellBounds.GetHashCode() -> int
+override NdsForge.Graphics.Sprites.NitroObjectEntry.GetHashCode() -> int
+override NdsForge.Graphics.Tiles.NcgrSourceRegion.GetHashCode() -> int
+static NdsForge.Graphics.Animations.NanrAnimationBank.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Animations.NanrAnimationBank!
+static NdsForge.Graphics.Colors.NitroColor555.FromRgba32(NdsForge.Graphics.Colors.RgbaColor32 color, bool highBit = false) -> NdsForge.Graphics.Colors.NitroColor555
+static NdsForge.Graphics.Colors.NitroColor555.operator !=(NdsForge.Graphics.Colors.NitroColor555 left, NdsForge.Graphics.Colors.NitroColor555 right) -> bool
+static NdsForge.Graphics.Colors.NitroColor555.operator ==(NdsForge.Graphics.Colors.NitroColor555 left, NdsForge.Graphics.Colors.NitroColor555 right) -> bool
+static NdsForge.Graphics.Colors.RgbaColor32.operator !=(NdsForge.Graphics.Colors.RgbaColor32 left, NdsForge.Graphics.Colors.RgbaColor32 right) -> bool
+static NdsForge.Graphics.Colors.RgbaColor32.operator ==(NdsForge.Graphics.Colors.RgbaColor32 left, NdsForge.Graphics.Colors.RgbaColor32 right) -> bool
+static NdsForge.Graphics.Fonts.NftrCharacterMapping.operator !=(NdsForge.Graphics.Fonts.NftrCharacterMapping left, NdsForge.Graphics.Fonts.NftrCharacterMapping right) -> bool
+static NdsForge.Graphics.Fonts.NftrCharacterMapping.operator ==(NdsForge.Graphics.Fonts.NftrCharacterMapping left, NdsForge.Graphics.Fonts.NftrCharacterMapping right) -> bool
+static NdsForge.Graphics.Fonts.NftrExtendedMetrics.operator !=(NdsForge.Graphics.Fonts.NftrExtendedMetrics left, NdsForge.Graphics.Fonts.NftrExtendedMetrics right) -> bool
+static NdsForge.Graphics.Fonts.NftrExtendedMetrics.operator ==(NdsForge.Graphics.Fonts.NftrExtendedMetrics left, NdsForge.Graphics.Fonts.NftrExtendedMetrics right) -> bool
+static NdsForge.Graphics.Fonts.NftrFont.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Fonts.NftrFont!
+static NdsForge.Graphics.Fonts.NftrGlyphMetrics.operator !=(NdsForge.Graphics.Fonts.NftrGlyphMetrics left, NdsForge.Graphics.Fonts.NftrGlyphMetrics right) -> bool
+static NdsForge.Graphics.Fonts.NftrGlyphMetrics.operator ==(NdsForge.Graphics.Fonts.NftrGlyphMetrics left, NdsForge.Graphics.Fonts.NftrGlyphMetrics right) -> bool
+static NdsForge.Graphics.Images.IndexedConversionOptions.operator !=(NdsForge.Graphics.Images.IndexedConversionOptions? left, NdsForge.Graphics.Images.IndexedConversionOptions? right) -> bool
+static NdsForge.Graphics.Images.IndexedConversionOptions.operator ==(NdsForge.Graphics.Images.IndexedConversionOptions? left, NdsForge.Graphics.Images.IndexedConversionOptions? right) -> bool
+static NdsForge.Graphics.Images.IndexedImage4.FromRgba32(int width, int height, System.ReadOnlySpan<NdsForge.Graphics.Colors.RgbaColor32> pixels, NdsForge.Graphics.Images.IndexedConversionOptions? options = null) -> NdsForge.Graphics.Images.IndexedImage4!
+static NdsForge.Graphics.Images.IndexedImage4.MapToPalette(int width, int height, System.ReadOnlySpan<NdsForge.Graphics.Colors.RgbaColor32> pixels, System.ReadOnlySpan<ushort> palette, NdsForge.Graphics.Images.IndexedConversionOptions? options = null) -> NdsForge.Graphics.Images.IndexedImage4!
+static NdsForge.Graphics.Maps.NscrMapEntry.FromPackedValue(ushort value) -> NdsForge.Graphics.Maps.NscrMapEntry
+static NdsForge.Graphics.Maps.NscrMapEntry.operator !=(NdsForge.Graphics.Maps.NscrMapEntry left, NdsForge.Graphics.Maps.NscrMapEntry right) -> bool
+static NdsForge.Graphics.Maps.NscrMapEntry.operator ==(NdsForge.Graphics.Maps.NscrMapEntry left, NdsForge.Graphics.Maps.NscrMapEntry right) -> bool
+static NdsForge.Graphics.Maps.NscrScreenMap.Create(int width, int height, NdsForge.Graphics.Maps.NitroPaletteSelection paletteSelection, NdsForge.Graphics.Maps.NitroBackgroundKind backgroundKind, System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Maps.NscrMapEntry>! entries) -> NdsForge.Graphics.Maps.NscrScreenMap!
+static NdsForge.Graphics.Maps.NscrScreenMap.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Maps.NscrScreenMap!
+static NdsForge.Graphics.Palettes.NclrPalette.Create(NdsForge.Graphics.Palettes.NitroColorDepth depth, System.Collections.Generic.IReadOnlyList<NdsForge.Graphics.Colors.NitroColor555>! colors, bool isExtendedPalette = false, System.Collections.Generic.IReadOnlyList<ushort>? paletteMapping = null) -> NdsForge.Graphics.Palettes.NclrPalette!
+static NdsForge.Graphics.Palettes.NclrPalette.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Palettes.NclrPalette!
+static NdsForge.Graphics.Sprites.NcerCellBank.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Sprites.NcerCellBank!
+static NdsForge.Graphics.Sprites.NcerCellBounds.operator !=(NdsForge.Graphics.Sprites.NcerCellBounds left, NdsForge.Graphics.Sprites.NcerCellBounds right) -> bool
+static NdsForge.Graphics.Sprites.NcerCellBounds.operator ==(NdsForge.Graphics.Sprites.NcerCellBounds left, NdsForge.Graphics.Sprites.NcerCellBounds right) -> bool
+static NdsForge.Graphics.Sprites.NitroObjectEntry.Create(int x, int y, int width, int height, ushort characterName, NdsForge.Graphics.Palettes.NitroColorDepth depth, byte paletteIndex = 0, byte priority = 0, bool horizontalFlip = false, bool verticalFlip = false, NdsForge.Graphics.Sprites.NitroObjectMode mode = NdsForge.Graphics.Sprites.NitroObjectMode.Normal, bool mosaic = false) -> NdsForge.Graphics.Sprites.NitroObjectEntry
+static NdsForge.Graphics.Sprites.NitroObjectEntry.operator !=(NdsForge.Graphics.Sprites.NitroObjectEntry left, NdsForge.Graphics.Sprites.NitroObjectEntry right) -> bool
+static NdsForge.Graphics.Sprites.NitroObjectEntry.operator ==(NdsForge.Graphics.Sprites.NitroObjectEntry left, NdsForge.Graphics.Sprites.NitroObjectEntry right) -> bool
+static NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Create(int width, int height, NdsForge.Graphics.Palettes.NitroColorDepth depth, System.Collections.Generic.IReadOnlyList<byte>! pixels, bool tileOrdered = true, NdsForge.Graphics.Tiles.NitroTileMapping mapping = NdsForge.Graphics.Tiles.NitroTileMapping.TwoDimensional, bool omitDimensions = false) -> NdsForge.Graphics.Tiles.NcgrCharacterGraphics!
+static NdsForge.Graphics.Tiles.NcgrCharacterGraphics.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Tiles.NcgrCharacterGraphics!
+static NdsForge.Graphics.Tiles.NcgrSourceRegion.operator !=(NdsForge.Graphics.Tiles.NcgrSourceRegion left, NdsForge.Graphics.Tiles.NcgrSourceRegion right) -> bool
+static NdsForge.Graphics.Tiles.NcgrSourceRegion.operator ==(NdsForge.Graphics.Tiles.NcgrSourceRegion left, NdsForge.Graphics.Tiles.NcgrSourceRegion right) -> bool
+~override NdsForge.Graphics.Colors.NitroColor555.Equals(object obj) -> bool
+~override NdsForge.Graphics.Colors.NitroColor555.ToString() -> string
+~override NdsForge.Graphics.Colors.RgbaColor32.Equals(object obj) -> bool
+~override NdsForge.Graphics.Colors.RgbaColor32.ToString() -> string
+~override NdsForge.Graphics.Fonts.NftrCharacterMapping.Equals(object obj) -> bool
+~override NdsForge.Graphics.Fonts.NftrCharacterMapping.ToString() -> string
+~override NdsForge.Graphics.Fonts.NftrExtendedMetrics.Equals(object obj) -> bool
+~override NdsForge.Graphics.Fonts.NftrExtendedMetrics.ToString() -> string
+~override NdsForge.Graphics.Fonts.NftrGlyphMetrics.Equals(object obj) -> bool
+~override NdsForge.Graphics.Fonts.NftrGlyphMetrics.ToString() -> string
+~override NdsForge.Graphics.Maps.NscrMapEntry.Equals(object obj) -> bool
+~override NdsForge.Graphics.Maps.NscrMapEntry.ToString() -> string
+~override NdsForge.Graphics.Sprites.NcerCellBounds.Equals(object obj) -> bool
+~override NdsForge.Graphics.Sprites.NcerCellBounds.ToString() -> string
+~override NdsForge.Graphics.Sprites.NitroObjectEntry.Equals(object obj) -> bool
+~override NdsForge.Graphics.Sprites.NitroObjectEntry.ToString() -> string
+~override NdsForge.Graphics.Tiles.NcgrSourceRegion.Equals(object obj) -> bool
+~override NdsForge.Graphics.Tiles.NcgrSourceRegion.ToString() -> string

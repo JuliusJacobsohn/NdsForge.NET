@@ -40,6 +40,9 @@ internal static class NdsImageLayoutPlanner
             ? null
             : Place(ref cursor, builder.Banner.RawData.Length, options.SectionAlignment);
         NdsRegion[] files = PlaceAllocations(ref cursor, content, options, ndstoolProfile);
+        NdsRegion? debugProgram = builder.DebugProgram is null
+            ? null
+            : Place(ref cursor, builder.DebugProgram.Contents.Length, options.SectionAlignment);
         return PlanImageEnd(
             builder,
             content,
@@ -53,6 +56,7 @@ internal static class NdsImageLayoutPlanner
             fat,
             banner,
             files,
+            debugProgram,
             cursor,
             ndstoolProfile);
     }
@@ -92,6 +96,7 @@ internal static class NdsImageLayoutPlanner
     /// <param name="fat">Common allocation table.</param>
     /// <param name="banner">Optional menu metadata.</param>
     /// <param name="files">Final FAT payload Regions.</param>
+    /// <param name="debugProgram">Optional debug executable included in common content.</param>
     /// <param name="commonContentEnd">Exclusive end before any DSi-only data.</param>
     /// <param name="ndstoolProfile">Controls the DS used-size convention.</param>
     /// <returns>The complete DS or DSi Layout.</returns>
@@ -108,27 +113,44 @@ internal static class NdsImageLayoutPlanner
         NdsRegion fat,
         NdsRegion? banner,
         NdsRegion[] files,
+        NdsRegion? debugProgram,
         long commonContentEnd,
         bool ndstoolProfile)
     {
         long cursor = commonContentEnd;
         NdsRegion? arm9i = null;
         NdsRegion? arm7i = null;
+        NdsRegion? twlReserved = null;
         NdsRegion ntrDigest = default;
         NdsRegion twlDigest = default;
         NdsRegion sectorHashTable = default;
         NdsRegion blockHashTable = default;
         long usedSize;
         long physicalSize;
+        int signatureLength = builder.DownloadPlaySignature?.RawData.Length ?? 0;
         if (builder.Kind == NdsImageKind.NintendoDs)
         {
             physicalSize = Align(commonContentEnd, options.FileAlignment);
             usedSize = ndstoolProfile ? physicalSize : commonContentEnd;
+            physicalSize = Align(checked(usedSize + signatureLength), options.FileAlignment);
+        }
+        else if (builder.Carrier == NdsImageCarrier.Cartridge)
+        {
+            NdsDsiCartridgeTail tail = NdsDsiCartridgePlanner.Plan(builder, content, options, arm9.Offset, commonContentEnd);
+            arm9i = tail.Arm9i;
+            arm7i = tail.Arm7i;
+            twlReserved = tail.Reservation;
+            ntrDigest = tail.NtrDigest;
+            twlDigest = tail.TwlDigest;
+            sectorHashTable = tail.SectorTable;
+            blockHashTable = tail.BlockTable;
+            usedSize = tail.UsedSize;
+            physicalSize = tail.PhysicalSize;
         }
         else
         {
             usedSize = Align(commonContentEnd, options.FileAlignment);
-            cursor = usedSize;
+            cursor = checked(usedSize + signatureLength);
             arm9i = Place(ref cursor, content.Arm9iData.Length, alignment: 0x400);
             arm7i = Place(ref cursor, content.Arm7iData.Length, options.SectionAlignment);
             if (builder.DsiMetadata!.Digests is not null)
@@ -162,8 +184,10 @@ internal static class NdsImageLayoutPlanner
             fat,
             banner,
             files,
+            debugProgram,
             arm9i,
             arm7i,
+            twlReserved,
             ntrDigest,
             twlDigest,
             sectorHashTable,

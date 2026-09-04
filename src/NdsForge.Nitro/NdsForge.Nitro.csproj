@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>NdsForge.Nitro</PackageId>
+    <Title>NdsForge.NET Nitro formats</Title>
+    <Description>Dependency-free codecs and container formats shared by Nintendo DS and DSi software.</Description>
+    <Authors>Julius Jacobsohn;NdsForge.NET contributors</Authors>
+    <PackageTags>nintendo-ds;nds;dsi;nitro;compression;narc;bmg;archive;text;audio;adpcm;rom-hacking</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>See CHANGELOG.md for release details and compatibility guidance.</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/JuliusJacobsohn/NdsForge.NET</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/JuliusJacobsohn/NdsForge.NET</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningsAsErrors>$(WarningsAsErrors);CS1591;RS0016;RS0017</WarningsAsErrors>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Shared/BlzEngine.cs" Link="Internal/BlzEngine.cs" />
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+    <None Include="../../assets/branding/ndsforge-icon.png" Pack="true" PackagePath="icon.png" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../CHANGELOG.md" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE" Link="LICENSE.txt" Pack="true" PackagePath="/" />
+    <None Include="../../THIRD_PARTY_NOTICES.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

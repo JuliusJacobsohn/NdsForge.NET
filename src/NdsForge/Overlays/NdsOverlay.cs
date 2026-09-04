@@ -59,6 +59,18 @@ public sealed class NdsOverlay
     /// <summary>Preserves the packed control word's high byte, including compression and authentication-related bits.</summary>
     public byte Flags { get; }
 
+    /// <summary>Reports whether bit zero of the control byte declares BLZ-compressed stored data.</summary>
+    public bool IsCompressed => (Flags & 0x01) != 0;
+
+    /// <summary>Reports whether bit one declares an entry in the ARM9 Download Play authentication table.</summary>
+    public bool IsAuthenticated => (Flags & 0x02) != 0;
+
+    /// <summary>Links this table entry to its decoded Download Play digest when the enclosing table is complete.</summary>
+    public NdsOverlayAuthenticationRecord? AuthenticationRecord { get; internal set; }
+
+    /// <summary>Preserves currently undefined control bits independently from the two standardized flags.</summary>
+    public byte ReservedFlags => (byte)(Flags & 0xFC);
+
     /// <summary>Gets the resolved payload region, or <see langword="null"/> for an invalid file ID.</summary>
     public NdsRegion? Data { get; }
 

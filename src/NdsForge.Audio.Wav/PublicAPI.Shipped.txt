@@ -1,0 +1,153 @@
+#nullable enable
+NdsForge.Audio.Wav.NitroWavAdapter
+NdsForge.Audio.Wav.NitroWavExportOptions
+NdsForge.Audio.Wav.NitroWavExportOptions.<Clone>$() -> NdsForge.Audio.Wav.NitroWavExportOptions!
+NdsForge.Audio.Wav.NitroWavExportOptions.AdpcmClipping.get -> NdsForge.Nitro.Audio.NitroAdpcmClipping
+NdsForge.Audio.Wav.NitroWavExportOptions.AdpcmClipping.init -> void
+NdsForge.Audio.Wav.NitroWavExportOptions.Encoding.get -> NdsForge.Audio.Wav.WavPcmEncoding
+NdsForge.Audio.Wav.NitroWavExportOptions.Encoding.init -> void
+NdsForge.Audio.Wav.NitroWavExportOptions.Equals(NdsForge.Audio.Wav.NitroWavExportOptions? other) -> bool
+NdsForge.Audio.Wav.NitroWavExportOptions.Limits.get -> NdsForge.Audio.Wav.WavReadOptions!
+NdsForge.Audio.Wav.NitroWavExportOptions.Limits.init -> void
+NdsForge.Audio.Wav.NitroWavExportOptions.NitroWavExportOptions() -> void
+NdsForge.Audio.Wav.NitroWavExportOptions.UseExtensibleFormat.get -> bool
+NdsForge.Audio.Wav.NitroWavExportOptions.UseExtensibleFormat.init -> void
+NdsForge.Audio.Wav.WavChunk
+NdsForge.Audio.Wav.WavChunk.Data.get -> System.ReadOnlyMemory<byte>
+NdsForge.Audio.Wav.WavChunk.Equals(NdsForge.Audio.Wav.WavChunk other) -> bool
+NdsForge.Audio.Wav.WavChunk.Identifier.get -> uint
+NdsForge.Audio.Wav.WavChunk.Name.get -> string!
+NdsForge.Audio.Wav.WavChunk.Offset.get -> int
+NdsForge.Audio.Wav.WavChunk.PaddingByte.get -> byte?
+NdsForge.Audio.Wav.WavChunk.WavChunk() -> void
+NdsForge.Audio.Wav.WavFile
+NdsForge.Audio.Wav.WavFile.AverageBytesPerSecond.get -> uint
+NdsForge.Audio.Wav.WavFile.BlockAlignment.get -> ushort
+NdsForge.Audio.Wav.WavFile.ChannelCount.get -> int
+NdsForge.Audio.Wav.WavFile.ChannelMask.get -> uint
+NdsForge.Audio.Wav.WavFile.Chunks.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Audio.Wav.WavChunk>!
+NdsForge.Audio.Wav.WavFile.DeclaredLength.get -> int
+NdsForge.Audio.Wav.WavFile.Decode(int maximumSampleValues = 33554432) -> short[]!
+NdsForge.Audio.Wav.WavFile.EncodedSamples.get -> System.ReadOnlyMemory<byte>
+NdsForge.Audio.Wav.WavFile.Encoding.get -> NdsForge.Audio.Wav.WavPcmEncoding
+NdsForge.Audio.Wav.WavFile.FormatTag.get -> ushort
+NdsForge.Audio.Wav.WavFile.FrameCount.get -> int
+NdsForge.Audio.Wav.WavFile.HasOmittedFinalPadding.get -> bool
+NdsForge.Audio.Wav.WavFile.IsExtensible.get -> bool
+NdsForge.Audio.Wav.WavFile.SampleRate.get -> uint
+NdsForge.Audio.Wav.WavFile.SampleValueCount.get -> int
+NdsForge.Audio.Wav.WavFile.Sampler.get -> NdsForge.Audio.Wav.WavSampler?
+NdsForge.Audio.Wav.WavFile.ValidBitsPerSample.get -> ushort
+NdsForge.Audio.Wav.WavFile.WritePreserved() -> byte[]!
+NdsForge.Audio.Wav.WavLoop
+NdsForge.Audio.Wav.WavLoop.EndFrameExclusive.get -> int
+NdsForge.Audio.Wav.WavLoop.EndFrameExclusive.init -> void
+NdsForge.Audio.Wav.WavLoop.Equals(NdsForge.Audio.Wav.WavLoop other) -> bool
+NdsForge.Audio.Wav.WavLoop.Fraction.get -> uint
+NdsForge.Audio.Wav.WavLoop.Fraction.init -> void
+NdsForge.Audio.Wav.WavLoop.Identifier.get -> uint
+NdsForge.Audio.Wav.WavLoop.Identifier.init -> void
+NdsForge.Audio.Wav.WavLoop.PlayCount.get -> uint
+NdsForge.Audio.Wav.WavLoop.PlayCount.init -> void
+NdsForge.Audio.Wav.WavLoop.StartFrame.get -> int
+NdsForge.Audio.Wav.WavLoop.StartFrame.init -> void
+NdsForge.Audio.Wav.WavLoop.Type.get -> uint
+NdsForge.Audio.Wav.WavLoop.Type.init -> void
+NdsForge.Audio.Wav.WavLoop.WavLoop() -> void
+NdsForge.Audio.Wav.WavLoop.WavLoop(uint identifier, uint type, int startFrame, int endFrameExclusive, uint fraction = 0, uint playCount = 0) -> void
+NdsForge.Audio.Wav.WavLoopImportPolicy
+NdsForge.Audio.Wav.WavLoopImportPolicy.Ignore = 1 -> NdsForge.Audio.Wav.WavLoopImportPolicy
+NdsForge.Audio.Wav.WavLoopImportPolicy.Preserve = 0 -> NdsForge.Audio.Wav.WavLoopImportPolicy
+NdsForge.Audio.Wav.WavPcmEncoding
+NdsForge.Audio.Wav.WavPcmEncoding.Signed16 = 1 -> NdsForge.Audio.Wav.WavPcmEncoding
+NdsForge.Audio.Wav.WavPcmEncoding.Unsigned8 = 0 -> NdsForge.Audio.Wav.WavPcmEncoding
+NdsForge.Audio.Wav.WavReadOptions
+NdsForge.Audio.Wav.WavReadOptions.<Clone>$() -> NdsForge.Audio.Wav.WavReadOptions!
+NdsForge.Audio.Wav.WavReadOptions.AllowMissingFinalPadding.get -> bool
+NdsForge.Audio.Wav.WavReadOptions.AllowMissingFinalPadding.init -> void
+NdsForge.Audio.Wav.WavReadOptions.Equals(NdsForge.Audio.Wav.WavReadOptions? other) -> bool
+NdsForge.Audio.Wav.WavReadOptions.MaximumChunks.get -> int
+NdsForge.Audio.Wav.WavReadOptions.MaximumChunks.init -> void
+NdsForge.Audio.Wav.WavReadOptions.MaximumInputBytes.get -> int
+NdsForge.Audio.Wav.WavReadOptions.MaximumInputBytes.init -> void
+NdsForge.Audio.Wav.WavReadOptions.MaximumLoops.get -> int
+NdsForge.Audio.Wav.WavReadOptions.MaximumLoops.init -> void
+NdsForge.Audio.Wav.WavReadOptions.MaximumSampleValues.get -> int
+NdsForge.Audio.Wav.WavReadOptions.MaximumSampleValues.init -> void
+NdsForge.Audio.Wav.WavReadOptions.WavReadOptions() -> void
+NdsForge.Audio.Wav.WavSampler
+NdsForge.Audio.Wav.WavSampler.Loops.get -> System.Collections.Generic.IReadOnlyList<NdsForge.Audio.Wav.WavLoop>!
+NdsForge.Audio.Wav.WavSampler.Metadata.get -> NdsForge.Audio.Wav.WavSamplerMetadata!
+NdsForge.Audio.Wav.WavSampler.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.Audio.Wav.WavSampler.SamplerData.get -> System.ReadOnlyMemory<byte>
+NdsForge.Audio.Wav.WavSamplerMetadata
+NdsForge.Audio.Wav.WavSamplerMetadata.<Clone>$() -> NdsForge.Audio.Wav.WavSamplerMetadata!
+NdsForge.Audio.Wav.WavSamplerMetadata.Equals(NdsForge.Audio.Wav.WavSamplerMetadata? other) -> bool
+NdsForge.Audio.Wav.WavSamplerMetadata.Manufacturer.get -> uint
+NdsForge.Audio.Wav.WavSamplerMetadata.Manufacturer.init -> void
+NdsForge.Audio.Wav.WavSamplerMetadata.MidiPitchFraction.get -> uint
+NdsForge.Audio.Wav.WavSamplerMetadata.MidiPitchFraction.init -> void
+NdsForge.Audio.Wav.WavSamplerMetadata.MidiUnityNote.get -> uint
+NdsForge.Audio.Wav.WavSamplerMetadata.MidiUnityNote.init -> void
+NdsForge.Audio.Wav.WavSamplerMetadata.Product.get -> uint
+NdsForge.Audio.Wav.WavSamplerMetadata.Product.init -> void
+NdsForge.Audio.Wav.WavSamplerMetadata.SamplePeriodNanoseconds.get -> uint
+NdsForge.Audio.Wav.WavSamplerMetadata.SamplePeriodNanoseconds.init -> void
+NdsForge.Audio.Wav.WavSamplerMetadata.SmpteFormat.get -> uint
+NdsForge.Audio.Wav.WavSamplerMetadata.SmpteFormat.init -> void
+NdsForge.Audio.Wav.WavSamplerMetadata.SmpteOffset.get -> uint
+NdsForge.Audio.Wav.WavSamplerMetadata.SmpteOffset.init -> void
+NdsForge.Audio.Wav.WavSamplerMetadata.WavSamplerMetadata() -> void
+NdsForge.Audio.Wav.WavWriteOptions
+NdsForge.Audio.Wav.WavWriteOptions.<Clone>$() -> NdsForge.Audio.Wav.WavWriteOptions!
+NdsForge.Audio.Wav.WavWriteOptions.ChannelMask.get -> uint?
+NdsForge.Audio.Wav.WavWriteOptions.ChannelMask.init -> void
+NdsForge.Audio.Wav.WavWriteOptions.Encoding.get -> NdsForge.Audio.Wav.WavPcmEncoding
+NdsForge.Audio.Wav.WavWriteOptions.Encoding.init -> void
+NdsForge.Audio.Wav.WavWriteOptions.Equals(NdsForge.Audio.Wav.WavWriteOptions? other) -> bool
+NdsForge.Audio.Wav.WavWriteOptions.Limits.get -> NdsForge.Audio.Wav.WavReadOptions!
+NdsForge.Audio.Wav.WavWriteOptions.Limits.init -> void
+NdsForge.Audio.Wav.WavWriteOptions.Sampler.get -> NdsForge.Audio.Wav.WavSampler?
+NdsForge.Audio.Wav.WavWriteOptions.Sampler.init -> void
+NdsForge.Audio.Wav.WavWriteOptions.UseExtensibleFormat.get -> bool
+NdsForge.Audio.Wav.WavWriteOptions.UseExtensibleFormat.init -> void
+NdsForge.Audio.Wav.WavWriteOptions.WavWriteOptions() -> void
+override NdsForge.Audio.Wav.NitroWavExportOptions.Equals(object? obj) -> bool
+override NdsForge.Audio.Wav.NitroWavExportOptions.GetHashCode() -> int
+override NdsForge.Audio.Wav.NitroWavExportOptions.ToString() -> string!
+override NdsForge.Audio.Wav.WavChunk.GetHashCode() -> int
+override NdsForge.Audio.Wav.WavLoop.GetHashCode() -> int
+override NdsForge.Audio.Wav.WavReadOptions.Equals(object? obj) -> bool
+override NdsForge.Audio.Wav.WavReadOptions.GetHashCode() -> int
+override NdsForge.Audio.Wav.WavReadOptions.ToString() -> string!
+override NdsForge.Audio.Wav.WavSamplerMetadata.Equals(object? obj) -> bool
+override NdsForge.Audio.Wav.WavSamplerMetadata.GetHashCode() -> int
+override NdsForge.Audio.Wav.WavSamplerMetadata.ToString() -> string!
+override NdsForge.Audio.Wav.WavWriteOptions.Equals(object? obj) -> bool
+override NdsForge.Audio.Wav.WavWriteOptions.GetHashCode() -> int
+override NdsForge.Audio.Wav.WavWriteOptions.ToString() -> string!
+static NdsForge.Audio.Wav.NitroWavAdapter.FromStrm(NdsForge.Nitro.Audio.StrmFile! file, NdsForge.Audio.Wav.NitroWavExportOptions? options = null) -> NdsForge.Audio.Wav.WavFile!
+static NdsForge.Audio.Wav.NitroWavAdapter.FromSwav(NdsForge.Nitro.Audio.SwavFile! file, NdsForge.Audio.Wav.NitroWavExportOptions? options = null) -> NdsForge.Audio.Wav.WavFile!
+static NdsForge.Audio.Wav.NitroWavAdapter.FromWave(NdsForge.Nitro.Audio.NitroWave! wave, NdsForge.Audio.Wav.NitroWavExportOptions? options = null) -> NdsForge.Audio.Wav.WavFile!
+static NdsForge.Audio.Wav.NitroWavAdapter.ToStrm(NdsForge.Audio.Wav.WavFile! file, NdsForge.Nitro.Audio.NitroWaveEncoding encoding, NdsForge.Nitro.Audio.StrmCreateOptions? options = null, NdsForge.Audio.Wav.WavLoopImportPolicy loopPolicy = NdsForge.Audio.Wav.WavLoopImportPolicy.Preserve) -> NdsForge.Nitro.Audio.StrmFile!
+static NdsForge.Audio.Wav.NitroWavAdapter.ToSwav(NdsForge.Audio.Wav.WavFile! file, NdsForge.Nitro.Audio.NitroWaveEncoding encoding, NdsForge.Nitro.Audio.NitroWaveCreateOptions? options = null, NdsForge.Audio.Wav.WavLoopImportPolicy loopPolicy = NdsForge.Audio.Wav.WavLoopImportPolicy.Preserve, NdsForge.Nitro.Audio.SwavWriteOptions? writeOptions = null) -> NdsForge.Nitro.Audio.SwavFile!
+static NdsForge.Audio.Wav.NitroWavAdapter.ToWave(NdsForge.Audio.Wav.WavFile! file, NdsForge.Nitro.Audio.NitroWaveEncoding encoding, NdsForge.Nitro.Audio.NitroWaveCreateOptions? options = null, NdsForge.Audio.Wav.WavLoopImportPolicy loopPolicy = NdsForge.Audio.Wav.WavLoopImportPolicy.Preserve) -> NdsForge.Nitro.Audio.NitroWave!
+static NdsForge.Audio.Wav.NitroWavExportOptions.operator !=(NdsForge.Audio.Wav.NitroWavExportOptions? left, NdsForge.Audio.Wav.NitroWavExportOptions? right) -> bool
+static NdsForge.Audio.Wav.NitroWavExportOptions.operator ==(NdsForge.Audio.Wav.NitroWavExportOptions? left, NdsForge.Audio.Wav.NitroWavExportOptions? right) -> bool
+static NdsForge.Audio.Wav.WavChunk.operator !=(NdsForge.Audio.Wav.WavChunk left, NdsForge.Audio.Wav.WavChunk right) -> bool
+static NdsForge.Audio.Wav.WavChunk.operator ==(NdsForge.Audio.Wav.WavChunk left, NdsForge.Audio.Wav.WavChunk right) -> bool
+static NdsForge.Audio.Wav.WavFile.Create(System.ReadOnlySpan<short> samples, int channelCount, uint sampleRate, NdsForge.Audio.Wav.WavWriteOptions? options = null) -> NdsForge.Audio.Wav.WavFile!
+static NdsForge.Audio.Wav.WavFile.Parse(System.ReadOnlySpan<byte> data, NdsForge.Audio.Wav.WavReadOptions? options = null) -> NdsForge.Audio.Wav.WavFile!
+static NdsForge.Audio.Wav.WavLoop.operator !=(NdsForge.Audio.Wav.WavLoop left, NdsForge.Audio.Wav.WavLoop right) -> bool
+static NdsForge.Audio.Wav.WavLoop.operator ==(NdsForge.Audio.Wav.WavLoop left, NdsForge.Audio.Wav.WavLoop right) -> bool
+static NdsForge.Audio.Wav.WavReadOptions.operator !=(NdsForge.Audio.Wav.WavReadOptions? left, NdsForge.Audio.Wav.WavReadOptions? right) -> bool
+static NdsForge.Audio.Wav.WavReadOptions.operator ==(NdsForge.Audio.Wav.WavReadOptions? left, NdsForge.Audio.Wav.WavReadOptions? right) -> bool
+static NdsForge.Audio.Wav.WavSampler.Create(System.Collections.Generic.IReadOnlyList<NdsForge.Audio.Wav.WavLoop>! loops, NdsForge.Audio.Wav.WavSamplerMetadata? metadata = null, System.ReadOnlySpan<byte> samplerData = default(System.ReadOnlySpan<byte>), NdsForge.Audio.Wav.WavReadOptions? options = null) -> NdsForge.Audio.Wav.WavSampler!
+static NdsForge.Audio.Wav.WavSamplerMetadata.operator !=(NdsForge.Audio.Wav.WavSamplerMetadata? left, NdsForge.Audio.Wav.WavSamplerMetadata? right) -> bool
+static NdsForge.Audio.Wav.WavSamplerMetadata.operator ==(NdsForge.Audio.Wav.WavSamplerMetadata? left, NdsForge.Audio.Wav.WavSamplerMetadata? right) -> bool
+static NdsForge.Audio.Wav.WavWriteOptions.operator !=(NdsForge.Audio.Wav.WavWriteOptions? left, NdsForge.Audio.Wav.WavWriteOptions? right) -> bool
+static NdsForge.Audio.Wav.WavWriteOptions.operator ==(NdsForge.Audio.Wav.WavWriteOptions? left, NdsForge.Audio.Wav.WavWriteOptions? right) -> bool
+~override NdsForge.Audio.Wav.WavChunk.Equals(object obj) -> bool
+~override NdsForge.Audio.Wav.WavChunk.ToString() -> string
+~override NdsForge.Audio.Wav.WavLoop.Equals(object obj) -> bool
+~override NdsForge.Audio.Wav.WavLoop.ToString() -> string

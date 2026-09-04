@@ -10,6 +10,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <ProjectReference Include="../../src/NdsForge.Nitro/NdsForge.Nitro.csproj" />
+    <ProjectReference Include="../../src/NdsForge.Audio.Wav/NdsForge.Audio.Wav.csproj" />
+    <ProjectReference Include="../../src/NdsForge.Graphics/NdsForge.Graphics.csproj" />
     <ProjectReference Include="../../src/NdsForge/NdsForge.csproj" />
     <None Include="Corpus/Expectations/**/*.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

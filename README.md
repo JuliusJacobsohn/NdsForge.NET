@@ -15,7 +15,7 @@
 
 **[Get NdsForge on NuGet](https://www.nuget.org/packages/NdsForge)** · **[Browse the API documentation →](https://juliusjacobsohn.github.io/NdsForge.NET/)**
 
-[Getting started](docs/getting-started.md) · [Formats and safety](docs/formats-and-safety.md) · [CLI reference](docs/cli.md) · [Corpus testing](docs/corpus-testing.md)
+[Getting started](docs/getting-started.md) · [Formats and safety](docs/formats-and-safety.md) · [Nitro codecs](docs/nitro-codecs.md) · [Nitro graphics](docs/nitro-graphics.md) · [WAV audio](docs/wav-audio.md) · [CLI reference](docs/cli.md) · [Corpus testing](docs/corpus-testing.md)
 
 NdsForge is a pure C# library for inspecting, validating, extracting, editing, comparing, and building Nintendo DS and DSi software images. Its object-oriented API supports path, stream, and in-memory workflows without shelling out to native tools.
 
@@ -25,6 +25,24 @@ Install the library:
 
 ```shell
 dotnet add package NdsForge
+```
+
+Install `NdsForge.Nitro` separately when an application needs reusable Nitro compression, container, or raw audio sample codecs without the ROM-image model:
+
+```shell
+dotnet add package NdsForge.Nitro
+```
+
+Install `NdsForge.Graphics` for dependency-light native indexed graphics, palettes, tiles, maps, and sprites. Host raster codecs remain separate adapters:
+
+```shell
+dotnet add package NdsForge.Graphics
+```
+
+Install `NdsForge.Audio.Wav` for bounded PCM WAV import/export, including native wave and stream loop conversion:
+
+```shell
+dotnet add package NdsForge.Audio.Wav
 ```
 
 ```csharp
@@ -54,7 +72,11 @@ Parsing creates a navigable image model without modifying the source. Validation
 - Deterministic DS and DSi image construction from binary or supported ELF inputs
 - Stable JSON manifests and semantic image comparison
 - Caller-supplied KEY1, DSi digest, HMAC, modcrypt, and RSA operations
+- Verified classic-DS per-overlay Download Play HMAC parsing, validation, replacement, and BLZ-aware repair
 - An optional `Ndstool1503` build profile for verified interoperability cases
+- A dependency-free `NdsForge.Nitro` companion package for BLZ, BIOS compression, archives, messages, and other reusable Nitro formats
+- An optional `NdsForge.Graphics` feature package for native indexed graphics, sprites, animations, and bitmap fonts without host image-codec dependencies
+- An optional `NdsForge.Audio.Wav` adapter for PCM WAV interchange with native SWAV and STRM audio, without resampling or playback
 - A cross-platform `ndsforge` .NET command-line tool over the same library
 
 ## Edit an image
@@ -91,7 +113,7 @@ See the [CLI reference](docs/cli.md) for commands, options, and exit codes.
 
 ## Compatibility and scope
 
-NdsForge targets .NET 10 and has no runtime NuGet dependencies. It handles Nintendo DS image/container structures; it is not an emulator, disassembler, save editor, or game-specific archive library. PNG/GIF authoring and proprietary game compression belong in separate adapters.
+NdsForge targets .NET 10. The core image and Nitro packages have no runtime NuGet dependencies; graphics and the WAV adapter each depend only on `NdsForge.Nitro`. The project handles Nintendo DS image/container structures; it is not an emulator, disassembler, save editor, or game-specific archive library. PNG/GIF authoring and proprietary game compression belong in separate adapters.
 
 No ROMs, firmware, keys, certificates, or proprietary logo data are included. Cryptographic operations require caller-owned key material. Some authenticity checks cannot be completed from public image data alone, and validation distinguishes missing trust inputs from invalid content.
 

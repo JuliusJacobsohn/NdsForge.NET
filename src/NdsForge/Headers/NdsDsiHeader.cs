@@ -13,6 +13,7 @@ public sealed class NdsDsiHeader
         ReadOnlySpan<byte> data = rawHeader.Span;
         RawData = rawHeader.Slice(0x180, 0xE80);
         MemoryBankSettings = rawHeader.Slice(0x180, 0x30);
+        MemoryBanks = new(MemoryBankSettings);
         RegionFlags = NdsBinary.ReadUInt32(data, 0x1B0);
         AccessControl = NdsBinary.ReadUInt32(data, 0x1B4);
         ScfgExtMask = NdsBinary.ReadUInt32(data, 0x1B8);
@@ -25,6 +26,12 @@ public sealed class NdsDsiHeader
         DigestSectorSize = NdsBinary.ReadUInt32(data, 0x200);
         DigestBlockSectorCount = NdsBinary.ReadUInt32(data, 0x204);
         BannerSize = NdsBinary.ReadUInt32(data, 0x208);
+        SharedDataFileSizes = Array.AsReadOnly(new byte[]
+        {
+            data[0x20C], data[0x20D], data[0x214], data[0x215], data[0x216], data[0x217],
+        });
+        EulaVersion = data[0x20E];
+        AgeRatingsUsage = data[0x20F];
         TotalImageSize = NdsBinary.ReadUInt32(data, 0x210);
         ModcryptArea1 = ReadRegion(data, 0x220);
         ModcryptArea2 = ReadRegion(data, 0x228);
@@ -34,6 +41,13 @@ public sealed class NdsDsiHeader
         PublicSaveSize = NdsBinary.ReadUInt32(data, 0x238);
         PrivateSaveSize = NdsBinary.ReadUInt32(data, 0x23C);
         AgeRatings = rawHeader.Slice(0x2F0, 0x10);
+        var ratings = new NdsDsiAgeRating[16];
+        for (int index = 0; index < ratings.Length; index++)
+        {
+            ratings[index] = new((NdsDsiAgeRatingAuthority)index, data[0x2F0 + index]);
+        }
+
+        Ratings = Array.AsReadOnly(ratings);
         Arm9Hmac = rawHeader.Slice(0x300, 20);
         Arm7Hmac = rawHeader.Slice(0x314, 20);
         DigestMasterHmac = rawHeader.Slice(0x328, 20);
@@ -51,17 +65,35 @@ public sealed class NdsDsiHeader
     /// <summary>Gets raw global, ARM9, ARM7, and WRAM memory-bank settings.</summary>
     public ReadOnlyMemory<byte> MemoryBankSettings { get; }
 
+    /// <summary>Projects the global and processor-local MBK words plus MBK9 and WRAM control.</summary>
+    public NdsDsiMemoryBankConfiguration MemoryBanks { get; }
+
     /// <summary>Gets permitted DSi region flags.</summary>
     public uint RegionFlags { get; }
 
+    /// <summary>Projects defined territory bits while <see cref="RegionFlags"/> retains all 32 stored bits.</summary>
+    public NdsDsiRegionPermissions Regions => (NdsDsiRegionPermissions)RegionFlags;
+
+    /// <summary>Gets territory-field bits not currently assigned to a named region.</summary>
+    public uint UnknownRegionFlagBits => RegionFlags & ~0x3Fu;
+
     /// <summary>Gets DSi access-control flags.</summary>
     public uint AccessControl { get; }
+
+    /// <summary>Projects defined service and storage capabilities while retaining the raw word.</summary>
+    public NdsDsiAccessCapabilities AccessControlFlags => (NdsDsiAccessCapabilities)AccessControl;
+
+    /// <summary>Gets access-control bits whose behavior is not currently defined.</summary>
+    public uint UnknownAccessControlBits => AccessControl & ~0x8001FFFFu;
 
     /// <summary>Preserves the SCFG_EXT mask controlling which DSi hardware configuration bits software may change.</summary>
     public uint ScfgExtMask { get; }
 
     /// <summary>Gets DSi application flags.</summary>
     public byte ApplicationFlags { get; }
+
+    /// <summary>Projects the complete application-policy byte into named capabilities.</summary>
+    public NdsDsiApplicationFeatures ApplicationFeatures => (NdsDsiApplicationFeatures)ApplicationFlags;
 
     /// <summary>Identifies the runtime ARM7 address of the DSi device-list structure used during service initialization.</summary>
     public uint Arm7DeviceListAddress { get; }
@@ -86,6 +118,18 @@ public sealed class NdsDsiHeader
 
     /// <summary>Declares the DSi banner allocation, including animated data when the version is <c>0x0103</c>.</summary>
     public uint BannerSize { get; }
+
+    /// <summary>Gets six raw shared-data file-size units in native slot order.</summary>
+    public IReadOnlyList<byte> SharedDataFileSizes { get; }
+
+    /// <summary>Gets the title's required EULA revision byte.</summary>
+    public byte EulaVersion { get; }
+
+    /// <summary>Preserves the exact byte controlling whether system software evaluates parental ratings.</summary>
+    public byte AgeRatingsUsage { get; }
+
+    /// <summary>Reports whether the header requests parental-control rating evaluation.</summary>
+    public bool UsesAgeRatings => AgeRatingsUsage != 0;
 
     /// <summary>Reports the DSi metadata's total content extent, distinct from physical padding and the common used-size field.</summary>
     public uint TotalImageSize { get; }
@@ -128,6 +172,9 @@ public sealed class NdsDsiHeader
     /// <summary>Preserves sixteen territory-specific rating bytes because their flags and authorities vary by slot.</summary>
     public ReadOnlyMemory<byte> AgeRatings { get; }
 
+    /// <summary>Projects all eight assigned and eight unassigned authority slots without dropping raw flag bits.</summary>
+    public IReadOnlyList<NdsDsiAgeRating> Ratings { get; }
+
     /// <summary>Contains the 20-byte SHA-1 HMAC authenticating the common ARM9 payload; no key-validity claim is implied.</summary>
     public ReadOnlyMemory<byte> Arm9Hmac { get; }
 
@@ -160,7 +207,7 @@ public sealed class NdsDsiHeader
     /// <c>0x000</c>-<c>0xDFF</c>. A true result establishes authenticity only relative to that caller trust choice.
     /// </summary>
     /// <param name="publicKey">Caller-trusted RSA-1024 key.</param>
-    /// <returns><see langword="true"/> when the PKCS#1 v1.5 RSA-SHA1 signature matches.</returns>
+    /// <returns><see langword="true"/> when the type-one padded raw-SHA1 RSA signature matches.</returns>
     public bool VerifyRsaSignature(NdsDsiRsaPublicKey publicKey)
     {
         ArgumentNullException.ThrowIfNull(publicKey);

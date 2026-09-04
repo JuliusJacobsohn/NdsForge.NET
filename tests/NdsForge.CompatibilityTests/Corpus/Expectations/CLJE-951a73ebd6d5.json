@@ -1,0 +1,1265 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "MARIO \u0026 LUIGI - Bowser\u0027s Inside Story [CLJE] [USA - English] [951a73eb].nds",
+    "length": 134217728,
+    "sha256": "951a73ebd6d57d132c9aaf9abab27fc69ef3669a6636d5ab2670877646f84fd3",
+    "headerTitle": "MARIO\u0026LUIGI3",
+    "gameCode": "CLJE",
+    "makerCode": "01",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "MARIO \u0026 LUIGI - Bowser\u0027s Inside Story",
+    "bannerTitles": {
+      "Japanese": "MARIO \u0026 LUIGI\nBowser\u0027s Inside Story\nNintendo",
+      "English": "MARIO \u0026 LUIGI\nBowser\u0027s Inside Story\nNintendo",
+      "French": "MARIO \u0026 LUIGI\nBowser\u0027s Inside Story\nNintendo",
+      "German": "MARIO \u0026 LUIGI\nBowser\u0027s Inside Story\nNintendo",
+      "Italian": "MARIO \u0026 LUIGI\nBowser\u0027s Inside Story\nNintendo",
+      "Spanish": "MARIO \u0026 LUIGI\nBowser\u0027s Inside Story\nNintendo"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 160036,
+          "sha256": "2865A340923C5B85904321BC51E5743E56BC4E2B399790551A1E57B6549C9F5C"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 4512,
+          "sha256": "E4A0064D62C8B1C7912B8D4423369775B3D26FA830F6EBE41591E35C8F500198"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 219464,
+          "sha256": "CC8C183D2B314AB99B4F517BA18841C12403B610AFC694D25853A244DBBAA56C"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "96C360321AF8B4BF54A2E87F4D7F6CA1CFF090BAAA75B3AC5AC6C5DF9EE1FB58"
+        },
+        {
+          "path": "data/BAI/BAI_atk_hk.dat",
+          "length": 1211392,
+          "sha256": "F3D453256530AE1A5987AE5DF16BAD4428E87C68AF24A52143ABCABFF79AB2DC"
+        },
+        {
+          "path": "data/BAI/BAI_atk_mt.dat",
+          "length": 1536,
+          "sha256": "EE5B058F7A0389BA3945237FDD39B2DF7C7AC7428A6CA97F3ED2A0504D08E488"
+        },
+        {
+          "path": "data/BAI/BAI_atk_nh.dat",
+          "length": 181248,
+          "sha256": "C2FA1C34F2FB94AD97F8F0E50EF65D3F25236C3968E7532721E0631B2FF22273"
+        },
+        {
+          "path": "data/BAI/BAI_atk_yy.dat",
+          "length": 25088,
+          "sha256": "3459D45F31847D2DB9B7C90A7312E940921EA646A1C901B8E30A11C1463680CE"
+        },
+        {
+          "path": "data/BAI/BAI_item_ji.dat",
+          "length": 512,
+          "sha256": "B6CC7DF08EB69E12E1F33CC9FC42311B05C10CF3E87BF560D1755F376D07C276"
+        },
+        {
+          "path": "data/BAI/BAI_mon_cf.dat",
+          "length": 252928,
+          "sha256": "68029797B7B827615C24DB28C9F9D563F94EF65E78CABF848C0BB14DA25128A2"
+        },
+        {
+          "path": "data/BAI/BAI_mon_ji.dat",
+          "length": 957440,
+          "sha256": "E4AFB9CA37CB90EB6B7B53086B9D61E887F301EAFCFE19732A0E882F29435920"
+        },
+        {
+          "path": "data/BAI/BAI_mon_yo.dat",
+          "length": 174592,
+          "sha256": "2ECFB482740EE31E25F9BE78F257833EF095549B68A78476190EFD27FA6B64EB"
+        },
+        {
+          "path": "data/BAI/BAI_scn_cf.dat",
+          "length": 5120,
+          "sha256": "12E41EBA34B66021FDF46533E513D422575E0CA4A79D5015B981674F590737AD"
+        },
+        {
+          "path": "data/BAI/BAI_scn_ji.dat",
+          "length": 78336,
+          "sha256": "58DDE983F4FC123CB57C3F56080E806B11C133E4ED9D5D3ADDC97E232721B1BD"
+        },
+        {
+          "path": "data/BAI/BAI_scn_yo.dat",
+          "length": 785920,
+          "sha256": "120E48EF7C93CB5E998D0CC85B06228F1F5C8E4A30965F3DBB51CABA9D0AD869"
+        },
+        {
+          "path": "data/BAI/BMes_cf.dat",
+          "length": 111616,
+          "sha256": "59AD4EFD90E598FD07730773BF28697E8C2AC0D4623BBE1FF2C4F5999ACD5F07"
+        },
+        {
+          "path": "data/BAI/BMes_ji.dat",
+          "length": 25600,
+          "sha256": "FDAA458A6D95958EC530FAE37231533D7C6447CB44C5E6497A88E59B9CB32792"
+        },
+        {
+          "path": "data/BAI/BMes_yo.dat",
+          "length": 8192,
+          "sha256": "9FD6C9BA1E3FEDE64784D8BED0ABE538341F4E76E99C6C966D55375B9DE49ABF"
+        },
+        {
+          "path": "data/BDataMiniGame/mfset_MesDat_MiniGame.dat",
+          "length": 18944,
+          "sha256": "453E61BF090CDE0F2CFFB6FBFAC64938265870C78910BA2248269B3E33402290"
+        },
+        {
+          "path": "data/BData/BDataMap.dat",
+          "length": 174080,
+          "sha256": "56C33F12937FCAE41AB66120A45E4FE6609C411CE9BD2994D1FC566071658F2D"
+        },
+        {
+          "path": "data/BData/mfset_AItmC.dat",
+          "length": 512,
+          "sha256": "80D2C7EBFEA245AA8718B44CDD54CA91B0AFBBFE7D72EECD296422FCB0418078"
+        },
+        {
+          "path": "data/BData/mfset_AItmE.dat",
+          "length": 5120,
+          "sha256": "AB2C638F7A51B66F67219BD9DB0498E4CE9991D9F4448DA0E30D9A55FE2192A6"
+        },
+        {
+          "path": "data/BData/mfset_AItmE2.dat",
+          "length": 3072,
+          "sha256": "E129F8981C4C79765FB0A8B44EEF70548C4C77D1A0248700AEC7D8B7DA545050"
+        },
+        {
+          "path": "data/BData/mfset_AItmN.dat",
+          "length": 1536,
+          "sha256": "335974F36AAA88A1329B0BD320500F9E218AE6540CE85C126202519E37E6AD69"
+        },
+        {
+          "path": "data/BData/mfset_BadgeE.dat",
+          "length": 2048,
+          "sha256": "C67AA372F08EDBB44BA5706BA9B9B01A2A709D08D91B53EFB4BC2EDD6D1CB711"
+        },
+        {
+          "path": "data/BData/mfset_BadgeEffectE.dat",
+          "length": 5120,
+          "sha256": "0FCD377E8A65B4FBEB860DA5114147B51468036F38CDA8DC5FA7FAABCDDC9AC2"
+        },
+        {
+          "path": "data/BData/mfset_BadgeN.dat",
+          "length": 2048,
+          "sha256": "4C9D9C1585427F883D2B174603A5027BF367E0EB7251DF840DA8DAF0CC6729F2"
+        },
+        {
+          "path": "data/BData/mfset_BonusE.dat",
+          "length": 512,
+          "sha256": "80D2C7EBFEA245AA8718B44CDD54CA91B0AFBBFE7D72EECD296422FCB0418078"
+        },
+        {
+          "path": "data/BData/mfset_Help.dat",
+          "length": 4096,
+          "sha256": "DBC51996507C66F13303D35CC7A7D0CF91D41831827EDF407669FECB31EB7FC1"
+        },
+        {
+          "path": "data/BData/mfset_MiniGame.dat",
+          "length": 1536,
+          "sha256": "99BE750A4735DC7B4130707E5E02DBA1F6344B5991C7CF4EE75EFBB0833FECCD"
+        },
+        {
+          "path": "data/BData/mfset_MonN.dat",
+          "length": 6144,
+          "sha256": "09AD6ECB6198B0BC090931E3A8473CDD0A55E92D0CC372DF8F8C6F48A49FB0F9"
+        },
+        {
+          "path": "data/BData/mfset_RankUpE.dat",
+          "length": 7168,
+          "sha256": "CFEC4A1BDA4389A542A680F5B80DB0713FC120AE377778D50A9EC6C766970D3D"
+        },
+        {
+          "path": "data/BData/mfset_UItmE.dat",
+          "length": 1536,
+          "sha256": "6A059060D1D9A0F5EC1BE135B2BED40B890CCBA8A8D8A1DC2BDC21F9F75CB6D9"
+        },
+        {
+          "path": "data/BData/mfset_UItmE2.dat",
+          "length": 3072,
+          "sha256": "CBA971EBA720E413928FC0B083283606CFE58E2399B44FC618724F47076F103B"
+        },
+        {
+          "path": "data/BData/mfset_UItmN.dat",
+          "length": 5120,
+          "sha256": "1E3F4A8023E402EF915F761E229723B55A5F473DF4DFF2980B26338A00A14BF9"
+        },
+        {
+          "path": "data/BData/mfset_WearE.dat",
+          "length": 21504,
+          "sha256": "210990C20604DEAEA121E70D87D15C59ACC7BE344EDC62E32040A2B85475457F"
+        },
+        {
+          "path": "data/BData/mfset_WearN.dat",
+          "length": 27648,
+          "sha256": "A78C614D1107EB4ABAACD82B3C5ABE227CFAE55F1C16EF8BC6981B4C951FE3CA"
+        },
+        {
+          "path": "data/BMapG/BMapG.dat",
+          "length": 97280,
+          "sha256": "F14C78178CCA442DCE916FED2A6545EFDEA846495AA52D58F89047883E6BC44D"
+        },
+        {
+          "path": "data/BMap/BMap.dat",
+          "length": 3884544,
+          "sha256": "51EDBA1585A7C2BEF8C0145DF5431ABF6A5114956BD666531A453B231E2D7F84"
+        },
+        {
+          "path": "data/BObjMap/BObjMap.dat",
+          "length": 181760,
+          "sha256": "866AAB0F1BF2B94E8DD77185FB474FD2A9F51FCD31A827D3814EB14CD0F3703A"
+        },
+        {
+          "path": "data/BObjMon/BObjMon.dat",
+          "length": 1959424,
+          "sha256": "30C2B7FC96B792B3905555621511D84ED517FDCD3B8436434D7C259B3EBFAECE"
+        },
+        {
+          "path": "data/BObjPc/BObjPc.dat",
+          "length": 1507840,
+          "sha256": "81D76BB53C95C47465548A0054A5F593F9774A587411A6C5C55E661754D51E4C"
+        },
+        {
+          "path": "data/BObjUI/BObjUI.dat",
+          "length": 1208320,
+          "sha256": "B2646B84A849F856C5321FBA790E6214302B8EE069B0B75F4C30A53D7A8F4559"
+        },
+        {
+          "path": "data/BRfx/BDfxAll.dat",
+          "length": 192512,
+          "sha256": "5B0D2C3BD95016AAD851232A90BCE41DD653504579FEFE344D5FE095FABD7D9D"
+        },
+        {
+          "path": "data/BRfx/BDfxGAll.dat",
+          "length": 42496,
+          "sha256": "A6A91ADA08C09EA8F99D9E22219671AE77A9B787DCCFE9D4211471A3D04FC2C0"
+        },
+        {
+          "path": "data/BRfx/BDfxPal.dat",
+          "length": 6144,
+          "sha256": "B405B189DF47A21FFE8C30776FA99DC70F2A1C96958247FDC8F41927F4104F85"
+        },
+        {
+          "path": "data/BRfx/BDfxTex.dat",
+          "length": 38400,
+          "sha256": "92582E867E3477F7696785F57700D7ECD57A2E05B253707BFA4FE762D6120D47"
+        },
+        {
+          "path": "data/BRfx/BLfxTex.dat",
+          "length": 1024,
+          "sha256": "89E6A9F96F889F1DB71E421B88DDA654DD66754FE501EDD3D243D4589B907D03"
+        },
+        {
+          "path": "data/BRfx/BOfxAll.dat",
+          "length": 19968,
+          "sha256": "685A64158B05EAA1C02811FCBFB34D72EB875085546F3BA87FF050F34F76298C"
+        },
+        {
+          "path": "data/BRfx/BOfxPal.dat",
+          "length": 2560,
+          "sha256": "DC5B3579EFFB90872DBD9E2204EE84F6E059499C20AC7DF71151FF198E604F17"
+        },
+        {
+          "path": "data/BRfx/BOfxTex.dat",
+          "length": 7168,
+          "sha256": "74B02115AEDC2087B38301102FF80C9B524FEEEF6444F9C6CB78DA2CA1CE55E5"
+        },
+        {
+          "path": "data/EDataBC/EMesColosseum.dat",
+          "length": 16896,
+          "sha256": "2833C5DFD1F9EC3DA0863F177F71521B560153AE62D218E32609C326CB535699"
+        },
+        {
+          "path": "data/EDataMic/EMesMic.dat",
+          "length": 1024,
+          "sha256": "61151FAC4C64DBEAB600BDEDF6B80FBA8F480B9D94E361660DF6FF6D5C542865"
+        },
+        {
+          "path": "data/EDataSR/EObjSR.dat",
+          "length": 532992,
+          "sha256": "5EBBEC923CB58856130DD46A6D870CD81BA626E4C5A005ECF027F8239AF2A40C"
+        },
+        {
+          "path": "data/EDataSave/mfset_EMesJig.dat",
+          "length": 7168,
+          "sha256": "105FC7E857A5C2CDDE15EB9F8A098E3354F55D87555DEFF1ADFF4E7757238DF8"
+        },
+        {
+          "path": "data/EDataSave/mfset_EMesOutline.dat",
+          "length": 11776,
+          "sha256": "FAF61607451F5C9B0F1BB224699DFCDEB2030C825A4F9389CE53C9EF58E5C4D8"
+        },
+        {
+          "path": "data/EDataSave/mfset_EMesPlace.dat",
+          "length": 2560,
+          "sha256": "C0258792635EAAD8699B010F7317657E7D2FA828A749F3AD19E4032B205F68BD"
+        },
+        {
+          "path": "data/EDataSave/mfset_EMesSys.dat",
+          "length": 4096,
+          "sha256": "5FF39BA9426AF1A90D50974238E83136EE671EC313A06DBB0648C629728036F1"
+        },
+        {
+          "path": "data/EMapMic/EMapMic.dat",
+          "length": 14336,
+          "sha256": "D81054CB36596605EE4C0C8A3922465E7F46F37870680E74510EF74C25234C9D"
+        },
+        {
+          "path": "data/EMapSave/EMapSave.dat",
+          "length": 175616,
+          "sha256": "1A5FDCB5A3A0B3A20398523680E48D4FD58AEE89ECB60BF80E9847464724BD00"
+        },
+        {
+          "path": "data/EObjSave/EObjSave.dat",
+          "length": 251904,
+          "sha256": "7EE784FAECB175EBD2AA7195648FAD86597A06EB4535081D344DF9A9A9E2D23C"
+        },
+        {
+          "path": "data/FEvent/FEvent.dat",
+          "length": 8230400,
+          "sha256": "2B5712DDD191CC6DD6F7BF5FD0D0FE8A42B7D847CD1277B207E901F2DBBBE4BF"
+        },
+        {
+          "path": "data/FMap/FMapData.dat",
+          "length": 27805184,
+          "sha256": "F5D208E0E8A4C38E33028BD126006006946E1DD2EF8034CC25A943B749D375C9"
+        },
+        {
+          "path": "data/FObjMap/FObjMap.dat",
+          "length": 3584,
+          "sha256": "115AB7C678C624C7971C7C33CA1B33A8F35B73B6E48207A710C76CF79975646E"
+        },
+        {
+          "path": "data/FObjMon/FObjMon.dat",
+          "length": 223232,
+          "sha256": "40C5C39243AACAE5596576D93D77885B0AEAED65E0BEE710885591FCF3800B09"
+        },
+        {
+          "path": "data/FObjPc/FObjPc.dat",
+          "length": 2182656,
+          "sha256": "C182224ED9FBB7271D4ED1E962A4769FF92F7BF2DDFE6DD5BFAEB5BE5417C674"
+        },
+        {
+          "path": "data/FObj/FObj.dat",
+          "length": 2391552,
+          "sha256": "2E3E34079016F1EC83F331A9AA1EB88C595D3479858BCD5FBB890B442F5C896A"
+        },
+        {
+          "path": "data/FPaf/FPaf.dat",
+          "length": 6144,
+          "sha256": "D0852D9A19E5C374AC79E0A85E36A7EDF65DFAF43FD93FE1378FB4B974E47DDB"
+        },
+        {
+          "path": "data/FRfx/FDfxPal.dat",
+          "length": 65536,
+          "sha256": "A5272FD191CD5E1F57BDE69470E11445923CA4E7101B5C76C79103863B229E46"
+        },
+        {
+          "path": "data/FRfx/FDfxTex.dat",
+          "length": 162816,
+          "sha256": "CB77F37D64445992617122D09F6026EDA878DB140385FC90D838FC346C32BC7B"
+        },
+        {
+          "path": "data/FRfx/FOfxPal.dat",
+          "length": 37888,
+          "sha256": "FD41D157FE4AE185E8D99B9F4FA5878D2FFA508BD0A5BD9D77A60183B8819AEC"
+        },
+        {
+          "path": "data/FRfx/FOfxTex.dat",
+          "length": 75264,
+          "sha256": "DF839637CD7FE0D97F9CB97C34D7DA3FBC9C7F6304B0F3ACE32D2079F6B0D635"
+        },
+        {
+          "path": "data/FRfx/FWfxAll.dat",
+          "length": 1024,
+          "sha256": "562E3E6D20C428BABB441BB71E9D08D95AB6F30B5F008E5008360FED04B30426"
+        },
+        {
+          "path": "data/Font/StatFontSet.dat",
+          "length": 47616,
+          "sha256": "51522C495B16854C4E1FE2B6B22847CEED30911557A310ECD33CC4AACFF12AEE"
+        },
+        {
+          "path": "data/MAI/MAI_item_ji.dat",
+          "length": 512,
+          "sha256": "3E12D02E15715CB4F88BEAE6F09265C44BD42B44623A9A9B55091C27CC65A5B4"
+        },
+        {
+          "path": "data/MAI/MAI_nh.dat",
+          "length": 512,
+          "sha256": "C447B6E0D8254DCA13BA852B79B6FA0E1EDE47BEDA889D30E3A6E7F8777B3DE2"
+        },
+        {
+          "path": "data/MAI/MAI_tuto_yo.dat",
+          "length": 102912,
+          "sha256": "E1A313CE973BAA5ECA4F2990DD6CD133FF6B3E05F367E6B07793423FC2C1E2B2"
+        },
+        {
+          "path": "data/MAI/MMes_yo.dat",
+          "length": 14848,
+          "sha256": "04B8474A2D524D9B0EE2D6F8B08ADFA17FC187CCD0E92251DF7E2F9A0A9D9A0F"
+        },
+        {
+          "path": "data/MData/MDataShopBuyList.dat",
+          "length": 1536,
+          "sha256": "FF6E911449E5DC76D157B6D78097163748D4712D6FAECC20115A4972D3FAA05D"
+        },
+        {
+          "path": "data/MData/mfset_InitLoadMes.dat",
+          "length": 3072,
+          "sha256": "4F81D5276F21FDBACCDCE4730F9CDF91F99956F99C1C478471E285A9DEDDF6C8"
+        },
+        {
+          "path": "data/MData/mfset_MenuMes.dat",
+          "length": 18944,
+          "sha256": "4A0B36A37CEBCDF3A7FE79EFCC38F62BCD37F66B2B29F74E16217B241BEB2E20"
+        },
+        {
+          "path": "data/MData/mfset_ParamExpMes.dat",
+          "length": 2048,
+          "sha256": "9808B950FD33B3180E3DA2DB77DDCD39CCFD952F12C67F52EEF59FCB86586EEB"
+        },
+        {
+          "path": "data/MData/mfset_ShopMes.dat",
+          "length": 7680,
+          "sha256": "AE90B41147C0EEE40506B822A3ED005C2F8FAB99759AEA1E75EBFFB0E91405A7"
+        },
+        {
+          "path": "data/MMap/MMap.dat",
+          "length": 454656,
+          "sha256": "0048400C21B4CD8F3CAB9DED2B4ACC6B5594820DE58C28846AE0BD313F424EC4"
+        },
+        {
+          "path": "data/MObj/MObj.dat",
+          "length": 1055232,
+          "sha256": "FCC3824713204F82D9D9608390DE134A61409FBFA5FFC55FFAED5E90569C60EF"
+        },
+        {
+          "path": "data/MRfx/MDfxPal.dat",
+          "length": 2048,
+          "sha256": "F6132D5C5A593AEB277D4E103BC4FBE51D3CECB710155DAA5D66E528AF698596"
+        },
+        {
+          "path": "data/MRfx/MDfxTex.dat",
+          "length": 19456,
+          "sha256": "D930C1933B43A9D8732684AEB3DDA36B61542698F9C39A36C91D603FCC5C6754"
+        },
+        {
+          "path": "data/MRfx/MOfxPal.dat",
+          "length": 2560,
+          "sha256": "85D80BF358B1F8096C37D2BBD6A67D22A04D37DC4EB06D808414042C6F80DEB3"
+        },
+        {
+          "path": "data/MRfx/MOfxTex.dat",
+          "length": 13312,
+          "sha256": "464AF04A165724C1A09EC73258DE10E137368B406306993310002D5733F0B241"
+        },
+        {
+          "path": "data/SAI/SAI_tuto_yo.dat",
+          "length": 24576,
+          "sha256": "EF7F6E4E8DEB35367D88362272C775B74A37281E1BEDA944B9CF12C4E64E8570"
+        },
+        {
+          "path": "data/SAI/SMes_yo.dat",
+          "length": 35840,
+          "sha256": "019B68005CBAA694EA4D820D63541469400F386DA5959D65DE4E916D260539D8"
+        },
+        {
+          "path": "data/Sound/sound_data.sdat",
+          "length": 33693472,
+          "sha256": "E25DF87F7EB49E2DBD0E59BDEF7D7AF4B1460C05EA48509D29C09569602B3F76"
+        },
+        {
+          "path": "data/Treasure/TreasureInfo.dat",
+          "length": 8704,
+          "sha256": "3263EC12354B1A5B48EA271123530F4B3FF3A7A58DA3CC71E1D59CB6F9D5B252"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "17F14E0DC24983717F8D156F52BD1012B8052D1C13A95220CE0F6286D3D94849"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 12012,
+          "sha256": "D321C65BCC8647B04750543796522F5C5BD0C08C1A1C4D7F11838FC4B75111A2"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 1132,
+          "sha256": "3614A48F725C9B49F8F9A0284FDA7093DAC428A9F5BCD738F78C85D5FC9FFFBE"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 1008,
+          "sha256": "B332488AE846CF405220CC59307CA2CEC3E76D3C36FB3094101CB5B3F404F978"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 89116,
+          "sha256": "1E02CCD7EF1565D0BCA49F628F16E274A31803F255F25FACAEDE60B1FA0D5A98"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 266892,
+          "sha256": "F33DF2391018009CDE5D55B51272B29492014003FF3BD4CCA9C01164DA1C3759"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 9040,
+          "sha256": "9EDC92BDAA31A89C9CEFBDACF238F72F02238970E0D2AAD138515D105DB47B8E"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 45076,
+          "sha256": "F6D3B005BEABBC71CC8235D3A2448B6053FA183219F17E53D2D1371E53214733"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 14260,
+          "sha256": "3ECE0656BD41CB3300C3421F42310AED87ED415CD82E03AF15A2C2467E93E326"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 3252,
+          "sha256": "6DB540272F09AB3CD3E1F722E391081F19A98305D3216C91CAAF4079CDDEB78E"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 2468,
+          "sha256": "358A11D6C2B4795F6180C1B2A14BB0D358C40168A71111AF3214810E495A1152"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 30976,
+          "sha256": "E728B3278AED4D3FFCE805806347FBD3971A7383928216DA19EE1CCA9A8E9887"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 38356,
+          "sha256": "AA981A7E2840A9B1D7AEE81E8DE9F3A21FED65AB517E3CA1DBF03515B57A4DB3"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 23124,
+          "sha256": "03AAF9C003673F7894FB87BD6BD923BC6E030E76491B087DAF97673B52F8DDE5"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 30292,
+          "sha256": "5295E5C54D022F33D8B53D2E60EE81A9AB36B647F03E71ADDB1BFEBA54F05CB9"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 34768,
+          "sha256": "DC0417A935D796BF0C13DAB492FFA388C97BE14E1A6145C750A989819FD16891"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 25176,
+          "sha256": "82798756570CF162733E555F658534FB33A58689143B9317E8BE40D95DED5EA2"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 21660,
+          "sha256": "249F964D62826E8BAB726793D8CEBEC445EE45D1D1F0320572FC4DFB6B12E143"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 6764,
+          "sha256": "3A3541B932109481C029E576BDA280D4895F015C51AC08B74F4C6374135B1F70"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 11916,
+          "sha256": "468D989B8E8AE40F55582BC78A53590B1BD71DE51645DE1743324EBA47742184"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 21032,
+          "sha256": "31ED9D462C1C5FECCCA08224E3AFB5AFC1A11C86FC8931A69584F7454BC4D1A0"
+        },
+        {
+          "path": "overlays/overlay_0021.bin",
+          "length": 13612,
+          "sha256": "4E34268DF4D474F020E0CD9614662CA753AD199B47113DCAAEC85A1BE9473627"
+        },
+        {
+          "path": "overlays/overlay_0022.bin",
+          "length": 44220,
+          "sha256": "5F38EFCF528E1A3EEB7EFF53A2E29038C181DCB3AA5B3D479C6097B8B1CD2429"
+        },
+        {
+          "path": "overlays/overlay_0023.bin",
+          "length": 1724,
+          "sha256": "0A4F521348AF7761401B2669C04319ED0E6E5D8A80BB0E97848A913F5E670544"
+        },
+        {
+          "path": "overlays/overlay_0024.bin",
+          "length": 18536,
+          "sha256": "A3073E7811ED80838F20288E3812C91197B78429CEFE029339390C7C38360A37"
+        },
+        {
+          "path": "overlays/overlay_0025.bin",
+          "length": 14188,
+          "sha256": "CF313FB9D2AA531E0BB2B36773B13230B259F430AD1E1A08F3496E01C8550D47"
+        },
+        {
+          "path": "overlays/overlay_0026.bin",
+          "length": 5660,
+          "sha256": "1735E04AFA52F568F9685A1CA4B9D93DCC9B24B7013D27CBD78129901C3B6FF9"
+        },
+        {
+          "path": "overlays/overlay_0027.bin",
+          "length": 5136,
+          "sha256": "74EE63BA32D9EFC20B20532DDDF85D82E06C7E8517FD5B8726604E7E9662AB1F"
+        },
+        {
+          "path": "overlays/overlay_0028.bin",
+          "length": 10944,
+          "sha256": "2D3A55649588F8D3D2200E3B89A70F1D0908A582FA138272982B24AF57137CEF"
+        },
+        {
+          "path": "overlays/overlay_0029.bin",
+          "length": 17600,
+          "sha256": "6B5EBF1979616095819613CEE2CE63DB8CE29023C10DE104DFB313731D65A82D"
+        },
+        {
+          "path": "overlays/overlay_0030.bin",
+          "length": 18780,
+          "sha256": "BFFA66322243A6496D56C9D7E578B244636F2054C42C2722D4FEF0E28FB05F7E"
+        },
+        {
+          "path": "overlays/overlay_0031.bin",
+          "length": 14684,
+          "sha256": "070087E9C0E33EEAEBB0C08D2BF55ABC763429747C239FB41EDBA8A71382E92E"
+        },
+        {
+          "path": "overlays/overlay_0032.bin",
+          "length": 22360,
+          "sha256": "01FB8105116F32CF65E6B50B8B6E01662B5CF91B771F85C8E8D3C33B15CB615A"
+        },
+        {
+          "path": "overlays/overlay_0033.bin",
+          "length": 18064,
+          "sha256": "291A91B0D7C890AA44BD6C0EA591BA943865739A39F5B2A7E8F5924355FAF25B"
+        },
+        {
+          "path": "overlays/overlay_0034.bin",
+          "length": 15060,
+          "sha256": "06AC8240C978CC4D47C3D8901685C69BF007DAC921FFE5FC265AB78F8CD3FED9"
+        },
+        {
+          "path": "overlays/overlay_0035.bin",
+          "length": 7776,
+          "sha256": "3A65F68C90891B5B3D4DA1CF4A70EFE640982A4B05259698FA73CB5ABA7F46FC"
+        },
+        {
+          "path": "overlays/overlay_0036.bin",
+          "length": 17976,
+          "sha256": "D08D1593D028B52969932CFBA7063957E2492C599ED4727D79B1AF9B4377BEE9"
+        },
+        {
+          "path": "overlays/overlay_0037.bin",
+          "length": 11936,
+          "sha256": "1EC4538657EBA40ACD5D2E8B311912CBB7E619C7009A57804ABBF1152CD877B6"
+        },
+        {
+          "path": "overlays/overlay_0038.bin",
+          "length": 3696,
+          "sha256": "A0FD24A8899D85F561E8891279FC635F1B23A1173DA074EA37766E0075CA75D8"
+        },
+        {
+          "path": "overlays/overlay_0039.bin",
+          "length": 17544,
+          "sha256": "7E3169134B0687CD6A9E8F8C53D4269B082F35F99BE8D29D90B9E21E3CD4A23A"
+        },
+        {
+          "path": "overlays/overlay_0040.bin",
+          "length": 21032,
+          "sha256": "F56A4EFA4A9920B310C0F65B2E59C21C840251615E93EE1DBF5AA1A5C9ACD834"
+        },
+        {
+          "path": "overlays/overlay_0041.bin",
+          "length": 32,
+          "sha256": "3CCB92A8297A427F962936EF0D0CE7061E9C33D3FAB4ACA37A73377E9A8F05FD"
+        },
+        {
+          "path": "overlays/overlay_0042.bin",
+          "length": 21548,
+          "sha256": "FC8AAC948C34F127650B52CC3CADD8F3610D53AD3C0248B58C6C13DBDA3450A3"
+        },
+        {
+          "path": "overlays/overlay_0043.bin",
+          "length": 18780,
+          "sha256": "5D41EC3E371F91FBC816A2C68595EE512FFC43500B48F97E6780078FB6C6854C"
+        },
+        {
+          "path": "overlays/overlay_0044.bin",
+          "length": 5724,
+          "sha256": "418BA2357914416957AD519FC04F559157736D452142E3F02D4CCAD61EA84D90"
+        },
+        {
+          "path": "overlays/overlay_0045.bin",
+          "length": 23144,
+          "sha256": "73D3FA793B7707B66A8D25C7DD2E12C6D8B11B536774B9D6538B572675D97E08"
+        },
+        {
+          "path": "overlays/overlay_0046.bin",
+          "length": 19184,
+          "sha256": "0C0AC60039BCADA90F4345847390AADCFD48A17D21E395033FDC365A56E970D8"
+        },
+        {
+          "path": "overlays/overlay_0047.bin",
+          "length": 24488,
+          "sha256": "5B36B42FC5582D1173CFE49B6EC68AA0EDF4A1A3BD4783C9102AF730F370A82B"
+        },
+        {
+          "path": "overlays/overlay_0048.bin",
+          "length": 8504,
+          "sha256": "0F9C2ED72DF9AFD4241FD46C9264802BAFCB450DC3F870D8C3A83B8F26BBDE63"
+        },
+        {
+          "path": "overlays/overlay_0049.bin",
+          "length": 27032,
+          "sha256": "109C6DCF1AC3CD0BE73AC63FBB8132715944B0BC29706340BC1F4800C99DE999"
+        },
+        {
+          "path": "overlays/overlay_0050.bin",
+          "length": 27096,
+          "sha256": "128FF34E676D217A3336E4939FADFF67421552117CD088AF8E5EAF60715A397E"
+        },
+        {
+          "path": "overlays/overlay_0051.bin",
+          "length": 32,
+          "sha256": "3CCB92A8297A427F962936EF0D0CE7061E9C33D3FAB4ACA37A73377E9A8F05FD"
+        },
+        {
+          "path": "overlays/overlay_0052.bin",
+          "length": 32,
+          "sha256": "3CCB92A8297A427F962936EF0D0CE7061E9C33D3FAB4ACA37A73377E9A8F05FD"
+        },
+        {
+          "path": "overlays/overlay_0053.bin",
+          "length": 32,
+          "sha256": "3CCB92A8297A427F962936EF0D0CE7061E9C33D3FAB4ACA37A73377E9A8F05FD"
+        },
+        {
+          "path": "overlays/overlay_0054.bin",
+          "length": 1972,
+          "sha256": "1523152937673474F06D6312962CB4F71A3B820A0C8DBC0893D6503E3B7AB01A"
+        },
+        {
+          "path": "overlays/overlay_0055.bin",
+          "length": 7592,
+          "sha256": "56AF06617BA1F8B8B0FA520C8BDD7AFE620144E6A4B9CA73A0E41F048C2DC005"
+        },
+        {
+          "path": "overlays/overlay_0056.bin",
+          "length": 24044,
+          "sha256": "B0A438EFB03A4A3123A9074759868A79C2E32460E0FEA4A9F27D60C767948A69"
+        },
+        {
+          "path": "overlays/overlay_0057.bin",
+          "length": 1100,
+          "sha256": "2D4C4FFFB826FABDFFEE58A9D35BEC356DC9E976B55B0FA92801FDA3CFE19731"
+        },
+        {
+          "path": "overlays/overlay_0058.bin",
+          "length": 3748,
+          "sha256": "5C6C8817F77CCB382E1CD6A51034F9CF89C6D502D1AFEEE3C64D7D4DA77BBDBC"
+        },
+        {
+          "path": "overlays/overlay_0059.bin",
+          "length": 32,
+          "sha256": "3CCB92A8297A427F962936EF0D0CE7061E9C33D3FAB4ACA37A73377E9A8F05FD"
+        },
+        {
+          "path": "overlays/overlay_0060.bin",
+          "length": 9448,
+          "sha256": "F46326E893344219553789A8EA31EC94DFAB674DDF9514D726EB9ECFE5709753"
+        },
+        {
+          "path": "overlays/overlay_0061.bin",
+          "length": 8712,
+          "sha256": "8F2EE742AAC88E4C0E14D0E39DB94399A3A780E6FFFFC9111205BAA5471968DF"
+        },
+        {
+          "path": "overlays/overlay_0062.bin",
+          "length": 3404,
+          "sha256": "9348803C2A089CE42ED90F65877D78F2BFF1BB6EEC4E7BAD60E600C75AB78669"
+        },
+        {
+          "path": "overlays/overlay_0063.bin",
+          "length": 6796,
+          "sha256": "5FF140953B8D895DEE16C7E3042A1E9F06D603519219C8D48C1644FE461227EB"
+        },
+        {
+          "path": "overlays/overlay_0064.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0065.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0066.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0067.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0068.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0069.bin",
+          "length": 32,
+          "sha256": "3CCB92A8297A427F962936EF0D0CE7061E9C33D3FAB4ACA37A73377E9A8F05FD"
+        },
+        {
+          "path": "overlays/overlay_0070.bin",
+          "length": 32,
+          "sha256": "3CCB92A8297A427F962936EF0D0CE7061E9C33D3FAB4ACA37A73377E9A8F05FD"
+        },
+        {
+          "path": "overlays/overlay_0071.bin",
+          "length": 6328,
+          "sha256": "36C172203D79A1E956BE07D4794D4EAA66F58A71B8A08CE51A88E27CB8990FC1"
+        },
+        {
+          "path": "overlays/overlay_0072.bin",
+          "length": 8288,
+          "sha256": "FCFA9CDF883BF0D89D76B7493C6308E9B4A37029AB6E24C04313F3EF9666F2AB"
+        },
+        {
+          "path": "overlays/overlay_0073.bin",
+          "length": 5440,
+          "sha256": "01329E4300B8FC6675326A9D50A535674286693F1E004047F85DB6CD5A845819"
+        },
+        {
+          "path": "overlays/overlay_0074.bin",
+          "length": 8184,
+          "sha256": "E75C8A97DF8123A0B3838B32F54A01622B111379A4F8E83B8E63E526B14DDBD4"
+        },
+        {
+          "path": "overlays/overlay_0075.bin",
+          "length": 7676,
+          "sha256": "8BED28085280A5FDE7C03E69C975A5FD6E9650919E0C39AD0D57645FFB91F9EE"
+        },
+        {
+          "path": "overlays/overlay_0076.bin",
+          "length": 2972,
+          "sha256": "7E102608DA18F7125517722890A5C3C6D362FC2176D49401C2A23D3A24C4A75F"
+        },
+        {
+          "path": "overlays/overlay_0077.bin",
+          "length": 1292,
+          "sha256": "D41028BED135A120BC5AA2E71F1BCDD21FF4F013D8E04238EED2B6EE7296D731"
+        },
+        {
+          "path": "overlays/overlay_0078.bin",
+          "length": 3788,
+          "sha256": "4981E69A49EED99AF2F0B2B56F8720C520CA118F13CF9D5BA88D9EE7145801C2"
+        },
+        {
+          "path": "overlays/overlay_0079.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0080.bin",
+          "length": 4652,
+          "sha256": "079E57C10EBA586C7D02236A348C344AADD558AC5406AFF85C307F9F1AA6A30A"
+        },
+        {
+          "path": "overlays/overlay_0081.bin",
+          "length": 5832,
+          "sha256": "20AF6F270B9988E5E30D1E15A0D67AC66B41C3B31E90F3C667BE878A6C428896"
+        },
+        {
+          "path": "overlays/overlay_0082.bin",
+          "length": 6800,
+          "sha256": "5F4ABC38A5229415C6A84D3AE6551EAC28F914BAEFCCEEA9AB0B13E2FD41F0C0"
+        },
+        {
+          "path": "overlays/overlay_0083.bin",
+          "length": 6928,
+          "sha256": "F96D11366A5DA1E7CD7533C352884D87BBB9567A545BA02C7B588C7D36643B54"
+        },
+        {
+          "path": "overlays/overlay_0084.bin",
+          "length": 15572,
+          "sha256": "90589BA6CB94C66D99BA535C41801AB56D07C374E56C1885E1E7D8F60EB752F3"
+        },
+        {
+          "path": "overlays/overlay_0085.bin",
+          "length": 5484,
+          "sha256": "65E597E65FDD33736E511F09E1AD4C0F629008DCA9A111DED1294646C5F8F6FC"
+        },
+        {
+          "path": "overlays/overlay_0086.bin",
+          "length": 13240,
+          "sha256": "2DC133D95414440776BD2FEA1F1742D0661ACC4AC154C9BE2E72BCFCBF4802E3"
+        },
+        {
+          "path": "overlays/overlay_0087.bin",
+          "length": 10752,
+          "sha256": "1860D921EC7F3DB1DA9840F817FC48F70CE0310109CA7AFD87F2F2A629F0A078"
+        },
+        {
+          "path": "overlays/overlay_0088.bin",
+          "length": 10184,
+          "sha256": "31E2FDAD4B3D689F208B1BBCFB0BD21C71054A04BB441E1B9FFF627CB0018C2F"
+        },
+        {
+          "path": "overlays/overlay_0089.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0090.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0091.bin",
+          "length": 3360,
+          "sha256": "21D1E281AF4BC04489EEA42715B7BE9535BE48350048DC85AB744B19ABB56901"
+        },
+        {
+          "path": "overlays/overlay_0092.bin",
+          "length": 920,
+          "sha256": "B2E159EF0AD9418591CA90A24BEB5B5C0CD6CFAF5AA37829BB27347919B97C91"
+        },
+        {
+          "path": "overlays/overlay_0093.bin",
+          "length": 6360,
+          "sha256": "0EE6F035795F71AE0AE6E63E63677C53C340C1C18AEB98B93EFA1ECF1430C960"
+        },
+        {
+          "path": "overlays/overlay_0094.bin",
+          "length": 10072,
+          "sha256": "37784E0E04C334C5E7BC21B15C4A4CD5C0EFA0A601CC5EB0C2F44EE573B172E9"
+        },
+        {
+          "path": "overlays/overlay_0095.bin",
+          "length": 3476,
+          "sha256": "E0235319BA4CFC3D7B40DDDAE1BC47E0E78C8B435F8ED4EC9E0F40032012A53A"
+        },
+        {
+          "path": "overlays/overlay_0096.bin",
+          "length": 4856,
+          "sha256": "BDA1DD195E2223D08616EC1192E1540322E7A9D1299A902DEFD19BB5EEB54E2A"
+        },
+        {
+          "path": "overlays/overlay_0097.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0098.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0099.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0100.bin",
+          "length": 24,
+          "sha256": "39567C8568BA2AD65D4E4C444CB53B3313CE1AD5F5FA2E7909EC1E597B9B4898"
+        },
+        {
+          "path": "overlays/overlay_0101.bin",
+          "length": 10056,
+          "sha256": "E4375063A67A3246521D38EA7CF10C1059614CA39820ADC8D73F3915C8833AC8"
+        },
+        {
+          "path": "overlays/overlay_0102.bin",
+          "length": 1604,
+          "sha256": "8A4BB497C9FA159632EAB361F1472E9BE3592E2B399E8A013404F91525F4A29F"
+        },
+        {
+          "path": "overlays/overlay_0103.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0104.bin",
+          "length": 992,
+          "sha256": "5F520F32F8656F2148A111544367FF4906ADDFCF0C96A85520833DE4F6C2D731"
+        },
+        {
+          "path": "overlays/overlay_0105.bin",
+          "length": 14188,
+          "sha256": "C75BE1CBECD38F397A8E352F1A703725D387EAD0815F2AFB7329382B0E4B1A75"
+        },
+        {
+          "path": "overlays/overlay_0106.bin",
+          "length": 24352,
+          "sha256": "1A947658823F46748BBDFCD5433A3AEE83ED4A57CBD5C2018AE4A113B2F5D2D8"
+        },
+        {
+          "path": "overlays/overlay_0107.bin",
+          "length": 23184,
+          "sha256": "F98FE017BDA569B38876F574E7A54CA7EE8475CA3725D3B561D0982AC278354E"
+        },
+        {
+          "path": "overlays/overlay_0108.bin",
+          "length": 20124,
+          "sha256": "0E633E21A71A0A021CC6C2859336277ADD6285AB5E316ACB7DFCBCE841C4F375"
+        },
+        {
+          "path": "overlays/overlay_0109.bin",
+          "length": 21932,
+          "sha256": "E3B76570377A38F8259C682B1E31355C9F21BE96B1C501E112DFC9F9EB242C79"
+        },
+        {
+          "path": "overlays/overlay_0110.bin",
+          "length": 14776,
+          "sha256": "3A1A13D21D5154795FCAF864B16B6162675EC7727345EA275A9A46ED52750CD8"
+        },
+        {
+          "path": "overlays/overlay_0111.bin",
+          "length": 23588,
+          "sha256": "8A8D2820860604F1CD928B8499779C0FC862EE2B641FBCE1B7AA1D0168629BF0"
+        },
+        {
+          "path": "overlays/overlay_0112.bin",
+          "length": 26764,
+          "sha256": "DBD8108D320161DEEF71E9CC56AA39A6D58C4222F03941A76A15FE37F964F575"
+        },
+        {
+          "path": "overlays/overlay_0113.bin",
+          "length": 21788,
+          "sha256": "E22764112D76CC3599A9E1645312F439E3D454DD890563E16D7EC744AD1A3E60"
+        },
+        {
+          "path": "overlays/overlay_0114.bin",
+          "length": 19552,
+          "sha256": "03D6BB5F964445130B9F0911E87DD190356631E3CB1F579665737C106CBDF01A"
+        },
+        {
+          "path": "overlays/overlay_0115.bin",
+          "length": 17000,
+          "sha256": "7B8C49D178F962BF35694888C7CB9B46FB4F631B082CC43702276180DDA96F60"
+        },
+        {
+          "path": "overlays/overlay_0116.bin",
+          "length": 21512,
+          "sha256": "1D910554A51A783BCDE2065931561867328FEF96F0AB13A57CFD382CBDA09011"
+        },
+        {
+          "path": "overlays/overlay_0117.bin",
+          "length": 27124,
+          "sha256": "22476500E0F82DAAF2646456817953B485AC136E456ACC1569106B975B43F371"
+        },
+        {
+          "path": "overlays/overlay_0118.bin",
+          "length": 52780,
+          "sha256": "D771C5354014A85C522F65A961CD7304BCA4F3769A25406603B88F35779F2C14"
+        },
+        {
+          "path": "overlays/overlay_0119.bin",
+          "length": 3468,
+          "sha256": "F07D5B47EFD838B14671853E552804F977ABC4E389E63D0C2E02B59ED3316EB5"
+        },
+        {
+          "path": "overlays/overlay_0120.bin",
+          "length": 20040,
+          "sha256": "B463DC9101D5693D2A0865B6673EC9CD2A33BF48497C2A9E35B8FDF96DC6FCE5"
+        },
+        {
+          "path": "overlays/overlay_0121.bin",
+          "length": 19940,
+          "sha256": "B32F3E77CCCF660F64AF61D6269932C24E422762F9E3038677EF2572D76F7A83"
+        },
+        {
+          "path": "overlays/overlay_0122.bin",
+          "length": 28004,
+          "sha256": "2720FB5C61D29FDD0ED4CA4A1E93F16902BDE40E3BCF9E155A714A5B6D6C8ED6"
+        },
+        {
+          "path": "overlays/overlay_0123.bin",
+          "length": 112652,
+          "sha256": "9A922D26978D5EF7C1EC46E1213189BCD1C86A4CF678F12CFB108A9D934FB81C"
+        },
+        {
+          "path": "overlays/overlay_0124.bin",
+          "length": 100800,
+          "sha256": "924848D9966B2C92ADCD7907BDA2FAF0F5360F7775E819247CBCF4DE8AFE82F7"
+        },
+        {
+          "path": "overlays/overlay_0125.bin",
+          "length": 35316,
+          "sha256": "6ACC9BAEED0ECBDA0A2EAA7B9513724F4B6B38871D958ABF682E7AA5DE376306"
+        },
+        {
+          "path": "overlays/overlay_0126.bin",
+          "length": 50320,
+          "sha256": "323541D8FDFC19067B73928A68E2AEF207DD75BA1ECD8A73481C9BC67400B4A8"
+        },
+        {
+          "path": "overlays/overlay_0127.bin",
+          "length": 11016,
+          "sha256": "4E40144E65E9B4949618E7945CCB52BE4C5D48DA09D5194FCB3A0E1DE045C4CE"
+        },
+        {
+          "path": "overlays/overlay_0128.bin",
+          "length": 13848,
+          "sha256": "D46CB0ED24011697B56218F35EC7925135EC9D73927AB7C2456779F931007F01"
+        },
+        {
+          "path": "overlays/overlay_0129.bin",
+          "length": 21680,
+          "sha256": "A78D3680220D01F2C75685FBC0840A98EFC7796528E8DADCC2C86C0CAE4B827C"
+        },
+        {
+          "path": "overlays/overlay_0130.bin",
+          "length": 16728,
+          "sha256": "08C9AB400BEAB7C9B5DEE65A230E1A56897B9DC18F0CC85BE52CD66969DF00DD"
+        },
+        {
+          "path": "overlays/overlay_0131.bin",
+          "length": 16336,
+          "sha256": "7558937C8E742903489F946D6B139727CE87CFA21959550868747DCB32DC412F"
+        },
+        {
+          "path": "overlays/overlay_0132.bin",
+          "length": 10088,
+          "sha256": "EC1078AF26E0B593573272664DB98471D2067E0CB8A7CB4B5C929087D9BB0FC3"
+        },
+        {
+          "path": "overlays/overlay_0133.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0134.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0135.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0136.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0137.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        },
+        {
+          "path": "overlays/overlay_0138.bin",
+          "length": 2728,
+          "sha256": "F529DCB9D3BADF1534A9D88ED08C30A220D259A8C556E8A93E8517ECB17F2EFB"
+        },
+        {
+          "path": "overlays/overlay_0139.bin",
+          "length": 216,
+          "sha256": "CA3106161FC3133AAA7E69A06C1FED39A8AA9863D4A7E73329BB095DE6F2E23D"
+        },
+        {
+          "path": "overlays/overlay_0140.bin",
+          "length": 20,
+          "sha256": "07D1D94D7D3269A1155925F01090A020E40387E8E8998FC3B4A1A3C633CA4D46"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 93613056,
+          "sha256": "D61EE6DCCE6B9095F91424917ECE14E4AA2F6A7EA337FBD91624BD3EE4B3C98A"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 134217728,
+          "sha256": "B7B6362FEC55EA6438531C1CBC86F22EE59945D502A3A6B04C11E1BB8243B46F"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 134217728,
+          "sha256": "7090F9BF56092FAAC8365BCF5A36198C7FA194E32BD9C8AAE63DAF4DB27B665D"
+        }
+      ]
+    }
+  ]
+}

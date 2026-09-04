@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Ninjatown - SouthPeak Games [CNJE] [USA - English].nds",
+    "length": 33554432,
+    "sha256": "55f31a3b2d5f8acbd49795441a7944b94a9badc0ca5960174751cfb7971350b9",
+    "headerTitle": "NINJATOWN",
+    "gameCode": "CNJE",
+    "makerCode": "S5",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Ninjatown - SouthPeak Games",
+    "bannerTitles": {
+      "Japanese": "Ninjatown\nSouthPeak Games",
+      "English": "Ninjatown\nSouthPeak Games",
+      "French": "Ninjatown\nSouthPeak Games",
+      "German": "Ninjatown\nSouthPeak Games",
+      "Italian": "Ninjatown\nSouthPeak Games",
+      "Spanish": "Ninjatown\nSouthPeak Games"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 159528,
+          "sha256": "7079F4F319E402982280740B6A3005827B066F9DE6D289D4380C4A343607FAED"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 624228,
+          "sha256": "11C6369C026EF542C38C53CD11D273A8E7C8B1505CAE62F2ECF25A6C010BE8A9"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "A9E7B2B5ADA3F93918FD1E039C83B09F1481B7E125E6565D052B80ABCE441E7A"
+        },
+        {
+          "path": "data/NitroComposer/ninjatown.sdat",
+          "length": 5201024,
+          "sha256": "E70057DDCDB85FFE50EB1818DD86F5B70A7B2A5640C3097FCF87F066FD124A86"
+        },
+        {
+          "path": "data/childsigned.srl",
+          "length": 1502920,
+          "sha256": "73CD7868DA317ED308CBE1ABAD1675A531576BF6E6D4A387E0B22B8A7698293F"
+        },
+        {
+          "path": "data/data/banner.nbfc",
+          "length": 512,
+          "sha256": "BA0FFC91086F8E68BC68A4A0057D85F8D26E936A9C81E97097D7C5D265F998DE"
+        },
+        {
+          "path": "data/data/banner.nbfp",
+          "length": 32,
+          "sha256": "3D0FAF7F09D4AC2FC34C75F6E5978F0F0E49B5141DA4346C092CFD2AEC04E9C3"
+        },
+        {
+          "path": "data/movie/01_intro.mods",
+          "length": 887152,
+          "sha256": "2D1BD614E0A436EA8A6C7168D0500D8DC993C1E509683120A9D9300BAA3C9503"
+        },
+        {
+          "path": "data/movie/02_townSquare.mods",
+          "length": 357544,
+          "sha256": "5EE94E6F73925F7896683EB6E3116B58EA5E16EFC300041476782952033957FB"
+        },
+        {
+          "path": "data/movie/03_bizDistrict.mods",
+          "length": 572260,
+          "sha256": "C8A738E3A633B43B594FEEB86DEB4DEC0829814DD4A5ADBD338F4D6768E6D3B4"
+        },
+        {
+          "path": "data/movie/04_bizDistrict.mods",
+          "length": 567356,
+          "sha256": "474C7875BE9ABC4ACA599C66BC902247FC9B5F50B2AAAD991A56536D7CD65CC0"
+        },
+        {
+          "path": "data/movie/05_darkForest.mods",
+          "length": 442336,
+          "sha256": "9DB9130EE5DF3C7613EA5B86762303CCE14A4E6F15C7D40F96F3B6FF7A2B85F5"
+        },
+        {
+          "path": "data/movie/06_farmlands.mods",
+          "length": 468388,
+          "sha256": "2752137567258EB10071F070F50153A30FC345BD40C2732F9A02201AE78E4A83"
+        },
+        {
+          "path": "data/movie/07_shippingLanes.mods",
+          "length": 833180,
+          "sha256": "90717EE6325029C510A661ECFB6BDF4D31922167B897A36226A1EEDB8AAD7EB4"
+        },
+        {
+          "path": "data/movie/08_shippingLanes.mods",
+          "length": 553032,
+          "sha256": "DA66DAFC5A419008C0D37533C5236B10601DC646A1FB0FDD017789A68C4AD664"
+        },
+        {
+          "path": "data/movie/09_foothills.mods",
+          "length": 427460,
+          "sha256": "475D07C1E2F4E0FE9DF13CADBAB2E152B2CAFB181738A5D7F58A740E579DF085"
+        },
+        {
+          "path": "data/movie/10_mtFeroshi.mods",
+          "length": 399472,
+          "sha256": "8EA37FA0CD72D77BD8DB1CA2A37552C0A459426BBF91AFC030CAB846B9F49103"
+        },
+        {
+          "path": "data/movie/11_ovens.mods",
+          "length": 1697468,
+          "sha256": "C6B474948C752F57A022343D7F0B2A67AC2E45B3BDF7CBBAF3727F72D8E8D80F"
+        },
+        {
+          "path": "data/movie/failure.mods",
+          "length": 158148,
+          "sha256": "0256E515C4C9D8C35C3B17D2F4A8298EF2D2CD6474C6FEDB0AA11E63E81CA238"
+        },
+        {
+          "path": "data/movie/ninjatownTrailer.mods",
+          "length": 1992676,
+          "sha256": "E346C6DEE248A294AE25F6E7292B0D50D894240F1A983E285729F893927BA696"
+        },
+        {
+          "path": "data/nt_res.vrb",
+          "length": 8236099,
+          "sha256": "F41B71941DE7A53DF8BD843E8A8325961637FDBE5C52FFFDB0677F6F3793B798"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "70BC47E7FF4F4FD4BE29F9EC008A44D1905789614B216B48F0A5F3E96D056F41"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 25105892,
+          "sha256": "8DF4D0F32E0BF412392C1ECB6621DF7A7B6FA106C65B88AA484D75D0069E6D41"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 33554432,
+          "sha256": "2B0B08928CC9398BF468C73DED2D36B59E4A6DC22314F6A3AE58526314498458"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 33554432,
+          "sha256": "B813F2E1D4C3A692FE449601CD077B2DC8D0D106B14671C5E4BE5B7646E61E0C"
+        }
+      ]
+    }
+  ]
+}

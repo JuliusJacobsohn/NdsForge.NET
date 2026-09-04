@@ -8,8 +8,8 @@ internal static class NdsImageLoader
     /// <summary>The original DS header ends at 0x200 even when later image data is aligned farther out.</summary>
     private const int BaseHeaderLength = 0x200;
 
-    /// <summary>DSi-enhanced images extend the parseable header through offset 0x1000.</summary>
-    private const int DsiHeaderLength = 0x1000;
+    /// <summary>Late DS authentication and DSi metadata both extend the parseable header through offset 0x1000.</summary>
+    private const int ExtendedHeaderLength = 0x1000;
 
     /// <summary>Opens a file-backed source and releases its handle if any parsing stage fails.</summary>
     /// <param name="path">Host-filesystem path to the cartridge image.</param>
@@ -104,14 +104,27 @@ internal static class NdsImageLoader
         options ??= NdsReadOptions.Default;
         options.Validate();
         NdsHeader header = ReadHeader(source);
-        DetectArm9Footer(source, header);
+        NdsProgramMetadataParser.Parse(source, header);
         NdsFileSystem fileSystem = NitroFileSystemParser.Parse(source, header, options);
         IReadOnlyList<NdsOverlay> arm9Overlays = NdsOverlayParser.Parse(
             source, header.Arm9OverlayTable, NdsProcessor.Arm9, fileSystem, options);
         IReadOnlyList<NdsOverlay> arm7Overlays = NdsOverlayParser.Parse(
             source, header.Arm7OverlayTable, NdsProcessor.Arm7, fileSystem, options);
+        NdsOverlayAuthenticationTable? arm9OverlayAuthentication = NdsOverlayAuthenticationParser.Parse(
+            source, header, arm9Overlays, options);
         NdsBanner? banner = NdsBannerParser.Parse(source, header.BannerOffset, options);
-        return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
+        (NdsDownloadPlaySignature? signature, bool truncatedSignature) = NdsDownloadPlaySignatureParser.Parse(source, header);
+        return new NdsImage(
+            source,
+            header,
+            fileSystem,
+            arm9Overlays,
+            arm7Overlays,
+            arm9OverlayAuthentication,
+            banner,
+            signature,
+            truncatedSignature,
+            NdsCarrierLayoutParser.Parse(source, header, fileSystem, banner, signature));
     }
 
     /// <summary>Runs asynchronous component parsers in dependency order against one validated source.</summary>
@@ -127,7 +140,7 @@ internal static class NdsImageLoader
         options ??= NdsReadOptions.Default;
         options.Validate();
         NdsHeader header = await ReadHeaderAsync(source, cancellationToken).ConfigureAwait(false);
-        await DetectArm9FooterAsync(source, header, cancellationToken).ConfigureAwait(false);
+        await NdsProgramMetadataParser.ParseAsync(source, header, cancellationToken).ConfigureAwait(false);
         NdsFileSystem fileSystem = await NitroFileSystemParser.ParseAsync(
             source, header, options, cancellationToken).ConfigureAwait(false);
         IReadOnlyList<NdsOverlay> arm9Overlays = await NdsOverlayParser.ParseAsync(
@@ -136,19 +149,43 @@ internal static class NdsImageLoader
         IReadOnlyList<NdsOverlay> arm7Overlays = await NdsOverlayParser.ParseAsync(
             source, header.Arm7OverlayTable, NdsProcessor.Arm7, fileSystem, options, cancellationToken)
             .ConfigureAwait(false);
+        NdsOverlayAuthenticationTable? arm9OverlayAuthentication = await NdsOverlayAuthenticationParser.ParseAsync(
+            source,
+            header,
+            arm9Overlays,
+            options,
+            cancellationToken).ConfigureAwait(false);
         NdsBanner? banner = await NdsBannerParser.ParseAsync(
             source, header.BannerOffset, options, cancellationToken).ConfigureAwait(false);
-        return new NdsImage(source, header, fileSystem, arm9Overlays, arm7Overlays, banner);
+        (NdsDownloadPlaySignature? signature, bool truncatedSignature) = await NdsDownloadPlaySignatureParser.ParseAsync(
+            source, header, cancellationToken).ConfigureAwait(false);
+        return new NdsImage(
+            source,
+            header,
+            fileSystem,
+            arm9Overlays,
+            arm7Overlays,
+            arm9OverlayAuthentication,
+            banner,
+            signature,
+            truncatedSignature,
+            await NdsCarrierLayoutParser.ParseAsync(source, header, fileSystem, banner, signature, cancellationToken).ConfigureAwait(false));
     }
 
-    /// <summary>Reads either the 0x200-byte DS header or the 0x1000-byte DSi extension selected at offset 0x12.</summary>
+    /// <summary>Reads a classic header or a declared late-DS/DSi 0x1000-byte extension.</summary>
     /// <param name="source">Random-access bytes beginning at cartridge offset zero.</param>
     /// <returns>A parsed header retaining a lossless copy of every header byte read.</returns>
     private static NdsHeader ReadHeader(IImageDataSource source)
     {
         byte[] baseHeader = new byte[BaseHeaderLength];
         source.ReadExactly(0, baseHeader);
-        int length = (baseHeader[0x12] & 2) == 0 ? BaseHeaderLength : DsiHeaderLength;
+        int length = GetHeaderLength(baseHeader);
+        if (length == BaseHeaderLength && CanProbeDigitalCategory(baseHeader, source.Length))
+        {
+            Span<byte> category = stackalloc byte[4];
+            source.ReadExactly(0x234, category);
+            if ((NdsBinary.ReadUInt32(category, 0) >> 16) == 3) { length = ExtendedHeaderLength; }
+        }
         if (length == BaseHeaderLength)
         {
             return new NdsHeader(baseHeader);
@@ -170,7 +207,13 @@ internal static class NdsImageLoader
     {
         byte[] baseHeader = new byte[BaseHeaderLength];
         await source.ReadExactlyAsync(0, baseHeader, cancellationToken).ConfigureAwait(false);
-        int length = (baseHeader[0x12] & 2) == 0 ? BaseHeaderLength : DsiHeaderLength;
+        int length = GetHeaderLength(baseHeader);
+        if (length == BaseHeaderLength && CanProbeDigitalCategory(baseHeader, source.Length))
+        {
+            byte[] category = new byte[4];
+            await source.ReadExactlyAsync(0x234, category, cancellationToken).ConfigureAwait(false);
+            if ((NdsBinary.ReadUInt32(category, 0) >> 16) == 3) { length = ExtendedHeaderLength; }
+        }
         if (length == BaseHeaderLength)
         {
             return new NdsHeader(baseHeader);
@@ -185,47 +228,17 @@ internal static class NdsImageLoader
         return new NdsHeader(fullHeader);
     }
 
-    /// <summary>Recognizes the optional 12-byte SDK footer immediately after ARM9 without treating arbitrary trailing data as one.</summary>
-    /// <typeparam name="TSource">Concrete source type, avoiding interface dispatch in this small hot path.</typeparam>
-    /// <param name="source">Image bytes used to inspect the footer magic.</param>
-    /// <param name="header">Parsed header whose ARM9 model receives the discovered region.</param>
-    private static void DetectArm9Footer<TSource>(TSource source, NdsHeader header)
-        where TSource : IImageDataSource
+    /// <summary>Selects extension bytes only when unit code or late-DS authentication flags declare them.</summary>
+    private static int GetHeaderLength(ReadOnlySpan<byte> baseHeader)
     {
-        if (header.Arm9.Data.End > source.Length - 12)
-        {
-            return;
-        }
-
-        Span<byte> marker = stackalloc byte[4];
-        source.ReadExactly(header.Arm9.Data.End, marker);
-        if (NdsBinary.ReadUInt32(marker, 0) == 0xDEC00621)
-        {
-            header.Arm9.Footer = new(header.Arm9.Data.End, 12);
-        }
+        bool isDsi = (baseHeader[0x12] & 2) != 0;
+        const byte lateDsAuthenticationMask =
+            (byte)(NdsProgramFeatures.AuthenticatesBanner | NdsProgramFeatures.AuthenticatesPrograms);
+        bool isAuthenticatedLateDs = baseHeader[0x12] == 0 && (baseHeader[0x1BF] & lateDsAuthenticationMask) != 0;
+        return isDsi || isAuthenticatedLateDs ? ExtendedHeaderLength : BaseHeaderLength;
     }
 
-    /// <summary>Recognizes the optional ARM9 SDK footer using cancellable random-access I/O.</summary>
-    /// <typeparam name="TSource">Concrete source type, avoiding interface dispatch in this small hot path.</typeparam>
-    /// <param name="source">Image bytes used to inspect the footer magic.</param>
-    /// <param name="header">Parsed header whose ARM9 model receives the discovered region.</param>
-    /// <param name="cancellationToken">Cancels the marker read before the header is modified.</param>
-    private static async ValueTask DetectArm9FooterAsync<TSource>(
-        TSource source,
-        NdsHeader header,
-        CancellationToken cancellationToken)
-        where TSource : IImageDataSource
-    {
-        if (header.Arm9.Data.End > source.Length - 12)
-        {
-            return;
-        }
-
-        byte[] marker = new byte[4];
-        await source.ReadExactlyAsync(header.Arm9.Data.End, marker, cancellationToken).ConfigureAwait(false);
-        if (NdsBinary.ReadUInt32(marker, 0) == 0xDEC00621)
-        {
-            header.Arm9.Footer = new(header.Arm9.Data.End, 12);
-        }
-    }
+    /// <summary>Allows bounded detection of DS-mode system SRLs only inside a declared complete header reservation.</summary>
+    private static bool CanProbeDigitalCategory(ReadOnlySpan<byte> header, long sourceLength) =>
+        header[0x12] == 0 && NdsBinary.ReadUInt32(header, 0x84) >= ExtendedHeaderLength && sourceLength >= ExtendedHeaderLength;
 }

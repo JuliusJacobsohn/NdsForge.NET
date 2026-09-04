@@ -1,6 +1,6 @@
 <Project>
-  <!-- The manual release workflow verifies and publishes this stable Semantic Version. -->
+  <!-- Successful main CI releases this stable Semantic Version for all packages. -->
   <PropertyGroup>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 </Project>

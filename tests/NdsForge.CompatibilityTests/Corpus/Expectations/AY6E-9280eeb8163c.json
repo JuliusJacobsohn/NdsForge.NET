@@ -1,0 +1,2525 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Bangai-O Spirits - D3Publisher of America, Inc. [AY6E] [USA - English].nds",
+    "length": 8388608,
+    "sha256": "9280eeb8163c6cff5dab94d86af167f6c1374533bcbfda36f8db945f8bfd3ec8",
+    "headerTitle": "BANGAI-O",
+    "gameCode": "AY6E",
+    "makerCode": "G9",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "Bangai-O Spirits - D3Publisher of America, Inc.",
+    "bannerTitles": {
+      "Japanese": "Bangai-O Spirits\nD3Publisher of America, Inc.",
+      "English": "Bangai-O Spirits\nD3Publisher of America, Inc.",
+      "French": "Bangai-O Spirits\nD3Publisher of America, Inc.",
+      "German": "Bangai-O Spirits\nD3Publisher of America, Inc.",
+      "Italian": "Bangai-O Spirits\nD3Publisher of America, Inc.",
+      "Spanish": "Bangai-O Spirits\nD3Publisher of America, Inc."
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 159528,
+          "sha256": "7079F4F319E402982280740B6A3005827B066F9DE6D289D4380C4A343607FAED"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 960,
+          "sha256": "2A78711CCC01CFB50883C9E26E0D1C3303729483E1FE4C1DC72EEAD28BFDF6A7"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 562852,
+          "sha256": "21374FA301B075479841EB6C741ECAC18C82FB1D73A76CD28D48ED09F78B8D18"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "134629D0B8BDBEBDE26528C0BB5065D90B581CF80566459DBBC5CFA25C202E73"
+        },
+        {
+          "path": "data/back_bg/bee1_002_back_bg8.bin",
+          "length": 8764,
+          "sha256": "4C92B8BB507B7B13D0D32B215494DA3469F40DCFEBFD701EAA06FCB5E6B0E073"
+        },
+        {
+          "path": "data/back_bg/bee1_003_back_bg8.bin",
+          "length": 8740,
+          "sha256": "4049DF54BE71258C5C0FFC62E468B76B78C8E6C25EE0425EE52FC4542B5D2BD9"
+        },
+        {
+          "path": "data/back_bg/bee1_004_back_bg8.bin",
+          "length": 8740,
+          "sha256": "554B1C80AE958C26C3E955F19E8564EDE4AB49CF8FC97BEEC9B56F5B4A3CEF06"
+        },
+        {
+          "path": "data/back_bg/bee_001_back_bg8.bin",
+          "length": 9292,
+          "sha256": "8E0B1E7FCD2F8A7AFBF15F4B184098D2123097CA2B961B742D926560C5A421A7"
+        },
+        {
+          "path": "data/back_bg/cave_001_back_bg8.bin",
+          "length": 16204,
+          "sha256": "CDA3CA845C107570F9ADCB3186CACD856BC53C3BADEDE62EFA2875D8BAFA9024"
+        },
+        {
+          "path": "data/back_bg/city1_003_back_bg8.bin",
+          "length": 16692,
+          "sha256": "214463139E702EBC9F7920DF1EEBF4D45EF851A1C8ACEAAE8012A8B5849BAE2E"
+        },
+        {
+          "path": "data/back_bg/city1_004_back_bg8.bin",
+          "length": 16692,
+          "sha256": "6CAD3B1548708BDDFADC3107DC1A3BC5136855D2F2D53C55A51EA07A6D1E982E"
+        },
+        {
+          "path": "data/back_bg/city_001_back_bg8.bin",
+          "length": 16692,
+          "sha256": "3070B839FD32CC0C124DAAC5A987BBF9B969435056567FF925C130AC2676AC2E"
+        },
+        {
+          "path": "data/back_bg/city_002_back_bg8.bin",
+          "length": 17092,
+          "sha256": "1E021F300E64C4D23EDDA659F6BA89D388A0282B749DEA0F079373A8764EAC9B"
+        },
+        {
+          "path": "data/back_bg/duomo1_001_back_bg8.bin",
+          "length": 36188,
+          "sha256": "A99BC537328317F47215656E382DFC85919A6C62476C426DB01560A4393CF43D"
+        },
+        {
+          "path": "data/back_bg/flesh_001_back_bg8.bin",
+          "length": 100,
+          "sha256": "9D2F3CCFE8AE081BE5F0DF8CB6DD0AED0ACAEDE82DDF46602D4A042A6B96F4F8"
+        },
+        {
+          "path": "data/back_bg/forest_001_back_bg8.bin",
+          "length": 33088,
+          "sha256": "48817D8D77C42FF87AD55BFEDE34F710696712DD83E329E204DAAFACE164198F"
+        },
+        {
+          "path": "data/back_bg/gamiras_001_back_bg8.bin",
+          "length": 25116,
+          "sha256": "E15B2750BE12641B27F7A82D208D3B71F46D4049BFACF3E592B78F4AE95F414D"
+        },
+        {
+          "path": "data/back_bg/giger1_002_back_bg8.bin",
+          "length": 26284,
+          "sha256": "9D649CD73AFDB541006FAE19AA42BD011196D0645BEEFE030264EAA4A8BEE124"
+        },
+        {
+          "path": "data/back_bg/giger_001_back_bg8.bin",
+          "length": 26284,
+          "sha256": "1A4B21F9F3378BCB2D32A23B94FEBA87CA6639644D0C73ABB7E91B1BEBD377EC"
+        },
+        {
+          "path": "data/back_bg/kawara_001_back_bg8.bin",
+          "length": 17500,
+          "sha256": "B895EA1383973A46E413010DF08241BA74350CEC73A4D25ED5035852EC358B56"
+        },
+        {
+          "path": "data/back_bg/mario_001_back_bg8.bin",
+          "length": 3548,
+          "sha256": "114A9568CA287E290D0351D214D4A9AB3B062CE67B150965948E0E8A65316618"
+        },
+        {
+          "path": "data/back_bg/moon_001_back_bg8.bin",
+          "length": 23948,
+          "sha256": "E43B43BFD1ED6B01CB741E46D4DE9A41CDC38C55725E4CA44BA6B9149BA183AA"
+        },
+        {
+          "path": "data/back_bg/mount_001_back_bg8.bin",
+          "length": 33968,
+          "sha256": "59283E20E52D4B969DE42F16D6C14EC37DF7A7F1047EF76E658F481C5B190537"
+        },
+        {
+          "path": "data/back_bg/night_001_back_bg8.bin",
+          "length": 18772,
+          "sha256": "068ED24C7B55A0C4BC9C314EE7C7EC86DBBDF3BCAF5FF6651DC1F82FC9ED69D4"
+        },
+        {
+          "path": "data/back_bg/octagon1_002_back_bg8.bin",
+          "length": 5356,
+          "sha256": "7803B283E4F0775366D23B1BA87FEDC55CBB2E21B9D8937E6DF50906DEEBDB18"
+        },
+        {
+          "path": "data/back_bg/octagon1_003_back_bg8.bin",
+          "length": 5356,
+          "sha256": "5A8369992E88731FCD85FACB1F1306F45AE975893BDB3079977BBC7486328AF4"
+        },
+        {
+          "path": "data/back_bg/octagon_001_back_bg8.bin",
+          "length": 7236,
+          "sha256": "2088A714F78CA6EF31B6352AB02D7797E5157725001FBA5AAA28C832F3A8300B"
+        },
+        {
+          "path": "data/back_bg/red_001_back_bg8.bin",
+          "length": 16028,
+          "sha256": "7725202449B7566036C9CCE1E1848A7848E08D6B04F0484716E4C41214C7D513"
+        },
+        {
+          "path": "data/back_bg/sea_001_back_bg8.bin",
+          "length": 21892,
+          "sha256": "F5CC40534E57641F19DAFD071B42DEB1487EBB190654684BCC300DFF53F82AF2"
+        },
+        {
+          "path": "data/back_bg/ship_002_back_bg8.bin",
+          "length": 27176,
+          "sha256": "07D54B49AA97FDD0A92F1DADE307432E0E2E825C1FE4ACC88CE93B681A7ABA1A"
+        },
+        {
+          "path": "data/back_bg/skel1_002_back_bg8.bin",
+          "length": 26236,
+          "sha256": "A7F8499959950D7A9D53D0898A099D27B07ED5B6959120B1E2BC23C939746B66"
+        },
+        {
+          "path": "data/back_bg/skel1_003_back_bg8.bin",
+          "length": 26164,
+          "sha256": "383DEED082F513882C7DDCB7B3EC0627B58D2A3120EAA8B294B377A22CBE25C8"
+        },
+        {
+          "path": "data/back_bg/skel_001_back_bg8.bin",
+          "length": 26164,
+          "sha256": "0C9D9EB350CDE463E99794661D5A52065858B944729786E673E13AEDF7C0DC9C"
+        },
+        {
+          "path": "data/back_bg/sky2_001_back_bg8.bin",
+          "length": 20616,
+          "sha256": "DA1B54B0BEC2ECB8523FC836B0C0BED0D01E5F6DA36A25A5D2456D042BC3EF06"
+        },
+        {
+          "path": "data/back_bg/sky3_001_back_bg8.bin",
+          "length": 13568,
+          "sha256": "BC998AF925CF19BBDD5F74E8EA64470FF5DBF2920949D32015FE0314E419CE06"
+        },
+        {
+          "path": "data/back_bg/sky_002_back_bg8.bin",
+          "length": 8624,
+          "sha256": "D6EBD7460C66633218120773B1DFA97D7383F214B63E33F8F4C9C04D3CECBEF9"
+        },
+        {
+          "path": "data/back_bg/space1_002_back_bg8.bin",
+          "length": 11724,
+          "sha256": "6DA272836BCE379BF1F6518CE6F64D215BF204E3CB69DB5468F53C1F16A638D5"
+        },
+        {
+          "path": "data/back_bg/space2_002_back_bg8.bin",
+          "length": 10032,
+          "sha256": "FCED8D6E8407B733E2AA21F89420AFB17A9CA4876A6A93DD4B544B4A963B5AC6"
+        },
+        {
+          "path": "data/back_bg/space_003_back_bg8.bin",
+          "length": 872,
+          "sha256": "1B971F29D0173C7C1456E17F6AD58884EDCDC33476ACDCEBD12478E37B46B97B"
+        },
+        {
+          "path": "data/back_bg/space_004_back_bg8.bin",
+          "length": 10032,
+          "sha256": "A9969415B3D912E3ACDD92D5AED39F3CE331766C63BABC737F7014E19C65E5C0"
+        },
+        {
+          "path": "data/back_bg/square1_002_back_bg8.bin",
+          "length": 14428,
+          "sha256": "19CFD4FF34FD362A71FC330999B48A531FA2E25C3DB9466F448C0DA37169D470"
+        },
+        {
+          "path": "data/back_bg/square1_003_back_bg8.bin",
+          "length": 14428,
+          "sha256": "0678B11BCD0F52A3EE3339E0D958E9F5D083879589F2775BBE26D16156F3E48B"
+        },
+        {
+          "path": "data/back_bg/square_001_back_bg8.bin",
+          "length": 14428,
+          "sha256": "D78A7687AB0E1E71B638CBDB138CA9A9CA3BCCCB8912D28E2070ADE85ADC3AC4"
+        },
+        {
+          "path": "data/back_bg/star_001_back_bg8.bin",
+          "length": 29780,
+          "sha256": "154398CFC56707EB054A04EBD37D446D1B1BFC25C57B6883F0DE3DC4471C09D7"
+        },
+        {
+          "path": "data/back_bg/sun_001_back_bg8.bin",
+          "length": 19868,
+          "sha256": "101F8EB70C35DBFDF44FFCCA2C330C50ECD3DC476337A6A83BB6246941F12C13"
+        },
+        {
+          "path": "data/back_bg/tate1_001_back_bg8.bin",
+          "length": 25508,
+          "sha256": "7A13A75E163FE1A413CADD3C45B93894FD61C4EB9F87D946D07E17E575EF03A8"
+        },
+        {
+          "path": "data/back_bg/tate1_002_back_bg8.bin",
+          "length": 25508,
+          "sha256": "18EA21219555247ACF764AB661EE2344EEEF07A5E4AB055FCF34B9596F3A0D1A"
+        },
+        {
+          "path": "data/back_bg/triangle1_003_back_bg8.bin",
+          "length": 7388,
+          "sha256": "625FCF79C69F9E86BDEEC976DB25C6B5A1EDDD303C8A0C4A597DE8B26BC17477"
+        },
+        {
+          "path": "data/back_bg/triangle_001_back_bg8.bin",
+          "length": 7388,
+          "sha256": "BD4B07D0A22BEA74C0EAD1B9E5C3B141642B98EE2CCE990500892E352AB4976B"
+        },
+        {
+          "path": "data/back_bg/triangle_002_back_bg8.bin",
+          "length": 7388,
+          "sha256": "69B3AFA227E9CAA1EFCBC1AD4C3639E32732F2DCA6C466CB2C446FD41FF8F218"
+        },
+        {
+          "path": "data/back_bg/white1_002_back_bg8.bin",
+          "length": 13924,
+          "sha256": "A1F2C2685956EAF80A69812188293ABB33CB3D7C6F6ED3D366441F341035A45C"
+        },
+        {
+          "path": "data/back_bg/white_001_back_bg8.bin",
+          "length": 13924,
+          "sha256": "08EFEE52B687A94437E5A907C1094F411AA57F58DF8DF39FAFFE0703DBF48632"
+        },
+        {
+          "path": "data/back_bg/white_bg8.bin",
+          "length": 2252,
+          "sha256": "75E76C43E265233A4BCCF956E3FA15FC1DC88BA3C058D194F6362E8B319C7C95"
+        },
+        {
+          "path": "data/chara/adigo_hit.bin",
+          "length": 112,
+          "sha256": "DD9267C8A12E16F58ABD1752062AF5B459FBEB14E5465CF30DF74089C84649D2"
+        },
+        {
+          "path": "data/chara/adigo_obj.bin",
+          "length": 1052,
+          "sha256": "ACFC2A3678BCEA5518B45A27A4DFEB60651C1C86B1BFC7BAC0443077886B7822"
+        },
+        {
+          "path": "data/chara/adigo_tex.bin",
+          "length": 17408,
+          "sha256": "5436E4550ADDDB8B55686C2F38CF1CDF69562F73B79896A840B909AD657AE7A5"
+        },
+        {
+          "path": "data/chara/ant_hit.bin",
+          "length": 144,
+          "sha256": "15534D1EC4D0CB909A8E70E08A87E0F29F70E6CBCC4FE25AD0C175DB52C6D2F2"
+        },
+        {
+          "path": "data/chara/ant_obj.bin",
+          "length": 856,
+          "sha256": "9F0ACE62F3F578159A9DD500B715DAD4DEB94E81E9E274F5A683C0EF12F843BB"
+        },
+        {
+          "path": "data/chara/ant_tex.bin",
+          "length": 22528,
+          "sha256": "685302EBA4DAC29BF8886D993B340009FF300A7583A8E55BF1C8624F389589D8"
+        },
+        {
+          "path": "data/chara/ball_hit.bin",
+          "length": 104,
+          "sha256": "460693CF629AFA5F45EB6955AFE28094169791761A347DE491E97D598D6D91D1"
+        },
+        {
+          "path": "data/chara/ball_obj.bin",
+          "length": 300,
+          "sha256": "E0AC40AD9F4A71B6D971BCD5EE7465E4600B49C691C71EF5C224EAAC128FEFE6"
+        },
+        {
+          "path": "data/chara/ball_tex.bin",
+          "length": 2304,
+          "sha256": "A6367CEC1AFDFCD839CA2C50DB54727CD09E71B54BAAFDCEAB7D23561759C933"
+        },
+        {
+          "path": "data/chara/bangaio_alpha_effect_obj.bin",
+          "length": 4156,
+          "sha256": "4555ED4AA47DDCA24BA373658EBF0BAB8615EAB6FE2551E85693272793DED9CD"
+        },
+        {
+          "path": "data/chara/bangaio_alpha_effect_tex.bin",
+          "length": 124416,
+          "sha256": "77AB4C9F498C0C870D432DD589872A781A0F10943EA5BBA2A65CC1CB0CAADFE4"
+        },
+        {
+          "path": "data/chara/bangaio_hit.bin",
+          "length": 2644,
+          "sha256": "9643D8F643CE45874D724C4396540CB237921597787B47A4E64B714A25EF33A6"
+        },
+        {
+          "path": "data/chara/bangaio_obj.bin",
+          "length": 24912,
+          "sha256": "5479894BC684385CF6ED2E12AF261E055903FB9862FEFC4E12DC9B5CC14EBE78"
+        },
+        {
+          "path": "data/chara/bangaio_tex.bin",
+          "length": 214016,
+          "sha256": "D357B9F2EBA0DCF7CE9994CE2ABDCB6E2DFD823E377F2703D942340534C10370"
+        },
+        {
+          "path": "data/chara/bat_robo_hit.bin",
+          "length": 124,
+          "sha256": "DBC8369A9CA10964D39FC8B7029CCB5C5690DA19B793603C4F857E35970712CC"
+        },
+        {
+          "path": "data/chara/bat_robo_obj.bin",
+          "length": 912,
+          "sha256": "67027A68925D27BFDD24EB81A888990BA7613D165743C8C7C07E549D1FF31058"
+        },
+        {
+          "path": "data/chara/bat_robo_tex.bin",
+          "length": 16320,
+          "sha256": "054BF0E024B795C4619481ED9C54CAAA791E2C3AAA3F66647B5E0248D1B5D0F5"
+        },
+        {
+          "path": "data/chara/big_mine_hit.bin",
+          "length": 44,
+          "sha256": "DEAD1E50622EBEA1EA2256C5935CF4AD5909B784E049FF0A16C9D08036481CF3"
+        },
+        {
+          "path": "data/chara/big_mine_obj.bin",
+          "length": 164,
+          "sha256": "F95797D7A707ABFF5CCAC10E6F9372CFD3DA50AB1E6668C8E4BD7B412D60C8F6"
+        },
+        {
+          "path": "data/chara/big_mine_tex.bin",
+          "length": 16384,
+          "sha256": "BB8413D9B22FF2944F09FB6C54288C357B5E9B9F197BC679ACF4252BEE95F820"
+        },
+        {
+          "path": "data/chara/big_robo_hit.bin",
+          "length": 120,
+          "sha256": "C71AB6295B234DBEE5A61E892DDFE8E8C70596077FC524A19C2BE30CFD0A01C9"
+        },
+        {
+          "path": "data/chara/big_robo_obj.bin",
+          "length": 1868,
+          "sha256": "211A55944AE1E35870353F6C097D4B7D072F46771EB14B968B2011D51F4E4666"
+        },
+        {
+          "path": "data/chara/big_robo_tex.bin",
+          "length": 163072,
+          "sha256": "B2EB38ED474A5639191BD09F11ED33C1CD735F5A0049D10AB4D8E2CBEAF777CA"
+        },
+        {
+          "path": "data/chara/block_hit.bin",
+          "length": 276,
+          "sha256": "68B4F3C45CE4B3B1DAF5C8B257D7E42046A96DBCB3DCF76217694A531FE4AA21"
+        },
+        {
+          "path": "data/chara/block_obj.bin",
+          "length": 2088,
+          "sha256": "281AC92A8D70E7C66408286ABA527A26400EB96D301E11BDA0B8EB6079732599"
+        },
+        {
+          "path": "data/chara/block_tex.bin",
+          "length": 20736,
+          "sha256": "9FF6A6F546E5D1FF99BDD563B47ACAE54102FE11441A2AFF52F16F3A6D8400CD"
+        },
+        {
+          "path": "data/chara/boss1_hit.bin",
+          "length": 88,
+          "sha256": "DCF18334B284B928E0B1A1BDE7C5C1D5D73E1AED74E2DC9A0D55298E68F84AB5"
+        },
+        {
+          "path": "data/chara/boss1_obj.bin",
+          "length": 388,
+          "sha256": "EC895609A17FCB97873FEBBF314B5663B5D257FB0A23636FDEC620C4B30EC19B"
+        },
+        {
+          "path": "data/chara/boss1_tex.bin",
+          "length": 18688,
+          "sha256": "506C1538EA1FF7F4DD8D8513415899727069BCB1D2086A0AE3D5BD31C1C11D07"
+        },
+        {
+          "path": "data/chara/boss2_hit.bin",
+          "length": 108,
+          "sha256": "1A4737DB652656A48BB5D69D2C0FF7B281B37069CDEEBD839B7DE5749BFC8499"
+        },
+        {
+          "path": "data/chara/boss2_obj.bin",
+          "length": 1016,
+          "sha256": "18C63A86418897CB937483759C49AF8CA3D887FDD8C8FE3C275A2E884E42A011"
+        },
+        {
+          "path": "data/chara/boss2_tex.bin",
+          "length": 11776,
+          "sha256": "104F6FC5B5F872A6287AE1FA20EC88BF776C51FF8F4E3C8B834205F1DD8AF9AD"
+        },
+        {
+          "path": "data/chara/bound_zako_obj.bin",
+          "length": 7856,
+          "sha256": "366882EF7874CEFBEF1179B396818C154EE4393BFCAC3FA90FD7F55F4FEAA03B"
+        },
+        {
+          "path": "data/chara/bound_zako_tex.bin",
+          "length": 10240,
+          "sha256": "416E542CE595727E938B96BADA3EDBABEA27B639CD94EB6D2DD8B1B5A1E82B04"
+        },
+        {
+          "path": "data/chara/break_zako_obj.bin",
+          "length": 7856,
+          "sha256": "93C0FA66AB374CC6B835302698D57ECBD2F9E05CDAF84DB4A591D209976410DE"
+        },
+        {
+          "path": "data/chara/break_zako_tex.bin",
+          "length": 5632,
+          "sha256": "771DACF69F46FC018B022D76A0C3B76B06E33A83659F55DCB3511C417CE30AB6"
+        },
+        {
+          "path": "data/chara/cannon_hit.bin",
+          "length": 996,
+          "sha256": "49BE49BB256413C84C0073B9BAF517713BA85EA1344B7624E9EFA136EBB9BE3E"
+        },
+        {
+          "path": "data/chara/cannon_obj.bin",
+          "length": 3260,
+          "sha256": "2F9341F2439FD138366CA35AF84F4E7298EE859633901A08F18B654522CA32F5"
+        },
+        {
+          "path": "data/chara/cannon_tex.bin",
+          "length": 36096,
+          "sha256": "FDDEF4A992571FA2404DAF75D892438E9206EDDC83A4DB75FC220E5BEE564F76"
+        },
+        {
+          "path": "data/chara/drill_boss_hit.bin",
+          "length": 252,
+          "sha256": "05AAA08D154E5B0213BA4F3C3ED73C6741569D3A37D0896376139CEA03FE9960"
+        },
+        {
+          "path": "data/chara/drill_boss_obj.bin",
+          "length": 1908,
+          "sha256": "AD6675AF813BB5F18323E898BCBC7AE6E52B950E652EB6006A6BC77F8BC28D39"
+        },
+        {
+          "path": "data/chara/drill_boss_tex.bin",
+          "length": 22528,
+          "sha256": "B68FD4C55B4499BF2AA5D70A8775F08456F8443C901CC3BE0616C721BD0B18FE"
+        },
+        {
+          "path": "data/chara/effect_alpha_hit.bin",
+          "length": 316,
+          "sha256": "1D58F4217B36E914236327645ED135EB3D7CA83A969C1F89C80F023EF53824FD"
+        },
+        {
+          "path": "data/chara/effect_alpha_obj.bin",
+          "length": 3304,
+          "sha256": "DAF16C916CD991CD422F446D54A773CD84E983DB8C4EF3AFC7C92384B187130E"
+        },
+        {
+          "path": "data/chara/effect_alpha_tex.bin",
+          "length": 66688,
+          "sha256": "7FC394E94F08642EB3BC3A687C2E879E4F51B7B25670D14658D13EB537127911"
+        },
+        {
+          "path": "data/chara/effect_obj.bin",
+          "length": 780,
+          "sha256": "3CC2A88FA1AE55962240F8B1981B209CFC8FDC497BBFBAD6604CAC004DA3F9D1"
+        },
+        {
+          "path": "data/chara/effect_tex.bin",
+          "length": 10368,
+          "sha256": "A29C472F4D681DF0DA5A96C827E5B15F0D4680EC05A34C2DD7DAB4C241B3F3DB"
+        },
+        {
+          "path": "data/chara/generator_hit.bin",
+          "length": 72,
+          "sha256": "84D4AB21638DB43AF9BA03961273A327E3C01C49BDF8F14E70F9029983B8120A"
+        },
+        {
+          "path": "data/chara/generator_obj.bin",
+          "length": 472,
+          "sha256": "9DFF70E0EB3A9A216D29DC4DF4687FCB27A4C76DAC394037D5BF922A12881326"
+        },
+        {
+          "path": "data/chara/generator_tex.bin",
+          "length": 9216,
+          "sha256": "B1D38F0E58339C1FB2FB5A6F44AFE487EF3CDFE4D4C44E08A357C60C5C59AD3A"
+        },
+        {
+          "path": "data/chara/homing_zako_obj.bin",
+          "length": 7920,
+          "sha256": "D06CAB803237F3FEB65E231E7EC2CE91CBC437345C186938C7CD8DFA3234E082"
+        },
+        {
+          "path": "data/chara/homing_zako_tex.bin",
+          "length": 10240,
+          "sha256": "86B049424302B1006D72AD37123E0606A7966A9351E8730A5D4CDB39DED02E28"
+        },
+        {
+          "path": "data/chara/info_disp_obj.bin",
+          "length": 1940,
+          "sha256": "0F4A24F667E14887BA502F33B8C5E258DB3FCE61BE4319507970C1C8DFE5A101"
+        },
+        {
+          "path": "data/chara/info_disp_tex.bin",
+          "length": 13344,
+          "sha256": "39E9B40F496E365B7BD6C3B56E9E538E3A87C79B7A6C4F8AE04AA087AB7CE235"
+        },
+        {
+          "path": "data/chara/item_obj.bin",
+          "length": 1664,
+          "sha256": "24E8667F4DBC3F2C3092400E027C802EB8DCE25841ACB04D8290763BDA54497D"
+        },
+        {
+          "path": "data/chara/item_tex.bin",
+          "length": 12800,
+          "sha256": "CDEEE2CF85014508CDFD0264888AC0910983338C9FAB991DD604436A9D745E13"
+        },
+        {
+          "path": "data/chara/missile_hit.bin",
+          "length": 144,
+          "sha256": "D9F8325D4D871C11274D2484955EFA3E5884BE4A04B3CAD938432428F682E6AA"
+        },
+        {
+          "path": "data/chara/missile_obj.bin",
+          "length": 964,
+          "sha256": "6A06FE8AFA01620212E42ACDA7F8DDD6831E91D8C463E9D1419489CDC5BD796F"
+        },
+        {
+          "path": "data/chara/missile_tex.bin",
+          "length": 4736,
+          "sha256": "558882AF92B848EF1E2EBA235F3497AFAF35EB1E88FB8E842E289F73A7ACDA21"
+        },
+        {
+          "path": "data/chara/napalm_zako_obj.bin",
+          "length": 7824,
+          "sha256": "227E98E536608A6939674FAD8B0406A53CC0107EAFC430AAB0419839B2701C1E"
+        },
+        {
+          "path": "data/chara/napalm_zako_tex.bin",
+          "length": 10240,
+          "sha256": "C875F760599E41DB5EB978A04248160B332E01534925E3CFB23D22E29C61B35B"
+        },
+        {
+          "path": "data/chara/ninja_robo_hit.bin",
+          "length": 508,
+          "sha256": "E10B84D597272FFA5FDCB177BACCD41F5F720F7D3F1A91293C6C48CB10863D72"
+        },
+        {
+          "path": "data/chara/ninja_robo_obj.bin",
+          "length": 5428,
+          "sha256": "A5CDE9CB17CF036C53C379BCB515E4C60B4050B1A6698E871C8748666E1D66D2"
+        },
+        {
+          "path": "data/chara/ninja_robo_tex.bin",
+          "length": 154240,
+          "sha256": "8C9306FC0846BD867825391D45CE10A1A842A66020C2F92BC47C1401B035DB37"
+        },
+        {
+          "path": "data/chara/normal_zako_obj.bin",
+          "length": 7856,
+          "sha256": "2B0ABEF0D658C5BFBFA2E49BE59329806203617034ABA8220414AE3973BF73C5"
+        },
+        {
+          "path": "data/chara/normal_zako_tex.bin",
+          "length": 5632,
+          "sha256": "0E214AFD7C9FBB85E056A3486C43A2DE0DC660130FE20FED4808D660C862A706"
+        },
+        {
+          "path": "data/chara/rongaio_hit.bin",
+          "length": 2716,
+          "sha256": "AD9B150F4BB270F2E0CAC5196C43E9B0DE9541A499FC114D8AAF7F5B8FB21081"
+        },
+        {
+          "path": "data/chara/rongaio_obj.bin",
+          "length": 25136,
+          "sha256": "439203A9AB2BF530A3EEEFF8767E67A435534D776F81492786D9F7BAA60E1D3A"
+        },
+        {
+          "path": "data/chara/rongaio_tex.bin",
+          "length": 217088,
+          "sha256": "874AF47B6834530B045F00F12E2A5285A43CAC0FAA4BDEFCB508FFAF3001C059"
+        },
+        {
+          "path": "data/chara/sonic_robo_hit.bin",
+          "length": 300,
+          "sha256": "AC8E2B75A713C98995A918134A59370686FDDBDC2778E07E80F29BA42349E065"
+        },
+        {
+          "path": "data/chara/sonic_robo_obj.bin",
+          "length": 1616,
+          "sha256": "2A5869C47C714FBA22EB52F70D11D2E60266961417ACACA811125E2986F8FFE3"
+        },
+        {
+          "path": "data/chara/sonic_robo_tex.bin",
+          "length": 39936,
+          "sha256": "DBD14C50DF7DD848D1E19341C5E937D624528356D93304B5A0E3EE33B372BBF2"
+        },
+        {
+          "path": "data/chara/tank_hit.bin",
+          "length": 44,
+          "sha256": "10343B5EDF9A298C6A06FD6D9E4CCF0654B7C443A7AE19DAD3C24164169F3828"
+        },
+        {
+          "path": "data/chara/tank_obj.bin",
+          "length": 228,
+          "sha256": "4E88D341150077DB53E0F567E2C36FEB0CB7E7195A33609B00481A8B69D61312"
+        },
+        {
+          "path": "data/chara/tank_tex.bin",
+          "length": 2048,
+          "sha256": "EA5C1F3B528FFA5DD8A68426FB786B67C0DCA72B997B0EC085B889371839A15E"
+        },
+        {
+          "path": "data/chara/zako1_obj.bin",
+          "length": 8048,
+          "sha256": "5BC0948AA6CAF5DEDD0397F283ACF7E3B59BDB95D23C32087F83171AD47A19CB"
+        },
+        {
+          "path": "data/chara/zako1_tex.bin",
+          "length": 5632,
+          "sha256": "08E250DEA3BE067CA4C6C795DC982A870160D7076931A1EDF767FEA18A8F73DD"
+        },
+        {
+          "path": "data/chara/zako2_obj.bin",
+          "length": 8048,
+          "sha256": "64866774641E83705644A6F4406338C1E670F4F9F70A8E9A1CF3C283B8B9899D"
+        },
+        {
+          "path": "data/chara/zako2_tex.bin",
+          "length": 5632,
+          "sha256": "845532E24086B6BEFF97004328B9E51E7002EC95348E243AD114BDA16C2731D0"
+        },
+        {
+          "path": "data/chara/zako_hit.bin",
+          "length": 872,
+          "sha256": "F3D93F4A3D1AF36F29D7E0DA39AF1FE79FF498A9A43A4A9B05FC57DE6325B23A"
+        },
+        {
+          "path": "data/demo/base_back_bg8.bin",
+          "length": 36124,
+          "sha256": "637D24A4B0D84CB9EC9782EE0FE45CB77C270C90682B5D8C285D4258C07FECC3"
+        },
+        {
+          "path": "data/demo/bat_get_bg8.bin",
+          "length": 18108,
+          "sha256": "2D6B545D138A85FDCDC5783F15D045FF43412C59CDAF2E436F6F74B4CAAE3C88"
+        },
+        {
+          "path": "data/demo/demo_hakase_obj.bin",
+          "length": 1588,
+          "sha256": "56790783BF162363DFC39219366032030E4203C09444731CE7EE1E7B41EBDA51"
+        },
+        {
+          "path": "data/demo/demo_hakase_tex.bin",
+          "length": 56292,
+          "sha256": "9CB4EFCAD7CABDD57FED1030CB9EE2828ED3C9E91732B74FED1B279CADDB1771"
+        },
+        {
+          "path": "data/demo/demo_masato_obj.bin",
+          "length": 1332,
+          "sha256": "ED275C85EB9B7740A20B809D430D824889EC05DE4B609CFB8695514782273C81"
+        },
+        {
+          "path": "data/demo/demo_masato_tex.bin",
+          "length": 45592,
+          "sha256": "90AB35D53665D75F9D3EC5DE1AA363031EB69E167AFA316335DC54862308D632"
+        },
+        {
+          "path": "data/demo/demo_obj.bin",
+          "length": 196,
+          "sha256": "4FFA249718182F9BDA54AC7F35BEF112E186AE41F3B92EB27FA2F66A330BE91A"
+        },
+        {
+          "path": "data/demo/demo_ruri_obj.bin",
+          "length": 1268,
+          "sha256": "D0D101C3C3699F88091B1608E4A4CF25508841B39E519BE176360F23C02A1B27"
+        },
+        {
+          "path": "data/demo/demo_ruri_tex.bin",
+          "length": 46312,
+          "sha256": "396CC4673702F9EE39FFC247CE2C05E8F9BE58CCB7311D1C1B55FF423430C3C0"
+        },
+        {
+          "path": "data/demo/demo_serifu_obj.bin",
+          "length": 19820,
+          "sha256": "D324D355B1F2D7578D478B26BD6E4F0E26B746EE668A177FB85536D1AB32EFAE"
+        },
+        {
+          "path": "data/demo/demo_serifu_tex.bin",
+          "length": 519268,
+          "sha256": "D5344F5DB4039A1B3956250AF89B6EF45693E87617C0AACCF0D6A8304FBB532D"
+        },
+        {
+          "path": "data/demo/demo_tex.bin",
+          "length": 428,
+          "sha256": "7A6FB239392C9CC38403DA81FC5730DF517F7FC194176BF1098394CBE85CFB60"
+        },
+        {
+          "path": "data/demo/demo_waku_obj.bin",
+          "length": 3428,
+          "sha256": "A2298FF2A3E0AD7177FAA767B6B27ACC1C6954B567BA4D50BD108A1028E6DA65"
+        },
+        {
+          "path": "data/demo/demo_waku_tex.bin",
+          "length": 4672,
+          "sha256": "8273E11D4122E75EF174A15645CFA9A3E7289CD1EA5EFA23628DB7BDC73489D5"
+        },
+        {
+          "path": "data/game/back_grid16_bg4.bin",
+          "length": 248,
+          "sha256": "A7EBA70D09AF20ED609C39C3BC34AC6A7BFFABE68630502845F31B003E92073F"
+        },
+        {
+          "path": "data/game/back_grid8_bg4.bin",
+          "length": 108,
+          "sha256": "14A643E69876E7413AA8BA4F191E9C67C5A057BAF0251E917EB68A687009E0D0"
+        },
+        {
+          "path": "data/game/chara_icon_obj.bin",
+          "length": 2260,
+          "sha256": "B4FA400C83F04B2871413D8DC917B01A056779A5A2A936EF33C3C9B3AB2AB5DA"
+        },
+        {
+          "path": "data/game/chara_icon_tex.bin",
+          "length": 35648,
+          "sha256": "C19B3EBC60CD6A30AD77415555DFDD130BE9473DD1DE58252E8E22A511B02FC2"
+        },
+        {
+          "path": "data/game/chara_name_obj.bin",
+          "length": 2444,
+          "sha256": "52C4F11ECBF49A178B31EA7F71894570A329A6DCBB4E3543F2FCB619E1C7F311"
+        },
+        {
+          "path": "data/game/chara_name_tex.bin",
+          "length": 8224,
+          "sha256": "B16CF332DDCC4B80BD0884BED2420E06508AE6A9DC58A3990710B0761C66C1F9"
+        },
+        {
+          "path": "data/game/edit_rect_bg8.bin",
+          "length": 132,
+          "sha256": "8360A0002384ABFB53C70FF6FE7C39F9E33F17BB2F00F6E481A6659E9A3CE35E"
+        },
+        {
+          "path": "data/game/edit_window_obj.bin",
+          "length": 6076,
+          "sha256": "4CD59A0F5FB8702EC76F2BA43D21B2C39BA86CCCE2373CCCB30E67C799C8C3F0"
+        },
+        {
+          "path": "data/game/edit_window_tex.bin",
+          "length": 104256,
+          "sha256": "21642C518B53A095881F1C675301B2A5DF04947535213099C734793D2BB6FAE0"
+        },
+        {
+          "path": "data/game/gage_bg4.bin",
+          "length": 1036,
+          "sha256": "783B082034F3DA06744680A5F02646BA895E78622198DA8EEC9E3C721CCB6A0A"
+        },
+        {
+          "path": "data/game/gage_obj.bin",
+          "length": 772,
+          "sha256": "39AD782C906BAB040FED7540B407FC9A1F5E247E021296D9A1385A1A6C872FC4"
+        },
+        {
+          "path": "data/game/gage_tex.bin",
+          "length": 1088,
+          "sha256": "AC56F539F111B00A91A8AEB69D5C038C8B210615035875177B5570C889FAD462"
+        },
+        {
+          "path": "data/game/sub_display_back_bg4.bin",
+          "length": 688,
+          "sha256": "CDC1D4B7DE75C03C1151A1D0E7910AA3AA3258984F81E622B790811490EC3F67"
+        },
+        {
+          "path": "data/game/sub_display_bg4.bin",
+          "length": 1092,
+          "sha256": "C2942818A76EE88BA4EB6784E0E546709684A53D103DC4CEA75D77F5D6940C42"
+        },
+        {
+          "path": "data/game/sub_display_obj.bin",
+          "length": 612,
+          "sha256": "21B62C7C2C4F1EC4DCD848CC606A7AC5B68181233A14719B58B5B83453E908FC"
+        },
+        {
+          "path": "data/game/sub_display_tex.bin",
+          "length": 1280,
+          "sha256": "4A2D56160923BAB2B9360280F4567D98B1C729E7D314E0D7972F77CFA8C65D92"
+        },
+        {
+          "path": "data/game/weapon_name_obj.bin",
+          "length": 932,
+          "sha256": "8182808E882C6C708EEBB308B51C86DC0BCFE13F77E674DFC2CE8A7BDC281FB4"
+        },
+        {
+          "path": "data/game/weapon_name_tex.bin",
+          "length": 1984,
+          "sha256": "8BFD72E708A7A1D0D6F5B40A588983C4FAC5CE882AA3CCF0D151BB671F516B6F"
+        },
+        {
+          "path": "data/map_bg/stage_map10_yellow_bg8.bin",
+          "length": 4264,
+          "sha256": "9304DBA4C06ABDB751FF9BA7ADA6F880EC4C389DE49B4235D11AF7A56D591CAC"
+        },
+        {
+          "path": "data/map_bg/stage_map11_grey_bg8.bin",
+          "length": 4264,
+          "sha256": "F0408B61B7D3E059B1521598B9CD4B17AFA05EC25A9F5650B32E77505651CAE8"
+        },
+        {
+          "path": "data/map_bg/stage_map12_red2_bg8.bin",
+          "length": 4264,
+          "sha256": "E704F5F41BB5C6000910BF3A3F3002E75E00EE8EE0E3E59711E1FB70FB0170EB"
+        },
+        {
+          "path": "data/map_bg/stage_map13_red3_bg8.bin",
+          "length": 4264,
+          "sha256": "0EFE440E6C2E544C1CF3A17DFB13F81E964D79FE271203552B76445F49509B68"
+        },
+        {
+          "path": "data/map_bg/stage_map14_grey_bg8.bin",
+          "length": 4264,
+          "sha256": "EDEDA5D987A26885F3897964EF0DCA6D6735212317E922BC9ACC2E6A7B246C8A"
+        },
+        {
+          "path": "data/map_bg/stage_map15_yellow2_bg8.bin",
+          "length": 4264,
+          "sha256": "9C1E65F068FE70AF5F8DFE18D405BBEDDF36BC3CE24E50A880B7086F297FDEC6"
+        },
+        {
+          "path": "data/map_bg/stage_map16_dot_bg8.bin",
+          "length": 4168,
+          "sha256": "350E3A425AB00A440DFBB84F27F6760394DDA9FED97FD390B4D81A5D8DBAB61E"
+        },
+        {
+          "path": "data/map_bg/stage_map17_b_gra_bg8.bin",
+          "length": 4168,
+          "sha256": "C43458540423050C3870CB85598CDC8FB02D17AE8D619F4B6776E6EEB46086FE"
+        },
+        {
+          "path": "data/map_bg/stage_map18_w_gra_bg8.bin",
+          "length": 4168,
+          "sha256": "46C3439794EB600DC0E9FC506B81B144C5DE4F5D6358B1F10D59C27D521D4F99"
+        },
+        {
+          "path": "data/map_bg/stage_map19_kuro_bg8.bin",
+          "length": 4168,
+          "sha256": "7E5E01699D6C33152ABFC49F8D4A3D5A58A9C21C4A1F4A2E01D14CEB84BB8E72"
+        },
+        {
+          "path": "data/map_bg/stage_map20_shiro_bg8.bin",
+          "length": 4168,
+          "sha256": "A2C93C1BA5A35056B8B2D16B2CCBBD4512ED62D05E86D1B1AA8B0F8B9EA95B8E"
+        },
+        {
+          "path": "data/map_bg/stage_map21_flesh_bg8.bin",
+          "length": 4168,
+          "sha256": "5BCA4A9E854C0E987C483B602FAFACBD6464EE4EAF2B933E2F442AF2033DEC10"
+        },
+        {
+          "path": "data/map_bg/stage_map2_bg8.bin",
+          "length": 4296,
+          "sha256": "41EFD5DADB2C5921808B6C38D51F0186561C15FD94B4423BBEB8E830827821D6"
+        },
+        {
+          "path": "data/map_bg/stage_map3_bg8.bin",
+          "length": 4264,
+          "sha256": "14D3A0AB349103C1397AFC41413EBA19DA8BB9E109AA55E288B57C7B0F70CBF6"
+        },
+        {
+          "path": "data/map_bg/stage_map4_tile_bg8.bin",
+          "length": 4264,
+          "sha256": "ED8ADC5191AB4EB51E504D2B7D45F6F50CBB277DC612FCD8318F4C820709BA43"
+        },
+        {
+          "path": "data/map_bg/stage_map5_punch_bg8.bin",
+          "length": 4264,
+          "sha256": "D968F31E7B2E683C65E4132EED40C918930A079D6D0EFDB206B2CE455DA381D6"
+        },
+        {
+          "path": "data/map_bg/stage_map6_net_bg8.bin",
+          "length": 4232,
+          "sha256": "2DA8969B29CA61AD4A030874107D313A52ED227077F3B207992E174D2CA98391"
+        },
+        {
+          "path": "data/map_bg/stage_map7_slit_bg8.bin",
+          "length": 4232,
+          "sha256": "B927D43EE0CEBAF284426C8386C6C7CB141296EA7C85E9E88DDDB9835BAFA970"
+        },
+        {
+          "path": "data/map_bg/stage_map8_black_bg8.bin",
+          "length": 4264,
+          "sha256": "707B076AC5149DE1B53BF5F68F3F60F3FB31B5DDF2617CCBED9DA9CA1ACD07F5"
+        },
+        {
+          "path": "data/map_bg/stage_map9_red_bg8.bin",
+          "length": 4264,
+          "sha256": "948881D61F524EB8CB9D8B996946CAD9541653787D8D95F57FE1C3B5240479A4"
+        },
+        {
+          "path": "data/map_bg/stage_map_bg8.bin",
+          "length": 4264,
+          "sha256": "9D1B48C36B6D92105707294547BAABEFCEA8497B178FA5999E760F3CBABE87E9"
+        },
+        {
+          "path": "data/module/clear_demo_obj.bin",
+          "length": 580,
+          "sha256": "B9351ABD2B5D401D17C9578319F6813C49A083B5116C96C984ACD7C9BD3D71F9"
+        },
+        {
+          "path": "data/module/clear_demo_tex.bin",
+          "length": 32768,
+          "sha256": "7AF6CF1095517A714D84E6216F248E2DE9A31369840C00A9E3EC2B6293062002"
+        },
+        {
+          "path": "data/module/d3_logo_bg8.bin",
+          "length": 11340,
+          "sha256": "A28F5DCC4900F612F379A54CE1763D20980C7619E98AC56442D45B84C445643B"
+        },
+        {
+          "path": "data/module/edit_etc_bg8.bin",
+          "length": 12268,
+          "sha256": "629748C48C0542B7453390EE20EB8D49D81DECBE61EEC29B905B7BBC6FBD070F"
+        },
+        {
+          "path": "data/module/esp_logo_white_bg8.bin",
+          "length": 7672,
+          "sha256": "680D95E84ABF7AF3DCCA33562058BA5A8CA19C6E2C75A350F4B898777AE38063"
+        },
+        {
+          "path": "data/module/legal_bg4.bin",
+          "length": 7976,
+          "sha256": "CF1380D01B22AC0B526D101591DE359DADCF573DB8D0FCF5B1534A8BA9721808"
+        },
+        {
+          "path": "data/module/name_entry_bg4.bin",
+          "length": 2420,
+          "sha256": "789827096B59CCD5AA81768040B4E0855ED6C3E35F02C4C180A83480210B79DE"
+        },
+        {
+          "path": "data/module/nintendo_w_bg4.bin",
+          "length": 1760,
+          "sha256": "0CB08C81B2D762DA0AAF5676BE3C5F201E2F5C59C466D73E8145BF23B950E991"
+        },
+        {
+          "path": "data/module/staff_roll1_bg4.bin",
+          "length": 19632,
+          "sha256": "B567629260F141C732D5777C0B23D49C89C430022CFD35C626A98EAC0405BAC2"
+        },
+        {
+          "path": "data/module/staff_roll2_bg4.bin",
+          "length": 24528,
+          "sha256": "13BC86193A6E64E3D3314FBA51A6F091678B606CCC60A13D1EBD90137187E78C"
+        },
+        {
+          "path": "data/module/staff_roll3_bg4.bin",
+          "length": 22928,
+          "sha256": "E17E7A9EC95C4A312628D558AC4E34372523B6DBCC89C2D3855A1AF6E6363A69"
+        },
+        {
+          "path": "data/module/staff_roll4_bg4.bin",
+          "length": 29328,
+          "sha256": "95634644BC6708BD66C8D19FB83D2A6B70CC426FF2AB7B320C57BED9E1FE4589"
+        },
+        {
+          "path": "data/module/staff_roll5_bg4.bin",
+          "length": 22224,
+          "sha256": "BCC26D59B230F0282C19914C30CC19674919F556CB3E91A587D807FD8639F8B6"
+        },
+        {
+          "path": "data/module/staff_roll_back1_bg8.bin",
+          "length": 33916,
+          "sha256": "9D51679FDBF880610ABE88282A6BBF98871A7C893DEDC5CCDC0BE9F13721D8B3"
+        },
+        {
+          "path": "data/module/staff_roll_back2_bg8.bin",
+          "length": 32116,
+          "sha256": "3041829FEFBDB6710CDAD108FAA4E85F4CE30B2AB24B7ADFABA4BBFCC4A3EBAE"
+        },
+        {
+          "path": "data/module/sub_bg_bg8.bin",
+          "length": 848,
+          "sha256": "B230FE0B419CCF5BEC7BE37D3A2B801E2B8F89A254F0E1B08CB93992DE7F3063"
+        },
+        {
+          "path": "data/module/sub_logo_bg8.bin",
+          "length": 39052,
+          "sha256": "684C13B18CFD6B009590B42E9DE321879C30ED17ED07D9D0E1BC253597A71120"
+        },
+        {
+          "path": "data/module/title_bg8.bin",
+          "length": 16304,
+          "sha256": "E59A8039F7A55EC30C83FD61D94BE3D376D697ACD24334015E4A553D68630EB7"
+        },
+        {
+          "path": "data/module/title_fire_bg8.bin",
+          "length": 43264,
+          "sha256": "F2B8A25EBE87C095E9B44E4A1877166EF26CFF9E0968FB2BC57D1B6BCD5D91EE"
+        },
+        {
+          "path": "data/module/title_sky_bg8.bin",
+          "length": 30236,
+          "sha256": "6DD0F3703F26CB8F4F18E73636C3DBCEAB2C9BBC9503BCC64E1BF559CCE85165"
+        },
+        {
+          "path": "data/module/title_space_bg8.bin",
+          "length": 36948,
+          "sha256": "76E59A68E658ABCFE41B1B969504EE7AA5AAA9871DA015A19358B1E20DA562AC"
+        },
+        {
+          "path": "data/module/treasure_logo_bg8.bin",
+          "length": 10048,
+          "sha256": "3BB28484BB9A81EC0D4D950B7719A7004A24DF8CC972F50817D6E76EF01C0D6A"
+        },
+        {
+          "path": "data/sound/sound_data.sdat",
+          "length": 1096832,
+          "sha256": "B04A44D43998E74DE8740136374FD53084EBFD35A4A9505D7EE396A6E8770D12"
+        },
+        {
+          "path": "data/stage/3LDK_stg.bin",
+          "length": 1044,
+          "sha256": "65441083CB0F200E8FDF8A3CD999F54F7514172DB66BD3AA29A2D9C235BE0DB4"
+        },
+        {
+          "path": "data/stage/3_2_1_stg.bin",
+          "length": 1324,
+          "sha256": "2170DF4CD5A65C6DF502D875119F42313E364D80300F04A1ED63D1322ECF3D45"
+        },
+        {
+          "path": "data/stage/aaseisyunnosutoraiku_stg.bin",
+          "length": 1296,
+          "sha256": "FCF8D29FB9CA33E0979CD9F68547704A9BFB603CDF9AB2C9845D8DEFF21B50B8"
+        },
+        {
+          "path": "data/stage/ariari_stg.bin",
+          "length": 768,
+          "sha256": "970C7CC7023546FC71EBDB1AE7B0204806D83AAA0158AA708FD82A94520EF2F9"
+        },
+        {
+          "path": "data/stage/arienai_nanikanomatiga_stg.bin",
+          "length": 940,
+          "sha256": "9EA45907F672E45D34B5FCDD0EB42B21AF2BCB6388CB9CDE11CCF19BA581D701"
+        },
+        {
+          "path": "data/stage/baikakuhoudai_okihoudai_stg.bin",
+          "length": 1328,
+          "sha256": "AD18132A4FC8FE492008AE416B775D1DBBC5807DD08E51725E549E5E50C1D50F"
+        },
+        {
+          "path": "data/stage/ballwo_madokara_nagesutero_stg.bin",
+          "length": 600,
+          "sha256": "A2081405660E1DAE707FA530A5BED01D5D1B7D6F80766A40623FDC582CD8604D"
+        },
+        {
+          "path": "data/stage/battingusenta_stg.bin",
+          "length": 380,
+          "sha256": "1350C87DB138BC3C38D79E7EC40E2247E23E8BE5C919F6E26D12DED17CC5B0EA"
+        },
+        {
+          "path": "data/stage/battle_siti_stg.bin",
+          "length": 312,
+          "sha256": "BF3FCE06CA97D6E2EC649B0B1A1A697DDEF47A896912F9A779D6BECE1631F70D"
+        },
+        {
+          "path": "data/stage/battoboys_stg.bin",
+          "length": 236,
+          "sha256": "AD9C241412A55589C42E6D3E92D6D879FA9E6EB95AA9B211778464B0E93BC46A"
+        },
+        {
+          "path": "data/stage/battodego_stg.bin",
+          "length": 268,
+          "sha256": "D2CBE53AF8BA3C0EE8A4D60011683A2F4BD2A759D43C00E25970A0B98F6B278A"
+        },
+        {
+          "path": "data/stage/battorobo_daikirai_stg.bin",
+          "length": 276,
+          "sha256": "9418A6A6F5F518C3B4AFB35689DE4C6EEC631351BB7C419187B7E4775959AE40"
+        },
+        {
+          "path": "data/stage/biruha_haeruyo_itumademo_stg.bin",
+          "length": 348,
+          "sha256": "C86C1B53B26A212FC069B2260983C3863E7434824F2E8DAD3F4E7999EC140DAF"
+        },
+        {
+          "path": "data/stage/bosu_iroiro_stg.bin",
+          "length": 1592,
+          "sha256": "754A6AD782CDC79AC8F5DA126BF474F97577C17F53451BA3B0040AEE0575D423"
+        },
+        {
+          "path": "data/stage/bosunohurukoosu_stg.bin",
+          "length": 696,
+          "sha256": "112F8737DE3E7A9477F55D7E402249F89E4F600E560A2F1A4D4BCC17FC58A844"
+        },
+        {
+          "path": "data/stage/boukyakunotani_stg.bin",
+          "length": 848,
+          "sha256": "3E1FDC294AF0EB4179165083F8543B347335D3C9F05471EC6F2822FBE3290443"
+        },
+        {
+          "path": "data/stage/bukkoase_stg.bin",
+          "length": 352,
+          "sha256": "2037FB738BC34618B76007FA575C8450381E3F2A913BDC380999F5D894434BE4"
+        },
+        {
+          "path": "data/stage/byunbyun_stg.bin",
+          "length": 348,
+          "sha256": "B3C2A92AA0A83D6DA7E81A7144CA21CB23DE0E2424B1DF7EB1F4B0747DF95498"
+        },
+        {
+          "path": "data/stage/charaga_stg.bin",
+          "length": 380,
+          "sha256": "DFB457F309A6446F1722F35CC8F2B01E85148417D59DD6DB663D4E380D96C9E8"
+        },
+        {
+          "path": "data/stage/daikiraida_stg.bin",
+          "length": 148,
+          "sha256": "7260222F6256E4D299DF40F1CF3882FAACE422F9775A6B16D25A204C199A329D"
+        },
+        {
+          "path": "data/stage/daiutyuusensou_stg.bin",
+          "length": 2232,
+          "sha256": "6AD7EFC88960C38DCF923285A9EA0ADCC0C6DAA33C96BD15BECDDD1CAA25C86E"
+        },
+        {
+          "path": "data/stage/dassyu_kai_stg.bin",
+          "length": 1040,
+          "sha256": "C068B70BF27EFDC15F92E9F8432442C8AC2C9CD49A0FB2377052CC7A7BFD139E"
+        },
+        {
+          "path": "data/stage/dassyu_stg.bin",
+          "length": 1144,
+          "sha256": "51D1FFD08C99273029F3C5F25E98D13A174DA6759537F9AEA92150943D6BA9A7"
+        },
+        {
+          "path": "data/stage/dassyutu_stg.bin",
+          "length": 1328,
+          "sha256": "7F4D6EFA0A453B481C2539E90BA222BCE2A7D04A72B010A5901BB2F59F979794"
+        },
+        {
+          "path": "data/stage/deka_stg.bin",
+          "length": 644,
+          "sha256": "11BD1E05725E271C95DC3C44D0D52EDB0B451D5B18675D4799B4E72281F33990"
+        },
+        {
+          "path": "data/stage/dorirubosu_stg.bin",
+          "length": 292,
+          "sha256": "45A9CC658508F91A78E8793E8895A03EF15D020E8F044CFE9B41F2135BCCBB1F"
+        },
+        {
+          "path": "data/stage/doriruyonkyoudai_stg.bin",
+          "length": 1904,
+          "sha256": "D7E00724E58932437385FDFE8E27C179CE03C595313A395C2A123A1A83189C43"
+        },
+        {
+          "path": "data/stage/doriruzannmai_stg.bin",
+          "length": 204,
+          "sha256": "8B2E8757B3827BF941555F7A675EBF8CAAC32FB881C842AB56B678A9BDF9622A"
+        },
+        {
+          "path": "data/stage/doukasen_stg.bin",
+          "length": 1236,
+          "sha256": "085333812723A65A0571324093792E0C13367081C95CD7D5BC53CEA8A870CE95"
+        },
+        {
+          "path": "data/stage/geetmania_stg.bin",
+          "length": 1216,
+          "sha256": "698743A11B468AD0477B7FCFF552276D7A523D635E0160A10DD0C9758CE383B3"
+        },
+        {
+          "path": "data/stage/gurennnarusoranisakebe_stg.bin",
+          "length": 1028,
+          "sha256": "91A28C157FC009AB155F737286048B1FE13F267D3D5DF02FE80AAF44442A97CB"
+        },
+        {
+          "path": "data/stage/gyoukosuruzouo_stg.bin",
+          "length": 352,
+          "sha256": "059AC535874CE68F39546DE153C0A93A16CBF1EC9F207B7974BB32B1674F2BB8"
+        },
+        {
+          "path": "data/stage/haehae_stg.bin",
+          "length": 876,
+          "sha256": "94BE384CA6A4D9610D79DB46656209FAA0FC50FB22C2F0EEAFCD0FB2C6BBA4E4"
+        },
+        {
+          "path": "data/stage/harry_up_stg.bin",
+          "length": 1188,
+          "sha256": "CE101F0DCCA13CB453EF736E7A5ACC34DADE7EC7B83B07C19622577AA07824FC"
+        },
+        {
+          "path": "data/stage/hikkakattara_make_sono2_stg.bin",
+          "length": 352,
+          "sha256": "EA16601A9D32131849E506DEB6481FEDD483C2B6B1D4302B82C7453905DF7301"
+        },
+        {
+          "path": "data/stage/hikkakattara_make_stg.bin",
+          "length": 368,
+          "sha256": "40C750088F4C7BD763FF93366994B77B2FC9DE109AC61D130CAFE633202065D7"
+        },
+        {
+          "path": "data/stage/horisusumania_stg.bin",
+          "length": 1292,
+          "sha256": "9FC424B0E0BA855EC6EABBA7CE7F051343ACD1B06D913A1B49F86EC7F8461927"
+        },
+        {
+          "path": "data/stage/houdaibosu_stg.bin",
+          "length": 264,
+          "sha256": "CACD94172B2D93796F8F811B6D478124CDE7CE7F6D7CF1D2215A9C82E07B3B0C"
+        },
+        {
+          "path": "data/stage/igaiga_2_stg.bin",
+          "length": 296,
+          "sha256": "16C5A73847D474E5EF8C5C1821B6945E24A86D6AB9CE5D5AB33F9C82AA785672"
+        },
+        {
+          "path": "data/stage/igaiga_stg.bin",
+          "length": 264,
+          "sha256": "97B12E47EA3A4EB9C6603E916000A3B596CA85B3B948E08A61412F2F04154B99"
+        },
+        {
+          "path": "data/stage/ikoruattoikoruatto_ply.bin",
+          "length": 120,
+          "sha256": "C3C41C214D4E2EC2B09CA2ACD96F88CAE0AC4BD1E12B0B63A9B5A2D2223EB21E"
+        },
+        {
+          "path": "data/stage/ikoruattoikoruatto_stg.bin",
+          "length": 504,
+          "sha256": "A25C6545516C7CB317E8D64581736703846FA681E524F5B2031DD1A26CF9DDC0"
+        },
+        {
+          "path": "data/stage/itigekidetoreja_stg.bin",
+          "length": 532,
+          "sha256": "029605AE4FBD06FBBE193221FB07896F2796AD4067A8EEF3DE32B6093F142238"
+        },
+        {
+          "path": "data/stage/jiyuutoiunanoakumu_stg.bin",
+          "length": 1048,
+          "sha256": "D4F98E519683E9D31318205B982F6227A8FD9EE4244ED9D85001E79FC683F8A4"
+        },
+        {
+          "path": "data/stage/kegasumono_stg.bin",
+          "length": 444,
+          "sha256": "84D9ECD7BF874157E16B4F41304A14A9240F8BA275AC1BA2D110319ED6A01E69"
+        },
+        {
+          "path": "data/stage/kibakosannjuurou_stg.bin",
+          "length": 396,
+          "sha256": "D010A0D9E5B8C3E695E56B105F3E5E043DCF08FE7F3B00F2FE2412B602E1519B"
+        },
+        {
+          "path": "data/stage/kikai_map_stg.bin",
+          "length": 1072,
+          "sha256": "8D4BA29F74FE10A9FDE06E01E8DEC46BF62EC6CE3861291869570AB20DC4258F"
+        },
+        {
+          "path": "data/stage/kowasiteminnka_stg.bin",
+          "length": 264,
+          "sha256": "E02F55FA5005BEED5BBD39E295C7933C1D7371DBCF0D27DAD591CDB20C234F4B"
+        },
+        {
+          "path": "data/stage/kyokantaihousyugi_hutatabi_stg.bin",
+          "length": 344,
+          "sha256": "6225F3F638CD883D2D9DBB41D0BD6693D9908D856630C255CA170C13DA8CAA7B"
+        },
+        {
+          "path": "data/stage/kyokantaihousyugi_stg.bin",
+          "length": 248,
+          "sha256": "4A989555D08D9C307F4D1CCF841DB0929E8EEE36509D88298CD4ED3DA2643151"
+        },
+        {
+          "path": "data/stage/maegawa10_stg.bin",
+          "length": 1284,
+          "sha256": "EAE6EED6AB8920457F267CA997F6F78A50D16879DEF935E2B3D900C292034D2B"
+        },
+        {
+          "path": "data/stage/maegawa11_stg.bin",
+          "length": 1648,
+          "sha256": "6AE7E8FD827C0413483C4D90F376B1F7A1A26B9B5136854D9DC7F6FF57DE361C"
+        },
+        {
+          "path": "data/stage/maegawa12_stg.bin",
+          "length": 336,
+          "sha256": "E408404E32A821204F47281D4F81233D0C9590C1AC82439AB5B89E288112ACC1"
+        },
+        {
+          "path": "data/stage/maegawa13_stg.bin",
+          "length": 1124,
+          "sha256": "2FF167C6B5FA76ABCDBF2586A8C1E16AE3FE7E1AA76D1345FB9239CEE72ECC91"
+        },
+        {
+          "path": "data/stage/maegawa14_stg.bin",
+          "length": 1188,
+          "sha256": "6BD6E720D2BF73171366A95A191B8B9003662AE5D7AC7B56E4DB0E06558FD0BE"
+        },
+        {
+          "path": "data/stage/maegawa15_stg.bin",
+          "length": 1512,
+          "sha256": "1AD7F2EBD768E76A5FB3D1F0C32277123F773073ADC514F37DC2F6441CBE5645"
+        },
+        {
+          "path": "data/stage/maegawa16_ply.bin",
+          "length": 468,
+          "sha256": "A4FF583B81C39A6E0762BE6715257E5F0E3AFB45C06AE16D3312C85F9D5E8F95"
+        },
+        {
+          "path": "data/stage/maegawa16_stg.bin",
+          "length": 628,
+          "sha256": "DFAE2F2576537EBB8E4928380E1D5E1A0374CA763C599344CC353FD26EDCE7CB"
+        },
+        {
+          "path": "data/stage/maegawa17_stg.bin",
+          "length": 452,
+          "sha256": "715D27202FDEF139C57646BBB99F17446A6AF199B396BE283E234AB3AAC2C846"
+        },
+        {
+          "path": "data/stage/maegawa18_ply.bin",
+          "length": 136,
+          "sha256": "A04E8ECF9E945909F5197A8ACD7C0F0F6961BE742F3CA09399A6D142056E2DE6"
+        },
+        {
+          "path": "data/stage/maegawa18_stg.bin",
+          "length": 656,
+          "sha256": "11144169BDC6DAB32BCEF6DEE18594529303763BF9CD7B6D4E5FA86E972BFD97"
+        },
+        {
+          "path": "data/stage/maegawa19_stg.bin",
+          "length": 268,
+          "sha256": "A8EB2A47587A570737E83E7AC8B4E0C5CDFF3842E64DBAE7FC52A081EBB7150E"
+        },
+        {
+          "path": "data/stage/maegawa1_stg.bin",
+          "length": 2116,
+          "sha256": "38BEBC3058F77F0331E0ECCB4F1F8A7623E4F762EF5EF8231153EDF5DBE3407D"
+        },
+        {
+          "path": "data/stage/maegawa20_stg.bin",
+          "length": 1032,
+          "sha256": "C35AD07004BEC376545693B08326056AD8206837FC480BE32CD1D912CD20DF5F"
+        },
+        {
+          "path": "data/stage/maegawa21_stg.bin",
+          "length": 1096,
+          "sha256": "3B915283C0641C667DE43981C87406CBCBA605056A2891E429A5217CA4DCCAD0"
+        },
+        {
+          "path": "data/stage/maegawa22_stg.bin",
+          "length": 1328,
+          "sha256": "D1CE18578F8FD965BEED25177E57FD2942E3BB6CEA9D534C5F7CE110C382FE01"
+        },
+        {
+          "path": "data/stage/maegawa23_stg.bin",
+          "length": 664,
+          "sha256": "86D9FA5DBD6975E7E5C59857C079DB0FFDC82E3BE77941A850FE0D8FADCF6A3E"
+        },
+        {
+          "path": "data/stage/maegawa24_stg.bin",
+          "length": 736,
+          "sha256": "2F0A7159AEC13B57B58E7075C7F53D7EACCE24839A528B48527B9F75D0F4248D"
+        },
+        {
+          "path": "data/stage/maegawa2_stg.bin",
+          "length": 1576,
+          "sha256": "ECE3E103562ADF468104BFA2687A6D5AAD854438B25D8BFB8920625415156394"
+        },
+        {
+          "path": "data/stage/maegawa3_stg.bin",
+          "length": 696,
+          "sha256": "278B1F73430D13544DAD3FC5DD9DE6EE809B876F87D6321B343DEF1E987DB442"
+        },
+        {
+          "path": "data/stage/maegawa4_stg.bin",
+          "length": 540,
+          "sha256": "27E96B483050C02D5F6B629EA7156CACE90BD0469BA3A574E8F8DB0602040C2E"
+        },
+        {
+          "path": "data/stage/maegawa5_stg.bin",
+          "length": 684,
+          "sha256": "06F96684821C431B136C79AFD60629BB020C4B00E0B46ADDDC642B0AA11B7A51"
+        },
+        {
+          "path": "data/stage/maegawa6_stg.bin",
+          "length": 868,
+          "sha256": "E823891613F01B42498BF0EF59550ECB04AAA9BCE0CFC4ECECB16E1D23FEE288"
+        },
+        {
+          "path": "data/stage/maegawa7_stg.bin",
+          "length": 380,
+          "sha256": "3A7CA70C114089C6B07858779DDF0161896038466201A41A663847FD7C018EC2"
+        },
+        {
+          "path": "data/stage/maegawa8_stg.bin",
+          "length": 444,
+          "sha256": "CCC156C20E4796AB970B979C0E575F0793702B1FEF808C09B5207909B285E88F"
+        },
+        {
+          "path": "data/stage/maegawa9_stg.bin",
+          "length": 928,
+          "sha256": "C45F77BB2C42FB0ED6F1D418AEA2481782529946AEADBD32E9C47AC82CBF2F3D"
+        },
+        {
+          "path": "data/stage/manda_stg.bin",
+          "length": 376,
+          "sha256": "7B9E901A53240E76A8F52FC1950255D778948EC01DC359DEDDDFC871817D5553"
+        },
+        {
+          "path": "data/stage/maru_stg.bin",
+          "length": 216,
+          "sha256": "EA95DC938DB7856B4CCE5F64B320F84DF21CD3F99C183243FC01225C7C66C74C"
+        },
+        {
+          "path": "data/stage/matenrou_stg.bin",
+          "length": 1548,
+          "sha256": "6D05A3F5AB61CB5FDD167158BD66EF48B7A544F50B9DDD984E5D1ADB29704415"
+        },
+        {
+          "path": "data/stage/mip2_stg.bin",
+          "length": 2788,
+          "sha256": "17A11149D64035C70E1C73872E71A655FB04A5B4A2C954DFE40955FB0E814B5E"
+        },
+        {
+          "path": "data/stage/mip_stg.bin",
+          "length": 2728,
+          "sha256": "6FA1827BA0BB261CC0A69D4912D85E9D486CD7DE9A85EAEFBC05451045B51D1B"
+        },
+        {
+          "path": "data/stage/move_the_box.bin",
+          "length": 208,
+          "sha256": "FDE0C11389F74020D4A1B65184D61B3646ED099F6161B69C124E561325428388"
+        },
+        {
+          "path": "data/stage/nakai10_stg.bin",
+          "length": 3320,
+          "sha256": "3AB15C7015DCDC8D20A5AD7D2D18CEEA4C2F4BBB622CEC90902B559A3D489513"
+        },
+        {
+          "path": "data/stage/nakai11_stg.bin",
+          "length": 2896,
+          "sha256": "9C85550CFB513AE184E965E1EC7D6EF55BB470D9E5BEEA043983D6E64C918D3A"
+        },
+        {
+          "path": "data/stage/nakai12_stg.bin",
+          "length": 1648,
+          "sha256": "4239CBE84C7ACA58851E10E5240105DC37BA2B986D6B87D918533FFD8D46E0DB"
+        },
+        {
+          "path": "data/stage/nakai13_stg.bin",
+          "length": 1848,
+          "sha256": "3B1978964FEAEBA2A698ABA080EFF23BFA1F27D7D78E615FC3AFB7103254BA54"
+        },
+        {
+          "path": "data/stage/nakai14_stg.bin",
+          "length": 2816,
+          "sha256": "6438C38F503F08CD2595DC6CE1B9BF725727F7B3D333664FEAC757DBF74B2E70"
+        },
+        {
+          "path": "data/stage/nakai15_stg.bin",
+          "length": 1640,
+          "sha256": "12E9AA893A9304B8E47558F2C5A7FC476E092CE8FCFE247B301C75770619E08C"
+        },
+        {
+          "path": "data/stage/nakai15_tate_oriru.bin",
+          "length": 1612,
+          "sha256": "C36DD3FD0B60B9384DC2D44CA8526A5012292493F8DFA30D75BD1BFC559105D1"
+        },
+        {
+          "path": "data/stage/nakai16_meiro1.bin",
+          "length": 1620,
+          "sha256": "BE8B2E8DFF10167262865DA10CE36320781CB123AD4F0AEC886D82455BF7CF3B"
+        },
+        {
+          "path": "data/stage/nakai16_stg.bin",
+          "length": 1652,
+          "sha256": "1686ED42FD62AC64CD495A7810420DE5CB9BEFCD0FE9B9697631355CB2B1BBD7"
+        },
+        {
+          "path": "data/stage/nakai17_stg.bin",
+          "length": 1572,
+          "sha256": "1DBB9FB3F7847D4F085E59BFB7AD5EBA01E88C57E1AF5CBDBFAC780CF6C51645"
+        },
+        {
+          "path": "data/stage/nakai17_tate_agare.bin",
+          "length": 1676,
+          "sha256": "F0CE4ADE50E798CB994EC272A72D742135F79C9721808CBBBBDCBC794DF5F3B7"
+        },
+        {
+          "path": "data/stage/nakai18_2route.bin",
+          "length": 1652,
+          "sha256": "3B28BC96E3F14DF04BAFA328B951E65BC887DFE6F1154BA676B84B8BF0613FB6"
+        },
+        {
+          "path": "data/stage/nakai18_stg.bin",
+          "length": 1592,
+          "sha256": "4CB389C1C79F07080A7C891A80A24978486A9E51A86A71F6011937EA798B8F28"
+        },
+        {
+          "path": "data/stage/nakai19_stg.bin",
+          "length": 2312,
+          "sha256": "C63C848908B410D46419B69A8A0D221889D2D648D1247643695B69CD387E6295"
+        },
+        {
+          "path": "data/stage/nakai19_yokonaga01.bin",
+          "length": 2664,
+          "sha256": "3EAA99F80384FBF0C49069CA290004D60A7017F44535EEAB95A5D524CEEFAE9D"
+        },
+        {
+          "path": "data/stage/nakai1_stg.bin",
+          "length": 1540,
+          "sha256": "28E6B723162F4BAD4D110F6F2310E54BA76B42FC889A31B5AF5DDAF36C6F1370"
+        },
+        {
+          "path": "data/stage/nakai20_Vjump1.bin",
+          "length": 7168,
+          "sha256": "A56E39E5E315A4AD15E7C5308C6E5EF08E106E77E94CE72DF6ED42E79238B651"
+        },
+        {
+          "path": "data/stage/nakai20_stg.bin",
+          "length": 1400,
+          "sha256": "421B8894FEF45125906EB56BBC9A9D33641E720F9F8552B783E51230310FAAD8"
+        },
+        {
+          "path": "data/stage/nakai21_BOSS01.bin",
+          "length": 2324,
+          "sha256": "96BF3758B29BB4B3EB358895331147C59638ADF295FFCE25BB73F2D3989D4D8B"
+        },
+        {
+          "path": "data/stage/nakai21_stg.bin",
+          "length": 3304,
+          "sha256": "D8C663ABE278EC8BAB5708DD519AF41341D6A11C9122F97EB0BB48A43118E4B3"
+        },
+        {
+          "path": "data/stage/nakai22_Vjump2.bin",
+          "length": 7168,
+          "sha256": "C708EEABD1FDB04B20BDF174EB0F8260CDA33EAE9A0738AD4BD0A9FB6058B427"
+        },
+        {
+          "path": "data/stage/nakai22_stg.bin",
+          "length": 744,
+          "sha256": "9E5CD075603BB460B4281D562202E148B12AE31DB7D959B131DADEFA69C6B128"
+        },
+        {
+          "path": "data/stage/nakai23_stg.bin",
+          "length": 2280,
+          "sha256": "77911EDF60FDC4BEB634BA93F93A152F52266EEB5ABCC128176D85E648E1885C"
+        },
+        {
+          "path": "data/stage/nakai25.bin",
+          "length": 1488,
+          "sha256": "1D05E794664072E16E6F44903DF25C33A0BA74B3AACEC56F859A073881A69F72"
+        },
+        {
+          "path": "data/stage/nakai27_BlueTriangl.bin",
+          "length": 3264,
+          "sha256": "2C6DD4898807EDCD5F891A72EFE60F6184342D409116B311EAF05BE527479335"
+        },
+        {
+          "path": "data/stage/nakai28_SmallWarld.bin",
+          "length": 748,
+          "sha256": "89CB9C38CD9E8E2448ECF2EBC39E42A2E9C6AE69A1D1D6F2891A3456401C2572"
+        },
+        {
+          "path": "data/stage/nakai29_NANAME.bin",
+          "length": 2328,
+          "sha256": "D32D572D6D13C4020D7671E93FE3F68C207B094FEFDB3A47AFE528808828F8AD"
+        },
+        {
+          "path": "data/stage/nakai2_stg.bin",
+          "length": 1900,
+          "sha256": "DA68C9DF15A4DFA7BD1064A62402CFFF60C2A10972C0A5CF67870705234A9959"
+        },
+        {
+          "path": "data/stage/nakai30_BlackSquare.bin",
+          "length": 1612,
+          "sha256": "F8FC311CDC42541ACDC6D23AD292ABD94DB0F11ACA338E97ABA87DA41CA33BC7"
+        },
+        {
+          "path": "data/stage/nakai31_BlockWorld.bin",
+          "length": 2384,
+          "sha256": "E52866ECE14485020901064FF9FE53CB64B91A71742D05CB13005E0B84960155"
+        },
+        {
+          "path": "data/stage/nakai3_stg.bin",
+          "length": 2292,
+          "sha256": "CFECEEA93D92F33F76F491C6E6B33455E29B19F0036606CC21353208380BFDEB"
+        },
+        {
+          "path": "data/stage/nakai4_stg.bin",
+          "length": 1572,
+          "sha256": "F4FC7A7DCAA0C6815F734176ECE04CFA7AA9959632E449A66468949325DB87CE"
+        },
+        {
+          "path": "data/stage/nakai5_stg.bin",
+          "length": 1588,
+          "sha256": "94EB7984D623A5923C4E14DDEA5F19567162949012C69A6A53D113AD5D320599"
+        },
+        {
+          "path": "data/stage/nakai6_stg.bin",
+          "length": 2728,
+          "sha256": "763CC7FE711B6A0F9ED0FF8378F2F566D54DBDC376FFEAEE56815E2E6ED217F6"
+        },
+        {
+          "path": "data/stage/nakai7_stg.bin",
+          "length": 1652,
+          "sha256": "6CAE102BD5993088865E66FBA859C56A00B0FB46D529CD191831031810A98039"
+        },
+        {
+          "path": "data/stage/nakai8_stg.bin",
+          "length": 1652,
+          "sha256": "E296B372C0DBE86D62A2AC0EA0DF5A621F27A1872A61BD31B44D682D8A1E481C"
+        },
+        {
+          "path": "data/stage/nakai9_stg.bin",
+          "length": 1688,
+          "sha256": "FE17BB14DA75D05084AD4D2F3078086D2B2CE2E2C95FCF35B6BEDB857A31436B"
+        },
+        {
+          "path": "data/stage/nittirezazu_stg.bin",
+          "length": 632,
+          "sha256": "C55CB31DB8CBB2E8456681AEB58DD165E068A3094FAAE3E4278B7485D4FAED65"
+        },
+        {
+          "path": "data/stage/ogino10_stg.bin",
+          "length": 1660,
+          "sha256": "4D39734F999D2EAC3A8DC84BA636931B0FE631BCC2C5E63DE089D60056A1DC4E"
+        },
+        {
+          "path": "data/stage/ogino11_stg.bin",
+          "length": 916,
+          "sha256": "69CD3DD4B6DDD0B6278E58F950E3927473D75F63079D3A2505A3B91E9B28B471"
+        },
+        {
+          "path": "data/stage/ogino12_stg.bin",
+          "length": 1284,
+          "sha256": "D9C8D0E64ADF888EE5A9C53CB5F6C0FF2F1E5B54BC7426FA2F79B0F00D1E4E7B"
+        },
+        {
+          "path": "data/stage/ogino13_stg.bin",
+          "length": 1796,
+          "sha256": "62D879F197C98F4FD17D17A075265D3902DE353FF3009C7BADBCF44EF437F2BB"
+        },
+        {
+          "path": "data/stage/ogino14_ply.bin",
+          "length": 604,
+          "sha256": "3FF4AAEBF08CC9F85B039E002B117BD6AC7693246773B5D181E0E81CD9CF9BFD"
+        },
+        {
+          "path": "data/stage/ogino14_stg.bin",
+          "length": 2588,
+          "sha256": "2FA76A0D7C1D2D635F11011690F886153A3D3F900B3EF2E5C26902F4C0F2915F"
+        },
+        {
+          "path": "data/stage/ogino15_stg.bin",
+          "length": 6224,
+          "sha256": "4D1C51B33FFE9F204CA635E8DBC17BF892E6BFD85E3107447B29F2310EADEF58"
+        },
+        {
+          "path": "data/stage/ogino16_stg.bin",
+          "length": 1480,
+          "sha256": "964347D65BE84BCF85B41BE3757D574BF88A4548AEB1BDACF50C705B1AEF096C"
+        },
+        {
+          "path": "data/stage/ogino17_stg.bin",
+          "length": 1028,
+          "sha256": "3B47A0FB05363E36E51757D37F833765E41B6A6EE4126482E11C0309104042B7"
+        },
+        {
+          "path": "data/stage/ogino18_stg.bin",
+          "length": 816,
+          "sha256": "B9173884F9D330DD70C3C5E1F095FA4E49E0A354DB4B9EE3649D667A14074949"
+        },
+        {
+          "path": "data/stage/ogino19_ply.bin",
+          "length": 400,
+          "sha256": "F2B49483990235248926D6A3D59CD06E1909A0B8441ADB0973E8886044D80A90"
+        },
+        {
+          "path": "data/stage/ogino19_stg.bin",
+          "length": 1460,
+          "sha256": "0B3C7FA4E783E584887304F9279F25DDD552F69C14661ABBFBE95F98A79CF7C2"
+        },
+        {
+          "path": "data/stage/ogino1_stg.bin",
+          "length": 468,
+          "sha256": "31352443F1B0A7F53B72BEB7E05570732327287C9C9A5D6771649357130C4F29"
+        },
+        {
+          "path": "data/stage/ogino20_stg.bin",
+          "length": 1128,
+          "sha256": "6E73E843157AD24F1647C234DB396ED52D7962859B780932A143F6416E800A18"
+        },
+        {
+          "path": "data/stage/ogino21_ply.bin",
+          "length": 312,
+          "sha256": "975F96B12C692A007BD40A7536B83A99BCB22A85EBF63358DE39352ED5AB0161"
+        },
+        {
+          "path": "data/stage/ogino21_stg.bin",
+          "length": 1236,
+          "sha256": "B3986BCA964F844AA09C51987FDD76D6AC4187603BE4F360FE8AE6CF8671FA95"
+        },
+        {
+          "path": "data/stage/ogino2_ply.bin",
+          "length": 504,
+          "sha256": "9643E0EE6205C3558AB9D1E61F2EDB6B7E5B7CC2C819E3C1EB8E83D4DA4DA2C1"
+        },
+        {
+          "path": "data/stage/ogino2_stg.bin",
+          "length": 1124,
+          "sha256": "E7EAB31E14CA3105F08E717CB890E6CD335364CA674816616907CCE7ECA134DD"
+        },
+        {
+          "path": "data/stage/ogino3_stg.bin",
+          "length": 824,
+          "sha256": "0D2EFF5916F50246FCA26C01B561C1949B4CF851BD43C03FDF8A130F52D6AE65"
+        },
+        {
+          "path": "data/stage/ogino4_stg.bin",
+          "length": 1144,
+          "sha256": "390AE05FA967102A851FDD222FC9517C9568099439DB30FD36819398517AA642"
+        },
+        {
+          "path": "data/stage/ogino5_stg.bin",
+          "length": 1488,
+          "sha256": "E336EBCD22F70539675E914617D54E032A6C9AAA3D8D6098384FCE21D5C58730"
+        },
+        {
+          "path": "data/stage/ogino6_ply.bin",
+          "length": 120,
+          "sha256": "E2D5249F889235ED7CEABEC15B6DED4347DD7CEEC3C041880902302FFC0AE946"
+        },
+        {
+          "path": "data/stage/ogino6_stg.bin",
+          "length": 344,
+          "sha256": "A053FC14B9AC65FA13DBB49A840E8AEC68479C86553353F4DAC8276FBD3B1E34"
+        },
+        {
+          "path": "data/stage/ogino7_stg.bin",
+          "length": 1104,
+          "sha256": "AEF755371071FC9944EFA519046675EE7BFE5207DAE5A8702533CA0D51C631C7"
+        },
+        {
+          "path": "data/stage/ogino8_stg.bin",
+          "length": 6232,
+          "sha256": "73F039724C326A0E830098EE83AC17649DCCC884199E30B5A1BD0D1E2AA9CA33"
+        },
+        {
+          "path": "data/stage/ogino9_stg.bin",
+          "length": 1416,
+          "sha256": "BDD144533D1DCDBF79C91AA3F785EE1068154CEB59F2B5436744FC947978AC66"
+        },
+        {
+          "path": "data/stage/ogino_vjump.bin",
+          "length": 7168,
+          "sha256": "41BC5BDA9ED73BA3CC3C046A30BC73A1187C6C96A2BA18E082A5121F032D6AF0"
+        },
+        {
+          "path": "data/stage/oninosumika_stg.bin",
+          "length": 564,
+          "sha256": "AFFF5D6FDF3FE98182E13C423262C6FA47BD12DC4A4885C5C902A99091C87E68"
+        },
+        {
+          "path": "data/stage/orokamononotudoisiyakata_ply.bin",
+          "length": 1048,
+          "sha256": "042C69E2D7FCEEC6F79BCD92DAD85ABCA3809F2DCFDC648597882EDABCA9867B"
+        },
+        {
+          "path": "data/stage/orokamononotudoisiyakata_stg.bin",
+          "length": 2700,
+          "sha256": "0F8EA2BD938FA21DBE812696C45C08DFBFBA0D0F7186C6ECC47F0645680381D7"
+        },
+        {
+          "path": "data/stage/p_type_stg.bin",
+          "length": 828,
+          "sha256": "5352DD6A42FA67FE1D316D43AF09A1F4A5D7B7A5A56EB10E6B03625A6F3AC4DC"
+        },
+        {
+          "path": "data/stage/pacman_stg.bin",
+          "length": 1788,
+          "sha256": "D70375667561A0C5CB8C32CB676FB6B3C36B42616B6BB1BA369BBF7377BDFDC5"
+        },
+        {
+          "path": "data/stage/posurassyu_stg.bin",
+          "length": 1324,
+          "sha256": "EC96CED951663D30502BA0672225D4881A7BBC9FA7C11F5C9938F2B92DD2459B"
+        },
+        {
+          "path": "data/stage/reach.bin",
+          "length": 308,
+          "sha256": "37757A54B314AD5A1B3ED77CEC0C740177403466547FA2DB7EBDF49BA53A5106"
+        },
+        {
+          "path": "data/stage/robogundan_stg.bin",
+          "length": 268,
+          "sha256": "516539D5D984CB5A59056D1D579C77FD2719A70BB158A1370B42A2E783529595"
+        },
+        {
+          "path": "data/stage/sabu_stg.bin",
+          "length": 2452,
+          "sha256": "88F2B05E905EC2CC80DFB9C83E397C88FA42A77A3BC8DD136BCB4CF5B754BE48"
+        },
+        {
+          "path": "data/stage/saikyounotate_stg.bin",
+          "length": 1028,
+          "sha256": "2BEC915854ECA419A4B1930C5ECBA2F3BC3918035E23A20D021537BCBAB0F8D1"
+        },
+        {
+          "path": "data/stage/sensyanomikanngei_stg.bin",
+          "length": 392,
+          "sha256": "D5806FFF4F99E3163BD5ABF684EE318D89DE52B3BA741E7B8C1E83B64119EF4E"
+        },
+        {
+          "path": "data/stage/sessyu_stg.bin",
+          "length": 3604,
+          "sha256": "CC6CBC4158E5D8828DB935D45193C3B0F4538BE26247602E444BD84CCABE95F0"
+        },
+        {
+          "path": "data/stage/sinnennnaruyaminitire_stg.bin",
+          "length": 2248,
+          "sha256": "5A74F5354C4F811BB092E31C2A318C77E91702305CF6138C393C105CA0949575"
+        },
+        {
+          "path": "data/stage/spirits_stg.bin",
+          "length": 1320,
+          "sha256": "614834400487D495C91B1E042BA486A15BC62CADD7C874BE6E1859E11C5FD9A9"
+        },
+        {
+          "path": "data/stage/sumartoball_stg.bin",
+          "length": 532,
+          "sha256": "53223482B17615225B62EDC559290635C8C8D45410933A00B777B0F42F752ECD"
+        },
+        {
+          "path": "data/stage/tamadeikuzakogunndan_stg.bin",
+          "length": 684,
+          "sha256": "43C796B37B153D8DB8800E79F0A01440B4C99C969C76CA3AD2D3A98218299C94"
+        },
+        {
+          "path": "data/stage/tamaniikunara_konnna_kirai_stg.bin",
+          "length": 740,
+          "sha256": "5563A22A4C98FA47AAEDA4D4CABEBA9D97E0012239DCE7C6468A93EE16A77813"
+        },
+        {
+          "path": "data/stage/tanken_ply.bin",
+          "length": 348,
+          "sha256": "074F59B749FC0E0C93001B9FBA0DEA82AA6AA5C81A27A2941F587F5220156B57"
+        },
+        {
+          "path": "data/stage/tanken_stg.bin",
+          "length": 1112,
+          "sha256": "55BD330E614DA6F0443D3335B54576234923B3ACF895F326BC21C7158911293D"
+        },
+        {
+          "path": "data/stage/test_stg.bin",
+          "length": 1436,
+          "sha256": "B9E40CC840FCDFED45DF683E213B15E332A2A8A43A4DC2D436FE3E6AE1E47622"
+        },
+        {
+          "path": "data/stage/tetorisu_stg.bin",
+          "length": 1456,
+          "sha256": "55468D07F71AEBB056D42AD2C9B11C82AC7C17041A1B3335EF59B11C3214C9A5"
+        },
+        {
+          "path": "data/stage/the_earth_stg.bin",
+          "length": 652,
+          "sha256": "300FEAC3A4C1392B171C554514F95B218294C00500BC15DC2BCDDB90BCEEB869"
+        },
+        {
+          "path": "data/stage/the_face_stg.bin",
+          "length": 5020,
+          "sha256": "F909D358EE587FA24299A1067253ACBC32D8A13C1FF12EE1880D84CFE1F9EE78"
+        },
+        {
+          "path": "data/stage/tutorial10_stg.bin",
+          "length": 268,
+          "sha256": "AA176D489BE1C76A4579DF390EA24170D78119A1657C5C74F1D9E0C6CF744BA7"
+        },
+        {
+          "path": "data/stage/tutorial11_stg.bin",
+          "length": 224,
+          "sha256": "DC82209B871CB740B0153FF0FCCE802F26A841C64EE1A3F15EE5D5D929D582C5"
+        },
+        {
+          "path": "data/stage/tutorial12_stg.bin",
+          "length": 232,
+          "sha256": "BBF21F63821F7DCBD66DA7618BF3CB6A81DEFCAEC70EEBA1203A10335E71947D"
+        },
+        {
+          "path": "data/stage/tutorial13_stg.bin",
+          "length": 244,
+          "sha256": "F6DCCB4EBCA8440B913449150C57D116780A4D06AB5A865C49BDFF4C10FB4E97"
+        },
+        {
+          "path": "data/stage/tutorial14_stg.bin",
+          "length": 328,
+          "sha256": "AD3AE866386B8833F6A7973A52DF6890D5692DE5FAE4DB07BAF1E77940BB9DA6"
+        },
+        {
+          "path": "data/stage/tutorial15_stg.bin",
+          "length": 496,
+          "sha256": "D8E11A7B871B257B2F248BC70868A990F72D6862DC35148EA29DA56C373E56E8"
+        },
+        {
+          "path": "data/stage/tutorial16_stg.bin",
+          "length": 648,
+          "sha256": "F49E504C7724DA03AD914D37254E92FC4E9237BFFBE37AF78AB81C211F731573"
+        },
+        {
+          "path": "data/stage/tutorial17_ply.bin",
+          "length": 368,
+          "sha256": "AFF49EA946A0BC7BD65C40E53CF094625838940BB23B9D7DCDF047E81146D068"
+        },
+        {
+          "path": "data/stage/tutorial17_stg.bin",
+          "length": 1436,
+          "sha256": "B5DC262B7D04D63B648653A4992C87158A03439D2DB583B967BFE666EED17ED3"
+        },
+        {
+          "path": "data/stage/tutorial1_ply.bin",
+          "length": 96,
+          "sha256": "F1BFE5EA08D8B3D6C4317E8AF23BE21A439CE3AEFFC133011681EC7233B81A08"
+        },
+        {
+          "path": "data/stage/tutorial1_stg.bin",
+          "length": 280,
+          "sha256": "05F3DBBB516A597C0FECB82E1E2F02FEC5F223FE99A5FD6979879C2DCE2E2A62"
+        },
+        {
+          "path": "data/stage/tutorial2_stg.bin",
+          "length": 228,
+          "sha256": "EBB035B242F73F501951C22257E0752D5E71E7D9183C53E0519EFE958BF58DCC"
+        },
+        {
+          "path": "data/stage/tutorial3_stg.bin",
+          "length": 196,
+          "sha256": "08C8B43B865E95DDF0A67971085ED0A6BFBB4E3D6386F0F223C104D66EAB439C"
+        },
+        {
+          "path": "data/stage/tutorial4_stg.bin",
+          "length": 276,
+          "sha256": "A3FAA2832DBAE58FE5969B9D6360EDC0AE181FBF0C60E3261B9840697104C59F"
+        },
+        {
+          "path": "data/stage/tutorial5_stg.bin",
+          "length": 592,
+          "sha256": "22C9D81FA50D93A7C63B7EABACA41689A1DD23B209EEADA09CF5E614FC438D4C"
+        },
+        {
+          "path": "data/stage/tutorial6_stg.bin",
+          "length": 392,
+          "sha256": "DE72ACEE4A2EF483032508C846634A347C2ED7A31DC0AC9A3CF2743C3531112B"
+        },
+        {
+          "path": "data/stage/tutorial7_stg.bin",
+          "length": 272,
+          "sha256": "5CB10CDA242A5742919A703646637592D97DDBD04480F60FC7426F5FAB396E89"
+        },
+        {
+          "path": "data/stage/tutorial8_stg.bin",
+          "length": 212,
+          "sha256": "57BF1C5BB814275858570A319D58401F266BFDB298F5134DE17FDF4CA5CB3967"
+        },
+        {
+          "path": "data/stage/tutorial9_stg.bin",
+          "length": 336,
+          "sha256": "AEC101EB74E329C25094CD0864EF4F094853A6A13B215C3E24BC2D683332142C"
+        },
+        {
+          "path": "data/stage/tyanbamohasiru_stg.bin",
+          "length": 2200,
+          "sha256": "5BFFF75FAD59794BB47650797B83747B0B211416EF70EC2C300950EEFE8DE5F5"
+        },
+        {
+          "path": "data/stage/unnmeinotobirawotokihanate_stg.bin",
+          "length": 404,
+          "sha256": "F4B518521FD2DD45A26A175FCF3AC1F97C269BDFFB9CA27A3FF59971236A6E27"
+        },
+        {
+          "path": "data/stage/utiagerubesi_stg.bin",
+          "length": 1200,
+          "sha256": "5254CF90BABC5A93E1EC7FD72EBC496F92BB146144F424271BE0D404C34D3493"
+        },
+        {
+          "path": "data/stage/v_jump_stg.bin",
+          "length": 6968,
+          "sha256": "6A8878A79A1843FF46E968BCA10308E787925C343BA92F78426EF32C8F585779"
+        },
+        {
+          "path": "data/stage/wasinodsha2gamenmadearuzo_stg.bin",
+          "length": 248,
+          "sha256": "735C105DD506602D4EBD28B9AD13A1EC93CE609E8C1E6BC661E4A941FA67A1C7"
+        },
+        {
+          "path": "data/stage/which_move.bin",
+          "length": 244,
+          "sha256": "45A9DAE6D0DF8991F2B798FB6678A1FB92167653B582FBD7F0DF173BE9D577C1"
+        },
+        {
+          "path": "data/stage/yamato_stg.bin",
+          "length": 1324,
+          "sha256": "1493E05567FDEF08935483B96EA418A928DF6FAA724C040B36AA8C75FA3A6E79"
+        },
+        {
+          "path": "data/stage/yaritaihoudai_stg.bin",
+          "length": 612,
+          "sha256": "5EC0B7EDFDDA1EF1276B90ED5F6EFA7F6A38F21DA95269305C7E1BBEBA90311E"
+        },
+        {
+          "path": "data/stage/yaturanokodouwotomero_stg.bin",
+          "length": 424,
+          "sha256": "1C14D1187783831672BD6725C79E8543BA04203C4812E4971A0D3776AA09B6E1"
+        },
+        {
+          "path": "data/stage/yokokawa10_stg.bin",
+          "length": 668,
+          "sha256": "5477667F52C796481AA91606ED0279E45BD689692851DA81B39DEA00A78E3562"
+        },
+        {
+          "path": "data/stage/yokokawa11_stg.bin",
+          "length": 172,
+          "sha256": "F602FFB41EB7498AE24EE5EB2ACD45C289A75476806C2787C126533AAED09751"
+        },
+        {
+          "path": "data/stage/yokokawa1_stg.bin",
+          "length": 1020,
+          "sha256": "8C0C0D5CBBE4553A6B4383C3B2915EFBFE93FC31AC0A67468A8B1B9E1EA3F539"
+        },
+        {
+          "path": "data/stage/yokokawa2_stg.bin",
+          "length": 936,
+          "sha256": "0B036E59AF1D226F6E34731D716FAC1E47746F26DD460B314F545BEF00C9A8E1"
+        },
+        {
+          "path": "data/stage/yokokawa3_stg.bin",
+          "length": 560,
+          "sha256": "E0C16DDA93421BC3119F3949D230E934C7E1C4BAC09D13769655766C58C3ADA0"
+        },
+        {
+          "path": "data/stage/yokokawa4_stg.bin",
+          "length": 608,
+          "sha256": "E88A784A37A9EFB8421BEE22CD9BFF59F7CCF594F4819FCBF337CCB17820CF77"
+        },
+        {
+          "path": "data/stage/yokokawa5_stg.bin",
+          "length": 692,
+          "sha256": "A21B4801834E945CA4E2AEF815D4FDD7B205CA8948CAADA84E8306C25C892838"
+        },
+        {
+          "path": "data/stage/yokokawa6_stg.bin",
+          "length": 292,
+          "sha256": "C0A784A68464D42BF855FAF29D6DDA067A2CAB807FD9D5332C4A0D1BF6D9BD0B"
+        },
+        {
+          "path": "data/stage/yokokawa7_stg.bin",
+          "length": 720,
+          "sha256": "AD99C06252B0FA3C715A73409D3F593419E65F184F57E84808E3B2C02C202DC8"
+        },
+        {
+          "path": "data/stage/yokokawa8_stg.bin",
+          "length": 508,
+          "sha256": "5B88E96CB4D936B36103A7A7058E403018DC478DB7120885CB48F3E8AAD5E50F"
+        },
+        {
+          "path": "data/stage/yokokawa9_stg.bin",
+          "length": 328,
+          "sha256": "9EC2DEC85A5DD9D2C1D5423DB3AE0ED142613ACB8DD7E61E06D4C319E7BBDE38"
+        },
+        {
+          "path": "data/stage/yokokawa_vjump.bin",
+          "length": 2032,
+          "sha256": "0DD9EB39FF7A6A9E7CB1BA5E951D038C29CDD4CA6EA31CD69F157D26974AFA03"
+        },
+        {
+          "path": "data/stage/yokoninagaizamurai_stg.bin",
+          "length": 2516,
+          "sha256": "F9191848E2C3D32080818C51065362863B3F11C5BC41211AC298726164ECEF02"
+        },
+        {
+          "path": "data/stage/yubituri_stg.bin",
+          "length": 3536,
+          "sha256": "FC744DC05BABE706585BA8C003D0BC1F132A4BE9FA200C2837E8BEAB9280197B"
+        },
+        {
+          "path": "data/stage/zujoutyuui_stg.bin",
+          "length": 1180,
+          "sha256": "83F7B77CBE252EDDE7526BEAFA524EA1956AA8CFF3414C9917304719AD2217B4"
+        },
+        {
+          "path": "data/window/arrow_obj.bin",
+          "length": 540,
+          "sha256": "7D24F442BC523B3DB414409F9C758A8B90B4163BDB22F70B2CE490E2F9277E50"
+        },
+        {
+          "path": "data/window/arrow_tex.bin",
+          "length": 6336,
+          "sha256": "8F101C683642C2B79F8771814C194F1FB699EAAF52F9C990C67E93B2E4D94FBF"
+        },
+        {
+          "path": "data/window/bangaio_icon_obj.bin",
+          "length": 452,
+          "sha256": "5B771A6FE9D605CAC094ABC84F0889BF2F6CF425250D7AF5F493C07FEC663ECA"
+        },
+        {
+          "path": "data/window/bangaio_icon_tex.bin",
+          "length": 2312,
+          "sha256": "0C8D33C54F111A5CB86CB26AB5307D5A91372A1F7DD2E1E6E8C300FEA7F6ED7E"
+        },
+        {
+          "path": "data/window/chara_print_obj.bin",
+          "length": 8100,
+          "sha256": "54E17386D0F719D9A532E824B8DB4C88C86E34FC8459DD82DBE479D69712FE3C"
+        },
+        {
+          "path": "data/window/chara_print_tex.bin",
+          "length": 18312,
+          "sha256": "7FBEF0FC0E6D2CA6DB15D054F41C725EE9B7B3C40A094D676C667860E32E57F1"
+        },
+        {
+          "path": "data/window/data_init_bg_obj.bin",
+          "length": 724,
+          "sha256": "2BBCEEDA0483A7D52627B8211DB7D2249C95FE0FBD42FDDD6A8D2595EB0F57AA"
+        },
+        {
+          "path": "data/window/data_init_bg_tex.bin",
+          "length": 32768,
+          "sha256": "87BC88C2A2A7EE2B34A3CD61421F81B6D0EF0774F7A1CC0EB4B3DF3FCB0F3E87"
+        },
+        {
+          "path": "data/window/dialog_box_button_obj.bin",
+          "length": 764,
+          "sha256": "8FFA9D02B9CE5FB226698FD5490DD689616AB41ADA8B88E56F14B07A04441E46"
+        },
+        {
+          "path": "data/window/dialog_box_button_tex.bin",
+          "length": 2960,
+          "sha256": "B714E5E33E2F953850ED670DE3517C6F6D5D62A9A3B488FC1CC30BEF26D76569"
+        },
+        {
+          "path": "data/window/dialog_box_window_obj.bin",
+          "length": 492,
+          "sha256": "90E4DA35C3B8945E3419E55EB83213F4E3981FE6C912CEFB61A4ECBF40D75022"
+        },
+        {
+          "path": "data/window/dialog_box_window_tex.bin",
+          "length": 3392,
+          "sha256": "C4EC467B1E61A56089757B8E0940CA685A91B103999DD8246997ED9AF0EC90D0"
+        },
+        {
+          "path": "data/window/general_bg_obj.bin",
+          "length": 5292,
+          "sha256": "56E50B644935BBD8DC3F8FF28A1F8BD19DBA0B0BB698CD6EE273793F518A3D07"
+        },
+        {
+          "path": "data/window/general_bg_tex.bin",
+          "length": 90300,
+          "sha256": "FB95F899FA09E4AD0336B116C0F198D7599C71F8BFA327C9529F57118E9EA0E4"
+        },
+        {
+          "path": "data/window/keyboard_bg_obj.bin",
+          "length": 740,
+          "sha256": "A5C730EC7E6B83C1AA15A42ACD1B8162348E2B0BD1664B1C68238257E5D1992D"
+        },
+        {
+          "path": "data/window/keyboard_bg_tex.bin",
+          "length": 38372,
+          "sha256": "81BFA9CF13891FCA465E7C9FCA48E3A65590ADF77BE003523241EE2FBCE63E28"
+        },
+        {
+          "path": "data/window/keyboard_english_bg8.bin",
+          "length": 24684,
+          "sha256": "D44E33F316503DCA0AE2256766E658F2DB2A65C9BBC58C26D7EC72AA4417C9C2"
+        },
+        {
+          "path": "data/window/keyboard_figure_mark_bg8.bin",
+          "length": 20012,
+          "sha256": "B5EFA74A4B54DC4CF7D509CC9A97EA0A0C6EABD6EBA1D2609CAB8E6274766364"
+        },
+        {
+          "path": "data/window/keyboard_hira_bg8.bin",
+          "length": 26476,
+          "sha256": "7CAC200509FAF4A4B4DFA05DD67A4A2A4F266CAB1FE94DA5149B05359B4AAC95"
+        },
+        {
+          "path": "data/window/keyboard_kata_bg8.bin",
+          "length": 25708,
+          "sha256": "E60C058081E6CECC17A100FE72B69A23E79CCE7F5C53F439FEF1C539B61F6478"
+        },
+        {
+          "path": "data/window/keyboard_obj.bin",
+          "length": 9228,
+          "sha256": "9E71E84B3AE76F94D8922B366B236322F2159D8B622381F30A6217C3EB8878BE"
+        },
+        {
+          "path": "data/window/keyboard_tex.bin",
+          "length": 27976,
+          "sha256": "03DF52832521BDCF75D544113F79286A6DFCAADCF08C4B2E43EA63708686A263"
+        },
+        {
+          "path": "data/window/message_obj.bin",
+          "length": 2780,
+          "sha256": "03234101234EC561F39643666569B797BDA1D8EFF6540E397595C50568B6B743"
+        },
+        {
+          "path": "data/window/message_tex.bin",
+          "length": 22660,
+          "sha256": "F35B99A49A291C50A898BF2887C8293486467ED569AAADEE6382F1F14D821D9E"
+        },
+        {
+          "path": "data/window/mode_select_bg_obj.bin",
+          "length": 716,
+          "sha256": "09F8A6D71F4DC5A8182D14B8AD4D97861D18055E69977DCEB120FB3F50C815DC"
+        },
+        {
+          "path": "data/window/mode_select_bg_tex.bin",
+          "length": 28672,
+          "sha256": "F82AD55ED67252BFF9CD77BA7C882E28B71F95624676689F57445DE044B9C447"
+        },
+        {
+          "path": "data/window/sound_load_help_obj.bin",
+          "length": 692,
+          "sha256": "65E73070F4578377CE919DDDD6A2D0868C2F2125597531840DF2934CC74C94D0"
+        },
+        {
+          "path": "data/window/sound_load_help_tex.bin",
+          "length": 95632,
+          "sha256": "D95292BD2AA164C1D2E81BBAEF87B4AC742D86724EDF2EF932A438346AC9D8D6"
+        },
+        {
+          "path": "data/window/switch_obj.bin",
+          "length": 8492,
+          "sha256": "F10CD801226D8DF8C132D32EE5C32CEE8D5E15C3C5AFF4C8CD0607834399CE32"
+        },
+        {
+          "path": "data/window/switch_tex.bin",
+          "length": 135276,
+          "sha256": "298E1447071BB3CAC7DDEBCB3E51D8505BA41062B7130A68A9FEE11319FF8D2B"
+        },
+        {
+          "path": "data/window/weapon_obj.bin",
+          "length": 180,
+          "sha256": "6C5099E465EB69EFC2FFD63B38F4DC36BAA6C4AC1803A3BB6B25AD08A8B9B8CA"
+        },
+        {
+          "path": "data/window/weapon_tex.bin",
+          "length": 372,
+          "sha256": "196E32E82627798D40719A9ECFC537F537D9AE7F433292FAEE469D0136468074"
+        },
+        {
+          "path": "data/window/wireless_mark_obj.bin",
+          "length": 612,
+          "sha256": "CACBB07DFC92B171262174A578CAB9DF4A1496D56E881D07D86194914C6FD332"
+        },
+        {
+          "path": "data/window/wireless_mark_tex.bin",
+          "length": 1152,
+          "sha256": "865EBE07763C9157AF7D116EF99572B749EFC1D0729EB94E5A2E1E7D4B06BD26"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "E46012911DBEC2F12C18AFF704B82A9CEE2A329839F171AB0F91C8C3443FC08E"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 1024,
+          "sha256": "8F8ED7FC14F2428573C6515E7865BD5C4DF2B548A4666A85D13B971E2FBE837C"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 960,
+          "sha256": "EDA63D5A7DB6272507BAAAD8E3B60D342BEBA9ED9ECA2E582B32F92F6335FDEA"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 2880,
+          "sha256": "3C504DE7838A0158E89A10404BBA4AE95CD1676E7846259A708435BADFD34A14"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 2400,
+          "sha256": "1EBB653DA5CB2E34AE550549A64085AFD337185BF946993C1C61F4ACE7333652"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 2176,
+          "sha256": "F4F523EE71DE14E94CB0FE373FBA9A80639C1B4AC0BFFB431428813BB8DFF158"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 2976,
+          "sha256": "AD2E2DD92902616291EF34600BCCA03DB9C0623DCF75BA08368E76EB21AC4D6E"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 6368,
+          "sha256": "428DBDD47B2CD756A1F1CFC6C847F7996459EEB899921E2C596342D0D2BD8297"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 7712,
+          "sha256": "F5352064611D0AD11AA6A0539AE2F159A5F3A33CA8168E3BE79A8076FE2789EA"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 6176,
+          "sha256": "5ACEAB54777CA8C3AE88128D6E38C098A5C349D33F86C6FD19935541F2E176C8"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 17920,
+          "sha256": "85E59790436B9F874DF096A6F59D62618389453E7B0DAC601C9A211B52613F07"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 20224,
+          "sha256": "8054696F9082E134E263B39560B5CCC582C157E6DC6B3C73596EE2FFF2063467"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 1056,
+          "sha256": "AF55F044E2C9267376B18328FE7FEACBCC0122709D1779182D3029222296826A"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 3360,
+          "sha256": "0F81BF62058538692BA1AFF23DB94E41F1D23B158F2F02B0308D9795A7EF48ED"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 1024,
+          "sha256": "6A49C495CA7290CB2957C352073DF83208DB84768E0D02D915408E615F7FC307"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 4160,
+          "sha256": "319B25FFB85208AF9AD2A35CDEB072D33BC014CF90B47CDB578219BCA523B4D1"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 4320,
+          "sha256": "3DA8E615AE183AC0BF4EECA36DD7B164C7BE74179FAC427FD0FD65750AA6CFF1"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 8704,
+          "sha256": "C0BCFD62CA40C16985D6009EA31DBFC87307FADAB9A17DB27975027127A644B8"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 1280,
+          "sha256": "3A6EBE1D23553E6EF74AADF11EB91BF72D5E310BFE1C9B537768C066943FAA69"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 5376,
+          "sha256": "66B28EE3EE714F85905F0F1B55846165ED89B2928973A24559EE3E6BC1C975DD"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 5536,
+          "sha256": "C7D47A1BDD2EB54159289F1C0F7558AA7E31CBB6839EF373ECDE2F8E5E4F7F8A"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 2912,
+          "sha256": "42130D9A1E312120F3B9411C67C6E71CB2956A1ACF17AA4F97360CDB9ADB0DEE"
+        },
+        {
+          "path": "overlays/overlay_0021.bin",
+          "length": 1728,
+          "sha256": "9706BFB16C4DEFFB8EF22E594E3B59170618493F90988FF33E74BA09693648CC"
+        },
+        {
+          "path": "overlays/overlay_0022.bin",
+          "length": 8640,
+          "sha256": "309F0FD17BF6812F9DAB44DE61787B1216D30710D35119BFC39951880F79E908"
+        },
+        {
+          "path": "overlays/overlay_0023.bin",
+          "length": 8448,
+          "sha256": "D2EAF126B08D55C4E34AE6CA12E5DFE2B227AC84D962E8FD67DE7F5884D40292"
+        },
+        {
+          "path": "overlays/overlay_0024.bin",
+          "length": 1824,
+          "sha256": "57E6C97B9900D7662106FDBA6DA06154D91EE667D5DDBFB3679EE9A71FC0D5DC"
+        },
+        {
+          "path": "overlays/overlay_0025.bin",
+          "length": 6048,
+          "sha256": "FA9E68F097B1FE0A2F3A9D3540CF3C49244BB6844AA722F56DF936113BA7404F"
+        },
+        {
+          "path": "overlays/overlay_0026.bin",
+          "length": 2368,
+          "sha256": "429C7A39190AED57F7977439529FCA6BB827799ADF83F8CF22EC08FBC6976E12"
+        },
+        {
+          "path": "overlays/overlay_0027.bin",
+          "length": 2240,
+          "sha256": "5BE608AD2F243871569327349289B044233EF0D0B3EA2B8C591A1D51F52EE930"
+        },
+        {
+          "path": "overlays/overlay_0028.bin",
+          "length": 3936,
+          "sha256": "95BF3230A9FD825EFB5CE18E94B25A65AF295EAF83B0FC5F3F9AC71EF60A85C1"
+        },
+        {
+          "path": "overlays/overlay_0029.bin",
+          "length": 2784,
+          "sha256": "8E27CC928DBA280811FD1D4B5103978769DD2DF87294F16161278CF64D00851B"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 6700672,
+          "sha256": "0B91C28A92F0CE90C2FD34997DDDB4718D09373F3D7A043407A823E162E76E50"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 8388608,
+          "sha256": "B760AD12FC59D573F7469DE6B1EE41B1F468B80776F4513513D0623CFDC95296"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 8388608,
+          "sha256": "83DE277A3DFDD724BCDC650BB3DEBD0A06789E4415E1D7B045CB754F39760087"
+        }
+      ]
+    }
+  ]
+}

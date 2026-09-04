@@ -14,12 +14,14 @@ public sealed class NdsImageBuildResult
     /// <param name="fileNameTable">Final FNT Region.</param>
     /// <param name="fileAllocationTable">Final FAT Region.</param>
     /// <param name="banner">Final Banner Region, or <see langword="null"/> when absent.</param>
+    /// <param name="debugProgram">Final debug executable Region, or <see langword="null"/> when absent.</param>
     /// <param name="arm9i">Final ARM9i Region, or <see langword="null"/> for a DS-only build.</param>
     /// <param name="arm7i">Final ARM7i Region, or <see langword="null"/> for a DS-only build.</param>
     /// <param name="sectorHashTable">Generated first-level DSi digest table, or an empty region.</param>
     /// <param name="blockHashTable">Generated second-level DSi digest table, or an empty region.</param>
     /// <param name="fileCount">Number of named NitroFS payloads assigned File IDs.</param>
     /// <param name="allocationCount">Total FAT records, including unnamed Overlay payloads.</param>
+    /// <param name="diagnostics">Explicit authentication preservation or absent-signing-authority findings.</param>
     internal NdsImageBuildResult(
         long usedSize,
         long physicalSize,
@@ -31,12 +33,14 @@ public sealed class NdsImageBuildResult
         NdsRegion fileNameTable,
         NdsRegion fileAllocationTable,
         NdsRegion? banner,
+        NdsRegion? debugProgram,
         NdsRegion? arm9i,
         NdsRegion? arm7i,
         NdsRegion sectorHashTable,
         NdsRegion blockHashTable,
         int fileCount,
-        int allocationCount)
+        int allocationCount,
+        IReadOnlyList<NdsDiagnostic> diagnostics)
     {
         UsedSize = usedSize;
         PhysicalSize = physicalSize;
@@ -48,12 +52,14 @@ public sealed class NdsImageBuildResult
         FileNameTable = fileNameTable;
         FileAllocationTable = fileAllocationTable;
         Banner = banner;
+        DebugProgram = debugProgram;
         Arm9i = arm9i;
         Arm7i = arm7i;
         SectorHashTable = sectorHashTable;
         BlockHashTable = blockHashTable;
         FileCount = fileCount;
         AllocationCount = allocationCount;
+        Diagnostics = Array.AsReadOnly(diagnostics.ToArray());
     }
 
     /// <summary>Identifies the meaningful content end written to header offset <c>0x80</c>.</summary>
@@ -86,6 +92,9 @@ public sealed class NdsImageBuildResult
     /// <summary>Locates optional checksummed menu metadata after final alignment.</summary>
     public NdsRegion? Banner { get; }
 
+    /// <summary>Locates the optional debug executable referenced by common-header debug fields.</summary>
+    public NdsRegion? DebugProgram { get; }
+
     /// <summary>Locates the DSi-mode ARM9 payload appended after common content, or remains absent for DS images.</summary>
     public NdsRegion? Arm9i { get; }
 
@@ -103,4 +112,7 @@ public sealed class NdsImageBuildResult
 
     /// <summary>Counts every FAT entry, including unnamed payloads reachable only through Overlay records.</summary>
     public int AllocationCount { get; }
+
+    /// <summary>Reports explicit unverified/stale authentication preservation and cleared-signature outcomes.</summary>
+    public IReadOnlyList<NdsDiagnostic> Diagnostics { get; }
 }

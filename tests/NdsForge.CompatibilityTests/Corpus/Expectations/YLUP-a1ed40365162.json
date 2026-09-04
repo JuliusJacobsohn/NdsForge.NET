@@ -1,0 +1,1515 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "Last Window - The Secret of Cape West [YLUP] [Europe - Multilingual].nds",
+    "length": 134217728,
+    "sha256": "a1ed4036516242548cc7ff24c57137812e59b08589fb6678837b0bb354dc82e1",
+    "headerTitle": "LASTWINDOW",
+    "gameCode": "YLUP",
+    "makerCode": "01",
+    "kind": "NintendoDs",
+    "revision": 0,
+    "region": "Europe - Multilingual",
+    "preferredLanguage": "English",
+    "displayTitle": "Last Window - The Secret of Cape West",
+    "bannerTitles": {
+      "Japanese": "Last Window\nThe Secret of Cape West\nNintendo",
+      "English": "Last Window\nThe Secret of Cape West\nNintendo",
+      "French": "Last Window\nLe secret de Cape West\nNintendo",
+      "German": "Last Window\nDas Geheimnis von Cape West\nNintendo",
+      "Italian": "Last Window\nIl Segreto di Cape West\nNintendo",
+      "Spanish": "Last Window\nEl secreto de Cape West\nNintendo"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 160048,
+          "sha256": "9F40087972CCB8B89D4CC4BAF8288123E26A479BB43FA68B18A30A59650633A1"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 32,
+          "sha256": "104F017FDC184956D39094B9DCE8ACC26F7B6C800FB9C9EF999101ECA1C1ECBD"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 374972,
+          "sha256": "E3C1B23B0425EB364917EDB443D37B619658C1B0CAC4F6C74BB6FD1A453311BD"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "FB5982365A17CA8C6850BFEBBF4C82DC86FA5F62658E8006AC8CE328C73BC0ED"
+        },
+        {
+          "path": "data/data/BG3DAnime.pack",
+          "length": 225944,
+          "sha256": "0001B705353489DB88E5CB158702E9BCC97284DE69C344E92F16209034006A63"
+        },
+        {
+          "path": "data/data/Chapter_Ep00.pack",
+          "length": 57710,
+          "sha256": "3C59B8B0B1934460D93306445EFD4136743D80290EFDE046D6C3E596FEDFFB2F"
+        },
+        {
+          "path": "data/data/Chapter_Ep00_Text.pack",
+          "length": 116518,
+          "sha256": "56749518312F1FC7AD3D263452DCFB8FDA6D456FDBF424D3D9DE457DB1F6889E"
+        },
+        {
+          "path": "data/data/Chapter_Ep01.pack",
+          "length": 266991,
+          "sha256": "6EB6853118879F380C0ABE23A8A9D49CF331B842C51D683EE119DF8325C103FF"
+        },
+        {
+          "path": "data/data/Chapter_Ep01_Text.pack",
+          "length": 187797,
+          "sha256": "8E5EA9F84606918DFC17BE3CEBF30C230654C65477C0CA1459D67C54DA72FDDC"
+        },
+        {
+          "path": "data/data/Chapter_Ep02.pack",
+          "length": 201117,
+          "sha256": "19BE26FE72A901C976C092160686E3C35C3D85F82FDE1E06A9195A97F79C5E64"
+        },
+        {
+          "path": "data/data/Chapter_Ep02_Text.pack",
+          "length": 181316,
+          "sha256": "5DBE56992DB0FD1BEB55444A7B4087A099CC5EE89CC41D27BC964599069E3B5D"
+        },
+        {
+          "path": "data/data/Chapter_Ep03.pack",
+          "length": 299586,
+          "sha256": "62DA3D25BC04965DE8164BD1ACE523C67079F8DF48D1D2D4354E4F0E10113650"
+        },
+        {
+          "path": "data/data/Chapter_Ep03_Text.pack",
+          "length": 210423,
+          "sha256": "12CC4650DEDC4CABD40143A6483C61CCD86B8EE1ADB3C7F4C0CD5F564CB5D5DD"
+        },
+        {
+          "path": "data/data/Chapter_Ep04.pack",
+          "length": 274614,
+          "sha256": "F8CB104CC0455FAF38CB8E3CDF57E3F3395E0E2517B7C8AED74A4C34D6CE31F7"
+        },
+        {
+          "path": "data/data/Chapter_Ep04_Text.pack",
+          "length": 258595,
+          "sha256": "3E3B0CC68340DE743110797178B2BF3C81CAEFF7A2CD3246AE80B8153294F635"
+        },
+        {
+          "path": "data/data/Chapter_Ep05.pack",
+          "length": 206950,
+          "sha256": "79BCE3FF26720289EF1B437D5D9682E882A6E732F28439E752E7424AB7D49297"
+        },
+        {
+          "path": "data/data/Chapter_Ep05_Text.pack",
+          "length": 188004,
+          "sha256": "DE10396B189DF971406748D443E53CEC6056E0A9DFE15382606EEE644E11E336"
+        },
+        {
+          "path": "data/data/Chapter_Ep06.pack",
+          "length": 187428,
+          "sha256": "E16C1F78345CEED9A31FCA03628CC25ABA4E7B89DA2FA84247F7722D1129B6D5"
+        },
+        {
+          "path": "data/data/Chapter_Ep06_Text.pack",
+          "length": 170790,
+          "sha256": "D1E0C1B33A72517CD82524351FD742DA8D577C61B61BB024BF071B8B93DBA13F"
+        },
+        {
+          "path": "data/data/Chapter_Ep07.pack",
+          "length": 279639,
+          "sha256": "68FAF14FD6763594A04D4AF0EE2D0A4EE6972E72283C69959EAF7CBF8BA8FE50"
+        },
+        {
+          "path": "data/data/Chapter_Ep07_Text.pack",
+          "length": 268667,
+          "sha256": "A52482B460ABCA680E9782EB9E44D1DD19DD7B53151ADB2AB3FF7902A10D1D01"
+        },
+        {
+          "path": "data/data/Chapter_Ep08.pack",
+          "length": 259611,
+          "sha256": "06C3E8ADE7E9B3D9AB1ADEB90E49C0BDBB00832C3DFA1EBD73F1D0995A648A1B"
+        },
+        {
+          "path": "data/data/Chapter_Ep08_Text.pack",
+          "length": 262728,
+          "sha256": "0DCA14D0A5C5CB72D4712D73F887AF5462A74EE3F5E0EBE96D07DB3B2B2D94D2"
+        },
+        {
+          "path": "data/data/Chapter_Ep09.pack",
+          "length": 65906,
+          "sha256": "BE00133EDF3490A0654AB36B31D38BAF3D16B55E20A95AFCBCEB08AEB5B8B419"
+        },
+        {
+          "path": "data/data/Chapter_Ep09_Text.pack",
+          "length": 264451,
+          "sha256": "6CC7F2D9F64C50891FD1D485F0B422E7345D38D4464DDEFFD5223C901B139FA9"
+        },
+        {
+          "path": "data/data/Chapter_Ep99.pack",
+          "length": 1131,
+          "sha256": "0987F1322254E54A68CDC00D04FF4A2D44F1BBDF3B20848D33B4AE4DD26B1536"
+        },
+        {
+          "path": "data/data/Chapter_Ep99_Text.pack",
+          "length": 111133,
+          "sha256": "F69C7A7515F60C1831E7CB8DCCC4ADC173D4A480FDCC728B98279FBF941B411B"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R001.pack",
+          "length": 1606,
+          "sha256": "90C5D47D61C47D4C70DA4A3E8BA4BABC2ACE309166929FE0AD4E747ED946E894"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R002.pack",
+          "length": 1981,
+          "sha256": "F1849D93DC213009164D37AA766826CFD976CDDF677E273997A6267453E86472"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R003.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R004.pack",
+          "length": 1509,
+          "sha256": "61FA6435A6B42FE92A87A8475FD01F84EBE6D99A29D02B7372EC3439DA7A00AE"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R005.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R101.pack",
+          "length": 4088,
+          "sha256": "D935CC3B15E2521215B6CB2150017F8A09D4289920AE614FC60C299DBA2C4895"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R102.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R103.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R104.pack",
+          "length": 3678,
+          "sha256": "94C3378C60FF771883187B9A290A01E3F20FDFB63AE7514FA76C1C532CAE4558"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R105.pack",
+          "length": 1697,
+          "sha256": "1740EF93518B205627FCB6DEF94B3B3626F6386868BECBC0ABBB893AD7A8CD72"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R106.pack",
+          "length": 2162,
+          "sha256": "B8E8D16FD18E9D57E67E99FDCFBB4B2848F4F49441D6D39BD58E9ED52B9CB424"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R107.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R108.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R109.pack",
+          "length": 1367,
+          "sha256": "18D56F0D7001663112EB88144A61A3A3C8A71F3291F7F41F12562A4B4E3958CF"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R110.pack",
+          "length": 1834,
+          "sha256": "BE81FFEB90FD1057B03E70A73F85DB48753351F9D387151783C0E11FC7DB9351"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R111.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R112.pack",
+          "length": 2559,
+          "sha256": "E136513A4221B27E9A36C0F19E22102BF542791F299068979B6BE02B853C4DDD"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R113.pack",
+          "length": 2333,
+          "sha256": "D8E3F5CB1A947C1E621C57A89B6B37157304C58A94BED917356C231733379744"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R114.pack",
+          "length": 1772,
+          "sha256": "62663B81D95499B002C4E9C904CD6C928C985E9BDC17584750DAA0A9F26457CE"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R115.pack",
+          "length": 1490,
+          "sha256": "9407B074E7D86ADD8CFCFBA9659A8CCC5A12D009BFEFF53C84DC53770DBCBDAF"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R201.pack",
+          "length": 2572,
+          "sha256": "C5EB47D50EC00EF9512AB60A98CF8E817A85477F581B945DF57A41A409A880DC"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R202.pack",
+          "length": 5696,
+          "sha256": "6F8FE44EEA601464ED5BD767ECD2CCFB11F01534F7AE15708C131C26299BE524"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R203.pack",
+          "length": 613,
+          "sha256": "1F14E820DD5D18A402A4947391F99FCD4D5F69DE6BCFAF1D743575A7202325FD"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R204.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R205.pack",
+          "length": 2134,
+          "sha256": "2389DFFF4DED90EB15E6E493A436974E8E3B87D0B0492AFA66EB25F78C0054EA"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R206.pack",
+          "length": 3484,
+          "sha256": "1EB3D97246D4341F5D91283E34D023D772793E529559516AF524D751571CA59C"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R207.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R208.pack",
+          "length": 2287,
+          "sha256": "9DBA5AA132B7B9AE4A59D4AB252C41413A9D85F372DDFD2B5EDBDD54BBCA96BF"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R210.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R211.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R301.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R302.pack",
+          "length": 2709,
+          "sha256": "5EFAC3C4B4AFF8A7960BE737B432DCB59842A24C9C4C200B961B87CA9977F6B0"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R303.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R304.pack",
+          "length": 3338,
+          "sha256": "28220AF484E612C3F54B34A071AD1FABF9AF15E90C6C5AA42C99113B567F9CDE"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R305.pack",
+          "length": 2551,
+          "sha256": "61BB1F2454C87924F516B08BB5EC3A7AD0DC873140C955C5D89277476CB8EFB7"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R306.pack",
+          "length": 3113,
+          "sha256": "4464A3735EC63EAD0CE8C033BC10AB07C0BDBE0768BBCBBF5F059BD5D598E89F"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R307.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R308.pack",
+          "length": 2036,
+          "sha256": "01A32737E5CA8412406B32B1D540AEE9DC5BEC57ACC66776C4F8926D71869663"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R310.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R311.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R401.pack",
+          "length": 1548,
+          "sha256": "F6D4C92072511857FBBDDD383AC7D08F504F4E77C2D17C50A9BC84CAC3AAD8CC"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R402.pack",
+          "length": 1502,
+          "sha256": "6DC6CC68FFDEB0F5F6328FFC42C892FB6E75A1F2CA9AD99A17E00526A416560B"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R403.pack",
+          "length": 1554,
+          "sha256": "AE998E6AB53D0F37441D63E7FD74EA8B978745F4A4BD740B3A62CBFFF093FAF3"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R404.pack",
+          "length": 1955,
+          "sha256": "F9E0920CBEBC449E793244013B67A70CE9035470850511E0BADB7763E665B5E4"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R405.pack",
+          "length": 1757,
+          "sha256": "934A91F3327AD919FCD14C39C470EF7631988C64707FE5D9401C43418167D292"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R406.pack",
+          "length": 2873,
+          "sha256": "3C5E2E4F731ACA4385E0E43D511C455148C0ED5E748D1132FE9468C52418D834"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R407.pack",
+          "length": 2814,
+          "sha256": "89B27DDBE1A1CEFBC96AF71F02DB7A2F56DF0ED1F1320AD77D0DD320E04BC667"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R409.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R410.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R411.pack",
+          "length": 2686,
+          "sha256": "25E839EB4B3AE9E01C77666C2FD9720C013A0956970D2E32DAD40BE4F3C224B3"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R501.pack",
+          "length": 1580,
+          "sha256": "DB5C7EBE48E9F1509B8FDE277A2E01A4F7596D44CBF3610F59999A2E9BDE0FBE"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R502.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R998.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_R999.pack",
+          "length": 45,
+          "sha256": "58EE45C4146048C35C9E4DC321CFB2A267210AB8547DBA87DF6B19E2EF6007B2"
+        },
+        {
+          "path": "data/data/Chapter_EpSystem_Text.pack",
+          "length": 296648,
+          "sha256": "767D6EE682A6C4AE7D8396317254346901B1AC4DF2C77049FCF2894D29F064FD"
+        },
+        {
+          "path": "data/data/Chapter_common.pack",
+          "length": 177176,
+          "sha256": "EBCB08EACA54FB3EECEF5A9DDFBF2F16B65BF107508E8E64CB8A883B6E73ADD1"
+        },
+        {
+          "path": "data/data/Chapter_common_Text.pack",
+          "length": 41833,
+          "sha256": "AA294C34921F4E84FE54992091AC267BC6797204CEB12C9FB5D0B32460A89FCE"
+        },
+        {
+          "path": "data/data/Char_Betty.pack",
+          "length": 4592634,
+          "sha256": "16773FDFDB4FB53CD0DA9B7B1C2BBDE9DB9B042837AE48600681FE1DC99E1ED3"
+        },
+        {
+          "path": "data/data/Char_Charles.pack",
+          "length": 4628649,
+          "sha256": "B9E17904C434AFDD074445A57A93AF94B60077B5FBADE29ADFA2364CFEE72DC0"
+        },
+        {
+          "path": "data/data/Char_Chris.pack",
+          "length": 30297,
+          "sha256": "2BD3A3D13E107968DAA92B50EA25BCD2994AAF6D2BBCBA76047366B75BE0FBC3"
+        },
+        {
+          "path": "data/data/Char_Dylan.pack",
+          "length": 5050420,
+          "sha256": "64341C1BF93F987D53ACEBB9CB8C1BB047A94EAC3DD22AEF0191048AFD10C1A2"
+        },
+        {
+          "path": "data/data/Char_Ed.pack",
+          "length": 549664,
+          "sha256": "529AAB60A7CED6FDCF691367750C747EAB6AFC72B9A7AB17A3766BC7C2A59A5A"
+        },
+        {
+          "path": "data/data/Char_Frank.pack",
+          "length": 3608629,
+          "sha256": "6A2184924EEB03F6DFD1807AFD7B78CC8A7CBDA605D04CD0E9415645D3ED0FEC"
+        },
+        {
+          "path": "data/data/Char_George.pack",
+          "length": 24819,
+          "sha256": "B594EFD241A48DCB5C56C19F776425586DCFC9E49922EFA9AA56E59671E90802"
+        },
+        {
+          "path": "data/data/Char_Hyde.pack",
+          "length": 5640289,
+          "sha256": "CB079A28B87E4E6851E81C4B99C1B978AD0643164DFF9495719E963574A95D4D"
+        },
+        {
+          "path": "data/data/Char_Jeanie.pack",
+          "length": 28327,
+          "sha256": "BDED1E6BBE91E69733C32C6975E5296C5834B3D104F0F61CC4BB488BCC71601B"
+        },
+        {
+          "path": "data/data/Char_Kathy.pack",
+          "length": 28417,
+          "sha256": "43D73685A75B0187CCE65274A4D740C160FF9CCC920E39AABBB557E0DA3C1CDF"
+        },
+        {
+          "path": "data/data/Char_Marguerite.pack",
+          "length": 4068174,
+          "sha256": "D473191CAAAC750822154E004AEAA5BA0500EF4E48DC13B29CABB108EB3750FF"
+        },
+        {
+          "path": "data/data/Char_Marie.pack",
+          "length": 4604486,
+          "sha256": "6F3A2EFEB27371DF82E376C8FBB71625856A26CA054AE797C4A426FD3D220C5A"
+        },
+        {
+          "path": "data/data/Char_Michael.pack",
+          "length": 29165,
+          "sha256": "DE5E511CD8A7D9B7E7B7BDACF8413F3778259B19A93D208E058202502E533BA0"
+        },
+        {
+          "path": "data/data/Char_Mike.pack",
+          "length": 26299,
+          "sha256": "144F189F2D78B982DD7F608D4A717710D7BD69424E3A96225B8F2305C4D2E47C"
+        },
+        {
+          "path": "data/data/Char_Mila.pack",
+          "length": 2574885,
+          "sha256": "8762469B2ED4742DFCAA5622A9C2F8925010A3E4D9124B29CD8535DF062860C1"
+        },
+        {
+          "path": "data/data/Char_Nicole.pack",
+          "length": 4199459,
+          "sha256": "7FBD5E5E5975BBFA58D903D6AF64D7F81202ED01A25AB428CD6C133C2F6AE1DC"
+        },
+        {
+          "path": "data/data/Char_Peter.pack",
+          "length": 25773,
+          "sha256": "C4E15D00CCD36A406CBACD3F38EF9DD3A42FB3901904334488192D3A0344B735"
+        },
+        {
+          "path": "data/data/Char_Rachel.pack",
+          "length": 331343,
+          "sha256": "F1604FE29BE999E5B3060F6828836149C829755BA8853FFEF75896F712AA6D87"
+        },
+        {
+          "path": "data/data/Char_Rex.pack",
+          "length": 3507300,
+          "sha256": "7E8B44235E9C1413B1FD652BF99FD7A4F7B30639B2BD46E1FC755F8B6CCAD9A0"
+        },
+        {
+          "path": "data/data/Char_Spec.pack",
+          "length": 47007,
+          "sha256": "8E42EDC9B82298E05D907431C5E8D3A7279834E5A6E9ACCD226A85A70AFE5012"
+        },
+        {
+          "path": "data/data/Char_Steve.pack",
+          "length": 5082994,
+          "sha256": "5AF2FC5A34153D592F3004CA759F338B8F6437B15113FB72BA960B521F575947"
+        },
+        {
+          "path": "data/data/Char_Sydney.pack",
+          "length": 4764776,
+          "sha256": "61A9AAF94AB0DC2418D19045DCC2FA9C012B97968AD25E31FDCD2BBE69108617"
+        },
+        {
+          "path": "data/data/Char_Will.pack",
+          "length": 3558134,
+          "sha256": "17278CA0A4681070B1429DFA185A08F3CE5DEE4F7A82A8AD4BDB59E14A23B7B0"
+        },
+        {
+          "path": "data/data/ColorAnime.pack",
+          "length": 1025633,
+          "sha256": "CA3ABE3F1BEC5F7BFEB31FBAD90588B9767407B22A7FB7588348C00F85614997"
+        },
+        {
+          "path": "data/data/Effect.pack",
+          "length": 9300,
+          "sha256": "248D0819341B9FD9E291D96608D934BA53E5474810182B2D5BDAE696D4758AD1"
+        },
+        {
+          "path": "data/data/JA_novel.bin",
+          "length": 49664,
+          "sha256": "5BA0C8E1CF2CCAE880AAE3D4BF2996F237F732149B6D849CADF22F846FFA29B7"
+        },
+        {
+          "path": "data/data/LW_1_80.vx",
+          "length": 2352120,
+          "sha256": "788E151C8E3BA793720EE0E11653A407B958F401825E059886FB85BF4B791A86"
+        },
+        {
+          "path": "data/data/LW_2_80.vx",
+          "length": 1537044,
+          "sha256": "0F12DE3DE56241686729AAC17B76A4F4B6ABA875F75CACC4316B65C346B9B2C9"
+        },
+        {
+          "path": "data/data/Main_Debug.pack",
+          "length": 28143,
+          "sha256": "6D5F101B52E3C7F9982A6ABDB64CDB9BF4B2A968DC442555FCD751291A008B5D"
+        },
+        {
+          "path": "data/data/Main_GameOver.pack",
+          "length": 403109,
+          "sha256": "3A15DC60A7E2A052334C829F568A4B4CEC4D0F50AF8D475582306711B6413B8F"
+        },
+        {
+          "path": "data/data/Main_MapDebug.pack",
+          "length": 13844,
+          "sha256": "637C94C596EABF7147D06B8DAC04EB1677E3B17269B18356666B56B11F7BBB17"
+        },
+        {
+          "path": "data/data/Main_Movie.pack",
+          "length": 76292,
+          "sha256": "09BC763010D94F58F8829A6AB6F9E9A98540FBA4C783291E639D679DDE4EE6A5"
+        },
+        {
+          "path": "data/data/Main_Note.pack",
+          "length": 1896586,
+          "sha256": "FCC0EEF17FF4EA499D6ED5251375C9601299227583B2793C4EC36FE7FB4FA7E8"
+        },
+        {
+          "path": "data/data/Main_Novel.pack",
+          "length": 3067990,
+          "sha256": "A2FB0197C0E334C33917C92331FB17B7F1069EBF489F1CC3821F19E6366C15E3"
+        },
+        {
+          "path": "data/data/Main_Search.pack",
+          "length": 14907,
+          "sha256": "78D726D2404003A16DCC1292C07C2E6C2D185D6CA8981C77F0E44B74C7713F3F"
+        },
+        {
+          "path": "data/data/Main_StaffRoll.pack",
+          "length": 644,
+          "sha256": "1D6BD12BEF35F583E0FF98C2D349666DF100268E885F7F67DBA6D4A8B2833F83"
+        },
+        {
+          "path": "data/data/Main_TimeEffect.pack",
+          "length": 387143,
+          "sha256": "6201C8B805BDD4ECFF14F701850A910B3082A0164FDCDF1FD8BFAC2D467B1ACA"
+        },
+        {
+          "path": "data/data/Main_Title.pack",
+          "length": 238552,
+          "sha256": "6915488757350F1E1A41BA36B61929B6988005A049C0FBF5BF32CF85A34F4B1A"
+        },
+        {
+          "path": "data/data/Main_Trick.pack",
+          "length": 15472,
+          "sha256": "1C2F74F7543BC0B39E856CFEE626824A7AEB2B14C146CF059177626A7E9879C9"
+        },
+        {
+          "path": "data/data/Main_Walk.pack",
+          "length": 12810,
+          "sha256": "0A565911291C12D6BAFFEEE3387CF78C5AEF3B05AA8ED9CB15C29CF7035E2381"
+        },
+        {
+          "path": "data/data/Map_R001.pack",
+          "length": 411743,
+          "sha256": "B46BC9FB6D36442B23346E46AA414EB3504EDB1DEB80F4F818B3FEC53C8666B3"
+        },
+        {
+          "path": "data/data/Map_R002.pack",
+          "length": 277377,
+          "sha256": "7ABBE43C8F8CD6BEA2A5B8174A07C2DEA94203B5366D3F94D547FAF23B6CDF60"
+        },
+        {
+          "path": "data/data/Map_R004.pack",
+          "length": 225726,
+          "sha256": "08A2421936D98D86C64201F8919072F0E5AE1DA1B6A9CC2FC862054F4BD6CF4D"
+        },
+        {
+          "path": "data/data/Map_R101.pack",
+          "length": 1645663,
+          "sha256": "981F4C8FFA0B2BA84FC81F947C1BA4DE7C32A643E1268291545457F525F735FE"
+        },
+        {
+          "path": "data/data/Map_R104.pack",
+          "length": 1322537,
+          "sha256": "7EA2EE396F13BBBE6C669DBAA9B1EF213C50EAF7C76BFD8D4CEC20E75B55357C"
+        },
+        {
+          "path": "data/data/Map_R105.pack",
+          "length": 316430,
+          "sha256": "966C92B4CAB94E175224C252432CD251EB9B17143D9B716FAFE5C87E16360C9B"
+        },
+        {
+          "path": "data/data/Map_R106.pack",
+          "length": 326933,
+          "sha256": "193097317B676701031C16BE5D64FE697990CEC28732A5F01C400F577A012FFF"
+        },
+        {
+          "path": "data/data/Map_R109.pack",
+          "length": 182939,
+          "sha256": "01BACA99A41C459063C8747F1E97CFC960B7153C9179ED9E019831D765126463"
+        },
+        {
+          "path": "data/data/Map_R110.pack",
+          "length": 561350,
+          "sha256": "92332FA05005386F9E06D3137BD9952320B81B359DF1287DE9CA056CABFB4216"
+        },
+        {
+          "path": "data/data/Map_R112.pack",
+          "length": 471167,
+          "sha256": "84E7AA0FD10B27BB179BB0FEC97E5E95EDDBF236AD7250EEE20A99DC9AC06284"
+        },
+        {
+          "path": "data/data/Map_R113.pack",
+          "length": 949897,
+          "sha256": "FB4B7C04078715599EC303AF08776E4D014D422611055C741E2B3747C91DF51B"
+        },
+        {
+          "path": "data/data/Map_R114.pack",
+          "length": 358374,
+          "sha256": "B3862A899ED0E5FA37984C9DACDF06BABBBAF3B65DC87687B85C44B8A32A6CF2"
+        },
+        {
+          "path": "data/data/Map_R115.pack",
+          "length": 183128,
+          "sha256": "DA308683B695ACBDD277777987E0A8854D0D98807E1567A4BDEEEE4BDB01ED46"
+        },
+        {
+          "path": "data/data/Map_R201.pack",
+          "length": 736216,
+          "sha256": "5E884C286D5A44F819DA7F5D1518DA940ED03287F925D256D402EBB6E5E91AF1"
+        },
+        {
+          "path": "data/data/Map_R202.pack",
+          "length": 1688313,
+          "sha256": "F1F6733B52A87C52B03DC6D422BB8DFD28CC67F9BBE50EA10F757EC9C8C1B8C0"
+        },
+        {
+          "path": "data/data/Map_R203.pack",
+          "length": 140307,
+          "sha256": "A0351D13442A2E16BB37184878287721CCBE89F3EB519B31F744C870AC14D9B5"
+        },
+        {
+          "path": "data/data/Map_R205.pack",
+          "length": 336271,
+          "sha256": "63A5A90DD0BF8E526361E5E07410AFA6A5E73A702F820AF37179A90F4622F3F9"
+        },
+        {
+          "path": "data/data/Map_R206.pack",
+          "length": 742008,
+          "sha256": "6F21C38E69B1B0CCD885E8E708B6BE6CB654F2A5D00F5288151A4E2264F0B098"
+        },
+        {
+          "path": "data/data/Map_R208.pack",
+          "length": 919141,
+          "sha256": "7DC00D92706B263DDA782A0695802A564C739BF4A37B0FFE1373F6BA19980976"
+        },
+        {
+          "path": "data/data/Map_R302.pack",
+          "length": 627116,
+          "sha256": "CAB4957CA7CB15297288B54D67232A668290EC49B68EED9B091EC08F3D617FFA"
+        },
+        {
+          "path": "data/data/Map_R304.pack",
+          "length": 1063223,
+          "sha256": "E417A6DBE402277D1DE8BD196A5073A0BC2BC047F822CDD02BF16C9EA401B6C2"
+        },
+        {
+          "path": "data/data/Map_R305.pack",
+          "length": 499878,
+          "sha256": "A7B8F32F6FC5D23EA91399D98AF0F9E55DC975A207EFA40764445DCE13D27823"
+        },
+        {
+          "path": "data/data/Map_R306.pack",
+          "length": 517664,
+          "sha256": "05C95A02094EA7D2F5EE8106FB2FD57357557D32689C0562C764C76B868B14CC"
+        },
+        {
+          "path": "data/data/Map_R308.pack",
+          "length": 796268,
+          "sha256": "489433713BBD626ECD95DC785A77E2F080AF90CA2E68E21D4EFC8FC5DD528FC0"
+        },
+        {
+          "path": "data/data/Map_R401.pack",
+          "length": 849615,
+          "sha256": "CE7929EA94FB91E318A9E629C422AB5FCA0D0ED3EE8FB3FE9C5442E7410AF747"
+        },
+        {
+          "path": "data/data/Map_R402.pack",
+          "length": 864952,
+          "sha256": "ED779F4D3E5AC7F0409A065DA0C55316AD2FD6DE43C8944B62EB7159C486E1C0"
+        },
+        {
+          "path": "data/data/Map_R403.pack",
+          "length": 776862,
+          "sha256": "17FFBCC4A6E9ED64468CA05BA844D729DC8EA19CC43457F0484E1783C99F2E72"
+        },
+        {
+          "path": "data/data/Map_R404.pack",
+          "length": 767235,
+          "sha256": "FA55F916BDBB38C24B8A869F0BD78F50975F60E92F28526A700FDF938AE097CB"
+        },
+        {
+          "path": "data/data/Map_R405.pack",
+          "length": 788449,
+          "sha256": "2353A7A9CA4A21E8C0639763E7005858C8D11A7C21CF9E8956148D860AEB3876"
+        },
+        {
+          "path": "data/data/Map_R406.pack",
+          "length": 1712036,
+          "sha256": "B961A3E633777DF7ED2E57A3841AB009BB675E87961751D47393BD3F168CEFB0"
+        },
+        {
+          "path": "data/data/Map_R407.pack",
+          "length": 823383,
+          "sha256": "B16323A69F6615CAE42266AA95D258233AE34A94E45748B2022A5581F8DCBC40"
+        },
+        {
+          "path": "data/data/Map_R411.pack",
+          "length": 882493,
+          "sha256": "F4A670D6554797EC1C8ED4C3741F88E817CC2980460912F61E46A1203EEE0AAA"
+        },
+        {
+          "path": "data/data/Map_R501.pack",
+          "length": 1159331,
+          "sha256": "4F8F946D4C8EF869D9EC35AA48B65FCB10DB52C5AA98D46CAAF06295D0CAA0CE"
+        },
+        {
+          "path": "data/data/System.pack",
+          "length": 15857211,
+          "sha256": "9911A2D4EA379D8A3E2B8DB6B9B72E61271CFC1F605ACC3DE08A4C792848D6E8"
+        },
+        {
+          "path": "data/data/Trick_TRICK_001.pack",
+          "length": 136971,
+          "sha256": "208561EB4BDB9DBC43C83AF6C2F9678276177D5678A0F44C0698F27C3B1D7ED0"
+        },
+        {
+          "path": "data/data/Trick_TRICK_001_Text.pack",
+          "length": 837,
+          "sha256": "C63694F556A9B3B5F7955D7C73236F1F72F2DD1033C4A42EC3EDAF38CCA423CF"
+        },
+        {
+          "path": "data/data/Trick_TRICK_002.pack",
+          "length": 174704,
+          "sha256": "FE514281EDD898FC1229B8300999978EF623A7E38148113AA5D263D3E0BEDF6F"
+        },
+        {
+          "path": "data/data/Trick_TRICK_002_Text.pack",
+          "length": 632,
+          "sha256": "305BA3BAAAD1936BC0E357A0AB131114996F582DA0B6EDE797ECBB58F1DD1ECE"
+        },
+        {
+          "path": "data/data/Trick_TRICK_003.pack",
+          "length": 129016,
+          "sha256": "DA3C35FC0CC1AECA0D411E2867CE6A1565E24C17651AF95DF3EB847A3C3E3339"
+        },
+        {
+          "path": "data/data/Trick_TRICK_003_Text.pack",
+          "length": 412,
+          "sha256": "8CB7EAED4DF3210087907DA04DECF3B52FE766B6B3686241E2912352268FC696"
+        },
+        {
+          "path": "data/data/Trick_TRICK_004.pack",
+          "length": 151151,
+          "sha256": "F2870BF22F7F195460C87703E2D39C8C4DFCFEE42DF109D227B5E4166FC04825"
+        },
+        {
+          "path": "data/data/Trick_TRICK_004_Text.pack",
+          "length": 4881,
+          "sha256": "13CACAEC4F51D78BB3B7DC7F1430222ECC7C1868D0E68C77B0032CEF1DA746E4"
+        },
+        {
+          "path": "data/data/Trick_TRICK_005.pack",
+          "length": 415211,
+          "sha256": "177C91734BC560D54677F058FF232C13FCA655067551DBD84361C6882C19C1CE"
+        },
+        {
+          "path": "data/data/Trick_TRICK_005_Text.pack",
+          "length": 18639,
+          "sha256": "26DF3C02C3557E900F401A341FAA631D0718B52A2CB69C34408293085177009A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_006.pack",
+          "length": 110431,
+          "sha256": "A92026B9DEC16C94FAA26CF6178897769D7F60B3969CC71C3C1D469CCE91FB2E"
+        },
+        {
+          "path": "data/data/Trick_TRICK_006_Text.pack",
+          "length": 248,
+          "sha256": "7957C049313A7026D80A040207EF0A93F9445037DC39B5167077120F15DD6830"
+        },
+        {
+          "path": "data/data/Trick_TRICK_008.pack",
+          "length": 151762,
+          "sha256": "9CF865A294C4DA13A8FBC43D0AA9F042C29802EB9E467AA797AF48496878CF56"
+        },
+        {
+          "path": "data/data/Trick_TRICK_008_Text.pack",
+          "length": 854,
+          "sha256": "FF523F425648A163C2EDCDC401F06B64F92886258D737CAAA6514B0AAD9998E2"
+        },
+        {
+          "path": "data/data/Trick_TRICK_009.pack",
+          "length": 35462,
+          "sha256": "3C6885D373A91C441049A23E4096A415B7EF3FE0A1C3B9AD9F34A44985E86EE7"
+        },
+        {
+          "path": "data/data/Trick_TRICK_009_Text.pack",
+          "length": 268,
+          "sha256": "6146A47CCB877F08BA26578F290F8E2FACF4D2C39A70B169733E1C7720D5BCED"
+        },
+        {
+          "path": "data/data/Trick_TRICK_010.pack",
+          "length": 465991,
+          "sha256": "4A42A1F13ABFA3AAB02D2FEEE80578257064BA3FB02D655C6926D4A52CCF6934"
+        },
+        {
+          "path": "data/data/Trick_TRICK_010_Text.pack",
+          "length": 14222,
+          "sha256": "9686B3CF0357C2AECED4EACDDDB474F275BE96951EC18219B2CDB44E947C6750"
+        },
+        {
+          "path": "data/data/Trick_TRICK_011.pack",
+          "length": 54741,
+          "sha256": "2BB375DC0811E480C1945C3877288D3772EE96D2BCFCFBD3875481ED0E8A35A3"
+        },
+        {
+          "path": "data/data/Trick_TRICK_011_Text.pack",
+          "length": 316,
+          "sha256": "2DE02ED8029B395FB52167B666D0D988CC471012349F04AA532CFF84FCEDDCCE"
+        },
+        {
+          "path": "data/data/Trick_TRICK_012.pack",
+          "length": 32504,
+          "sha256": "DE54370E93676EBE896426585C60AD6EE2671D5B691FC6516667F2FC7A4016F0"
+        },
+        {
+          "path": "data/data/Trick_TRICK_012_Text.pack",
+          "length": 3669,
+          "sha256": "32F590696D94748FFBA7FB694768AD9072A66AA26E1BD3AB73D99D49ABC0A3B0"
+        },
+        {
+          "path": "data/data/Trick_TRICK_013.pack",
+          "length": 86230,
+          "sha256": "7E73EEB1E3BA30422C9B203B79F5E523951BB736CF54491EE6761324D1BA4DFE"
+        },
+        {
+          "path": "data/data/Trick_TRICK_013_Text.pack",
+          "length": 349,
+          "sha256": "AB1A3A3C341CD66050501BFEC94E9D0CB5E1137B2B3C2D07B66B5A6722ACEFBA"
+        },
+        {
+          "path": "data/data/Trick_TRICK_014.pack",
+          "length": 77363,
+          "sha256": "9D3A2119DE5B0AD3727575DF61ABF7125F215DD1942B40C19F23BADCA36AF08A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_014_Text.pack",
+          "length": 701,
+          "sha256": "33493719B96808CA6ECA121EA2CB0C71E14A1F112FE0043AB776A4FFA5B39B58"
+        },
+        {
+          "path": "data/data/Trick_TRICK_015.pack",
+          "length": 111281,
+          "sha256": "31FF8DF41B003F9FEB2BCAC141BA62265307ED63862BF2F1118F1335FE7F90FB"
+        },
+        {
+          "path": "data/data/Trick_TRICK_015_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_016.pack",
+          "length": 100759,
+          "sha256": "1DFE46D21F4CBF1C9F65F99DB93A5CBCA6A8CEF3881DD63B6B61BDD6BFC529C3"
+        },
+        {
+          "path": "data/data/Trick_TRICK_016_Text.pack",
+          "length": 3846,
+          "sha256": "C2F5D5161F40154C318159EC8CD5578B00CC02F1A38DA77A4F065D37CA7CBAA8"
+        },
+        {
+          "path": "data/data/Trick_TRICK_018.pack",
+          "length": 45012,
+          "sha256": "D70DFEDC8E7994D035768820AB49517646183E42154744DD1ADA2A39A3194F27"
+        },
+        {
+          "path": "data/data/Trick_TRICK_018_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_019.pack",
+          "length": 50187,
+          "sha256": "9B55203A916CC7D9AF917836F56B2F241D9CD283E99083C4FFC5D5A8A324207E"
+        },
+        {
+          "path": "data/data/Trick_TRICK_019_Text.pack",
+          "length": 1041,
+          "sha256": "5FE64FE8FF33697E0379EDD6D106C13E5E41CAC2E9CC85EEA9B246666EC84E04"
+        },
+        {
+          "path": "data/data/Trick_TRICK_020.pack",
+          "length": 141550,
+          "sha256": "272998A15F90A82B37720E9D736DD5676B91B373885B2E098A654B3396D2AA0F"
+        },
+        {
+          "path": "data/data/Trick_TRICK_020_Text.pack",
+          "length": 2213,
+          "sha256": "1ABE0C042CBFC9B82006CE5D0712AB80526433F44445932E6028CA0A57E31C49"
+        },
+        {
+          "path": "data/data/Trick_TRICK_021.pack",
+          "length": 113278,
+          "sha256": "010ED0A935FCEB76B4822D3CAE0591758AF739354D2B528392886006CA85BF31"
+        },
+        {
+          "path": "data/data/Trick_TRICK_021_Text.pack",
+          "length": 1554,
+          "sha256": "4E5E2F868D3C208C7AA698EB218DE1FB799780E0C8ED81031270CB98BABCA6C4"
+        },
+        {
+          "path": "data/data/Trick_TRICK_022.pack",
+          "length": 74966,
+          "sha256": "9E69186E7A461AEAF19C5A7A92116434450FBC7D83AE35487835234A869302B1"
+        },
+        {
+          "path": "data/data/Trick_TRICK_022_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_023.pack",
+          "length": 31619,
+          "sha256": "653C0DD1FB51FAE8AE1BD7150D850F89ECC7980E06E9362DF96EE17DA742B00C"
+        },
+        {
+          "path": "data/data/Trick_TRICK_023_Text.pack",
+          "length": 341,
+          "sha256": "84194BCDADEE594CD7F32E083F1D5E303FD486F1BDBFBE6B4611B3A93AE6DFB9"
+        },
+        {
+          "path": "data/data/Trick_TRICK_024.pack",
+          "length": 113731,
+          "sha256": "975EE47D116FAE183D261CC4C8812853A7B8DC85BA197F2887C9CFC9360F4A1C"
+        },
+        {
+          "path": "data/data/Trick_TRICK_024_Text.pack",
+          "length": 6219,
+          "sha256": "805097213CF5423CB4503394709B1918B28C8AD664CA0604CBB62CA919ED486A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_027.pack",
+          "length": 90148,
+          "sha256": "EF7C07E66CFBAFDA8C8513B944735C780977D1EA523C6C996CBDAE4EC2E3F1F4"
+        },
+        {
+          "path": "data/data/Trick_TRICK_027_Text.pack",
+          "length": 1220,
+          "sha256": "DD075663EE8E09DDFD06FDF43F82F154F4D9805B67289F66761B6937444EEEDF"
+        },
+        {
+          "path": "data/data/Trick_TRICK_029.pack",
+          "length": 79813,
+          "sha256": "EBD26C4DD85E8BC7DBFEC6C7DFABA42A67CF3107A6432A796774F226CA0570F3"
+        },
+        {
+          "path": "data/data/Trick_TRICK_029_Text.pack",
+          "length": 1493,
+          "sha256": "486A0EADD275AEDCE91454CFA953832B4F579AE864FEB7FA93670305F7A97709"
+        },
+        {
+          "path": "data/data/Trick_TRICK_030.pack",
+          "length": 78969,
+          "sha256": "1FBFFEE7B5417E18AE1065C8CFFA795CE7998EE7C8EB2F2321FF585346C53972"
+        },
+        {
+          "path": "data/data/Trick_TRICK_030_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_034.pack",
+          "length": 40610,
+          "sha256": "9394A0D04D028FFF3D47E217935D1581F23917388D3F376B03826A3BEF0AC2A6"
+        },
+        {
+          "path": "data/data/Trick_TRICK_034_Text.pack",
+          "length": 319,
+          "sha256": "2217B65A606DB27FA3B60999BDE4A4BBD04CA237A8E0842F11AFD7D5E68CF0A1"
+        },
+        {
+          "path": "data/data/Trick_TRICK_035.pack",
+          "length": 34610,
+          "sha256": "1D6D1D27644F96A19E864070CE8ECE5F6C54DB6FC6ED5881D0A21533205E2E79"
+        },
+        {
+          "path": "data/data/Trick_TRICK_035_Text.pack",
+          "length": 992,
+          "sha256": "7D9EA1DE8E3901BA646A1EC48A0344A49602533EF7E3107C930C5C3822D728EC"
+        },
+        {
+          "path": "data/data/Trick_TRICK_044.pack",
+          "length": 90839,
+          "sha256": "13CC6A6B7F1603D268F2D0EC11BFB05E2B37F4E618347B4C94F4A54D48CF02C5"
+        },
+        {
+          "path": "data/data/Trick_TRICK_044_Text.pack",
+          "length": 2629,
+          "sha256": "5686070C25567B497F8BB8164F8292F780483C2DC0E4A62B3151C6365E4986A5"
+        },
+        {
+          "path": "data/data/Trick_TRICK_045.pack",
+          "length": 83810,
+          "sha256": "3FE2A922D4D7BA62B96C33BB85BB3A23E690BC6A96DD31F79CB4621A53D8A80B"
+        },
+        {
+          "path": "data/data/Trick_TRICK_045_Text.pack",
+          "length": 483,
+          "sha256": "031E78A72A631E679CE16439C8BEEFC9120576CED5CB6F658804D3855F423CC9"
+        },
+        {
+          "path": "data/data/Trick_TRICK_047.pack",
+          "length": 458094,
+          "sha256": "5872242697829FAD5073CEAB7563266569AAEC8ADA545768C65E2F1026B1D650"
+        },
+        {
+          "path": "data/data/Trick_TRICK_047_Text.pack",
+          "length": 1010,
+          "sha256": "2C6BD7C3E710A32B80D865FE7E9C23C99A6D3B6141999912D1BB64B52770DF1F"
+        },
+        {
+          "path": "data/data/Trick_TRICK_048.pack",
+          "length": 102840,
+          "sha256": "F0E1E38F772E6287AACEDC96C5B5A20AFF4D344803D5435568A81B1E1BEA6D76"
+        },
+        {
+          "path": "data/data/Trick_TRICK_048_Text.pack",
+          "length": 679,
+          "sha256": "CE41CBF83E559396B0C27511673E83D350AD2D165774696AE75BF2A2A60F0F17"
+        },
+        {
+          "path": "data/data/Trick_TRICK_051.pack",
+          "length": 51431,
+          "sha256": "2AD6AA428FECDA5EBCAC9E5AB9F1C05398430B667ABE6C5465BDD958A89176D4"
+        },
+        {
+          "path": "data/data/Trick_TRICK_051_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_052.pack",
+          "length": 95345,
+          "sha256": "F35363654A1C2F06FA014AD0D591590B88209332D4B788BDA1E2241D400B7E70"
+        },
+        {
+          "path": "data/data/Trick_TRICK_052_Text.pack",
+          "length": 482,
+          "sha256": "D720E120CC416735B3F18FC8D26FB6A4757BD26B1E30ACE74C30B95D6CA17C9A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_054.pack",
+          "length": 129027,
+          "sha256": "A685975AA3A6AA50381DC0376356D233870A7BA258976DA2F3F1580E0A11EEAA"
+        },
+        {
+          "path": "data/data/Trick_TRICK_054_Text.pack",
+          "length": 1599,
+          "sha256": "965CBE30B79643E0F1543DE79B3FC40857840356E519217D84E990160FB1B382"
+        },
+        {
+          "path": "data/data/Trick_TRICK_056.pack",
+          "length": 28221,
+          "sha256": "85D241466860A1F5877A58D6D9D340357995D63EA12CB0FCB0794AC42C1F6350"
+        },
+        {
+          "path": "data/data/Trick_TRICK_056_Text.pack",
+          "length": 904,
+          "sha256": "3CD28E4EC0CD6EA6F0322A1B8383546750BED31AA4EC1F05D21D608FDC0D5B9A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_059.pack",
+          "length": 113242,
+          "sha256": "FB2E2A4042B6C59788D68B6F19E143461A45542F79184D647819C14139229F30"
+        },
+        {
+          "path": "data/data/Trick_TRICK_059_Text.pack",
+          "length": 1919,
+          "sha256": "5ADFF0A633CE448F69CDCE0BEB3BAE924D313A262C2D5DBF41440705ABA43E61"
+        },
+        {
+          "path": "data/data/Trick_TRICK_068.pack",
+          "length": 198310,
+          "sha256": "77854EEB6943FD0299E8313F5E30C2A16CC431C57ABD4BC9556C572FB7ACA2F1"
+        },
+        {
+          "path": "data/data/Trick_TRICK_068_Text.pack",
+          "length": 1163,
+          "sha256": "99B42DED573DC49D48AA3AAF95459359CC99B1B53DCF0092E0AEA28ED2745194"
+        },
+        {
+          "path": "data/data/Trick_TRICK_069.pack",
+          "length": 33433,
+          "sha256": "2B3F30EE75AF59FC895F304F33BD952E13A0B643DB40FF67A07BDA0F308437BD"
+        },
+        {
+          "path": "data/data/Trick_TRICK_069_Text.pack",
+          "length": 852,
+          "sha256": "31B31E587C57AB3098C0CA81BC1CAAE70960DDDBB0B0571E0FD36CABCC676986"
+        },
+        {
+          "path": "data/data/Trick_TRICK_071.pack",
+          "length": 109535,
+          "sha256": "C92A448A45C44C08E3DBD3B504016CA45ACE3C37B04CE04AD7558E16F729B009"
+        },
+        {
+          "path": "data/data/Trick_TRICK_071_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_072.pack",
+          "length": 1463,
+          "sha256": "B8957492019BA36B447A2CA0B692E16DCEE52220AF0AD7E718C5FB8C55504E82"
+        },
+        {
+          "path": "data/data/Trick_TRICK_072_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_073.pack",
+          "length": 233925,
+          "sha256": "3D2E198DD646742CD4A8F048D328ED506CD573D079BF972F5BF3BAEC0B793C5E"
+        },
+        {
+          "path": "data/data/Trick_TRICK_073_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_074.pack",
+          "length": 51752,
+          "sha256": "AD1BCBBEA78BA0447AE1AE8420AD694D2F252DFBF15955444A672363D27510B9"
+        },
+        {
+          "path": "data/data/Trick_TRICK_074_Text.pack",
+          "length": 818,
+          "sha256": "AC754052F6A597931A2621951CAF1BB8D6B747B2AB05C29423AE93664C92C2F5"
+        },
+        {
+          "path": "data/data/Trick_TRICK_079.pack",
+          "length": 117251,
+          "sha256": "2F6F87B1B79FF19C5744B76FD4F1B6D4BDA7A510E7D0FA24DE90C4B2EF8CFC25"
+        },
+        {
+          "path": "data/data/Trick_TRICK_079_Text.pack",
+          "length": 2775,
+          "sha256": "305B3D46410BE8C075272DA26EE5CBC1ED52ECD79A3722792D15FDB22516D909"
+        },
+        {
+          "path": "data/data/Trick_TRICK_082.pack",
+          "length": 181065,
+          "sha256": "ABA5A258716083427DFF3B2AED6974F0290BFDDC636A522CD532D544C50D4D51"
+        },
+        {
+          "path": "data/data/Trick_TRICK_082_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_084.pack",
+          "length": 66687,
+          "sha256": "14C213E2103FC7A97BE40F4430768D511BD6A4465BECF1F18614006D042D06EE"
+        },
+        {
+          "path": "data/data/Trick_TRICK_084_Text.pack",
+          "length": 236,
+          "sha256": "C1AAC8876B5B21CD5169578F34A095A7C1771819522BE1A9E8A174AADC6641AF"
+        },
+        {
+          "path": "data/data/Trick_TRICK_085.pack",
+          "length": 474227,
+          "sha256": "9C287CDAF9E6508D5D35BE4735F3C02DAAC4126B6594CC6304D631257D17AB09"
+        },
+        {
+          "path": "data/data/Trick_TRICK_085_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_088.pack",
+          "length": 128705,
+          "sha256": "60417BB1146E356BB462E3E51528235ECEAF0B6397FEDB54331F62A9BF56D5C6"
+        },
+        {
+          "path": "data/data/Trick_TRICK_088_Text.pack",
+          "length": 1077,
+          "sha256": "7A161DB84DE3F38A0E5B13BE0DCD4233AF3F898AEBB45E0078A06B3AB08239DA"
+        },
+        {
+          "path": "data/data/Trick_TRICK_090.pack",
+          "length": 106661,
+          "sha256": "81A90FE61F8A2F07104B47B96C0C17D8F007FCF8F4D5176EA17C453C103B4DA5"
+        },
+        {
+          "path": "data/data/Trick_TRICK_090_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_091.pack",
+          "length": 315606,
+          "sha256": "C1E924925DA4F36B28FF7E682DFB667F61ECFB1A71610FD1AC53329A19F30224"
+        },
+        {
+          "path": "data/data/Trick_TRICK_091_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_093.pack",
+          "length": 345193,
+          "sha256": "805747A7AB8FDFFE804A564153C383A2512909B2C1BEDD653E9C236A3B210621"
+        },
+        {
+          "path": "data/data/Trick_TRICK_093_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_095.pack",
+          "length": 147170,
+          "sha256": "B77AE39480957A7CE15B27A77CCEA370CAC8D0B43A3F4366C0BE5FB18D972A9C"
+        },
+        {
+          "path": "data/data/Trick_TRICK_095_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_097.pack",
+          "length": 305666,
+          "sha256": "695221EF528E2170D130F6FDA256B7971F5C6FF722D5A81B01729275394330D0"
+        },
+        {
+          "path": "data/data/Trick_TRICK_097_Text.pack",
+          "length": 2337,
+          "sha256": "1C48DA32318EAA4F6AA3802FAB0CD334B1B662A4CB46CFF49C5BD26C3FE32518"
+        },
+        {
+          "path": "data/data/Trick_TRICK_099.pack",
+          "length": 85429,
+          "sha256": "130639E79453D10F4A55B0A77FF30F72B25612B054AA33333BE6A7448F9AA678"
+        },
+        {
+          "path": "data/data/Trick_TRICK_099_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_101.pack",
+          "length": 48565,
+          "sha256": "4E0EF73CF33039CD874880A282A2C6F8B059F237256C0BF197C841048BB1F6CD"
+        },
+        {
+          "path": "data/data/Trick_TRICK_101_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_102.pack",
+          "length": 43838,
+          "sha256": "A7553D59CC49C4F1546765FFEA1F19EBCCDB6FCB0C44F90158C897587BBF785E"
+        },
+        {
+          "path": "data/data/Trick_TRICK_102_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_103.pack",
+          "length": 112872,
+          "sha256": "3BFBA60F78F26E7BF7C1BD14CA6B19375732D80BC99B37FE821225F40F687B84"
+        },
+        {
+          "path": "data/data/Trick_TRICK_103_Text.pack",
+          "length": 1296,
+          "sha256": "1726D04CBBDF7C274ECF66AD41EE60392024AA2A3BEBBAB93CDBE7A9CA53C180"
+        },
+        {
+          "path": "data/data/Trick_TRICK_104.pack",
+          "length": 27690,
+          "sha256": "EDAB42D8D2517C5A5EA49028D00700608FE64C9FFFDC03B2CF1E822EF474F1B1"
+        },
+        {
+          "path": "data/data/Trick_TRICK_104_Text.pack",
+          "length": 759,
+          "sha256": "F57CA820B2A4B6E1D804035912B43C83220486735ADFF7F760F78688D3FBB2E6"
+        },
+        {
+          "path": "data/data/Trick_TRICK_105.pack",
+          "length": 98777,
+          "sha256": "EE368A0F996A1CB1E87DED02DC06AE0AAF0C9776E490F1410394C41446A26B61"
+        },
+        {
+          "path": "data/data/Trick_TRICK_105_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_106.pack",
+          "length": 51858,
+          "sha256": "FDA9818CCA749C9D41302E5FD6F4A954EB040E19D3E82F419FCA41C9139C86E8"
+        },
+        {
+          "path": "data/data/Trick_TRICK_106_Text.pack",
+          "length": 300,
+          "sha256": "B599D5A01734CE5F333BEF0D8536BE4E34059EAEB3A38EAC1C17D846BB18659A"
+        },
+        {
+          "path": "data/data/Trick_TRICK_107.pack",
+          "length": 62223,
+          "sha256": "51580949D3870E7593560F042BD04DC59A9CFF308DDE640774CBA89B496C620C"
+        },
+        {
+          "path": "data/data/Trick_TRICK_107_Text.pack",
+          "length": 561,
+          "sha256": "80D3FE61D1E9379B8408F4FB43578AC11F0BA7102EC16C31156DABBBF4349364"
+        },
+        {
+          "path": "data/data/Trick_TRICK_DATA.pack",
+          "length": 46042,
+          "sha256": "4570DC8786ADBC5615BA6CB4409A0A7634116F05384D6863AE097EB0EA498420"
+        },
+        {
+          "path": "data/data/book_left2.mods",
+          "length": 31012,
+          "sha256": "A7E0736ED111031A3C42C81228F77F6979F2B816B0C9B3C048DE1EE8A1743FB1"
+        },
+        {
+          "path": "data/data/book_right2.mods",
+          "length": 42016,
+          "sha256": "8ED86CE4B8A03B594A805BFE4A6F329EFA746AE15265B99EA07602FB6B77F684"
+        },
+        {
+          "path": "data/data/jp.font",
+          "length": 6144,
+          "sha256": "04DD6099539A64C9FFADE2179D2EF0D86F3F09B804B51B7EBE2A9C760810A292"
+        },
+        {
+          "path": "data/data/sound_data.sdat",
+          "length": 7795712,
+          "sha256": "065C28CF7EBE35E4435B41A28C069C80DF22CB6A91CFE97351B20F08C131D6AF"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "67B72C23B37BDB6774E261F576413CD58B5A144C1AEA3E9E12A4761EBF9ACC83"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 16956,
+          "sha256": "40A29370FAFE00CB6E1F7D0327D756C881189D5B698780A6CED589009690B202"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 129357312,
+          "sha256": "D5A5E82E1D8EEF78DE9ECD9E285C7EDAD54BB83B31FBF66F8BBFC32DE47F4F3A"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 134217728,
+          "sha256": "82E5234DBF1F170847A08B741587364887BA1592103269B11B33CEA9F9135D28"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 134217728,
+          "sha256": "DB002A3780318D5C486B492071628184D9AE43F2DB9A9E93A099A995687530D7"
+        }
+      ]
+    }
+  ]
+}

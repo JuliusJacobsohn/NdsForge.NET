@@ -20,6 +20,7 @@ internal static class NdsImageBuildVerifier
             leaveOpen: true,
             cancellationToken: cancellationToken).ConfigureAwait(false);
         var validationOptions = new NdsValidationOptions();
+        builder.DsMetadata?.Integrity?.ApplyValidation(validationOptions);
         if (builder.DsiMetadata?.Integrity.HmacKey.IsEmpty == false)
         {
             validationOptions.SetDsiHmacKey(builder.DsiMetadata.Integrity.HmacKey.Span);
@@ -30,6 +31,30 @@ internal static class NdsImageBuildVerifier
         {
             throw new InvalidDataException(
                 $"Generated image verification failed: {string.Join("; ", validation.Diagnostics.Select(static item => item.Message))}");
+        }
+
+        if (image.CarrierLayout.Kind != builder.Carrier ||
+            !image.CarrierLayout.PostHeaderData.Span.StartsWith(builder.PostHeaderData.Span))
+        {
+            throw new InvalidDataException("Generated image carrier or opaque post-header material did not match the recipe.");
+        }
+
+        if (image.Header.NandRomEndUnits != builder.NandRomEndUnits ||
+            image.Header.NandWritableStartUnits != builder.NandWritableStartUnits)
+        {
+            throw new InvalidDataException("Generated NAND partition boundaries did not preserve the recipe values.");
+        }
+
+        if (builder.DownloadPlaySignature is not null && (image.DownloadPlaySignature is null ||
+            !image.DownloadPlaySignature.RawData.Span.SequenceEqual(builder.DownloadPlaySignature.RawData.Span)))
+        {
+            throw new InvalidDataException("Generated Download Play signature trailer did not preserve its stored bytes.");
+        }
+
+        if (!builder.TwlReservedData.IsEmpty && (image.CarrierLayout is not NdsCartridgeLayout cartridge ||
+            !cartridge.TwlReservedData.Span.SequenceEqual(builder.TwlReservedData.Span)))
+        {
+            throw new InvalidDataException("Generated cartridge TWL reservation did not preserve the recipe bytes.");
         }
 
         foreach (NdsBuildFile expectedFile in fileSystem.FilesInIdOrder)
@@ -53,8 +78,34 @@ internal static class NdsImageBuildVerifier
             await VerifyProgramAsync(image, image.Header.Arm7i, builder.Arm7i, cancellationToken).ConfigureAwait(false);
         }
 
+        if (builder.DebugProgram is not null)
+        {
+            await VerifyDebugProgramAsync(image, builder.DebugProgram, cancellationToken).ConfigureAwait(false);
+        }
+
         await VerifyOverlaysAsync(image, image.Arm9Overlays, builder.Arm9Overlays, cancellationToken).ConfigureAwait(false);
         await VerifyOverlaysAsync(image, image.Arm7Overlays, builder.Arm7Overlays, cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>Byte-compares the optional debug executable and verifies its runtime address.</summary>
+    private static async ValueTask VerifyDebugProgramAsync(
+        NdsImage image,
+        NdsDebugProgramDefinition expected,
+        CancellationToken cancellationToken)
+    {
+        if (image.Header.DebugRomSize != expected.Contents.Length ||
+            image.Header.DebugLoadAddress != expected.LoadAddress)
+        {
+            throw new InvalidDataException("Generated debug program metadata did not round-trip.");
+        }
+
+        using Stream stream = image.OpenRead(image.Header.DebugRom);
+        byte[] contents = new byte[expected.Contents.Length];
+        await stream.ReadExactlyAsync(contents, cancellationToken).ConfigureAwait(false);
+        if (!contents.AsSpan().SequenceEqual(expected.Contents.Span))
+        {
+            throw new InvalidDataException("Generated debug program payload did not round-trip.");
+        }
     }
 
     /// <summary>Proves one DSi Program retained processor identity, runtime address, and exact payload bytes.</summary>

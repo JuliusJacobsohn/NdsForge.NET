@@ -1,0 +1,620 @@
+{
+  "schemaVersion": 1,
+  "ndstoolSha256": "E69EA6125BC08957D4903173ADD061B27E939E4D8740A9495E81A4C4A80443BB",
+  "rom": {
+    "fileName": "MARIO \u0026 LUIGI - PARTNERS IN TIME [ARME] [USA - English].nds",
+    "length": 67108864,
+    "sha256": "164c82b37531f561b9a5e5457edcb20417cbc2e04dd4f8234c2d16db4bfcb23a",
+    "headerTitle": "MARIO\u0026LUIGI2",
+    "gameCode": "ARME",
+    "makerCode": "01",
+    "kind": "NintendoDs",
+    "revision": 1,
+    "region": "USA - English",
+    "preferredLanguage": "English",
+    "displayTitle": "MARIO \u0026 LUIGI - PARTNERS IN TIME",
+    "bannerTitles": {
+      "Japanese": "MARIO \u0026 LUIGI\nPARTNERS IN TIME\nNintendo",
+      "English": "MARIO \u0026 LUIGI\nPARTNERS IN TIME\nNintendo",
+      "French": "MARIO \u0026 LUIGI\nPARTNERS IN TIME\nNintendo",
+      "German": "MARIO \u0026 LUIGI\nPARTNERS IN TIME\nNintendo",
+      "Italian": "MARIO \u0026 LUIGI\nPARTNERS IN TIME\nNintendo",
+      "Spanish": "MARIO \u0026 LUIGI\nPARTNERS IN TIME\nNintendo"
+    }
+  },
+  "validationDiagnostics": [],
+  "operations": [
+    {
+      "name": "extract-all",
+      "exitCode": 0,
+      "standardOutputSha256": "C5334BF50381C151F1586613A48E5456C509EB6C954362DBD7155703D123840B",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "arm7-overlays.bin",
+          "length": 0,
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+        },
+        {
+          "path": "arm7.bin",
+          "length": 159524,
+          "sha256": "ABEF0964E4DDE0AD115B814FF5B31A3E748C48691BED8CD4E910BB709069B931"
+        },
+        {
+          "path": "arm9-overlays.bin",
+          "length": 1184,
+          "sha256": "13E92F5A291882C032998916DB39D1B86A224D2EDE7D0DBCFE89473CE353B98E"
+        },
+        {
+          "path": "arm9.bin",
+          "length": 354116,
+          "sha256": "7215420BDFF353F6D5E72B8D2F7A128B90EC0C54DCE89554756245BCF6110549"
+        },
+        {
+          "path": "banner.bin",
+          "length": 2112,
+          "sha256": "663FA83A291954B2F7BDE38DDEA82A1C88DE0B5C9DCDD95799DCA110EAFD15F9"
+        },
+        {
+          "path": "data/BAI/BAI_iwasaki.dat",
+          "length": 63952,
+          "sha256": "7CC6EF338506B5346A93A52EB89315F4341F71FA811EE3B2324CD5A4823AA4C1"
+        },
+        {
+          "path": "data/BAI/BAI_mon_0_hn.dat",
+          "length": 75432,
+          "sha256": "B5A1069513B164A576B2A9A3F9FF975110D9A3B6555C113C6E870FB42051C7F4"
+        },
+        {
+          "path": "data/BAI/BAI_mon_1_hn.dat",
+          "length": 82484,
+          "sha256": "CE241F5BC43EB508492B13CAEB0DB6BC707091AC0EF17BD767F4D6CF204DAFCC"
+        },
+        {
+          "path": "data/BAI/BAI_mon_2_hn.dat",
+          "length": 64664,
+          "sha256": "ACEF730504A30A48DE2A0391371B19B51EBC0C8C5A51FDFDF947DC27581250C0"
+        },
+        {
+          "path": "data/BAI/BAI_mon_3_hn.dat",
+          "length": 92744,
+          "sha256": "1423635E330F5C1E50D3AA4E7FF47CCC7A666AA777F1E03E67F18D856B3666AE"
+        },
+        {
+          "path": "data/BAI/BAI_mon_4_hn.dat",
+          "length": 77388,
+          "sha256": "34C44A36497A416726183AA7B0C142D61406939B27607C0E45337473CEFE2FF3"
+        },
+        {
+          "path": "data/BAI/BAI_mon_ji.dat",
+          "length": 398780,
+          "sha256": "4730DCEE05716B46830AB7652B3D9DA0D64F56DAAAA4E187A08860B3DD73DA77"
+        },
+        {
+          "path": "data/BAI/BAI_scn_0_hn.dat",
+          "length": 39492,
+          "sha256": "36C555A931A3AEEC13F3F06F97DF7452CA9E4B3488849FE735F04A32F069C8F6"
+        },
+        {
+          "path": "data/BAI/BAI_scn_1_hn.dat",
+          "length": 95544,
+          "sha256": "4D06A4FDEB2E86F4362092A77FA656F1A58C67B2A87A60AB564A2BCACEBD9A71"
+        },
+        {
+          "path": "data/BAI/BAI_scn_2_hn.dat",
+          "length": 70060,
+          "sha256": "C61F9D921ACAD6944453A134A5DC6D45AFFAC152DE3C408317C529B05B2C246E"
+        },
+        {
+          "path": "data/BAI/BAI_scn_3_hn.dat",
+          "length": 89032,
+          "sha256": "AD31BD1E976B1594518F5B3E82CF6A7E93B39F04340CD6F0B50A8F23C2ADEF2F"
+        },
+        {
+          "path": "data/BAI/BAI_scn_4_hn.dat",
+          "length": 103180,
+          "sha256": "0E14849DB520797452B03437CEA0C5A01C1720BE83FA799071B675F6FD7CE997"
+        },
+        {
+          "path": "data/BAI/BAI_scn_ji.dat",
+          "length": 155544,
+          "sha256": "E77C49CE64800BAAF3DAC6D5B1CDFE874507920CD0DC0A474B0B77466D5303D8"
+        },
+        {
+          "path": "data/BAI/BAI_sugiyama.dat",
+          "length": 1980,
+          "sha256": "BA43ED7D741D0D3F1543D062B46D98AC114DCFFAB818A01182A0793CA7F89508"
+        },
+        {
+          "path": "data/BAI/BMes.dat",
+          "length": 98616,
+          "sha256": "19270DED975E746082D2B162F693496955D483E97A222453DC71EC8C9DCBD179"
+        },
+        {
+          "path": "data/BData/BDataMon.dat",
+          "length": 4092,
+          "sha256": "A7BE5C084A40DDE121CD905D6D1792EB4FC62F38120EC3605070E52A1797B776"
+        },
+        {
+          "path": "data/BData/mfset_AItmC.dat",
+          "length": 780,
+          "sha256": "7C48F32F4C5E7905EFA8685E7082EE27C08127BEE616F84F8A451118516C4BB5"
+        },
+        {
+          "path": "data/BData/mfset_AItmE.dat",
+          "length": 11032,
+          "sha256": "D260ADE4A656BAFD6C96E73EC0660DC33E25704464BC60DC5E3ACAF1C823F865"
+        },
+        {
+          "path": "data/BData/mfset_AItmE2.dat",
+          "length": 2292,
+          "sha256": "0856CE257154265B81A65F659A6F3E046BE810373EE7FDA7D9A045E614BDB450"
+        },
+        {
+          "path": "data/BData/mfset_AItmN.dat",
+          "length": 3872,
+          "sha256": "8310037B6E2EBF0ACBDB0C5671E09990D70071560139383D45C4530CC7A19672"
+        },
+        {
+          "path": "data/BData/mfset_BadgeE.dat",
+          "length": 15540,
+          "sha256": "21C075A50113614D9ACE1BE9FB0B50D28B40444EB95FEBD163C49672667CD3E6"
+        },
+        {
+          "path": "data/BData/mfset_BadgeN.dat",
+          "length": 15408,
+          "sha256": "C93A300181B4274BDFF5BAA6DB52A37702F2F54F2A2CF6A76C925BACECB6B044"
+        },
+        {
+          "path": "data/BData/mfset_BonusE.dat",
+          "length": 1348,
+          "sha256": "A2844EF38AF22323A885BA4E072912E0BA9EF46E02259A249514D3FF06C0D368"
+        },
+        {
+          "path": "data/BData/mfset_Help.dat",
+          "length": 5216,
+          "sha256": "0C82F9DD7145E87FC28FA7143C7D21C7FE6E8C08FEA0FD18CED4E3CB22061951"
+        },
+        {
+          "path": "data/BData/mfset_MonN.dat",
+          "length": 6580,
+          "sha256": "DE2BE986E3A66F52E8782565A349946CEDBC58C5651CF96995F84374C046B015"
+        },
+        {
+          "path": "data/BData/mfset_UItmE.dat",
+          "length": 980,
+          "sha256": "E2ED2F9C524E0B63FF86BC638CE188FA3BB3D417C4C131F9F072BE3228AC9196"
+        },
+        {
+          "path": "data/BData/mfset_UItmE2.dat",
+          "length": 2452,
+          "sha256": "5115D9BED5D588C2B14AF11315086E53522AF32839F3F5C3AE84105BF9D08FA1"
+        },
+        {
+          "path": "data/BData/mfset_UItmN.dat",
+          "length": 5000,
+          "sha256": "C0B515EFDA751F126A7A03620074EAB2FB97F13A2BF8C2D690C74342CDE408FF"
+        },
+        {
+          "path": "data/BData/mfset_WearE.dat",
+          "length": 12692,
+          "sha256": "14E3081120EA1A5C522A1DB7815C8B9536EE73C6C5E62B5652D70868DA752115"
+        },
+        {
+          "path": "data/BData/mfset_WearN.dat",
+          "length": 12096,
+          "sha256": "C5EA4FFA1076751BFF2ED8DDD417B94E706787C77F3B89AD6137C9ED8D5381E8"
+        },
+        {
+          "path": "data/BFx/dfx_00.dat",
+          "length": 131708,
+          "sha256": "D5C2AEA2D3EE43DBD6B362678092CBDADCC0C903412EED2C8C18547C094101E0"
+        },
+        {
+          "path": "data/BFx/rfx_00.dat",
+          "length": 108556,
+          "sha256": "B84CDD073A612BCBFC31295126C40B9CDBAB50EF8C2B3BAAB4983092B0DA9770"
+        },
+        {
+          "path": "data/BMap/BMap.dat",
+          "length": 2032500,
+          "sha256": "858D06222EB09D126EC311D5941A10E42A5318B6B3812B261DCB62875108C6E2"
+        },
+        {
+          "path": "data/BObjMon/BObjMon.dat",
+          "length": 826436,
+          "sha256": "369A420D538F57B7DF7181BAB5D824AA5A2B49E8F934E5008E3A1109029F2B7D"
+        },
+        {
+          "path": "data/BObjPc/BObjPc.dat",
+          "length": 1083016,
+          "sha256": "E6DA655C2BA16296302AB3ED0C309984ABAEC4F61B6EA280FADEBB04145DF78B"
+        },
+        {
+          "path": "data/BObjUI/BObjUI.dat",
+          "length": 153800,
+          "sha256": "E47BAA93262F727ED68C5A40D0653974CE635A70B784FADA4F2224BEF8F11081"
+        },
+        {
+          "path": "data/Etc/Haraki/HarakiTestData.dat",
+          "length": 461880,
+          "sha256": "4E756DF2532368BCA9F04B7D90AAE8F52B7C8030955656967758B135E002000F"
+        },
+        {
+          "path": "data/Etc/Sasaki/TestMapData.dat",
+          "length": 130148,
+          "sha256": "1F9DAE9B7F98ACF93F7A5DD724C1CEDB1BEFCCD301DC1A8AFA619643BE8C31FD"
+        },
+        {
+          "path": "data/Etc/Sugiyama/Test.dat",
+          "length": 47936,
+          "sha256": "ED24F91F6D85A1995DD70A9CA134223883B14343B7E760B2459E88DCEE368851"
+        },
+        {
+          "path": "data/Etc/Uchida/UchidaTestDat.dat",
+          "length": 82956,
+          "sha256": "E834DDC4ECCB71989E62600443AEBC4563C1C7F478E423EDF32129D0873FB73F"
+        },
+        {
+          "path": "data/FEvent/FEvData.dat",
+          "length": 7191876,
+          "sha256": "324932E9C5CED5D5429E28650877FCD40CF524B2AEABD73C0BD98207B146EB5E"
+        },
+        {
+          "path": "data/FMap/FMapData.dat",
+          "length": 30078920,
+          "sha256": "3E5895D5ACD46970F87806360A7061B55BB76C2CB1E9C113BE869F502AE8CE71"
+        },
+        {
+          "path": "data/FObjMon/FObjMon.dat",
+          "length": 222056,
+          "sha256": "AAD089B14D279FBA9A0D99F027E0D59B3943D260CEF128D2EDB1252B99BBC691"
+        },
+        {
+          "path": "data/FObjPc/FObjPc.dat",
+          "length": 900608,
+          "sha256": "DF38B6285746E0F9CE7DDB22A2481B78849D8B849C40BAF733AE41A28216794A"
+        },
+        {
+          "path": "data/FObj/FObj.dat",
+          "length": 2091520,
+          "sha256": "5A2F9790220D80B7F1B73F92BEC0603121D4E3FC2DA7B5AD784BF13D8086035D"
+        },
+        {
+          "path": "data/FieldFx/FieldFxData.dat",
+          "length": 206488,
+          "sha256": "0C614D7E104051570B75B6DECD806AA09421DE060071C3070079E12A796B7ABA"
+        },
+        {
+          "path": "data/Font/StatFontSet.dat",
+          "length": 46296,
+          "sha256": "1E29FDB331D4197AF72D13AE0C1A5E851BD4069CBB7F07DE92D311C51338A413"
+        },
+        {
+          "path": "data/MenuAI/BAI_iwasaki.dat",
+          "length": 63956,
+          "sha256": "80ED492BCF84603817A6A999F28C24D52A6C7D03A7E65A4F5B1E4157F5C447B8"
+        },
+        {
+          "path": "data/MenuAI/MAI_fujioka.dat",
+          "length": 15172,
+          "sha256": "6A240C7C502ABA36C19BEA1DA48A68380A6ECC575BE882CB19374B00A339FF17"
+        },
+        {
+          "path": "data/MenuAI/MAI_uchida.dat",
+          "length": 11032,
+          "sha256": "77C3128D7D35C3A15F173CBE2F5460A61119964B7D780DA0151C5D19762161BC"
+        },
+        {
+          "path": "data/MenuAI/mfset_Mes_AreaName_out.dat",
+          "length": 5180,
+          "sha256": "90FF2E1E8E2B4EBA58E84BA4E625D3F82C5F85A7DCB2C4D974866731A0E051EC"
+        },
+        {
+          "path": "data/MenuAI/mfset_Mes_LoadSave_out.dat",
+          "length": 13416,
+          "sha256": "2A5AF2021F0ED4E89C02178BA646E835C75FA32EFB2B67901FB290633B2722F9"
+        },
+        {
+          "path": "data/MenuAI/mfset_Mes_MenuAI_out.dat",
+          "length": 28948,
+          "sha256": "80EAE82BEBC75A4AD41B0112C2F0EFAC188D256036AA2F7D07AA1A303868F072"
+        },
+        {
+          "path": "data/MenuAI/mfset_Mes_Outline_out.dat",
+          "length": 54340,
+          "sha256": "FF9696783B2A1875B8B397556D180C8D55490CC42FA5C076F94F7F97E2D34AC5"
+        },
+        {
+          "path": "data/MenuAI/mfset_menu_mes.dat",
+          "length": 3292,
+          "sha256": "09A2339A3A5E19BC59437ACE03E967AE323E0B08374F650875C43453AE29E668"
+        },
+        {
+          "path": "data/MenuAI/mfset_option_mes.dat",
+          "length": 400,
+          "sha256": "A2D75A8B983476A739FB34CCDB032A0B047F659B1F1EB477EE70BA8A998677CD"
+        },
+        {
+          "path": "data/MenuAI/mfset_shop_mes.dat",
+          "length": 12844,
+          "sha256": "3EB9EAC78F2D31301A3D8CF8E46577BA36246AA4B50A45CF6CDC32D4FD5F8378"
+        },
+        {
+          "path": "data/Menu/Menu.dat",
+          "length": 59316,
+          "sha256": "3E23557BA0715A0C9F5BA46651BD87C203A79B745E4FFAF0FE3B7B1226D084AB"
+        },
+        {
+          "path": "data/Menu/MenuDat",
+          "length": 365,
+          "sha256": "A7966DC81A6CD2F2524692C9858CD1D5C8D844ABBA1D2528B92BB0BA47A6D871"
+        },
+        {
+          "path": "data/Menu/MenuDat.dat",
+          "length": 564476,
+          "sha256": "E8E8A19FBEAFC6CFEC1F063B7367CEF382C8B51648BA4F36764A3F2518A5B50F"
+        },
+        {
+          "path": "data/SavePoint/SavePhoto.dat",
+          "length": 397816,
+          "sha256": "7172484148D3A65C709C4D88B5A5B41A93A35884910C0AF62BE0BDD1793BD107"
+        },
+        {
+          "path": "data/Sound/sound_data.sdat",
+          "length": 6869824,
+          "sha256": "E4EC39DB0457F8C77A7B78DA975C2ED497C61A0D8C190C44F6CC310D19865809"
+        },
+        {
+          "path": "data/Title/TitleBG.dat",
+          "length": 109224,
+          "sha256": "9B55D361A7186C9112A41FF773AC398182A9F879E79FB49286B9F1AF9FE86AEC"
+        },
+        {
+          "path": "data/Treasure/TreasureInfo.dat",
+          "length": 10340,
+          "sha256": "6C3654BD68CB858FF6C6ED8F05EBA2C0C394387556A9BC782F54896CF1DDAFDE"
+        },
+        {
+          "path": "header.bin",
+          "length": 512,
+          "sha256": "0D32FE9B2A052DB7105066E795ED48C1FAC173456C7A457A27B8C23B5861B240"
+        },
+        {
+          "path": "logo.bin",
+          "length": 156,
+          "sha256": "08A0153CFD6B0EA54B938F7D209933FA849DA0D56F5A34C481060C9FF2FAD818"
+        },
+        {
+          "path": "overlays/overlay_0000.bin",
+          "length": 374848,
+          "sha256": "56298A6E9179FEF17C6A36D7C31123F36C0A83BB97808AD997B1CA6100C637EC"
+        },
+        {
+          "path": "overlays/overlay_0001.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0002.bin",
+          "length": 370528,
+          "sha256": "76C5B0BC4658C10DC934FDCE1F1F478A667138E31995E2393632D84DA75CF68C"
+        },
+        {
+          "path": "overlays/overlay_0003.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0004.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0005.bin",
+          "length": 17440,
+          "sha256": "8EB7282F461B301E91884A79DEF92872AA32812C6D1BB3267C80BE9045CBCC2A"
+        },
+        {
+          "path": "overlays/overlay_0006.bin",
+          "length": 71424,
+          "sha256": "14B8F38DD165D665DA19C29C3203D2B2DD57193DFC6502F0467B5C215F89A2A1"
+        },
+        {
+          "path": "overlays/overlay_0007.bin",
+          "length": 145024,
+          "sha256": "BC8A66691319AFD8EA4EE89C9FE1758CCA7CFA85C08D74E37F8C79C0CE22BC6B"
+        },
+        {
+          "path": "overlays/overlay_0008.bin",
+          "length": 55040,
+          "sha256": "BB6677F45C95AB39FF2BEEC1C87B09E081C14C10EA1FE1DAB2B239ADB6F552B1"
+        },
+        {
+          "path": "overlays/overlay_0009.bin",
+          "length": 81504,
+          "sha256": "8CE459B97392F485E79A28E24D0E80255D637BB716D7B7A4A867F5183394FCF1"
+        },
+        {
+          "path": "overlays/overlay_0010.bin",
+          "length": 6944,
+          "sha256": "04E03B4A928F9EBFE0125F28455BDF8D6F5858CAD161C8E9ACDADCB308E7BE91"
+        },
+        {
+          "path": "overlays/overlay_0011.bin",
+          "length": 14304,
+          "sha256": "29E7A79213135E7C09FE696544C68E772CC688D3BD407D0E7EA7DBB80220F155"
+        },
+        {
+          "path": "overlays/overlay_0012.bin",
+          "length": 12192,
+          "sha256": "41DB38FE2662458FC7DD3F5A01B1DCE5B272E4C3DD1C701F84C96CDA9971BAA0"
+        },
+        {
+          "path": "overlays/overlay_0013.bin",
+          "length": 12416,
+          "sha256": "3A7BF8821D50773C8EA368CCE9BF5027C7BA149C6D731BB29EF5868B0BEC4886"
+        },
+        {
+          "path": "overlays/overlay_0014.bin",
+          "length": 14176,
+          "sha256": "29B95EC7788F654E449DBBC244F7FEDCC4B5A9D7D77F020331FE7023473F70D2"
+        },
+        {
+          "path": "overlays/overlay_0015.bin",
+          "length": 13824,
+          "sha256": "83CDE4258475985C26B6CD11C6D0F95C47A3237095A5FBB7CE884FA40E26DF70"
+        },
+        {
+          "path": "overlays/overlay_0016.bin",
+          "length": 19040,
+          "sha256": "73BAED257225428FF98474A54AAFEB4B7721F3486D1BB45FEDF04163CE429CE7"
+        },
+        {
+          "path": "overlays/overlay_0017.bin",
+          "length": 17696,
+          "sha256": "1EC183508BEACEF46F1E6A206A580E8E0A68FF0515F0C37CC4CD073950A3F57C"
+        },
+        {
+          "path": "overlays/overlay_0018.bin",
+          "length": 19296,
+          "sha256": "E938486EEC2471D47E6EF7373AF781FE05F3988042DC6F82F72E3E297AE172E4"
+        },
+        {
+          "path": "overlays/overlay_0019.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0020.bin",
+          "length": 10176,
+          "sha256": "518430200F243833E7C09525F95D002914772876A49CC50BC83235375DC84901"
+        },
+        {
+          "path": "overlays/overlay_0021.bin",
+          "length": 5728,
+          "sha256": "5071691E54D159E72E02591477CB2778D98DC65F2632A608489A196C6516E8E9"
+        },
+        {
+          "path": "overlays/overlay_0022.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0023.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0024.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0025.bin",
+          "length": 38080,
+          "sha256": "6ECB829DEAD8AC254ECCB59273F81FEE26F4BB47BA81B80457EEA95013E62F88"
+        },
+        {
+          "path": "overlays/overlay_0026.bin",
+          "length": 15008,
+          "sha256": "B01C3F11112F6B209989D96794610495BB42F86AC70E9AC616308112B8E508B2"
+        },
+        {
+          "path": "overlays/overlay_0027.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0028.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0029.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0030.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0031.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0032.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0033.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0034.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0035.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        },
+        {
+          "path": "overlays/overlay_0036.bin",
+          "length": 32,
+          "sha256": "66687AADF862BD776C8FC18B8E9F8E20089714856EE233B3902A591D0D5F2925"
+        }
+      ]
+    },
+    {
+      "name": "create-binary",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "A4B4F032C1A1523F1A9DBF1CEC318CB0FECDEA6782339F43565113C319AA7C50",
+      "artifacts": [
+        {
+          "path": "rebuilt-binary.nds",
+          "length": 57505380,
+          "sha256": "84272AE6102CD5A9438AD0014D1C1F5AEE2977EC6424584AD17016EA840316AD"
+        }
+      ]
+    },
+    {
+      "name": "repair-header-crc",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "repaired-header.nds",
+          "length": 67108864,
+          "sha256": "BBB242DB011D15A5644F2D72E8A6B38D3AE6246C13908EC206219B518D066A75"
+        }
+      ]
+    },
+    {
+      "name": "hook-arm7",
+      "exitCode": 0,
+      "standardOutputSha256": "8E929C49EF57F36CBC5F33429092E507CC1972B8A91F437370D2923C2F007114",
+      "standardErrorSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "artifacts": [
+        {
+          "path": "hook.bin",
+          "length": 4,
+          "sha256": "71B1548A3867FE8E62A860F8010BECB36B0386C9E97D552809CEBCCB9D93881D"
+        },
+        {
+          "path": "hooked.nds",
+          "length": 67108864,
+          "sha256": "625F00B26AEC02E6E2C535F60970D6E3B47CC8322F4824832FAE6DFD5494C6E6"
+        }
+      ]
+    }
+  ]
+}

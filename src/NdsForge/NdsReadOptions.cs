@@ -22,6 +22,9 @@ public sealed record NdsReadOptions
     /// <summary>Bounds entries decoded independently from each ARM9 or ARM7 overlay table.</summary>
     public int MaximumOverlayCount { get; init; } = 65_536;
 
+    /// <summary>Bounds stored or BLZ-decoded ARM9 bytes retained while resolving Download Play authentication records.</summary>
+    public int MaximumDecodedProgramBytes { get; init; } = 64 * 1024 * 1024;
+
     /// <summary>Bounds banner allocation before its version field selects a smaller, exact supported layout.</summary>
     public int MaximumBannerBytes { get; init; } = 0x23C0;
 
@@ -34,6 +37,7 @@ public sealed record NdsReadOptions
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumDirectoryCount);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumDirectoryDepth);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumOverlayCount);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumDecodedProgramBytes);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(MaximumBannerBytes);
     }
 }

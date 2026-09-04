@@ -31,6 +31,9 @@ internal sealed class StreamImageDataSource : IImageDataSource
     /// <summary>Captures the stream length at construction so later external position changes are irrelevant.</summary>
     public long Length { get; }
 
+    /// <summary>Detects direct attempts to overwrite the same caller stream that supplies lazy image reads.</summary>
+    internal bool UsesStream(Stream stream) => ReferenceEquals(_stream, stream);
+
     /// <inheritdoc />
     public int Read(long offset, Span<byte> destination)
     {

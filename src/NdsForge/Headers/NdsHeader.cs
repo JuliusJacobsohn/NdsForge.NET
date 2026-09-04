@@ -3,8 +3,8 @@ namespace NdsForge;
 /// <summary>Projects the common cartridge header into typed fields while retaining every byte needed for lossless work.</summary>
 public sealed class NdsHeader
 {
-    /// <summary>Decodes the 0x200-byte DS prefix and, when selected by unit code, its 0xE00-byte DSi extension.</summary>
-    /// <param name="rawData">Exactly the header span selected by the loader: 0x200 bytes for DS or 0x1000 for DSi.</param>
+    /// <summary>Decodes the common DS prefix and an authentication or DSi extension when declared.</summary>
+    /// <param name="rawData">Exactly the 0x200-byte classic header or a complete 0x1000-byte extended header.</param>
     internal NdsHeader(ReadOnlyMemory<byte> rawData)
     {
         RawData = rawData;
@@ -35,10 +35,24 @@ public sealed class NdsHeader
         SecureDisable = ((ulong)NdsBinary.ReadUInt32(data, 0x7C) << 32) | NdsBinary.ReadUInt32(data, 0x78);
         UsedImageSize = NdsBinary.ReadUInt32(data, 0x80);
         HeaderSize = NdsBinary.ReadUInt32(data, 0x84);
+        NandRomEndUnits = NdsBinary.ReadUInt16(data, 0x94);
+        NandWritableStartUnits = NdsBinary.ReadUInt16(data, 0x96);
         NintendoLogoCrc = NdsBinary.ReadUInt16(data, 0x15C);
         HeaderCrc = NdsBinary.ReadUInt16(data, 0x15E);
+        DebugRomOffset = NdsBinary.ReadUInt32(data, 0x160);
+        DebugRomSize = NdsBinary.ReadUInt32(data, 0x164);
+        DebugLoadAddress = NdsBinary.ReadUInt32(data, 0x168);
 
-        if (data.Length >= 0x1E0 && Kind != NdsImageKind.NintendoDs)
+        ProgramFeatures = (NdsProgramFeatures)data[0x1BF];
+        bool digitalTitle = data.Length >= 0x238 && NdsCarrierLayoutParser.IsDigitalCategory(NdsBinary.ReadUInt32(data, 0x234));
+
+        if (data.Length >= 0x1000 && Kind == NdsImageKind.NintendoDs && !digitalTitle &&
+            (ProgramFeatures & (NdsProgramFeatures.AuthenticatesBanner | NdsProgramFeatures.AuthenticatesPrograms)) != 0)
+        {
+            DsExtended = new(rawData);
+        }
+
+        if (data.Length >= 0x1000 && (Kind != NdsImageKind.NintendoDs || digitalTitle))
         {
             Arm9i = ReadDsiProgram(data, NdsProcessor.Arm9i, 0x1C0);
             Arm7i = ReadDsiProgram(data, NdsProcessor.Arm7i, 0x1D0);
@@ -68,13 +82,30 @@ public sealed class NdsHeader
     public byte DeviceCapacityExponent { get; }
 
     /// <summary>Computes the nominal power-of-two cartridge capacity independently from physical or used image length.</summary>
-    public long DeviceCapacityBytes => 128L * 1024L << DeviceCapacityExponent;
+    /// <exception cref="InvalidOperationException">The raw exponent cannot be represented as a positive 64-bit length.</exception>
+    public long DeviceCapacityBytes => NdsImageSizeInfo.DecodeDeviceCapacity(DeviceCapacityExponent)
+        ?? throw new InvalidOperationException("The device-capacity exponent exceeds the positive 64-bit byte-length range.");
 
     /// <summary>Preserves the DSi flags at offset <c>0x1C</c>; DS-only software normally leaves them zero.</summary>
     public byte DsiFlags { get; }
 
+    /// <summary>Projects defined DSi execution and modcrypt bits while <see cref="DsiFlags"/> retains the raw byte.</summary>
+    public NdsDsiCryptoPolicy DsiCryptoPolicy => (NdsDsiCryptoPolicy)DsiFlags;
+
+    /// <summary>Gets currently unassigned high bits from <see cref="DsiFlags"/>.</summary>
+    public byte UnknownDsiFlagBits => (byte)(DsiFlags & 0xF0);
+
     /// <summary>Preserves the header's region byte, whose defined interpretation depends on DS versus DSi mode.</summary>
     public byte RegionCode { get; }
+
+    /// <summary>Projects the original-DS region value; inspect <see cref="RegionCode"/> for undefined values.</summary>
+    public NdsLegacyRegion LegacyRegion => new(RegionCode);
+
+    /// <summary>Projects DSi launch-policy bits when <see cref="Kind"/> selects DSi execution.</summary>
+    public NdsDsiLaunchPolicy DsiLaunchPolicy => (NdsDsiLaunchPolicy)RegionCode;
+
+    /// <summary>Gets launch-byte bits not currently assigned by the DSi header format.</summary>
+    public byte UnknownDsiLaunchBits => (byte)(RegionCode & 0xFC);
 
     /// <summary>Exposes the publisher-controlled one-byte software revision rather than the banner or format version.</summary>
     public byte Version { get; }
@@ -88,14 +119,20 @@ public sealed class NdsHeader
     /// <summary>Locates the secondary processor payload and its entry/load addresses from header offsets <c>0x30</c>-<c>0x3F</c>.</summary>
     public NdsProgram Arm7 { get; }
 
-    /// <summary>Locates the DSi-mode ARM9i payload when the unit code selects an extended header.</summary>
+    /// <summary>Locates the ARM9i payload in an extended DSi or digital-system header, including explicit empty tuples.</summary>
     public NdsProgram? Arm9i { get; }
 
-    /// <summary>Locates the DSi-mode ARM7i payload when the unit code selects an extended header.</summary>
+    /// <summary>Locates the ARM7i payload in an extended DSi or digital-system header, including explicit empty tuples.</summary>
     public NdsProgram? Arm7i { get; }
 
-    /// <summary>Gets the extended DSi header, or <see langword="null"/> for DS-only images.</summary>
+    /// <summary>Gets DSi metadata, including declared DS-mode digital system titles; ordinary DS cartridges return null.</summary>
     public NdsDsiHeader? Dsi { get; }
+
+    /// <summary>Gets the DSi-era authentication extension used by late DS software, or <see langword="null"/> when absent.</summary>
+    public NdsDsExtendedHeader? DsExtended { get; }
+
+    /// <summary>Interprets launcher and authentication capabilities stored in the common feature byte at <c>0x1BF</c>.</summary>
+    public NdsProgramFeatures ProgramFeatures { get; }
 
     /// <summary>Locates the FNT main records and name subtables that give FAT identifiers a hierarchy and names.</summary>
     public NdsRegion FileNameTable { get; }
@@ -139,11 +176,35 @@ public sealed class NdsHeader
     /// <summary>Reports the header byte count claimed on cartridge, commonly <c>0x4000</c> despite a smaller parsed prefix.</summary>
     public uint HeaderSize { get; }
 
+    /// <summary>Preserves the NAND ROM partition's exclusive end at 0x94, in 128 KiB DS or 512 KiB DSi units; zero is unspecified.</summary>
+    public ushort NandRomEndUnits { get; }
+
+    /// <summary>Preserves the NAND writable partition's start at 0x96, independently from its unknown length; zero is unspecified.</summary>
+    public ushort NandWritableStartUnits { get; }
+
+    /// <summary>Projects the NAND ROM boundary into a 64-bit cartridge address; this is not the required physical file length.</summary>
+    public long NandRomEndOffset => NdsNandHeader.Decode(NandRomEndUnits, Kind);
+
+    /// <summary>Projects the NAND writable boundary into a 64-bit cartridge address; zero does not establish absence of NAND hardware.</summary>
+    public long NandWritableStartOffset => NdsNandHeader.Decode(NandWritableStartUnits, Kind);
+
     /// <summary>Contains the CRC16 protecting the 156-byte Nintendo logo at header offset <c>0xC0</c>.</summary>
     public ushort NintendoLogoCrc { get; }
 
     /// <summary>Contains the CRC16 over bytes <c>0x000</c>-<c>0x15D</c>, excluding this field itself.</summary>
     public ushort HeaderCrc { get; }
+
+    /// <summary>Gets the absolute source offset of an optional debug program, or zero when absent.</summary>
+    public uint DebugRomOffset { get; }
+
+    /// <summary>Reports the stored byte length of the optional debug executable.</summary>
+    public uint DebugRomSize { get; }
+
+    /// <summary>Identifies the runtime address receiving the first optional debug executable byte.</summary>
+    public uint DebugLoadAddress { get; }
+
+    /// <summary>Combines the debug source offset and size into a half-open image region.</summary>
+    public NdsRegion DebugRom => NdsRegion.FromUInt32(DebugRomOffset, DebugRomSize);
 
     /// <summary>Restricts unit codes to hardware modes whose header and program layouts this library understands.</summary>
     /// <param name="value">Raw unit code from header offset <c>0x12</c>.</param>
