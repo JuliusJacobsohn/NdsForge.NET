@@ -103,6 +103,34 @@ NdsForge.Nitro.Archives.WifiUtilityWriteOptions.PreserveSourceLayout.init -> voi
 NdsForge.Nitro.Archives.WifiUtilityWriteOptions.TableAlignment.get -> int
 NdsForge.Nitro.Archives.WifiUtilityWriteOptions.TableAlignment.init -> void
 NdsForge.Nitro.Archives.WifiUtilityWriteOptions.WifiUtilityWriteOptions() -> void
+NdsForge.Nitro.Audio.NitroAdpcmClipping
+NdsForge.Nitro.Audio.NitroAdpcmClipping.NintendoDs = 0 -> NdsForge.Nitro.Audio.NitroAdpcmClipping
+NdsForge.Nitro.Audio.NitroAdpcmClipping.Signed16 = 1 -> NdsForge.Nitro.Audio.NitroAdpcmClipping
+NdsForge.Nitro.Audio.NitroWaveCodec
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions.<Clone>$() -> NdsForge.Nitro.Audio.NitroWaveDecodeOptions!
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions.AdpcmClipping.get -> NdsForge.Nitro.Audio.NitroAdpcmClipping
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions.AdpcmClipping.init -> void
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions.Equals(NdsForge.Nitro.Audio.NitroWaveDecodeOptions? other) -> bool
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions.MaximumSamples.get -> int
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions.MaximumSamples.init -> void
+NdsForge.Nitro.Audio.NitroWaveDecodeOptions.NitroWaveDecodeOptions() -> void
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.<Clone>$() -> NdsForge.Nitro.Audio.NitroWaveEncodeOptions!
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.AdpcmClipping.get -> NdsForge.Nitro.Audio.NitroAdpcmClipping
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.AdpcmClipping.init -> void
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.Equals(NdsForge.Nitro.Audio.NitroWaveEncodeOptions? other) -> bool
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.InitialPredictor.get -> short?
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.InitialPredictor.init -> void
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.InitialStepIndex.get -> int
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.InitialStepIndex.init -> void
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.MaximumOutputBytes.get -> int
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.MaximumOutputBytes.init -> void
+NdsForge.Nitro.Audio.NitroWaveEncodeOptions.NitroWaveEncodeOptions() -> void
+NdsForge.Nitro.Audio.NitroWaveEncoding
+NdsForge.Nitro.Audio.NitroWaveEncoding.ImaAdpcm = 2 -> NdsForge.Nitro.Audio.NitroWaveEncoding
+NdsForge.Nitro.Audio.NitroWaveEncoding.Pcm16 = 1 -> NdsForge.Nitro.Audio.NitroWaveEncoding
+NdsForge.Nitro.Audio.NitroWaveEncoding.Pcm8 = 0 -> NdsForge.Nitro.Audio.NitroWaveEncoding
 NdsForge.Nitro.Compression.BlzCodec
 NdsForge.Nitro.Compression.BlzInfo
 NdsForge.Nitro.Compression.BlzInfo.AdditionalLength.get -> int
@@ -178,6 +206,12 @@ override NdsForge.Nitro.Archives.WifiUtilityReadOptions.ToString() -> string!
 override NdsForge.Nitro.Archives.WifiUtilityWriteOptions.Equals(object? obj) -> bool
 override NdsForge.Nitro.Archives.WifiUtilityWriteOptions.GetHashCode() -> int
 override NdsForge.Nitro.Archives.WifiUtilityWriteOptions.ToString() -> string!
+override NdsForge.Nitro.Audio.NitroWaveDecodeOptions.Equals(object? obj) -> bool
+override NdsForge.Nitro.Audio.NitroWaveDecodeOptions.GetHashCode() -> int
+override NdsForge.Nitro.Audio.NitroWaveDecodeOptions.ToString() -> string!
+override NdsForge.Nitro.Audio.NitroWaveEncodeOptions.Equals(object? obj) -> bool
+override NdsForge.Nitro.Audio.NitroWaveEncodeOptions.GetHashCode() -> int
+override NdsForge.Nitro.Audio.NitroWaveEncodeOptions.ToString() -> string!
 override NdsForge.Nitro.Compression.BlzInfo.GetHashCode() -> int
 override NdsForge.Nitro.Compression.NitroCompressionInfo.GetHashCode() -> int
 static NdsForge.Nitro.Archives.NarcArchive.CreateUnnamed(System.Collections.Generic.IReadOnlyList<System.ReadOnlyMemory<byte>>! files, NdsForge.Nitro.Containers.NitroByteOrder headerByteOrder = NdsForge.Nitro.Containers.NitroByteOrder.BigEndian) -> NdsForge.Nitro.Archives.NarcArchive!
@@ -187,6 +221,12 @@ static NdsForge.Nitro.Archives.WifiUtilityReadOptions.operator !=(NdsForge.Nitro
 static NdsForge.Nitro.Archives.WifiUtilityReadOptions.operator ==(NdsForge.Nitro.Archives.WifiUtilityReadOptions? left, NdsForge.Nitro.Archives.WifiUtilityReadOptions? right) -> bool
 static NdsForge.Nitro.Archives.WifiUtilityWriteOptions.operator !=(NdsForge.Nitro.Archives.WifiUtilityWriteOptions? left, NdsForge.Nitro.Archives.WifiUtilityWriteOptions? right) -> bool
 static NdsForge.Nitro.Archives.WifiUtilityWriteOptions.operator ==(NdsForge.Nitro.Archives.WifiUtilityWriteOptions? left, NdsForge.Nitro.Archives.WifiUtilityWriteOptions? right) -> bool
+static NdsForge.Nitro.Audio.NitroWaveCodec.Decode(System.ReadOnlySpan<byte> data, NdsForge.Nitro.Audio.NitroWaveEncoding encoding, int? sampleCount = null, NdsForge.Nitro.Audio.NitroWaveDecodeOptions? options = null) -> short[]!
+static NdsForge.Nitro.Audio.NitroWaveCodec.Encode(System.ReadOnlySpan<short> samples, NdsForge.Nitro.Audio.NitroWaveEncoding encoding, NdsForge.Nitro.Audio.NitroWaveEncodeOptions? options = null) -> byte[]!
+static NdsForge.Nitro.Audio.NitroWaveDecodeOptions.operator !=(NdsForge.Nitro.Audio.NitroWaveDecodeOptions? left, NdsForge.Nitro.Audio.NitroWaveDecodeOptions? right) -> bool
+static NdsForge.Nitro.Audio.NitroWaveDecodeOptions.operator ==(NdsForge.Nitro.Audio.NitroWaveDecodeOptions? left, NdsForge.Nitro.Audio.NitroWaveDecodeOptions? right) -> bool
+static NdsForge.Nitro.Audio.NitroWaveEncodeOptions.operator !=(NdsForge.Nitro.Audio.NitroWaveEncodeOptions? left, NdsForge.Nitro.Audio.NitroWaveEncodeOptions? right) -> bool
+static NdsForge.Nitro.Audio.NitroWaveEncodeOptions.operator ==(NdsForge.Nitro.Audio.NitroWaveEncodeOptions? left, NdsForge.Nitro.Audio.NitroWaveEncodeOptions? right) -> bool
 static NdsForge.Nitro.Compression.BlzCodec.Decompress(System.ReadOnlySpan<byte> data, int maximumDecodedLength = 2147483591) -> byte[]!
 static NdsForge.Nitro.Compression.BlzCodec.TryCompress(System.ReadOnlySpan<byte> data, out byte[]! encoded, int uncompressedPrefixLength = 0) -> bool
 static NdsForge.Nitro.Compression.BlzCodec.TryInspect(System.ReadOnlySpan<byte> data, out NdsForge.Nitro.Compression.BlzInfo info) -> bool

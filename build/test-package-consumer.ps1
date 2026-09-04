@@ -56,7 +56,19 @@ using NdsForge.Graphics.Tiles;
 using NdsForge.Graphics.Sprites;
 using NdsForge.Nitro.Compression;
 using NdsForge.Nitro.Archives;
+using NdsForge.Nitro.Audio;
 using System.Security.Cryptography;
+
+short[] audioSamples = [1000, 1000, 1000];
+foreach (NitroWaveEncoding encoding in new[] { NitroWaveEncoding.Pcm16, NitroWaveEncoding.ImaAdpcm })
+{
+    byte[] audioBytes = NitroWaveCodec.Encode(audioSamples, encoding, new NitroWaveEncodeOptions());
+    if (!NitroWaveCodec.Decode(audioBytes, encoding, audioSamples.Length, new NitroWaveDecodeOptions()).AsSpan().SequenceEqual(audioSamples))
+        throw new InvalidOperationException("Raw audio package consumer failed.");
+}
+if (NitroWaveCodec.Decode([0, 0x80, 0, 0, 0x80], NitroWaveEncoding.ImaAdpcm,
+    options: new() { AdpcmClipping = NitroAdpcmClipping.Signed16 })[1] != short.MinValue)
+    throw new InvalidOperationException("Explicit audio clipping package consumer failed.");
 
 var builder = new NdsImageBuilder
 {

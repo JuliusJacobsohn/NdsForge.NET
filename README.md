@@ -27,7 +27,7 @@ Install the library:
 dotnet add package NdsForge
 ```
 
-Install `NdsForge.Nitro` separately when an application needs reusable Nitro compression or container codecs without the ROM-image model:
+Install `NdsForge.Nitro` separately when an application needs reusable Nitro compression, container, or raw audio sample codecs without the ROM-image model:
 
 ```shell
 dotnet add package NdsForge.Nitro

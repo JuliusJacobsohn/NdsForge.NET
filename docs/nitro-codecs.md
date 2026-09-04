@@ -119,6 +119,54 @@ vectors additionally cover growth, shrinkage, renaming, empty and unnamed entrie
 shared intervals, and malformed input. No wireless emulation, SDK-version inference,
 or automatic decompression is implied.
 
+## Raw audio samples
+
+`NitroWaveCodec` converts native mono PCM8, PCM16, and DS IMA-ADPCM blocks
+to and from signed sixteen-bit sample values. It does not parse SWAV/STRM
+containers, infer sample rates or loops, play audio, resample, or read/write WAV
+files. Those responsibilities remain separate from the raw sample codec.
+
+```csharp
+using NdsForge.Nitro.Audio;
+
+short[] samples = [1000, 1100, 900, 800, 1000];
+byte[] encoded = NitroWaveCodec.Encode(samples, NitroWaveEncoding.ImaAdpcm,
+    new NitroWaveEncodeOptions { InitialStepIndex = 20 });
+short[] decoded = NitroWaveCodec.Decode(encoded, NitroWaveEncoding.ImaAdpcm,
+    sampleCount: samples.Length);
+```
+
+PCM16 is signed little-endian and lossless. PCM8 stores signed eight-bit values;
+decoding multiplies them by 256. Encoding discards the low PCM16 byte, rounding
+toward negative infinity. Thus each decoded value is between zero and 255 below
+the input; it is not a nearest-value conversion.
+
+ADPCM starts with a four-byte state header, followed by low-nibble-first samples.
+The header predictor is signed, the step index is zero through eighty-eight,
+and unused header bits do not affect decoding. The initial predictor is state,
+not an additional output sample. Encoding defaults to the first input sample as
+the predictor and index zero; callers may supply both explicitly. Empty ADPCM
+input produces a state header, while empty PCM produces no bytes.
+
+The default `NintendoDs` clipping policy saturates subtraction at -32767 and
+addition at 32767. An initial -32768 can remain unchanged after a positive
+zero-delta code. Select `NitroAdpcmClipping.Signed16` explicitly for tools that
+instead saturate subtraction at -32768. Both encoding and decoding expose this
+choice; the resulting samples, and sometimes encoded nibbles, can differ.
+
+ADPCM encoding chooses the next representable sample with the smallest absolute
+error; equal errors prefer the lower nibble. This policy is deterministic and
+lossy. It does not claim globally optimal quality or byte parity with other
+encoders. A final odd sample occupies the low nibble and leaves the high nibble
+zero. Supply the meaningful `sampleCount` when decoding to exclude that padding.
+With no count, decoding returns every stored sample, including encoded padding.
+
+Decoded output defaults to a limit of sixteen mebisamples; encoded output
+defaults to 64 MiB including the ADPCM header. Limits apply before allocating
+the output array. Incomplete PCM16 values, truncated ADPCM headers, invalid
+indices, unsupported modes, and impossible sample counts fail explicitly.
+The native package has no host audio-file, playback, or resampling dependency.
+
 ## BMG messages
 
 `BmgMessageBundle` provides a conservative, read-only view of standard `MESGbmg1` message resources. It supports little- and big-endian bundles, Windows-1252, UTF-16, Shift JIS, and UTF-8 declarations, variable-length INF1 metadata, and arbitrary auxiliary sections. Text spans and length-prefixed controls remain separate `BmgMessagePart` values, so decoding visible text never destroys embedded control types or payloads.
