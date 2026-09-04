@@ -88,7 +88,14 @@ public sealed class NdsWorkspacePathTests
         {
             File.Delete(fixture.Output);
             if (new DirectoryInfo(directoryLink).LinkTarget is not null) { Directory.Delete(directoryLink); }
-            if (new DirectoryInfo(dangling).LinkTarget is not null) { Directory.Delete(dangling); }
+            if (new DirectoryInfo(dangling).LinkTarget is not null)
+            {
+                // Unix links have no persistent directory-target type when their target is absent.
+                if (OperatingSystem.IsWindows()) { Directory.Delete(dangling); }
+                else { File.Delete(dangling); }
+            }
+            Assert.Null(new DirectoryInfo(dangling).LinkTarget);
+            Assert.True(Directory.Exists(fixture.Workspace));
         }
     }
 }

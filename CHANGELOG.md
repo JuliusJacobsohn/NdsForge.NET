@@ -150,6 +150,8 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 - Make private compatibility runs require both cartridge and digital fixture
   directories, validate the reference input as a file, and reject skipped tests.
+- Clean up dangling directory symlinks portably in workspace safety tests while
+  retaining all input/output link-rejection assertions on Windows and Linux.
 - Correct cartridge RSA signing and verification to use type-one padded raw
   SHA-1 instead of the incompatible ASN.1-wrapped signature encoding. Validate
   the complete padding block and blind and check private signing operations.
