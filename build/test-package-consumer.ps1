@@ -69,6 +69,12 @@ foreach (NitroWaveEncoding encoding in new[] { NitroWaveEncoding.Pcm16, NitroWav
 if (NitroWaveCodec.Decode([0, 0x80, 0, 0, 0x80], NitroWaveEncoding.ImaAdpcm,
     options: new() { AdpcmClipping = NitroAdpcmClipping.Signed16 })[1] != short.MinValue)
     throw new InvalidOperationException("Explicit audio clipping package consumer failed.");
+SwavFile standaloneWave = SwavFile.Create(NitroWave.Create(audioSamples, NitroWaveEncoding.ImaAdpcm, 22050,
+    new NitroWaveCreateOptions { PadFinalWord = true, LoopStartSample = 0 }));
+SwavFile waveCopy = SwavFile.Parse(standaloneWave.CreateBuilder().Build(new SwavWriteOptions()), new NitroWaveReadOptions());
+if (waveCopy.Wave.SampleCount != 8 || waveCopy.Wave.LoopStartSample != 0 || waveCopy.Wave.Timer != 759 ||
+    waveCopy.Wave.Decode().Any(sample => sample != 1000) || !waveCopy.WritePreserved().AsSpan().SequenceEqual(standaloneWave.WritePreserved()))
+    throw new InvalidOperationException("Standalone wave package consumer failed.");
 
 var builder = new NdsImageBuilder
 {

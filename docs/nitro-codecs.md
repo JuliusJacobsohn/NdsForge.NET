@@ -167,6 +167,71 @@ the output array. Incomplete PCM16 values, truncated ADPCM headers, invalid
 indices, unsupported modes, and impossible sample counts fail explicitly.
 The native package has no host audio-file, playback, or resampling dependency.
 
+## Standalone waves and native sample blocks
+
+`SwavFile` reads standalone SWAV files; its `Wave` is a `NitroWave`, the same
+twelve-byte-header-prefixed sample block used within SWAR archives. The wave
+exposes encoded bytes, encoding, sample rate, independent stored timer, raw loop
+flag, word counts, total sample count, and nullable active-loop sample positions.
+`Decode` returns one pass through the wave, without repeating its loop.
+
+```csharp
+using NdsForge.Nitro.Audio;
+
+SwavFile original = SwavFile.Parse(File.ReadAllBytes("sound.swav"));
+short[] samples = original.Wave.Decode();
+
+NitroWave replacement = NitroWave.Create(samples, NitroWaveEncoding.ImaAdpcm,
+    original.Wave.SampleRate, new NitroWaveCreateOptions
+    {
+        PadFinalWord = true,
+        LoopStartSample = 0,
+        EncodingOptions = new NitroWaveEncodeOptions { InitialStepIndex = 20 },
+    });
+SwavFileBuilder builder = original.CreateBuilder();
+builder.Wave = replacement;
+File.WriteAllBytes("sound-edited.swav", builder.Build());
+```
+
+Stored wave lengths use four-byte words: four PCM8 samples, two PCM16 samples,
+or eight ADPCM samples per data word. ADPCM additionally has one state-header
+word. `LoopStartWords` includes that header; `LoopStartSample` does not. Active
+loops must start inside the decoded duration, not at its exclusive end or within
+the ADPCM header. Inactive loop offsets, noncanonical nonzero loop flags, reserved
+ADPCM header bits, and independent timer values remain lossless.
+
+Sample-based `Create` rejects incomplete final words by default. `PadFinalWord`
+explicitly repeats the final input sample before encoding and increases the stored
+duration to the next full word. Loop starts must already be word-aligned; they
+are never rounded. The timer defaults to integer division of 16756991 by the
+nonzero sample rate; supply `Timer` to retain another stored value. An unrepresentable
+derived timer fails instead of wrapping. Empty nonlooping sample blocks can be
+represented; parsing a wave does not imply that its length is hardware-playable.
+
+`CreateEncoded` accepts already word-aligned encoded samples plus explicit rate,
+timer, loop offset, and raw loop flag. `ParseSampleBlock` reads the shared wave
+representation without a standalone envelope. `WriteSampleBlock` retains all
+following padding by default; pass false for only the header and declared data.
+
+`WritePreserved` and an unchanged SWAV builder retain every original byte,
+including header extensions, inner wave padding, and outer allocation padding.
+A replacement changes the entire wave block, including its own padding, while
+retaining the source envelope extension and outer padding. Set
+`PreserveSourceLayout = false` for a deterministic sixteen-byte-header envelope
+without extensions or padding. Creating a new `SwavFile` also uses this canonical
+layout. Both marker representations retain little-endian sample fields; canonical
+output uses marker FEFF and version 0100. Builder output is reparsed before return.
+
+Read limits default to 64 MiB of complete input and sixteen mebisamples. Sample
+creation separately bounds padded samples and raw encoded bytes; standalone writes
+default to a 64 MiB complete-output limit. Invalid envelopes, truncation, impossible
+word counts, unsupported encodings, invalid ADPCM indices, zero sample rates, and
+invalid active loops fail explicitly. The corpus gate checks all 373 standalone
+waves, 9,962,188 sample values under the explicit signed-16 clipping policy,
+metadata, exact preservation, and canonical output. DS saturation behavior has
+separate sample-vector coverage. SWAR/SDAT archive APIs, STRM block streams, WAV
+interoperability, and playback are not implied by this standalone-wave API.
+
 ## BMG messages
 
 `BmgMessageBundle` provides a conservative, read-only view of standard `MESGbmg1` message resources. It supports little- and big-endian bundles, Windows-1252, UTF-16, Shift JIS, and UTF-8 declarations, variable-length INF1 metadata, and arbitrary auxiliary sections. Text spans and length-prefixed controls remain separate `BmgMessagePart` values, so decoding visible text never destroys embedded control types or payloads.

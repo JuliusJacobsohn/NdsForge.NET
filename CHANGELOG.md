@@ -7,6 +7,9 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ### Added
 
+- Read, create, decode, and replace standalone SWAV waves and shared native sample
+  blocks with bounded lengths, exact preservation, explicit word padding and loop
+  positions, independent timing metadata, and deterministic canonical output.
 - Add bounded raw mono PCM8, PCM16, and Nintendo DS IMA-ADPCM sample decoding
   and deterministic encoding in the dependency-free Nitro package. Expose
   meaningful sample counts, explicit initial ADPCM state, and DS or signed-16
