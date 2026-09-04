@@ -1,6 +1,6 @@
 <Project>
   <!-- Successful main CI releases this stable Semantic Version for all packages. -->
   <PropertyGroup>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 </Project>
