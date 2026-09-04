@@ -1,4 +1,19 @@
 #nullable enable
+NdsForge.Graphics.Images.CartridgeLogo
+NdsForge.Graphics.Images.CartridgeLogo.EncodeTiles() -> byte[]!
+NdsForge.Graphics.Images.CartridgeLogo.EncodedBitLength.get -> int
+NdsForge.Graphics.Images.CartridgeLogo.Pixels.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Images.CartridgeLogo.RawData.get -> System.ReadOnlyMemory<byte>
+NdsForge.Graphics.Images.CartridgeLogo.Render(NdsForge.Graphics.Colors.RgbaColor32 foreground, NdsForge.Graphics.Colors.RgbaColor32 background) -> NdsForge.Graphics.Images.RgbaImage32!
+NdsForge.Graphics.Images.CartridgeLogo.WriteCanonical() -> byte[]!
+NdsForge.Graphics.Images.CartridgeLogo.WritePreserved() -> byte[]!
+const NdsForge.Graphics.Images.CartridgeLogo.EncodedByteLength = 156 -> int
+const NdsForge.Graphics.Images.CartridgeLogo.Height = 16 -> int
+const NdsForge.Graphics.Images.CartridgeLogo.Width = 104 -> int
+static NdsForge.Graphics.Images.CartridgeLogo.FromPixels(System.ReadOnlySpan<byte> pixels) -> NdsForge.Graphics.Images.CartridgeLogo!
+static NdsForge.Graphics.Images.CartridgeLogo.FromRgba32(System.ReadOnlySpan<NdsForge.Graphics.Colors.RgbaColor32> pixels, NdsForge.Graphics.Colors.RgbaColor32 foreground, NdsForge.Graphics.Colors.RgbaColor32 background) -> NdsForge.Graphics.Images.CartridgeLogo!
+static NdsForge.Graphics.Images.CartridgeLogo.MeasureEncodedBitLength(System.ReadOnlySpan<byte> pixels) -> int
+static NdsForge.Graphics.Images.CartridgeLogo.Parse(System.ReadOnlySpan<byte> data) -> NdsForge.Graphics.Images.CartridgeLogo!
 NdsForge.Graphics.Animations.NanrAnimationBank
 NdsForge.Graphics.Animations.NanrAnimationBank.BankConstant.get -> uint
 NdsForge.Graphics.Animations.NanrAnimationBank.DeclaredFrameCount.get -> ushort
