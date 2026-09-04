@@ -44,6 +44,10 @@ Publishing, publishes all five packages and their symbols, waits for public NuGe
 downloads, and tests those downloaded packages in isolated library/CLI consumers.
 Only then does it create the stable GitHub release with changelog notes, package
 assets, and SHA-256 checksums. Documentation deployment also runs on main.
+Hosted CI and documentation jobs have a 10-minute limit; publication has a
+20-minute limit, including up to 10 minutes for NuGet indexing. The full private
+ROM matrix runs locally or on the explicitly selected self-hosted runner, never
+on GitHub-hosted runners.
 
 Pull requests, fork runs, failed CI, and unmerged branches cannot trigger
 publication. The privileged workflow does not consume artifacts from the

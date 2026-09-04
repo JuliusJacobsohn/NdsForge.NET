@@ -13,6 +13,7 @@ jobs:
   release-gate:
     name: Ubuntu release gate
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
         with:
@@ -97,6 +98,7 @@ jobs:
   windows-portability:
     name: Windows portability
     runs-on: windows-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-dotnet@v6

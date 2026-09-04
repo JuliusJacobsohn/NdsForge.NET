@@ -35,6 +35,7 @@ jobs:
        github.event.workflow_run.head_repository.full_name == github.repository &&
        (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch'))
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       actions: read
       contents: write
@@ -132,7 +133,7 @@ jobs:
       - name: Verify public NuGet downloads and clean consumers
         if: steps.identity.outputs.publish == 'true'
         shell: pwsh
-        run: ./build/verify-published-packages.ps1 -Version $env:PACKAGE_VERSION
+        run: ./build/verify-published-packages.ps1 -Version $env:PACKAGE_VERSION -TimeoutMinutes 10
       - name: Create stable GitHub release
         if: steps.identity.outputs.publish == 'true'
         shell: bash
