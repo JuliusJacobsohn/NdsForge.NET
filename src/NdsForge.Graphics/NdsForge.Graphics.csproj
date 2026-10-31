@@ -4,7 +4,7 @@
     <Title>NdsForge.NET Nitro graphics</Title>
     <Description>Indexed graphics primitives and native Nintendo DS and DSi 2D resource formats.</Description>
     <Authors>Julius Jacobsohn;NdsForge.NET contributors</Authors>
-    <PackageTags>nintendo-ds;nds;dsi;nitro;graphics;nclr;ncgr;nscr;ncer;nanr;nftr;font;rom-hacking</PackageTags>
+    <PackageTags>nintendo-ds;nds;dsi;nitro;graphics;nclr;ncgr;nscr;ncer;nanr;nftr;font;logo;rom-hacking</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -20,6 +20,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EnablePackageValidation>true</EnablePackageValidation>
+    <PackageValidationBaselineVersion>1.1.0</PackageValidationBaselineVersion>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
   <ItemGroup>

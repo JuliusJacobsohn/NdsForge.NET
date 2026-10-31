@@ -89,6 +89,58 @@ tile/palette combinations in ten animated Banners, and 226 sequence entries.
 Visible colors and transparency must
 survive conversion and rebuilding; source palette-index aliases need not survive.
 
+## Monochrome cartridge logos
+
+`CartridgeLogo` converts the fixed 104-by-16 image in the 156-byte cartridge
+header field. It supplies no built-in proprietary image. `FromPixels` takes
+exactly 1,664 row-major bytes: **zero is background; one is foreground**.
+`FromRgba32` maps two explicitly selected, distinct RGBA colors exactly, including
+alpha. Other colors are rejected; no thresholding, color reduction, or alpha
+compositing is performed implicitly.
+
+```csharp
+using NdsForge;
+using NdsForge.Graphics.Colors;
+using NdsForge.Graphics.Images;
+
+// A caller-authored half-plane, not a proprietary logo image.
+byte[] monochrome = Enumerable.Range(0, CartridgeLogo.Width * CartridgeLogo.Height)
+    .Select(i => (byte)(i % CartridgeLogo.Width < 52 ? 1 : 0)).ToArray();
+int requiredBits = CartridgeLogo.MeasureEncodedBitLength(monochrome);
+CartridgeLogo logo = CartridgeLogo.FromPixels(monochrome);
+RgbaImage32 preview = logo.Render(new RgbaColor32(32, 80, 220), new RgbaColor32(255, 255, 255));
+var builder = new NdsImageBuilder().SetNintendoLogo(logo.RawData.Span);
+// Configure programs and other image metadata before building.
+```
+
+The lossless encoding must fit in 1,248 bits. `MeasureEncodedBitLength` includes
+the fixed filter header and can report a larger required size without writing.
+Creation throws `InvalidOperationException` if the image does not fit, rather
+than silently simplifying or truncating it. Inputs and returned output arrays
+are detached from their callers.
+
+`Parse` accepts exactly 156 bytes, for example
+`CartridgeLogo.Parse(image.Header.RawData.Span.Slice(0xC0, 156))`. It validates the
+fixed filter header and bounds decoding to the known image size without trusting
+an input-supplied allocation length. Invalid fields throw `FormatException`.
+`WritePreserved` retains all original bytes, including unused nonzero tail bits;
+`WriteCanonical` re-encodes pixels with zero tail padding. Canonical writing must
+not be substituted when exact header-byte preservation is required.
+
+`EncodeTiles` returns 208 bytes in row-major 8-by-8 tile order, thirteen tiles
+across and two down, with each tile row's leftmost foreground bit in bit zero.
+PNG/BMP decoding or file export belongs in a separate host-codec adapter. The
+core image builder calculates the logo CRC and dependent header CRC after the
+field is set; an existing authenticated image can additionally require explicit
+authentication repair. Valid conversion or CRCs do **not** establish retail
+firmware boot acceptance.
+
+The private compatibility tests check every decoded pixel in all 142 cartridge
+and five digital header fields. These fixtures share one image; broader encoding
+coverage comes from synthetic repeated patterns, all 1,664 single-pixel positions,
+and precise capacity boundaries. The real fields contain unused nonzero tail
+bits, so their canonical encodings are pixel-equivalent but not byte-identical.
+
 ## Colors and NCLR palettes
 
 `NitroColor555` preserves the complete stored BGR555 word, including bit 15, and converts to or from dependency-free `RgbaColor32` values. Alpha is not embedded in an NCLR color; transparent palette-index policy belongs to the tile/map/sprite composition layer.

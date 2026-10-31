@@ -5,6 +5,30 @@ All notable changes to NdsForge.NET are documented here. The project follows
 
 ## Unreleased
 
+## 1.2.0 - 2026-09-05
+
+### Added
+
+- Add `CartridgeLogo` in `NdsForge.Graphics.Images` for fixed 104-by-16
+  monochrome cartridge-header decoding, exact two-color RGBA import, configurable
+  rendering, native one-bit tile output, and deterministic lossless encoding.
+- Preserve every original encoded byte, including unused nonzero tail bits,
+  while offering explicit canonical zero-padded writing and bit-capacity
+  measurement. Reject invalid field sizes, filter headers, exhausted streams,
+  nonbinary pixels, ambiguous colors, and images exceeding the 156-byte field.
+- Verify synthetic pattern identities, single-pixel placement, full-capacity
+  boundaries, malformed fields, all 142 cartridge and five digital logo fields,
+  canonical pixel preservation, and integration with core image-building CRCs.
+  No proprietary logo images or host image-file codecs are included, and image
+  conversion does not imply retail firmware boot acceptance.
+
+### Maintenance
+
+- Validate all four library packages against their published 1.1.0 APIs and
+  keep all five package versions aligned at 1.2.0.
+
+[Compare 1.1.0 to 1.2.0](https://github.com/JuliusJacobsohn/NdsForge.NET/compare/v1.1.0...v1.2.0)
+
 ## 1.1.0 - 2026-09-05
 
 ### Added

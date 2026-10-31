@@ -33,7 +33,7 @@ Install `NdsForge.Nitro` separately when an application needs reusable Nitro com
 dotnet add package NdsForge.Nitro
 ```
 
-Install `NdsForge.Graphics` for dependency-light native indexed graphics, palettes, tiles, maps, and sprites. Host raster codecs remain separate adapters:
+Install `NdsForge.Graphics` for dependency-light native indexed graphics, palettes, tiles, maps, sprites, and monochrome cartridge-logo conversion. Host raster codecs remain separate adapters:
 
 ```shell
 dotnet add package NdsForge.Graphics
@@ -75,7 +75,7 @@ Parsing creates a navigable image model without modifying the source. Validation
 - Verified classic-DS per-overlay Download Play HMAC parsing, validation, replacement, and BLZ-aware repair
 - An optional `Ndstool1503` build profile for verified interoperability cases
 - A dependency-free `NdsForge.Nitro` companion package for BLZ, BIOS compression, archives, messages, and other reusable Nitro formats
-- An optional `NdsForge.Graphics` feature package for native indexed graphics, sprites, animations, and bitmap fonts without host image-codec dependencies
+- An optional `NdsForge.Graphics` feature package for native indexed graphics, sprites, animations, bitmap fonts, and cartridge logos without host image-codec dependencies
 - An optional `NdsForge.Audio.Wav` adapter for PCM WAV interchange with native SWAV and STRM audio, without resampling or playback
 - A cross-platform `ndsforge` .NET command-line tool over the same library
 

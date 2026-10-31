@@ -62,6 +62,17 @@ using NdsForge.Nitro.Audio;
 using NdsForge.Audio.Wav;
 using System.Security.Cryptography;
 
+byte[] logoPixels = Enumerable.Range(0, CartridgeLogo.Width * CartridgeLogo.Height)
+    .Select(i => (byte)(i % CartridgeLogo.Width < 52 ? 1 : 0)).ToArray();
+CartridgeLogo logo = CartridgeLogo.FromPixels(logoPixels);
+CartridgeLogo decodedLogo = CartridgeLogo.Parse(logo.WriteCanonical());
+RgbaImage32 logoRaster = decodedLogo.Render(new RgbaColor32(0, 0, 0), new RgbaColor32(255, 255, 255));
+CartridgeLogo importedLogo = CartridgeLogo.FromRgba32(logoRaster.Pixels.ToArray(), new(0, 0, 0), new(255, 255, 255));
+if (logo.RawData.Length != CartridgeLogo.EncodedByteLength || logo.EncodedBitLength != CartridgeLogo.MeasureEncodedBitLength(logoPixels) ||
+    decodedLogo.EncodeTiles().Length != 208 || !decodedLogo.Pixels.Span.SequenceEqual(logoPixels) ||
+    !importedLogo.WritePreserved().AsSpan().SequenceEqual(logo.RawData.Span))
+    throw new InvalidOperationException("Cartridge logo package consumer failed.");
+
 short[] audioSamples = [1000, 1000, 1000];
 foreach (NitroWaveEncoding encoding in new[] { NitroWaveEncoding.Pcm16, NitroWaveEncoding.ImaAdpcm })
 {
